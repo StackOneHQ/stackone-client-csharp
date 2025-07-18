@@ -1,0 +1,39 @@
+speakeasyVersion: 1.582.0
+sources:
+    StackOne:
+        sourceNamespace: stack-one
+        sourceRevisionDigest: sha256:ca91ee2cde2f57849543516ac0e262310c3ab1d80eb7191b18a0b450da8a4a24
+        sourceBlobDigest: sha256:5c0528160c502ee027f319ad3267cbb1d7178d38f62cd19f3a1528087771d506
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    stack-one:
+        source: StackOne
+        sourceNamespace: stack-one
+        sourceRevisionDigest: sha256:ca91ee2cde2f57849543516ac0e262310c3ab1d80eb7191b18a0b450da8a4a24
+        sourceBlobDigest: sha256:5c0528160c502ee027f319ad3267cbb1d7178d38f62cd19f3a1528087771d506
+        codeSamplesNamespace: stack-one-csharp-code-samples
+        codeSamplesRevisionDigest: sha256:7c9045f661f9f0ecd4a82c329966b8123232107f373a8d987a6b88bb473d63c0
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        StackOne:
+            inputs:
+                - location: https://api.eu1.stackone.com/oas/stackone.json
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/stackone/stackone/stack-one
+    targets:
+        stack-one:
+            target: csharp
+            source: StackOne
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/stackone/stackone/stack-one-csharp-code-samples
+                labelOverride:
+                    fixedValue: Csharp (SDK)
+                blocking: false

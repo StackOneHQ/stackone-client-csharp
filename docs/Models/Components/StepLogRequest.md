@@ -1,0 +1,14 @@
+# StepLogRequest
+
+The advanced log request data
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `Id`                                                                    | *string*                                                                | :heavy_minus_sign:                                                      | The request ID                                                          | adbf752f-6457-4ddd-89b3-98ae2252b83b                                    |
+| `Method`                                                                | *string*                                                                | :heavy_minus_sign:                                                      | The request method                                                      | get                                                                     |
+| `Headers`                                                               | Dictionary<String, *object*>                                            | :heavy_minus_sign:                                                      | N/A                                                                     | {<br/>"content-type": "application/json",<br/>"authorization": "Bearer token"<br/>} |
+| `Url`                                                                   | [StepLogUrl](../../Models/Components/StepLogUrl.md)                     | :heavy_minus_sign:                                                      | The request URL data                                                    |                                                                         |
+| `Body`                                                                  | *object*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
