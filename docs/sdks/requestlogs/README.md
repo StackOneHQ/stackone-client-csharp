@@ -20,7 +20,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using StackOne.Client.Models.Requests;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -88,7 +88,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using StackOne.Client.Models.Requests;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -140,7 +140,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using StackOne.Client.Models.Requests;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });

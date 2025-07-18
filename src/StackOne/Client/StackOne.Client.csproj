@@ -3,10 +3,12 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>StackOne.Client</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <TargetFramework>net8.0</TargetFramework>
     <Authors>Speakeasy</Authors>
     <Copyright>Copyright (c) Speakeasy 2025</Copyright>
+    <RepositoryUrl>https://github.com/StackOneHQ/stackone-client-csharp.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <Description>StackOne: The documentation for the StackOne API</Description>
   </PropertyGroup>
 

@@ -1,4 +1,4 @@
-# StackOne SDK
+# StackOneClient SDK
 
 ## Overview
 

@@ -24,7 +24,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using StackOne.Client.Models.Requests;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -73,7 +73,7 @@ Get Account
 using StackOne.Client;
 using StackOne.Client.Models.Components;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -120,7 +120,7 @@ Update Account
 using StackOne.Client;
 using StackOne.Client.Models.Components;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -173,7 +173,7 @@ Delete Account
 using StackOne.Client;
 using StackOne.Client.Models.Components;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -220,7 +220,7 @@ Get meta information of the account
 using StackOne.Client;
 using StackOne.Client.Models.Components;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });

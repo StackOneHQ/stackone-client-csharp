@@ -3,10 +3,11 @@ id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
   docChecksum: 2cf40a2941d6543b5f4cba7264472820
   docVersion: 1.0.0
-  speakeasyVersion: 1.582.0
-  generationVersion: 2.657.1
-  releaseVersion: 0.1.1
-  configChecksum: 88fb15106bcd5af4eb0d524cec6fefe8
+  speakeasyVersion: 1.583.0
+  generationVersion: 2.658.3
+  releaseVersion: 0.1.2
+  configChecksum: ba48f00e9b329b2150a871a82d36cbb8
+  repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -136,7 +137,7 @@ generatedFiles:
   - docs/sdks/connectsessions/README.md
   - docs/sdks/proxy/README.md
   - docs/sdks/requestlogs/README.md
-  - docs/sdks/stackone/README.md
+  - docs/sdks/stackoneclient/README.md
   - global.json
   - src/StackOne/Client/Accounts.cs
   - src/StackOne/Client/ConnectSessions.cs
@@ -249,7 +250,7 @@ generatedFiles:
   - src/StackOne/Client/RequestLogs.cs
   - src/StackOne/Client/SDKConfig.cs
   - src/StackOne/Client/StackOne.Client.csproj
-  - src/StackOne/Client/StackOne.cs
+  - src/StackOne/Client/StackOneClient.cs
   - src/StackOne/Client/Utils/AnyDeserializer.cs
   - src/StackOne/Client/Utils/BigIntStrConverter.cs
   - src/StackOne/Client/Utils/DecimalStrConverter.cs

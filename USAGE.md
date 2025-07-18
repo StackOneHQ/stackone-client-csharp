@@ -4,7 +4,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
