@@ -1,0 +1,14 @@
+# StepLogResponse
+
+The advanced log response data
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               | Example                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `StatusCode`                                                              | *double*                                                                  | :heavy_minus_sign:                                                        | The response status code                                                  | 200                                                                       |
+| `Headers`                                                                 | Dictionary<String, *object*>                                              | :heavy_minus_sign:                                                        | N/A                                                                       | {<br/>"content-type": "application/json",<br/>"authorization": "Bearer token"<br/>} |
+| `Body`                                                                    | *object*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |                                                                           |
+| `CustomMappingErrors`                                                     | List<[CustomMappingError](../../Models/Components/CustomMappingError.md)> | :heavy_minus_sign:                                                        | The custom mapping errors                                                 |                                                                           |
+| `ProviderErrors`                                                          | List<[ProviderError](../../Models/Components/ProviderError.md)>           | :heavy_minus_sign:                                                        | The provider errors                                                       |                                                                           |

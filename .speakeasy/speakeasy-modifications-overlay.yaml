@@ -1,0 +1,132 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/accounts/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.accounts.update()
+      before: sdk.Accounts.update_account()
+      created_at: 1752855639469
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/accounts/{id}/meta"]["get"]
+    update:
+      x-speakeasy-name-override: getMeta
+    x-speakeasy-metadata:
+      after: sdk.accounts.getMeta()
+      before: sdk.Accounts.get_account_meta_info()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/accounts"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.accounts.list()
+      before: sdk.Accounts.list_linked_accounts()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/connect_sessions/authenticate"]["post"]
+    update:
+      x-speakeasy-group: connectSessions
+      x-speakeasy-name-override: authenticate
+    x-speakeasy-metadata:
+      after: sdk.connectSessions.authenticate()
+      before: sdk.Connect Sessions.authenticate_connect_session()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/accounts/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.accounts.delete()
+      before: sdk.Accounts.delete_account()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/connect_sessions"]["post"]
+    update:
+      x-speakeasy-group: connectSessions
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.connectSessions.create()
+      before: sdk.Connect Sessions.create_connect_session()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/requests/logs/steps"]["get"]
+    update:
+      x-speakeasy-group: requestLogs
+      x-speakeasy-name-override: listSteps
+    x-speakeasy-metadata:
+      after: sdk.requestLogs.listSteps()
+      before: sdk.Request Logs.list_step_logs()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/requests/logs"]["get"]
+    update:
+      x-speakeasy-group: requestLogs
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.requestLogs.list()
+      before: sdk.Request Logs.list_logs()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/accounts/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.accounts.get()
+      before: sdk.Accounts.get_account()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/requests/logs/{id}"]["get"]
+    update:
+      x-speakeasy-group: requestLogs
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.requestLogs.get()
+      before: sdk.Request Logs.get_log()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/connectors/meta"]["get"]
+    update:
+      x-speakeasy-name-override: listMeta
+    x-speakeasy-metadata:
+      after: sdk.connectors.listMeta()
+      before: sdk.Connectors.list_connectors_meta()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/connectors/meta/{provider}"]["get"]
+    update:
+      x-speakeasy-name-override: getMeta
+    x-speakeasy-metadata:
+      after: sdk.connectors.getMeta()
+      before: sdk.Connectors.get_connector_meta()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/unified/proxy"]["post"]
+    update:
+      x-speakeasy-name-override: perform
+    x-speakeasy-metadata:
+      after: sdk.proxy.perform()
+      before: sdk.Proxy.proxy_request()
+      created_at: 1752855639470
+      reviewed_at: 1752855664122
+      type: method-name

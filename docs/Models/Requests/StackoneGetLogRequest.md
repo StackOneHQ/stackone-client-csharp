@@ -1,0 +1,9 @@
+# StackoneGetLogRequest
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `Id`                                                                         | *string*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |                                                                              |
+| `Include`                                                                    | [StackoneGetLogInclude](../../Models/Requests/StackoneGetLogInclude.md)      | :heavy_minus_sign:                                                           | The include parameter allows you to include additional data in the response. | step_logs                                                                    |

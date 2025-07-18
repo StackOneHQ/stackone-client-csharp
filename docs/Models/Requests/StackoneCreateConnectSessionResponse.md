@@ -1,0 +1,10 @@
+# StackoneCreateConnectSessionResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                            | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `ConnectSessionTokenAuthLink`                                                         | [ConnectSessionTokenAuthLink](../../Models/Components/ConnectSessionTokenAuthLink.md) | :heavy_minus_sign:                                                                    | The details of the connect session created with token and auth link                   |
+| `Headers`                                                                             | Dictionary<String, List<*string*>>                                                    | :heavy_check_mark:                                                                    | N/A                                                                                   |
