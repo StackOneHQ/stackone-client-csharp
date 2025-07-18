@@ -1,10 +1,10 @@
 <!-- Start SDK Example Usage [usage] -->
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOne;
+using StackOne.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneSDK(security: new Security() {
     Username = "",
     Password = "",
 });
