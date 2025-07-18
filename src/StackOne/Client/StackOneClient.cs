@@ -23,7 +23,7 @@ namespace StackOne.Client
     /// <summary>
     /// StackOne: The documentation for the StackOne API
     /// </summary>
-    public interface IStackOne
+    public interface IStackOneClient
     {
         public IConnectSessions ConnectSessions { get; }
 
@@ -48,13 +48,13 @@ namespace StackOne.Client
     /// <summary>
     /// StackOne: The documentation for the StackOne API
     /// </summary>
-    public class StackOne: IStackOne
+    public class StackOneClient: IStackOneClient
     {
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.1";
-        private const string _sdkGenVersion = "2.657.1";
+        private const string _sdkVersion = "0.1.2";
+        private const string _sdkGenVersion = "2.658.3";
         private const string _openapiDocVersion = "1.0.0";
         public IConnectSessions ConnectSessions { get; private set; }
         public IAccounts Accounts { get; private set; }
@@ -62,7 +62,7 @@ namespace StackOne.Client
         public IConnectors Connectors { get; private set; }
         public IProxy Proxy { get; private set; }
 
-        public StackOne(SDKConfig config)
+        public StackOneClient(SDKConfig config)
         {
             SDKConfiguration = config;
             InitHooks();
@@ -78,7 +78,7 @@ namespace StackOne.Client
             Proxy = new Proxy(SDKConfiguration);
         }
 
-        public StackOne(StackOne.Client.Models.Components.Security? security = null, Func<StackOne.Client.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
+        public StackOneClient(StackOne.Client.Models.Components.Security? security = null, Func<StackOne.Client.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
         {
             if (serverIndex != null)
             {
@@ -186,12 +186,12 @@ namespace StackOne.Client
                 return this;
             }
 
-            public StackOne Build()
+            public StackOneClient Build()
             {
               if (_sdkConfig.SecuritySource == null) {
                   throw new Exception("securitySource cannot be null. One of `Security` or `securitySource` needs to be defined.");
               }
-              return new StackOne(_sdkConfig);
+              return new StackOneClient(_sdkConfig);
             }
 
         }

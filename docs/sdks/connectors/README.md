@@ -20,7 +20,7 @@ List Connectors Meta Information for all providers
 using StackOne.Client;
 using StackOne.Client.Models.Components;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -67,7 +67,7 @@ Get Connector Meta information for the given provider key
 using StackOne.Client;
 using StackOne.Client.Models.Components;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });

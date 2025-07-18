@@ -56,7 +56,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -104,7 +104,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -184,7 +184,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -232,7 +232,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOne(
+var sdk = new StackOneClient(
     retryConfig: new RetryConfig(
         strategy: RetryConfig.RetryStrategy.BACKOFF,
         backoff: new BackoffStrategy(
@@ -313,7 +313,7 @@ using StackOne.Client.Models.Components;
 using StackOne.Client.Models.Errors;
 using System.Collections.Generic;
 
-var sdk = new StackOne(security: new Security() {
+var sdk = new StackOneClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -421,7 +421,7 @@ using StackOne.Client;
 using StackOne.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOne(
+var sdk = new StackOneClient(
     serverUrl: "https://api.stackone.com",
     security: new Security() {
         Username = "",
