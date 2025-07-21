@@ -1,6 +1,6 @@
 configVersion: 2.0.0
 generation:
-  sdkClassName: StackOne.Client
+  sdkClassName: StackOneHQ.Client
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -46,7 +46,7 @@ csharp:
   maxMethodParams: 4
   methodArguments: infer-optional-args
   outputModelSuffix: output
-  packageName: StackOne.Client
+  packageName: StackOneHQ.Client
   packageTags: sdk api client stackone stack one
   responseFormat: envelope-http
   sourceDirectory: src
