@@ -3,10 +3,10 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>StackOne.Client</PackageId>
-    <Version>0.2.4</Version>
+    <Version>0.2.5</Version>
     <TargetFramework>net8.0</TargetFramework>
-    <Authors>Speakeasy</Authors>
-    <Copyright>Copyright (c) Speakeasy 2025</Copyright>
+    <Authors>stackone</Authors>
+    <Copyright>Copyright (c) stackone 2025</Copyright>
     <RepositoryUrl>https://github.com/StackOneHQ/stackone-client-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>sdk api client stackone stack one</PackageTags>
@@ -21,11 +21,13 @@
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\..\..\NUGET.md" Pack="true" PackagePath="README.md"/>
+    <None Include="..\..\..\LICENSE.md" Pack="true" PackagePath="\"/>
     <None Include="..\..\..\icon.png" Pack="true" PackagePath="\"/>
     <None Include="..\..\..\docs\**\*" Pack="true" PackagePath="\docs"  CopyToOutputDirectory="PreserveNewest"/>
   </ItemGroup>
