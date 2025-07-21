@@ -1,0 +1,9 @@
+# MarketingCreateInAppTemplateRequest
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                                                | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The account identifier                                                                                      |
+| `MarketingCreateInAppTemplateRequestDto`                                                                    | [MarketingCreateInAppTemplateRequestDto](../../Models/Components/MarketingCreateInAppTemplateRequestDto.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |

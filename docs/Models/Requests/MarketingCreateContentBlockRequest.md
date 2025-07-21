@@ -1,0 +1,9 @@
+# MarketingCreateContentBlockRequest
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                                                | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The account identifier                                                                                      |
+| `MarketingCreateContentBlocksRequestDto`                                                                    | [MarketingCreateContentBlocksRequestDto](../../Models/Components/MarketingCreateContentBlocksRequestDto.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |

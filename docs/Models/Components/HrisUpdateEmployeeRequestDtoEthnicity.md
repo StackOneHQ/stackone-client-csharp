@@ -1,0 +1,11 @@
+# HrisUpdateEmployeeRequestDtoEthnicity
+
+The employee ethnicity
+
+
+## Fields
+
+| Field                                                                                                                                     | Type                                                                                                                                      | Required                                                                                                                                  | Description                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                                   | [HrisUpdateEmployeeRequestDtoEthnicityValue](../../Models/Components/HrisUpdateEmployeeRequestDtoEthnicityValue.md)                       | :heavy_minus_sign:                                                                                                                        | N/A                                                                                                                                       |
+| `SourceValue`                                                                                                                             | [HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion](../../Models/Components/HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion.md) | :heavy_minus_sign:                                                                                                                        | N/A                                                                                                                                       |

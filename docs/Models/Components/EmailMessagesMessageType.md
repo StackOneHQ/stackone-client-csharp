@@ -1,0 +1,9 @@
+# EmailMessagesMessageType
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Value`                                                                                   | [EmailMessagesValue](../../Models/Components/EmailMessagesValue.md)                       | :heavy_minus_sign:                                                                        | The unified message type.                                                                 | email                                                                                     |
+| `SourceValue`                                                                             | [EmailMessagesSourceValueUnion](../../Models/Components/EmailMessagesSourceValueUnion.md) | :heavy_minus_sign:                                                                        | The original value from the provider used to derive the unified message type.             | Email                                                                                     |

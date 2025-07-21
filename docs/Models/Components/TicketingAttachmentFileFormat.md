@@ -1,0 +1,11 @@
+# TicketingAttachmentFileFormat
+
+The type of the file
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                               | [TicketingAttachmentValue](../../Models/Components/TicketingAttachmentValue.md)                       | :heavy_minus_sign:                                                                                    | The file format of the file, expressed as a file extension                                            | pdf                                                                                                   |
+| `SourceValue`                                                                                         | [TicketingAttachmentSourceValueUnion](../../Models/Components/TicketingAttachmentSourceValueUnion.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   | application/pdf                                                                                       |

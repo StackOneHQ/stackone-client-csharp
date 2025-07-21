@@ -1,0 +1,11 @@
+# LmsCreateCompletionRequestDtoResult
+
+The result of the completion
+
+
+## Fields
+
+| Field                                                                                                                     | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                   | [LmsCreateCompletionRequestDtoValue](../../Models/Components/LmsCreateCompletionRequestDtoValue.md)                       | :heavy_minus_sign:                                                                                                        | N/A                                                                                                                       |
+| `SourceValue`                                                                                                             | [LmsCreateCompletionRequestDtoSourceValueUnion](../../Models/Components/LmsCreateCompletionRequestDtoSourceValueUnion.md) | :heavy_minus_sign:                                                                                                        | N/A                                                                                                                       |

@@ -1,0 +1,10 @@
+# CreateAnswer
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `Id`                                                                     | *string*                                                                 | :heavy_minus_sign:                                                       | Unique identifier                                                        | 8187e5da-dc77-475e-9949-af0f1fa4e4e3                                     |
+| `Type`                                                                   | [CreateAnswerType](../../Models/Components/CreateAnswerType.md)          | :heavy_minus_sign:                                                       | Type of the answer                                                       |                                                                          |
+| `Values`                                                                 | List<*string*>                                                           | :heavy_minus_sign:                                                       | Values of the answer                                                     | [<br/>"Yes",<br/>"No Travel",<br/>"It sounds pretty cool.",<br/>"Excel",<br/>"Power Point"<br/>] |

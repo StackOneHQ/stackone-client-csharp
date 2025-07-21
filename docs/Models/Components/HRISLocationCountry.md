@@ -1,0 +1,11 @@
+# HRISLocationCountry
+
+The country code
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                               | [HRISLocationCountryValue](../../Models/Components/HRISLocationCountryValue.md)                       | :heavy_minus_sign:                                                                                    | The ISO3166-1 Alpha2 Code of the Country                                                              | US                                                                                                    |
+| `SourceValue`                                                                                         | [HRISLocationCountrySourceValueUnion](../../Models/Components/HRISLocationCountrySourceValueUnion.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |                                                                                                       |

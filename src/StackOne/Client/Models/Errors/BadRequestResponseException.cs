@@ -41,7 +41,7 @@ namespace StackOne.Client.Models.Errors
         /// Error details
         /// </summary>
         [JsonProperty("data")]
-        public Data? Data { get; set; }
+        public BadRequestResponseData? Data { get; set; }
 
         /// <summary>
         /// List of provider-specific errors

@@ -1,0 +1,11 @@
+# WorkLocationLocationType
+
+The location type
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     | Example                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                         | [WorkLocationLocationTypeValue](../../Models/Components/WorkLocationLocationTypeValue.md)                       | :heavy_minus_sign:                                                                                              | The type of the location.                                                                                       | home                                                                                                            |
+| `SourceValue`                                                                                                   | [WorkLocationLocationTypeSourceValueUnion](../../Models/Components/WorkLocationLocationTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                              | The source value of the location type.                                                                          | Home                                                                                                            |

@@ -1,0 +1,9 @@
+# WorkEligibilityType
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                               | [WorkEligibilityTypeValue](../../Models/Components/WorkEligibilityTypeValue.md)                       | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `SourceValue`                                                                                         | [WorkEligibilityTypeSourceValueUnion](../../Models/Components/WorkEligibilityTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

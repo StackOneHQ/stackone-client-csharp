@@ -1,0 +1,9 @@
+# AttachmentContentType
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         | Example                                                                             |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `Value`                                                                             | [AttachmentValue](../../Models/Components/AttachmentValue.md)                       | :heavy_minus_sign:                                                                  | The content type of the attachment.                                                 | text                                                                                |
+| `SourceValue`                                                                       | [AttachmentSourceValueUnion](../../Models/Components/AttachmentSourceValueUnion.md) | :heavy_minus_sign:                                                                  | The source value of the content type.                                               | Text                                                                                |

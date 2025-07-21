@@ -30,7 +30,7 @@ namespace StackOne.Client.Models.Components
         public string? ProviderName { get; set; } = null;
 
         [JsonProperty("status")]
-        public Status Status { get; set; } = default!;
+        public StatusEnum Status { get; set; } = default!;
 
         [JsonProperty("status_reasons")]
         public List<StatusReason>? StatusReasons { get; set; } = null;

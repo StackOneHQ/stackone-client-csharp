@@ -1,0 +1,11 @@
+# AtsUpdateBackgroundCheckPackagesRequestDto
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           | Example                                                               |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `Name`                                                                | *string*                                                              | :heavy_minus_sign:                                                    | Package name                                                          | Test 1                                                                |
+| `Description`                                                         | *string*                                                              | :heavy_minus_sign:                                                    | Package description                                                   | Skills test to gauge a candidate's proficiency in job-specific skills |
+| `Tests`                                                               | List<[UpdatePackage](../../Models/Components/UpdatePackage.md)>       | :heavy_minus_sign:                                                    | Package tests                                                         |                                                                       |
+| `Passthrough`                                                         | Dictionary<String, *object*>                                          | :heavy_minus_sign:                                                    | Value to pass through to the provider                                 | {<br/>"other_known_names": "John Doe"<br/>}                           |

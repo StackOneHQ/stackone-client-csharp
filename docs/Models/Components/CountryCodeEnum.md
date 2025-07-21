@@ -1,0 +1,9 @@
+# CountryCodeEnum
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `Value`                                                                                       | [CountryCodeEnumValue](../../Models/Components/CountryCodeEnumValue.md)                       | :heavy_minus_sign:                                                                            | The ISO3166-1 Alpha2 Code of the Country                                                      | US                                                                                            |
+| `SourceValue`                                                                                 | [CountryCodeEnumSourceValueUnion](../../Models/Components/CountryCodeEnumSourceValueUnion.md) | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |

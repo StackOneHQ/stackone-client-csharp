@@ -1,0 +1,11 @@
+# UnifiedUploadRequestDtoCategory
+
+The category object for associating uploaded files. If both an ID and a name are provided, the ID takes precedence.
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            | Example                                                                                                |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `Value`                                                                                                | *string*                                                                                               | :heavy_minus_sign:                                                                                     | The category name for associating uploaded files.                                                      | reports, resumes                                                                                       |
+| `SourceValue`                                                                                          | *string*                                                                                               | :heavy_minus_sign:                                                                                     | The provider specific category for associating uploaded files, if provided, the value will be ignored. | 550e8400-e29b-41d4-a716-446655440000, CUSTOM_CATEGORY_NAME                                             |

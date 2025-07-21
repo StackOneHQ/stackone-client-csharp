@@ -1,0 +1,10 @@
+# TicketingListTicketStatusesResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                                      | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                         | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `TicketingTicketStatusesPaginated`                                                              | [TicketingTicketStatusesPaginated](../../Models/Components/TicketingTicketStatusesPaginated.md) | :heavy_minus_sign:                                                                              | The list of ticket statuses was retrieved.                                                      |
+| `Headers`                                                                                       | Dictionary<String, List<*string*>>                                                              | :heavy_check_mark:                                                                              | N/A                                                                                             |

@@ -1,0 +1,13 @@
+# ~~EmploymentEmploymentType~~
+
+The type of employment (e.g., contractor, permanent)
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     | Example                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                         | [EmploymentEmploymentTypeValue](../../Models/Components/EmploymentEmploymentTypeValue.md)                       | :heavy_minus_sign:                                                                                              | The type of the employment.                                                                                     | permanent                                                                                                       |
+| `SourceValue`                                                                                                   | [EmploymentEmploymentTypeSourceValueUnion](../../Models/Components/EmploymentEmploymentTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                              | The source value of the employment type.                                                                        | Permanent                                                                                                       |

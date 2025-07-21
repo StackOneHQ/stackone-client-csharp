@@ -1,0 +1,9 @@
+# CustomFieldOption
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `Id`                                                                           | *string*                                                                       | :heavy_check_mark:                                                             | The unique identifier for the option to be used when updating the custom field | option_123                                                                     |
+| `Value`                                                                        | *string*                                                                       | :heavy_check_mark:                                                             | The human readable value of the option                                         | Not Started                                                                    |

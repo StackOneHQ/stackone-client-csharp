@@ -1,0 +1,9 @@
+# ConditionType
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Value`                                                                                   | [ConditionTypeValue](../../Models/Components/ConditionTypeValue.md)                       | :heavy_minus_sign:                                                                        | The type of the question's condition                                                      | equals_to                                                                                 |
+| `SourceValue`                                                                             | [ConditionTypeSourceValueUnion](../../Models/Components/ConditionTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                        | The source value of the question's condition type                                         | EqualsTo                                                                                  |

@@ -1,0 +1,11 @@
+# WorkEligibilityIssuedBy
+
+The country code of the issued by authority
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                       | [WorkEligibilityIssuedByValue](../../Models/Components/WorkEligibilityIssuedByValue.md)                       | :heavy_minus_sign:                                                                                            | The ISO3166-1 Alpha2 Code of the Country                                                                      | US                                                                                                            |
+| `SourceValue`                                                                                                 | [WorkEligibilityIssuedBySourceValueUnion](../../Models/Components/WorkEligibilityIssuedBySourceValueUnion.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |                                                                                                               |

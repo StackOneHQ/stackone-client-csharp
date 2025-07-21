@@ -1,0 +1,12 @@
+# TicketingTicketResultStatus
+
+Current status of the ticket
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `Id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | The id of the ticket status.                                                                  | 001                                                                                           |
+| `Type`                                                                                        | [TicketingTicketResultStatusType](../../Models/Components/TicketingTicketResultStatusType.md) | :heavy_minus_sign:                                                                            | The type of this status                                                                       |                                                                                               |
+| `Name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | The name of the ticket status.                                                                | Backlog                                                                                       |

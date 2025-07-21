@@ -1,0 +1,11 @@
+# AssignmentStatus
+
+The status of the assignment
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `Value`                                                                                         | [AssignmentStatusValue](../../Models/Components/AssignmentStatusValue.md)                       | :heavy_minus_sign:                                                                              | N/A                                                                                             | in_progress                                                                                     |
+| `SourceValue`                                                                                   | [AssignmentStatusSourceValueUnion](../../Models/Components/AssignmentStatusSourceValueUnion.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |                                                                                                 |

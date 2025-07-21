@@ -21,14 +21,14 @@ namespace StackOne.Client
     using System.Threading.Tasks;
 
     /// <summary>
-    /// StackOne: The documentation for the StackOne API
+    /// Documents: The documentation for the StackOne Unified API - DOCUMENTS
     /// </summary>
     public interface IStackOneClient
     {
         public IConnectSessions ConnectSessions { get; }
 
         /// <summary>
-        /// View and manage linked accounts.
+        /// Customer or business accounts.
         /// </summary>
         public IAccounts Accounts { get; }
         public IRequestLogs RequestLogs { get; }
@@ -42,18 +42,26 @@ namespace StackOne.Client
         /// Routing API requests through StackOne directly to the underlying provider.
         /// </summary>
         public IProxy Proxy { get; }
+        public IHris Hris { get; }
+        public IAts Ats { get; }
+        public ICrm Crm { get; }
+        public IIam Iam { get; }
+        public IMarketing Marketing { get; }
+        public ILms Lms { get; }
+        public ITicketing Ticketing { get; }
+        public IDocuments Documents { get; }
     }
 
 
     /// <summary>
-    /// StackOne: The documentation for the StackOne API
+    /// Documents: The documentation for the StackOne Unified API - DOCUMENTS
     /// </summary>
     public class StackOneClient: IStackOneClient
     {
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.2";
+        private const string _sdkVersion = "0.2.0";
         private const string _sdkGenVersion = "2.658.3";
         private const string _openapiDocVersion = "1.0.0";
         public IConnectSessions ConnectSessions { get; private set; }
@@ -61,6 +69,14 @@ namespace StackOne.Client
         public IRequestLogs RequestLogs { get; private set; }
         public IConnectors Connectors { get; private set; }
         public IProxy Proxy { get; private set; }
+        public IHris Hris { get; private set; }
+        public IAts Ats { get; private set; }
+        public ICrm Crm { get; private set; }
+        public IIam Iam { get; private set; }
+        public IMarketing Marketing { get; private set; }
+        public ILms Lms { get; private set; }
+        public ITicketing Ticketing { get; private set; }
+        public IDocuments Documents { get; private set; }
 
         public StackOneClient(SDKConfig config)
         {
@@ -76,6 +92,22 @@ namespace StackOne.Client
             Connectors = new Connectors(SDKConfiguration);
 
             Proxy = new Proxy(SDKConfiguration);
+
+            Hris = new Hris(SDKConfiguration);
+
+            Ats = new Ats(SDKConfiguration);
+
+            Crm = new Crm(SDKConfiguration);
+
+            Iam = new Iam(SDKConfiguration);
+
+            Marketing = new Marketing(SDKConfiguration);
+
+            Lms = new Lms(SDKConfiguration);
+
+            Ticketing = new Ticketing(SDKConfiguration);
+
+            Documents = new Documents(SDKConfiguration);
         }
 
         public StackOneClient(StackOne.Client.Models.Components.Security? security = null, Func<StackOne.Client.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
@@ -129,6 +161,22 @@ namespace StackOne.Client
             Connectors = new Connectors(SDKConfiguration);
 
             Proxy = new Proxy(SDKConfiguration);
+
+            Hris = new Hris(SDKConfiguration);
+
+            Ats = new Ats(SDKConfiguration);
+
+            Crm = new Crm(SDKConfiguration);
+
+            Iam = new Iam(SDKConfiguration);
+
+            Marketing = new Marketing(SDKConfiguration);
+
+            Lms = new Lms(SDKConfiguration);
+
+            Ticketing = new Ticketing(SDKConfiguration);
+
+            Documents = new Documents(SDKConfiguration);
         }
 
         private void InitHooks()

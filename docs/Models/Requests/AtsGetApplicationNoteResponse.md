@@ -1,0 +1,10 @@
+# AtsGetApplicationNoteResponse
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `HttpMeta`                                                                                             | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                                | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `NoteResult`                                                                                           | [NoteResult](../../Models/Components/NoteResult.md)                                                    | :heavy_minus_sign:                                                                                     | The note with the given identifier related to the application with the given identifier was retrieved. |
+| `Headers`                                                                                              | Dictionary<String, List<*string*>>                                                                     | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

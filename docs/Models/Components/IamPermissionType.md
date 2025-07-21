@@ -1,0 +1,9 @@
+# IamPermissionType
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Value`                                                                                   | [IamPermissionValue](../../Models/Components/IamPermissionValue.md)                       | :heavy_minus_sign:                                                                        | The type of the permission, e.g. read, read_write, delete, etc.                           | read_write                                                                                |
+| `SourceValue`                                                                             | [IamPermissionSourceValueUnion](../../Models/Components/IamPermissionSourceValueUnion.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |                                                                                           |

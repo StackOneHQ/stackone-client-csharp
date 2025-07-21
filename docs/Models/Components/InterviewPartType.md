@@ -1,0 +1,9 @@
+# InterviewPartType
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Value`                                                                                   | [InterviewPartValue](../../Models/Components/InterviewPartValue.md)                       | :heavy_minus_sign:                                                                        | The type of the interview.                                                                | on_site                                                                                   |
+| `SourceValue`                                                                             | [InterviewPartSourceValueUnion](../../Models/Components/InterviewPartSourceValueUnion.md) | :heavy_minus_sign:                                                                        | The source value of the interview type.                                                   | Onsite Interview                                                                          |

@@ -1,0 +1,9 @@
+# ApplicationApplicationStatus
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           | Example                                                                               |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `Value`                                                                               | [ApplicationValue](../../Models/Components/ApplicationValue.md)                       | :heavy_minus_sign:                                                                    | The status of the application.                                                        | hired                                                                                 |
+| `SourceValue`                                                                         | [ApplicationSourceValueUnion](../../Models/Components/ApplicationSourceValueUnion.md) | :heavy_minus_sign:                                                                    | The source value of the application status.                                           | Hired                                                                                 |

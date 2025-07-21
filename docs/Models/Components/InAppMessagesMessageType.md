@@ -1,0 +1,9 @@
+# InAppMessagesMessageType
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Value`                                                                                   | [InAppMessagesValue](../../Models/Components/InAppMessagesValue.md)                       | :heavy_minus_sign:                                                                        | The unified message type.                                                                 | email                                                                                     |
+| `SourceValue`                                                                             | [InAppMessagesSourceValueUnion](../../Models/Components/InAppMessagesSourceValueUnion.md) | :heavy_minus_sign:                                                                        | The original value from the provider used to derive the unified message type.             | Email                                                                                     |

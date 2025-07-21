@@ -1,0 +1,9 @@
+# LanguageEnum
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             | Example                                                                                 |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Value`                                                                                 | [LanguageEnumValue](../../Models/Components/LanguageEnumValue.md)                       | :heavy_minus_sign:                                                                      | The Locale Code of the language                                                         | en_GB                                                                                   |
+| `SourceValue`                                                                           | [LanguageEnumSourceValueUnion](../../Models/Components/LanguageEnumSourceValueUnion.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |                                                                                         |

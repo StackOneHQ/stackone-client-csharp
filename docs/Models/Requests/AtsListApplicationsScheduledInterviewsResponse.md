@@ -1,0 +1,10 @@
+# AtsListApplicationsScheduledInterviewsResponse
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                              | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                 | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `ScheduledInterviewsPaginated`                                                          | [ScheduledInterviewsPaginated](../../Models/Components/ScheduledInterviewsPaginated.md) | :heavy_minus_sign:                                                                      | The list of applications scheduled interviews was retrieved.                            |
+| `Headers`                                                                               | Dictionary<String, List<*string*>>                                                      | :heavy_check_mark:                                                                      | N/A                                                                                     |

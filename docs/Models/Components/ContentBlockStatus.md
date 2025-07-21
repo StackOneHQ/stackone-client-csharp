@@ -1,0 +1,11 @@
+# ContentBlockStatus
+
+Stackone enum identifying the status of content block.
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         | Example                                                                                             |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                             | [ContentBlockStatusValue](../../Models/Components/ContentBlockStatusValue.md)                       | :heavy_minus_sign:                                                                                  | The Status of the content blocks.                                                                   | live                                                                                                |
+| `SourceValue`                                                                                       | [ContentBlockStatusSourceValueUnion](../../Models/Components/ContentBlockStatusSourceValueUnion.md) | :heavy_minus_sign:                                                                                  | The source value of the status.                                                                     | active                                                                                              |

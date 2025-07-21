@@ -1,0 +1,9 @@
+# RejectedReasonType
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 | Example                                                                                     |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `Value`                                                                                     | [RejectedReasonValue](../../Models/Components/RejectedReasonValue.md)                       | :heavy_minus_sign:                                                                          | The type of the rejected reason.                                                            | rejected_by_organization                                                                    |
+| `SourceValue`                                                                               | [RejectedReasonSourceValueUnion](../../Models/Components/RejectedReasonSourceValueUnion.md) | :heavy_minus_sign:                                                                          | The source value of the rejected reason type.                                               | RejectedByOrg                                                                               |
