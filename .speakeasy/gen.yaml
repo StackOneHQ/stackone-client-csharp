@@ -24,7 +24,7 @@ generation:
 csharp:
   version: 0.2.4
   additionalDependencies: []
-  author: Speakeasy
+  author: stackone
   baseErrorName: StackOneError
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIException

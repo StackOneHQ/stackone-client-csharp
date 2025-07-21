@@ -9,11 +9,6 @@ Developer-friendly & type-safe Csharp SDK specifically catered to leverage *Stac
     </a>
 </div>
 
-
-<br /><br />
-> [!IMPORTANT]
-> This SDK is not yet ready for production use. To complete setup please follow the steps outlined in your [workspace](https://app.speakeasy.com/org/stackone/stackone). Delete this section before > publishing to a package manager.
-
 <!-- Start Summary [summary] -->
 ## Summary
 
