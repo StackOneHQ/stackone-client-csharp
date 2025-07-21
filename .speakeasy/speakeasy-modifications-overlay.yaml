@@ -2,7 +2,7 @@ overlay: 1.0.0
 x-speakeasy-jsonpath: rfc9535
 info:
   title: Speakeasy Modifications
-  version: 0.0.2
+  version: 0.0.4
   x-speakeasy-metadata:
     after: ""
     before: ""
@@ -129,4 +129,2295 @@ actions:
       before: sdk.Proxy.proxy_request()
       created_at: 1752855639470
       reviewed_at: 1752855664122
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/sms/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateSmsTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.updateSmsTemplate()
+      before: sdk.marketing.update_sms_template()
+      created_at: 1753104050962
+      reviewed_at: 1753104303776
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/packages/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.backgroundChecks.packages
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.backgroundChecks.packages.get()
+      before: sdk.ats.get_background_check_package()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/departments"]["get"]
+    update:
+      x-speakeasy-group: hris.groups
+      x-speakeasy-name-override: listDepartments
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.listDepartments()
+      before: sdk.hris.list_department_groups()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/custom_field_definitions/jobs"]["get"]
+    update:
+      x-speakeasy-name-override: listJobCustomFieldDefinitions
+    x-speakeasy-metadata:
+      after: sdk.ats.listJobCustomFieldDefinitions()
+      before: sdk.ats.list_job_custom_field_definitions()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/files/upload"]["post"]
+    update:
+      x-speakeasy-name-override: uploadFile
+    x-speakeasy-metadata:
+      after: sdk.documents.uploadFile()
+      before: sdk.documents.upload_file()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getGroup
+    x-speakeasy-metadata:
+      after: sdk.hris.getGroup()
+      before: sdk.hris.get_group()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/candidates/{id}/notes"]["get"]
+    update:
+      x-speakeasy-group: ats.candidates.notes
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.candidates.notes.list()
+      before: sdk.ats.list_candidate_notes()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/push"]["get"]
+    update:
+      x-speakeasy-name-override: templatesListPush
+    x-speakeasy-metadata:
+      after: sdk.marketing.templatesListPush()
+      before: sdk.marketing.list_push_templates()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/candidates/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.candidates
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.candidates.get()
+      before: sdk.ats.get_candidate()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/work_eligibility"]["get"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: workEligibilityList
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.workEligibilityList()
+      before: sdk.hris.list_employee_work_eligibility()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/custom_field_definitions/contacts/{id}"]["get"]
+    update:
+      x-speakeasy-group: crm.customFieldDefinitions.contacts
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.crm.customFieldDefinitions.contacts.get()
+      before: sdk.crm.get_contact_custom_field_definition()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/documents/employee_categories"]["get"]
+    update:
+      x-speakeasy-group: hris.documents.employeeCategories
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.documents.employeeCategories.list()
+      before: sdk.hris.list_employee_categories()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/custom_field_definitions/candidates"]["get"]
+    update:
+      x-speakeasy-group: ats.customFieldDefinitions
+      x-speakeasy-name-override: listCandidates
+    x-speakeasy-metadata:
+      after: sdk.ats.customFieldDefinitions.listCandidates()
+      before: sdk.ats.list_candidate_custom_field_definitions()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/files/{id}/download"]["get"]
+    update:
+      x-speakeasy-group: documents.files
+      x-speakeasy-name-override: download
+    x-speakeasy-metadata:
+      after: sdk.documents.files.download()
+      before: sdk.documents.download_file()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}/attachments/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: ticketing.tickets.attachments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.attachments.get()
+      before: sdk.ticketing.get_attachment()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/jobs/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.jobs
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.jobs.get()
+      before: sdk.ats.get_job()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/lists/{id}"]["get"]
+    update:
+      x-speakeasy-group: crm.lists
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.crm.lists.get()
+      before: sdk.crm.get_list()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}/completions/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getUserCompletion
+    x-speakeasy-metadata:
+      after: sdk.lms.getUserCompletion()
+      before: sdk.lms.get_user_completion()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/offers"]["get"]
+    update:
+      x-speakeasy-group: ats.offers
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.offers.list()
+      before: sdk.ats.list_offers()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_off_policies"]["get"]
+    update:
+      x-speakeasy-name-override: listTimeOffPolicies
+    x-speakeasy-metadata:
+      after: sdk.hris.listTimeOffPolicies()
+      before: sdk.hris.list_time_off_policies()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/skills/{id}"]["get"]
+    update:
+      x-speakeasy-group: lms.skills
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.lms.skills.get()
+      before: sdk.lms.get_skill()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/locations/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.locations
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.locations.get()
+      before: sdk.ats.get_location()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/completions"]["get"]
+    update:
+      x-speakeasy-group: lms.completions
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.lms.completions.list()
+      before: sdk.lms.list_completions()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/teams"]["get"]
+    update:
+      x-speakeasy-group: hris.groups
+      x-speakeasy-name-override: listTeams
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.listTeams()
+      before: sdk.hris.list_team_groups()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/email"]["post"]
+    update:
+      x-speakeasy-name-override: createEmailTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.createEmailTemplate()
+      before: sdk.marketing.create_email_template()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/folders"]["get"]
+    update:
+      x-speakeasy-group: documents.folders
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.documents.folders.list()
+      before: sdk.documents.list_folders()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employments/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmployment
+    x-speakeasy-metadata:
+      after: sdk.hris.getEmployment()
+      before: sdk.hris.get_employment()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/roles"]["get"]
+    update:
+      x-speakeasy-name-override: listRoles
+    x-speakeasy-metadata:
+      after: sdk.iam.listRoles()
+      before: sdk.iam.list_roles()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/drives"]["get"]
+    update:
+      x-speakeasy-group: documents.drives
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.documents.drives.list()
+      before: sdk.documents.list_drives()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/skills"]["get"]
+    update:
+      x-speakeasy-name-override: listSkills
+    x-speakeasy-metadata:
+      after: sdk.lms.listSkills()
+      before: sdk.lms.list_skills()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/cost_centers"]["get"]
+    update:
+      x-speakeasy-group: hris.groups
+      x-speakeasy-name-override: listCostCenters
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.listCostCenters()
+      before: sdk.hris.list_cost_center_groups()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/candidates"]["get"]
+    update:
+      x-speakeasy-name-override: listCandidates
+    x-speakeasy-metadata:
+      after: sdk.ats.listCandidates()
+      before: sdk.ats.list_candidates()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/candidates/{id}/notes"]["post"]
+    update:
+      x-speakeasy-name-override: createNote
+    x-speakeasy-metadata:
+      after: sdk.ats.createNote()
+      before: sdk.ats.create_candidate_note()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/assignments/{id}"]["get"]
+    update:
+      x-speakeasy-group: lms.assignments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.lms.assignments.get()
+      before: sdk.lms.get_assignment()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/companies/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.companies
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.companies.get()
+      before: sdk.hris.get_company_group()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/notes"]["get"]
+    update:
+      x-speakeasy-name-override: listApplicationNotes
+    x-speakeasy-metadata:
+      after: sdk.ats.listApplicationNotes()
+      before: sdk.ats.list_application_notes()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/assessments/orders/{id}/result"]["patch"]
+    update:
+      x-speakeasy-name-override: assessmentsUpdateResult
+    x-speakeasy-metadata:
+      after: sdk.ats.assessmentsUpdateResult()
+      before: sdk.ats.update_assessments_result()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_entries/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getTimeEntry
+    x-speakeasy-metadata:
+      after: sdk.hris.getTimeEntry()
+      before: sdk.hris.get_time_entries()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/ticket_types"]["get"]
+    update:
+      x-speakeasy-name-override: listTicketTypes
+    x-speakeasy-metadata:
+      after: sdk.ticketing.listTicketTypes()
+      before: sdk.ticketing.list_ticket_types()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/locations"]["get"]
+    update:
+      x-speakeasy-group: hris.locations
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.locations.list()
+      before: sdk.hris.list_locations()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/courses"]["get"]
+    update:
+      x-speakeasy-group: courses
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.courses.list()
+      before: sdk.lms.list_courses()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/scorecards/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: applications
+      x-speakeasy-name-override: getScorecard
+    x-speakeasy-metadata:
+      after: sdk.applications.getScorecard()
+      before: sdk.ats.get_application_scorecard()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/companies"]["get"]
+    update:
+      x-speakeasy-group: hris.groups.companies
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.companies.list()
+      before: sdk.hris.list_companies_groups()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/packages/{id}"]["delete"]
+    update:
+      x-speakeasy-group: backgroundChecks
+      x-speakeasy-name-override: deletePackage
+    x-speakeasy-metadata:
+      after: sdk.backgroundChecks.deletePackage()
+      before: sdk.ats.delete_background_check_package()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/orders"]["post"]
+    update:
+      x-speakeasy-name-override: orderBackgroundCheck
+    x-speakeasy-metadata:
+      after: sdk.ats.orderBackgroundCheck()
+      before: sdk.ats.order_background_check_request()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/email/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmailTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.getEmailTemplate()
+      before: sdk.marketing.get_email_template()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/collections/{id}/ticket_types"]["get"]
+    update:
+      x-speakeasy-name-override: listCollectionTicketTypes
+    x-speakeasy-metadata:
+      after: sdk.ticketing.listCollectionTicketTypes()
+      before: sdk.ticketing.list_collection_ticket_types()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/email/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateEmailTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.updateEmailTemplate()
+      before: sdk.marketing.update_email_template()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off/{subResourceId}"]["delete"]
+    update:
+      x-speakeasy-name-override: cancelEmployeeTimeOff
+    x-speakeasy-metadata:
+      after: sdk.hris.cancelEmployeeTimeOff()
+      before: sdk.hris.cancel_employee_time_off_request()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/policies"]["get"]
+    update:
+      x-speakeasy-name-override: listPolicies
+    x-speakeasy-metadata:
+      after: sdk.iam.listPolicies()
+      before: sdk.iam.list_policies()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/interviews"]["get"]
+    update:
+      x-speakeasy-group: ats.interviews
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.interviews.list()
+      before: sdk.ats.list_interviews()
+      created_at: 1753104050962
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/content"]["put"]
+    update:
+      x-speakeasy-group: lms.content
+      x-speakeasy-name-override: upsert
+    x-speakeasy-metadata:
+      after: sdk.lms.content.upsert()
+      before: sdk.lms.upsert_content()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/custom_field_definitions/employees"]["get"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: listCustomFieldDefinitions
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.listCustomFieldDefinitions()
+      before: sdk.hris.list_employee_custom_field_definitions()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/tasks/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getTask
+    x-speakeasy-metadata:
+      after: sdk.hris.getTask()
+      before: sdk.hris.get_task()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/documents/{subResourceId}/download"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: downloadDocument
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.downloadDocument()
+      before: sdk.ats.download_application_document()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/ticket_types/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getTicketType
+    x-speakeasy-metadata:
+      after: sdk.ticketing.getTicketType()
+      before: sdk.ticketing.get_ticket_type()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/lists/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.lists
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.lists.get()
+      before: sdk.ats.get_list()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/orders/{id}/result"]["patch"]
+    update:
+      x-speakeasy-name-override: updateBackgroundCheckResult
+    x-speakeasy-metadata:
+      after: sdk.ats.updateBackgroundCheckResult()
+      before: sdk.ats.update_background_check_result()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/scheduled_interviews/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: getScheduledInterview
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.getScheduledInterview()
+      before: sdk.ats.get_application_scheduled_interview()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/sms/{id}"]["get"]
+    update:
+      x-speakeasy-group: marketing.templates.sms
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.marketing.templates.sms.get()
+      before: sdk.marketing.get_sms_template()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/candidates/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateCandidate
+    x-speakeasy-metadata:
+      after: sdk.ats.updateCandidate()
+      before: sdk.ats.update_candidate()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_off_policies/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getTimeOffPolicy
+    x-speakeasy-metadata:
+      after: sdk.hris.getTimeOffPolicy()
+      before: sdk.hris.get_time_off_policy()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/policies/{id}"]["get"]
+    update:
+      x-speakeasy-group: iam.policies
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.iam.policies.get()
+      before: sdk.iam.get_policy()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/employments/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: getEmployment
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.getEmployment()
+      before: sdk.hris.get_employee_employment()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/candidates/{id}/notes/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getCandidateNote
+    x-speakeasy-metadata:
+      after: sdk.ats.getCandidateNote()
+      before: sdk.ats.get_candidate_note()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/content_blocks/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getContentBlock
+    x-speakeasy-metadata:
+      after: sdk.marketing.getContentBlock()
+      before: sdk.marketing.get_content_block()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}/statuses"]["get"]
+    update:
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: listStatuses
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.listStatuses()
+      before: sdk.ticketing.list_ticket_statuses()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off"]["post"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: createTimeOff
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.createTimeOff()
+      before: sdk.hris.create_employee_time_off_request()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/cost_centers/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.groups.costCenters
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.costCenters.get()
+      before: sdk.hris.get_cost_center_group()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}/completions/{subResourceId}"]["delete"]
+    update:
+      x-speakeasy-name-override: deleteUserCompletion
+    x-speakeasy-metadata:
+      after: sdk.lms.deleteUserCompletion()
+      before: sdk.lms.delete_user_completion()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/job_postings"]["get"]
+    update:
+      x-speakeasy-name-override: listJobPostings
+    x-speakeasy-metadata:
+      after: sdk.ats.listJobPostings()
+      before: sdk.ats.list_job_postings()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/custom_field_definitions/employees/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmployeeCustomFieldDefinition
+    x-speakeasy-metadata:
+      after: sdk.hris.getEmployeeCustomFieldDefinition()
+      before: sdk.hris.get_employee_custom_field_definition()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/categories/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getCategory
+    x-speakeasy-metadata:
+      after: sdk.lms.getCategory()
+      before: sdk.lms.get_category()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/packages"]["post"]
+    update:
+      x-speakeasy-group: ats.backgroundChecks
+      x-speakeasy-name-override: createPackage
+    x-speakeasy-metadata:
+      after: sdk.ats.backgroundChecks.createPackage()
+      before: sdk.ats.create_background_check_package()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off/{subResourceId}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateEmployeeTimeOffRequest
+    x-speakeasy-metadata:
+      after: sdk.hris.updateEmployeeTimeOffRequest()
+      before: sdk.hris.update_employee_time_off_request()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/contacts"]["post"]
+    update:
+      x-speakeasy-group: crm.contacts
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.crm.contacts.create()
+      before: sdk.crm.create_contact()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/push"]["post"]
+    update:
+      x-speakeasy-group: marketing.templates
+      x-speakeasy-name-override: createPush
+    x-speakeasy-metadata:
+      after: sdk.marketing.templates.createPush()
+      before: sdk.marketing.create_push_template()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/documents/employee_categories/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.documents.employeeCategories
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.documents.employeeCategories.get()
+      before: sdk.hris.get_employee_document_category()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/custom_field_definitions/applications/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: getCustomFieldDefinition
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.getCustomFieldDefinition()
+      before: sdk.ats.get_application_custom_field_definition()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/folders/{id}"]["get"]
+    update:
+      x-speakeasy-group: documents.folders
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.documents.folders.get()
+      before: sdk.documents.get_folder()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/employments"]["post"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: createEmployment
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.createEmployment()
+      before: sdk.hris.create_employee_employment()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/sms"]["get"]
+    update:
+      x-speakeasy-name-override: listSmsTemplates
+    x-speakeasy-metadata:
+      after: sdk.marketing.listSmsTemplates()
+      before: sdk.marketing.list_sms_templates()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/custom_field_definitions/jobs/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.customFieldDefinitions
+      x-speakeasy-name-override: getJob
+    x-speakeasy-metadata:
+      after: sdk.ats.customFieldDefinitions.getJob()
+      before: sdk.ats.get_job_custom_field_definition()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/documents/upload/batch"]["post"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: batchUploadDocument
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.batchUploadDocument()
+      before: sdk.hris.batch_upload_employee_document()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/offers"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: listOffers
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.listOffers()
+      before: sdk.ats.list_applications_offers()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/divisions/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.groups.divisions
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.divisions.get()
+      before: sdk.hris.get_division_group()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employments"]["get"]
+    update:
+      x-speakeasy-group: hris.employments
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.employments.list()
+      before: sdk.hris.list_employments()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}/assignments"]["get"]
+    update:
+      x-speakeasy-name-override: listUserAssignments
+    x-speakeasy-metadata:
+      after: sdk.lms.listUserAssignments()
+      before: sdk.lms.list_user_assignments()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/documents/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmployeeDocument
+    x-speakeasy-metadata:
+      after: sdk.hris.getEmployeeDocument()
+      before: sdk.hris.get_employee_document()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/courses/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getCourse
+    x-speakeasy-metadata:
+      after: sdk.lms.getCourse()
+      before: sdk.lms.get_course()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_entries"]["get"]
+    update:
+      x-speakeasy-name-override: listTimeEntries
+    x-speakeasy-metadata:
+      after: sdk.hris.listTimeEntries()
+      before: sdk.hris.list_time_entries()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/completions/{id}"]["get"]
+    update:
+      x-speakeasy-group: lms.completions
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.lms.completions.get()
+      before: sdk.lms.get_completion()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/skills"]["post"]
+    update:
+      x-speakeasy-name-override: createEmployeeSkill
+    x-speakeasy-metadata:
+      after: sdk.hris.createEmployeeSkill()
+      before: sdk.hris.create_employee_skill()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/employments"]["get"]
+    update:
+      x-speakeasy-group: hris.employees.employments
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.employments.list()
+      before: sdk.hris.list_employee_employments()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/roles/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getRole
+    x-speakeasy-metadata:
+      after: sdk.iam.getRole()
+      before: sdk.iam.get_role()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/tasks"]["get"]
+    update:
+      x-speakeasy-group: hris.employees.tasks
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.tasks.list()
+      before: sdk.hris.list_employee_tasks()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/work_eligibility"]["post"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: createWorkEligibilityRequest
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.createWorkEligibilityRequest()
+      before: sdk.hris.create_employee_work_eligibility_request()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/documents/{subResourceId}/download"]["get"]
+    update:
+      x-speakeasy-group: hris.employees.documents
+      x-speakeasy-name-override: download
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.documents.download()
+      before: sdk.hris.download_employee_document()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/employments/{subResourceId}"]["patch"]
+    update:
+      x-speakeasy-group: hris.employees.employments
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.employments.update()
+      before: sdk.hris.update_employee_employment()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/in_app"]["post"]
+    update:
+      x-speakeasy-name-override: createInAppTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.createInAppTemplate()
+      before: sdk.marketing.create_in_app_template()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/accounts"]["get"]
+    update:
+      x-speakeasy-name-override: listAccounts
+    x-speakeasy-metadata:
+      after: sdk.crm.listAccounts()
+      before: sdk.crm.list_accounts()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.get()
+      before: sdk.ats.get_application()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/companies"]["get"]
+    update:
+      x-speakeasy-name-override: getCompanies
+    x-speakeasy-metadata:
+      after: sdk.hris.getCompanies()
+      before: sdk.hris.list_companies()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/tasks/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmployeeTask
+    x-speakeasy-metadata:
+      after: sdk.hris.getEmployeeTask()
+      before: sdk.hris.get_employee_task()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/offers/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.offers
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.offers.get()
+      before: sdk.ats.get_offer()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/orders/{id}/results"]["get"]
+    update:
+      x-speakeasy-group: ats.backgroundChecks
+      x-speakeasy-name-override: getResults
+    x-speakeasy-metadata:
+      after: sdk.ats.backgroundChecks.getResults()
+      before: sdk.ats.get_background_check_result()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/jobs"]["get"]
+    update:
+      x-speakeasy-name-override: listJobs
+    x-speakeasy-metadata:
+      after: sdk.ats.listJobs()
+      before: sdk.ats.list_jobs()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/candidates"]["post"]
+    update:
+      x-speakeasy-group: ats.candidates
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.ats.candidates.create()
+      before: sdk.ats.create_candidate()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}/completions"]["post"]
+    update:
+      x-speakeasy-name-override: createUserCompletion
+    x-speakeasy-metadata:
+      after: sdk.lms.createUserCompletion()
+      before: sdk.lms.create_user_completion()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/custom_field_definitions/contacts"]["get"]
+    update:
+      x-speakeasy-group: crm.customFieldDefinitions.contacts
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.crm.customFieldDefinitions.contacts.list()
+      before: sdk.crm.list_contact_custom_field_definitions()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/assignments"]["get"]
+    update:
+      x-speakeasy-group: lms.assignments
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.lms.assignments.list()
+      before: sdk.lms.list_assignments()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/groups"]["get"]
+    update:
+      x-speakeasy-group: iam.groups
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.iam.groups.list()
+      before: sdk.iam.list_groups()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/notes/{subResourceId}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateNote
+    x-speakeasy-metadata:
+      after: sdk.ats.updateNote()
+      before: sdk.ats.update_application_note()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/interviews/{id}"]["get"]
+    update:
+      x-speakeasy-group: interviews
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.interviews.get()
+      before: sdk.ats.get_interview()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}"]["get"]
+    update:
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.get()
+      before: sdk.ticketing.get_ticket()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications"]["get"]
+    update:
+      x-speakeasy-name-override: listApplications
+    x-speakeasy-metadata:
+      after: sdk.ats.listApplications()
+      before: sdk.ats.list_applications()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/notes/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getNote
+    x-speakeasy-metadata:
+      after: sdk.ats.getNote()
+      before: sdk.ats.get_application_note()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/invite"]["post"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: invite
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.invite()
+      before: sdk.hris.invite_employee()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/offers/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: getOffer
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.getOffer()
+      before: sdk.ats.get_application_offer()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets"]["post"]
+    update:
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.create()
+      before: sdk.ticketing.create_ticket()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/users/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getUser
+    x-speakeasy-metadata:
+      after: sdk.ticketing.getUser()
+      before: sdk.ticketing.get_user()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off_balances"]["get"]
+    update:
+      x-speakeasy-name-override: listEmployeeTimeOffBalances
+    x-speakeasy-metadata:
+      after: sdk.hris.listEmployeeTimeOffBalances()
+      before: sdk.hris.list_employee_time_off_balances()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/files"]["get"]
+    update:
+      x-speakeasy-group: documents.files
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.documents.files.list()
+      before: sdk.documents.list_files()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees"]["post"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.create()
+      before: sdk.hris.create_employee()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}/attachments/{subResourceId}/download"]["get"]
+    update:
+      x-speakeasy-name-override: downloadAttachment
+    x-speakeasy-metadata:
+      after: sdk.ticketing.downloadAttachment()
+      before: sdk.ticketing.download_ticketing_attachment()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/custom_field_definitions/candidates/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.candidates.customFieldDefinitions
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.candidates.customFieldDefinitions.get()
+      before: sdk.ats.get_candidate_custom_field_definition()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off"]["get"]
+    update:
+      x-speakeasy-name-override: listEmployeeTimeOffRequests
+    x-speakeasy-metadata:
+      after: sdk.hris.listEmployeeTimeOffRequests()
+      before: sdk.hris.list_employee_time_off_requests()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/content_blocks/{id}"]["patch"]
+    update:
+      x-speakeasy-group: marketing.contentBlocks
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.marketing.contentBlocks.update()
+      before: sdk.marketing.update_content_block()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/documents/upload"]["post"]
+    update:
+      x-speakeasy-name-override: documentsUpload
+    x-speakeasy-metadata:
+      after: sdk.ats.documentsUpload()
+      before: sdk.ats.upload_application_document()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/users/{id}"]["get"]
+    update:
+      x-speakeasy-group: iam.users
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.iam.users.get()
+      before: sdk.iam.get_user()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/jobs/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateJob
+    x-speakeasy-metadata:
+      after: sdk.ats.updateJob()
+      before: sdk.ats.update_job()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/email"]["get"]
+    update:
+      x-speakeasy-name-override: templatesListEmail
+    x-speakeasy-metadata:
+      after: sdk.marketing.templatesListEmail()
+      before: sdk.marketing.list_email_templates()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/tasks/{subResourceId}"]["patch"]
+    update:
+      x-speakeasy-group: hris.employees.tasks
+      x-speakeasy-name-override: complete
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.tasks.complete()
+      before: sdk.hris.complete_employee_task()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/notes"]["post"]
+    update:
+      x-speakeasy-name-override: createApplicationNote
+    x-speakeasy-metadata:
+      after: sdk.ats.createApplicationNote()
+      before: sdk.ats.create_application_note()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/in_app"]["get"]
+    update:
+      x-speakeasy-name-override: templatesListInApp
+    x-speakeasy-metadata:
+      after: sdk.marketing.templatesListInApp()
+      before: sdk.marketing.list_in_app_templates()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees"]["get"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.list()
+      before: sdk.hris.list_employees()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getUser
+    x-speakeasy-metadata:
+      after: sdk.lms.getUser()
+      before: sdk.lms.get_user()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/assessments/orders/{id}/results"]["get"]
+    update:
+      x-speakeasy-group: ats.assessments
+      x-speakeasy-name-override: getResults
+    x-speakeasy-metadata:
+      after: sdk.ats.assessments.getResults()
+      before: sdk.ats.get_assessments_result()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/users/{id}"]["patch"]
+    update:
+      x-speakeasy-group: iam.users
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.iam.users.update()
+      before: sdk.iam.update_user()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/content_blocks"]["get"]
+    update:
+      x-speakeasy-name-override: listContentBlocks
+    x-speakeasy-metadata:
+      after: sdk.marketing.listContentBlocks()
+      before: sdk.marketing.list_content_blocks()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_off_types/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.timeOffTypes
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.timeOffTypes.get()
+      before: sdk.hris.get_time_off_type()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}/attachments"]["get"]
+    update:
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: listAttachments
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.listAttachments()
+      before: sdk.ticketing.list_attachments()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/push/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updatePushTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.updatePushTemplate()
+      before: sdk.marketing.update_push_template()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmployee
+    x-speakeasy-metadata:
+      after: sdk.hris.getEmployee()
+      before: sdk.hris.get_employee()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/departments"]["get"]
+    update:
+      x-speakeasy-name-override: getDepartments
+    x-speakeasy-metadata:
+      after: sdk.ats.getDepartments()
+      before: sdk.ats.list_departments()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/users"]["get"]
+    update:
+      x-speakeasy-group: ticketing.users
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ticketing.users.list()
+      before: sdk.ticketing.list_users()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/jobs/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.jobs
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.jobs.get()
+      before: sdk.hris.get_job()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/locations"]["get"]
+    update:
+      x-speakeasy-group: ats.locations
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.locations.list()
+      before: sdk.ats.list_locations()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}/comments"]["get"]
+    update:
+      x-speakeasy-group: ticketing.tickets.comments
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.comments.list()
+      before: sdk.ticketing.list_comments()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/scorecards"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: scorecardsList
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.scorecardsList()
+      before: sdk.ats.list_application_scorecards()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/positions/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getPosition
+    x-speakeasy-metadata:
+      after: sdk.hris.getPosition()
+      before: sdk.hris.get_position()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/shifts"]["get"]
+    update:
+      x-speakeasy-name-override: listShifts
+    x-speakeasy-metadata:
+      after: sdk.hris.listShifts()
+      before: sdk.hris.list_shifts()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications"]["post"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.create()
+      before: sdk.ats.create_application()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/content/batch"]["post"]
+    update:
+      x-speakeasy-name-override: batchUpsertContent
+    x-speakeasy-metadata:
+      after: sdk.lms.batchUpsertContent()
+      before: sdk.lms.batch_upsert_content()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/changes"]["get"]
+    update:
+      x-speakeasy-name-override: getApplicationChanges
+    x-speakeasy-metadata:
+      after: sdk.ats.getApplicationChanges()
+      before: sdk.ats.list_application_changes()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/documents/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getDocument
+    x-speakeasy-metadata:
+      after: sdk.ats.getDocument()
+      before: sdk.ats.get_application_document()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/in_app/{id}"]["patch"]
+    update:
+      x-speakeasy-group: marketing.templates.inApp
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.marketing.templates.inApp.update()
+      before: sdk.marketing.update_in_app_template()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/assessments/packages/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.assessments.packages
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.assessments.packages.get()
+      before: sdk.ats.get_assessments_package()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}"]["patch"]
+    update:
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.update()
+      before: sdk.ticketing.update_ticket()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/rejected_reasons"]["get"]
+    update:
+      x-speakeasy-group: ats.rejectedReasons
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.rejectedReasons.list()
+      before: sdk.ats.list_rejected_reasons()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/contacts/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateContact
+    x-speakeasy-metadata:
+      after: sdk.crm.updateContact()
+      before: sdk.crm.update_contact()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/work_eligibility/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: getWorkEligibility
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.getWorkEligibility()
+      before: sdk.hris.get_employees_work_eligibility()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets/{id}/comments/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: ticketing.comments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ticketing.comments.get()
+      before: sdk.ticketing.get_comment()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/users"]["get"]
+    update:
+      x-speakeasy-group: ats.users
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.users.list()
+      before: sdk.ats.list_users()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users"]["get"]
+    update:
+      x-speakeasy-name-override: listUsers
+    x-speakeasy-metadata:
+      after: sdk.lms.listUsers()
+      before: sdk.lms.list_users()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/sms"]["post"]
+    update:
+      x-speakeasy-name-override: createSmsTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.createSmsTemplate()
+      before: sdk.marketing.create_sms_template()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}/assignments"]["post"]
+    update:
+      x-speakeasy-group: lms.assignments
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.lms.assignments.create()
+      before: sdk.lms.create_user_assignment()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/benefits"]["get"]
+    update:
+      x-speakeasy-name-override: listBenefits
+    x-speakeasy-metadata:
+      after: sdk.hris.listBenefits()
+      before: sdk.hris.list_benefits()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/work_eligibility/{subResourceId}"]["patch"]
+    update:
+      x-speakeasy-group: hris.employees.workEligibility
+      x-speakeasy-name-override: updateRequest
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.workEligibility.updateRequest()
+      before: sdk.hris.update_employee_work_eligibility_request()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/documents/application_categories/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.documents.applicationCategories
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.documents.applicationCategories.get()
+      before: sdk.ats.get_application_document_category()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/shifts/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.shifts
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.shifts.get()
+      before: sdk.hris.get_shift()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/companies/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getCompany
+    x-speakeasy-metadata:
+      after: sdk.hris.getCompany()
+      before: sdk.hris.get_company()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/teams/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getTeamGroup
+    x-speakeasy-metadata:
+      after: sdk.hris.getTeamGroup()
+      before: sdk.hris.get_team_group()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/documents/application_categories"]["get"]
+    update:
+      x-speakeasy-group: documents
+      x-speakeasy-name-override: listApplicationCategories
+    x-speakeasy-metadata:
+      after: sdk.documents.listApplicationCategories()
+      before: sdk.ats.list_application_document_categories()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/documents"]["get"]
+    update:
+      x-speakeasy-name-override: listEmployeeDocuments
+    x-speakeasy-metadata:
+      after: sdk.hris.listEmployeeDocuments()
+      before: sdk.hris.list_employee_documents()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/documents/upload"]["post"]
+    update:
+      x-speakeasy-name-override: uploadEmployeeDocument
+    x-speakeasy-metadata:
+      after: sdk.hris.uploadEmployeeDocument()
+      before: sdk.hris.upload_employee_document()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/users/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: deleteUser
+    x-speakeasy-metadata:
+      after: sdk.iam.deleteUser()
+      before: sdk.iam.delete_user()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/campaigns"]["get"]
+    update:
+      x-speakeasy-group: marketing.campaigns
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.marketing.campaigns.list()
+      before: sdk.marketing.list_campaigns()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/packages/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateBackgroundCheckPackage
+    x-speakeasy-metadata:
+      after: sdk.ats.updateBackgroundCheckPackage()
+      before: sdk.ats.update_background_check_package()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off_balances/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmployeeTimeOffBalance
+    x-speakeasy-metadata:
+      after: sdk.hris.getEmployeeTimeOffBalance()
+      before: sdk.hris.get_employee_time_off_balance()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/tickets"]["get"]
+    update:
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ticketing.tickets.list()
+      before: sdk.ticketing.list_tickets()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/users/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getUser
+    x-speakeasy-metadata:
+      after: sdk.ats.getUser()
+      before: sdk.ats.get_user()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/rejected_reasons/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.rejectedReasons
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.rejectedReasons.get()
+      before: sdk.ats.get_rejected_reason()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/lists"]["get"]
+    update:
+      x-speakeasy-group: ats.lists
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.lists.list()
+      before: sdk.ats.list_lists()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/groups/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getGroup
+    x-speakeasy-metadata:
+      after: sdk.iam.getGroup()
+      before: sdk.iam.get_group()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off_policies"]["get"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: listTimeOffPolicies
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.listTimeOffPolicies()
+      before: sdk.hris.list_employee_time_off_policies()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/departments/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.departments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.departments.get()
+      before: sdk.ats.get_department()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/push/{id}"]["get"]
+    update:
+      x-speakeasy-group: marketing.templates
+      x-speakeasy-name-override: getPush
+    x-speakeasy-metadata:
+      after: sdk.marketing.templates.getPush()
+      before: sdk.marketing.get_push_template()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/time_off/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-name-override: getEmployeeTimeOffRequest
+    x-speakeasy-metadata:
+      after: sdk.hris.getEmployeeTimeOffRequest()
+      before: sdk.hris.get_employees_time_off_request()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/collections"]["get"]
+    update:
+      x-speakeasy-name-override: listCollections
+    x-speakeasy-metadata:
+      after: sdk.ticketing.listCollections()
+      before: sdk.ticketing.list_collections()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/tasks"]["get"]
+    update:
+      x-speakeasy-group: hris.tasks
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.tasks.list()
+      before: sdk.hris.list_tasks()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/iam/users"]["get"]
+    update:
+      x-speakeasy-group: iam.users
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.iam.users.list()
+      before: sdk.iam.list_users()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/divisions"]["get"]
+    update:
+      x-speakeasy-group: hris.groups
+      x-speakeasy-name-override: listDivisions
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.listDivisions()
+      before: sdk.hris.list_division_groups()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/interview_stages/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.interviewStages
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.interviewStages.get()
+      before: sdk.ats.get_interview_stage()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/files/{id}"]["get"]
+    update:
+      x-speakeasy-group: documents.files
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.documents.files.get()
+      before: sdk.documents.get_file()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/documents"]["get"]
+    update:
+      x-speakeasy-group: ats.applications.documents
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.documents.list()
+      before: sdk.ats.list_application_documents()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/categories"]["get"]
+    update:
+      x-speakeasy-group: lms.categories
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.lms.categories.list()
+      before: sdk.lms.list_categories()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/content/{id}"]["get"]
+    update:
+      x-speakeasy-group: lms.content
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.lms.content.get()
+      before: sdk.lms.get_content()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/jobs"]["post"]
+    update:
+      x-speakeasy-name-override: createJob
+    x-speakeasy-metadata:
+      after: sdk.ats.createJob()
+      before: sdk.ats.create_job()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}"]["patch"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.update()
+      before: sdk.ats.update_application()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/jobs"]["get"]
+    update:
+      x-speakeasy-group: hris.jobs
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.jobs.list()
+      before: sdk.hris.list_jobs()
+      created_at: 1753104050963
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/omni_channel"]["post"]
+    update:
+      x-speakeasy-group: marketing.templates
+      x-speakeasy-name-override: createOmniChannel
+    x-speakeasy-metadata:
+      after: sdk.marketing.templates.createOmniChannel()
+      before: sdk.marketing.create_omni_channel_template()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_off/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getTimeOffRequest
+    x-speakeasy-metadata:
+      after: sdk.hris.getTimeOffRequest()
+      before: sdk.hris.get_time_off_request()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/scheduled_interviews"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: listScheduledInterviews
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.listScheduledInterviews()
+      before: sdk.ats.list_applications_scheduled_interviews()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/content_blocks"]["post"]
+    update:
+      x-speakeasy-name-override: createContentBlock
+    x-speakeasy-metadata:
+      after: sdk.marketing.createContentBlock()
+      before: sdk.marketing.create_content_block()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/benefits/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.benefits
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.benefits.get()
+      before: sdk.hris.get_benefit()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/accounts/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getAccount
+    x-speakeasy-metadata:
+      after: sdk.crm.getAccount()
+      before: sdk.crm.get_account()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/reject"]["post"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: reject
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.reject()
+      before: sdk.ats.reject_application()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/contacts/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getContact
+    x-speakeasy-metadata:
+      after: sdk.crm.getContact()
+      before: sdk.crm.get_contact()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/omni_channel/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: updateOmniChannelTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.updateOmniChannelTemplate()
+      before: sdk.marketing.update_omni_channel_template()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ticketing/collections/{id}"]["get"]
+    update:
+      x-speakeasy-group: ticketing.collections
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ticketing.collections.get()
+      before: sdk.ticketing.get_collection()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/positions"]["get"]
+    update:
+      x-speakeasy-name-override: listPositions
+    x-speakeasy-metadata:
+      after: sdk.hris.listPositions()
+      before: sdk.hris.list_positions()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/campaigns/{id}"]["get"]
+    update:
+      x-speakeasy-group: marketing.campaigns
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.marketing.campaigns.get()
+      before: sdk.marketing.get_campaign()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups/departments/{id}"]["get"]
+    update:
+      x-speakeasy-group: hris.departments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.hris.departments.get()
+      before: sdk.hris.get_department_group()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_off"]["get"]
+    update:
+      x-speakeasy-group: hris.timeOff
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.timeOff.list()
+      before: sdk.hris.list_time_off_requests()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/background_checks/packages"]["get"]
+    update:
+      x-speakeasy-group: ats.backgroundChecks
+      x-speakeasy-name-override: packagesList
+    x-speakeasy-metadata:
+      after: sdk.ats.backgroundChecks.packagesList()
+      before: sdk.ats.list_background_check_packages()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/skills"]["get"]
+    update:
+      x-speakeasy-group: hris.employees.skills
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.skills.list()
+      before: sdk.hris.list_employee_skills()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/assessments/orders"]["post"]
+    update:
+      x-speakeasy-name-override: orderAssessments
+    x-speakeasy-metadata:
+      after: sdk.ats.orderAssessments()
+      before: sdk.ats.order_assessments_request()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/in_app/{id}"]["get"]
+    update:
+      x-speakeasy-group: marketing.templates.inApp
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.marketing.templates.inApp.get()
+      before: sdk.marketing.get_in_app_template()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/assessments/packages"]["get"]
+    update:
+      x-speakeasy-group: ats.assessments
+      x-speakeasy-name-override: packagesList
+    x-speakeasy-metadata:
+      after: sdk.ats.assessments.packagesList()
+      before: sdk.ats.list_assessments_packages()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/offers"]["post"]
+    update:
+      x-speakeasy-group: ats.offers
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.ats.offers.create()
+      before: sdk.ats.create_offer()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}/completions"]["get"]
+    update:
+      x-speakeasy-group: lms.users
+      x-speakeasy-name-override: listCompletions
+    x-speakeasy-metadata:
+      after: sdk.lms.users.listCompletions()
+      before: sdk.lms.list_user_completions()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/groups"]["get"]
+    update:
+      x-speakeasy-group: hris.groups
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.hris.groups.list()
+      before: sdk.hris.list_groups()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/content/{id}"]["patch"]
+    update:
+      x-speakeasy-group: lms.content
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.lms.content.update()
+      before: sdk.lms.update_content()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/custom_field_definitions/applications"]["get"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: listCustomFieldDefinitions
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.listCustomFieldDefinitions()
+      before: sdk.ats.list_application_custom_field_definitions()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/users/{id}/assignments/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: lms.usersAssignments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.lms.usersAssignments.get()
+      before: sdk.lms.get_user_assignment()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/applications/{id}/move"]["post"]
+    update:
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: move
+    x-speakeasy-metadata:
+      after: sdk.ats.applications.move()
+      before: sdk.ats.move_application()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/contacts"]["get"]
+    update:
+      x-speakeasy-group: crm.contacts
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.crm.contacts.list()
+      before: sdk.crm.list_contacts()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/job_postings/{id}"]["get"]
+    update:
+      x-speakeasy-group: ats.jobPostings
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.ats.jobPostings.get()
+      before: sdk.ats.get_job_posting()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/locations/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getLocation
+    x-speakeasy-metadata:
+      after: sdk.hris.getLocation()
+      before: sdk.hris.get_location()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/omni_channel/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getOmniChannelTemplate
+    x-speakeasy-metadata:
+      after: sdk.marketing.getOmniChannelTemplate()
+      before: sdk.marketing.get_omni_channel_template()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/time_off_types"]["get"]
+    update:
+      x-speakeasy-name-override: listTimeOffTypes
+    x-speakeasy-metadata:
+      after: sdk.hris.listTimeOffTypes()
+      before: sdk.hris.list_time_off_types()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/ats/interview_stages"]["get"]
+    update:
+      x-speakeasy-group: ats.interviewStages
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.ats.interviewStages.list()
+      before: sdk.ats.list_interview_stages()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/crm/lists"]["get"]
+    update:
+      x-speakeasy-group: crm.lists
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.crm.lists.list()
+      before: sdk.crm.list_lists()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/lms/content"]["get"]
+    update:
+      x-speakeasy-name-override: listContent
+    x-speakeasy-metadata:
+      after: sdk.lms.listContent()
+      before: sdk.lms.list_content()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}"]["patch"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.update()
+      before: sdk.hris.update_employee()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/documents/drives/{id}"]["get"]
+    update:
+      x-speakeasy-group: drives
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.drives.get()
+      before: sdk.documents.get_drive()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/hris/employees/{id}/skills/{subResourceId}"]["get"]
+    update:
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: getSkill
+    x-speakeasy-metadata:
+      after: sdk.hris.employees.getSkill()
+      before: sdk.hris.get_employee_skill()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
+      type: method-name
+  - target: $["paths"]["/unified/marketing/templates/omni_channel"]["get"]
+    update:
+      x-speakeasy-name-override: listOmniChannelTemplates
+    x-speakeasy-metadata:
+      after: sdk.marketing.listOmniChannelTemplates()
+      before: sdk.marketing.list_omni_channel_templates()
+      created_at: 1753104050964
+      reviewed_at: 1753104303777
       type: method-name

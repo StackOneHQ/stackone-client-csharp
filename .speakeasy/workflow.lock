@@ -6,7 +6,6 @@ sources:
         sourceBlobDigest: sha256:732ba0ada6ad2301a8ad3b2682b2e3da25a39dd3f7e277250e41552e8795418f
         tags:
             - latest
-            - speakeasy-sdk-regen-1753103044
             - 1.0.0
 targets:
     stack-one:
@@ -15,7 +14,7 @@ targets:
         sourceRevisionDigest: sha256:810f0d930dd1553407fd22b5b70d8560164fac28cae5b817a98e7da154abbd40
         sourceBlobDigest: sha256:732ba0ada6ad2301a8ad3b2682b2e3da25a39dd3f7e277250e41552e8795418f
         codeSamplesNamespace: stack-one-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:08818f7d7f0c25d6b619d41b0bd58d2d2bf05fde478e129fcbabbba92a694bc7
+        codeSamplesRevisionDigest: sha256:b29a897b22a3c0c99ad9841c07a8bcdf3bd17b059e20f9d276d62849227becba
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

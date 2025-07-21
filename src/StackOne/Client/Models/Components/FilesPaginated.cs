@@ -21,7 +21,7 @@ namespace StackOne.Client.Models.Components
         public string? Next { get; set; } = null;
 
         [JsonProperty("data")]
-        public List<Files> Data { get; set; } = default!;
+        public List<Models.Components.Files> Data { get; set; } = default!;
 
         [JsonProperty("raw")]
         public List<RawResponse>? Raw { get; set; } = null;

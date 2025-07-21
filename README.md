@@ -72,7 +72,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     Include = "avatar_url,avatar,custom_fields,job_description,benefits",
 };
 
-HrisListEmployeesResponse? res = await sdk.Hris.ListEmployeesAsync(req);
+HrisListEmployeesResponse? res = await sdk.Hris.Employees.ListAsync(req);
 
 while(res != null)
 {
@@ -145,80 +145,147 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 * [Update](docs/sdks/accounts/README.md#update) - Update Account
 * [GetMeta](docs/sdks/accounts/README.md#getmeta) - Get meta information of the account
 
+### [Applications](docs/sdks/applications/README.md)
+
+* [GetScorecard](docs/sdks/applications/README.md#getscorecard) - Get Application Scorecard
+
 ### [Ats](docs/sdks/ats/README.md)
 
 * [ListApplications](docs/sdks/ats/README.md#listapplications) - List Applications
-* [CreateApplication](docs/sdks/ats/README.md#createapplication) - Create Application
-* [GetApplication](docs/sdks/ats/README.md#getapplication) - Get Application
-* [UpdateApplication](docs/sdks/ats/README.md#updateapplication) - Update an Application
-* [ListApplicationsOffers](docs/sdks/ats/README.md#listapplicationsoffers) - List Application Offers
-* [MoveApplication](docs/sdks/ats/README.md#moveapplication) - Move Application
-* [RejectApplication](docs/sdks/ats/README.md#rejectapplication) - Reject Application
-* [GetApplicationOffer](docs/sdks/ats/README.md#getapplicationoffer) - Get Application Offer
-* [ListApplicationScorecards](docs/sdks/ats/README.md#listapplicationscorecards) - List Application Scorecards
-* [GetApplicationScorecard](docs/sdks/ats/README.md#getapplicationscorecard) - Get Application Scorecard
-* [ListApplicationChanges](docs/sdks/ats/README.md#listapplicationchanges) - List Application Changes
+* [Get](docs/sdks/ats/README.md#get) - Get Application
+* [GetApplicationChanges](docs/sdks/ats/README.md#getapplicationchanges) - List Application Changes
 * [ListApplicationNotes](docs/sdks/ats/README.md#listapplicationnotes) - List Application Notes
 * [CreateApplicationNote](docs/sdks/ats/README.md#createapplicationnote) - Create Application Note
-* [GetApplicationNote](docs/sdks/ats/README.md#getapplicationnote) - Get Application Note
-* [UpdateApplicationNote](docs/sdks/ats/README.md#updateapplicationnote) - Update an Application Note
-* [ListApplicationsScheduledInterviews](docs/sdks/ats/README.md#listapplicationsscheduledinterviews) - List Applications scheduled interviews
-* [GetApplicationScheduledInterview](docs/sdks/ats/README.md#getapplicationscheduledinterview) - Get Applications scheduled interview
-* [UploadApplicationDocument](docs/sdks/ats/README.md#uploadapplicationdocument) - Upload Application Document
-* [DownloadApplicationDocument](docs/sdks/ats/README.md#downloadapplicationdocument) - Download Application Document
-* [ListApplicationDocuments](docs/sdks/ats/README.md#listapplicationdocuments) - List Application Documents
-* [GetApplicationDocument](docs/sdks/ats/README.md#getapplicationdocument) - Get Application Document
+* [GetNote](docs/sdks/ats/README.md#getnote) - Get Application Note
+* [UpdateNote](docs/sdks/ats/README.md#updatenote) - Update an Application Note
+* [DocumentsUpload](docs/sdks/ats/README.md#documentsupload) - Upload Application Document
+* [GetDocument](docs/sdks/ats/README.md#getdocument) - Get Application Document
 * [ListCandidates](docs/sdks/ats/README.md#listcandidates) - List Candidates
-* [CreateCandidate](docs/sdks/ats/README.md#createcandidate) - Create Candidate
-* [GetCandidate](docs/sdks/ats/README.md#getcandidate) - Get Candidate
 * [UpdateCandidate](docs/sdks/ats/README.md#updatecandidate) - Update Candidate
-* [ListCandidateNotes](docs/sdks/ats/README.md#listcandidatenotes) - List Candidate Notes
-* [CreateCandidateNote](docs/sdks/ats/README.md#createcandidatenote) - Create Candidate Note
+* [CreateNote](docs/sdks/ats/README.md#createnote) - Create Candidate Note
 * [GetCandidateNote](docs/sdks/ats/README.md#getcandidatenote) - Get Candidate Note
-* [ListApplicationCustomFieldDefinitions](docs/sdks/ats/README.md#listapplicationcustomfielddefinitions) - List Application Custom Field Definitions
-* [GetApplicationCustomFieldDefinition](docs/sdks/ats/README.md#getapplicationcustomfielddefinition) - Get Application Custom Field Definition
-* [ListCandidateCustomFieldDefinitions](docs/sdks/ats/README.md#listcandidatecustomfielddefinitions) - List Candidate Custom Field Definitions
-* [GetCandidateCustomFieldDefinition](docs/sdks/ats/README.md#getcandidatecustomfielddefinition) - Get Candidate Custom Field Definition
 * [ListJobCustomFieldDefinitions](docs/sdks/ats/README.md#listjobcustomfielddefinitions) - List Job Custom Field Definitions
-* [GetJobCustomFieldDefinition](docs/sdks/ats/README.md#getjobcustomfielddefinition) - Get Job Custom Field Definition
-* [ListDepartments](docs/sdks/ats/README.md#listdepartments) - List Departments
-* [GetDepartment](docs/sdks/ats/README.md#getdepartment) - Get Department
-* [ListInterviewStages](docs/sdks/ats/README.md#listinterviewstages) - List Interview Stages
-* [GetInterviewStage](docs/sdks/ats/README.md#getinterviewstage) - Get Interview Stage
-* [ListInterviews](docs/sdks/ats/README.md#listinterviews) - List Interviews
-* [GetInterview](docs/sdks/ats/README.md#getinterview) - Get Interview
+* [GetDepartments](docs/sdks/ats/README.md#getdepartments) - List Departments
 * [ListJobs](docs/sdks/ats/README.md#listjobs) - List Jobs
 * [CreateJob](docs/sdks/ats/README.md#createjob) - Create Job
-* [GetJob](docs/sdks/ats/README.md#getjob) - Get Job
 * [UpdateJob](docs/sdks/ats/README.md#updatejob) - Update Job
-* [ListLists](docs/sdks/ats/README.md#listlists) - Get all Lists
-* [GetList](docs/sdks/ats/README.md#getlist) - Get List
-* [ListLocations](docs/sdks/ats/README.md#listlocations) - List locations
-* [GetLocation](docs/sdks/ats/README.md#getlocation) - Get Location
-* [ListRejectedReasons](docs/sdks/ats/README.md#listrejectedreasons) - List Rejected Reasons
-* [GetRejectedReason](docs/sdks/ats/README.md#getrejectedreason) - Get Rejected Reason
-* [ListUsers](docs/sdks/ats/README.md#listusers) - List Users
 * [GetUser](docs/sdks/ats/README.md#getuser) - Get User
 * [ListJobPostings](docs/sdks/ats/README.md#listjobpostings) - List Job Postings
-* [GetJobPosting](docs/sdks/ats/README.md#getjobposting) - Get Job Posting
-* [ListOffers](docs/sdks/ats/README.md#listoffers) - List Offers
-* [CreateOffer](docs/sdks/ats/README.md#createoffer) - Creates an offer
-* [GetOffer](docs/sdks/ats/README.md#getoffer) - Get Offer
-* [ListAssessmentsPackages](docs/sdks/ats/README.md#listassessmentspackages) - List Assessments Packages
-* [GetAssessmentsPackage](docs/sdks/ats/README.md#getassessmentspackage) - Get Assessments Package
-* [OrderAssessmentsRequest](docs/sdks/ats/README.md#orderassessmentsrequest) - Order Assessments Request
-* [UpdateAssessmentsResult](docs/sdks/ats/README.md#updateassessmentsresult) - Update Assessments Result
-* [GetAssessmentsResult](docs/sdks/ats/README.md#getassessmentsresult) - Get Assessments Results
-* [ListBackgroundCheckPackages](docs/sdks/ats/README.md#listbackgroundcheckpackages) - List Background Check Packages
-* [CreateBackgroundCheckPackage](docs/sdks/ats/README.md#createbackgroundcheckpackage) - Create Background Check Package
-* [GetBackgroundCheckPackage](docs/sdks/ats/README.md#getbackgroundcheckpackage) - Get Background Check Package
-* [DeleteBackgroundCheckPackage](docs/sdks/ats/README.md#deletebackgroundcheckpackage) - Delete Background Check Package
+* [OrderAssessments](docs/sdks/ats/README.md#orderassessments) - Order Assessments Request
+* [AssessmentsUpdateResult](docs/sdks/ats/README.md#assessmentsupdateresult) - Update Assessments Result
 * [UpdateBackgroundCheckPackage](docs/sdks/ats/README.md#updatebackgroundcheckpackage) - Update Background Check Package
-* [OrderBackgroundCheckRequest](docs/sdks/ats/README.md#orderbackgroundcheckrequest) - Order Background Check Request
+* [OrderBackgroundCheck](docs/sdks/ats/README.md#orderbackgroundcheck) - Order Background Check Request
 * [UpdateBackgroundCheckResult](docs/sdks/ats/README.md#updatebackgroundcheckresult) - Update Background Check Result
-* [GetBackgroundCheckResult](docs/sdks/ats/README.md#getbackgroundcheckresult) - Get Background Check Results
-* [ListApplicationDocumentCategories](docs/sdks/ats/README.md#listapplicationdocumentcategories) - List Application Document Categories
-* [GetApplicationDocumentCategory](docs/sdks/ats/README.md#getapplicationdocumentcategory) - Get Application Document Category
+
+#### [Ats.Applications](docs/sdks/atsapplications/README.md)
+
+* [Create](docs/sdks/atsapplications/README.md#create) - Create Application
+* [Update](docs/sdks/atsapplications/README.md#update) - Update an Application
+* [ListOffers](docs/sdks/atsapplications/README.md#listoffers) - List Application Offers
+* [Move](docs/sdks/atsapplications/README.md#move) - Move Application
+* [Reject](docs/sdks/atsapplications/README.md#reject) - Reject Application
+* [GetOffer](docs/sdks/atsapplications/README.md#getoffer) - Get Application Offer
+* [ScorecardsList](docs/sdks/atsapplications/README.md#scorecardslist) - List Application Scorecards
+* [ListScheduledInterviews](docs/sdks/atsapplications/README.md#listscheduledinterviews) - List Applications scheduled interviews
+* [GetScheduledInterview](docs/sdks/atsapplications/README.md#getscheduledinterview) - Get Applications scheduled interview
+* [DownloadDocument](docs/sdks/atsapplications/README.md#downloaddocument) - Download Application Document
+* [ListCustomFieldDefinitions](docs/sdks/atsapplications/README.md#listcustomfielddefinitions) - List Application Custom Field Definitions
+* [GetCustomFieldDefinition](docs/sdks/atsapplications/README.md#getcustomfielddefinition) - Get Application Custom Field Definition
+
+#### [Ats.Applications.Documents](docs/sdks/applicationsdocuments/README.md)
+
+* [List](docs/sdks/applicationsdocuments/README.md#list) - List Application Documents
+
+#### [Ats.Assessments](docs/sdks/assessments/README.md)
+
+* [PackagesList](docs/sdks/assessments/README.md#packageslist) - List Assessments Packages
+* [GetResults](docs/sdks/assessments/README.md#getresults) - Get Assessments Results
+
+#### [Ats.Assessments.Packages](docs/sdks/assessmentspackages/README.md)
+
+* [Get](docs/sdks/assessmentspackages/README.md#get) - Get Assessments Package
+
+#### [Ats.BackgroundChecks](docs/sdks/atsbackgroundchecks/README.md)
+
+* [PackagesList](docs/sdks/atsbackgroundchecks/README.md#packageslist) - List Background Check Packages
+* [CreatePackage](docs/sdks/atsbackgroundchecks/README.md#createpackage) - Create Background Check Package
+* [GetResults](docs/sdks/atsbackgroundchecks/README.md#getresults) - Get Background Check Results
+
+#### [Ats.BackgroundChecks.Packages](docs/sdks/backgroundcheckspackages/README.md)
+
+* [Get](docs/sdks/backgroundcheckspackages/README.md#get) - Get Background Check Package
+
+#### [Ats.Candidates](docs/sdks/candidates/README.md)
+
+* [Create](docs/sdks/candidates/README.md#create) - Create Candidate
+* [Get](docs/sdks/candidates/README.md#get) - Get Candidate
+
+#### [Ats.Candidates.CustomFieldDefinitions](docs/sdks/candidatescustomfielddefinitions/README.md)
+
+* [Get](docs/sdks/candidatescustomfielddefinitions/README.md#get) - Get Candidate Custom Field Definition
+
+#### [Ats.Candidates.Notes](docs/sdks/notes/README.md)
+
+* [List](docs/sdks/notes/README.md#list) - List Candidate Notes
+
+#### [Ats.CustomFieldDefinitions](docs/sdks/atscustomfielddefinitions/README.md)
+
+* [ListCandidates](docs/sdks/atscustomfielddefinitions/README.md#listcandidates) - List Candidate Custom Field Definitions
+* [GetJob](docs/sdks/atscustomfielddefinitions/README.md#getjob) - Get Job Custom Field Definition
+
+#### [Ats.Departments](docs/sdks/atsdepartments/README.md)
+
+* [Get](docs/sdks/atsdepartments/README.md#get) - Get Department
+
+#### [Ats.Documents.ApplicationCategories](docs/sdks/applicationcategories/README.md)
+
+* [Get](docs/sdks/applicationcategories/README.md#get) - Get Application Document Category
+
+#### [Ats.Interviews](docs/sdks/atsinterviews/README.md)
+
+* [List](docs/sdks/atsinterviews/README.md#list) - List Interviews
+
+#### [Ats.InterviewStages](docs/sdks/interviewstages/README.md)
+
+* [List](docs/sdks/interviewstages/README.md#list) - List Interview Stages
+* [Get](docs/sdks/interviewstages/README.md#get) - Get Interview Stage
+
+#### [Ats.JobPostings](docs/sdks/jobpostings/README.md)
+
+* [Get](docs/sdks/jobpostings/README.md#get) - Get Job Posting
+
+#### [Ats.Jobs](docs/sdks/atsjobs/README.md)
+
+* [Get](docs/sdks/atsjobs/README.md#get) - Get Job
+
+#### [Ats.Lists](docs/sdks/atslists/README.md)
+
+* [List](docs/sdks/atslists/README.md#list) - Get all Lists
+* [Get](docs/sdks/atslists/README.md#get) - Get List
+
+#### [Ats.Locations](docs/sdks/atslocations/README.md)
+
+* [List](docs/sdks/atslocations/README.md#list) - List locations
+* [Get](docs/sdks/atslocations/README.md#get) - Get Location
+
+#### [Ats.Offers](docs/sdks/offers/README.md)
+
+* [List](docs/sdks/offers/README.md#list) - List Offers
+* [Create](docs/sdks/offers/README.md#create) - Creates an offer
+* [Get](docs/sdks/offers/README.md#get) - Get Offer
+
+#### [Ats.RejectedReasons](docs/sdks/rejectedreasons/README.md)
+
+* [List](docs/sdks/rejectedreasons/README.md#list) - List Rejected Reasons
+* [Get](docs/sdks/rejectedreasons/README.md#get) - Get Rejected Reason
+
+#### [Ats.Users](docs/sdks/atsusers/README.md)
+
+* [List](docs/sdks/atsusers/README.md#list) - List Users
+
+### [BackgroundChecks](docs/sdks/backgroundchecks/README.md)
+
+* [DeletePackage](docs/sdks/backgroundchecks/README.md#deletepackage) - Delete Background Check Package
 
 ### [Connectors](docs/sdks/connectors/README.md)
 
@@ -230,172 +297,309 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 * [Create](docs/sdks/connectsessions/README.md#create) - Create Connect Session
 * [Authenticate](docs/sdks/connectsessions/README.md#authenticate) - Authenticate Connect Session
 
+### [Courses](docs/sdks/courses/README.md)
+
+* [List](docs/sdks/courses/README.md#list) - List Courses
+
 ### [Crm](docs/sdks/crm/README.md)
 
-* [ListContacts](docs/sdks/crm/README.md#listcontacts) - List Contacts
-* [CreateContact](docs/sdks/crm/README.md#createcontact) - Creates a new Contact
 * [GetContact](docs/sdks/crm/README.md#getcontact) - Get Contact
 * [UpdateContact](docs/sdks/crm/README.md#updatecontact) - Update Contact (early access)
 * [ListAccounts](docs/sdks/crm/README.md#listaccounts) - List Accounts
 * [GetAccount](docs/sdks/crm/README.md#getaccount) - Get Account
-* [ListLists](docs/sdks/crm/README.md#listlists) - Get all Lists
-* [GetList](docs/sdks/crm/README.md#getlist) - Get List
-* [ListContactCustomFieldDefinitions](docs/sdks/crm/README.md#listcontactcustomfielddefinitions) - List Contact Custom Field Definitions
-* [GetContactCustomFieldDefinition](docs/sdks/crm/README.md#getcontactcustomfielddefinition) - Get Contact Custom Field Definition
+
+#### [Crm.Contacts](docs/sdks/contacts/README.md)
+
+* [List](docs/sdks/contacts/README.md#list) - List Contacts
+* [Create](docs/sdks/contacts/README.md#create) - Creates a new Contact
+
+#### [Crm.CustomFieldDefinitions.Contacts](docs/sdks/customfielddefinitionscontacts/README.md)
+
+* [List](docs/sdks/customfielddefinitionscontacts/README.md#list) - List Contact Custom Field Definitions
+* [Get](docs/sdks/customfielddefinitionscontacts/README.md#get) - Get Contact Custom Field Definition
+
+#### [Crm.Lists](docs/sdks/crmlists/README.md)
+
+* [List](docs/sdks/crmlists/README.md#list) - Get all Lists
+* [Get](docs/sdks/crmlists/README.md#get) - Get List
 
 ### [Documents](docs/sdks/documents/README.md)
 
-* [DownloadFile](docs/sdks/documents/README.md#downloadfile) - Download File
+* [ListApplicationCategories](docs/sdks/documents/README.md#listapplicationcategories) - List Application Document Categories
 * [UploadFile](docs/sdks/documents/README.md#uploadfile) - Upload File
-* [ListFiles](docs/sdks/documents/README.md#listfiles) - List Files
-* [GetFile](docs/sdks/documents/README.md#getfile) - Get File
-* [ListFolders](docs/sdks/documents/README.md#listfolders) - List Folders
-* [GetFolder](docs/sdks/documents/README.md#getfolder) - Get Folder
-* [ListDrives](docs/sdks/documents/README.md#listdrives) - List Drives
-* [GetDrive](docs/sdks/documents/README.md#getdrive) - Get Drive
+
+#### [Documents.Drives](docs/sdks/documentsdrives/README.md)
+
+* [List](docs/sdks/documentsdrives/README.md#list) - List Drives
+
+#### [Documents.Files](docs/sdks/files/README.md)
+
+* [Download](docs/sdks/files/README.md#download) - Download File
+* [List](docs/sdks/files/README.md#list) - List Files
+* [Get](docs/sdks/files/README.md#get) - Get File
+
+#### [Documents.Folders](docs/sdks/folders/README.md)
+
+* [List](docs/sdks/folders/README.md#list) - List Folders
+* [Get](docs/sdks/folders/README.md#get) - Get Folder
+
+### [Drives](docs/sdks/drives/README.md)
+
+* [Get](docs/sdks/drives/README.md#get) - Get Drive
 
 ### [Hris](docs/sdks/hris/README.md)
 
-* [ListCompanies](docs/sdks/hris/README.md#listcompanies) - List Companies
+* [GetCompanies](docs/sdks/hris/README.md#getcompanies) - List Companies
 * [GetCompany](docs/sdks/hris/README.md#getcompany) - Get Company
-* [ListEmployeeCustomFieldDefinitions](docs/sdks/hris/README.md#listemployeecustomfielddefinitions) - List employee Custom Field Definitions
 * [GetEmployeeCustomFieldDefinition](docs/sdks/hris/README.md#getemployeecustomfielddefinition) - Get employee Custom Field Definition
-* [ListEmployees](docs/sdks/hris/README.md#listemployees) - List Employees
-* [CreateEmployee](docs/sdks/hris/README.md#createemployee) - Creates an employee
 * [GetEmployee](docs/sdks/hris/README.md#getemployee) - Get Employee
-* [UpdateEmployee](docs/sdks/hris/README.md#updateemployee) - Updates an employee
-* [InviteEmployee](docs/sdks/hris/README.md#inviteemployee) - Invite Employee
 * [ListEmployeeTimeOffRequests](docs/sdks/hris/README.md#listemployeetimeoffrequests) - List Employee Time Off Requests
-* [CreateEmployeeTimeOffRequest](docs/sdks/hris/README.md#createemployeetimeoffrequest) - Create Employee Time Off Request
-* [GetEmployeesTimeOffRequest](docs/sdks/hris/README.md#getemployeestimeoffrequest) - Get Employees Time Off Request
-* [CancelEmployeeTimeOffRequest](docs/sdks/hris/README.md#cancelemployeetimeoffrequest) - Cancel Employee Time Off Request
+* [GetEmployeeTimeOffRequest](docs/sdks/hris/README.md#getemployeetimeoffrequest) - Get Employees Time Off Request
+* [CancelEmployeeTimeOff](docs/sdks/hris/README.md#cancelemployeetimeoff) - Cancel Employee Time Off Request
 * [UpdateEmployeeTimeOffRequest](docs/sdks/hris/README.md#updateemployeetimeoffrequest) - Update Employee Time Off Request
-* [BatchUploadEmployeeDocument](docs/sdks/hris/README.md#batchuploademployeedocument) - Batch Upload Employee Document
 * [UploadEmployeeDocument](docs/sdks/hris/README.md#uploademployeedocument) - Upload Employee Document
-* [DownloadEmployeeDocument](docs/sdks/hris/README.md#downloademployeedocument) - Download Employee Document
 * [ListEmployeeDocuments](docs/sdks/hris/README.md#listemployeedocuments) - List Employee Documents
 * [GetEmployeeDocument](docs/sdks/hris/README.md#getemployeedocument) - Get Employee Document
-* [ListEmployeeCategories](docs/sdks/hris/README.md#listemployeecategories) - List Employee Document Categories
-* [GetEmployeeDocumentCategory](docs/sdks/hris/README.md#getemployeedocumentcategory) - Get Employee Document Category
-* [ListEmployeeWorkEligibility](docs/sdks/hris/README.md#listemployeeworkeligibility) - List Employee Work Eligibility
-* [CreateEmployeeWorkEligibilityRequest](docs/sdks/hris/README.md#createemployeeworkeligibilityrequest) - Create Employee Work Eligibility Request
-* [GetEmployeesWorkEligibility](docs/sdks/hris/README.md#getemployeesworkeligibility) - Get Employees Work Eligibility
-* [UpdateEmployeeWorkEligibilityRequest](docs/sdks/hris/README.md#updateemployeeworkeligibilityrequest) - Update Employee Work Eligibility Request
 * [ListEmployeeTimeOffBalances](docs/sdks/hris/README.md#listemployeetimeoffbalances) - List Employee Time Off Balances
 * [GetEmployeeTimeOffBalance](docs/sdks/hris/README.md#getemployeetimeoffbalance) - Get Employee Time Off Balance
-* [ListEmployments](docs/sdks/hris/README.md#listemployments) - List Employments
 * [GetEmployment](docs/sdks/hris/README.md#getemployment) - Get Employment
-* [ListEmployeeEmployments](docs/sdks/hris/README.md#listemployeeemployments) - List Employee Employments
-* [CreateEmployeeEmployment](docs/sdks/hris/README.md#createemployeeemployment) - Create Employee Employment
-* [GetEmployeeEmployment](docs/sdks/hris/README.md#getemployeeemployment) - Get Employee Employment
-* [UpdateEmployeeEmployment](docs/sdks/hris/README.md#updateemployeeemployment) - Update Employee Employment
-* [ListGroups](docs/sdks/hris/README.md#listgroups) - List Groups
-* [ListDepartmentGroups](docs/sdks/hris/README.md#listdepartmentgroups) - List Department Groups
-* [ListCostCenterGroups](docs/sdks/hris/README.md#listcostcentergroups) - List Cost Center Groups
-* [ListTeamGroups](docs/sdks/hris/README.md#listteamgroups) - List Team Groups
-* [ListDivisionGroups](docs/sdks/hris/README.md#listdivisiongroups) - List Division Groups
-* [ListCompaniesGroups](docs/sdks/hris/README.md#listcompaniesgroups) - List Companies Groups
 * [GetGroup](docs/sdks/hris/README.md#getgroup) - Get Group
-* [GetDepartmentGroup](docs/sdks/hris/README.md#getdepartmentgroup) - Get Department Group
-* [GetCostCenterGroup](docs/sdks/hris/README.md#getcostcentergroup) - Get Cost Center Group
 * [GetTeamGroup](docs/sdks/hris/README.md#getteamgroup) - Get Team Group
-* [GetDivisionGroup](docs/sdks/hris/README.md#getdivisiongroup) - Get Division Group
-* [GetCompanyGroup](docs/sdks/hris/README.md#getcompanygroup) - Get Company Group
-* [ListJobs](docs/sdks/hris/README.md#listjobs) - List Jobs
-* [GetJob](docs/sdks/hris/README.md#getjob) - Get Job
-* [ListLocations](docs/sdks/hris/README.md#listlocations) - List Work Locations
 * [GetLocation](docs/sdks/hris/README.md#getlocation) - Get Work Location
 * [ListPositions](docs/sdks/hris/README.md#listpositions) - List Positions
 * [GetPosition](docs/sdks/hris/README.md#getposition) - Get Position
 * [ListTimeEntries](docs/sdks/hris/README.md#listtimeentries) - List Time Entries
-* [GetTimeEntries](docs/sdks/hris/README.md#gettimeentries) - Get Time Entry
-* [ListTimeOffRequests](docs/sdks/hris/README.md#listtimeoffrequests) - List time off requests
+* [GetTimeEntry](docs/sdks/hris/README.md#gettimeentry) - Get Time Entry
 * [GetTimeOffRequest](docs/sdks/hris/README.md#gettimeoffrequest) - Get time off request
 * [ListShifts](docs/sdks/hris/README.md#listshifts) - List Shifts
-* [GetShift](docs/sdks/hris/README.md#getshift) - Get Shift
 * [~~ListTimeOffTypes~~](docs/sdks/hris/README.md#listtimeofftypes) - List time off types :warning: **Deprecated**
-* [~~GetTimeOffType~~](docs/sdks/hris/README.md#gettimeofftype) - Get time off type :warning: **Deprecated**
 * [ListTimeOffPolicies](docs/sdks/hris/README.md#listtimeoffpolicies) - List Time Off Policies
 * [GetTimeOffPolicy](docs/sdks/hris/README.md#gettimeoffpolicy) - Get Time Off Policy
-* [ListEmployeeTimeOffPolicies](docs/sdks/hris/README.md#listemployeetimeoffpolicies) - List Assigned Time Off Policies
 * [ListBenefits](docs/sdks/hris/README.md#listbenefits) - List benefits
-* [GetBenefit](docs/sdks/hris/README.md#getbenefit) - Get Benefit
-* [ListEmployeeSkills](docs/sdks/hris/README.md#listemployeeskills) - List Employee Skills
 * [CreateEmployeeSkill](docs/sdks/hris/README.md#createemployeeskill) - Create Employee Skill
-* [GetEmployeeSkill](docs/sdks/hris/README.md#getemployeeskill) - Get Employee Skill
-* [ListEmployeeTasks](docs/sdks/hris/README.md#listemployeetasks) - List Employee Tasks
 * [GetEmployeeTask](docs/sdks/hris/README.md#getemployeetask) - Get Employee Task
-* [ListTasks](docs/sdks/hris/README.md#listtasks) - List Tasks
 * [GetTask](docs/sdks/hris/README.md#gettask) - Get Task
+
+#### [Hris.Benefits](docs/sdks/benefits/README.md)
+
+* [Get](docs/sdks/benefits/README.md#get) - Get Benefit
+
+#### [Hris.Companies](docs/sdks/companies/README.md)
+
+* [Get](docs/sdks/companies/README.md#get) - Get Company Group
+
+#### [Hris.Departments](docs/sdks/hrisdepartments/README.md)
+
+* [Get](docs/sdks/hrisdepartments/README.md#get) - Get Department Group
+
+#### [Hris.Documents.EmployeeCategories](docs/sdks/employeecategories/README.md)
+
+* [List](docs/sdks/employeecategories/README.md#list) - List Employee Document Categories
+* [Get](docs/sdks/employeecategories/README.md#get) - Get Employee Document Category
+
+#### [Hris.Employees](docs/sdks/employees/README.md)
+
+* [ListCustomFieldDefinitions](docs/sdks/employees/README.md#listcustomfielddefinitions) - List employee Custom Field Definitions
+* [List](docs/sdks/employees/README.md#list) - List Employees
+* [Create](docs/sdks/employees/README.md#create) - Creates an employee
+* [Update](docs/sdks/employees/README.md#update) - Updates an employee
+* [Invite](docs/sdks/employees/README.md#invite) - Invite Employee
+* [CreateTimeOff](docs/sdks/employees/README.md#createtimeoff) - Create Employee Time Off Request
+* [BatchUploadDocument](docs/sdks/employees/README.md#batchuploaddocument) - Batch Upload Employee Document
+* [WorkEligibilityList](docs/sdks/employees/README.md#workeligibilitylist) - List Employee Work Eligibility
+* [CreateWorkEligibilityRequest](docs/sdks/employees/README.md#createworkeligibilityrequest) - Create Employee Work Eligibility Request
+* [GetWorkEligibility](docs/sdks/employees/README.md#getworkeligibility) - Get Employees Work Eligibility
+* [CreateEmployment](docs/sdks/employees/README.md#createemployment) - Create Employee Employment
+* [GetEmployment](docs/sdks/employees/README.md#getemployment) - Get Employee Employment
+* [ListTimeOffPolicies](docs/sdks/employees/README.md#listtimeoffpolicies) - List Assigned Time Off Policies
+* [GetSkill](docs/sdks/employees/README.md#getskill) - Get Employee Skill
+
+#### [Hris.Employees.Documents](docs/sdks/employeesdocuments/README.md)
+
+* [Download](docs/sdks/employeesdocuments/README.md#download) - Download Employee Document
+
+#### [Hris.Employees.Employments](docs/sdks/employeesemployments/README.md)
+
+* [List](docs/sdks/employeesemployments/README.md#list) - List Employee Employments
+* [Update](docs/sdks/employeesemployments/README.md#update) - Update Employee Employment
+
+#### [Hris.Employees.Skills](docs/sdks/employeesskills/README.md)
+
+* [List](docs/sdks/employeesskills/README.md#list) - List Employee Skills
+
+#### [Hris.Employees.Tasks](docs/sdks/employeestasks/README.md)
+
+* [List](docs/sdks/employeestasks/README.md#list) - List Employee Tasks
+
+#### [Hris.Employees.WorkEligibility](docs/sdks/workeligibility/README.md)
+
+* [UpdateRequest](docs/sdks/workeligibility/README.md#updaterequest) - Update Employee Work Eligibility Request
+
+#### [Hris.Employments](docs/sdks/employments/README.md)
+
+* [List](docs/sdks/employments/README.md#list) - List Employments
+
+#### [Hris.Groups](docs/sdks/hrisgroups/README.md)
+
+* [List](docs/sdks/hrisgroups/README.md#list) - List Groups
+* [ListDepartments](docs/sdks/hrisgroups/README.md#listdepartments) - List Department Groups
+* [ListCostCenters](docs/sdks/hrisgroups/README.md#listcostcenters) - List Cost Center Groups
+* [ListTeams](docs/sdks/hrisgroups/README.md#listteams) - List Team Groups
+* [ListDivisions](docs/sdks/hrisgroups/README.md#listdivisions) - List Division Groups
+
+#### [Hris.Groups.Companies](docs/sdks/groupscompanies/README.md)
+
+* [List](docs/sdks/groupscompanies/README.md#list) - List Companies Groups
+
+#### [Hris.Groups.CostCenters](docs/sdks/costcenters/README.md)
+
+* [Get](docs/sdks/costcenters/README.md#get) - Get Cost Center Group
+
+#### [Hris.Groups.Divisions](docs/sdks/divisions/README.md)
+
+* [Get](docs/sdks/divisions/README.md#get) - Get Division Group
+
+#### [Hris.Jobs](docs/sdks/hrisjobs/README.md)
+
+* [List](docs/sdks/hrisjobs/README.md#list) - List Jobs
+* [Get](docs/sdks/hrisjobs/README.md#get) - Get Job
+
+#### [Hris.Locations](docs/sdks/hrislocations/README.md)
+
+* [List](docs/sdks/hrislocations/README.md#list) - List Work Locations
+
+#### [Hris.Shifts](docs/sdks/shifts/README.md)
+
+* [Get](docs/sdks/shifts/README.md#get) - Get Shift
+
+#### [Hris.Tasks](docs/sdks/tasks/README.md)
+
+* [List](docs/sdks/tasks/README.md#list) - List Tasks
+
+#### [Hris.TimeOff](docs/sdks/timeoff/README.md)
+
+* [List](docs/sdks/timeoff/README.md#list) - List time off requests
+
+#### [~~Hris.TimeOffTypes~~](docs/sdks/timeofftypes/README.md)
+
+* [~~Get~~](docs/sdks/timeofftypes/README.md#get) - Get time off type :warning: **Deprecated**
 
 ### [Iam](docs/sdks/iam/README.md)
 
-* [ListUsers](docs/sdks/iam/README.md#listusers) - List Users
-* [GetUser](docs/sdks/iam/README.md#getuser) - Get User
 * [DeleteUser](docs/sdks/iam/README.md#deleteuser) - Delete User
-* [UpdateUser](docs/sdks/iam/README.md#updateuser) - Update User
 * [ListRoles](docs/sdks/iam/README.md#listroles) - List Roles
 * [GetRole](docs/sdks/iam/README.md#getrole) - Get Role
-* [ListGroups](docs/sdks/iam/README.md#listgroups) - List Groups
 * [GetGroup](docs/sdks/iam/README.md#getgroup) - Get Group
 * [ListPolicies](docs/sdks/iam/README.md#listpolicies) - List Policies
-* [GetPolicy](docs/sdks/iam/README.md#getpolicy) - Get Policy
+
+#### [Iam.Groups](docs/sdks/iamgroups/README.md)
+
+* [List](docs/sdks/iamgroups/README.md#list) - List Groups
+
+#### [Iam.Policies](docs/sdks/policies/README.md)
+
+* [Get](docs/sdks/policies/README.md#get) - Get Policy
+
+#### [Iam.Users](docs/sdks/iamusers/README.md)
+
+* [List](docs/sdks/iamusers/README.md#list) - List Users
+* [Get](docs/sdks/iamusers/README.md#get) - Get User
+* [Update](docs/sdks/iamusers/README.md#update) - Update User
+
+### [Interviews](docs/sdks/interviews/README.md)
+
+* [Get](docs/sdks/interviews/README.md#get) - Get Interview
 
 ### [Lms](docs/sdks/lms/README.md)
 
-* [ListCourses](docs/sdks/lms/README.md#listcourses) - List Courses
 * [GetCourse](docs/sdks/lms/README.md#getcourse) - Get Course
 * [ListUserAssignments](docs/sdks/lms/README.md#listuserassignments) - List User Assignments
-* [CreateUserAssignment](docs/sdks/lms/README.md#createuserassignment) - Create User Assignment
-* [GetUserAssignment](docs/sdks/lms/README.md#getuserassignment) - Get User Assignment
 * [BatchUpsertContent](docs/sdks/lms/README.md#batchupsertcontent) - Batch Upsert Content
 * [ListContent](docs/sdks/lms/README.md#listcontent) - List Content
-* [UpsertContent](docs/sdks/lms/README.md#upsertcontent) - Upsert Content
-* [GetContent](docs/sdks/lms/README.md#getcontent) - Get Content
-* [UpdateContent](docs/sdks/lms/README.md#updatecontent) - Update Content
-* [ListUserCompletions](docs/sdks/lms/README.md#listusercompletions) - List User Completions
 * [CreateUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
 * [GetUserCompletion](docs/sdks/lms/README.md#getusercompletion) - Get User Completion
 * [DeleteUserCompletion](docs/sdks/lms/README.md#deleteusercompletion) - Delete User Completion
-* [ListCompletions](docs/sdks/lms/README.md#listcompletions) - List Completions
-* [GetCompletion](docs/sdks/lms/README.md#getcompletion) - Get Completion
 * [GetCategory](docs/sdks/lms/README.md#getcategory) - Get Category
-* [ListCategories](docs/sdks/lms/README.md#listcategories) - List Categories
 * [ListUsers](docs/sdks/lms/README.md#listusers) - List Users
 * [GetUser](docs/sdks/lms/README.md#getuser) - Get User
-* [GetSkill](docs/sdks/lms/README.md#getskill) - Get Skill
 * [ListSkills](docs/sdks/lms/README.md#listskills) - List Skills
-* [ListAssignments](docs/sdks/lms/README.md#listassignments) - List Assignments
-* [GetAssignment](docs/sdks/lms/README.md#getassignment) - Get Assignment
+
+#### [Lms.Assignments](docs/sdks/assignments/README.md)
+
+* [Create](docs/sdks/assignments/README.md#create) - Create User Assignment
+* [List](docs/sdks/assignments/README.md#list) - List Assignments
+* [Get](docs/sdks/assignments/README.md#get) - Get Assignment
+
+#### [Lms.Categories](docs/sdks/categories/README.md)
+
+* [List](docs/sdks/categories/README.md#list) - List Categories
+
+#### [Lms.Completions](docs/sdks/completions/README.md)
+
+* [List](docs/sdks/completions/README.md#list) - List Completions
+* [Get](docs/sdks/completions/README.md#get) - Get Completion
+
+#### [Lms.Content](docs/sdks/content/README.md)
+
+* [Upsert](docs/sdks/content/README.md#upsert) - Upsert Content
+* [Get](docs/sdks/content/README.md#get) - Get Content
+* [Update](docs/sdks/content/README.md#update) - Update Content
+
+#### [Lms.Skills](docs/sdks/lmsskills/README.md)
+
+* [Get](docs/sdks/lmsskills/README.md#get) - Get Skill
+
+#### [Lms.Users](docs/sdks/lmsusers/README.md)
+
+* [ListCompletions](docs/sdks/lmsusers/README.md#listcompletions) - List User Completions
+
+#### [Lms.UsersAssignments](docs/sdks/usersassignments/README.md)
+
+* [Get](docs/sdks/usersassignments/README.md#get) - Get User Assignment
 
 ### [Marketing](docs/sdks/marketing/README.md)
 
-* [ListEmailTemplates](docs/sdks/marketing/README.md#listemailtemplates) - List Email Templates
+* [TemplatesListEmail](docs/sdks/marketing/README.md#templateslistemail) - List Email Templates
 * [CreateEmailTemplate](docs/sdks/marketing/README.md#createemailtemplate) - Create Email Templates
 * [GetEmailTemplate](docs/sdks/marketing/README.md#getemailtemplate) - Get Email Templates
 * [UpdateEmailTemplate](docs/sdks/marketing/README.md#updateemailtemplate) - Update Email Templates
-* [ListInAppTemplates](docs/sdks/marketing/README.md#listinapptemplates) - List In-App Templates
+* [TemplatesListInApp](docs/sdks/marketing/README.md#templateslistinapp) - List In-App Templates
 * [CreateInAppTemplate](docs/sdks/marketing/README.md#createinapptemplate) - Create In-App Template
-* [GetInAppTemplate](docs/sdks/marketing/README.md#getinapptemplate) - Get In-App Template
-* [UpdateInAppTemplate](docs/sdks/marketing/README.md#updateinapptemplate) - Update In-App Template
 * [ListSmsTemplates](docs/sdks/marketing/README.md#listsmstemplates) - List SMS Templates
 * [CreateSmsTemplate](docs/sdks/marketing/README.md#createsmstemplate) - Create SMS Template
-* [GetSmsTemplate](docs/sdks/marketing/README.md#getsmstemplate) - Get SMS Template
 * [UpdateSmsTemplate](docs/sdks/marketing/README.md#updatesmstemplate) - Update SMS Template
 * [~~ListOmniChannelTemplates~~](docs/sdks/marketing/README.md#listomnichanneltemplates) - List Omni-Channel Templates :warning: **Deprecated**
-* [~~CreateOmniChannelTemplate~~](docs/sdks/marketing/README.md#createomnichanneltemplate) - Create Omni-Channel Template :warning: **Deprecated**
 * [~~GetOmniChannelTemplate~~](docs/sdks/marketing/README.md#getomnichanneltemplate) - Get Omni-Channel Template :warning: **Deprecated**
 * [~~UpdateOmniChannelTemplate~~](docs/sdks/marketing/README.md#updateomnichanneltemplate) - Update Omni-Channel Template :warning: **Deprecated**
-* [ListPushTemplates](docs/sdks/marketing/README.md#listpushtemplates) - List Push Templates
-* [CreatePushTemplate](docs/sdks/marketing/README.md#createpushtemplate) - Create Push Template
-* [GetPushTemplate](docs/sdks/marketing/README.md#getpushtemplate) - Get Push Template
+* [TemplatesListPush](docs/sdks/marketing/README.md#templateslistpush) - List Push Templates
 * [UpdatePushTemplate](docs/sdks/marketing/README.md#updatepushtemplate) - Update Push Template
-* [ListCampaigns](docs/sdks/marketing/README.md#listcampaigns) - List campaigns
-* [GetCampaign](docs/sdks/marketing/README.md#getcampaign) - Get campaign
 * [ListContentBlocks](docs/sdks/marketing/README.md#listcontentblocks) - List Content Blocks
 * [CreateContentBlock](docs/sdks/marketing/README.md#createcontentblock) - Create Content Block
 * [GetContentBlock](docs/sdks/marketing/README.md#getcontentblock) - Get Content Blocks
-* [UpdateContentBlock](docs/sdks/marketing/README.md#updatecontentblock) - Update Content Block
+
+#### [Marketing.Campaigns](docs/sdks/campaigns/README.md)
+
+* [List](docs/sdks/campaigns/README.md#list) - List campaigns
+* [Get](docs/sdks/campaigns/README.md#get) - Get campaign
+
+#### [Marketing.ContentBlocks](docs/sdks/contentblocks/README.md)
+
+* [Update](docs/sdks/contentblocks/README.md#update) - Update Content Block
+
+#### [Marketing.Templates](docs/sdks/templates/README.md)
+
+* [~~CreateOmniChannel~~](docs/sdks/templates/README.md#createomnichannel) - Create Omni-Channel Template :warning: **Deprecated**
+* [CreatePush](docs/sdks/templates/README.md#createpush) - Create Push Template
+* [GetPush](docs/sdks/templates/README.md#getpush) - Get Push Template
+
+#### [Marketing.Templates.InApp](docs/sdks/inapp/README.md)
+
+* [Get](docs/sdks/inapp/README.md#get) - Get In-App Template
+* [Update](docs/sdks/inapp/README.md#update) - Update In-App Template
+
+#### [Marketing.Templates.Sms](docs/sdks/sms/README.md)
+
+* [Get](docs/sdks/sms/README.md#get) - Get SMS Template
 
 ### [Proxy](docs/sdks/proxy/README.md)
 
@@ -410,23 +614,41 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 
 ### [Ticketing](docs/sdks/ticketing/README.md)
 
-* [ListTickets](docs/sdks/ticketing/README.md#listtickets) - List Tickets
-* [CreateTicket](docs/sdks/ticketing/README.md#createticket) - Create Ticket
-* [GetTicket](docs/sdks/ticketing/README.md#getticket) - Get Ticket
-* [UpdateTicket](docs/sdks/ticketing/README.md#updateticket) - Update Ticket
-* [ListUsers](docs/sdks/ticketing/README.md#listusers) - List Users
 * [GetUser](docs/sdks/ticketing/README.md#getuser) - Get User
-* [ListComments](docs/sdks/ticketing/README.md#listcomments) - List Comments
-* [GetComment](docs/sdks/ticketing/README.md#getcomment) - Get Comment
-* [DownloadTicketingAttachment](docs/sdks/ticketing/README.md#downloadticketingattachment) - Download Attachment
-* [ListAttachments](docs/sdks/ticketing/README.md#listattachments) - List Attachments
-* [GetAttachment](docs/sdks/ticketing/README.md#getattachment) - Get Attachment
+* [DownloadAttachment](docs/sdks/ticketing/README.md#downloadattachment) - Download Attachment
 * [ListTicketTypes](docs/sdks/ticketing/README.md#listtickettypes) - List Ticket Types
 * [GetTicketType](docs/sdks/ticketing/README.md#gettickettype) - Get Ticket Type
 * [ListCollections](docs/sdks/ticketing/README.md#listcollections) - List Collections
-* [GetCollection](docs/sdks/ticketing/README.md#getcollection) - Get Collection
 * [ListCollectionTicketTypes](docs/sdks/ticketing/README.md#listcollectiontickettypes) - List Collection Ticket Types
-* [ListTicketStatuses](docs/sdks/ticketing/README.md#listticketstatuses) - List Ticket Statuses
+
+#### [Ticketing.Collections](docs/sdks/collections/README.md)
+
+* [Get](docs/sdks/collections/README.md#get) - Get Collection
+
+#### [Ticketing.Comments](docs/sdks/comments/README.md)
+
+* [Get](docs/sdks/comments/README.md#get) - Get Comment
+
+#### [Ticketing.Tickets](docs/sdks/tickets/README.md)
+
+* [List](docs/sdks/tickets/README.md#list) - List Tickets
+* [Create](docs/sdks/tickets/README.md#create) - Create Ticket
+* [Get](docs/sdks/tickets/README.md#get) - Get Ticket
+* [Update](docs/sdks/tickets/README.md#update) - Update Ticket
+* [ListAttachments](docs/sdks/tickets/README.md#listattachments) - List Attachments
+* [ListStatuses](docs/sdks/tickets/README.md#liststatuses) - List Ticket Statuses
+
+#### [Ticketing.Tickets.Attachments](docs/sdks/attachments/README.md)
+
+* [Get](docs/sdks/attachments/README.md#get) - Get Attachment
+
+#### [Ticketing.Tickets.Comments](docs/sdks/ticketscomments/README.md)
+
+* [List](docs/sdks/ticketscomments/README.md#list) - List Comments
+
+#### [Ticketing.Users](docs/sdks/ticketingusers/README.md)
+
+* [List](docs/sdks/ticketingusers/README.md#list) - List Users
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -457,7 +679,7 @@ HrisListCompaniesRequest req = new HrisListCompaniesRequest() {
     },
 };
 
-HrisListCompaniesResponse? res = await sdk.Hris.ListCompaniesAsync(req);
+HrisListCompaniesResponse? res = await sdk.Hris.GetCompaniesAsync(req);
 
 while(res != null)
 {

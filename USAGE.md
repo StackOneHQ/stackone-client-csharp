@@ -21,7 +21,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     Include = "avatar_url,avatar,custom_fields,job_description,benefits",
 };
 
-HrisListEmployeesResponse? res = await sdk.Hris.ListEmployeesAsync(req);
+HrisListEmployeesResponse? res = await sdk.Hris.Employees.ListAsync(req);
 
 while(res != null)
 {

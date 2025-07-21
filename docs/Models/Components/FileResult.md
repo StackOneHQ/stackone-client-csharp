@@ -5,5 +5,5 @@
 
 | Field                                                       | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `Data`                                                      | [Files](../../Models/Components/Files.md)                   | :heavy_check_mark:                                          | N/A                                                         |
+| `Data`                                                      | [Models.Components.Files](../../Models/Components/Files.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `Raw`                                                       | List<[RawResponse](../../Models/Components/RawResponse.md)> | :heavy_minus_sign:                                          | N/A                                                         |

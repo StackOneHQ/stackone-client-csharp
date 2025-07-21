@@ -5,34 +5,25 @@
 
 ### Available Operations
 
-* [ListEmailTemplates](#listemailtemplates) - List Email Templates
+* [TemplatesListEmail](#templateslistemail) - List Email Templates
 * [CreateEmailTemplate](#createemailtemplate) - Create Email Templates
 * [GetEmailTemplate](#getemailtemplate) - Get Email Templates
 * [UpdateEmailTemplate](#updateemailtemplate) - Update Email Templates
-* [ListInAppTemplates](#listinapptemplates) - List In-App Templates
+* [TemplatesListInApp](#templateslistinapp) - List In-App Templates
 * [CreateInAppTemplate](#createinapptemplate) - Create In-App Template
-* [GetInAppTemplate](#getinapptemplate) - Get In-App Template
-* [UpdateInAppTemplate](#updateinapptemplate) - Update In-App Template
 * [ListSmsTemplates](#listsmstemplates) - List SMS Templates
 * [CreateSmsTemplate](#createsmstemplate) - Create SMS Template
-* [GetSmsTemplate](#getsmstemplate) - Get SMS Template
 * [UpdateSmsTemplate](#updatesmstemplate) - Update SMS Template
 * [~~ListOmniChannelTemplates~~](#listomnichanneltemplates) - List Omni-Channel Templates :warning: **Deprecated**
-* [~~CreateOmniChannelTemplate~~](#createomnichanneltemplate) - Create Omni-Channel Template :warning: **Deprecated**
 * [~~GetOmniChannelTemplate~~](#getomnichanneltemplate) - Get Omni-Channel Template :warning: **Deprecated**
 * [~~UpdateOmniChannelTemplate~~](#updateomnichanneltemplate) - Update Omni-Channel Template :warning: **Deprecated**
-* [ListPushTemplates](#listpushtemplates) - List Push Templates
-* [CreatePushTemplate](#createpushtemplate) - Create Push Template
-* [GetPushTemplate](#getpushtemplate) - Get Push Template
+* [TemplatesListPush](#templateslistpush) - List Push Templates
 * [UpdatePushTemplate](#updatepushtemplate) - Update Push Template
-* [ListCampaigns](#listcampaigns) - List campaigns
-* [GetCampaign](#getcampaign) - Get campaign
 * [ListContentBlocks](#listcontentblocks) - List Content Blocks
 * [CreateContentBlock](#createcontentblock) - Create Content Block
 * [GetContentBlock](#getcontentblock) - Get Content Blocks
-* [UpdateContentBlock](#updatecontentblock) - Update Content Block
 
-## ListEmailTemplates
+## TemplatesListEmail
 
 List Email Templates
 
@@ -56,7 +47,7 @@ MarketingListEmailTemplatesRequest req = new MarketingListEmailTemplatesRequest(
     },
 };
 
-MarketingListEmailTemplatesResponse? res = await sdk.Marketing.ListEmailTemplatesAsync(req);
+MarketingListEmailTemplatesResponse? res = await sdk.Marketing.TemplatesListEmailAsync(req);
 
 while(res != null)
 {
@@ -284,7 +275,7 @@ var res = await sdk.Marketing.UpdateEmailTemplateAsync(
 | StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
 | StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
 
-## ListInAppTemplates
+## TemplatesListInApp
 
 List In-App Templates
 
@@ -306,7 +297,7 @@ MarketingListInAppTemplatesRequest req = new MarketingListInAppTemplatesRequest(
     Filter = null,
 };
 
-MarketingListInAppTemplatesResponse? res = await sdk.Marketing.ListInAppTemplatesAsync(req);
+MarketingListInAppTemplatesResponse? res = await sdk.Marketing.TemplatesListInAppAsync(req);
 
 while(res != null)
 {
@@ -394,132 +385,6 @@ var res = await sdk.Marketing.CreateInAppTemplateAsync(
 ### Response
 
 **[MarketingCreateInAppTemplateResponse](../../Models/Requests/MarketingCreateInAppTemplateResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## GetInAppTemplate
-
-Get In-App Template
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-MarketingGetInAppTemplateRequest req = new MarketingGetInAppTemplateRequest() {
-    XAccountId = "<id>",
-    Id = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
-};
-
-var res = await sdk.Marketing.GetInAppTemplateAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [MarketingGetInAppTemplateRequest](../../Models/Requests/MarketingGetInAppTemplateRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
-
-### Response
-
-**[MarketingGetInAppTemplateResponse](../../Models/Requests/MarketingGetInAppTemplateResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## UpdateInAppTemplate
-
-Update In-App Template
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using System.Collections.Generic;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-var res = await sdk.Marketing.UpdateInAppTemplateAsync(
-    xAccountId: "<id>",
-    id: "<id>",
-    marketingCreateInAppTemplateRequestDto: new MarketingCreateInAppTemplateRequestDto() {
-        Messages = new List<InAppMessages>() {
-            new InAppMessages() {
-                Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
-                RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
-                MessageType = new InAppMessagesMessageType() {
-                    Value = InAppMessagesValue.Email,
-                    SourceValue = InAppMessagesSourceValueUnion.CreateStr(
-                        "Email"
-                    ),
-                },
-            },
-        },
-        Passthrough = new Dictionary<string, object>() {
-            { "other_known_names", "John Doe" },
-        },
-    }
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                                | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The account identifier                                                                                      |
-| `Id`                                                                                                        | *string*                                                                                                    | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-| `MarketingCreateInAppTemplateRequestDto`                                                                    | [MarketingCreateInAppTemplateRequestDto](../../Models/Components/MarketingCreateInAppTemplateRequestDto.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-
-### Response
-
-**[MarketingUpdateInAppTemplateResponse](../../Models/Requests/MarketingUpdateInAppTemplateResponse.md)**
 
 ### Errors
 
@@ -651,61 +516,6 @@ var res = await sdk.Marketing.CreateSmsTemplateAsync(
 ### Response
 
 **[MarketingCreateSmsTemplateResponse](../../Models/Requests/MarketingCreateSmsTemplateResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## GetSmsTemplate
-
-Get SMS Template
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-MarketingGetSmsTemplateRequest req = new MarketingGetSmsTemplateRequest() {
-    XAccountId = "<id>",
-    Id = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
-};
-
-var res = await sdk.Marketing.GetSmsTemplateAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [MarketingGetSmsTemplateRequest](../../Models/Requests/MarketingGetSmsTemplateRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
-
-### Response
-
-**[MarketingGetSmsTemplateResponse](../../Models/Requests/MarketingGetSmsTemplateResponse.md)**
 
 ### Errors
 
@@ -860,76 +670,6 @@ while(res != null)
 | StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
 | StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
 
-## ~~CreateOmniChannelTemplate~~
-
-Create Omni-Channel Template
-
-> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using System.Collections.Generic;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-var res = await sdk.Marketing.CreateOmniChannelTemplateAsync(
-    xAccountId: "<id>",
-    marketingCreateTemplateRequestDto: new MarketingCreateTemplateRequestDto() {
-        Messages = new List<CreateMessage>() {
-            new CreateMessage() {
-                Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
-                MessageType = new CreateMessageMessageType() {
-                    Value = CreateMessageValue.Email,
-                    SourceValue = CreateMessageSourceValueUnion.CreateStr(
-                        "Email"
-                    ),
-                },
-            },
-        },
-        Passthrough = new Dictionary<string, object>() {
-            { "other_known_names", "John Doe" },
-        },
-    }
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                      | *string*                                                                                          | :heavy_check_mark:                                                                                | The account identifier                                                                            |
-| `MarketingCreateTemplateRequestDto`                                                               | [MarketingCreateTemplateRequestDto](../../Models/Components/MarketingCreateTemplateRequestDto.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |
-
-### Response
-
-**[MarketingCreateOmniChannelTemplateResponse](../../Models/Requests/MarketingCreateOmniChannelTemplateResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
 ## ~~GetOmniChannelTemplate~~
 
 Get Omni-Channel Template
@@ -1059,7 +799,7 @@ var res = await sdk.Marketing.UpdateOmniChannelTemplateAsync(
 | StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
 | StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
 
-## ListPushTemplates
+## TemplatesListPush
 
 List Push Templates
 
@@ -1083,7 +823,7 @@ MarketingListPushTemplatesRequest req = new MarketingListPushTemplatesRequest() 
     },
 };
 
-MarketingListPushTemplatesResponse? res = await sdk.Marketing.ListPushTemplatesAsync(req);
+MarketingListPushTemplatesResponse? res = await sdk.Marketing.TemplatesListPushAsync(req);
 
 while(res != null)
 {
@@ -1102,130 +842,6 @@ while(res != null)
 ### Response
 
 **[MarketingListPushTemplatesResponse](../../Models/Requests/MarketingListPushTemplatesResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## CreatePushTemplate
-
-Create Push Template
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using System.Collections.Generic;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-var res = await sdk.Marketing.CreatePushTemplateAsync(
-    xAccountId: "<id>",
-    marketingCreatePushTemplateRequestDto: new MarketingCreatePushTemplateRequestDto() {
-        Messages = new List<PushMessages>() {
-            new PushMessages() {
-                Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
-                RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
-                MessageType = new PushMessagesMessageType() {
-                    Value = PushMessagesValue.Email,
-                    SourceValue = PushMessagesSourceValueUnion.CreateStr(
-                        "Email"
-                    ),
-                },
-            },
-        },
-        Passthrough = new Dictionary<string, object>() {
-            { "other_known_names", "John Doe" },
-        },
-    }
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                              | *string*                                                                                                  | :heavy_check_mark:                                                                                        | The account identifier                                                                                    |
-| `MarketingCreatePushTemplateRequestDto`                                                                   | [MarketingCreatePushTemplateRequestDto](../../Models/Components/MarketingCreatePushTemplateRequestDto.md) | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
-
-### Response
-
-**[MarketingCreatePushTemplateResponse](../../Models/Requests/MarketingCreatePushTemplateResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## GetPushTemplate
-
-Get Push Template
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-MarketingGetPushTemplateRequest req = new MarketingGetPushTemplateRequest() {
-    XAccountId = "<id>",
-    Id = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
-};
-
-var res = await sdk.Marketing.GetPushTemplateAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [MarketingGetPushTemplateRequest](../../Models/Requests/MarketingGetPushTemplateRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
-
-### Response
-
-**[MarketingGetPushTemplateResponse](../../Models/Requests/MarketingGetPushTemplateResponse.md)**
 
 ### Errors
 
@@ -1297,123 +913,6 @@ var res = await sdk.Marketing.UpdatePushTemplateAsync(
 ### Response
 
 **[MarketingUpdatePushTemplateResponse](../../Models/Requests/MarketingUpdatePushTemplateResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## ListCampaigns
-
-List campaigns
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-MarketingListCampaignsRequest req = new MarketingListCampaignsRequest() {
-    XAccountId = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages",
-    Filter = new MarketingListCampaignsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
-    },
-};
-
-MarketingListCampaignsResponse? res = await sdk.Marketing.ListCampaignsAsync(req);
-
-while(res != null)
-{
-    // handle items
-
-    res = await res.Next!();
-}
-```
-
-### Parameters
-
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [MarketingListCampaignsRequest](../../Models/Requests/MarketingListCampaignsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
-
-### Response
-
-**[MarketingListCampaignsResponse](../../Models/Requests/MarketingListCampaignsResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## GetCampaign
-
-Get campaign
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-MarketingGetCampaignRequest req = new MarketingGetCampaignRequest() {
-    XAccountId = "<id>",
-    Id = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages",
-};
-
-var res = await sdk.Marketing.GetCampaignAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [MarketingGetCampaignRequest](../../Models/Requests/MarketingGetCampaignRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
-
-### Response
-
-**[MarketingGetCampaignResponse](../../Models/Requests/MarketingGetCampaignResponse.md)**
 
 ### Errors
 
@@ -1594,71 +1093,6 @@ var res = await sdk.Marketing.GetContentBlockAsync(req);
 ### Response
 
 **[MarketingGetContentBlockResponse](../../Models/Requests/MarketingGetContentBlockResponse.md)**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
-
-## UpdateContentBlock
-
-Update Content Block
-
-### Example Usage
-
-```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using System.Collections.Generic;
-
-var sdk = new StackOneClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-var res = await sdk.Marketing.UpdateContentBlockAsync(
-    xAccountId: "<id>",
-    id: "<id>",
-    marketingCreateContentBlocksRequestDto: new MarketingCreateContentBlocksRequestDto() {
-        Type = new MarketingCreateContentBlocksRequestDtoType() {
-            Value = MarketingCreateContentBlocksRequestDtoValue.Html,
-            SourceValue = MarketingCreateContentBlocksRequestDtoSourceValueUnion.CreateStr(
-                "text"
-            ),
-        },
-        Passthrough = new Dictionary<string, object>() {
-            { "other_known_names", "John Doe" },
-        },
-    }
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                                | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The account identifier                                                                                      |
-| `Id`                                                                                                        | *string*                                                                                                    | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-| `MarketingCreateContentBlocksRequestDto`                                                                    | [MarketingCreateContentBlocksRequestDto](../../Models/Components/MarketingCreateContentBlocksRequestDto.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-
-### Response
-
-**[MarketingUpdateContentBlockResponse](../../Models/Requests/MarketingUpdateContentBlockResponse.md)**
 
 ### Errors
 

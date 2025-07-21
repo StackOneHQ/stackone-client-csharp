@@ -1630,7 +1630,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_companies"
+      x-speakeasy-name-override: "getCompanies"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/companies/{id}:
@@ -1750,7 +1750,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_company"
+      x-speakeasy-name-override: "getCompany"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/custom_field_definitions/employees:
     get:
@@ -1910,8 +1910,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_custom_field_definitions"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "listCustomFieldDefinitions"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/custom_field_definitions/employees/{id}:
@@ -2078,7 +2078,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee_custom_field_definition"
+      x-speakeasy-name-override: "getEmployeeCustomFieldDefinition"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees:
     get:
@@ -2262,8 +2262,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employees"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
       x-speakeasy-usage-example: {"title": "List Employees", "position": 1}
@@ -2357,8 +2357,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "create_employee"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "create"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}:
     get:
@@ -2493,7 +2493,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee"
+      x-speakeasy-name-override: "getEmployee"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -2590,8 +2590,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "update_employee"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/invite:
     post:
@@ -2689,8 +2689,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "invite_employee"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "invite"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/time_off:
     get:
@@ -2871,7 +2871,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_time_off_requests"
+      x-speakeasy-name-override: "listEmployeeTimeOffRequests"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -2970,8 +2970,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "create_employee_time_off_request"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "createTimeOff"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/time_off/{subResourceId}:
     get:
@@ -3104,7 +3104,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employees_time_off_request"
+      x-speakeasy-name-override: "getEmployeeTimeOffRequest"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     delete:
       tags:
@@ -3205,7 +3205,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "cancel_employee_time_off_request"
+      x-speakeasy-name-override: "cancelEmployeeTimeOff"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -3309,7 +3309,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "update_employee_time_off_request"
+      x-speakeasy-name-override: "updateEmployeeTimeOffRequest"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/documents/upload/batch:
     post:
@@ -3408,8 +3408,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "batch_upload_employee_document"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "batchUploadDocument"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/documents/upload:
     post:
@@ -3509,7 +3509,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "upload_employee_document"
+      x-speakeasy-name-override: "uploadEmployeeDocument"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/documents/{subResourceId}/download:
     get:
@@ -3626,8 +3626,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "download_employee_document"
+      x-speakeasy-group: "hris.employees.documents"
+      x-speakeasy-name-override: "download"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/documents:
     get:
@@ -3794,7 +3794,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_documents"
+      x-speakeasy-name-override: "listEmployeeDocuments"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/documents/{subResourceId}:
@@ -3920,7 +3920,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee_document"
+      x-speakeasy-name-override: "getEmployeeDocument"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/documents/employee_categories:
     get:
@@ -4080,8 +4080,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_categories"
+      x-speakeasy-group: "hris.documents.employeeCategories"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/documents/employee_categories/{id}:
@@ -4200,8 +4200,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee_document_category"
+      x-speakeasy-group: "hris.documents.employeeCategories"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/work_eligibility:
     get:
@@ -4367,8 +4367,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_work_eligibility"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "workEligibilityList"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -4467,8 +4467,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "create_employee_work_eligibility_request"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "createWorkEligibilityRequest"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/work_eligibility/{subResourceId}:
     get:
@@ -4592,8 +4592,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employees_work_eligibility"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "getWorkEligibility"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -4692,8 +4692,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "update_employee_work_eligibility_request"
+      x-speakeasy-group: "hris.employees.workEligibility"
+      x-speakeasy-name-override: "updateRequest"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/time_off_balances:
     get:
@@ -4875,7 +4875,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_time_off_balances"
+      x-speakeasy-name-override: "listEmployeeTimeOffBalances"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/time_off_balances/{subResourceId}:
@@ -5009,7 +5009,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee_time_off_balance"
+      x-speakeasy-name-override: "getEmployeeTimeOffBalance"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employments:
     get:
@@ -5177,8 +5177,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employments"
+      x-speakeasy-group: "hris.employments"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employments/{id}:
@@ -5306,7 +5306,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employment"
+      x-speakeasy-name-override: "getEmployment"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/employments:
     get:
@@ -5480,8 +5480,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_employments"
+      x-speakeasy-group: "hris.employees.employments"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -5580,8 +5580,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "create_employee_employment"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "createEmployment"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/employments/{subResourceId}:
     get:
@@ -5713,8 +5713,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee_employment"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "getEmployment"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -5817,8 +5817,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "update_employee_employment"
+      x-speakeasy-group: "hris.employees.employments"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups:
     get:
@@ -5978,8 +5978,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_groups"
+      x-speakeasy-group: "hris.groups"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/departments:
@@ -6140,8 +6140,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_department_groups"
+      x-speakeasy-group: "hris.groups"
+      x-speakeasy-name-override: "listDepartments"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/cost_centers:
@@ -6302,8 +6302,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_cost_center_groups"
+      x-speakeasy-group: "hris.groups"
+      x-speakeasy-name-override: "listCostCenters"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/teams:
@@ -6464,8 +6464,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_team_groups"
+      x-speakeasy-group: "hris.groups"
+      x-speakeasy-name-override: "listTeams"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/divisions:
@@ -6626,8 +6626,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_division_groups"
+      x-speakeasy-group: "hris.groups"
+      x-speakeasy-name-override: "listDivisions"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/companies:
@@ -6788,8 +6788,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_companies_groups"
+      x-speakeasy-group: "hris.groups.companies"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/{id}:
@@ -6909,7 +6909,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_group"
+      x-speakeasy-name-override: "getGroup"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/departments/{id}:
     get:
@@ -7027,8 +7027,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_department_group"
+      x-speakeasy-group: "hris.departments"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/cost_centers/{id}:
     get:
@@ -7146,8 +7146,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_cost_center_group"
+      x-speakeasy-group: "hris.groups.costCenters"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/teams/{id}:
     get:
@@ -7266,7 +7266,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_team_group"
+      x-speakeasy-name-override: "getTeamGroup"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/divisions/{id}:
     get:
@@ -7384,8 +7384,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_division_group"
+      x-speakeasy-group: "hris.groups.divisions"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/groups/companies/{id}:
     get:
@@ -7503,8 +7503,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_company_group"
+      x-speakeasy-group: "hris.companies"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/jobs:
     get:
@@ -7664,8 +7664,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_jobs"
+      x-speakeasy-group: "hris.jobs"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/jobs/{id}:
@@ -7784,8 +7784,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_job"
+      x-speakeasy-group: "hris.jobs"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/locations:
     get:
@@ -7945,8 +7945,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_locations"
+      x-speakeasy-group: "hris.locations"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/locations/{id}:
@@ -8066,7 +8066,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_location"
+      x-speakeasy-name-override: "getLocation"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/positions:
     get:
@@ -8241,7 +8241,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_positions"
+      x-speakeasy-name-override: "listPositions"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/positions/{id}:
@@ -8360,7 +8360,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_position"
+      x-speakeasy-name-override: "getPosition"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_entries:
     get:
@@ -8538,7 +8538,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_time_entries"
+      x-speakeasy-name-override: "listTimeEntries"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_entries/{id}:
@@ -8658,7 +8658,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_time_entries"
+      x-speakeasy-name-override: "getTimeEntry"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_off:
     get:
@@ -8832,8 +8832,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_time_off_requests"
+      x-speakeasy-group: "hris.timeOff"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_off/{id}:
@@ -8961,7 +8961,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_time_off_request"
+      x-speakeasy-name-override: "getTimeOffRequest"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/shifts:
     get:
@@ -9145,7 +9145,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_shifts"
+      x-speakeasy-name-override: "listShifts"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/shifts/{id}:
@@ -9263,8 +9263,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_shift"
+      x-speakeasy-group: "hris.shifts"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_off_types:
     get:
@@ -9426,7 +9426,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_time_off_types"
+      x-speakeasy-name-override: "listTimeOffTypes"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_off_types/{id}:
@@ -9546,8 +9546,8 @@ paths:
       deprecated: true
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_time_off_type"
+      x-speakeasy-group: "hris.timeOffTypes"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_off_policies:
     get:
@@ -9736,7 +9736,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_time_off_policies"
+      x-speakeasy-name-override: "listTimeOffPolicies"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/time_off_policies/{id}:
@@ -9856,7 +9856,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_time_off_policy"
+      x-speakeasy-name-override: "getTimeOffPolicy"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/time_off_policies:
     get:
@@ -10050,8 +10050,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_time_off_policies"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "listTimeOffPolicies"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/benefits:
@@ -10213,7 +10213,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_benefits"
+      x-speakeasy-name-override: "listBenefits"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/benefits/{id}:
@@ -10332,8 +10332,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_benefit"
+      x-speakeasy-group: "hris.benefits"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/skills:
     get:
@@ -10499,8 +10499,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_skills"
+      x-speakeasy-group: "hris.employees.skills"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -10600,7 +10600,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "create_employee_skill"
+      x-speakeasy-name-override: "createEmployeeSkill"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/skills/{subResourceId}:
     get:
@@ -10724,8 +10724,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee_skill"
+      x-speakeasy-group: "hris.employees"
+      x-speakeasy-name-override: "getSkill"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/tasks:
     get:
@@ -10899,8 +10899,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_employee_tasks"
+      x-speakeasy-group: "hris.employees.tasks"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/tasks/{subResourceId}:
@@ -11034,7 +11034,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_employee_task"
+      x-speakeasy-name-override: "getEmployeeTask"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -11143,8 +11143,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "complete_employee_task"
+      x-speakeasy-group: "hris.employees.tasks"
+      x-speakeasy-name-override: "complete"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/tasks:
     get:
@@ -11312,8 +11312,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "list_tasks"
+      x-speakeasy-group: "hris.tasks"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/tasks/{id}:
@@ -11441,7 +11441,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "hris"
-      x-speakeasy-name-override: "get_task"
+      x-speakeasy-name-override: "getTask"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications:
     get:
@@ -11649,7 +11649,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_applications"
+      x-speakeasy-name-override: "listApplications"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -11742,8 +11742,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "create_application"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "create"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}:
     get:
@@ -11878,7 +11878,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -11975,8 +11975,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "update_application"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/offers:
     get:
@@ -12150,8 +12150,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_applications_offers"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "listOffers"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/move:
@@ -12250,8 +12250,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "move_application"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "move"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/reject:
     post:
@@ -12349,8 +12349,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "reject_application"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "reject"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/offers/{subResourceId}:
     get:
@@ -12474,8 +12474,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application_offer"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "getOffer"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/scorecards:
     get:
@@ -12649,8 +12649,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_application_scorecards"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "scorecardsList"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/scorecards/{subResourceId}:
@@ -12774,8 +12774,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application_scorecard"
+      x-speakeasy-group: "applications"
+      x-speakeasy-name-override: "getScorecard"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/changes:
     get:
@@ -12934,7 +12934,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_application_changes"
+      x-speakeasy-name-override: "getApplicationChanges"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/notes:
@@ -13110,7 +13110,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_application_notes"
+      x-speakeasy-name-override: "listApplicationNotes"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -13210,7 +13210,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "create_application_note"
+      x-speakeasy-name-override: "createApplicationNote"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/notes/{subResourceId}:
     get:
@@ -13335,7 +13335,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application_note"
+      x-speakeasy-name-override: "getNote"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -13439,7 +13439,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "update_application_note"
+      x-speakeasy-name-override: "updateNote"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/scheduled_interviews:
     get:
@@ -13613,8 +13613,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_applications_scheduled_interviews"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "listScheduledInterviews"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/scheduled_interviews/{subResourceId}:
@@ -13739,8 +13739,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application_scheduled_interview"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "getScheduledInterview"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/documents/upload:
     post:
@@ -13840,7 +13840,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "upload_application_document"
+      x-speakeasy-name-override: "documentsUpload"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/documents/{subResourceId}/download:
     get:
@@ -13957,8 +13957,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "download_application_document"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "downloadDocument"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/documents:
     get:
@@ -14136,8 +14136,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_application_documents"
+      x-speakeasy-group: "ats.applications.documents"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/applications/{id}/documents/{subResourceId}:
@@ -14263,7 +14263,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application_document"
+      x-speakeasy-name-override: "getDocument"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/candidates:
     get:
@@ -14450,7 +14450,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_candidates"
+      x-speakeasy-name-override: "listCandidates"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -14543,8 +14543,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "create_candidate"
+      x-speakeasy-group: "ats.candidates"
+      x-speakeasy-name-override: "create"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/candidates/{id}:
     get:
@@ -14670,8 +14670,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_candidate"
+      x-speakeasy-group: "ats.candidates"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -14769,7 +14769,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "update_candidate"
+      x-speakeasy-name-override: "updateCandidate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/candidates/{id}/notes:
     get:
@@ -14943,8 +14943,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_candidate_notes"
+      x-speakeasy-group: "ats.candidates.notes"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -15044,7 +15044,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "create_candidate_note"
+      x-speakeasy-name-override: "createNote"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/candidates/{id}/notes/{subResourceId}:
     get:
@@ -15169,7 +15169,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_candidate_note"
+      x-speakeasy-name-override: "getCandidateNote"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/custom_field_definitions/applications:
     get:
@@ -15329,8 +15329,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_application_custom_field_definitions"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "listCustomFieldDefinitions"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/custom_field_definitions/applications/{id}:
@@ -15496,8 +15496,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application_custom_field_definition"
+      x-speakeasy-group: "ats.applications"
+      x-speakeasy-name-override: "getCustomFieldDefinition"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/custom_field_definitions/candidates:
     get:
@@ -15657,8 +15657,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_candidate_custom_field_definitions"
+      x-speakeasy-group: "ats.customFieldDefinitions"
+      x-speakeasy-name-override: "listCandidates"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/custom_field_definitions/candidates/{id}:
@@ -15824,8 +15824,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_candidate_custom_field_definition"
+      x-speakeasy-group: "ats.candidates.customFieldDefinitions"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/custom_field_definitions/jobs:
     get:
@@ -15986,7 +15986,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_job_custom_field_definitions"
+      x-speakeasy-name-override: "listJobCustomFieldDefinitions"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/custom_field_definitions/jobs/{id}:
@@ -16152,8 +16152,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_job_custom_field_definition"
+      x-speakeasy-group: "ats.customFieldDefinitions"
+      x-speakeasy-name-override: "getJob"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/departments:
     get:
@@ -16322,7 +16322,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_departments"
+      x-speakeasy-name-override: "getDepartments"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/departments/{id}:
@@ -16441,8 +16441,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_department"
+      x-speakeasy-group: "ats.departments"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/interview_stages:
     get:
@@ -16610,8 +16610,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_interview_stages"
+      x-speakeasy-group: "ats.interviewStages"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/interview_stages/{id}:
@@ -16730,8 +16730,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_interview_stage"
+      x-speakeasy-group: "ats.interviewStages"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/interviews:
     get:
@@ -16905,8 +16905,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_interviews"
+      x-speakeasy-group: "ats.interviews"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/interviews/{id}:
@@ -17025,8 +17025,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_interview"
+      x-speakeasy-group: "interviews"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/jobs:
     get:
@@ -17234,7 +17234,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_jobs"
+      x-speakeasy-name-override: "listJobs"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -17328,7 +17328,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "create_job"
+      x-speakeasy-name-override: "createJob"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/jobs/{id}:
     get:
@@ -17462,8 +17462,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_job"
+      x-speakeasy-group: "ats.jobs"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -17561,7 +17561,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "update_job"
+      x-speakeasy-name-override: "updateJob"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/lists:
     get:
@@ -17721,8 +17721,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_lists"
+      x-speakeasy-group: "ats.lists"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/lists/{id}:
@@ -17841,8 +17841,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_list"
+      x-speakeasy-group: "ats.lists"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/locations:
     get:
@@ -18010,8 +18010,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_locations"
+      x-speakeasy-group: "ats.locations"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/locations/{id}:
@@ -18130,8 +18130,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_location"
+      x-speakeasy-group: "ats.locations"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/rejected_reasons:
     get:
@@ -18299,8 +18299,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_rejected_reasons"
+      x-speakeasy-group: "ats.rejectedReasons"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/rejected_reasons/{id}:
@@ -18419,8 +18419,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_rejected_reason"
+      x-speakeasy-group: "ats.rejectedReasons"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/users:
     get:
@@ -18588,8 +18588,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_users"
+      x-speakeasy-group: "ats.users"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/users/{id}:
@@ -18709,7 +18709,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_user"
+      x-speakeasy-name-override: "getUser"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/job_postings:
     get:
@@ -18892,7 +18892,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_job_postings"
+      x-speakeasy-name-override: "listJobPostings"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/job_postings/{id}:
@@ -19019,8 +19019,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_job_posting"
+      x-speakeasy-group: "ats.jobPostings"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/offers:
     get:
@@ -19188,8 +19188,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_offers"
+      x-speakeasy-group: "ats.offers"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -19282,8 +19282,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "create_offer"
+      x-speakeasy-group: "ats.offers"
+      x-speakeasy-name-override: "create"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/offers/{id}:
     get:
@@ -19401,8 +19401,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_offer"
+      x-speakeasy-group: "ats.offers"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/assessments/packages:
     get:
@@ -19558,8 +19558,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_assessments_packages"
+      x-speakeasy-group: "ats.assessments"
+      x-speakeasy-name-override: "packagesList"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/assessments/packages/{id}:
@@ -19676,8 +19676,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_assessments_package"
+      x-speakeasy-group: "ats.assessments.packages"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/assessments/orders:
     post:
@@ -19772,7 +19772,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "order_assessments_request"
+      x-speakeasy-name-override: "orderAssessments"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/assessments/orders/{id}/result:
     patch:
@@ -19872,7 +19872,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "update_assessments_result"
+      x-speakeasy-name-override: "assessmentsUpdateResult"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/assessments/orders/{id}/results:
     get:
@@ -19991,8 +19991,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_assessments_result"
+      x-speakeasy-group: "ats.assessments"
+      x-speakeasy-name-override: "getResults"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/background_checks/packages:
     get:
@@ -20149,8 +20149,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_background_check_packages"
+      x-speakeasy-group: "ats.backgroundChecks"
+      x-speakeasy-name-override: "packagesList"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -20244,8 +20244,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "create_background_check_package"
+      x-speakeasy-group: "ats.backgroundChecks"
+      x-speakeasy-name-override: "createPackage"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/background_checks/packages/{id}:
     get:
@@ -20362,8 +20362,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_background_check_package"
+      x-speakeasy-group: "ats.backgroundChecks.packages"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     delete:
       tags:
@@ -20456,8 +20456,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "delete_background_check_package"
+      x-speakeasy-group: "backgroundChecks"
+      x-speakeasy-name-override: "deletePackage"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -20556,7 +20556,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "update_background_check_package"
+      x-speakeasy-name-override: "updateBackgroundCheckPackage"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/background_checks/orders:
     post:
@@ -20651,7 +20651,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "order_background_check_request"
+      x-speakeasy-name-override: "orderBackgroundCheck"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/background_checks/orders/{id}/result:
     patch:
@@ -20751,7 +20751,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "update_background_check_result"
+      x-speakeasy-name-override: "updateBackgroundCheckResult"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/background_checks/orders/{id}/results:
     get:
@@ -20870,8 +20870,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_background_check_result"
+      x-speakeasy-group: "ats.backgroundChecks"
+      x-speakeasy-name-override: "getResults"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/documents/application_categories:
     get:
@@ -21031,8 +21031,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "list_application_document_categories"
+      x-speakeasy-group: "documents"
+      x-speakeasy-name-override: "listApplicationCategories"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/documents/application_categories/{id}:
@@ -21151,8 +21151,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ats"
-      x-speakeasy-name-override: "get_application_document_category"
+      x-speakeasy-group: "ats.documents.applicationCategories"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/contacts:
     get:
@@ -21320,8 +21320,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "list_contacts"
+      x-speakeasy-group: "crm.contacts"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -21414,8 +21414,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "create_contact"
+      x-speakeasy-group: "crm.contacts"
+      x-speakeasy-name-override: "create"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/contacts/{id}:
     get:
@@ -21542,7 +21542,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "get_contact"
+      x-speakeasy-name-override: "getContact"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -21640,7 +21640,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "update_contact"
+      x-speakeasy-name-override: "updateContact"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/accounts:
     get:
@@ -21801,7 +21801,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "list_accounts"
+      x-speakeasy-name-override: "listAccounts"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/accounts/{id}:
@@ -21921,7 +21921,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "get_account"
+      x-speakeasy-name-override: "getAccount"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/lists:
     get:
@@ -22081,8 +22081,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "list_lists"
+      x-speakeasy-group: "crm.lists"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/lists/{id}:
@@ -22201,8 +22201,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "get_list"
+      x-speakeasy-group: "crm.lists"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/custom_field_definitions/contacts:
     get:
@@ -22362,8 +22362,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "list_contact_custom_field_definitions"
+      x-speakeasy-group: "crm.customFieldDefinitions.contacts"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/crm/custom_field_definitions/contacts/{id}:
@@ -22529,8 +22529,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "crm"
-      x-speakeasy-name-override: "get_contact_custom_field_definition"
+      x-speakeasy-group: "crm.customFieldDefinitions.contacts"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/users:
     get:
@@ -22698,8 +22698,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "list_users"
+      x-speakeasy-group: "iam.users"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/users/{id}:
@@ -22826,8 +22826,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "get_user"
+      x-speakeasy-group: "iam.users"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     delete:
       tags:
@@ -22922,7 +22922,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "delete_user"
+      x-speakeasy-name-override: "deleteUser"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -23019,8 +23019,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "update_user"
+      x-speakeasy-group: "iam.users"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/roles:
     get:
@@ -23189,7 +23189,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "list_roles"
+      x-speakeasy-name-override: "listRoles"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/roles/{id}:
@@ -23317,7 +23317,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "get_role"
+      x-speakeasy-name-override: "getRole"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/groups:
     get:
@@ -23485,8 +23485,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "list_groups"
+      x-speakeasy-group: "iam.groups"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/groups/{id}:
@@ -23614,7 +23614,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "get_group"
+      x-speakeasy-name-override: "getGroup"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/policies:
     get:
@@ -23783,7 +23783,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "list_policies"
+      x-speakeasy-name-override: "listPolicies"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/iam/policies/{id}:
@@ -23910,8 +23910,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "iam"
-      x-speakeasy-name-override: "get_policy"
+      x-speakeasy-group: "iam.policies"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/email:
     get:
@@ -24073,7 +24073,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "list_email_templates"
+      x-speakeasy-name-override: "templatesListEmail"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -24168,7 +24168,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "create_email_template"
+      x-speakeasy-name-override: "createEmailTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/email/{id}:
     get:
@@ -24288,7 +24288,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "get_email_template"
+      x-speakeasy-name-override: "getEmailTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -24387,7 +24387,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "update_email_template"
+      x-speakeasy-name-override: "updateEmailTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/in_app:
     get:
@@ -24549,7 +24549,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "list_in_app_templates"
+      x-speakeasy-name-override: "templatesListInApp"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -24644,7 +24644,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "create_in_app_template"
+      x-speakeasy-name-override: "createInAppTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/in_app/{id}:
     get:
@@ -24763,8 +24763,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "get_in_app_template"
+      x-speakeasy-group: "marketing.templates.inApp"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -24862,8 +24862,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "update_in_app_template"
+      x-speakeasy-group: "marketing.templates.inApp"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/sms:
     get:
@@ -25025,7 +25025,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "list_sms_templates"
+      x-speakeasy-name-override: "listSmsTemplates"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -25120,7 +25120,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "create_sms_template"
+      x-speakeasy-name-override: "createSmsTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/sms/{id}:
     get:
@@ -25239,8 +25239,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "get_sms_template"
+      x-speakeasy-group: "marketing.templates.sms"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -25339,7 +25339,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "update_sms_template"
+      x-speakeasy-name-override: "updateSmsTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/omni_channel:
     get:
@@ -25502,7 +25502,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "list_omni_channel_templates"
+      x-speakeasy-name-override: "listOmniChannelTemplates"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -25597,8 +25597,8 @@ paths:
       deprecated: true
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "create_omni_channel_template"
+      x-speakeasy-group: "marketing.templates"
+      x-speakeasy-name-override: "createOmniChannel"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/omni_channel/{id}:
     get:
@@ -25719,7 +25719,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "get_omni_channel_template"
+      x-speakeasy-name-override: "getOmniChannelTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -25819,7 +25819,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "update_omni_channel_template"
+      x-speakeasy-name-override: "updateOmniChannelTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/push:
     get:
@@ -25981,7 +25981,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "list_push_templates"
+      x-speakeasy-name-override: "templatesListPush"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -26075,8 +26075,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "create_push_template"
+      x-speakeasy-group: "marketing.templates"
+      x-speakeasy-name-override: "createPush"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/templates/push/{id}:
     get:
@@ -26195,8 +26195,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "get_push_template"
+      x-speakeasy-group: "marketing.templates"
+      x-speakeasy-name-override: "getPush"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -26295,7 +26295,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "update_push_template"
+      x-speakeasy-name-override: "updatePushTemplate"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/campaigns:
     get:
@@ -26455,8 +26455,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "list_campaigns"
+      x-speakeasy-group: "marketing.campaigns"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/campaigns/{id}:
@@ -26575,8 +26575,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "get_campaign"
+      x-speakeasy-group: "marketing.campaigns"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/content_blocks:
     get:
@@ -26737,7 +26737,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "list_content_blocks"
+      x-speakeasy-name-override: "listContentBlocks"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -26831,7 +26831,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "create_content_block"
+      x-speakeasy-name-override: "createContentBlock"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/marketing/content_blocks/{id}:
     get:
@@ -26950,7 +26950,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "get_content_block"
+      x-speakeasy-name-override: "getContentBlock"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -27047,8 +27047,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "marketing"
-      x-speakeasy-name-override: "update_content_block"
+      x-speakeasy-group: "marketing.contentBlocks"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/courses:
     get:
@@ -27212,8 +27212,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_courses"
+      x-speakeasy-group: "courses"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/courses/{id}:
@@ -27331,7 +27331,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_course"
+      x-speakeasy-name-override: "getCourse"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/users/{id}/assignments:
     get:
@@ -27519,7 +27519,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_user_assignments"
+      x-speakeasy-name-override: "listUserAssignments"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -27618,8 +27618,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "create_user_assignment"
+      x-speakeasy-group: "lms.assignments"
+      x-speakeasy-name-override: "create"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/users/{id}/assignments/{subResourceId}:
     get:
@@ -27742,8 +27742,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_user_assignment"
+      x-speakeasy-group: "lms.usersAssignments"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/content/batch:
     post:
@@ -27837,7 +27837,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "batch_upsert_content"
+      x-speakeasy-name-override: "batchUpsertContent"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/content:
     get:
@@ -27998,7 +27998,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_content"
+      x-speakeasy-name-override: "listContent"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     put:
@@ -28091,8 +28091,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "upsert_content"
+      x-speakeasy-group: "lms.content"
+      x-speakeasy-name-override: "upsert"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/content/{id}:
     get:
@@ -28208,8 +28208,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_content"
+      x-speakeasy-group: "lms.content"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -28306,8 +28306,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "update_content"
+      x-speakeasy-group: "lms.content"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/users/{id}/completions:
     get:
@@ -28469,8 +28469,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_user_completions"
+      x-speakeasy-group: "lms.users"
+      x-speakeasy-name-override: "listCompletions"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -28570,7 +28570,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "create_user_completion"
+      x-speakeasy-name-override: "createUserCompletion"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/users/{id}/completions/{subResourceId}:
     get:
@@ -28694,7 +28694,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_user_completion"
+      x-speakeasy-name-override: "getUserCompletion"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     delete:
       tags:
@@ -28795,7 +28795,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "delete_user_completion"
+      x-speakeasy-name-override: "deleteUserCompletion"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/completions:
     get:
@@ -28955,8 +28955,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_completions"
+      x-speakeasy-group: "lms.completions"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/completions/{id}:
@@ -29072,8 +29072,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_completion"
+      x-speakeasy-group: "lms.completions"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/categories/{id}:
     get:
@@ -29190,7 +29190,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_category"
+      x-speakeasy-name-override: "getCategory"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/categories:
     get:
@@ -29348,8 +29348,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_categories"
+      x-speakeasy-group: "lms.categories"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/users:
@@ -29519,7 +29519,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_users"
+      x-speakeasy-name-override: "listUsers"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/users/{id}:
@@ -29637,7 +29637,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_user"
+      x-speakeasy-name-override: "getUser"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/skills/{id}:
     get:
@@ -29753,8 +29753,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_skill"
+      x-speakeasy-group: "lms.skills"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/skills:
     get:
@@ -29913,7 +29913,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_skills"
+      x-speakeasy-name-override: "listSkills"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/assignments:
@@ -30095,8 +30095,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "list_assignments"
+      x-speakeasy-group: "lms.assignments"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/assignments/{id}:
@@ -30214,8 +30214,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "lms"
-      x-speakeasy-name-override: "get_assignment"
+      x-speakeasy-group: "lms.assignments"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets:
     get:
@@ -30376,8 +30376,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_tickets"
+      x-speakeasy-group: "ticketing.tickets"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     post:
@@ -30471,8 +30471,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "create_ticket"
+      x-speakeasy-group: "ticketing.tickets"
+      x-speakeasy-name-override: "create"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}:
     get:
@@ -30591,8 +30591,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "get_ticket"
+      x-speakeasy-group: "ticketing.tickets"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
@@ -30690,8 +30690,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "update_ticket"
+      x-speakeasy-group: "ticketing.tickets"
+      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/users:
     get:
@@ -30852,8 +30852,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_users"
+      x-speakeasy-group: "ticketing.users"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/users/{id}:
@@ -30974,7 +30974,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "get_user"
+      x-speakeasy-name-override: "getUser"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}/comments:
     get:
@@ -31141,8 +31141,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_comments"
+      x-speakeasy-group: "ticketing.tickets.comments"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}/comments/{subResourceId}:
@@ -31268,8 +31268,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "get_comment"
+      x-speakeasy-group: "ticketing.comments"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}/attachments/{subResourceId}/download:
     get:
@@ -31388,7 +31388,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "download_ticketing_attachment"
+      x-speakeasy-name-override: "downloadAttachment"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}/attachments:
     get:
@@ -31555,8 +31555,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_attachments"
+      x-speakeasy-group: "ticketing.tickets"
+      x-speakeasy-name-override: "listAttachments"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}/attachments/{subResourceId}:
@@ -31682,8 +31682,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "get_attachment"
+      x-speakeasy-group: "ticketing.tickets.attachments"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/ticket_types:
     get:
@@ -31845,7 +31845,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_ticket_types"
+      x-speakeasy-name-override: "listTicketTypes"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/ticket_types/{id}:
@@ -31966,7 +31966,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "get_ticket_type"
+      x-speakeasy-name-override: "getTicketType"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/collections:
     get:
@@ -32136,7 +32136,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_collections"
+      x-speakeasy-name-override: "listCollections"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/collections/{id}:
@@ -32256,8 +32256,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "get_collection"
+      x-speakeasy-group: "ticketing.collections"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/collections/{id}/ticket_types:
     get:
@@ -32425,7 +32425,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_collection_ticket_types"
+      x-speakeasy-name-override: "listCollectionTicketTypes"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}/statuses:
@@ -32592,8 +32592,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "list_ticket_statuses"
+      x-speakeasy-group: "ticketing.tickets"
+      x-speakeasy-name-override: "listStatuses"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/files/{id}/download:
@@ -32711,8 +32711,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "download_file"
+      x-speakeasy-group: "documents.files"
+      x-speakeasy-name-override: "download"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/files/upload:
     post:
@@ -32812,7 +32812,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "upload_file"
+      x-speakeasy-name-override: "uploadFile"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/files:
     get:
@@ -32974,8 +32974,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "list_files"
+      x-speakeasy-group: "documents.files"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/files/{id}:
@@ -33100,8 +33100,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "get_file"
+      x-speakeasy-group: "documents.files"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/folders:
     get:
@@ -33257,8 +33257,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "list_folders"
+      x-speakeasy-group: "documents.folders"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/folders/{id}:
@@ -33377,8 +33377,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "get_folder"
+      x-speakeasy-group: "documents.folders"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/drives:
     get:
@@ -33534,8 +33534,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "list_drives"
+      x-speakeasy-group: "documents.drives"
+      x-speakeasy-name-override: "list"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/documents/drives/{id}:
@@ -33654,8 +33654,8 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "documents"
-      x-speakeasy-name-override: "get_drive"
+      x-speakeasy-group: "drives"
+      x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
 components:
   schemas:

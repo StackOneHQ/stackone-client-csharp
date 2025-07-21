@@ -135,7 +135,7 @@ namespace StackOne.Client.Models.Components
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("cost_centers")]
-        public List<CostCenters>? CostCenters { get; set; } = null;
+        public List<Models.Components.CostCenters>? CostCenters { get; set; } = null;
 
         /// <summary>
         /// The employee manager ID

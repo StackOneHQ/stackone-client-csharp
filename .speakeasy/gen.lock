@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: 58d58af9f140f100719b8a1474980083
+  docChecksum: 3e36a82e516bc6c1a34b70dce9ada614
   docVersion: 1.0.0
   speakeasyVersion: 1.583.0
   generationVersion: 2.658.3
-  releaseVersion: 0.2.0
-  configChecksum: 51dded6c104d538c1d82e5d5af526fc5
+  releaseVersion: 0.2.3
+  configChecksum: 7cb9db55b1dee83c82d9bef6a4b01c1c
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
 features:
   csharp:
@@ -2114,31 +2114,167 @@ generatedFiles:
   - docs/Models/Requests/TicketingUpdateTicketRequest.md
   - docs/Models/Requests/TicketingUpdateTicketResponse.md
   - docs/sdks/accounts/README.md
+  - docs/sdks/applicationcategories/README.md
+  - docs/sdks/applications/README.md
+  - docs/sdks/applicationsdocuments/README.md
+  - docs/sdks/assessments/README.md
+  - docs/sdks/assessmentspackages/README.md
+  - docs/sdks/assignments/README.md
   - docs/sdks/ats/README.md
+  - docs/sdks/atsapplications/README.md
+  - docs/sdks/atsbackgroundchecks/README.md
+  - docs/sdks/atscustomfielddefinitions/README.md
+  - docs/sdks/atsdepartments/README.md
+  - docs/sdks/atsinterviews/README.md
+  - docs/sdks/atsjobs/README.md
+  - docs/sdks/atslists/README.md
+  - docs/sdks/atslocations/README.md
+  - docs/sdks/atsusers/README.md
+  - docs/sdks/attachments/README.md
+  - docs/sdks/backgroundchecks/README.md
+  - docs/sdks/backgroundcheckspackages/README.md
+  - docs/sdks/benefits/README.md
+  - docs/sdks/campaigns/README.md
+  - docs/sdks/candidates/README.md
+  - docs/sdks/candidatescustomfielddefinitions/README.md
+  - docs/sdks/categories/README.md
+  - docs/sdks/collections/README.md
+  - docs/sdks/comments/README.md
+  - docs/sdks/companies/README.md
+  - docs/sdks/completions/README.md
   - docs/sdks/connectors/README.md
   - docs/sdks/connectsessions/README.md
+  - docs/sdks/contacts/README.md
+  - docs/sdks/content/README.md
+  - docs/sdks/contentblocks/README.md
+  - docs/sdks/costcenters/README.md
+  - docs/sdks/courses/README.md
   - docs/sdks/crm/README.md
+  - docs/sdks/crmlists/README.md
+  - docs/sdks/customfielddefinitionscontacts/README.md
+  - docs/sdks/divisions/README.md
   - docs/sdks/documents/README.md
+  - docs/sdks/documentsdrives/README.md
+  - docs/sdks/drives/README.md
+  - docs/sdks/employeecategories/README.md
+  - docs/sdks/employees/README.md
+  - docs/sdks/employeesdocuments/README.md
+  - docs/sdks/employeesemployments/README.md
+  - docs/sdks/employeesskills/README.md
+  - docs/sdks/employeestasks/README.md
+  - docs/sdks/employments/README.md
+  - docs/sdks/files/README.md
+  - docs/sdks/folders/README.md
+  - docs/sdks/groupscompanies/README.md
   - docs/sdks/hris/README.md
+  - docs/sdks/hrisdepartments/README.md
+  - docs/sdks/hrisgroups/README.md
+  - docs/sdks/hrisjobs/README.md
+  - docs/sdks/hrislocations/README.md
   - docs/sdks/iam/README.md
+  - docs/sdks/iamgroups/README.md
+  - docs/sdks/iamusers/README.md
+  - docs/sdks/inapp/README.md
+  - docs/sdks/interviews/README.md
+  - docs/sdks/interviewstages/README.md
+  - docs/sdks/jobpostings/README.md
   - docs/sdks/lms/README.md
+  - docs/sdks/lmsskills/README.md
+  - docs/sdks/lmsusers/README.md
   - docs/sdks/marketing/README.md
+  - docs/sdks/notes/README.md
+  - docs/sdks/offers/README.md
+  - docs/sdks/policies/README.md
   - docs/sdks/proxy/README.md
+  - docs/sdks/rejectedreasons/README.md
   - docs/sdks/requestlogs/README.md
+  - docs/sdks/shifts/README.md
+  - docs/sdks/sms/README.md
   - docs/sdks/stackoneclient/README.md
+  - docs/sdks/tasks/README.md
+  - docs/sdks/templates/README.md
   - docs/sdks/ticketing/README.md
+  - docs/sdks/ticketingusers/README.md
+  - docs/sdks/tickets/README.md
+  - docs/sdks/ticketscomments/README.md
+  - docs/sdks/timeoff/README.md
+  - docs/sdks/timeofftypes/README.md
+  - docs/sdks/usersassignments/README.md
+  - docs/sdks/workeligibility/README.md
   - global.json
   - src/StackOne/Client/Accounts.cs
+  - src/StackOne/Client/ApplicationCategories.cs
+  - src/StackOne/Client/Applications.cs
+  - src/StackOne/Client/ApplicationsDocuments.cs
+  - src/StackOne/Client/Assessments.cs
+  - src/StackOne/Client/AssessmentsPackages.cs
+  - src/StackOne/Client/Assignments.cs
   - src/StackOne/Client/Ats.cs
+  - src/StackOne/Client/AtsApplications.cs
+  - src/StackOne/Client/AtsBackgroundChecks.cs
+  - src/StackOne/Client/AtsCustomFieldDefinitions.cs
+  - src/StackOne/Client/AtsDepartments.cs
+  - src/StackOne/Client/AtsDocuments.cs
+  - src/StackOne/Client/AtsInterviews.cs
+  - src/StackOne/Client/AtsJobs.cs
+  - src/StackOne/Client/AtsLists.cs
+  - src/StackOne/Client/AtsLocations.cs
+  - src/StackOne/Client/AtsUsers.cs
+  - src/StackOne/Client/Attachments.cs
+  - src/StackOne/Client/BackgroundChecks.cs
+  - src/StackOne/Client/BackgroundChecksPackages.cs
+  - src/StackOne/Client/Benefits.cs
+  - src/StackOne/Client/Campaigns.cs
+  - src/StackOne/Client/Candidates.cs
+  - src/StackOne/Client/CandidatesCustomFieldDefinitions.cs
+  - src/StackOne/Client/Categories.cs
+  - src/StackOne/Client/Collections.cs
+  - src/StackOne/Client/Comments.cs
+  - src/StackOne/Client/Companies.cs
+  - src/StackOne/Client/Completions.cs
   - src/StackOne/Client/ConnectSessions.cs
   - src/StackOne/Client/Connectors.cs
+  - src/StackOne/Client/Contacts.cs
+  - src/StackOne/Client/Content.cs
+  - src/StackOne/Client/ContentBlocks.cs
+  - src/StackOne/Client/CostCenters.cs
+  - src/StackOne/Client/Courses.cs
   - src/StackOne/Client/Crm.cs
+  - src/StackOne/Client/CrmCustomFieldDefinitions.cs
+  - src/StackOne/Client/CrmLists.cs
+  - src/StackOne/Client/CustomFieldDefinitionsContacts.cs
+  - src/StackOne/Client/Divisions.cs
   - src/StackOne/Client/Documents.cs
+  - src/StackOne/Client/DocumentsDrives.cs
+  - src/StackOne/Client/Drives.cs
+  - src/StackOne/Client/EmployeeCategories.cs
+  - src/StackOne/Client/Employees.cs
+  - src/StackOne/Client/EmployeesDocuments.cs
+  - src/StackOne/Client/EmployeesEmployments.cs
+  - src/StackOne/Client/EmployeesSkills.cs
+  - src/StackOne/Client/EmployeesTasks.cs
+  - src/StackOne/Client/Employments.cs
+  - src/StackOne/Client/Files.cs
+  - src/StackOne/Client/Folders.cs
+  - src/StackOne/Client/GroupsCompanies.cs
   - src/StackOne/Client/Hooks/HookTypes.cs
   - src/StackOne/Client/Hooks/SDKHooks.cs
   - src/StackOne/Client/Hris.cs
+  - src/StackOne/Client/HrisDepartments.cs
+  - src/StackOne/Client/HrisDocuments.cs
+  - src/StackOne/Client/HrisGroups.cs
+  - src/StackOne/Client/HrisJobs.cs
+  - src/StackOne/Client/HrisLocations.cs
   - src/StackOne/Client/Iam.cs
+  - src/StackOne/Client/IamGroups.cs
+  - src/StackOne/Client/IamUsers.cs
+  - src/StackOne/Client/InApp.cs
+  - src/StackOne/Client/InterviewStages.cs
+  - src/StackOne/Client/Interviews.cs
+  - src/StackOne/Client/JobPostings.cs
   - src/StackOne/Client/Lms.cs
+  - src/StackOne/Client/LmsSkills.cs
+  - src/StackOne/Client/LmsUsers.cs
   - src/StackOne/Client/Marketing.cs
   - src/StackOne/Client/Models/Components/ATSLocation.cs
   - src/StackOne/Client/Models/Components/ATSLocationResult.cs
@@ -4220,12 +4356,26 @@ generatedFiles:
   - src/StackOne/Client/Models/Requests/TicketingListUsersResponse.cs
   - src/StackOne/Client/Models/Requests/TicketingUpdateTicketRequest.cs
   - src/StackOne/Client/Models/Requests/TicketingUpdateTicketResponse.cs
+  - src/StackOne/Client/Notes.cs
+  - src/StackOne/Client/Offers.cs
+  - src/StackOne/Client/Policies.cs
   - src/StackOne/Client/Proxy.cs
+  - src/StackOne/Client/RejectedReasons.cs
   - src/StackOne/Client/RequestLogs.cs
   - src/StackOne/Client/SDKConfig.cs
+  - src/StackOne/Client/Shifts.cs
+  - src/StackOne/Client/Sms.cs
   - src/StackOne/Client/StackOne.Client.csproj
   - src/StackOne/Client/StackOneClient.cs
+  - src/StackOne/Client/Tasks.cs
+  - src/StackOne/Client/Templates.cs
   - src/StackOne/Client/Ticketing.cs
+  - src/StackOne/Client/TicketingUsers.cs
+  - src/StackOne/Client/Tickets.cs
+  - src/StackOne/Client/TicketsComments.cs
+  - src/StackOne/Client/TimeOff.cs
+  - src/StackOne/Client/TimeOffTypes.cs
+  - src/StackOne/Client/UsersAssignments.cs
   - src/StackOne/Client/Utils/AnyDeserializer.cs
   - src/StackOne/Client/Utils/BigIntStrConverter.cs
   - src/StackOne/Client/Utils/DecimalStrConverter.cs
@@ -4244,6 +4394,7 @@ generatedFiles:
   - src/StackOne/Client/Utils/SpeakeasyMetadata.cs
   - src/StackOne/Client/Utils/URLBuilder.cs
   - src/StackOne/Client/Utils/Utilities.cs
+  - src/StackOne/Client/WorkEligibility.cs
 examples:
   stackone_create_connect_session:
     speakeasy-default-stackone-create-connect-session:

@@ -26,7 +26,7 @@ namespace StackOne.Client.Models.Components
         public string? Next { get; set; } = null;
 
         [JsonProperty("data")]
-        public List<TimeOff> Data { get; set; } = default!;
+        public List<Models.Components.TimeOff> Data { get; set; } = default!;
 
         [JsonProperty("raw")]
         public List<RawResponse>? Raw { get; set; } = null;

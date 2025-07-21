@@ -53,7 +53,7 @@ namespace StackOne.Client.Models.Components
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("contents")]
-        public List<Content>? Contents { get; set; } = null;
+        public List<Models.Components.Content>? Contents { get; set; } = null;
 
         /// <summary>
         /// The categoryId of the documents

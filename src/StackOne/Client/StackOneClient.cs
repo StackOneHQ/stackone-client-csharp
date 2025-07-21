@@ -44,12 +44,17 @@ namespace StackOne.Client
         public IProxy Proxy { get; }
         public IHris Hris { get; }
         public IAts Ats { get; }
+        public IApplications Applications { get; }
+        public IInterviews Interviews { get; }
+        public IBackgroundChecks BackgroundChecks { get; }
+        public IDocuments Documents { get; }
         public ICrm Crm { get; }
         public IIam Iam { get; }
         public IMarketing Marketing { get; }
+        public ICourses Courses { get; }
         public ILms Lms { get; }
         public ITicketing Ticketing { get; }
-        public IDocuments Documents { get; }
+        public IDrives Drives { get; }
     }
 
 
@@ -61,7 +66,7 @@ namespace StackOne.Client
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.0";
+        private const string _sdkVersion = "0.2.3";
         private const string _sdkGenVersion = "2.658.3";
         private const string _openapiDocVersion = "1.0.0";
         public IConnectSessions ConnectSessions { get; private set; }
@@ -71,12 +76,17 @@ namespace StackOne.Client
         public IProxy Proxy { get; private set; }
         public IHris Hris { get; private set; }
         public IAts Ats { get; private set; }
+        public IApplications Applications { get; private set; }
+        public IInterviews Interviews { get; private set; }
+        public IBackgroundChecks BackgroundChecks { get; private set; }
+        public IDocuments Documents { get; private set; }
         public ICrm Crm { get; private set; }
         public IIam Iam { get; private set; }
         public IMarketing Marketing { get; private set; }
+        public ICourses Courses { get; private set; }
         public ILms Lms { get; private set; }
         public ITicketing Ticketing { get; private set; }
-        public IDocuments Documents { get; private set; }
+        public IDrives Drives { get; private set; }
 
         public StackOneClient(SDKConfig config)
         {
@@ -97,17 +107,27 @@ namespace StackOne.Client
 
             Ats = new Ats(SDKConfiguration);
 
+            Applications = new Applications(SDKConfiguration);
+
+            Interviews = new Interviews(SDKConfiguration);
+
+            BackgroundChecks = new BackgroundChecks(SDKConfiguration);
+
+            Documents = new Documents(SDKConfiguration);
+
             Crm = new Crm(SDKConfiguration);
 
             Iam = new Iam(SDKConfiguration);
 
             Marketing = new Marketing(SDKConfiguration);
 
+            Courses = new Courses(SDKConfiguration);
+
             Lms = new Lms(SDKConfiguration);
 
             Ticketing = new Ticketing(SDKConfiguration);
 
-            Documents = new Documents(SDKConfiguration);
+            Drives = new Drives(SDKConfiguration);
         }
 
         public StackOneClient(StackOne.Client.Models.Components.Security? security = null, Func<StackOne.Client.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
@@ -166,17 +186,27 @@ namespace StackOne.Client
 
             Ats = new Ats(SDKConfiguration);
 
+            Applications = new Applications(SDKConfiguration);
+
+            Interviews = new Interviews(SDKConfiguration);
+
+            BackgroundChecks = new BackgroundChecks(SDKConfiguration);
+
+            Documents = new Documents(SDKConfiguration);
+
             Crm = new Crm(SDKConfiguration);
 
             Iam = new Iam(SDKConfiguration);
 
             Marketing = new Marketing(SDKConfiguration);
 
+            Courses = new Courses(SDKConfiguration);
+
             Lms = new Lms(SDKConfiguration);
 
             Ticketing = new Ticketing(SDKConfiguration);
 
-            Documents = new Documents(SDKConfiguration);
+            Drives = new Drives(SDKConfiguration);
         }
 
         private void InitHooks()

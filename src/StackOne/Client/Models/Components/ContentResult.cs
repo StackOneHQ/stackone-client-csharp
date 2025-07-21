@@ -18,7 +18,7 @@ namespace StackOne.Client.Models.Components
     {
 
         [JsonProperty("data")]
-        public Content Data { get; set; } = default!;
+        public Models.Components.Content Data { get; set; } = default!;
 
         [JsonProperty("raw")]
         public List<RawResponse>? Raw { get; set; } = null;
