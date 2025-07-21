@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.583.1
   generationVersion: 2.658.3
-  releaseVersion: 0.2.4
-  configChecksum: 6df0524e4834b98787ea4276a522aa08
+  releaseVersion: 0.2.5
+  configChecksum: 4d2064c6d5f8cf4ab4ab660d74bd749c
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:

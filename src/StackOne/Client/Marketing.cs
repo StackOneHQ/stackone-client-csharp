@@ -120,7 +120,7 @@ namespace StackOne.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.4";
+        private const string _sdkVersion = "0.2.5";
         private const string _sdkGenVersion = "2.658.3";
         private const string _openapiDocVersion = "1.0.0";
         public ITemplates Templates { get; private set; }
