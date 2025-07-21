@@ -4,6 +4,14 @@ sources:
     StackOne:
         inputs:
             - location: https://api.eu1.stackone.com/oas/stackone.json
+            - location: https://api.eu1.stackone.com/oas/hris.json
+            - location: https://api.eu1.stackone.com/oas/ats.json
+            - location: https://api.eu1.stackone.com/oas/crm.json
+            - location: https://api.eu1.stackone.com/oas/iam.json
+            - location: https://api.eu1.stackone.com/oas/marketing.json
+            - location: https://api.eu1.stackone.com/oas/lms.json
+            - location: https://api.eu1.stackone.com/oas/ticketing.json
+            - location: https://api.eu1.stackone.com/oas/documents.json
         overlays:
             - location: .speakeasy/speakeasy-modifications-overlay.yaml
         output: .speakeasy/out.openapi.yaml
