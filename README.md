@@ -40,14 +40,14 @@ Documents: The documentation for the StackOne Unified API - DOCUMENTS
 
 To add the [NuGet](https://www.nuget.org/) package to a .NET project:
 ```bash
-dotnet add package StackOne.Client
+dotnet add package StackOneHQ.Client
 ```
 
 ### Locally
 
 To add a reference to a local instance of the SDK in a .NET project:
 ```bash
-dotnet add reference src/StackOne/Client/StackOne.Client.csproj
+dotnet add reference src/StackOneHQ/Client/StackOneHQ.Client.csproj
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -57,11 +57,11 @@ dotnet add reference src/StackOne/Client/StackOne.Client.csproj
 ### List Employees
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -100,11 +100,11 @@ This SDK supports the following security scheme globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -666,11 +666,11 @@ return value of `Next` is `null`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -701,11 +701,11 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply pass a `RetryConfig` to the call:
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -749,11 +749,11 @@ var res = await sdk.ConnectSessions.CreateAsync(
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `RetryConfig` optional parameter when intitializing the SDK:
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(
+var sdk = new StackOneHQClient(
     retryConfig: new RetryConfig(
         strategy: RetryConfig.RetryStrategy.BACKOFF,
         backoff: new BackoffStrategy(
@@ -801,7 +801,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 
 Handling errors in this SDK should largely match your expectations. All operations return a response object or throw an exception.
 
-By default, an API error will raise a `StackOne.Client.Models.Errors.APIException` exception, which has the following properties:
+By default, an API error will raise a `StackOneHQ.Client.Models.Errors.APIException` exception, which has the following properties:
 
 | Property      | Type                  | Description           |
 |---------------|-----------------------|-----------------------|
@@ -811,30 +811,30 @@ By default, an API error will raise a `StackOne.Client.Models.Errors.APIExceptio
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAsync` method throws the following exceptions:
 
-| Error Type                                                         | Status Code | Content Type     |
-| ------------------------------------------------------------------ | ----------- | ---------------- |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400         | application/json |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401         | application/json |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403         | application/json |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404         | application/json |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408         | application/json |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409         | application/json |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422         | application/json |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429         | application/json |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500         | application/json |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501         | application/json |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502         | application/json |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX    | \*/\*            |
+| Error Type                                                           | Status Code | Content Type     |
+| -------------------------------------------------------------------- | ----------- | ---------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400         | application/json |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401         | application/json |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403         | application/json |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404         | application/json |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408         | application/json |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409         | application/json |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422         | application/json |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429         | application/json |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500         | application/json |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501         | application/json |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502         | application/json |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Errors;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Errors;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -922,7 +922,7 @@ catch (Exception ex)
         // Handle exception data
         throw;
     }
-    else if (ex is StackOne.Client.Models.Errors.APIException)
+    else if (ex is StackOneHQ.Client.Models.Errors.APIException)
     {
         // Handle default exception
         throw;
@@ -938,11 +938,11 @@ catch (Exception ex)
 
 The default server can be overridden globally by passing a URL to the `serverUrl: string` optional parameter when initializing the SDK client instance. For example:
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(
+var sdk = new StackOneHQClient(
     serverUrl: "https://api.stackone.com",
     security: new Security() {
         Username = "",
