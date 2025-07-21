@@ -1,0 +1,11 @@
+# TicketingTicketStatusType
+
+The type of this status
+
+
+## Fields
+
+| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               | Example                                                                                                   |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                   | [TicketingTicketStatusValue](../../Models/Components/TicketingTicketStatusValue.md)                       | :heavy_minus_sign:                                                                                        | The type of this status                                                                                   | to-do                                                                                                     |
+| `SourceValue`                                                                                             | [TicketingTicketStatusSourceValueUnion](../../Models/Components/TicketingTicketStatusSourceValueUnion.md) | :heavy_minus_sign:                                                                                        | The source value of this status type                                                                      | New                                                                                                       |

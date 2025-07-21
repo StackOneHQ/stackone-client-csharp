@@ -1,0 +1,9 @@
+# IamGroupType
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     | Example                                                                         |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `Value`                                                                         | [IamGroupValue](../../Models/Components/IamGroupValue.md)                       | :heavy_minus_sign:                                                              | N/A                                                                             | team                                                                            |
+| `SourceValue`                                                                   | [IamGroupSourceValueUnion](../../Models/Components/IamGroupSourceValueUnion.md) | :heavy_minus_sign:                                                              | N/A                                                                             |                                                                                 |

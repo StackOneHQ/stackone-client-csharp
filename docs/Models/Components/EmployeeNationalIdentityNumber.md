@@ -1,0 +1,14 @@
+# ~~EmployeeNationalIdentityNumber~~
+
+The national identity number
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+
+
+## Fields
+
+| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               | Example                                                                                                   |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                   | *string*                                                                                                  | :heavy_minus_sign:                                                                                        | N/A                                                                                                       | 123456789                                                                                                 |
+| `Type`                                                                                                    | [EmployeeType](../../Models/Components/EmployeeType.md)                                                   | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |                                                                                                           |
+| `Country`                                                                                                 | [EmployeeNationalIdentityNumberCountry](../../Models/Components/EmployeeNationalIdentityNumberCountry.md) | :heavy_minus_sign:                                                                                        | The country code                                                                                          |                                                                                                           |

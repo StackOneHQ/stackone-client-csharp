@@ -1,0 +1,10 @@
+# TicketingListTicketTypesResponse
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                              | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                 | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `TicketingTicketTypePaginated`                                                          | [TicketingTicketTypePaginated](../../Models/Components/TicketingTicketTypePaginated.md) | :heavy_minus_sign:                                                                      | The list of ticket types was retrieved.                                                 |
+| `Headers`                                                                               | Dictionary<String, List<*string*>>                                                      | :heavy_check_mark:                                                                      | N/A                                                                                     |

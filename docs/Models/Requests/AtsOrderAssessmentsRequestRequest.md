@@ -1,0 +1,9 @@
+# AtsOrderAssessmentsRequestRequest
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                                                    | *string*                                                                                                        | :heavy_check_mark:                                                                                              | The account identifier                                                                                          |
+| `AtsCreateCandidatesAssessmentsRequestDto`                                                                      | [AtsCreateCandidatesAssessmentsRequestDto](../../Models/Components/AtsCreateCandidatesAssessmentsRequestDto.md) | :heavy_check_mark:                                                                                              | N/A                                                                                                             |

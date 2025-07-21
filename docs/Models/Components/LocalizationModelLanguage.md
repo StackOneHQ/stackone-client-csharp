@@ -1,0 +1,11 @@
+# LocalizationModelLanguage
+
+The language associated with the localization details
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       | Example                                                                                           |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                           | [LocalizationModelValue](../../Models/Components/LocalizationModelValue.md)                       | :heavy_minus_sign:                                                                                | The Locale Code of the language                                                                   | en_GB                                                                                             |
+| `SourceValue`                                                                                     | [LocalizationModelSourceValueUnion](../../Models/Components/LocalizationModelSourceValueUnion.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |                                                                                                   |

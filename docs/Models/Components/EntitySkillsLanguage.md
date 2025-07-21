@@ -1,0 +1,11 @@
+# EntitySkillsLanguage
+
+The language associated with this skill
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             | Example                                                                                                 |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                 | [EntitySkillsLanguageValue](../../Models/Components/EntitySkillsLanguageValue.md)                       | :heavy_minus_sign:                                                                                      | The Locale Code of the language                                                                         | en_GB                                                                                                   |
+| `SourceValue`                                                                                           | [EntitySkillsLanguageSourceValueUnion](../../Models/Components/EntitySkillsLanguageSourceValueUnion.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |                                                                                                         |

@@ -1,0 +1,11 @@
+# HrisCreateTimeOffRequestDtoStatus
+
+The status of the time off request
+
+
+## Fields
+
+| Field                                                                                                                             | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                           | [HrisCreateTimeOffRequestDtoStatusValue](../../Models/Components/HrisCreateTimeOffRequestDtoStatusValue.md)                       | :heavy_minus_sign:                                                                                                                | N/A                                                                                                                               |
+| `SourceValue`                                                                                                                     | [HrisCreateTimeOffRequestDtoStatusSourceValueUnion](../../Models/Components/HrisCreateTimeOffRequestDtoStatusSourceValueUnion.md) | :heavy_minus_sign:                                                                                                                | N/A                                                                                                                               |

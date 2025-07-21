@@ -1,0 +1,11 @@
+# HrisCreateEmployeeRequestDtoGender
+
+The employee gender
+
+
+## Fields
+
+| Field                                                                                                                               | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                             | [HrisCreateEmployeeRequestDtoGenderValue](../../Models/Components/HrisCreateEmployeeRequestDtoGenderValue.md)                       | :heavy_minus_sign:                                                                                                                  | N/A                                                                                                                                 |
+| `SourceValue`                                                                                                                       | [HrisCreateEmployeeRequestDtoGenderSourceValueUnion](../../Models/Components/HrisCreateEmployeeRequestDtoGenderSourceValueUnion.md) | :heavy_minus_sign:                                                                                                                  | N/A                                                                                                                                 |

@@ -1,0 +1,11 @@
+# CategoryLanguage
+
+The language associated with this category
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `Value`                                                                                         | [CategoryLanguageValue](../../Models/Components/CategoryLanguageValue.md)                       | :heavy_minus_sign:                                                                              | The Locale Code of the language                                                                 | en_GB                                                                                           |
+| `SourceValue`                                                                                   | [CategoryLanguageSourceValueUnion](../../Models/Components/CategoryLanguageSourceValueUnion.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |                                                                                                 |

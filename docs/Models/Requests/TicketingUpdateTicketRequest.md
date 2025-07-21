@@ -1,0 +1,10 @@
+# TicketingUpdateTicketRequest
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | The account identifier                                                                        |
+| `Id`                                                                                          | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `TicketingTicketUpdateRequestDto`                                                             | [TicketingTicketUpdateRequestDto](../../Models/Components/TicketingTicketUpdateRequestDto.md) | :heavy_check_mark:                                                                            | N/A                                                                                           |

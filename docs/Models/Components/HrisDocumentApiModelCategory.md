@@ -1,0 +1,11 @@
+# HrisDocumentApiModelCategory
+
+The category of the the document
+
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                 | [HrisDocumentApiModelCategoryValue](../../Models/Components/HrisDocumentApiModelCategoryValue.md)                       | :heavy_minus_sign:                                                                                                      | The category of the file                                                                                                |
+| `SourceValue`                                                                                                           | [HrisDocumentApiModelCategorySourceValueUnion](../../Models/Components/HrisDocumentApiModelCategorySourceValueUnion.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |

@@ -1,0 +1,11 @@
+# HrisShiftResultStatus
+
+The status of the shift
+
+
+## Fields
+
+| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               | Example                                                                                                   |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                   | [HrisShiftResultStatusValue](../../Models/Components/HrisShiftResultStatusValue.md)                       | :heavy_minus_sign:                                                                                        | The status of the shift                                                                                   | confirmed                                                                                                 |
+| `SourceValue`                                                                                             | [HrisShiftResultStatusSourceValueUnion](../../Models/Components/HrisShiftResultStatusSourceValueUnion.md) | :heavy_minus_sign:                                                                                        | N/A                                                                                                       | Confirmed                                                                                                 |

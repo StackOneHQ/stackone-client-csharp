@@ -1,0 +1,10 @@
+# MarketingGetSmsTemplateResponse
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `HttpMeta`                                                        | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)           | :heavy_check_mark:                                                | N/A                                                               |
+| `SmsTemplateResult`                                               | [SmsTemplateResult](../../Models/Components/SmsTemplateResult.md) | :heavy_minus_sign:                                                | The SMS template with the given identifier was retrieved.         |
+| `Headers`                                                         | Dictionary<String, List<*string*>>                                | :heavy_check_mark:                                                | N/A                                                               |

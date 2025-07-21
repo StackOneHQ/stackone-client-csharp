@@ -1,0 +1,10 @@
+# TicketingTicketStatus
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `Id`                                                                              | *string*                                                                          | :heavy_minus_sign:                                                                | The id of the ticket status.                                                      | 001                                                                               |
+| `Type`                                                                            | [TicketingTicketStatusType](../../Models/Components/TicketingTicketStatusType.md) | :heavy_minus_sign:                                                                | The type of this status                                                           |                                                                                   |
+| `Name`                                                                            | *string*                                                                          | :heavy_minus_sign:                                                                | The name of the ticket status.                                                    | Backlog                                                                           |

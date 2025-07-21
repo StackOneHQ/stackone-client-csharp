@@ -1,0 +1,10 @@
+# AtsOrderAssessmentsRequestResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                            | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `CreateAssessmentOrderResult`                                                         | [CreateAssessmentOrderResult](../../Models/Components/CreateAssessmentOrderResult.md) | :heavy_minus_sign:                                                                    | The order request of the assessment for candidate.                                    |
+| `Headers`                                                                             | Dictionary<String, List<*string*>>                                                    | :heavy_check_mark:                                                                    | N/A                                                                                   |

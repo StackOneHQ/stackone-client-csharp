@@ -1,0 +1,9 @@
+# IamResourceType
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           | Example                                                                               |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `Value`                                                                               | [IamResourceValue](../../Models/Components/IamResourceValue.md)                       | :heavy_minus_sign:                                                                    | The type of the resource, e.g. user, group, permission, etc.                          | file                                                                                  |
+| `SourceValue`                                                                         | [IamResourceSourceValueUnion](../../Models/Components/IamResourceSourceValueUnion.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |                                                                                       |

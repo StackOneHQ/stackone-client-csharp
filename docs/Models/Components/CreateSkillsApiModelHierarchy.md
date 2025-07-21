@@ -1,0 +1,11 @@
+# CreateSkillsApiModelHierarchy
+
+The hierarchal level of the skill
+
+
+## Fields
+
+| Field                                                                                                                     | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                   | [CreateSkillsApiModelHierarchyValue](../../Models/Components/CreateSkillsApiModelHierarchyValue.md)                       | :heavy_minus_sign:                                                                                                        | N/A                                                                                                                       |
+| `SourceValue`                                                                                                             | [CreateSkillsApiModelHierarchySourceValueUnion](../../Models/Components/CreateSkillsApiModelHierarchySourceValueUnion.md) | :heavy_minus_sign:                                                                                                        | N/A                                                                                                                       |

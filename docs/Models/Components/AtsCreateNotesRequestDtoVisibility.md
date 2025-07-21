@@ -1,0 +1,11 @@
+# AtsCreateNotesRequestDtoVisibility
+
+Visibility of the note
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     | Example                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                         | [AtsCreateNotesRequestDtoValue](../../Models/Components/AtsCreateNotesRequestDtoValue.md)                       | :heavy_minus_sign:                                                                                              | The visibility of the notes.                                                                                    | public                                                                                                          |
+| `SourceValue`                                                                                                   | [AtsCreateNotesRequestDtoSourceValueUnion](../../Models/Components/AtsCreateNotesRequestDtoSourceValueUnion.md) | :heavy_minus_sign:                                                                                              | The source value of the notes visibility.                                                                       | Public                                                                                                          |

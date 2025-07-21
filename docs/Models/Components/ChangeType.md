@@ -1,0 +1,11 @@
+# ChangeType
+
+The type of change that occurred to the application
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         | Example                                                                                             |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                             | [ApplicationChangesValue](../../Models/Components/ApplicationChangesValue.md)                       | :heavy_minus_sign:                                                                                  | The type of change that occurred to the application                                                 | application_status                                                                                  |
+| `SourceValue`                                                                                       | [ApplicationChangesSourceValueUnion](../../Models/Components/ApplicationChangesSourceValueUnion.md) | :heavy_minus_sign:                                                                                  | The source value of the change type                                                                 | StatusChange                                                                                        |

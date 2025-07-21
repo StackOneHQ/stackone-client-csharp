@@ -1,0 +1,11 @@
+# EmploymentPayFrequency
+
+The pay frequency
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 | Example                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                     | [EmploymentPayFrequencyValue](../../Models/Components/EmploymentPayFrequencyValue.md)                       | :heavy_minus_sign:                                                                                          | The pay frequency of the job postings.                                                                      | hourly                                                                                                      |
+| `SourceValue`                                                                                               | [EmploymentPayFrequencySourceValueUnion](../../Models/Components/EmploymentPayFrequencySourceValueUnion.md) | :heavy_minus_sign:                                                                                          | The source value of the pay frequency.                                                                      | Hourly                                                                                                      |

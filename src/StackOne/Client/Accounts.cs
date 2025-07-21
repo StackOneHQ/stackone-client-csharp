@@ -23,7 +23,7 @@ namespace StackOne.Client
     using System.Threading.Tasks;
 
     /// <summary>
-    /// View and manage linked accounts.
+    /// Customer or business accounts.
     /// </summary>
     public interface IAccounts
     {
@@ -39,14 +39,14 @@ namespace StackOne.Client
         Task<StackoneGetAccountResponse> GetAsync(string id, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Update Account
-        /// </summary>
-        Task<StackoneUpdateAccountResponse> UpdateAsync(string id, PatchAccountExternalDto patchAccountExternalDto, RetryConfig? retryConfig = null);
-
-        /// <summary>
         /// Delete Account
         /// </summary>
         Task<StackoneDeleteAccountResponse> DeleteAsync(string id, RetryConfig? retryConfig = null);
+
+        /// <summary>
+        /// Update Account
+        /// </summary>
+        Task<StackoneUpdateAccountResponse> UpdateAsync(string id, PatchAccountExternalDto patchAccountExternalDto, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// Get meta information of the account
@@ -55,13 +55,13 @@ namespace StackOne.Client
     }
 
     /// <summary>
-    /// View and manage linked accounts.
+    /// Customer or business accounts.
     /// </summary>
     public class Accounts: IAccounts
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.2";
+        private const string _sdkVersion = "0.2.0";
         private const string _sdkGenVersion = "2.658.3";
         private const string _openapiDocVersion = "1.0.0";
 
@@ -632,31 +632,24 @@ namespace StackOne.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse);
         }
 
-        public async Task<StackoneUpdateAccountResponse> UpdateAsync(string id, PatchAccountExternalDto patchAccountExternalDto, RetryConfig? retryConfig = null)
+        public async Task<StackoneDeleteAccountResponse> DeleteAsync(string id, RetryConfig? retryConfig = null)
         {
-            var request = new StackoneUpdateAccountRequest()
+            var request = new StackoneDeleteAccountRequest()
             {
                 Id = id,
-                PatchAccountExternalDto = patchAccountExternalDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{id}", request);
 
-            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-
-            var serializedBody = RequestBodySerializer.Serialize(request, "PatchAccountExternalDto", "json", false, false);
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
 
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "stackone_update_account", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "stackone_delete_account", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -731,7 +724,7 @@ namespace StackOne.Client
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LinkedAccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new StackoneUpdateAccountResponse()
+                    var response = new StackoneDeleteAccountResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
                         {
@@ -922,24 +915,31 @@ namespace StackOne.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse);
         }
 
-        public async Task<StackoneDeleteAccountResponse> DeleteAsync(string id, RetryConfig? retryConfig = null)
+        public async Task<StackoneUpdateAccountResponse> UpdateAsync(string id, PatchAccountExternalDto patchAccountExternalDto, RetryConfig? retryConfig = null)
         {
-            var request = new StackoneDeleteAccountRequest()
+            var request = new StackoneUpdateAccountRequest()
             {
                 Id = id,
+                PatchAccountExternalDto = patchAccountExternalDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{id}", request);
 
-            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "PatchAccountExternalDto", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
 
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "stackone_delete_account", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "stackone_update_account", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1014,7 +1014,7 @@ namespace StackOne.Client
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LinkedAccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new StackoneDeleteAccountResponse()
+                    var response = new StackoneUpdateAccountResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
                         {

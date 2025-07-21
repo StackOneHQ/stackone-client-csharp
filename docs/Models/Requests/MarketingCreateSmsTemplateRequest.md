@@ -1,0 +1,9 @@
+# MarketingCreateSmsTemplateRequest
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                                            | *string*                                                                                                | :heavy_check_mark:                                                                                      | The account identifier                                                                                  |
+| `MarketingCreateSmsTemplateRequestDto`                                                                  | [MarketingCreateSmsTemplateRequestDto](../../Models/Components/MarketingCreateSmsTemplateRequestDto.md) | :heavy_check_mark:                                                                                      | N/A                                                                                                     |

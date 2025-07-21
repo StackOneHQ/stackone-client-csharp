@@ -1,0 +1,9 @@
+# InterviewInterviewStatus
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `Value`                                                                           | [InterviewValue](../../Models/Components/InterviewValue.md)                       | :heavy_minus_sign:                                                                | The status of the interview.                                                      | unscheduled                                                                       |
+| `SourceValue`                                                                     | [InterviewSourceValueUnion](../../Models/Components/InterviewSourceValueUnion.md) | :heavy_minus_sign:                                                                | The source value of the interview status.                                         | Unscheduled                                                                       |

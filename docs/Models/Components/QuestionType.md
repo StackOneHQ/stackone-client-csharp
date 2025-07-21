@@ -1,0 +1,9 @@
+# QuestionType
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             | Example                                                                                 |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Value`                                                                                 | [QuestionTypeValue](../../Models/Components/QuestionTypeValue.md)                       | :heavy_minus_sign:                                                                      | The type of the questions.                                                              | short_text                                                                              |
+| `SourceValue`                                                                           | [QuestionTypeSourceValueUnion](../../Models/Components/QuestionTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                      | The source value of the questions type.                                                 | ShortText                                                                               |

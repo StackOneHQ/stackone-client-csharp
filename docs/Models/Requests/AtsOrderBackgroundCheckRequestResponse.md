@@ -1,0 +1,10 @@
+# AtsOrderBackgroundCheckRequestResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                                      | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                         | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `CreateBackgroundCheckOrderResult`                                                              | [CreateBackgroundCheckOrderResult](../../Models/Components/CreateBackgroundCheckOrderResult.md) | :heavy_minus_sign:                                                                              | The order request of the background check for candidate.                                        |
+| `Headers`                                                                                       | Dictionary<String, List<*string*>>                                                              | :heavy_check_mark:                                                                              | N/A                                                                                             |

@@ -1,0 +1,11 @@
+# HRISLocationLocationType
+
+The location type
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     | Example                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                         | [HRISLocationLocationTypeValue](../../Models/Components/HRISLocationLocationTypeValue.md)                       | :heavy_minus_sign:                                                                                              | The type of the location.                                                                                       | home                                                                                                            |
+| `SourceValue`                                                                                                   | [HRISLocationLocationTypeSourceValueUnion](../../Models/Components/HRISLocationLocationTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                              | The source value of the location type.                                                                          | Home                                                                                                            |

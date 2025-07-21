@@ -1,0 +1,11 @@
+# ContentBlockType
+
+Stackone enum identifying the type of content block.
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `Value`                                                                                         | [ContentBlockTypeValue](../../Models/Components/ContentBlockTypeValue.md)                       | :heavy_minus_sign:                                                                              | The type of the content blocks.                                                                 | html                                                                                            |
+| `SourceValue`                                                                                   | [ContentBlockTypeSourceValueUnion](../../Models/Components/ContentBlockTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                              | The source value of the type.                                                                   | text                                                                                            |

@@ -1,0 +1,9 @@
+# IamRoleType
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   | Example                                                                       |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `Value`                                                                       | [IamRoleValue](../../Models/Components/IamRoleValue.md)                       | :heavy_minus_sign:                                                            | N/A                                                                           | admin                                                                         |
+| `SourceValue`                                                                 | [IamRoleSourceValueUnion](../../Models/Components/IamRoleSourceValueUnion.md) | :heavy_minus_sign:                                                            | N/A                                                                           |                                                                               |

@@ -1,0 +1,11 @@
+# AccountAddressCountry
+
+The country code
+
+
+## Fields
+
+| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               | Example                                                                                                   |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                   | [AccountAddressCountryValue](../../Models/Components/AccountAddressCountryValue.md)                       | :heavy_minus_sign:                                                                                        | The ISO 3166-1 alpha-2 code of the country.                                                               | GB                                                                                                        |
+| `SourceValue`                                                                                             | [AccountAddressCountrySourceValueUnion](../../Models/Components/AccountAddressCountrySourceValueUnion.md) | :heavy_minus_sign:                                                                                        | The source value of the ISO 3166-1 alpha-2 code of the country.                                           | GB                                                                                                        |

@@ -1,0 +1,11 @@
+# EmploymentPayPeriod
+
+The pay period
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                               | [EmploymentPayPeriodValue](../../Models/Components/EmploymentPayPeriodValue.md)                       | :heavy_minus_sign:                                                                                    | The pay period of the job postings.                                                                   | hour                                                                                                  |
+| `SourceValue`                                                                                         | [EmploymentPayPeriodSourceValueUnion](../../Models/Components/EmploymentPayPeriodSourceValueUnion.md) | :heavy_minus_sign:                                                                                    | The source value of the pay period.                                                                   | Hour                                                                                                  |

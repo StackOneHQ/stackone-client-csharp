@@ -1,0 +1,11 @@
+# HrisShiftApprovalStatus
+
+The approval status of the shift
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                       | [HrisShiftApprovalStatusValue](../../Models/Components/HrisShiftApprovalStatusValue.md)                       | :heavy_minus_sign:                                                                                            | The approval status of the shift                                                                              | approved                                                                                                      |
+| `SourceValue`                                                                                                 | [HrisShiftApprovalStatusSourceValueUnion](../../Models/Components/HrisShiftApprovalStatusSourceValueUnion.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           | Approved                                                                                                      |

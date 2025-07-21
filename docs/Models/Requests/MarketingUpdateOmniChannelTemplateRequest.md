@@ -1,0 +1,10 @@
+# MarketingUpdateOmniChannelTemplateRequest
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                                      | *string*                                                                                          | :heavy_check_mark:                                                                                | The account identifier                                                                            |
+| `Id`                                                                                              | *string*                                                                                          | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `MarketingCreateTemplateRequestDto`                                                               | [MarketingCreateTemplateRequestDto](../../Models/Components/MarketingCreateTemplateRequestDto.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |

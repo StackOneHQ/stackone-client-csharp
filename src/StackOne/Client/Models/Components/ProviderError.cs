@@ -32,7 +32,7 @@ namespace StackOne.Client.Models.Components
         /// Raw error response from the provider
         /// </summary>
         [JsonProperty("raw")]
-        public Raw? Raw { get; set; } = null;
+        public ProviderErrorRaw? Raw { get; set; } = null;
 
         /// <summary>
         /// Response headers

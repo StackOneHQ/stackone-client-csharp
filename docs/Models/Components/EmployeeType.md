@@ -1,0 +1,9 @@
+# EmployeeType
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             | Example                                                                                 |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Value`                                                                                 | [EmployeeTypeValue](../../Models/Components/EmployeeTypeValue.md)                       | :heavy_minus_sign:                                                                      | The type of the national identity number                                                | ssn                                                                                     |
+| `SourceValue`                                                                           | [EmployeeTypeSourceValueUnion](../../Models/Components/EmployeeTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |                                                                                         |

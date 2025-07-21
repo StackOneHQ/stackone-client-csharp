@@ -1,0 +1,10 @@
+# JobPostingContent
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `Plain`                                                                               | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `Html`                                                                                | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `Sections`                                                                            | List<[JobPostingContentSection](../../Models/Components/JobPostingContentSection.md)> | :heavy_minus_sign:                                                                    | N/A                                                                                   |

@@ -1,0 +1,9 @@
+# ChannelsEnum
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             | Example                                                                                 |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Value`                                                                                 | [ChannelsEnumValue](../../Models/Components/ChannelsEnumValue.md)                       | :heavy_minus_sign:                                                                      | The Channels of the campaign.                                                           | sms                                                                                     |
+| `SourceValue`                                                                           | [ChannelsEnumSourceValueUnion](../../Models/Components/ChannelsEnumSourceValueUnion.md) | :heavy_minus_sign:                                                                      | The source value of the Channels.                                                       | SMS                                                                                     |

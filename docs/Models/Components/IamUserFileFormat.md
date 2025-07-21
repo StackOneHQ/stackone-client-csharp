@@ -1,0 +1,11 @@
+# IamUserFileFormat
+
+The file format of the file
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `Value`                                                                                         | [AvatarValue](../../Models/Components/AvatarValue.md)                                           | :heavy_minus_sign:                                                                              | The file format of the file, expressed as a file extension                                      | pdf                                                                                             |
+| `SourceValue`                                                                                   | [AvatarFileFormatSourceValueUnion](../../Models/Components/AvatarFileFormatSourceValueUnion.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             | application/pdf                                                                                 |

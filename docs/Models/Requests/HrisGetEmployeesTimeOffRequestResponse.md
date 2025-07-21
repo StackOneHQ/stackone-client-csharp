@@ -1,0 +1,10 @@
+# HrisGetEmployeesTimeOffRequestResponse
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                             | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `TimeOffResult`                                                                        | [TimeOffResult](../../Models/Components/TimeOffResult.md)                              | :heavy_minus_sign:                                                                     | The time off request related to the employee with the given identifiers was retrieved. |
+| `Headers`                                                                              | Dictionary<String, List<*string*>>                                                     | :heavy_check_mark:                                                                     | N/A                                                                                    |

@@ -1,0 +1,9 @@
+# TicketingUserType
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Value`                                                                                   | [TicketingUserValue](../../Models/Components/TicketingUserValue.md)                       | :heavy_minus_sign:                                                                        | The type of the user.                                                                     | agent                                                                                     |
+| `SourceValue`                                                                             | [TicketingUserSourceValueUnion](../../Models/Components/TicketingUserSourceValueUnion.md) | :heavy_minus_sign:                                                                        | The source value of the user type.                                                        | Live                                                                                      |

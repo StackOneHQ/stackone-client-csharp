@@ -1,0 +1,11 @@
+# AssignmentLearningObjectType
+
+The learning object type of the assignment
+
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                 | [AssignmentLearningObjectTypeValue](../../Models/Components/AssignmentLearningObjectTypeValue.md)                       | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
+| `SourceValue`                                                                                                           | [AssignmentLearningObjectTypeSourceValueUnion](../../Models/Components/AssignmentLearningObjectTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |

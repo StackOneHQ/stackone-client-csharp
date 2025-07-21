@@ -1,0 +1,11 @@
+# CreateCategoriesApiModelHierarchy
+
+The hierarchal level of the category
+
+
+## Fields
+
+| Field                                                                                                                             | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                           | [CreateCategoriesApiModelHierarchyValue](../../Models/Components/CreateCategoriesApiModelHierarchyValue.md)                       | :heavy_minus_sign:                                                                                                                | N/A                                                                                                                               |
+| `SourceValue`                                                                                                                     | [CreateCategoriesApiModelHierarchySourceValueUnion](../../Models/Components/CreateCategoriesApiModelHierarchySourceValueUnion.md) | :heavy_minus_sign:                                                                                                                | N/A                                                                                                                               |
