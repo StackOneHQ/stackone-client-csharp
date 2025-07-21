@@ -25,12 +25,12 @@ Create Application
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -149,21 +149,21 @@ var res = await sdk.Ats.Applications.CreateAsync(
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## Update
 
@@ -172,11 +172,11 @@ Update an Application
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -230,21 +230,21 @@ var res = await sdk.Ats.Applications.UpdateAsync(
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## ListOffers
 
@@ -253,11 +253,11 @@ List Application Offers
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -293,21 +293,21 @@ while(res != null)
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## Move
 
@@ -316,11 +316,11 @@ Move Application
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -353,21 +353,21 @@ var res = await sdk.Ats.Applications.MoveAsync(
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## Reject
 
@@ -376,11 +376,11 @@ Reject Application
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -413,21 +413,21 @@ var res = await sdk.Ats.Applications.RejectAsync(
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## GetOffer
 
@@ -436,11 +436,11 @@ Get Application Offer
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -469,21 +469,21 @@ var res = await sdk.Ats.Applications.GetOfferAsync(req);
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## ScorecardsList
 
@@ -492,11 +492,11 @@ List Application Scorecards
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -532,21 +532,21 @@ while(res != null)
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## ListScheduledInterviews
 
@@ -555,11 +555,11 @@ List Applications scheduled interviews
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -595,21 +595,21 @@ while(res != null)
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## GetScheduledInterview
 
@@ -618,11 +618,11 @@ Get Applications scheduled interview
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -651,21 +651,21 @@ var res = await sdk.Ats.Applications.GetScheduledInterviewAsync(req);
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## DownloadDocument
 
@@ -674,11 +674,11 @@ Download Application Document
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -708,21 +708,21 @@ var res = await sdk.Ats.Applications.DownloadDocumentAsync(req);
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## ListCustomFieldDefinitions
 
@@ -731,11 +731,11 @@ List Application Custom Field Definitions
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -768,21 +768,21 @@ while(res != null)
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## GetCustomFieldDefinition
 
@@ -791,11 +791,11 @@ Get Application Custom Field Definition
 ### Example Usage
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
@@ -824,18 +824,18 @@ var res = await sdk.Ats.Applications.GetCustomFieldDefinitionAsync(req);
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| StackOne.Client.Models.Errors.BadRequestResponseException          | 400                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ForbiddenResponseException           | 403                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotFoundResponseException            | 404                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.ConflictResponseException            | 409                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.NotImplementedResponseException      | 501                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.BadGatewayResponseException          | 502                                                                | application/json                                                   |
-| StackOne.Client.Models.Errors.APIException                         | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |

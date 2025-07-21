@@ -2,11 +2,11 @@
 ### List Employees
 
 ```csharp
-using StackOne.Client;
-using StackOne.Client.Models.Components;
-using StackOne.Client.Models.Requests;
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
-var sdk = new StackOneClient(security: new Security() {
+var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
