@@ -3,11 +3,12 @@ id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
   docChecksum: 3e36a82e516bc6c1a34b70dce9ada614
   docVersion: 1.0.0
-  speakeasyVersion: 1.583.0
+  speakeasyVersion: 1.583.1
   generationVersion: 2.658.3
-  releaseVersion: 0.2.3
-  configChecksum: 7cb9db55b1dee83c82d9bef6a4b01c1c
+  releaseVersion: 0.2.4
+  configChecksum: 6df0524e4834b98787ea4276a522aa08
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
+  published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -32,6 +33,7 @@ features:
     unions: 0.2.2
 generatedFiles:
   - .gitattributes
+  - NUGET.md
   - StackOne.Client.sln
   - USAGE.md
   - docs/Models/Components/ATSLocation.md

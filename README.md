@@ -41,6 +41,15 @@ Documents: The documentation for the StackOne Unified API - DOCUMENTS
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
+### NuGet
+
+To add the [NuGet](https://www.nuget.org/) package to a .NET project:
+```bash
+dotnet add package StackOne.Client
+```
+
+### Locally
+
 To add a reference to a local instance of the SDK in a .NET project:
 ```bash
 dotnet add reference src/StackOne/Client/StackOne.Client.csproj
