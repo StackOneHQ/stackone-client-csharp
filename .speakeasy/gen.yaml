@@ -47,6 +47,8 @@ csharp:
   methodArguments: infer-optional-args
   outputModelSuffix: output
   packageName: StackOne.Client
-  packageTags: ""
+  packageTags: "sdk api client stackone stack one"
   responseFormat: envelope-http
   sourceDirectory: src
+  enableSourceLink: true
+  includeDebugSymbols: true
