@@ -21,6 +21,9 @@ targets:
     stack-one:
         target: csharp
         source: StackOne
+        publish:
+            nuget:
+                apiKey: $nuget_api_key
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/stackone/stackone/stack-one-csharp-code-samples
