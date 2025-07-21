@@ -22,7 +22,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.2.3
+  version: 0.2.4
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: StackOneError
@@ -30,6 +30,7 @@ csharp:
   defaultErrorName: APIException
   disableNamespacePascalCasingApr2024: true
   dotnetVersion: net8.0
+  enableSourceLink: true
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first
   imports:
@@ -40,13 +41,12 @@ csharp:
       operations: Models/Requests
       shared: Models/Components
       webhooks: Models/Webhooks
+  includeDebugSymbols: true
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: infer-optional-args
   outputModelSuffix: output
   packageName: StackOne.Client
-  packageTags: "sdk api client stackone stack one"
+  packageTags: sdk api client stackone stack one
   responseFormat: envelope-http
   sourceDirectory: src
-  enableSourceLink: true
-  includeDebugSymbols: true
