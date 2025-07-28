@@ -72,21 +72,27 @@ namespace StackOneHQ.Client.Models.Components
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// Collections the ticket belongs to
+        /// Organization associated with the ticket
         /// </summary>
-        [JsonProperty("collection_ids")]
-        public List<string>? CollectionIds { get; set; } = null;
+        [JsonProperty("organization_id")]
+        public string? OrganizationId { get; set; } = null;
+
+        /// <summary>
+        /// Project the ticket belongs to
+        /// </summary>
+        [JsonProperty("project_id")]
+        public string? ProjectId { get; set; } = null;
+
+        /// <summary>
+        /// Components to associate with the ticket
+        /// </summary>
+        [JsonProperty("component_ids")]
+        public string? ComponentIds { get; set; } = null;
 
         /// <summary>
         /// The type of the ticket
         /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; } = null;
-
-        /// <summary>
-        /// Organization associated with the ticket
-        /// </summary>
-        [JsonProperty("organization_id")]
-        public string? OrganizationId { get; set; } = null;
     }
 }

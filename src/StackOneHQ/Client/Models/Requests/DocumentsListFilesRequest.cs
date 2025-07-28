@@ -50,7 +50,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// <summary>
         /// Documents Files Filter
         /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=filter")]
+        [SpeakeasyMetadata("queryParam:style=deepObject,explode=true,name=filter")]
         public DocumentsListFilesFilter? Filter { get; set; } = null;
 
         /// <summary>
@@ -78,5 +78,23 @@ namespace StackOneHQ.Client.Models.Requests
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_after")]
         public string? UpdatedAfter { get; set; } = null;
+
+        /// <summary>
+        /// Use to only include Files within the specified Folder. Required when requesting nested items
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=folder_id")]
+        public string? FolderId { get; set; } = null;
+
+        /// <summary>
+        /// When &quot;true&quot; and used with filter[folder_id], the response includes Files and Files within descendant Folders
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=nested_items")]
+        public string? NestedItems { get; set; } = "false";
+
+        /// <summary>
+        /// The comma separated list of fields that will be included in the response
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=include")]
+        public string? Include { get; set; } = null;
     }
 }

@@ -9,8 +9,11 @@
 * [DownloadAttachment](#downloadattachment) - Download Attachment
 * [ListTicketTypes](#listtickettypes) - List Ticket Types
 * [GetTicketType](#gettickettype) - Get Ticket Type
-* [ListCollections](#listcollections) - List Collections
-* [ListCollectionTicketTypes](#listcollectiontickettypes) - List Collection Ticket Types
+* [ListProjects](#listprojects) - List Projects
+* [GetProject](#getproject) - Get Project
+* [ListProjectComponents](#listprojectcomponents) - List Project Components
+* [GetProjectComponent](#getprojectcomponent) - Get Project Component
+* [ListProjectTicketTypes](#listprojecttickettypes) - List Project Ticket Types
 
 ## GetUser
 
@@ -142,7 +145,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 TicketingListTicketTypesRequest req = new TicketingListTicketTypesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,parent_collection_id,remote_parent_collection_id",
+    Fields = "id,remote_id,name,project_id,remote_project_id",
     Filter = new TicketingListTicketTypesFilter() {
         UpdatedAfter = "2020-01-01T00:00:00.000Z",
     },
@@ -205,7 +208,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingGetTicketTypeRequest req = new TicketingGetTicketTypeRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,parent_collection_id,remote_parent_collection_id",
+    Fields = "id,remote_id,name,project_id,remote_project_id",
 };
 
 var res = await sdk.Ticketing.GetTicketTypeAsync(req);
@@ -241,9 +244,9 @@ var res = await sdk.Ticketing.GetTicketTypeAsync(req);
 | StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
 | StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
-## ListCollections
+## ListProjects
 
-Retrieve a paginated list of collections.
+Retrieve a paginated list of projects.
 
 ### Example Usage
 
@@ -257,15 +260,15 @@ var sdk = new StackOneHQClient(security: new Security() {
     Password = "",
 });
 
-TicketingListCollectionsRequest req = new TicketingListCollectionsRequest() {
+TicketingListProjectsRequest req = new TicketingListProjectsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,organization_id,remote_organization_id,parent_id,remote_parent_id,key,name,description,type,created_at,updated_at",
-    Filter = new TicketingListCollectionsFilter() {
+    Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at",
+    Filter = new TicketingListProjectsFilter() {
         UpdatedAfter = "2020-01-01T00:00:00.000Z",
     },
 };
 
-TicketingListCollectionsResponse? res = await sdk.Ticketing.ListCollectionsAsync(req);
+TicketingListProjectsResponse? res = await sdk.Ticketing.ListProjectsAsync(req);
 
 while(res != null)
 {
@@ -277,13 +280,13 @@ while(res != null)
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [TicketingListCollectionsRequest](../../Models/Requests/TicketingListCollectionsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [TicketingListProjectsRequest](../../Models/Requests/TicketingListProjectsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[TicketingListCollectionsResponse](../../Models/Requests/TicketingListCollectionsResponse.md)**
+**[TicketingListProjectsResponse](../../Models/Requests/TicketingListProjectsResponse.md)**
 
 ### Errors
 
@@ -303,9 +306,9 @@ while(res != null)
 | StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
 | StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
-## ListCollectionTicketTypes
+## GetProject
 
-Retrieve a paginated list of ticket types for a collection.
+Retrieve a single project by its identifier.
 
 ### Example Usage
 
@@ -319,16 +322,69 @@ var sdk = new StackOneHQClient(security: new Security() {
     Password = "",
 });
 
-TicketingListCollectionTicketTypesRequest req = new TicketingListCollectionTicketTypesRequest() {
+TicketingGetProjectRequest req = new TicketingGetProjectRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,parent_collection_id,remote_parent_collection_id",
-    Filter = new TicketingListCollectionTicketTypesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
-    },
+    Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at",
 };
 
-TicketingListCollectionTicketTypesResponse? res = await sdk.Ticketing.ListCollectionTicketTypesAsync(req);
+var res = await sdk.Ticketing.GetProjectAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [TicketingGetProjectRequest](../../Models/Requests/TicketingGetProjectRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[TicketingGetProjectResponse](../../Models/Requests/TicketingGetProjectResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## ListProjectComponents
+
+Retrieve a paginated list of project components.
+
+### Example Usage
+
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+TicketingListProjectComponentsRequest req = new TicketingListProjectComponentsRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at",
+    Filter = null,
+};
+
+TicketingListProjectComponentsResponse? res = await sdk.Ticketing.ListProjectComponentsAsync(req);
 
 while(res != null)
 {
@@ -340,13 +396,132 @@ while(res != null)
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                       | [TicketingListCollectionTicketTypesRequest](../../Models/Requests/TicketingListCollectionTicketTypesRequest.md) | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                               | [TicketingListProjectComponentsRequest](../../Models/Requests/TicketingListProjectComponentsRequest.md) | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
 
 ### Response
 
-**[TicketingListCollectionTicketTypesResponse](../../Models/Requests/TicketingListCollectionTicketTypesResponse.md)**
+**[TicketingListProjectComponentsResponse](../../Models/Requests/TicketingListProjectComponentsResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## GetProjectComponent
+
+Retrieve a single project component by its identifier.
+
+### Example Usage
+
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+TicketingGetProjectComponentRequest req = new TicketingGetProjectComponentRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    SubResourceId = "<id>",
+    Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at",
+};
+
+var res = await sdk.Ticketing.GetProjectComponentAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [TicketingGetProjectComponentRequest](../../Models/Requests/TicketingGetProjectComponentRequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+
+### Response
+
+**[TicketingGetProjectComponentResponse](../../Models/Requests/TicketingGetProjectComponentResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## ListProjectTicketTypes
+
+Retrieve a paginated list of ticket types for a project.
+
+### Example Usage
+
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+TicketingListProjectTicketTypesRequest req = new TicketingListProjectTicketTypesRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    Fields = "id,remote_id,name,project_id,remote_project_id",
+    Filter = new TicketingListProjectTicketTypesFilter() {
+        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+    },
+};
+
+TicketingListProjectTicketTypesResponse? res = await sdk.Ticketing.ListProjectTicketTypesAsync(req);
+
+while(res != null)
+{
+    // handle items
+
+    res = await res.Next!();
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                 | [TicketingListProjectTicketTypesRequest](../../Models/Requests/TicketingListProjectTicketTypesRequest.md) | :heavy_check_mark:                                                                                        | The request object to use for the request.                                                                |
+
+### Response
+
+**[TicketingListProjectTicketTypesResponse](../../Models/Requests/TicketingListProjectTicketTypesResponse.md)**
 
 ### Errors
 

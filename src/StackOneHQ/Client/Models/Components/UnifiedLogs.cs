@@ -163,6 +163,12 @@ namespace StackOneHQ.Client.Models.Components
         public UnifiedLogsResponse? Response { get; set; } = null;
 
         /// <summary>
+        /// The requests source IPV4 ip address
+        /// </summary>
+        [JsonProperty("source_ip")]
+        public string? SourceIp { get; set; } = null;
+
+        /// <summary>
         /// The list of provider requests
         /// </summary>
         [JsonProperty("step_requests")]

@@ -1,0 +1,9 @@
+# PlatformLogsPaginated
+
+
+## Fields
+
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `Next`                                                      | *string*                                                    | :heavy_minus_sign:                                          | N/A                                                         |
+| `Data`                                                      | List<[PlatformLog](../../Models/Components/PlatformLog.md)> | :heavy_check_mark:                                          | N/A                                                         |

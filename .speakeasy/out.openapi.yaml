@@ -1203,6 +1203,236 @@ paths:
       x-speakeasy-name-override: "list"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
       x-speakeasy-group: requestLogs
+  "/requests/platform-logs":
+    get:
+      tags:
+        - "Request Logs"
+      summary: "List Platform Logs"
+      operationId: "stackone_list_platform_logs"
+      parameters:
+        - name: "order_by"
+          in: "query"
+          description: "The field to order the results by."
+          required: false
+          schema:
+            type: "string"
+            enum:
+              - "provider"
+              - "service"
+              - "status"
+              - "eventDatetime"
+              - "duration"
+              - null
+            additionalProperties: false
+            nullable: true
+            example: "created_at"
+          x-speakeasy-unknown-values: "allow"
+        - name: "order_direction"
+          in: "query"
+          description: "The direction to order the results by."
+          required: false
+          schema:
+            type: "string"
+            enum:
+              - "asc"
+              - "desc"
+              - null
+            additionalProperties: false
+            nullable: true
+            example: "asc"
+          x-speakeasy-unknown-values: "allow"
+        - name: "page_size"
+          in: "query"
+          description: "The number of results per page (default value is 25)"
+          required: false
+          schema:
+            type: "number"
+            maximum: 100
+            nullable: true
+        - name: "next"
+          in: "query"
+          description: "The unified cursor"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "filter"
+          in: "query"
+          description: "Filter parameters that allow greater customisation of the list response"
+          required: false
+          schema:
+            type: "object"
+            properties:
+              "account_ids":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of account IDs to filter the results by."
+                nullable: true
+                example: "45355976281015164504,45355976281015164505"
+              "start_date":
+                type: "string"
+                additionalProperties: false
+                description: "A ISO8601 date string to filter the results by start_date."
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+              "end_date":
+                type: "string"
+                additionalProperties: false
+                description: "A ISO8601 date string to filter the results by end_date."
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+              "request_ids":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of request IDs to filter the results by."
+                nullable: true
+                example: "adbf752f-6457-4ddd-89b3-98ae2252b83b,adbf752f-6457-4ddd-89b3-98ae2252b83c"
+              "source_types":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of source types to filter the results by."
+                nullable: true
+                example: "DASHBOARD,SYNTHETIC_WEBHOOK"
+              "source_values":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of source values to filter the results by."
+                nullable: true
+              "source_ids":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of source IDs to filter the results by."
+                nullable: true
+              "http_methods":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of HTTP methods to filter the results by."
+                nullable: true
+                example: "GET,POST"
+              "categories":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of categories to filter the results by."
+                nullable: true
+                example: "hris,ats"
+              "resources":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of resources to filter the results by."
+                nullable: true
+                example: "employees,users"
+              "actions":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of actions to filter the results by."
+                nullable: true
+                example: "download,upload"
+              "status_codes":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of status codes to filter the results by."
+                nullable: true
+                example: "200,400"
+              "success":
+                type: "boolean"
+                additionalProperties: false
+                description: "A boolean value to filter the results by success or failure."
+                nullable: true
+                example: true
+              "order_by":
+                type: "string"
+                enum:
+                  - "provider"
+                  - "service"
+                  - "status"
+                  - "eventDatetime"
+                  - "duration"
+                  - null
+                additionalProperties: false
+                description: "The field to order the results by."
+                nullable: true
+                example: "created_at"
+              "order_direction":
+                type: "string"
+                enum:
+                  - "asc"
+                  - "desc"
+                  - null
+                additionalProperties: false
+                description: "The direction to order the results by."
+                nullable: true
+                example: "asc"
+            nullable: true
+      responses:
+        "200":
+          description: "The list of platform logs was retrieved."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PlatformLogsPaginated"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-name-override: "list_platform_logs"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   "/connectors/meta":
     get:
       tags:
@@ -19210,7 +19440,7 @@ paths:
             schema: {"$ref": "#/components/schemas/AtsCreateOfferRequestDto"}
         required: true
       responses:
-        "200":
+        "201":
           description: "The offer was created successfully."
           content:
             "application/json":
@@ -30255,7 +30485,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,collections,organization,created_at,updated_at"
+            example: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -30517,7 +30747,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,collections,organization,created_at,updated_at"
+            example: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at"
       responses:
         "200":
           description: "The ticket with the given identifier was retrieved."
@@ -31723,7 +31953,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,parent_collection_id,remote_parent_collection_id"
+            example: "id,remote_id,name,project_id,remote_project_id"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -31891,7 +32121,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,parent_collection_id,remote_parent_collection_id"
+            example: "id,remote_id,name,project_id,remote_project_id"
       responses:
         "200":
           description: "The ticket type with the given identifier was retrieved."
@@ -31968,13 +32198,13 @@ paths:
       x-speakeasy-group: "ticketing"
       x-speakeasy-name-override: "getTicketType"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
-  /unified/ticketing/collections:
+  /unified/ticketing/projects:
     get:
       tags:
-        - "Collections"
-      summary: "List Collections"
-      description: "Retrieve a paginated list of collections."
-      operationId: "ticketing_list_collections"
+        - "Projects"
+      summary: "List Projects"
+      description: "Retrieve a paginated list of projects."
+      operationId: "ticketing_list_projects"
       parameters:
         - name: "x-account-id"
           in: "header"
@@ -32006,10 +32236,10 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,organization_id,remote_organization_id,parent_id,remote_parent_id,key,name,description,type,created_at,updated_at"
+            example: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at"
         - name: "filter"
           in: "query"
-          description: "Ticketing Collections filters"
+          description: "Filter parameters that allow greater customisation of the list response"
           required: false
           style: "deepObject"
           explode: true
@@ -32022,14 +32252,6 @@ paths:
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
-              "type":
-                type: "string"
-                enum:
-                  - "project"
-                  - "component"
-                  - null
-                description: "Filter collections by type"
-                nullable: true
             nullable: true
         - name: "page"
           in: "query"
@@ -32064,10 +32286,10 @@ paths:
             example: "2020-01-01T00:00:00.000Z"
       responses:
         "200":
-          description: "The list of collections was retrieved."
+          description: "The list of projects was retrieved."
           content:
             "application/json":
-              schema: {"$ref": "#/components/schemas/TicketingCollectionsPaginated"}
+              schema: {"$ref": "#/components/schemas/TicketingProjectsPaginated"}
         "400":
           description: "Invalid request."
           content:
@@ -32136,16 +32358,16 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "listCollections"
+      x-speakeasy-name-override: "list_projects"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
-  /unified/ticketing/collections/{id}:
+  /unified/ticketing/projects/{id}:
     get:
       tags:
-        - "Collections"
-      summary: "Get Collection"
-      description: "Retrieve a single collection by its identifier."
-      operationId: "ticketing_get_collection"
+        - "Projects"
+      summary: "Get Project"
+      description: "Retrieve a single project by its identifier."
+      operationId: "ticketing_get_project"
       parameters:
         - name: "x-account-id"
           in: "header"
@@ -32182,13 +32404,13 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,organization_id,remote_organization_id,parent_id,remote_parent_id,key,name,description,type,created_at,updated_at"
+            example: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at"
       responses:
         "200":
-          description: "The collection with the given identifier was retrieved."
+          description: "The project with the given identifier was retrieved."
           content:
             "application/json":
-              schema: {"$ref": "#/components/schemas/TicketingCollectionResult"}
+              schema: {"$ref": "#/components/schemas/TicketingProjectResult"}
         "400":
           description: "Invalid request."
           content:
@@ -32256,17 +32478,17 @@ paths:
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
       security:
         - basic: []
-      x-speakeasy-group: "ticketing.collections"
-      x-speakeasy-name-override: "get"
+      x-speakeasy-group: "ticketing"
+      x-speakeasy-name-override: "get_project"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
-  /unified/ticketing/collections/{id}/ticket_types:
+  /unified/ticketing/projects/{id}/components:
     get:
       tags:
-        - "Collections"
-        - "Ticket Types"
-      summary: "List Collection Ticket Types"
-      description: "Retrieve a paginated list of ticket types for a collection."
-      operationId: "ticketing_list_collection_ticket_types"
+        - "Projects"
+        - "Components"
+      summary: "List Project Components"
+      description: "Retrieve a paginated list of project components."
+      operationId: "ticketing_list_project_components"
       parameters:
         - name: "x-account-id"
           in: "header"
@@ -32303,7 +32525,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,parent_collection_id,remote_parent_collection_id"
+            example: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -32353,7 +32575,302 @@ paths:
             example: "2020-01-01T00:00:00.000Z"
       responses:
         "200":
-          description: "The list of collection ticket types was retrieved."
+          description: "The list of project components was retrieved."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TicketingComponentsPaginated"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "ticketing"
+      x-speakeasy-name-override: "list_project_components"
+      x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/ticketing/projects/{id}/components/{subResourceId}:
+    get:
+      tags:
+        - "Projects"
+        - "Components"
+      summary: "Get Project Component"
+      description: "Retrieve a single project component by its identifier."
+      operationId: "ticketing_get_project_component"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "subResourceId"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "raw"
+          in: "query"
+          description: "Indicates that the raw request result should be returned in addition to the mapped result (default value is false)"
+          required: false
+          schema:
+            type: "boolean"
+            nullable: true
+        - name: "proxy"
+          in: "query"
+          description: "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            additionalProperties: true
+            nullable: true
+        - name: "fields"
+          in: "query"
+          description: "The comma separated list of fields that will be returned in the response (if empty, all fields are returned)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at"
+      responses:
+        "200":
+          description: "The project component with the given identifier was retrieved."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TicketingComponentResult"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "ticketing"
+      x-speakeasy-name-override: "get_project_component"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/ticketing/projects/{id}/ticket_types:
+    get:
+      tags:
+        - "Projects"
+        - "Ticket Types"
+      summary: "List Project Ticket Types"
+      description: "Retrieve a paginated list of ticket types for a project."
+      operationId: "ticketing_list_project_ticket_types"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "raw"
+          in: "query"
+          description: "Indicates that the raw request result should be returned in addition to the mapped result (default value is false)"
+          required: false
+          schema:
+            type: "boolean"
+            nullable: true
+        - name: "proxy"
+          in: "query"
+          description: "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            additionalProperties: true
+            nullable: true
+        - name: "fields"
+          in: "query"
+          description: "The comma separated list of fields that will be returned in the response (if empty, all fields are returned)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "id,remote_id,name,project_id,remote_project_id"
+        - name: "filter"
+          in: "query"
+          description: "Filter parameters that allow greater customisation of the list response"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            properties:
+              "updated_after":
+                type: "string"
+                additionalProperties: false
+                description: "Use a string with a date to only select results updated after that given date"
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+            nullable: true
+        - name: "page"
+          in: "query"
+          description: "The page number of the results to fetch"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            nullable: true
+        - name: "page_size"
+          in: "query"
+          description: "The number of results per page (default value is 25)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "next"
+          in: "query"
+          description: "The unified cursor"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "updated_after"
+          in: "query"
+          description: "Use a string with a date to only select results updated after that given date"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            nullable: true
+            example: "2020-01-01T00:00:00.000Z"
+      responses:
+        "200":
+          description: "The list of project ticket types was retrieved."
           content:
             "application/json":
               schema: {"$ref": "#/components/schemas/TicketingTicketTypePaginated"}
@@ -32425,7 +32942,7 @@ paths:
       security:
         - basic: []
       x-speakeasy-group: "ticketing"
-      x-speakeasy-name-override: "listCollectionTicketTypes"
+      x-speakeasy-name-override: "list_project_ticket_types"
       x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ticketing/tickets/{id}/statuses:
@@ -32855,11 +33372,13 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children"
+            example: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids"
         - name: "filter"
           in: "query"
           description: "Documents Files Filter"
           required: false
+          style: "deepObject"
+          explode: true
           schema:
             type: "object"
             properties:
@@ -32869,6 +33388,32 @@ paths:
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
+              "name":
+                type: "string"
+                description: "Search if the name of the file contains the string"
+                nullable: true
+                example: "john_doe_resume.pdf"
+              "content":
+                type: "string"
+                description: "Search if the contents of the file contains the string (contents can include file metadata)"
+                nullable: true
+                example: "FAQ of the project"
+              "created_after":
+                type: "string"
+                additionalProperties: false
+                description: "Use a string with a date to only select results created after that given date"
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+              "drive_id":
+                type: "string"
+                description: "Use to only include Files within the specified Drive"
+                nullable: true
+                example: "1234567890"
+              "folder_id":
+                type: "string"
+                description: "Use to only include Files within the specified Folder. Required when requesting nested items"
+                nullable: true
+                example: "1234567890"
             nullable: true
         - name: "page"
           in: "query"
@@ -32901,6 +33446,31 @@ paths:
             type: "string"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
+        - name: "folder_id"
+          in: "query"
+          description: "Use to only include Files within the specified Folder. Required when requesting nested items"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "1234567890"
+        - name: "nested_items"
+          in: "query"
+          description: "When \"true\" and used with filter[folder_id], the response includes Files and Files within descendant Folders"
+          required: false
+          schema:
+            type: "string"
+            default: "false"
+            nullable: true
+            example: "true"
+        - name: "include"
+          in: "query"
+          description: "The comma separated list of fields that will be included in the response"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "all_parent_folder_ids"
       responses:
         "200":
           description: "The list of files was retrieved."
@@ -33026,7 +33596,15 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children"
+            example: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids"
+        - name: "include"
+          in: "query"
+          description: "The comma separated list of fields that will be included in the response"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "all_parent_folder_ids"
       responses:
         "200":
           description: "The file with the given identifier was retrieved."
@@ -33138,7 +33716,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root"
+            example: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids"
         - name: "filter"
           in: "query"
           description: "Documents Folders Filter"
@@ -33152,6 +33730,18 @@ paths:
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
+              "drive_id":
+                type: "string"
+                additionalProperties: false
+                description: "Use to only include Folders within the specified Drive"
+                nullable: true
+                example: "1234567890"
+              "folder_id":
+                type: "string"
+                additionalProperties: false
+                description: "Use to only include Folders within the specified Folder. Required when requesting nested items"
+                nullable: true
+                example: "1234567890"
             nullable: true
         - name: "page"
           in: "query"
@@ -33184,6 +33774,31 @@ paths:
             type: "string"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
+        - name: "folder_id"
+          in: "query"
+          description: "Use to only include Folders within the specified Folder. Required when requesting nested items"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "1234567890"
+        - name: "nested_items"
+          in: "query"
+          description: "When \"true\" and used with filter[folder_id], the response includes Folders and their descendant Folders"
+          required: false
+          schema:
+            type: "string"
+            default: "false"
+            nullable: true
+            example: "true"
+        - name: "include"
+          in: "query"
+          description: "The comma separated list of fields that will be included in the response"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "all_parent_folder_ids"
       responses:
         "200":
           description: "The list of folders was retrieved."
@@ -33303,7 +33918,15 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root"
+            example: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids"
+        - name: "include"
+          in: "query"
+          description: "The comma separated list of fields that will be included in the response"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "all_parent_folder_ids"
       responses:
         "200":
           description: "The folder with the given identifier was retrieved."
@@ -34390,6 +35013,128 @@ components:
           nullable: true
           example: ["PRODUCTION", "TEST"]
           x-speakeasy-unknown-values: "allow"
+    "PlatformLog":
+      type: "object"
+      properties:
+        "request_id":
+          type: "string"
+          description: "The request ID"
+          nullable: true
+          example: "adbf752f-6457-4ddd-89b3-98ae2252b83b"
+        "event_datetime":
+          type: "string"
+          format: "date-time"
+          description: "The event ISO8601 date string"
+          nullable: true
+          example: "2021-01-01T00:00:00Z"
+        "start_time":
+          type: "string"
+          format: "date-time"
+          description: "The request start time ISO8601 date string"
+          nullable: true
+          example: "2021-01-01T00:00:00Z"
+        "end_time":
+          type: "string"
+          format: "date-time"
+          description: "The request end time ISO8601 date string"
+          nullable: true
+          example: "2021-01-01T00:00:00Z"
+        "account_id":
+          type: "string"
+          description: "The account ID of the request"
+          nullable: true
+          example: "45355976281015164504"
+        "project_id":
+          type: "string"
+          description: "The project ID of the request"
+          nullable: true
+          example: "dev-project-68574"
+        "http_method":
+          type: "string"
+          description: "The requested HTTP method"
+          nullable: true
+          example: "get"
+        "path":
+          type: "string"
+          description: "The requested path"
+          nullable: true
+          example: "/unified/hris/employees"
+        "url":
+          type: "string"
+          description: "The requested URL"
+          nullable: true
+          example: "https://api.stackone.com/unified/hris/employees?raw=false"
+        "status":
+          type: "number"
+          description: "The requests response status code"
+          nullable: true
+          example: 200
+        "duration":
+          type: "number"
+          description: "The request duration in milliseconds"
+          nullable: true
+          example: 356
+        "success":
+          type: "boolean"
+          description: "The request success flag"
+          nullable: true
+          example: true
+        "resource":
+          type: "string"
+          description: "The requested resource"
+          nullable: true
+          example: "employees"
+        "child_resource":
+          type: "string"
+          description: "The requested child resource"
+          nullable: true
+          example: "time-off"
+        "sub_resource":
+          type: "string"
+          description: "The requested sub resource"
+          nullable: true
+          example: "documents"
+        "action":
+          type: "string"
+          description: "The requested action"
+          nullable: true
+          example: "download"
+        "source_type":
+          type: "string"
+          description: "The requests source type"
+          nullable: true
+          example: "DASHBOARD"
+        "source_value":
+          type: "string"
+          description: "The requests source value"
+          nullable: true
+          example: "ACCOUNT_TESTER"
+        "source_id":
+          type: "string"
+          description: "The requests source ID"
+          nullable: true
+          example: "1234567890"
+        "source_ip":
+          type: "string"
+          description: "The requests source IPV4 ip address"
+          nullable: true
+          example: "192.168.1.1"
+        "category":
+          type: "string"
+          description: "The requested category"
+          nullable: true
+          example: "hris"
+    "PlatformLogsPaginated":
+      type: "object"
+      properties:
+        "next":
+          type: "string"
+          nullable: true
+        "data":
+          type: "array"
+          items: {"$ref": "#/components/schemas/PlatformLog"}
+      required:
+        - "data"
     "PreconditionFailedResponse":
       type: "object"
       properties:
@@ -34599,6 +35344,11 @@ components:
           description: "The asynchronous worker flag"
           nullable: true
           example: false
+        "source_ip":
+          type: "string"
+          description: "The requests source IPV4 ip address"
+          nullable: true
+          example: "192.168.1.1"
         "id":
           type: "string"
           description: "The provider request ID"
@@ -34915,6 +35665,11 @@ components:
             - {"$ref": "#/components/schemas/AdvancedLogResponseData"}
           description: "The advanced log response data"
           nullable: true
+        "source_ip":
+          type: "string"
+          description: "The requests source IPV4 ip address"
+          nullable: true
+          example: "192.168.1.1"
         "step_requests":
           type: "array"
           items: {"$ref": "#/components/schemas/StepLog"}
@@ -35047,6 +35802,11 @@ components:
           description: "The requests source ID"
           nullable: true
           example: "1234567890"
+        "source_ip":
+          type: "string"
+          description: "The requests source IPV4 ip address"
+          nullable: true
+          example: "192.168.1.1"
         "step_requests":
           type: "array"
           items: {"$ref": "#/components/schemas/StepLogPartial"}
@@ -50430,92 +51190,6 @@ components:
           type: "array"
           items: {"$ref": "#/components/schemas/RawResponse"}
           nullable: true
-    TicketingCollection:
-      type: "object"
-      properties:
-        "id":
-          type: "string"
-          description: "Unique identifier"
-          nullable: true
-          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
-        "remote_id":
-          type: "string"
-          description: "Provider's unique identifier"
-          nullable: true
-          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
-        "parent_id":
-          type: "string"
-          description: "The parent collection of the collection"
-          nullable: true
-          example: "collection-001"
-        "name":
-          type: "string"
-          description: "The name of the collection"
-          nullable: true
-          example: "Project Falcon"
-        "description":
-          type: "string"
-          description: "The description of the collection"
-          nullable: true
-          example: "Description of the project"
-        "key":
-          type: "string"
-          description: "The user-friendly key of the collection"
-          nullable: true
-          example: "project-falcon"
-        "type":
-          type: "string"
-          enum:
-            - "project"
-            - "component"
-            - "unmapped_value"
-            - null
-          description: "The type of the collection."
-          nullable: true
-          example: "project"
-          x-speakeasy-unknown-values: "allow"
-        "organization_id":
-          type: "string"
-          description: "The organization id related to the collection"
-          nullable: true
-          example: "organization-001"
-        "created_at":
-          type: "string"
-          format: "date-time"
-          description: "The timestamp when the record was created"
-          nullable: true
-          example: "2021-01-01T01:01:01.000Z"
-        "updated_at":
-          type: "string"
-          format: "date-time"
-          description: "The timestamp when the record was last updated"
-          nullable: true
-          example: "2021-01-01T01:01:01.000Z"
-    TicketingCollectionResult:
-      type: "object"
-      properties:
-        "data":
-          allOf:
-            - {"$ref": "#/components/schemas/TicketingCollection"}
-          nullable: true
-        "raw":
-          type: "array"
-          items: {"$ref": "#/components/schemas/RawResponse"}
-          nullable: true
-    TicketingCollectionsPaginated:
-      type: "object"
-      properties:
-        "next":
-          type: "string"
-          nullable: true
-        "data":
-          type: "array"
-          items: {"$ref": "#/components/schemas/TicketingCollection"}
-          nullable: true
-        "raw":
-          type: "array"
-          items: {"$ref": "#/components/schemas/RawResponse"}
-          nullable: true
     TicketingComment:
       type: "object"
       properties:
@@ -50587,6 +51261,76 @@ components:
           type: "array"
           items: {"$ref": "#/components/schemas/RawResponse"}
           nullable: true
+    TicketingComponent:
+      type: "object"
+      properties:
+        "id":
+          type: "string"
+          description: "Unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "remote_id":
+          type: "string"
+          description: "Provider's unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "organization_id":
+          type: "string"
+          description: "The organization id related to the component"
+          nullable: true
+          example: "organization-001"
+        "project_id":
+          type: "string"
+          description: "The project id related to the component"
+          nullable: true
+          example: "project-001"
+        "name":
+          type: "string"
+          description: "The name of the component"
+          nullable: true
+          example: "Component Falcon"
+        "description":
+          type: "string"
+          description: "The description of the component"
+          nullable: true
+          example: "Description of the component"
+        "created_at":
+          type: "string"
+          format: "date-time"
+          description: "The timestamp when the record was created"
+          nullable: true
+          example: "2021-01-01T01:01:01.000Z"
+        "updated_at":
+          type: "string"
+          format: "date-time"
+          description: "The timestamp when the record was last updated"
+          nullable: true
+          example: "2021-01-01T01:01:01.000Z"
+    TicketingComponentResult:
+      type: "object"
+      properties:
+        "data":
+          allOf:
+            - {"$ref": "#/components/schemas/TicketingComponent"}
+          nullable: true
+        "raw":
+          type: "array"
+          items: {"$ref": "#/components/schemas/RawResponse"}
+          nullable: true
+    TicketingComponentsPaginated:
+      type: "object"
+      properties:
+        "next":
+          type: "string"
+          nullable: true
+        "data":
+          type: "array"
+          items: {"$ref": "#/components/schemas/TicketingComponent"}
+          nullable: true
+        "raw":
+          type: "array"
+          items: {"$ref": "#/components/schemas/RawResponse"}
+          nullable: true
     TicketingContent:
       type: "object"
       properties:
@@ -50623,6 +51367,71 @@ components:
           description: "The name of the organization"
           nullable: true
           example: "Company"
+    TicketingProject:
+      type: "object"
+      properties:
+        "id":
+          type: "string"
+          description: "Unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "remote_id":
+          type: "string"
+          description: "Provider's unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "name":
+          type: "string"
+          description: "The name of the project"
+          nullable: true
+          example: "Project Falcon"
+        "description":
+          type: "string"
+          description: "The description of the project"
+          nullable: true
+          example: "Description of the project"
+        "organization_id":
+          type: "string"
+          description: "The organization id related to the project"
+          nullable: true
+          example: "organization-001"
+        "created_at":
+          type: "string"
+          format: "date-time"
+          description: "The timestamp when the record was created"
+          nullable: true
+          example: "2021-01-01T01:01:01.000Z"
+        "updated_at":
+          type: "string"
+          format: "date-time"
+          description: "The timestamp when the record was last updated"
+          nullable: true
+          example: "2021-01-01T01:01:01.000Z"
+    TicketingProjectResult:
+      type: "object"
+      properties:
+        "data":
+          allOf:
+            - {"$ref": "#/components/schemas/TicketingProject"}
+          nullable: true
+        "raw":
+          type: "array"
+          items: {"$ref": "#/components/schemas/RawResponse"}
+          nullable: true
+    TicketingProjectsPaginated:
+      type: "object"
+      properties:
+        "next":
+          type: "string"
+          nullable: true
+        "data":
+          type: "array"
+          items: {"$ref": "#/components/schemas/TicketingProject"}
+          nullable: true
+        "raw":
+          type: "array"
+          items: {"$ref": "#/components/schemas/RawResponse"}
+          nullable: true
     TicketingReadTicket:
       type: "object"
       properties:
@@ -50688,10 +51497,10 @@ components:
           description: "The tags of the ticket"
           nullable: true
           example: ["tag-001", "tag-002"]
-        "collections":
+        "projects":
           type: "array"
-          items: {"$ref": "#/components/schemas/TicketingCollection"}
-          description: "Collections the ticket belongs to"
+          items: {"$ref": "#/components/schemas/TicketingProject"}
+          description: "Projects the ticket belongs to"
           nullable: true
         "ticket_number":
           type: "string"
@@ -50723,6 +51532,11 @@ components:
           allOf:
             - {"$ref": "#/components/schemas/TicketingOrganization"}
           description: "Organization associated with the ticket"
+          nullable: true
+        "components":
+          type: "array"
+          items: {"$ref": "#/components/schemas/TicketingComponent"}
+          description: "Components associated with the ticket"
           nullable: true
         "created_at":
           type: "string"
@@ -50791,23 +51605,26 @@ components:
           description: "The tags of the ticket"
           nullable: true
           example: ["tag-001", "tag-002"]
-        "collection_ids":
-          type: "array"
-          items:
-            type: "string"
-          description: "Collections the ticket belongs to"
-          nullable: true
-          example: ["collection-001", "collection-002"]
-        "type":
-          type: "string"
-          description: "The type of the ticket"
-          nullable: true
-          example: "ticket-type-001"
         "organization_id":
           type: "string"
           description: "Organization associated with the ticket"
           nullable: true
           example: "organization-001"
+        "project_id":
+          type: "string"
+          description: "Project the ticket belongs to"
+          nullable: true
+          example: "project-001"
+        "component_ids":
+          type: "string"
+          description: "Components to associate with the ticket"
+          nullable: true
+          example: ["component-001", "component-002"]
+        "type":
+          type: "string"
+          description: "The type of the ticket"
+          nullable: true
+          example: "ticket-type-001"
     TicketingTicketPriorityTypeEnum:
       type: "object"
       properties:
@@ -50937,11 +51754,11 @@ components:
           description: "The name of the ticket type."
           nullable: true
           example: "Task"
-        "parent_collection_id":
+        "project_id":
           type: "string"
-          description: "The collection the ticket type belongs to."
+          description: "The project the ticket type belongs to."
           nullable: true
-          example: "collection-001"
+          example: "project-001"
     TicketingTicketTypePaginated:
       type: "object"
       properties:
@@ -51017,13 +51834,16 @@ components:
           description: "The tags of the ticket"
           nullable: true
           example: ["tag-001", "tag-002"]
-        "collection_ids":
-          type: "array"
-          items:
-            type: "string"
-          description: "Collections the ticket belongs to"
+        "project_id":
+          type: "string"
+          description: "Project the ticket belongs to"
           nullable: true
-          example: ["collection-001", "collection-002"]
+          example: "project-001"
+        "component_ids":
+          type: "string"
+          description: "Components to associate with the ticket"
+          nullable: true
+          example: ["component-001", "component-002"]
         "status":
           allOf:
             - {"$ref": "#/components/schemas/TicketingTicketStatus"}
@@ -51341,6 +52161,13 @@ components:
           description: "Whether the file has children"
           nullable: true
           example: true
+        "all_parent_folder_ids":
+          type: "array"
+          items:
+            type: "string"
+          description: "List of containing parent Folder IDs in descending order"
+          nullable: true
+          example: ["0123456789"]
     FilesPaginated:
       type: "object"
       properties:
@@ -51476,6 +52303,13 @@ components:
           description: "Whether the folder is at the root level of the drive"
           nullable: true
           example: true
+        "all_parent_folder_ids":
+          type: "array"
+          items:
+            type: "string"
+          description: "List of containing parent Folder IDs in descending order"
+          nullable: true
+          example: ["0123456789"]
     FoldersPaginated:
       type: "object"
       properties:
@@ -51632,6 +52466,10 @@ tags:
     description: "Files attached to tickets."
   - name: "Ticket Types"
     description: "Types or categories of tickets."
+  - name: "Projects"
+    description: "The top level grouping of tickets."
+  - name: "Components"
+    description: "A sub grouping under projects in which related tickets can be classified together."
   - name: "Ticket Statuses"
     description: "Statuses representing ticket progress."
   - name: "Files"

@@ -26,10 +26,15 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 DocumentsListFoldersRequest req = new DocumentsListFoldersRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root",
+    Fields = "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids",
     Filter = new DocumentsListFoldersFilter() {
         UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        DriveId = "1234567890",
+        FolderId = "1234567890",
     },
+    FolderId = "1234567890",
+    NestedItems = "true",
+    Include = "all_parent_folder_ids",
 };
 
 DocumentsListFoldersResponse? res = await sdk.Documents.Folders.ListAsync(req);
@@ -89,7 +94,8 @@ var sdk = new StackOneHQClient(security: new Security() {
 DocumentsGetFolderRequest req = new DocumentsGetFolderRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root",
+    Fields = "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids",
+    Include = "all_parent_folder_ids",
 };
 
 var res = await sdk.Documents.Folders.GetAsync(req);

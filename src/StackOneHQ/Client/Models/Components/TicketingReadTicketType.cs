@@ -31,9 +31,9 @@ namespace StackOneHQ.Client.Models.Components
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The collection the ticket type belongs to.
+        /// The project the ticket type belongs to.
         /// </summary>
-        [JsonProperty("parent_collection_id")]
-        public string? ParentCollectionId { get; set; } = null;
+        [JsonProperty("project_id")]
+        public string? ProjectId { get; set; } = null;
     }
 }

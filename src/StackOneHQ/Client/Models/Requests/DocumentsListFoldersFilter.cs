@@ -22,5 +22,17 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public string? UpdatedAfter { get; set; } = null;
+
+        /// <summary>
+        /// Use to only include Folders within the specified Drive
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=drive_id")]
+        public string? DriveId { get; set; } = null;
+
+        /// <summary>
+        /// Use to only include Folders within the specified Folder. Required when requesting nested items
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=folder_id")]
+        public string? FolderId { get; set; } = null;
     }
 }

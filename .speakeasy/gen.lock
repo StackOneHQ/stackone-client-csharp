@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: 3e36a82e516bc6c1a34b70dce9ada614
+  docChecksum: 76ec057ac7ff316efb87e7603b0c62c2
   docVersion: 1.0.0
-  speakeasyVersion: 1.583.1
-  generationVersion: 2.658.3
-  releaseVersion: 0.2.6
-  configChecksum: c755ea108133f7a7280baa374d04aeb9
+  speakeasyVersion: 1.591.0
+  generationVersion: 2.666.0
+  releaseVersion: 0.2.7
+  configChecksum: a0bcfa34b4950e12c5474217cb22a9d2
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
@@ -1168,6 +1168,8 @@ generatedFiles:
   - docs/Models/Components/PatchAccountExternalDtoType.md
   - docs/Models/Components/PhoneNumber.md
   - docs/Models/Components/PhoneNumberType.md
+  - docs/Models/Components/PlatformLog.md
+  - docs/Models/Components/PlatformLogsPaginated.md
   - docs/Models/Components/Position.md
   - docs/Models/Components/PositionResult.md
   - docs/Models/Components/PositionSourceValue.md
@@ -1311,17 +1313,19 @@ generatedFiles:
   - docs/Models/Components/TicketingAttachmentSourceValueUnion.md
   - docs/Models/Components/TicketingAttachmentValue.md
   - docs/Models/Components/TicketingAttachmentsPaginated.md
-  - docs/Models/Components/TicketingCollection.md
-  - docs/Models/Components/TicketingCollectionResult.md
-  - docs/Models/Components/TicketingCollectionResultData.md
-  - docs/Models/Components/TicketingCollectionResultType.md
-  - docs/Models/Components/TicketingCollectionType.md
-  - docs/Models/Components/TicketingCollectionsPaginated.md
   - docs/Models/Components/TicketingComment.md
   - docs/Models/Components/TicketingCommentResult.md
   - docs/Models/Components/TicketingCommentResultData.md
   - docs/Models/Components/TicketingCommentsPaginated.md
+  - docs/Models/Components/TicketingComponent.md
+  - docs/Models/Components/TicketingComponentResult.md
+  - docs/Models/Components/TicketingComponentResultData.md
+  - docs/Models/Components/TicketingComponentsPaginated.md
   - docs/Models/Components/TicketingContent.md
+  - docs/Models/Components/TicketingProject.md
+  - docs/Models/Components/TicketingProjectResult.md
+  - docs/Models/Components/TicketingProjectResultData.md
+  - docs/Models/Components/TicketingProjectsPaginated.md
   - docs/Models/Components/TicketingReadTicket.md
   - docs/Models/Components/TicketingReadTicketOrganization.md
   - docs/Models/Components/TicketingReadTicketPriority.md
@@ -1719,8 +1723,6 @@ generatedFiles:
   - docs/Models/Requests/DocumentsListFoldersResponse.md
   - docs/Models/Requests/DocumentsUploadFileRequest.md
   - docs/Models/Requests/DocumentsUploadFileResponse.md
-  - docs/Models/Requests/FilterOrderBy.md
-  - docs/Models/Requests/FilterOrderDirection.md
   - docs/Models/Requests/HrisBatchUploadEmployeeDocumentRequest.md
   - docs/Models/Requests/HrisBatchUploadEmployeeDocumentResponse.md
   - docs/Models/Requests/HrisCancelEmployeeTimeOffRequestRequest.md
@@ -2058,11 +2060,20 @@ generatedFiles:
   - docs/Models/Requests/StackoneListLinkedAccountsRequest.md
   - docs/Models/Requests/StackoneListLinkedAccountsResponse.md
   - docs/Models/Requests/StackoneListLogsFilter.md
+  - docs/Models/Requests/StackoneListLogsFilterOrderBy.md
+  - docs/Models/Requests/StackoneListLogsFilterOrderDirection.md
   - docs/Models/Requests/StackoneListLogsInclude.md
   - docs/Models/Requests/StackoneListLogsOrderBy.md
   - docs/Models/Requests/StackoneListLogsOrderDirection.md
   - docs/Models/Requests/StackoneListLogsRequest.md
   - docs/Models/Requests/StackoneListLogsResponse.md
+  - docs/Models/Requests/StackoneListPlatformLogsFilter.md
+  - docs/Models/Requests/StackoneListPlatformLogsFilterOrderBy.md
+  - docs/Models/Requests/StackoneListPlatformLogsFilterOrderDirection.md
+  - docs/Models/Requests/StackoneListPlatformLogsOrderBy.md
+  - docs/Models/Requests/StackoneListPlatformLogsOrderDirection.md
+  - docs/Models/Requests/StackoneListPlatformLogsRequest.md
+  - docs/Models/Requests/StackoneListPlatformLogsResponse.md
   - docs/Models/Requests/StackoneListStepLogsFilter.md
   - docs/Models/Requests/StackoneListStepLogsOrderBy.md
   - docs/Models/Requests/StackoneListStepLogsOrderDirection.md
@@ -2078,10 +2089,12 @@ generatedFiles:
   - docs/Models/Requests/TicketingDownloadTicketingAttachmentResponse.md
   - docs/Models/Requests/TicketingGetAttachmentRequest.md
   - docs/Models/Requests/TicketingGetAttachmentResponse.md
-  - docs/Models/Requests/TicketingGetCollectionRequest.md
-  - docs/Models/Requests/TicketingGetCollectionResponse.md
   - docs/Models/Requests/TicketingGetCommentRequest.md
   - docs/Models/Requests/TicketingGetCommentResponse.md
+  - docs/Models/Requests/TicketingGetProjectComponentRequest.md
+  - docs/Models/Requests/TicketingGetProjectComponentResponse.md
+  - docs/Models/Requests/TicketingGetProjectRequest.md
+  - docs/Models/Requests/TicketingGetProjectResponse.md
   - docs/Models/Requests/TicketingGetTicketRequest.md
   - docs/Models/Requests/TicketingGetTicketResponse.md
   - docs/Models/Requests/TicketingGetTicketTypeRequest.md
@@ -2091,16 +2104,18 @@ generatedFiles:
   - docs/Models/Requests/TicketingListAttachmentsFilter.md
   - docs/Models/Requests/TicketingListAttachmentsRequest.md
   - docs/Models/Requests/TicketingListAttachmentsResponse.md
-  - docs/Models/Requests/TicketingListCollectionTicketTypesFilter.md
-  - docs/Models/Requests/TicketingListCollectionTicketTypesRequest.md
-  - docs/Models/Requests/TicketingListCollectionTicketTypesResponse.md
-  - docs/Models/Requests/TicketingListCollectionsFilter.md
-  - docs/Models/Requests/TicketingListCollectionsRequest.md
-  - docs/Models/Requests/TicketingListCollectionsResponse.md
-  - docs/Models/Requests/TicketingListCollectionsType.md
   - docs/Models/Requests/TicketingListCommentsFilter.md
   - docs/Models/Requests/TicketingListCommentsRequest.md
   - docs/Models/Requests/TicketingListCommentsResponse.md
+  - docs/Models/Requests/TicketingListProjectComponentsFilter.md
+  - docs/Models/Requests/TicketingListProjectComponentsRequest.md
+  - docs/Models/Requests/TicketingListProjectComponentsResponse.md
+  - docs/Models/Requests/TicketingListProjectTicketTypesFilter.md
+  - docs/Models/Requests/TicketingListProjectTicketTypesRequest.md
+  - docs/Models/Requests/TicketingListProjectTicketTypesResponse.md
+  - docs/Models/Requests/TicketingListProjectsFilter.md
+  - docs/Models/Requests/TicketingListProjectsRequest.md
+  - docs/Models/Requests/TicketingListProjectsResponse.md
   - docs/Models/Requests/TicketingListTicketStatusesFilter.md
   - docs/Models/Requests/TicketingListTicketStatusesRequest.md
   - docs/Models/Requests/TicketingListTicketStatusesResponse.md
@@ -2140,7 +2155,6 @@ generatedFiles:
   - docs/sdks/candidates/README.md
   - docs/sdks/candidatescustomfielddefinitions/README.md
   - docs/sdks/categories/README.md
-  - docs/sdks/collections/README.md
   - docs/sdks/comments/README.md
   - docs/sdks/companies/README.md
   - docs/sdks/completions/README.md
@@ -2230,7 +2244,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Candidates.cs
   - src/StackOneHQ/Client/CandidatesCustomFieldDefinitions.cs
   - src/StackOneHQ/Client/Categories.cs
-  - src/StackOneHQ/Client/Collections.cs
   - src/StackOneHQ/Client/Comments.cs
   - src/StackOneHQ/Client/Companies.cs
   - src/StackOneHQ/Client/Completions.cs
@@ -3410,6 +3423,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDtoType.cs
   - src/StackOneHQ/Client/Models/Components/PhoneNumber.cs
   - src/StackOneHQ/Client/Models/Components/PhoneNumberType.cs
+  - src/StackOneHQ/Client/Models/Components/PlatformLog.cs
+  - src/StackOneHQ/Client/Models/Components/PlatformLogsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/Position.cs
   - src/StackOneHQ/Client/Models/Components/PositionResult.cs
   - src/StackOneHQ/Client/Models/Components/PositionSourceValue.cs
@@ -3553,17 +3568,19 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/TicketingAttachmentSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/TicketingAttachmentValue.cs
   - src/StackOneHQ/Client/Models/Components/TicketingAttachmentsPaginated.cs
-  - src/StackOneHQ/Client/Models/Components/TicketingCollection.cs
-  - src/StackOneHQ/Client/Models/Components/TicketingCollectionResult.cs
-  - src/StackOneHQ/Client/Models/Components/TicketingCollectionResultData.cs
-  - src/StackOneHQ/Client/Models/Components/TicketingCollectionResultType.cs
-  - src/StackOneHQ/Client/Models/Components/TicketingCollectionType.cs
-  - src/StackOneHQ/Client/Models/Components/TicketingCollectionsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/TicketingComment.cs
   - src/StackOneHQ/Client/Models/Components/TicketingCommentResult.cs
   - src/StackOneHQ/Client/Models/Components/TicketingCommentResultData.cs
   - src/StackOneHQ/Client/Models/Components/TicketingCommentsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingComponent.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingComponentResult.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingComponentResultData.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingComponentsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/TicketingContent.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingProject.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingProjectResult.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingProjectResultData.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingProjectsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/TicketingReadTicket.cs
   - src/StackOneHQ/Client/Models/Components/TicketingReadTicketOrganization.cs
   - src/StackOneHQ/Client/Models/Components/TicketingReadTicketPriority.cs
@@ -3962,8 +3979,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/DocumentsListFoldersResponse.cs
   - src/StackOneHQ/Client/Models/Requests/DocumentsUploadFileRequest.cs
   - src/StackOneHQ/Client/Models/Requests/DocumentsUploadFileResponse.cs
-  - src/StackOneHQ/Client/Models/Requests/FilterOrderBy.cs
-  - src/StackOneHQ/Client/Models/Requests/FilterOrderDirection.cs
   - src/StackOneHQ/Client/Models/Requests/HrisBatchUploadEmployeeDocumentRequest.cs
   - src/StackOneHQ/Client/Models/Requests/HrisBatchUploadEmployeeDocumentResponse.cs
   - src/StackOneHQ/Client/Models/Requests/HrisCancelEmployeeTimeOffRequestRequest.cs
@@ -4301,11 +4316,20 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/StackoneListLinkedAccountsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLinkedAccountsResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLogsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListLogsFilterOrderBy.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListLogsFilterOrderDirection.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLogsInclude.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLogsOrderBy.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLogsOrderDirection.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLogsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLogsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListPlatformLogsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListPlatformLogsFilterOrderBy.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListPlatformLogsFilterOrderDirection.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListPlatformLogsOrderBy.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListPlatformLogsOrderDirection.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListPlatformLogsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListPlatformLogsResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListStepLogsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListStepLogsOrderBy.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListStepLogsOrderDirection.cs
@@ -4321,10 +4345,12 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/TicketingDownloadTicketingAttachmentResponse.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingGetAttachmentRequest.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingGetAttachmentResponse.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingGetCollectionRequest.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingGetCollectionResponse.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingGetCommentRequest.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingGetCommentResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingGetProjectComponentRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingGetProjectComponentResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingGetProjectRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingGetProjectResponse.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingGetTicketRequest.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingGetTicketResponse.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingGetTicketTypeRequest.cs
@@ -4334,16 +4360,18 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/TicketingListAttachmentsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListAttachmentsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListAttachmentsResponse.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingListCollectionTicketTypesFilter.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingListCollectionTicketTypesRequest.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingListCollectionTicketTypesResponse.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingListCollectionsFilter.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingListCollectionsRequest.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingListCollectionsResponse.cs
-  - src/StackOneHQ/Client/Models/Requests/TicketingListCollectionsType.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListCommentsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListCommentsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListCommentsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectComponentsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectComponentsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectComponentsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectTicketTypesFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectTicketTypesRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectTicketTypesResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/TicketingListProjectsResponse.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListTicketStatusesFilter.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListTicketStatusesRequest.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingListTicketStatusesResponse.cs
@@ -4649,7 +4677,7 @@ examples:
           include: "step_logs"
       responses:
         "200":
-          application/json: {"data": {"request_id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "event_datetime": "2021-01-01T00:00:00Z", "start_time": "2021-01-01T00:00:00Z", "end_time": "2021-01-01T00:00:00Z", "account_id": "45355976281015164504", "project_id": "dev-project-68574", "http_method": "get", "path": "/unified/hris/employees", "url": "https://api.stackone.com/unified/hris/employees?raw=false", "status": 200, "duration": 356, "success": true, "provider": "planday", "service": "hris", "resource": "employees", "child_resource": "time-off", "sub_resource": "documents", "action": "download", "is_worker": false, "source_type": "DASHBOARD", "source_value": "ACCOUNT_TESTER", "source_id": "1234567890", "request": {"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "method": "get", "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "url": {"url": "https://example.com/api/v1/resource", "hostname": "example.com", "path": "/api/v1/resource", "query_params": {"page": 1, "limit": 10}}}, "response": {"status_code": 200, "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "custom_mapping_errors": [{"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "message": "Invalid value", "targetField": "first_name"}], "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}, "step_requests": [{"request_id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "start_time": "2021-01-01T00:00:00Z", "end_time": "2021-01-01T00:00:00Z", "account_id": "45355976281015164504", "project_id": "dev-project-68574", "http_method": "get", "path": "/unified/hris/employees", "url": "https://api.stackone.com/unified/hris/employees?raw=false", "status": 200, "duration": 356, "success": true, "provider": "planday", "service": "hris", "resource": "employees", "child_resource": "time-off", "sub_resource": "documents", "action": "download", "is_worker": false, "id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "request": {"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "method": "get", "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "url": {"url": "https://example.com/api/v1/resource", "hostname": "example.com", "path": "/api/v1/resource", "query_params": {"page": 1, "limit": 10}}}, "response": {"status_code": 200, "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "custom_mapping_errors": [{"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "message": "Invalid value", "targetField": "first_name"}], "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}}]}}
+          application/json: {"data": {"request_id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "event_datetime": "2021-01-01T00:00:00Z", "start_time": "2021-01-01T00:00:00Z", "end_time": "2021-01-01T00:00:00Z", "account_id": "45355976281015164504", "project_id": "dev-project-68574", "http_method": "get", "path": "/unified/hris/employees", "url": "https://api.stackone.com/unified/hris/employees?raw=false", "status": 200, "duration": 356, "success": true, "provider": "planday", "service": "hris", "resource": "employees", "child_resource": "time-off", "sub_resource": "documents", "action": "download", "is_worker": false, "source_type": "DASHBOARD", "source_value": "ACCOUNT_TESTER", "source_id": "1234567890", "request": {"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "method": "get", "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "url": {"url": "https://example.com/api/v1/resource", "hostname": "example.com", "path": "/api/v1/resource", "query_params": {"page": 1, "limit": 10}}}, "response": {"status_code": 200, "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "custom_mapping_errors": [{"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "message": "Invalid value", "targetField": "first_name"}], "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}, "source_ip": "192.168.1.1", "step_requests": [{"request_id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "start_time": "2021-01-01T00:00:00Z", "end_time": "2021-01-01T00:00:00Z", "account_id": "45355976281015164504", "project_id": "dev-project-68574", "http_method": "get", "path": "/unified/hris/employees", "url": "https://api.stackone.com/unified/hris/employees?raw=false", "status": 200, "duration": 356, "success": true, "provider": "planday", "service": "hris", "resource": "employees", "child_resource": "time-off", "sub_resource": "documents", "action": "download", "is_worker": false, "id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "request": {"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "method": "get", "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "url": {"url": "https://example.com/api/v1/resource", "hostname": "example.com", "path": "/api/v1/resource", "query_params": {"page": 1, "limit": 10}}}, "response": {"status_code": 200, "headers": {"content-type": "application/json", "authorization": "Bearer token"}, "custom_mapping_errors": [{"id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "message": "Invalid value", "targetField": "first_name"}], "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}}]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -9387,6 +9415,8 @@ examples:
           application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "201":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
   ats_get_offer:
     speakeasy-default-ats-get-offer:
       parameters:
@@ -12441,13 +12471,13 @@ examples:
     speakeasy-default-ticketing-list-tickets:
       parameters:
         query:
-          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,collections,organization,created_at,updated_at"
+          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "creator_id": "user-001", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "collections": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "parent_id": "collection-001", "name": "Project Falcon", "description": "Description of the project", "key": "project-falcon", "type": "project", "organization_id": "organization-001", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "ticket_number": "ticket-001", "type": {"id": "001", "name": "Task", "parent_collection_id": "collection-001"}, "closed_at": "2021-01-01T01:01:01.000Z", "ticket_url": "https://help.company.com/tickets/SUP-5689", "status": {"id": "001", "type": {"value": "to-do", "source_value": "New"}, "name": "Backlog"}, "organization": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "domain": "company.com", "name": "Company"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "creator_id": "user-001", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "ticket_number": "ticket-001", "type": {"id": "001", "name": "Task"}, "closed_at": "2021-01-01T01:01:01.000Z", "ticket_url": "https://help.company.com/tickets/SUP-5689", "status": {"id": "001", "type": {"value": "to-do", "source_value": "New"}, "name": "Backlog"}, "organization": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "domain": "company.com", "name": "Company"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12478,7 +12508,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "creator_id": "user-001", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "collection_ids": ["collection-001", "collection-002"], "type": "ticket-type-001", "organization_id": "organization-001"}
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "creator_id": "user-001", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "organization_id": "organization-001", "project_id": "project-001", "component_ids": "[\"component-001\",\"component-002\"]", "type": "ticket-type-001"}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
@@ -12512,12 +12542,12 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,collections,organization,created_at,updated_at"
+          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "creator_id": "user-001", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "collections": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "parent_id": "collection-001", "name": "Project Falcon", "description": "Description of the project", "key": "project-falcon", "type": "project", "organization_id": "organization-001", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "ticket_number": "ticket-001", "type": null, "closed_at": "2021-01-01T01:01:01.000Z", "ticket_url": "https://help.company.com/tickets/SUP-5689", "status": {"id": "001", "type": {"value": "to-do", "source_value": "New"}, "name": "Backlog"}, "organization": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "domain": "company.com", "name": "Company"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "creator_id": "user-001", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "projects": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Project Falcon", "description": "Description of the project", "organization_id": "organization-001", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "ticket_number": "ticket-001", "type": null, "closed_at": "2021-01-01T01:01:01.000Z", "ticket_url": "https://help.company.com/tickets/SUP-5689", "status": {"id": "001", "type": {"value": "to-do", "source_value": "New"}, "name": "Backlog"}, "organization": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "domain": "company.com", "name": "Company"}, "components": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "organization_id": "organization-001", "project_id": "project-001", "name": "Component Falcon", "description": "Description of the component", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12550,7 +12580,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "collection_ids": ["collection-001", "collection-002"], "status": {"id": "001", "type": {"value": "to-do", "source_value": "New"}, "name": "Backlog"}}
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "System outage in production environment", "reporters": ["user-001", "user-002"], "assignees": ["user-001", "user-002"], "content": [{"plain": "This is some content", "html": "<p>This is some content</p>"}], "parent_id": "ticket-002", "priority": {"id": "001", "value": "medium", "source_value": "Normal"}, "tags": ["tag-001", "tag-002"], "project_id": "project-001", "component_ids": "[\"component-001\",\"component-002\"]", "status": {"id": "001", "type": {"value": "to-do", "source_value": "New"}, "name": "Backlog"}}
       responses:
         "200":
           application/json: {"statusCode": 200, "message": "Record updated successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
@@ -12839,13 +12869,13 @@ examples:
     speakeasy-default-ticketing-list-ticket-types:
       parameters:
         query:
-          fields: "id,remote_id,name,parent_collection_id,remote_parent_collection_id"
+          fields: "id,remote_id,name,project_id,remote_project_id"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "001", "name": "Task", "parent_collection_id": "collection-001"}]}
+          application/json: {"data": [{"id": "001", "name": "Task"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12876,12 +12906,12 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,parent_collection_id,remote_parent_collection_id"
+          fields: "id,remote_id,name,project_id,remote_project_id"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "001", "name": "Task", "parent_collection_id": "collection-001"}}
+          application/json: {"data": {"id": "001", "name": "Task", "project_id": "project-001"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -13125,8 +13155,11 @@ examples:
     speakeasy-default-documents-list-files:
       parameters:
         query:
-          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children"
-          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z", "name": "john_doe_resume.pdf", "content": "FAQ of the project", "created_after": "2020-01-01T00:00:00.000Z", "drive_id": "1234567890", "folder_id": "1234567890"}
+          folder_id: "1234567890"
+          nested_items: "true"
+          include: "all_parent_folder_ids"
         header:
           x-account-id: "<id>"
       responses:
@@ -13162,12 +13195,13 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children"
+          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids"
+          include: "all_parent_folder_ids"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "description": "This is the description associated to the file.", "size": 1024, "url": "https://drive.google.com/file/d/nd8932h9d/view", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "path": "/path/to/file", "owner_id": "c28xyrc55866bvuv", "export_formats": ["application/pdf"], "default_download_format": "application/pdf", "remote_owner_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "folder_id": "c28xyrc55866bvuv", "remote_folder_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "drive_id": "c28xyrc55866bvuv", "remote_drive_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z", "has_content": true, "has_children": true}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "description": "This is the description associated to the file.", "size": 1024, "url": "https://drive.google.com/file/d/nd8932h9d/view", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "path": "/path/to/file", "owner_id": "c28xyrc55866bvuv", "export_formats": ["application/pdf"], "default_download_format": "application/pdf", "remote_owner_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "folder_id": "c28xyrc55866bvuv", "remote_folder_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "drive_id": "c28xyrc55866bvuv", "remote_drive_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z", "has_content": true, "has_children": true, "all_parent_folder_ids": ["0123456789"]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -13196,8 +13230,11 @@ examples:
     speakeasy-default-documents-list-folders:
       parameters:
         query:
-          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root"
-          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z", "drive_id": "1234567890", "folder_id": "1234567890"}
+          folder_id: "1234567890"
+          nested_items: "true"
+          include: "all_parent_folder_ids"
         header:
           x-account-id: "<id>"
       responses:
@@ -13233,12 +13270,13 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root"
+          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids"
+          include: "all_parent_folder_ids"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "description": "This is the description associated to the folder.", "size": 1024, "url": "https://drive.google.com/folder/d/nd8932h9d/view", "path": "/path/to/folder", "owner_id": "c28xyrc55866bvuv", "remote_owner_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "parent_folder_id": "c28xyrc55866bvuv", "remote_parent_folder_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "drive_id": "c28xyrc55866bvuv", "remote_drive_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z", "has_content": true, "has_children": true, "is_root": true}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "description": "This is the description associated to the folder.", "size": 1024, "url": "https://drive.google.com/folder/d/nd8932h9d/view", "path": "/path/to/folder", "owner_id": "c28xyrc55866bvuv", "remote_owner_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "parent_folder_id": "c28xyrc55866bvuv", "remote_parent_folder_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "drive_id": "c28xyrc55866bvuv", "remote_drive_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z", "has_content": true, "has_children": true, "is_root": true, "all_parent_folder_ids": ["0123456789"]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -13310,6 +13348,220 @@ examples:
       responses:
         "200":
           application/json: {"data": {"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "USA Development Drive", "description": "Drive with USA Development documents", "url": "https://test.sharepoint.com/Document%20Library", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  stackone_list_platform_logs:
+    speakeasy-default-stackone-list-platform-logs:
+      parameters:
+        query:
+          order_by: "duration"
+          order_direction: "asc"
+          filter: {"account_ids": "45355976281015164504,45355976281015164505", "start_date": "2020-01-01T00:00:00.000Z", "end_date": "2020-01-01T00:00:00.000Z", "request_ids": "adbf752f-6457-4ddd-89b3-98ae2252b83b,adbf752f-6457-4ddd-89b3-98ae2252b83c", "source_types": "DASHBOARD,SYNTHETIC_WEBHOOK", "http_methods": "GET,POST", "categories": "hris,ats", "resources": "employees,users", "actions": "download,upload", "status_codes": "200,400", "success": true, "order_by": "eventDatetime", "order_direction": "asc"}
+      responses:
+        "200":
+          application/json: {"data": [{"request_id": "adbf752f-6457-4ddd-89b3-98ae2252b83b", "event_datetime": "2021-01-01T00:00:00Z", "start_time": "2021-01-01T00:00:00Z", "end_time": "2021-01-01T00:00:00Z", "account_id": "45355976281015164504", "project_id": "dev-project-68574", "http_method": "get", "path": "/unified/hris/employees", "url": "https://api.stackone.com/unified/hris/employees?raw=false", "status": 200, "duration": 356, "success": true, "resource": "employees", "child_resource": "time-off", "sub_resource": "documents", "action": "download", "source_type": "DASHBOARD", "source_value": "ACCOUNT_TESTER", "source_id": "1234567890", "source_ip": "192.168.1.1", "category": "hris"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ticketing_list_projects:
+    speakeasy-default-ticketing-list-projects:
+      parameters:
+        query:
+          fields: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Project Falcon", "description": "Description of the project", "organization_id": "organization-001", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ticketing_get_project:
+    speakeasy-default-ticketing-get-project:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Project Falcon", "description": "Description of the project", "organization_id": "organization-001", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ticketing_list_project_components:
+    speakeasy-default-ticketing-list-project-components:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at"
+          filter: null
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "organization_id": "organization-001", "project_id": "project-001", "name": "Component Falcon", "description": "Description of the component", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ticketing_get_project_component:
+    speakeasy-default-ticketing-get-project-component:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query:
+          fields: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "organization_id": "organization-001", "project_id": "project-001", "name": "Component Falcon", "description": "Description of the component", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": null}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ticketing_list_project_ticket_types:
+    speakeasy-default-ticketing-list-project-ticket-types:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,name,project_id,remote_project_id"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "001", "name": "Task", "project_id": "project-001"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":

@@ -30,7 +30,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 TicketingListTicketsRequest req = new TicketingListTicketsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,collections,organization,created_at,updated_at",
+    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at",
     Filter = new TicketingListTicketsFilter() {
         UpdatedAfter = "2020-01-01T00:00:00.000Z",
     },
@@ -125,12 +125,10 @@ var res = await sdk.Ticketing.Tickets.CreateAsync(
             "tag-001",
             "tag-002",
         },
-        CollectionIds = new List<string>() {
-            "collection-001",
-            "collection-002",
-        },
-        Type = "ticket-type-001",
         OrganizationId = "organization-001",
+        ProjectId = "project-001",
+        ComponentIds = "[\"component-001\",\"component-002\"]",
+        Type = "ticket-type-001",
     }
 );
 
@@ -185,7 +183,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingGetTicketRequest req = new TicketingGetTicketRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,collections,organization,created_at,updated_at",
+    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at",
 };
 
 var res = await sdk.Ticketing.Tickets.GetAsync(req);
@@ -272,10 +270,8 @@ var res = await sdk.Ticketing.Tickets.UpdateAsync(
             "tag-001",
             "tag-002",
         },
-        CollectionIds = new List<string>() {
-            "collection-001",
-            "collection-002",
-        },
+        ProjectId = "project-001",
+        ComponentIds = "[\"component-001\",\"component-002\"]",
         Status = new TicketingTicketUpdateRequestDtoStatus() {
             Id = "001",
             Type = new TicketingTicketUpdateRequestDtoType() {

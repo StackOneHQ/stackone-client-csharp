@@ -118,12 +118,12 @@ namespace StackOneHQ.Client.Models.Requests
         /// The field to order the results by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=order_by")]
-        public FilterOrderBy? OrderBy { get; set; } = null;
+        public StackoneListLogsFilterOrderBy? OrderBy { get; set; } = null;
 
         /// <summary>
         /// The direction to order the results by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=order_direction")]
-        public FilterOrderDirection? OrderDirection { get; set; } = null;
+        public StackoneListLogsFilterOrderDirection? OrderDirection { get; set; } = null;
     }
 }

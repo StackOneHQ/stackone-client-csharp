@@ -3,11 +3,14 @@
 
 ## Overview
 
+API requests and response logs.
+
 ### Available Operations
 
 * [ListSteps](#liststeps) - List Step Logs
 * [Get](#get) - Get a Log
 * [List](#list) - List Logs
+* [ListPlatformLogs](#listplatformlogs) - List Platform Logs
 
 ## ListSteps
 
@@ -164,8 +167,8 @@ StackoneListLogsRequest req = new StackoneListLogsRequest() {
         Actions = "download,upload",
         StatusCodes = "200,400",
         Success = true,
-        OrderBy = FilterOrderBy.Duration,
-        OrderDirection = FilterOrderDirection.Asc,
+        OrderBy = StackoneListLogsFilterOrderBy.Duration,
+        OrderDirection = StackoneListLogsFilterOrderDirection.Asc,
     },
 };
 
@@ -183,6 +186,74 @@ var res = await sdk.RequestLogs.ListAsync(req);
 ### Response
 
 **[StackoneListLogsResponse](../../Models/Requests/StackoneListLogsResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## ListPlatformLogs
+
+List Platform Logs
+
+### Example Usage
+
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+StackoneListPlatformLogsRequest req = new StackoneListPlatformLogsRequest() {
+    OrderBy = StackoneListPlatformLogsOrderBy.Duration,
+    OrderDirection = StackoneListPlatformLogsOrderDirection.Asc,
+    Filter = new StackoneListPlatformLogsFilter() {
+        AccountIds = "45355976281015164504,45355976281015164505",
+        StartDate = "2020-01-01T00:00:00.000Z",
+        EndDate = "2020-01-01T00:00:00.000Z",
+        RequestIds = "adbf752f-6457-4ddd-89b3-98ae2252b83b,adbf752f-6457-4ddd-89b3-98ae2252b83c",
+        SourceTypes = "DASHBOARD,SYNTHETIC_WEBHOOK",
+        HttpMethods = "GET,POST",
+        Categories = "hris,ats",
+        Resources = "employees,users",
+        Actions = "download,upload",
+        StatusCodes = "200,400",
+        Success = true,
+        OrderBy = StackoneListPlatformLogsFilterOrderBy.EventDatetime,
+        OrderDirection = StackoneListPlatformLogsFilterOrderDirection.Asc,
+    },
+};
+
+var res = await sdk.RequestLogs.ListPlatformLogsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [StackoneListPlatformLogsRequest](../../Models/Requests/StackoneListPlatformLogsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[StackoneListPlatformLogsResponse](../../Models/Requests/StackoneListPlatformLogsResponse.md)**
 
 ### Errors
 

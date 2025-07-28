@@ -47,8 +47,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.6";
-        private const string _sdkGenVersion = "2.658.3";
+        private const string _sdkVersion = "0.2.7";
+        private const string _sdkGenVersion = "2.666.0";
         private const string _openapiDocVersion = "1.0.0";
 
         public Files(SDKConfig config)
@@ -459,7 +459,10 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    FolderId = request.FolderId,
+                    NestedItems = request.NestedItems,
+                    Include = request.Include
                 };
 
                 return await ListAsync (

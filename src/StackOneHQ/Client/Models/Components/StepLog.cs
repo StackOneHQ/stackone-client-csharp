@@ -126,6 +126,12 @@ namespace StackOneHQ.Client.Models.Components
         public bool? IsWorker { get; set; } = null;
 
         /// <summary>
+        /// The requests source IPV4 ip address
+        /// </summary>
+        [JsonProperty("source_ip")]
+        public string? SourceIp { get; set; } = null;
+
+        /// <summary>
         /// The provider request ID
         /// </summary>
         [JsonProperty("id")]
