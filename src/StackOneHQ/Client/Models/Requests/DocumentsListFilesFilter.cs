@@ -22,5 +22,35 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public string? UpdatedAfter { get; set; } = null;
+
+        /// <summary>
+        /// Search if the name of the file contains the string
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=name")]
+        public string? Name { get; set; } = null;
+
+        /// <summary>
+        /// Search if the contents of the file contains the string (contents can include file metadata)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=content")]
+        public string? Content { get; set; } = null;
+
+        /// <summary>
+        /// Use a string with a date to only select results created after that given date
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=created_after")]
+        public string? CreatedAfter { get; set; } = null;
+
+        /// <summary>
+        /// Use to only include Files within the specified Drive
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=drive_id")]
+        public string? DriveId { get; set; } = null;
+
+        /// <summary>
+        /// Use to only include Files within the specified Folder. Required when requesting nested items
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=folder_id")]
+        public string? FolderId { get; set; } = null;
     }
 }

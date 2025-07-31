@@ -66,10 +66,16 @@ namespace StackOneHQ.Client.Models.Components
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// Collections the ticket belongs to
+        /// Project the ticket belongs to
         /// </summary>
-        [JsonProperty("collection_ids")]
-        public List<string>? CollectionIds { get; set; } = null;
+        [JsonProperty("project_id")]
+        public string? ProjectId { get; set; } = null;
+
+        /// <summary>
+        /// Components to associate with the ticket
+        /// </summary>
+        [JsonProperty("component_ids")]
+        public string? ComponentIds { get; set; } = null;
 
         /// <summary>
         /// Current status of the ticket

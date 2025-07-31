@@ -83,10 +83,18 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 DocumentsListFilesRequest req = new DocumentsListFilesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children",
+    Fields = "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids",
     Filter = new DocumentsListFilesFilter() {
         UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        Name = "john_doe_resume.pdf",
+        Content = "FAQ of the project",
+        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        DriveId = "1234567890",
+        FolderId = "1234567890",
     },
+    FolderId = "1234567890",
+    NestedItems = "true",
+    Include = "all_parent_folder_ids",
 };
 
 DocumentsListFilesResponse? res = await sdk.Documents.Files.ListAsync(req);
@@ -146,7 +154,8 @@ var sdk = new StackOneHQClient(security: new Security() {
 DocumentsGetFileRequest req = new DocumentsGetFileRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children",
+    Fields = "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids",
+    Include = "all_parent_folder_ids",
 };
 
 var res = await sdk.Documents.Files.GetAsync(req);

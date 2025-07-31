@@ -614,6 +614,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 * [ListSteps](docs/sdks/requestlogs/README.md#liststeps) - List Step Logs
 * [Get](docs/sdks/requestlogs/README.md#get) - Get a Log
 * [List](docs/sdks/requestlogs/README.md#list) - List Logs
+* [ListPlatformLogs](docs/sdks/requestlogs/README.md#listplatformlogs) - List Platform Logs
 
 
 ### [Ticketing](docs/sdks/ticketing/README.md)
@@ -622,12 +623,11 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 * [DownloadAttachment](docs/sdks/ticketing/README.md#downloadattachment) - Download Attachment
 * [ListTicketTypes](docs/sdks/ticketing/README.md#listtickettypes) - List Ticket Types
 * [GetTicketType](docs/sdks/ticketing/README.md#gettickettype) - Get Ticket Type
-* [ListCollections](docs/sdks/ticketing/README.md#listcollections) - List Collections
-* [ListCollectionTicketTypes](docs/sdks/ticketing/README.md#listcollectiontickettypes) - List Collection Ticket Types
-
-#### [Ticketing.Collections](docs/sdks/collections/README.md)
-
-* [Get](docs/sdks/collections/README.md#get) - Get Collection
+* [ListProjects](docs/sdks/ticketing/README.md#listprojects) - List Projects
+* [GetProject](docs/sdks/ticketing/README.md#getproject) - Get Project
+* [ListProjectComponents](docs/sdks/ticketing/README.md#listprojectcomponents) - List Project Components
+* [GetProjectComponent](docs/sdks/ticketing/README.md#getprojectcomponent) - Get Project Component
+* [ListProjectTicketTypes](docs/sdks/ticketing/README.md#listprojecttickettypes) - List Project Ticket Types
 
 #### [Ticketing.Comments](docs/sdks/comments/README.md)
 

@@ -137,5 +137,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("has_children")]
         public FilesHasChildrenUnion? HasChildren { get; set; } = null;
+
+        /// <summary>
+        /// List of containing parent Folder IDs in descending order
+        /// </summary>
+        [JsonProperty("all_parent_folder_ids")]
+        public List<string>? AllParentFolderIds { get; set; } = null;
     }
 }

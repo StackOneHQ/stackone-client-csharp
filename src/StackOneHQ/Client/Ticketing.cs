@@ -29,7 +29,6 @@ namespace StackOneHQ.Client
         public ITickets Tickets { get; }
         public ITicketingUsers Users { get; }
         public IComments Comments { get; }
-        public ICollections Collections { get; }
 
         /// <summary>
         /// Get User
@@ -68,35 +67,61 @@ namespace StackOneHQ.Client
         Task<TicketingGetTicketTypeResponse> GetTicketTypeAsync(TicketingGetTicketTypeRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// List Collections
+        /// List Projects
         /// 
         /// <remarks>
-        /// Retrieve a paginated list of collections.
+        /// Retrieve a paginated list of projects.
         /// </remarks>
         /// </summary>
-        Task<TicketingListCollectionsResponse> ListCollectionsAsync(TicketingListCollectionsRequest request, RetryConfig? retryConfig = null);
+        Task<TicketingListProjectsResponse> ListProjectsAsync(TicketingListProjectsRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// List Collection Ticket Types
+        /// Get Project
         /// 
         /// <remarks>
-        /// Retrieve a paginated list of ticket types for a collection.
+        /// Retrieve a single project by its identifier.
         /// </remarks>
         /// </summary>
-        Task<TicketingListCollectionTicketTypesResponse> ListCollectionTicketTypesAsync(TicketingListCollectionTicketTypesRequest request, RetryConfig? retryConfig = null);
+        Task<TicketingGetProjectResponse> GetProjectAsync(TicketingGetProjectRequest request, RetryConfig? retryConfig = null);
+
+        /// <summary>
+        /// List Project Components
+        /// 
+        /// <remarks>
+        /// Retrieve a paginated list of project components.
+        /// </remarks>
+        /// </summary>
+        Task<TicketingListProjectComponentsResponse> ListProjectComponentsAsync(TicketingListProjectComponentsRequest request, RetryConfig? retryConfig = null);
+
+        /// <summary>
+        /// Get Project Component
+        /// 
+        /// <remarks>
+        /// Retrieve a single project component by its identifier.
+        /// </remarks>
+        /// </summary>
+        Task<TicketingGetProjectComponentResponse> GetProjectComponentAsync(TicketingGetProjectComponentRequest request, RetryConfig? retryConfig = null);
+
+        /// <summary>
+        /// List Project Ticket Types
+        /// 
+        /// <remarks>
+        /// Retrieve a paginated list of ticket types for a project.
+        /// </remarks>
+        /// </summary>
+        Task<TicketingListProjectTicketTypesResponse> ListProjectTicketTypesAsync(TicketingListProjectTicketTypesRequest request, RetryConfig? retryConfig = null);
     }
 
     public class Ticketing: ITicketing
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.6";
-        private const string _sdkGenVersion = "2.658.3";
+        private const string _sdkVersion = "0.2.7";
+        private const string _sdkGenVersion = "2.666.0";
         private const string _openapiDocVersion = "1.0.0";
         public ITickets Tickets { get; private set; }
         public ITicketingUsers Users { get; private set; }
         public IComments Comments { get; private set; }
-        public ICollections Collections { get; private set; }
 
         public Ticketing(SDKConfig config)
         {
@@ -104,7 +129,6 @@ namespace StackOneHQ.Client
             Tickets = new Tickets(SDKConfiguration);
             Users = new TicketingUsers(SDKConfiguration);
             Comments = new Comments(SDKConfiguration);
-            Collections = new Collections(SDKConfiguration);
         }
 
         public async Task<TicketingGetUserResponse> GetUserAsync(TicketingGetUserRequest request, RetryConfig? retryConfig = null)
@@ -1322,10 +1346,10 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse);
         }
 
-        public async Task<TicketingListCollectionsResponse> ListCollectionsAsync(TicketingListCollectionsRequest request, RetryConfig? retryConfig = null)
+        public async Task<TicketingListProjectsResponse> ListProjectsAsync(TicketingListProjectsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/collections", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1336,7 +1360,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ticketing_list_collections", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ticketing_list_projects", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1405,7 +1429,7 @@ namespace StackOneHQ.Client
             httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             
-            Func<Task<TicketingListCollectionsResponse?>> nextFunc = async delegate()
+            Func<Task<TicketingListProjectsResponse?>> nextFunc = async delegate()
             {
                 var body = JObject.Parse(await httpResponse.Content.ReadAsStringAsync());
                 var nextCursorToken = body.SelectToken("$.next");
@@ -1420,7 +1444,7 @@ namespace StackOneHQ.Client
                     return null;
                 }
 
-                var newRequest = new TicketingListCollectionsRequest
+                var newRequest = new TicketingListProjectsRequest
                 {
                     XAccountId = request.XAccountId,
                     Raw = request.Raw,
@@ -1433,7 +1457,7 @@ namespace StackOneHQ.Client
                     UpdatedAfter = request.UpdatedAfter
                 };
 
-                return await ListCollectionsAsync (
+                return await ListProjectsAsync (
                     request: newRequest,
                     retryConfig: retryConfig
                 );
@@ -1445,8 +1469,8 @@ namespace StackOneHQ.Client
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<TicketingCollectionsPaginated>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new TicketingListCollectionsResponse()
+                    var obj = ResponseBodyDeserializer.Deserialize<TicketingProjectsPaginated>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new TicketingListProjectsResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
                         {
@@ -1455,7 +1479,7 @@ namespace StackOneHQ.Client
                         },
                         Next = nextFunc
                     };
-                    response.TicketingCollectionsPaginated = obj;
+                    response.TicketingProjectsPaginated = obj;
                     return response;
                 }
 
@@ -1653,10 +1677,10 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse);
         }
 
-        public async Task<TicketingListCollectionTicketTypesResponse> ListCollectionTicketTypesAsync(TicketingListCollectionTicketTypesRequest request, RetryConfig? retryConfig = null)
+        public async Task<TicketingGetProjectResponse> GetProjectAsync(TicketingGetProjectRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/collections/{id}/ticket_types", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1667,7 +1691,302 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ticketing_list_collection_ticket_types", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ticketing_get_project", new List<string> {  }, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            if (retryConfig == null)
+            {
+                if (this.SDKConfiguration.RetryConfig != null)
+                {
+                    retryConfig = this.SDKConfiguration.RetryConfig;
+                }
+                else
+                {
+                    var backoff = new BackoffStrategy(
+                        initialIntervalMs: 500L,
+                        maxIntervalMs: 60000L,
+                        maxElapsedTimeMs: 3600000L,
+                        exponent: 1.5
+                    );
+                    retryConfig = new RetryConfig(
+                        strategy: RetryConfig.RetryStrategy.BACKOFF,
+                        backoff: backoff,
+                        retryConnectionErrors: true
+                    );
+                }
+            }
+
+            List<string> statusCodes = new List<string>
+            {
+                "429",
+                "408",
+            };
+
+            Func<Task<HttpResponseMessage>> retrySend = async () =>
+            {
+                var _httpRequest = await SDKConfiguration.Client.CloneAsync(httpRequest);
+                return await SDKConfiguration.Client.SendAsync(_httpRequest);
+            };
+            var retries = new StackOneHQ.Client.Utils.Retries.Retries(retrySend, retryConfig, statusCodes);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await retries.Run();
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<TicketingProjectResult>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new TicketingGetProjectResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.TicketingProjectResult = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 400)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<BadRequestResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 401)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<UnauthorizedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 403)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<ForbiddenResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 404)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<NotFoundResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 408)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<RequestTimedOutResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 409)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<ConflictResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 412)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<PreconditionFailedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 422)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<UnprocessableEntityResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 429)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<TooManyRequestsResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 500)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<InternalServerErrorResponse>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 501)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<NotImplementedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 502)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<BadGatewayResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse);
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse);
+        }
+
+        public async Task<TicketingListProjectComponentsResponse> ListProjectComponentsAsync(TicketingListProjectComponentsRequest request, RetryConfig? retryConfig = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ticketing_list_project_components", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1736,7 +2055,7 @@ namespace StackOneHQ.Client
             httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             
-            Func<Task<TicketingListCollectionTicketTypesResponse?>> nextFunc = async delegate()
+            Func<Task<TicketingListProjectComponentsResponse?>> nextFunc = async delegate()
             {
                 var body = JObject.Parse(await httpResponse.Content.ReadAsStringAsync());
                 var nextCursorToken = body.SelectToken("$.next");
@@ -1751,7 +2070,7 @@ namespace StackOneHQ.Client
                     return null;
                 }
 
-                var newRequest = new TicketingListCollectionTicketTypesRequest
+                var newRequest = new TicketingListProjectComponentsRequest
                 {
                     XAccountId = request.XAccountId,
                     Id = request.Id,
@@ -1765,7 +2084,634 @@ namespace StackOneHQ.Client
                     UpdatedAfter = request.UpdatedAfter
                 };
 
-                return await ListCollectionTicketTypesAsync (
+                return await ListProjectComponentsAsync (
+                    request: newRequest,
+                    retryConfig: retryConfig
+                );
+            };
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<TicketingComponentsPaginated>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new TicketingListProjectComponentsResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        },
+                        Next = nextFunc
+                    };
+                    response.TicketingComponentsPaginated = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 400)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<BadRequestResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 401)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<UnauthorizedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 403)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<ForbiddenResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 404)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<NotFoundResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 408)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<RequestTimedOutResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 409)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<ConflictResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 412)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<PreconditionFailedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 422)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<UnprocessableEntityResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 429)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<TooManyRequestsResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 500)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<InternalServerErrorResponse>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 501)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<NotImplementedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 502)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<BadGatewayResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse);
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse);
+        }
+
+        public async Task<TicketingGetProjectComponentResponse> GetProjectComponentAsync(TicketingGetProjectComponentRequest request, RetryConfig? retryConfig = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components/{subResourceId}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ticketing_get_project_component", new List<string> {  }, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            if (retryConfig == null)
+            {
+                if (this.SDKConfiguration.RetryConfig != null)
+                {
+                    retryConfig = this.SDKConfiguration.RetryConfig;
+                }
+                else
+                {
+                    var backoff = new BackoffStrategy(
+                        initialIntervalMs: 500L,
+                        maxIntervalMs: 60000L,
+                        maxElapsedTimeMs: 3600000L,
+                        exponent: 1.5
+                    );
+                    retryConfig = new RetryConfig(
+                        strategy: RetryConfig.RetryStrategy.BACKOFF,
+                        backoff: backoff,
+                        retryConnectionErrors: true
+                    );
+                }
+            }
+
+            List<string> statusCodes = new List<string>
+            {
+                "429",
+                "408",
+            };
+
+            Func<Task<HttpResponseMessage>> retrySend = async () =>
+            {
+                var _httpRequest = await SDKConfiguration.Client.CloneAsync(httpRequest);
+                return await SDKConfiguration.Client.SendAsync(_httpRequest);
+            };
+            var retries = new StackOneHQ.Client.Utils.Retries.Retries(retrySend, retryConfig, statusCodes);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await retries.Run();
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<TicketingComponentResult>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new TicketingGetProjectComponentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.TicketingComponentResult = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 400)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<BadRequestResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 401)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<UnauthorizedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 403)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<ForbiddenResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 404)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<NotFoundResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 408)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<RequestTimedOutResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 409)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<ConflictResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 412)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<PreconditionFailedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 422)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<UnprocessableEntityResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 429)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<TooManyRequestsResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 500)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<InternalServerErrorResponse>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 501)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<NotImplementedResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode == 502)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<BadGatewayResponseException>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    obj!.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    throw obj!;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse);
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse);
+        }
+
+        public async Task<TicketingListProjectTicketTypesResponse> ListProjectTicketTypesAsync(TicketingListProjectTicketTypesRequest request, RetryConfig? retryConfig = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/ticket_types", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ticketing_list_project_ticket_types", new List<string> {  }, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            if (retryConfig == null)
+            {
+                if (this.SDKConfiguration.RetryConfig != null)
+                {
+                    retryConfig = this.SDKConfiguration.RetryConfig;
+                }
+                else
+                {
+                    var backoff = new BackoffStrategy(
+                        initialIntervalMs: 500L,
+                        maxIntervalMs: 60000L,
+                        maxElapsedTimeMs: 3600000L,
+                        exponent: 1.5
+                    );
+                    retryConfig = new RetryConfig(
+                        strategy: RetryConfig.RetryStrategy.BACKOFF,
+                        backoff: backoff,
+                        retryConnectionErrors: true
+                    );
+                }
+            }
+
+            List<string> statusCodes = new List<string>
+            {
+                "429",
+                "408",
+            };
+
+            Func<Task<HttpResponseMessage>> retrySend = async () =>
+            {
+                var _httpRequest = await SDKConfiguration.Client.CloneAsync(httpRequest);
+                return await SDKConfiguration.Client.SendAsync(_httpRequest);
+            };
+            var retries = new StackOneHQ.Client.Utils.Retries.Retries(retrySend, retryConfig, statusCodes);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await retries.Run();
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            
+            Func<Task<TicketingListProjectTicketTypesResponse?>> nextFunc = async delegate()
+            {
+                var body = JObject.Parse(await httpResponse.Content.ReadAsStringAsync());
+                var nextCursorToken = body.SelectToken("$.next");
+
+                if(nextCursorToken == null)
+                {
+                    return null;
+                }
+                var nextCursor = nextCursorToken.Value<string>();
+                if (nextCursor == null)
+                {
+                    return null;
+                }
+
+                var newRequest = new TicketingListProjectTicketTypesRequest
+                {
+                    XAccountId = request.XAccountId,
+                    Id = request.Id,
+                    Raw = request.Raw,
+                    Proxy = request.Proxy,
+                    Fields = request.Fields,
+                    Filter = request.Filter,
+                    Page = request.Page,
+                    PageSize = request.PageSize,
+                    Next = nextCursor,
+                    UpdatedAfter = request.UpdatedAfter
+                };
+
+                return await ListProjectTicketTypesAsync (
                     request: newRequest,
                     retryConfig: retryConfig
                 );
@@ -1778,7 +2724,7 @@ namespace StackOneHQ.Client
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TicketingTicketTypePaginated>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new TicketingListCollectionTicketTypesResponse()
+                    var response = new TicketingListProjectTicketTypesResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
                         {

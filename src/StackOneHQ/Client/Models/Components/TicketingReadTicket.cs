@@ -85,10 +85,10 @@ namespace StackOneHQ.Client.Models.Components
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// Collections the ticket belongs to
+        /// Projects the ticket belongs to
         /// </summary>
-        [JsonProperty("collections")]
-        public List<TicketingCollection>? Collections { get; set; } = null;
+        [JsonProperty("projects")]
+        public List<TicketingProject>? Projects { get; set; } = null;
 
         /// <summary>
         /// The unique ticket number or reference ID
@@ -125,6 +125,12 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("organization")]
         public TicketingReadTicketOrganization? Organization { get; set; } = null;
+
+        /// <summary>
+        /// Components associated with the ticket
+        /// </summary>
+        [JsonProperty("components")]
+        public List<TicketingComponent>? Components { get; set; } = null;
 
         /// <summary>
         /// The timestamp when the record was created

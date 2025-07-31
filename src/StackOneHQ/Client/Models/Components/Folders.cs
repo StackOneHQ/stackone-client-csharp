@@ -13,6 +13,7 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
+    using System.Collections.Generic;
     
     public class Folders
     {
@@ -124,5 +125,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("is_root")]
         public IsRoot? IsRoot { get; set; } = null;
+
+        /// <summary>
+        /// List of containing parent Folder IDs in descending order
+        /// </summary>
+        [JsonProperty("all_parent_folder_ids")]
+        public List<string>? AllParentFolderIds { get; set; } = null;
     }
 }

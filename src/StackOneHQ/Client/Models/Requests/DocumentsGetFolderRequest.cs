@@ -41,5 +41,11 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public string? Fields { get; set; } = null;
+
+        /// <summary>
+        /// The comma separated list of fields that will be included in the response
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=include")]
+        public string? Include { get; set; } = null;
     }
 }
