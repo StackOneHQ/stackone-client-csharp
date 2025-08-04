@@ -13,10 +13,12 @@ List Employee Tasks
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_employee_tasks" method="get" path="/unified/hris/employees/{id}/tasks" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ HrisListEmployeeTasksRequest req = new HrisListEmployeeTasksRequest() {
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at",
     Filter = new HrisListEmployeeTasksFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "attachments",
 };

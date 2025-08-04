@@ -13,6 +13,7 @@ Delete Background Check Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_delete_background_check_package" method="delete" path="/unified/ats/background_checks/packages/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

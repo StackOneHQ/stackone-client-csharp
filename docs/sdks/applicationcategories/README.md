@@ -13,6 +13,7 @@ Get Application Document Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_document_category" method="get" path="/unified/ats/documents/application_categories/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

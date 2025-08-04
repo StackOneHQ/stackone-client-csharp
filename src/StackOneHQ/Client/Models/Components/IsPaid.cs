@@ -19,25 +19,25 @@ namespace StackOneHQ.Client.Models.Components
     using System.Reflection;
     
 
-    public class InternalType
+    public class IsPaidType
     {
-        private InternalType(string value) { Value = value; }
+        private IsPaidType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static InternalType Boolean { get { return new InternalType("boolean"); } }
+        public static IsPaidType Boolean { get { return new IsPaidType("boolean"); } }
         
-        public static InternalType JobPostingQuestionnaireInternalEnum { get { return new InternalType("JobPostingQuestionnaire_internal_enum"); } }
+        public static IsPaidType IsPaidEnum { get { return new IsPaidType("is_paid_enum"); } }
         
-        public static InternalType Null { get { return new InternalType("null"); } }
+        public static IsPaidType Null { get { return new IsPaidType("null"); } }
 
         public override string ToString() { return Value; }
-        public static implicit operator String(InternalType v) { return v.Value; }
-        public static InternalType FromString(string v) {
+        public static implicit operator String(IsPaidType v) { return v.Value; }
+        public static IsPaidType FromString(string v) {
             switch(v) {
                 case "boolean": return Boolean;
-                case "JobPostingQuestionnaire_internal_enum": return JobPostingQuestionnaireInternalEnum;
+                case "is_paid_enum": return IsPaidEnum;
                 case "null": return Null;
-                default: throw new ArgumentException("Invalid value for InternalType");
+                default: throw new ArgumentException("Invalid value for IsPaidType");
             }
         }
         public override bool Equals(object? obj)
@@ -46,7 +46,7 @@ namespace StackOneHQ.Client.Models.Components
             {
                 return false;
             }
-            return Value.Equals(((InternalType)obj).Value);
+            return Value.Equals(((IsPaidType)obj).Value);
         }
 
         public override int GetHashCode()
@@ -56,9 +56,12 @@ namespace StackOneHQ.Client.Models.Components
     }
 
 
-    [JsonConverter(typeof(Internal.InternalConverter))]
-    public class Internal {
-        public Internal(InternalType type) {
+    /// <summary>
+    /// Whether the break is paid
+    /// </summary>
+    [JsonConverter(typeof(IsPaid.IsPaidConverter))]
+    public class IsPaid {
+        public IsPaid(IsPaidType type) {
             Type = type;
         }
 
@@ -66,36 +69,36 @@ namespace StackOneHQ.Client.Models.Components
         public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public JobPostingQuestionnaireInternalEnum? JobPostingQuestionnaireInternalEnum { get; set; }
+        public IsPaidEnum? IsPaidEnum { get; set; }
 
-        public InternalType Type { get; set; }
+        public IsPaidType Type { get; set; }
 
 
-        public static Internal CreateBoolean(bool boolean) {
-            InternalType typ = InternalType.Boolean;
+        public static IsPaid CreateBoolean(bool boolean) {
+            IsPaidType typ = IsPaidType.Boolean;
 
-            Internal res = new Internal(typ);
+            IsPaid res = new IsPaid(typ);
             res.Boolean = boolean;
             return res;
         }
 
-        public static Internal CreateJobPostingQuestionnaireInternalEnum(JobPostingQuestionnaireInternalEnum jobPostingQuestionnaireInternalEnum) {
-            InternalType typ = InternalType.JobPostingQuestionnaireInternalEnum;
+        public static IsPaid CreateIsPaidEnum(IsPaidEnum isPaidEnum) {
+            IsPaidType typ = IsPaidType.IsPaidEnum;
 
-            Internal res = new Internal(typ);
-            res.JobPostingQuestionnaireInternalEnum = jobPostingQuestionnaireInternalEnum;
+            IsPaid res = new IsPaid(typ);
+            res.IsPaidEnum = isPaidEnum;
             return res;
         }
 
-        public static Internal CreateNull() {
-            InternalType typ = InternalType.Null;
-            return new Internal(typ);
+        public static IsPaid CreateNull() {
+            IsPaidType typ = IsPaidType.Null;
+            return new IsPaid(typ);
         }
 
-        public class InternalConverter : JsonConverter
+        public class IsPaidConverter : JsonConverter
         {
 
-            public override bool CanConvert(System.Type objectType) => objectType == typeof(Internal);
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(IsPaid);
 
             public override bool CanRead => true;
 
@@ -112,7 +115,7 @@ namespace StackOneHQ.Client.Models.Components
                 try
                 {
                     var converted = Convert.ToBoolean(json);
-                    return new Internal(InternalType.Boolean)
+                    return new IsPaid(IsPaidType.Boolean)
                     {
                         Boolean = converted
                     };
@@ -124,14 +127,14 @@ namespace StackOneHQ.Client.Models.Components
 
                 try
                 {
-                    return new Internal(InternalType.JobPostingQuestionnaireInternalEnum)
+                    return new IsPaid(IsPaidType.IsPaidEnum)
                     {
-                        JobPostingQuestionnaireInternalEnum = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<JobPostingQuestionnaireInternalEnum>(json)
+                        IsPaidEnum = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IsPaidEnum>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(JobPostingQuestionnaireInternalEnum), new Internal(InternalType.JobPostingQuestionnaireInternalEnum), "JobPostingQuestionnaireInternalEnum"));
+                    fallbackCandidates.Add((typeof(IsPaidEnum), new IsPaid(IsPaidType.IsPaidEnum), "IsPaidEnum"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,8 +174,8 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                Internal res = (Internal)value;
-                if (InternalType.FromString(res.Type).Equals(InternalType.Null))
+                IsPaid res = (IsPaid)value;
+                if (IsPaidType.FromString(res.Type).Equals(IsPaidType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
@@ -182,9 +185,9 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.JobPostingQuestionnaireInternalEnum != null)
+                if (res.IsPaidEnum != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.JobPostingQuestionnaireInternalEnum));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.IsPaidEnum));
                     return;
                 }
 

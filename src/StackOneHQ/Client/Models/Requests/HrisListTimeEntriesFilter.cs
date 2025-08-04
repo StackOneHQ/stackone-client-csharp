@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
+    using System;
     
     /// <summary>
     /// HRIS Time Entries filters
@@ -21,7 +22,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// Use a string with a date to only select results updated after that given date
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
-        public string? UpdatedAfter { get; set; } = null;
+        public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
         /// Filter to select time entries by employee_id

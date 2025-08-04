@@ -53,19 +53,19 @@ namespace StackOneHQ.Client.Models.Components
         /// The date the content was completed
         /// </summary>
         [JsonProperty("completed_at")]
-        public string? CompletedAt { get; set; } = null;
+        public DateTime? CompletedAt { get; set; } = null;
 
         /// <summary>
         /// The created date of the completion
         /// </summary>
         [JsonProperty("created_at")]
-        public string? CreatedAt { get; set; } = null;
+        public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
         /// The updated date of the completion
         /// </summary>
         [JsonProperty("updated_at")]
-        public string? UpdatedAt { get; set; } = null;
+        public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
         /// The learning object type of the completion

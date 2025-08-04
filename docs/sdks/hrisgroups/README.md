@@ -17,10 +17,12 @@ List Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_groups" method="get" path="/unified/hris/groups" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -31,7 +33,7 @@ HrisListGroupsRequest req = new HrisListGroupsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
     Filter = new HrisListGroupsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -79,10 +81,12 @@ List Department Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_department_groups" method="get" path="/unified/hris/groups/departments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -93,7 +97,7 @@ HrisListDepartmentGroupsRequest req = new HrisListDepartmentGroupsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
     Filter = new HrisListDepartmentGroupsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -141,10 +145,12 @@ List Cost Center Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_cost_center_groups" method="get" path="/unified/hris/groups/cost_centers" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -155,7 +161,7 @@ HrisListCostCenterGroupsRequest req = new HrisListCostCenterGroupsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
     Filter = new HrisListCostCenterGroupsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -203,10 +209,12 @@ List Team Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_team_groups" method="get" path="/unified/hris/groups/teams" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -217,7 +225,7 @@ HrisListTeamGroupsRequest req = new HrisListTeamGroupsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids",
     Filter = new HrisListTeamGroupsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -265,10 +273,12 @@ List Division Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_division_groups" method="get" path="/unified/hris/groups/divisions" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -279,7 +289,7 @@ HrisListDivisionGroupsRequest req = new HrisListDivisionGroupsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
     Filter = new HrisListDivisionGroupsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

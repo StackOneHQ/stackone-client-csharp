@@ -13,10 +13,12 @@ Retrieve a paginated list of comments for a ticket.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_comments" method="get" path="/unified/ticketing/tickets/{id}/comments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ TicketingListCommentsRequest req = new TicketingListCommentsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at",
     Filter = new TicketingListCommentsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

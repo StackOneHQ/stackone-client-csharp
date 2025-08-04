@@ -23,6 +23,7 @@ Get Course
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_course" method="get" path="/unified/lms/courses/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -78,10 +79,12 @@ List User Assignments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_user_assignments" method="get" path="/unified/lms/users/{id}/assignments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -93,7 +96,7 @@ LmsListUserAssignmentsRequest req = new LmsListUserAssignmentsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference",
     Filter = new LmsListUserAssignmentsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     UserId = "c28xyrc55866bvuv",
     RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
@@ -143,6 +146,7 @@ Batch Upsert Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_batch_upsert_content" method="post" path="/unified/lms/content/batch" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -272,10 +276,12 @@ List Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_content" method="get" path="/unified/lms/content" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -286,7 +292,7 @@ LmsListContentRequest req = new LmsListContentRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors",
     Filter = new LmsListContentFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -334,9 +340,11 @@ Create User Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_create_user_completion" method="post" path="/unified/lms/users/{id}/completions" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
+using System;
 using System.Collections.Generic;
 
 var sdk = new StackOneHQClient(security: new Security() {
@@ -351,7 +359,7 @@ var res = await sdk.Lms.CreateUserCompletionAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-        CompletedAt = "2021-07-21T14:00:00.000Z",
+        CompletedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
         LearningObjectExternalReference = "learning-content-123",
         TimeSpent = "PT1H30M45S",
@@ -397,6 +405,7 @@ Get User Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_user_completion" method="get" path="/unified/lms/users/{id}/completions/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -452,6 +461,7 @@ Delete User Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_delete_user_completion" method="delete" path="/unified/lms/users/{id}/completions/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -506,6 +516,7 @@ Get Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_category" method="get" path="/unified/lms/categories/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -561,6 +572,7 @@ List Users
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_users" method="get" path="/unified/lms/users" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -621,6 +633,7 @@ Get User
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_user" method="get" path="/unified/lms/users/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -676,10 +689,12 @@ List Skills
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_skills" method="get" path="/unified/lms/skills" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -690,7 +705,7 @@ LmsListSkillsRequest req = new LmsListSkillsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,active,hierarchy,language",
     Filter = new LmsListSkillsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

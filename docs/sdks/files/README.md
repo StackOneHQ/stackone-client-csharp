@@ -15,6 +15,7 @@ Download File
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="documents_download_file" method="get" path="/unified/documents/files/{id}/download" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -71,10 +72,12 @@ List Files
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="documents_list_files" method="get" path="/unified/documents/files" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -85,10 +88,10 @@ DocumentsListFilesRequest req = new DocumentsListFilesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids",
     Filter = new DocumentsListFilesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         Name = "john_doe_resume.pdf",
         Content = "FAQ of the project",
-        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         DriveId = "1234567890",
         FolderId = "1234567890",
     },
@@ -141,6 +144,7 @@ Get File
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="documents_get_file" method="get" path="/unified/documents/files/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

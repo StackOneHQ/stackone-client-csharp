@@ -53,13 +53,13 @@ namespace StackOneHQ.Client.Models.Components
         /// The date the assignment was created
         /// </summary>
         [JsonProperty("created_at")]
-        public string? CreatedAt { get; set; } = null;
+        public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
         /// The date the assignment is due to be completed
         /// </summary>
         [JsonProperty("due_date")]
-        public string? DueDate { get; set; } = null;
+        public DateTime? DueDate { get; set; } = null;
 
         /// <summary>
         /// The status of the assignment

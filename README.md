@@ -60,6 +60,7 @@ dotnet add reference src/StackOneHQ/Client/StackOneHQ.Client.csproj
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -70,7 +71,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills",
     Filter = new HrisListEmployeesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "company,employments,work_location,home_location,groups,skills",
     Include = "avatar_url,avatar,custom_fields,job_description,benefits",
@@ -147,7 +148,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 * [Get](docs/sdks/accounts/README.md#get) - Get Account
 * [Delete](docs/sdks/accounts/README.md#delete) - Delete Account
 * [Update](docs/sdks/accounts/README.md#update) - Update Account
-* [GetMeta](docs/sdks/accounts/README.md#getmeta) - Get meta information of the account
+* [GetMeta](docs/sdks/accounts/README.md#getmeta) - Get Account Meta Information
 
 ### [Applications](docs/sdks/applications/README.md)
 
@@ -161,7 +162,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 * [ListApplicationNotes](docs/sdks/ats/README.md#listapplicationnotes) - List Application Notes
 * [CreateApplicationNote](docs/sdks/ats/README.md#createapplicationnote) - Create Application Note
 * [GetNote](docs/sdks/ats/README.md#getnote) - Get Application Note
-* [UpdateNote](docs/sdks/ats/README.md#updatenote) - Update an Application Note
+* [UpdateNote](docs/sdks/ats/README.md#updatenote) - Update Application Note
 * [DocumentsUpload](docs/sdks/ats/README.md#documentsupload) - Upload Application Document
 * [GetDocument](docs/sdks/ats/README.md#getdocument) - Get Application Document
 * [ListCandidates](docs/sdks/ats/README.md#listcandidates) - List Candidates
@@ -184,7 +185,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 #### [Ats.Applications](docs/sdks/atsapplications/README.md)
 
 * [Create](docs/sdks/atsapplications/README.md#create) - Create Application
-* [Update](docs/sdks/atsapplications/README.md#update) - Update an Application
+* [Update](docs/sdks/atsapplications/README.md#update) - Update Application
 * [ListOffers](docs/sdks/atsapplications/README.md#listoffers) - List Application Offers
 * [Move](docs/sdks/atsapplications/README.md#move) - Move Application
 * [Reject](docs/sdks/atsapplications/README.md#reject) - Reject Application
@@ -275,7 +276,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 #### [Ats.Offers](docs/sdks/offers/README.md)
 
 * [List](docs/sdks/offers/README.md#list) - List Offers
-* [Create](docs/sdks/offers/README.md#create) - Creates an offer
+* [Create](docs/sdks/offers/README.md#create) - Create Offer
 * [Get](docs/sdks/offers/README.md#get) - Get Offer
 
 #### [Ats.RejectedReasons](docs/sdks/rejectedreasons/README.md)
@@ -293,8 +294,8 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 
 ### [Connectors](docs/sdks/connectors/README.md)
 
-* [ListMeta](docs/sdks/connectors/README.md#listmeta) - List Connectors Meta Information for all providers
-* [GetMeta](docs/sdks/connectors/README.md#getmeta) - Get Connector Meta information for the given provider key
+* [ListMeta](docs/sdks/connectors/README.md#listmeta) - List Connector Meta Information
+* [GetMeta](docs/sdks/connectors/README.md#getmeta) - Get Connector Meta Information
 
 ### [ConnectSessions](docs/sdks/connectsessions/README.md)
 
@@ -315,7 +316,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 #### [Crm.Contacts](docs/sdks/contacts/README.md)
 
 * [List](docs/sdks/contacts/README.md#list) - List Contacts
-* [Create](docs/sdks/contacts/README.md#create) - Creates a new Contact
+* [Create](docs/sdks/contacts/README.md#create) - Create Contact
 
 #### [Crm.CustomFieldDefinitions.Contacts](docs/sdks/customfielddefinitionscontacts/README.md)
 
@@ -405,8 +406,8 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 
 * [ListCustomFieldDefinitions](docs/sdks/employees/README.md#listcustomfielddefinitions) - List employee Custom Field Definitions
 * [List](docs/sdks/employees/README.md#list) - List Employees
-* [Create](docs/sdks/employees/README.md#create) - Creates an employee
-* [Update](docs/sdks/employees/README.md#update) - Updates an employee
+* [Create](docs/sdks/employees/README.md#create) - Create Employee
+* [Update](docs/sdks/employees/README.md#update) - Update Employee
 * [Invite](docs/sdks/employees/README.md#invite) - Invite Employee
 * [CreateTimeOff](docs/sdks/employees/README.md#createtimeoff) - Create Employee Time Off Request
 * [BatchUploadDocument](docs/sdks/employees/README.md#batchuploaddocument) - Batch Upload Employee Document
@@ -612,7 +613,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 ### [RequestLogs](docs/sdks/requestlogs/README.md)
 
 * [ListSteps](docs/sdks/requestlogs/README.md#liststeps) - List Step Logs
-* [Get](docs/sdks/requestlogs/README.md#get) - Get a Log
+* [Get](docs/sdks/requestlogs/README.md#get) - Get Log
 * [List](docs/sdks/requestlogs/README.md#list) - List Logs
 * [ListPlatformLogs](docs/sdks/requestlogs/README.md#listplatformlogs) - List Platform Logs
 
@@ -669,6 +670,7 @@ Here's an example of one such pagination call:
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -679,7 +681,7 @@ HrisListCompaniesRequest req = new HrisListCompaniesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at",
     Filter = new HrisListCompaniesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

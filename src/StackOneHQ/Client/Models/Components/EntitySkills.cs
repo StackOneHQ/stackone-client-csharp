@@ -38,7 +38,7 @@ namespace StackOneHQ.Client.Models.Components
         /// Whether the skill is active and therefore available for use
         /// </summary>
         [JsonProperty("active")]
-        public bool? Active { get; set; } = null;
+        public EntitySkillsActiveUnion? Active { get; set; } = null;
 
         /// <summary>
         /// The language associated with this skill

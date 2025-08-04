@@ -34,7 +34,7 @@ namespace StackOneHQ.Client
         Task<AtsCreateApplicationResponse> CreateAsync(string xAccountId, AtsCreateApplicationRequestDto atsCreateApplicationRequestDto, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Update an Application
+        /// Update Application
         /// </summary>
         Task<AtsUpdateApplicationResponse> UpdateAsync(string xAccountId, string id, AtsUpdateApplicationRequestDto atsUpdateApplicationRequestDto, RetryConfig? retryConfig = null);
 
@@ -93,8 +93,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.7";
-        private const string _sdkGenVersion = "2.666.0";
+        private const string _sdkVersion = "0.2.8";
+        private const string _sdkGenVersion = "2.672.0";
         private const string _openapiDocVersion = "1.0.0";
         public IApplicationsDocuments Documents { get; private set; }
 

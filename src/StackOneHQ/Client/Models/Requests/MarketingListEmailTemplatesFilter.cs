@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
+    using System;
     
     /// <summary>
     /// Filter parameters that allow greater customisation of the list response
@@ -21,6 +22,6 @@ namespace StackOneHQ.Client.Models.Requests
         /// Use a string with a date to only select results updated after that given date
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
-        public string? UpdatedAfter { get; set; } = null;
+        public DateTime? UpdatedAfter { get; set; } = null;
     }
 }

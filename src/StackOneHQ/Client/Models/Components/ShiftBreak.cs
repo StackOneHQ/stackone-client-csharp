@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
+    using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
     
@@ -44,7 +45,7 @@ namespace StackOneHQ.Client.Models.Components
         /// Whether the break is paid
         /// </summary>
         [JsonProperty("is_paid")]
-        public bool? IsPaid { get; set; } = null;
+        public IsPaid? IsPaid { get; set; } = null;
 
         /// <summary>
         /// The date and time the break was created

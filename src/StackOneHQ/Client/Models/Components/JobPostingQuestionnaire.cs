@@ -33,7 +33,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? Name { get; set; } = null;
 
         [JsonProperty("internal")]
-        public Internal? Internal { get; set; } = null;
+        public JobPostingQuestionnaireInternalUnion? Internal { get; set; } = null;
 
         [JsonProperty("questions")]
         public List<Question>? Questions { get; set; } = null;

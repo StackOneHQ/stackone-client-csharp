@@ -148,7 +148,7 @@ namespace StackOneHQ.Client.Models.Components
         /// The employment active status
         /// </summary>
         [JsonProperty("active")]
-        public bool? Active { get; set; } = null;
+        public EmploymentActiveUnion? Active { get; set; } = null;
 
         /// <summary>
         /// The employee department

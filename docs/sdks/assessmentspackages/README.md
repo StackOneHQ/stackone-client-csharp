@@ -13,6 +13,7 @@ Get Assessments Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_assessments_package" method="get" path="/unified/ats/assessments/packages/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

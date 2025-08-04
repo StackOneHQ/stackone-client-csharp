@@ -13,6 +13,7 @@ Get Division Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_division_group" method="get" path="/unified/hris/groups/divisions/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

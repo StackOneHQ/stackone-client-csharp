@@ -16,6 +16,7 @@ Get Contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_get_contact" method="get" path="/unified/crm/contacts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -72,6 +73,7 @@ Update Contact (early access)
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_update_contact" method="patch" path="/unified/crm/contacts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -160,10 +162,12 @@ List Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_list_accounts" method="get" path="/unified/crm/accounts" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -174,7 +178,7 @@ CrmListAccountsRequest req = new CrmListAccountsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at",
     Filter = new CrmListAccountsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -222,6 +226,7 @@ Get Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_get_account" method="get" path="/unified/crm/accounts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

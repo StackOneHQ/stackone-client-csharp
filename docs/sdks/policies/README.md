@@ -13,6 +13,7 @@ Get Policy
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_get_policy" method="get" path="/unified/iam/policies/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

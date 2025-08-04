@@ -11,6 +11,7 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
+    using System;
     
     /// <summary>
     /// Filter parameters for application changes (supports created_after and change_type)
@@ -22,7 +23,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// Use a string with a date to only select results created after that given date
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=created_after")]
-        public string? CreatedAfter { get; set; } = null;
+        public DateTime? CreatedAfter { get; set; } = null;
 
         /// <summary>
         /// Filter by the type of change that occurred to the application

@@ -13,6 +13,7 @@ Get Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="documents_get_drive" method="get" path="/unified/documents/drives/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

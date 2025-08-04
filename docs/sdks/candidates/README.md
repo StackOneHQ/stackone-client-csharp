@@ -14,6 +14,7 @@ Create Candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_create_candidate" method="post" path="/unified/ats/candidates" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -107,6 +108,7 @@ Get Candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_candidate" method="get" path="/unified/ats/candidates/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

@@ -11,7 +11,7 @@ Customer or business accounts.
 * [Get](#get) - Get Account
 * [Delete](#delete) - Delete Account
 * [Update](#update) - Update Account
-* [GetMeta](#getmeta) - Get meta information of the account
+* [GetMeta](#getmeta) - Get Account Meta Information
 
 ## List
 
@@ -19,6 +19,7 @@ List Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_list_linked_accounts" method="get" path="/accounts" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -69,6 +70,7 @@ Get Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_get_account" method="get" path="/accounts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -116,6 +118,7 @@ Delete Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_delete_account" method="delete" path="/accounts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -163,6 +166,7 @@ Update Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_update_account" method="patch" path="/accounts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -212,10 +216,11 @@ var res = await sdk.Accounts.UpdateAsync(
 
 ## GetMeta
 
-Get meta information of the account
+Get Account Meta Information
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_get_account_meta_info" method="get" path="/accounts/{id}/meta" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

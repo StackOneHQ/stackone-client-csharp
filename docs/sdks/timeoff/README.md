@@ -13,6 +13,7 @@ List time off requests
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_time_off_requests" method="get" path="/unified/hris/time_off" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

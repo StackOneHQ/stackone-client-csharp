@@ -13,6 +13,7 @@ Get Cost Center Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_cost_center_group" method="get" path="/unified/hris/groups/cost_centers/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

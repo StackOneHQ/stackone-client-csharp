@@ -13,10 +13,12 @@ List Courses
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_courses" method="get" path="/unified/lms/courses" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -27,7 +29,7 @@ LmsListCoursesRequest req = new LmsListCoursesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors",
     Filter = new LmsListCoursesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

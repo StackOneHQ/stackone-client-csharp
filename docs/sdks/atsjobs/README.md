@@ -13,6 +13,7 @@ Get Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_job" method="get" path="/unified/ats/jobs/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

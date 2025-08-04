@@ -46,7 +46,7 @@ namespace StackOneHQ.Client.Models.Components
         /// Whether the comment is internal
         /// </summary>
         [JsonProperty("internal")]
-        public bool? Internal { get; set; } = null;
+        public TicketingCommentInternalUnion? Internal { get; set; } = null;
 
         /// <summary>
         /// Array of content associated with the comment

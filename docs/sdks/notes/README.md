@@ -13,10 +13,12 @@ List Candidate Notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_candidate_notes" method="get" path="/unified/ats/candidates/{id}/notes" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsListCandidateNotesRequest req = new AtsListCandidateNotesRequest() {
     Id = "<id>",
     Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at",
     Filter = new AtsListCandidateNotesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

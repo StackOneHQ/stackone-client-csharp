@@ -29,10 +29,12 @@ List Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_list_email_templates" method="get" path="/unified/marketing/templates/email" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -43,7 +45,7 @@ MarketingListEmailTemplatesRequest req = new MarketingListEmailTemplatesRequest(
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
     Filter = new MarketingListEmailTemplatesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -91,6 +93,7 @@ Create Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_create_email_template" method="post" path="/unified/marketing/templates/email" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -155,6 +158,7 @@ Get Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_get_email_template" method="get" path="/unified/marketing/templates/email/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -210,6 +214,7 @@ Update Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_update_email_template" method="patch" path="/unified/marketing/templates/email/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -281,6 +286,7 @@ List In-App Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_list_in_app_templates" method="get" path="/unified/marketing/templates/in_app" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -341,6 +347,7 @@ Create In-App Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_create_in_app_template" method="post" path="/unified/marketing/templates/in_app" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -410,10 +417,12 @@ List SMS Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_list_sms_templates" method="get" path="/unified/marketing/templates/sms" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -424,7 +433,7 @@ MarketingListSmsTemplatesRequest req = new MarketingListSmsTemplatesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
     Filter = new MarketingListSmsTemplatesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -472,6 +481,7 @@ Create SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_create_sms_template" method="post" path="/unified/marketing/templates/sms" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -541,6 +551,7 @@ Update SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_update_sms_template" method="patch" path="/unified/marketing/templates/sms/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -614,10 +625,12 @@ List Omni-Channel Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_list_omni_channel_templates" method="get" path="/unified/marketing/templates/omni_channel" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -628,7 +641,7 @@ MarketingListOmniChannelTemplatesRequest req = new MarketingListOmniChannelTempl
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
     Filter = new MarketingListOmniChannelTemplatesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -678,6 +691,7 @@ Get Omni-Channel Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_get_omni_channel_template" method="get" path="/unified/marketing/templates/omni_channel/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -735,6 +749,7 @@ Update Omni-Channel Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_update_omni_channel_template" method="patch" path="/unified/marketing/templates/omni_channel/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -805,10 +820,12 @@ List Push Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_list_push_templates" method="get" path="/unified/marketing/templates/push" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -819,7 +836,7 @@ MarketingListPushTemplatesRequest req = new MarketingListPushTemplatesRequest() 
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
     Filter = new MarketingListPushTemplatesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -867,6 +884,7 @@ Update Push Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_update_push_template" method="patch" path="/unified/marketing/templates/push/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -938,10 +956,12 @@ List Content Blocks
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_list_content_blocks" method="get" path="/unified/marketing/content_blocks" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -952,7 +972,7 @@ MarketingListContentBlocksRequest req = new MarketingListContentBlocksRequest() 
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,content,status,tags,created_at,updated_at",
     Filter = new MarketingListContentBlocksFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -1000,6 +1020,7 @@ Create Content Block
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_create_content_block" method="post" path="/unified/marketing/content_blocks" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1063,6 +1084,7 @@ Get Content Blocks
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_get_content_block" method="get" path="/unified/marketing/content_blocks/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

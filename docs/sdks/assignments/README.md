@@ -15,9 +15,11 @@ Create User Assignment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_create_user_assignment" method="post" path="/unified/lms/users/{id}/assignments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
+using System;
 using System.Collections.Generic;
 
 var sdk = new StackOneHQClient(security: new Security() {
@@ -35,8 +37,8 @@ var res = await sdk.Lms.Assignments.CreateAsync(
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
         LearningObjectExternalReference = "learning-content-123",
         Progress = 40D,
-        CreatedAt = "2021-07-21T14:00:00.000Z",
-        DueDate = "2021-07-21T14:00:00.000Z",
+        CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+        DueDate = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         Status = new LmsCreateAssignmentRequestDtoStatus() {
             Value = LmsCreateAssignmentRequestDtoValue.InProgress,
         },
@@ -82,10 +84,12 @@ List Assignments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_assignments" method="get" path="/unified/lms/assignments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -96,7 +100,7 @@ LmsListAssignmentsRequest req = new LmsListAssignmentsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference",
     Filter = new LmsListAssignmentsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     UserId = "c28xyrc55866bvuv",
     RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
@@ -146,6 +150,7 @@ Get Assignment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_assignment" method="get" path="/unified/lms/assignments/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

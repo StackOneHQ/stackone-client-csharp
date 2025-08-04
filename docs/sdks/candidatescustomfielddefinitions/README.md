@@ -13,10 +13,12 @@ Get Candidate Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_candidate_custom_field_definition" method="get" path="/unified/ats/custom_field_definitions/candidates/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsGetCandidateCustomFieldDefinitionRequest req = new AtsGetCandidateCustomField
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,options",
     Filter = new AtsGetCandidateCustomFieldDefinitionFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

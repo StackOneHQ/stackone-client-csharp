@@ -13,6 +13,7 @@ Retrieve the details of a single attachment for a ticket.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_get_attachment" method="get" path="/unified/ticketing/tickets/{id}/attachments/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

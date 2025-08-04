@@ -21,6 +21,7 @@ Retrieve a single user by their identifier.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_get_user" method="get" path="/unified/ticketing/users/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -76,6 +77,7 @@ Download the attachment file from a ticket.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_download_ticketing_attachment" method="get" path="/unified/ticketing/tickets/{id}/attachments/{subResourceId}/download" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -133,10 +135,12 @@ Retrieve a paginated list of all ticket types.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_ticket_types" method="get" path="/unified/ticketing/ticket_types" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -147,7 +151,7 @@ TicketingListTicketTypesRequest req = new TicketingListTicketTypesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,project_id,remote_project_id",
     Filter = new TicketingListTicketTypesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -195,6 +199,7 @@ Retrieve a single ticket type by its identifier.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_get_ticket_type" method="get" path="/unified/ticketing/ticket_types/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -250,10 +255,12 @@ Retrieve a paginated list of projects.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_projects" method="get" path="/unified/ticketing/projects" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -264,7 +271,7 @@ TicketingListProjectsRequest req = new TicketingListProjectsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at",
     Filter = new TicketingListProjectsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -312,6 +319,7 @@ Retrieve a single project by its identifier.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_get_project" method="get" path="/unified/ticketing/projects/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -367,6 +375,7 @@ Retrieve a paginated list of project components.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_project_components" method="get" path="/unified/ticketing/projects/{id}/components" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -428,6 +437,7 @@ Retrieve a single project component by its identifier.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_get_project_component" method="get" path="/unified/ticketing/projects/{id}/components/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -484,10 +494,12 @@ Retrieve a paginated list of ticket types for a project.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_project_ticket_types" method="get" path="/unified/ticketing/projects/{id}/ticket_types" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -499,7 +511,7 @@ TicketingListProjectTicketTypesRequest req = new TicketingListProjectTicketTypes
     Id = "<id>",
     Fields = "id,remote_id,name,project_id,remote_project_id",
     Filter = new TicketingListProjectTicketTypesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

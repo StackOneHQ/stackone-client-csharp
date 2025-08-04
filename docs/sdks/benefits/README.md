@@ -13,6 +13,7 @@ Get Benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_benefit" method="get" path="/unified/hris/benefits/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

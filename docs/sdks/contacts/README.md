@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [List](#list) - List Contacts
-* [Create](#create) - Creates a new Contact
+* [Create](#create) - Create Contact
 
 ## List
 
@@ -14,10 +14,12 @@ List Contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_list_contacts" method="get" path="/unified/crm/contacts" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ CrmListContactsRequest req = new CrmListContactsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at",
     Filter = new CrmListContactsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Include = "custom_fields",
 };
@@ -73,10 +75,11 @@ while(res != null)
 
 ## Create
 
-Creates a new Contact
+Create Contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_create_contact" method="post" path="/unified/crm/contacts" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

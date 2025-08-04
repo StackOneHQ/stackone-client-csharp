@@ -29,12 +29,12 @@ namespace StackOneHQ.Client
     {
 
         /// <summary>
-        /// List Connectors Meta Information for all providers
+        /// List Connector Meta Information
         /// </summary>
         Task<StackoneListConnectorsMetaResponse> ListMetaAsync(string? include = null, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Get Connector Meta information for the given provider key
+        /// Get Connector Meta Information
         /// </summary>
         Task<StackoneGetConnectorMetaResponse> GetMetaAsync(string provider, string? include = null, RetryConfig? retryConfig = null);
     }
@@ -46,8 +46,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.7";
-        private const string _sdkGenVersion = "2.666.0";
+        private const string _sdkVersion = "0.2.8";
+        private const string _sdkGenVersion = "2.672.0";
         private const string _openapiDocVersion = "1.0.0";
 
         public Connectors(SDKConfig config)

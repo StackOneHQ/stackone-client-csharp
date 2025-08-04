@@ -14,6 +14,7 @@ Create Connect Session
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_create_connect_session" method="post" path="/connect_sessions" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -82,6 +83,7 @@ Authenticate Connect Session
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_authenticate_connect_session" method="post" path="/connect_sessions/authenticate" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

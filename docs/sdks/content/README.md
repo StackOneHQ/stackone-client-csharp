@@ -15,6 +15,7 @@ Upsert Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_upsert_content" method="put" path="/unified/lms/content" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -140,6 +141,7 @@ Get Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_content" method="get" path="/unified/lms/content/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -195,6 +197,7 @@ Update Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_update_content" method="patch" path="/unified/lms/content/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
