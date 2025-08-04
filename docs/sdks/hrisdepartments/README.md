@@ -13,6 +13,7 @@ Get Department Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_department_group" method="get" path="/unified/hris/groups/departments/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

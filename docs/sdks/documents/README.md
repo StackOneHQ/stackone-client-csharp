@@ -14,10 +14,12 @@ List Application Document Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_application_document_categories" method="get" path="/unified/ats/documents/application_categories" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsListApplicationDocumentCategoriesRequest req = new AtsListApplicationDocument
     XAccountId = "<id>",
     Fields = "id,remote_id,name,active",
     Filter = new AtsListApplicationDocumentCategoriesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,6 +78,7 @@ Upload File
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="documents_upload_file" method="post" path="/unified/documents/files/upload" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

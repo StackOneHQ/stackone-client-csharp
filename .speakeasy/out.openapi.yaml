@@ -558,7 +558,7 @@ paths:
     get:
       tags:
         - "Accounts"
-      summary: "Get meta information of the account"
+      summary: "Get Account Meta Information"
       operationId: "stackone_get_account_meta_info"
       parameters:
         - name: "id"
@@ -704,12 +704,14 @@ paths:
                 example: "45355976281015164504,45355976281015164505"
               "start_date":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "A ISO8601 date string to filter the results by start_date."
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "end_date":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "A ISO8601 date string to filter the results by end_date."
                 nullable: true
@@ -850,7 +852,7 @@ paths:
     get:
       tags:
         - "Request Logs"
-      summary: "Get a Log"
+      summary: "Get Log"
       operationId: "stackone_get_log"
       parameters:
         - name: "id"
@@ -1022,12 +1024,14 @@ paths:
                 example: "45355976281015164504,45355976281015164505"
               "start_date":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "A ISO8601 date string to filter the results by start_date."
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "end_date":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "A ISO8601 date string to filter the results by end_date."
                 nullable: true
@@ -1271,12 +1275,14 @@ paths:
                 example: "45355976281015164504,45355976281015164505"
               "start_date":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "A ISO8601 date string to filter the results by start_date."
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "end_date":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "A ISO8601 date string to filter the results by end_date."
                 nullable: true
@@ -1437,7 +1443,7 @@ paths:
     get:
       tags:
         - "Connectors"
-      summary: "List Connectors Meta Information for all providers"
+      summary: "List Connector Meta Information"
       operationId: "stackone_list_connectors_meta"
       parameters:
         - name: "include"
@@ -1524,7 +1530,7 @@ paths:
     get:
       tags:
         - "Connectors"
-      summary: "Get Connector Meta information for the given provider key"
+      summary: "Get Connector Meta Information"
       operationId: "stackone_get_connector_meta"
       parameters:
         - name: "provider"
@@ -1750,6 +1756,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -1784,6 +1791,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -2031,6 +2039,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -2065,6 +2074,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -2198,6 +2208,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -2232,6 +2243,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -2359,6 +2371,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -2401,6 +2414,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -2500,7 +2514,7 @@ paths:
     post:
       tags:
         - "Employees"
-      summary: "Creates an employee"
+      summary: "Create Employee"
       operationId: "hris_create_employee"
       parameters:
         - name: "x-account-id"
@@ -2728,7 +2742,7 @@ paths:
     patch:
       tags:
         - "Employees"
-      summary: "Updates an employee"
+      summary: "Update Employee"
       operationId: "hris_update_employee"
       parameters:
         - name: "x-account-id"
@@ -2977,6 +2991,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -3017,6 +3032,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -3914,6 +3930,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -3948,6 +3965,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -4201,6 +4219,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -4235,6 +4254,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -4482,6 +4502,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -4516,6 +4537,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "x-account-id"
@@ -4980,6 +5002,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -5021,6 +5044,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -5290,6 +5314,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -5324,6 +5349,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -5593,6 +5619,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -5627,6 +5654,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -6099,6 +6127,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -6133,6 +6162,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -6261,6 +6291,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -6295,6 +6326,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -6423,6 +6455,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -6457,6 +6490,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -6585,6 +6619,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -6619,6 +6654,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -6747,6 +6783,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -6781,6 +6818,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -6909,6 +6947,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -6943,6 +6982,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -7785,6 +7825,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -7819,6 +7860,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -8066,6 +8108,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -8100,6 +8143,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -8346,6 +8390,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -8380,6 +8425,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "status"
@@ -8641,6 +8687,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -8692,6 +8739,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -8939,6 +8987,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -8979,6 +9028,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -9241,6 +9291,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -9299,6 +9350,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -9545,6 +9597,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -9579,6 +9632,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -9828,6 +9882,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -9890,6 +9945,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -10143,6 +10199,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -10205,6 +10262,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -10333,6 +10391,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -10367,6 +10426,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -10620,6 +10680,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -10654,6 +10715,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -11012,6 +11074,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -11046,6 +11109,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -11425,6 +11489,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -11459,6 +11524,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -11722,12 +11788,14 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "created_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results created after that given date"
                 nullable: true
@@ -11770,6 +11838,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -12113,7 +12182,7 @@ paths:
     patch:
       tags:
         - "Applications"
-      summary: "Update an Application"
+      summary: "Update Application"
       operationId: "ats_update_application"
       parameters:
         - name: "x-account-id"
@@ -12263,6 +12332,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -12297,6 +12367,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -12762,6 +12833,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -12796,6 +12868,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -13076,6 +13149,7 @@ paths:
             properties:
               "created_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results created after that given date"
                 nullable: true
@@ -13222,6 +13296,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -13256,6 +13331,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -13571,7 +13647,7 @@ paths:
       tags:
         - "Applications"
         - "Notes"
-      summary: "Update an Application Note"
+      summary: "Update Application Note"
       operationId: "ats_update_application_note"
       parameters:
         - name: "x-account-id"
@@ -13726,6 +13802,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -13760,6 +13837,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -14245,6 +14323,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -14283,6 +14362,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -14544,12 +14624,14 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "created_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results created after that given date"
                 nullable: true
@@ -14588,6 +14670,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -15056,6 +15139,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -15090,6 +15174,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -15450,6 +15535,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -15484,6 +15570,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -15617,6 +15704,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -15651,6 +15739,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -15778,6 +15867,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -15812,6 +15902,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -15945,6 +16036,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -15979,6 +16071,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -16106,6 +16199,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -16140,6 +16234,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -16273,6 +16368,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -16307,6 +16403,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -16434,6 +16531,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -16468,6 +16566,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -16723,6 +16822,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -16757,6 +16857,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -17012,12 +17113,14 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "created_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results created after that given date"
                 nullable: true
@@ -17052,6 +17155,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -17307,12 +17411,14 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "created_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results created after that given date"
                 nullable: true
@@ -17364,6 +17470,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -17842,6 +17949,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -17876,6 +17984,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -18123,6 +18232,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -18157,6 +18267,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -18412,6 +18523,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -18446,6 +18558,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -18701,6 +18814,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -18735,6 +18849,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -18990,12 +19105,14 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
               "created_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results created after that given date"
                 nullable: true
@@ -19030,6 +19147,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -19301,6 +19419,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -19335,6 +19454,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "sync_token"
@@ -19425,7 +19545,7 @@ paths:
     post:
       tags:
         - "Offers"
-      summary: "Creates an offer"
+      summary: "Create Offer"
       operationId: "ats_create_offer"
       parameters:
         - name: "x-account-id"
@@ -19679,6 +19799,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -19713,6 +19834,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -20270,6 +20392,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -20304,6 +20427,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -21152,6 +21276,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -21186,6 +21311,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -21433,6 +21559,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -21467,6 +21594,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "include"
@@ -21557,7 +21685,7 @@ paths:
     post:
       tags:
         - "Contacts"
-      summary: "Creates a new Contact"
+      summary: "Create Contact"
       operationId: "crm_create_contact"
       parameters:
         - name: "x-account-id"
@@ -21921,6 +22049,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -21955,6 +22084,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -22202,6 +22332,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -22236,6 +22367,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -22483,6 +22615,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -22517,6 +22650,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -22650,6 +22784,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -22684,6 +22819,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -22811,6 +22947,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -22845,6 +22982,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -23301,6 +23439,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -23335,6 +23474,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -23598,6 +23738,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -23632,6 +23773,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -23895,6 +24037,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -23929,6 +24072,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "expand"
@@ -24193,6 +24337,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -24227,6 +24372,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -24669,6 +24815,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -24703,6 +24850,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -25145,6 +25293,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -25179,6 +25328,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -25621,6 +25771,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -25655,6 +25806,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -26101,6 +26253,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -26135,6 +26288,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -26576,6 +26730,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -26610,6 +26765,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -26857,6 +27013,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -26891,6 +27048,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -27329,6 +27487,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -27367,6 +27526,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -27614,6 +27774,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -27657,6 +27818,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "user_id"
@@ -28118,6 +28280,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -28152,6 +28315,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -28590,6 +28754,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -28624,6 +28789,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -29076,6 +29242,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -29110,6 +29277,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -29469,6 +29637,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -29503,6 +29672,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -29631,6 +29801,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -29673,6 +29844,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -30033,6 +30205,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -30067,6 +30240,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -30191,6 +30365,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -30234,6 +30409,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "user_id"
@@ -30497,6 +30673,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -30531,6 +30708,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -30973,6 +31151,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -31007,6 +31186,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -31262,6 +31442,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -31296,6 +31477,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -31676,6 +31858,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -31710,6 +31893,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -31965,6 +32149,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -31999,6 +32184,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -32248,6 +32434,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -32282,6 +32469,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -32537,6 +32725,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -32571,6 +32760,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -32832,6 +33022,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -32866,6 +33057,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -33000,6 +33192,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -33034,6 +33227,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -33384,6 +33578,7 @@ paths:
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -33400,6 +33595,7 @@ paths:
                 example: "FAQ of the project"
               "created_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results created after that given date"
                 nullable: true
@@ -33444,6 +33640,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "folder_id"
@@ -33721,11 +33918,14 @@ paths:
           in: "query"
           description: "Documents Folders Filter"
           required: false
+          style: "deepObject"
+          explode: true
           schema:
             type: "object"
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -33772,6 +33972,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
         - name: "folder_id"
@@ -34043,11 +34244,14 @@ paths:
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
           required: false
+          style: "deepObject"
+          explode: true
           schema:
             type: "object"
             properties:
               "updated_after":
                 type: "string"
+                format: "date-time"
                 additionalProperties: false
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
@@ -34082,6 +34286,7 @@ paths:
           deprecated: true
           schema:
             type: "string"
+            format: "date-time"
             nullable: true
             example: "2020-01-01T00:00:00.000Z"
       responses:
@@ -37130,13 +37335,13 @@ components:
         "date_of_birth":
           type: "string"
           format: "date-time"
-          description: "The employee date_of_birth"
+          description: "The date when the employee was born"
           nullable: true
           example: "1990-01-01T00:00:00.000Z"
         "birthday":
           type: "string"
           format: "date-time"
-          description: "The employee birthday"
+          description: "The next birthday of the employee (upcoming birthday)"
           nullable: true
           example: "2021-01-01T00:00:00Z"
         "marital_status":
@@ -37430,7 +37635,12 @@ components:
           example: "2021-01-01T01:01:01.000Z"
           deprecated: true
         "active":
-          type: "boolean"
+          oneOf:
+            - type: "boolean"
+            - type: "string"
+              enum:
+                - "true"
+                - "false"
           description: "The employment active status"
           nullable: true
           example: true
@@ -37693,7 +37903,12 @@ components:
           nullable: true
           example: "Information-Technology"
         "active":
-          type: "boolean"
+          oneOf:
+            - type: "boolean"
+            - type: "string"
+              enum:
+                - "true"
+                - "false"
           description: "Whether the skill is active and therefore available for use"
           nullable: true
           example: true
@@ -39423,13 +39638,13 @@ components:
         "date_of_birth":
           type: "string"
           format: "date-time"
-          description: "The employee date_of_birth"
+          description: "The date when the employee was born"
           nullable: true
           example: "1990-01-01T00:00:00.000Z"
         "birthday":
           type: "string"
           format: "date-time"
-          description: "The employee birthday"
+          description: "The next birthday of the employee (upcoming birthday)"
           nullable: true
           example: "2021-01-01T00:00:00Z"
         "marital_status":
@@ -40691,13 +40906,13 @@ components:
         "date_of_birth":
           type: "string"
           format: "date-time"
-          description: "The employee date_of_birth"
+          description: "The date when the employee was born"
           nullable: true
           example: "1990-01-01T00:00:00.000Z"
         "birthday":
           type: "string"
           format: "date-time"
-          description: "The employee birthday"
+          description: "The next birthday of the employee (upcoming birthday)"
           nullable: true
           example: "2021-01-01T00:00:00Z"
         "marital_status":
@@ -42369,7 +42584,12 @@ components:
           nullable: true
           example: "PT1H"
         "is_paid":
-          type: "boolean"
+          oneOf:
+            - type: "boolean"
+            - type: "string"
+              enum:
+                - "true"
+                - "false"
           description: "Whether the break is paid"
           nullable: true
           example: true
@@ -49893,16 +50113,19 @@ components:
           example: "40"
         "updated_at":
           type: "string"
+          format: "date-time"
           description: "The date the assignment was last updated"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
         "created_at":
           type: "string"
+          format: "date-time"
           description: "The date the assignment was created"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
         "due_date":
           type: "string"
+          format: "date-time"
           description: "The date the assignment is due to be completed"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
@@ -50128,16 +50351,19 @@ components:
           nullable: true
         "completed_at":
           type: "string"
+          format: "date-time"
           description: "The date the content was completed"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
         "created_at":
           type: "string"
+          format: "date-time"
           description: "The created date of the completion"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
         "updated_at":
           type: "string"
+          format: "date-time"
           description: "The updated date of the completion"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
@@ -50402,11 +50628,13 @@ components:
           example: [{"id": "123", "name": "John Doe"}]
         "updated_at":
           type: "string"
+          format: "date-time"
           description: "The date on which the course was last updated."
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
         "created_at":
           type: "string"
+          format: "date-time"
           description: "The date on which the course was created."
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
@@ -50566,11 +50794,13 @@ components:
           example: "40"
         "created_at":
           type: "string"
+          format: "date-time"
           description: "The date the assignment was created"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
         "due_date":
           type: "string"
+          format: "date-time"
           description: "The date the assignment is due to be completed"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
@@ -50595,6 +50825,7 @@ components:
           nullable: true
         "completed_at":
           type: "string"
+          format: "date-time"
           description: "The date the content was completed"
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
@@ -51213,7 +51444,12 @@ components:
           nullable: true
           example: "user-001"
         "internal":
-          type: "boolean"
+          oneOf:
+            - type: "boolean"
+            - type: "string"
+              enum:
+                - "true"
+                - "false"
           description: "Whether the comment is internal"
           nullable: true
           example: false
@@ -51887,7 +52123,12 @@ components:
           nullable: true
           example: "johndoe"
         "active":
-          type: "boolean"
+          oneOf:
+            - type: "boolean"
+            - type: "string"
+              enum:
+                - "true"
+                - "false"
           description: "If the user is active"
           nullable: true
           example: true

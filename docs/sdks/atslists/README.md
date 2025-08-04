@@ -14,6 +14,7 @@ Get all Lists
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_lists" method="get" path="/unified/ats/lists" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -74,6 +75,7 @@ Get List
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_list" method="get" path="/unified/ats/lists/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

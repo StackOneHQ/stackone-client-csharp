@@ -13,10 +13,12 @@ Retrieve a paginated list of users.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_users" method="get" path="/unified/ticketing/users" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -27,7 +29,7 @@ TicketingListUsersRequest req = new TicketingListUsersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at",
     Filter = new TicketingListUsersFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

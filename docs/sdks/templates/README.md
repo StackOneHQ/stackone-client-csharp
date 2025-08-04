@@ -17,6 +17,7 @@ Create Omni-Channel Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_create_omni_channel_template" method="post" path="/unified/marketing/templates/omni_channel" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -85,6 +86,7 @@ Create Push Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_create_push_template" method="post" path="/unified/marketing/templates/push" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -154,6 +156,7 @@ Get Push Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_get_push_template" method="get" path="/unified/marketing/templates/push/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

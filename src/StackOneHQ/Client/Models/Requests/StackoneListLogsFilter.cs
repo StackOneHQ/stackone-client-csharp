@@ -11,6 +11,7 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
+    using System;
     
     /// <summary>
     /// Filter parameters that allow greater customisation of the list response
@@ -28,13 +29,13 @@ namespace StackOneHQ.Client.Models.Requests
         /// A ISO8601 date string to filter the results by start_date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=start_date")]
-        public string? StartDate { get; set; } = null;
+        public DateTime? StartDate { get; set; } = null;
 
         /// <summary>
         /// A ISO8601 date string to filter the results by end_date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=end_date")]
-        public string? EndDate { get; set; } = null;
+        public DateTime? EndDate { get; set; } = null;
 
         /// <summary>
         /// A comma-separated list of request IDs to filter the results by.

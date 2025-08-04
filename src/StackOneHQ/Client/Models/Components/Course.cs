@@ -12,6 +12,7 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
+    using System;
     using System.Collections.Generic;
     
     public class Course
@@ -123,12 +124,12 @@ namespace StackOneHQ.Client.Models.Components
         /// The date on which the course was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
-        public string? UpdatedAt { get; set; } = null;
+        public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
         /// The date on which the course was created.
         /// </summary>
         [JsonProperty("created_at")]
-        public string? CreatedAt { get; set; } = null;
+        public DateTime? CreatedAt { get; set; } = null;
     }
 }

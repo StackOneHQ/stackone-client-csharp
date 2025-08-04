@@ -15,10 +15,12 @@ List Background Check Packages
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_background_check_packages" method="get" path="/unified/ats/background_checks/packages" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -29,7 +31,7 @@ AtsListBackgroundCheckPackagesRequest req = new AtsListBackgroundCheckPackagesRe
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,tests",
     Filter = new AtsListBackgroundCheckPackagesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -77,6 +79,7 @@ Create Background Check Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_create_background_check_package" method="post" path="/unified/ats/background_checks/packages" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -142,6 +145,7 @@ Get Background Check Results
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_background_check_result" method="get" path="/unified/ats/background_checks/orders/{id}/results" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

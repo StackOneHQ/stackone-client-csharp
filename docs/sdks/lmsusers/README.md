@@ -13,10 +13,12 @@ List User Completions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_user_completions" method="get" path="/unified/lms/users/{id}/completions" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ LmsListUserCompletionsRequest req = new LmsListUserCompletionsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent",
     Filter = new LmsListUserCompletionsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

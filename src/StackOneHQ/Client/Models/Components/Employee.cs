@@ -169,13 +169,13 @@ namespace StackOneHQ.Client.Models.Components
         public EmployeeEthnicity? Ethnicity { get; set; } = null;
 
         /// <summary>
-        /// The employee date_of_birth
+        /// The date when the employee was born
         /// </summary>
         [JsonProperty("date_of_birth")]
         public DateTime? DateOfBirth { get; set; } = null;
 
         /// <summary>
-        /// The employee birthday
+        /// The next birthday of the employee (upcoming birthday)
         /// </summary>
         [JsonProperty("birthday")]
         public DateTime? Birthday { get; set; } = null;

@@ -43,12 +43,12 @@ namespace StackOneHQ.Client
         Task<HrisListEmployeesResponse> ListAsync(HrisListEmployeesRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Creates an employee
+        /// Create Employee
         /// </summary>
         Task<HrisCreateEmployeeResponse> CreateAsync(string xAccountId, HrisCreateEmployeeRequestDto hrisCreateEmployeeRequestDto, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Updates an employee
+        /// Update Employee
         /// </summary>
         Task<HrisUpdateEmployeeResponse> UpdateAsync(string xAccountId, string id, HrisUpdateEmployeeRequestDto hrisUpdateEmployeeRequestDto, RetryConfig? retryConfig = null);
 
@@ -107,8 +107,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.7";
-        private const string _sdkGenVersion = "2.666.0";
+        private const string _sdkVersion = "0.2.8";
+        private const string _sdkGenVersion = "2.672.0";
         private const string _openapiDocVersion = "1.0.0";
         public IEmployeesDocuments Documents { get; private set; }
         public IWorkEligibility WorkEligibility { get; private set; }

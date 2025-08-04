@@ -13,6 +13,7 @@ Get Company Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_company_group" method="get" path="/unified/hris/groups/companies/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

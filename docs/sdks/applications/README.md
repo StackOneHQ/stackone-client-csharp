@@ -13,6 +13,7 @@ Get Application Scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_scorecard" method="get" path="/unified/ats/applications/{id}/scorecards/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

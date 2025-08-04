@@ -14,10 +14,12 @@ List Candidate Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_candidate_custom_field_definitions" method="get" path="/unified/ats/custom_field_definitions/candidates" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsListCandidateCustomFieldDefinitionsRequest req = new AtsListCandidateCustomFi
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,type,options",
     Filter = new AtsListCandidateCustomFieldDefinitionsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,10 +78,12 @@ Get Job Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_job_custom_field_definition" method="get" path="/unified/ats/custom_field_definitions/jobs/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -91,7 +95,7 @@ AtsGetJobCustomFieldDefinitionRequest req = new AtsGetJobCustomFieldDefinitionRe
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,options",
     Filter = new AtsGetJobCustomFieldDefinitionFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

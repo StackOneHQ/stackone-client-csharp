@@ -13,6 +13,7 @@ List Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_list_groups" method="get" path="/unified/iam/groups" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

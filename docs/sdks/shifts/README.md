@@ -13,6 +13,7 @@ Get Shift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_shift" method="get" path="/unified/hris/shifts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

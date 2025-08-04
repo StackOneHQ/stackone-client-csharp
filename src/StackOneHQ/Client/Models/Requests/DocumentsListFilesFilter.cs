@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
+    using System;
     
     /// <summary>
     /// Documents Files Filter
@@ -21,7 +22,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// Use a string with a date to only select results updated after that given date
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
-        public string? UpdatedAfter { get; set; } = null;
+        public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
         /// Search if the name of the file contains the string
@@ -39,7 +40,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// Use a string with a date to only select results created after that given date
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=created_after")]
-        public string? CreatedAfter { get; set; } = null;
+        public DateTime? CreatedAfter { get; set; } = null;
 
         /// <summary>
         /// Use to only include Files within the specified Drive

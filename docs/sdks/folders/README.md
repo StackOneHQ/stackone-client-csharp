@@ -14,10 +14,12 @@ List Folders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="documents_list_folders" method="get" path="/unified/documents/folders" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ DocumentsListFoldersRequest req = new DocumentsListFoldersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids",
     Filter = new DocumentsListFoldersFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         DriveId = "1234567890",
         FolderId = "1234567890",
     },
@@ -81,6 +83,7 @@ Get Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="documents_get_folder" method="get" path="/unified/documents/folders/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

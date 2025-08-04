@@ -14,10 +14,12 @@ List Employee Employments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_employee_employments" method="get" path="/unified/hris/employees/{id}/employments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -29,7 +31,7 @@ HrisListEmployeeEmploymentsRequest req = new HrisListEmployeeEmploymentsRequest(
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager",
     Filter = new HrisListEmployeeEmploymentsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "groups",
 };
@@ -78,6 +80,7 @@ Update Employee Employment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_update_employee_employment" method="patch" path="/unified/hris/employees/{id}/employments/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

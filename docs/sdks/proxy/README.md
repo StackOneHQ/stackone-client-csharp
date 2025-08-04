@@ -15,6 +15,7 @@ Proxy Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_proxy_request" method="post" path="/unified/proxy" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

@@ -13,6 +13,7 @@ Get Interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_interview" method="get" path="/unified/ats/interviews/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

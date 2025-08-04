@@ -13,6 +13,7 @@ Retrieve a single comment by its identifier for a ticket.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_get_comment" method="get" path="/unified/ticketing/tickets/{id}/comments/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

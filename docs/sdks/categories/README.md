@@ -13,10 +13,12 @@ List Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_list_categories" method="get" path="/unified/lms/categories" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -27,7 +29,7 @@ LmsListCategoriesRequest req = new LmsListCategoriesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,active,hierarchy,level,language",
     Filter = new LmsListCategoriesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

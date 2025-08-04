@@ -14,10 +14,12 @@ List locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_locations" method="get" path="/unified/ats/locations" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsListLocationsRequest req = new AtsListLocationsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name",
     Filter = new AtsListLocationsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,6 +78,7 @@ Get Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_location" method="get" path="/unified/ats/locations/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

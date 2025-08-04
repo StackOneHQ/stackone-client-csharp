@@ -14,10 +14,12 @@ List Interview Stages
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_interview_stages" method="get" path="/unified/ats/interview_stages" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsListInterviewStagesRequest req = new AtsListInterviewStagesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,order,created_at,updated_at",
     Filter = new AtsListInterviewStagesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,6 +78,7 @@ Get Interview Stage
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_interview_stage" method="get" path="/unified/ats/interview_stages/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

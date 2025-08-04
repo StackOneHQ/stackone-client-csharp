@@ -11,7 +11,7 @@
 * [ListApplicationNotes](#listapplicationnotes) - List Application Notes
 * [CreateApplicationNote](#createapplicationnote) - Create Application Note
 * [GetNote](#getnote) - Get Application Note
-* [UpdateNote](#updatenote) - Update an Application Note
+* [UpdateNote](#updatenote) - Update Application Note
 * [DocumentsUpload](#documentsupload) - Upload Application Document
 * [GetDocument](#getdocument) - Get Application Document
 * [ListCandidates](#listcandidates) - List Candidates
@@ -37,10 +37,12 @@ List Applications
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_applications" method="get" path="/unified/ats/applications" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -51,8 +53,8 @@ AtsListApplicationsRequest req = new AtsListApplicationsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate",
     Filter = new AtsListApplicationsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
-        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "documents",
     Include = "attachments,custom_fields",
@@ -102,6 +104,7 @@ Get Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application" method="get" path="/unified/ats/applications/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -159,10 +162,12 @@ List Application Changes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_application_changes" method="get" path="/unified/ats/applications/{id}/changes" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -174,7 +179,7 @@ AtsListApplicationChangesRequest req = new AtsListApplicationChangesRequest() {
     Id = "<id>",
     Fields = "event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values",
     Filter = new AtsListApplicationChangesFilter() {
-        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -222,10 +227,12 @@ List Application Notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_application_notes" method="get" path="/unified/ats/applications/{id}/notes" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -237,7 +244,7 @@ AtsListApplicationNotesRequest req = new AtsListApplicationNotesRequest() {
     Id = "<id>",
     Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at",
     Filter = new AtsListApplicationNotesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -285,6 +292,7 @@ Create Application Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_create_application_note" method="post" path="/unified/ats/applications/{id}/notes" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -356,6 +364,7 @@ Get Application Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_note" method="get" path="/unified/ats/applications/{id}/notes/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -408,10 +417,11 @@ var res = await sdk.Ats.GetNoteAsync(req);
 
 ## UpdateNote
 
-Update an Application Note
+Update Application Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_update_application_note" method="patch" path="/unified/ats/applications/{id}/notes/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -485,6 +495,7 @@ Upload Application Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_upload_application_document" method="post" path="/unified/ats/applications/{id}/documents/upload" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -555,6 +566,7 @@ Get Application Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_document" method="get" path="/unified/ats/applications/{id}/documents/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -611,10 +623,12 @@ List Candidates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_candidates" method="get" path="/unified/ats/candidates" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -625,8 +639,8 @@ AtsListCandidatesRequest req = new AtsListCandidatesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at",
     Filter = new AtsListCandidatesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
-        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Include = "custom_fields",
 };
@@ -675,6 +689,7 @@ Update Candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_update_candidate" method="patch" path="/unified/ats/candidates/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -769,6 +784,7 @@ Create Candidate Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_create_candidate_note" method="post" path="/unified/ats/candidates/{id}/notes" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -840,6 +856,7 @@ Get Candidate Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_candidate_note" method="get" path="/unified/ats/candidates/{id}/notes/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -896,10 +913,12 @@ List Job Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_job_custom_field_definitions" method="get" path="/unified/ats/custom_field_definitions/jobs" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -910,7 +929,7 @@ AtsListJobCustomFieldDefinitionsRequest req = new AtsListJobCustomFieldDefinitio
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,type,options",
     Filter = new AtsListJobCustomFieldDefinitionsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -958,10 +977,12 @@ List Departments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_departments" method="get" path="/unified/ats/departments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -972,7 +993,7 @@ AtsListDepartmentsRequest req = new AtsListDepartmentsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name",
     Filter = new AtsListDepartmentsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -1020,10 +1041,12 @@ List Jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_jobs" method="get" path="/unified/ats/jobs" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -1034,8 +1057,8 @@ AtsListJobsRequest req = new AtsListJobsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at",
     Filter = new AtsListJobsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
-        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "job_postings,interview_stages",
     Include = "custom_fields",
@@ -1085,6 +1108,7 @@ Create Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_create_job" method="post" path="/unified/ats/jobs" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1200,6 +1224,7 @@ Update Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_update_job" method="patch" path="/unified/ats/jobs/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1294,6 +1319,7 @@ Get User
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_user" method="get" path="/unified/ats/users/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1349,10 +1375,12 @@ List Job Postings
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_job_postings" method="get" path="/unified/ats/job_postings" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -1363,8 +1391,8 @@ AtsListJobPostingsRequest req = new AtsListJobPostingsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at",
     Filter = new AtsListJobPostingsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
-        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Include = "questionnaires",
 };
@@ -1413,6 +1441,7 @@ Order Assessments Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_order_assessments_request" method="post" path="/unified/ats/assessments/orders" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1533,6 +1562,7 @@ Update Assessments Result
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_update_assessments_result" method="patch" path="/unified/ats/assessments/orders/{id}/result" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1620,6 +1650,7 @@ Update Background Check Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_update_background_check_package" method="patch" path="/unified/ats/background_checks/packages/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1688,6 +1719,7 @@ Order Background Check Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_order_background_check_request" method="post" path="/unified/ats/background_checks/orders" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1800,6 +1832,7 @@ Update Background Check Result
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_update_background_check_result" method="patch" path="/unified/ats/background_checks/orders/{id}/result" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

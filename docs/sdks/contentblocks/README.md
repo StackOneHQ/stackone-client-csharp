@@ -13,6 +13,7 @@ Update Content Block
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_update_content_block" method="patch" path="/unified/marketing/content_blocks/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

@@ -13,10 +13,12 @@ List Interviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_interviews" method="get" path="/unified/ats/interviews" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -27,8 +29,8 @@ AtsListInterviewsRequest req = new AtsListInterviewsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at",
     Filter = new AtsListInterviewsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
-        CreatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

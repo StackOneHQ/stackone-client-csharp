@@ -13,6 +13,7 @@ Get User Assignment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_user_assignment" method="get" path="/unified/lms/users/{id}/assignments/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

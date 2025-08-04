@@ -14,10 +14,12 @@ List Contact Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_list_contact_custom_field_definitions" method="get" path="/unified/crm/custom_field_definitions/contacts" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ CrmListContactCustomFieldDefinitionsRequest req = new CrmListContactCustomFieldD
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,type,options",
     Filter = new CrmListContactCustomFieldDefinitionsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,10 +78,12 @@ Get Contact Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_get_contact_custom_field_definition" method="get" path="/unified/crm/custom_field_definitions/contacts/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -91,7 +95,7 @@ CrmGetContactCustomFieldDefinitionRequest req = new CrmGetContactCustomFieldDefi
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,options",
     Filter = new CrmGetContactCustomFieldDefinitionFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

@@ -13,6 +13,7 @@ Update Employee Work Eligibility Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_update_employee_work_eligibility_request" method="patch" path="/unified/hris/employees/{id}/work_eligibility/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

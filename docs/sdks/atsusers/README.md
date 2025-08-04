@@ -13,6 +13,7 @@ List Users
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_users" method="get" path="/unified/ats/users" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

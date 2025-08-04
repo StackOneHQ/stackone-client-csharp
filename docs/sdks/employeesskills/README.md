@@ -13,10 +13,12 @@ List Employee Skills
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_employee_skills" method="get" path="/unified/hris/employees/{id}/skills" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ HrisListEmployeeSkillsRequest req = new HrisListEmployeeSkillsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency",
     Filter = new HrisListEmployeeSkillsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

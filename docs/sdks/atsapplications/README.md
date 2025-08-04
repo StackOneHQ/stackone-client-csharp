@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [Create](#create) - Create Application
-* [Update](#update) - Update an Application
+* [Update](#update) - Update Application
 * [ListOffers](#listoffers) - List Application Offers
 * [Move](#move) - Move Application
 * [Reject](#reject) - Reject Application
@@ -24,6 +24,7 @@ Create Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_create_application" method="post" path="/unified/ats/applications" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -167,10 +168,11 @@ var res = await sdk.Ats.Applications.CreateAsync(
 
 ## Update
 
-Update an Application
+Update Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_update_application" method="patch" path="/unified/ats/applications/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -252,10 +254,12 @@ List Application Offers
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_applications_offers" method="get" path="/unified/ats/applications/{id}/offers" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -267,7 +271,7 @@ AtsListApplicationsOffersRequest req = new AtsListApplicationsOffersRequest() {
     Id = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history",
     Filter = new AtsListApplicationsOffersFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -315,6 +319,7 @@ Move Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_move_application" method="post" path="/unified/ats/applications/{id}/move" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -375,6 +380,7 @@ Reject Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_reject_application" method="post" path="/unified/ats/applications/{id}/reject" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -435,6 +441,7 @@ Get Application Offer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_offer" method="get" path="/unified/ats/applications/{id}/offers/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -491,10 +498,12 @@ List Application Scorecards
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_application_scorecards" method="get" path="/unified/ats/applications/{id}/scorecards" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -506,7 +515,7 @@ AtsListApplicationScorecardsRequest req = new AtsListApplicationScorecardsReques
     Id = "<id>",
     Fields = "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at",
     Filter = new AtsListApplicationScorecardsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -554,10 +563,12 @@ List Applications scheduled interviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_applications_scheduled_interviews" method="get" path="/unified/ats/applications/{id}/scheduled_interviews" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -569,7 +580,7 @@ AtsListApplicationsScheduledInterviewsRequest req = new AtsListApplicationsSched
     Id = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at",
     Filter = new AtsListApplicationsScheduledInterviewsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -617,6 +628,7 @@ Get Applications scheduled interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_scheduled_interview" method="get" path="/unified/ats/applications/{id}/scheduled_interviews/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -673,6 +685,7 @@ Download Application Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_download_application_document" method="get" path="/unified/ats/applications/{id}/documents/{subResourceId}/download" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -730,6 +743,7 @@ List Application Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_application_custom_field_definitions" method="get" path="/unified/ats/custom_field_definitions/applications" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -790,6 +804,7 @@ Get Application Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_custom_field_definition" method="get" path="/unified/ats/custom_field_definitions/applications/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

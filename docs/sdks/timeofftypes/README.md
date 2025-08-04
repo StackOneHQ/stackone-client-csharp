@@ -15,6 +15,7 @@ Get time off type
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_time_off_type" method="get" path="/unified/hris/time_off_types/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

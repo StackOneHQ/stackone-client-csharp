@@ -7,15 +7,16 @@ Retrieve metadata for connectors.
 
 ### Available Operations
 
-* [ListMeta](#listmeta) - List Connectors Meta Information for all providers
-* [GetMeta](#getmeta) - Get Connector Meta information for the given provider key
+* [ListMeta](#listmeta) - List Connector Meta Information
+* [GetMeta](#getmeta) - Get Connector Meta Information
 
 ## ListMeta
 
-List Connectors Meta Information for all providers
+List Connector Meta Information
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_list_connectors_meta" method="get" path="/connectors/meta" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -59,10 +60,11 @@ var res = await sdk.Connectors.ListMetaAsync(include: "field_path,unmapped_field
 
 ## GetMeta
 
-Get Connector Meta information for the given provider key
+Get Connector Meta Information
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="stackone_get_connector_meta" method="get" path="/connectors/meta/{provider}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

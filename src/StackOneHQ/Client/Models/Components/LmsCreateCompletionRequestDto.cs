@@ -34,7 +34,7 @@ namespace StackOneHQ.Client.Models.Components
         /// The date the content was completed
         /// </summary>
         [JsonProperty("completed_at")]
-        public string? CompletedAt { get; set; } = null;
+        public DateTime? CompletedAt { get; set; } = null;
 
         /// <summary>
         /// The id of the learning object associated with this completion. This is not required unless specified in an integration.

@@ -18,10 +18,12 @@ Retrieve a paginated list of tickets.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_tickets" method="get" path="/unified/ticketing/tickets" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -32,7 +34,7 @@ TicketingListTicketsRequest req = new TicketingListTicketsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at",
     Filter = new TicketingListTicketsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -80,6 +82,7 @@ Create a new ticket record.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_create_ticket" method="post" path="/unified/ticketing/tickets" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -170,6 +173,7 @@ Retrieve a single ticket by its identifier.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_get_ticket" method="get" path="/unified/ticketing/tickets/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -225,6 +229,7 @@ Update an existing ticket record by its identifier.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_update_ticket" method="patch" path="/unified/ticketing/tickets/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -324,10 +329,12 @@ Retrieve a paginated list of attachment details for a ticket.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_attachments" method="get" path="/unified/ticketing/tickets/{id}/attachments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -339,7 +346,7 @@ TicketingListAttachmentsRequest req = new TicketingListAttachmentsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at",
     Filter = new TicketingListAttachmentsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -387,10 +394,12 @@ Retrieve a paginated list of statuses for a ticket.
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ticketing_list_ticket_statuses" method="get" path="/unified/ticketing/tickets/{id}/statuses" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -401,7 +410,7 @@ TicketingListTicketStatusesRequest req = new TicketingListTicketStatusesRequest(
     XAccountId = "<id>",
     Id = "<id>",
     Filter = new TicketingListTicketStatusesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

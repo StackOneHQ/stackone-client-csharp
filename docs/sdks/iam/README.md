@@ -17,6 +17,7 @@ Delete User
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_delete_user" method="delete" path="/unified/iam/users/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -69,10 +70,12 @@ List Roles
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_list_roles" method="get" path="/unified/iam/roles" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -83,7 +86,7 @@ IamListRolesRequest req = new IamListRolesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,policies,description,created_at,updated_at",
     Filter = new IamListRolesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "policies",
 };
@@ -132,6 +135,7 @@ Get Role
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_get_role" method="get" path="/unified/iam/roles/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -188,6 +192,7 @@ Get Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_get_group" method="get" path="/unified/iam/groups/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -244,6 +249,7 @@ List Policies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_list_policies" method="get" path="/unified/iam/policies" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

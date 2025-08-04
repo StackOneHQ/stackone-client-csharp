@@ -74,7 +74,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_after")]
-        public string? UpdatedAfter { get; set; } = null;
+        public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
         /// The sync token to select the only updated results

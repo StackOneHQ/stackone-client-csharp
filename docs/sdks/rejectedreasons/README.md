@@ -14,10 +14,12 @@ List Rejected Reasons
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_rejected_reasons" method="get" path="/unified/ats/rejected_reasons" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsListRejectedReasonsRequest req = new AtsListRejectedReasonsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,label,type,rejected_reason_type",
     Filter = new AtsListRejectedReasonsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,6 +78,7 @@ Get Rejected Reason
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_rejected_reason" method="get" path="/unified/ats/rejected_reasons/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

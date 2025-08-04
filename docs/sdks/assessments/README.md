@@ -14,10 +14,12 @@ List Assessments Packages
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_assessments_packages" method="get" path="/unified/ats/assessments/packages" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -27,7 +29,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListAssessmentsPackagesRequest req = new AtsListAssessmentsPackagesRequest() {
     XAccountId = "<id>",
     Filter = new AtsListAssessmentsPackagesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -75,6 +77,7 @@ Get Assessments Results
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_assessments_result" method="get" path="/unified/ats/assessments/orders/{id}/results" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

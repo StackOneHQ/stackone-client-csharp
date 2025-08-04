@@ -15,10 +15,12 @@ List Users
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_list_users" method="get" path="/unified/iam/users" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -29,7 +31,7 @@ IamListUsersRequest req = new IamListUsersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled",
     Filter = new IamListUsersFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "roles,groups",
 };
@@ -78,6 +80,7 @@ Get User
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_get_user" method="get" path="/unified/iam/users/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -134,6 +137,7 @@ Update User
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="iam_update_user" method="patch" path="/unified/iam/users/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

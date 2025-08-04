@@ -14,6 +14,7 @@ Get In-App Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_get_in_app_template" method="get" path="/unified/marketing/templates/in_app/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -69,6 +70,7 @@ Update In-App Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_update_in_app_template" method="patch" path="/unified/marketing/templates/in_app/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

@@ -14,10 +14,12 @@ List campaigns
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_list_campaigns" method="get" path="/unified/marketing/campaigns" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ MarketingListCampaignsRequest req = new MarketingListCampaignsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages",
     Filter = new MarketingListCampaignsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,6 +78,7 @@ Get campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_get_campaign" method="get" path="/unified/marketing/campaigns/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

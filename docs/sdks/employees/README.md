@@ -7,8 +7,8 @@
 
 * [ListCustomFieldDefinitions](#listcustomfielddefinitions) - List employee Custom Field Definitions
 * [List](#list) - List Employees
-* [Create](#create) - Creates an employee
-* [Update](#update) - Updates an employee
+* [Create](#create) - Create Employee
+* [Update](#update) - Update Employee
 * [Invite](#invite) - Invite Employee
 * [CreateTimeOff](#createtimeoff) - Create Employee Time Off Request
 * [BatchUploadDocument](#batchuploaddocument) - Batch Upload Employee Document
@@ -26,10 +26,12 @@ List employee Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_employee_custom_field_definitions" method="get" path="/unified/hris/custom_field_definitions/employees" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -40,7 +42,7 @@ HrisListEmployeeCustomFieldDefinitionsRequest req = new HrisListEmployeeCustomFi
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,type,options",
     Filter = new HrisListEmployeeCustomFieldDefinitionsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -88,10 +90,12 @@ List Employees
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_employees" method="get" path="/unified/hris/employees" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -102,7 +106,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills",
     Filter = new HrisListEmployeesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "company,employments,work_location,home_location,groups,skills",
     Include = "avatar_url,avatar,custom_fields,job_description,benefits",
@@ -148,10 +152,11 @@ while(res != null)
 
 ## Create
 
-Creates an employee
+Create Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_create_employee" method="post" path="/unified/hris/employees" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -298,10 +303,11 @@ var res = await sdk.Hris.Employees.CreateAsync(
 
 ## Update
 
-Updates an employee
+Update Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_update_employee" method="patch" path="/unified/hris/employees/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -453,6 +459,7 @@ Invite Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_invite_employee" method="post" path="/unified/hris/employees/{id}/invite" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -512,6 +519,7 @@ Create Employee Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_create_employee_time_off_request" method="post" path="/unified/hris/employees/{id}/time_off" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -586,6 +594,7 @@ Batch Upload Employee Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_batch_upload_employee_document" method="post" path="/unified/hris/employees/{id}/documents/upload/batch" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -663,10 +672,12 @@ List Employee Work Eligibility
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_employee_work_eligibility" method="get" path="/unified/hris/employees/{id}/work_eligibility" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -677,7 +688,7 @@ HrisListEmployeeWorkEligibilityRequest req = new HrisListEmployeeWorkEligibility
     Id = "<id>",
     Fields = "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number",
     Filter = new HrisListEmployeeWorkEligibilityFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     XAccountId = "<id>",
 };
@@ -726,6 +737,7 @@ Create Employee Work Eligibility Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_create_employee_work_eligibility_request" method="post" path="/unified/hris/employees/{id}/work_eligibility" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -806,6 +818,7 @@ Get Employees Work Eligibility
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_employees_work_eligibility" method="get" path="/unified/hris/employees/{id}/work_eligibility/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -862,6 +875,7 @@ Create Employee Employment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_create_employee_employment" method="post" path="/unified/hris/employees/{id}/employments" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -957,6 +971,7 @@ Get Employee Employment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_employee_employment" method="get" path="/unified/hris/employees/{id}/employments/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -1014,10 +1029,12 @@ List Assigned Time Off Policies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_employee_time_off_policies" method="get" path="/unified/hris/employees/{id}/time_off_policies" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -1029,7 +1046,7 @@ HrisListEmployeeTimeOffPoliciesRequest req = new HrisListEmployeeTimeOffPolicies
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at",
     Filter = new HrisListEmployeeTimeOffPoliciesFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -1077,6 +1094,7 @@ Get Employee Skill
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_employee_skill" method="get" path="/unified/hris/employees/{id}/skills/{subResourceId}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

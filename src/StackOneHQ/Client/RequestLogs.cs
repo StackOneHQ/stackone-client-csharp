@@ -34,7 +34,7 @@ namespace StackOneHQ.Client
         Task<StackoneListStepLogsResponse> ListStepsAsync(StackoneListStepLogsRequest? request = null, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Get a Log
+        /// Get Log
         /// </summary>
         Task<StackoneGetLogResponse> GetAsync(string id, StackoneGetLogInclude? include = null, RetryConfig? retryConfig = null);
 
@@ -56,8 +56,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.7";
-        private const string _sdkGenVersion = "2.666.0";
+        private const string _sdkVersion = "0.2.8";
+        private const string _sdkGenVersion = "2.672.0";
         private const string _openapiDocVersion = "1.0.0";
 
         public RequestLogs(SDKConfig config)

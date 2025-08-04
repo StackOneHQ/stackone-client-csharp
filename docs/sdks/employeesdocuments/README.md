@@ -13,6 +13,7 @@ Download Employee Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_download_employee_document" method="get" path="/unified/hris/employees/{id}/documents/{subResourceId}/download" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

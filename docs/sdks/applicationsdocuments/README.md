@@ -13,10 +13,12 @@ List Application Documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_application_documents" method="get" path="/unified/ats/applications/{id}/documents" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ AtsListApplicationDocumentsRequest req = new AtsListApplicationDocumentsRequest(
     Id = "<id>",
     Fields = "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
     Filter = new AtsListApplicationDocumentsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

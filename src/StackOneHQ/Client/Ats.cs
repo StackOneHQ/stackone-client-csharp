@@ -74,7 +74,7 @@ namespace StackOneHQ.Client
         Task<AtsGetApplicationNoteResponse> GetNoteAsync(AtsGetApplicationNoteRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Update an Application Note
+        /// Update Application Note
         /// </summary>
         Task<AtsUpdateApplicationNoteResponse> UpdateNoteAsync(string xAccountId, string id, string subResourceId, AtsUpdateNotesRequestDto atsUpdateNotesRequestDto, RetryConfig? retryConfig = null);
 
@@ -173,8 +173,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.7";
-        private const string _sdkGenVersion = "2.666.0";
+        private const string _sdkVersion = "0.2.8";
+        private const string _sdkGenVersion = "2.672.0";
         private const string _openapiDocVersion = "1.0.0";
         public IAtsApplications Applications { get; private set; }
         public ICandidates Candidates { get; private set; }

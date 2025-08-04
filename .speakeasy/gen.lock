@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: 76ec057ac7ff316efb87e7603b0c62c2
+  docChecksum: cd4b5c081ac5fa7513e3ae4d1c65685d
   docVersion: 1.0.0
-  speakeasyVersion: 1.591.0
-  generationVersion: 2.666.0
-  releaseVersion: 0.2.7
-  configChecksum: a0bcfa34b4950e12c5474217cb22a9d2
+  speakeasyVersion: 1.596.0
+  generationVersion: 2.672.0
+  releaseVersion: 0.2.8
+  configChecksum: 12f0a3937aeaaf2d799c782d9baa28ad
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.11.1
+    core: 3.11.2
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
@@ -502,6 +502,8 @@ generatedFiles:
   - docs/Models/Components/EmployeeWorkLocationCountryValue.md
   - docs/Models/Components/EmployeesPaginated.md
   - docs/Models/Components/Employment.md
+  - docs/Models/Components/EmploymentActiveEnum.md
+  - docs/Models/Components/EmploymentActiveUnion.md
   - docs/Models/Components/EmploymentDepartment.md
   - docs/Models/Components/EmploymentDurationUnit.md
   - docs/Models/Components/EmploymentEmploymentContractType.md
@@ -539,6 +541,8 @@ generatedFiles:
   - docs/Models/Components/EmploymentsPaginated.md
   - docs/Models/Components/EntitySkillResult.md
   - docs/Models/Components/EntitySkills.md
+  - docs/Models/Components/EntitySkillsActiveEnum.md
+  - docs/Models/Components/EntitySkillsActiveUnion.md
   - docs/Models/Components/EntitySkillsCreateRequestDto.md
   - docs/Models/Components/EntitySkillsCreateRequestDtoMaximumProficiency.md
   - docs/Models/Components/EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion.md
@@ -989,7 +993,6 @@ generatedFiles:
   - docs/Models/Components/InAppTemplate.md
   - docs/Models/Components/InAppTemplateResult.md
   - docs/Models/Components/InAppTemplatesPaginated.md
-  - docs/Models/Components/Internal.md
   - docs/Models/Components/Interview.md
   - docs/Models/Components/InterviewInterviewStage.md
   - docs/Models/Components/InterviewInterviewStatus.md
@@ -1008,6 +1011,8 @@ generatedFiles:
   - docs/Models/Components/InterviewsPaginated.md
   - docs/Models/Components/InterviewsResult.md
   - docs/Models/Components/InviteEmployeeResult.md
+  - docs/Models/Components/IsPaid.md
+  - docs/Models/Components/IsPaidEnum.md
   - docs/Models/Components/IsRoot.md
   - docs/Models/Components/IsRootEnum.md
   - docs/Models/Components/Job.md
@@ -1045,6 +1050,7 @@ generatedFiles:
   - docs/Models/Components/JobPostingLocation.md
   - docs/Models/Components/JobPostingQuestionnaire.md
   - docs/Models/Components/JobPostingQuestionnaireInternalEnum.md
+  - docs/Models/Components/JobPostingQuestionnaireInternalUnion.md
   - docs/Models/Components/JobPostingResult.md
   - docs/Models/Components/JobPostingSourceValueEmploymentContractType.md
   - docs/Models/Components/JobPostingSourceValueEmploymentType.md
@@ -1314,8 +1320,12 @@ generatedFiles:
   - docs/Models/Components/TicketingAttachmentValue.md
   - docs/Models/Components/TicketingAttachmentsPaginated.md
   - docs/Models/Components/TicketingComment.md
+  - docs/Models/Components/TicketingCommentInternalEnum.md
+  - docs/Models/Components/TicketingCommentInternalUnion.md
   - docs/Models/Components/TicketingCommentResult.md
   - docs/Models/Components/TicketingCommentResultData.md
+  - docs/Models/Components/TicketingCommentResultInternalEnum.md
+  - docs/Models/Components/TicketingCommentResultInternalUnion.md
   - docs/Models/Components/TicketingCommentsPaginated.md
   - docs/Models/Components/TicketingComponent.md
   - docs/Models/Components/TicketingComponentResult.md
@@ -1378,7 +1388,11 @@ generatedFiles:
   - docs/Models/Components/TicketingTicketUpdateRequestDtoType.md
   - docs/Models/Components/TicketingTicketsPaginated.md
   - docs/Models/Components/TicketingUser.md
+  - docs/Models/Components/TicketingUserActiveEnum.md
+  - docs/Models/Components/TicketingUserActiveUnion.md
   - docs/Models/Components/TicketingUserResult.md
+  - docs/Models/Components/TicketingUserResultActiveEnum.md
+  - docs/Models/Components/TicketingUserResultActiveUnion.md
   - docs/Models/Components/TicketingUserResultData.md
   - docs/Models/Components/TicketingUserResultSourceValue.md
   - docs/Models/Components/TicketingUserResultSourceValueUnion.md
@@ -2757,6 +2771,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/EmployeeWorkLocationCountryValue.cs
   - src/StackOneHQ/Client/Models/Components/EmployeesPaginated.cs
   - src/StackOneHQ/Client/Models/Components/Employment.cs
+  - src/StackOneHQ/Client/Models/Components/EmploymentActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/EmploymentActiveUnion.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentDepartment.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentDurationUnit.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentEmploymentContractType.cs
@@ -2794,6 +2810,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/EmploymentsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/EntitySkillResult.cs
   - src/StackOneHQ/Client/Models/Components/EntitySkills.cs
+  - src/StackOneHQ/Client/Models/Components/EntitySkillsActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/EntitySkillsActiveUnion.cs
   - src/StackOneHQ/Client/Models/Components/EntitySkillsCreateRequestDto.cs
   - src/StackOneHQ/Client/Models/Components/EntitySkillsCreateRequestDtoMaximumProficiency.cs
   - src/StackOneHQ/Client/Models/Components/EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion.cs
@@ -3244,7 +3262,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/InAppTemplate.cs
   - src/StackOneHQ/Client/Models/Components/InAppTemplateResult.cs
   - src/StackOneHQ/Client/Models/Components/InAppTemplatesPaginated.cs
-  - src/StackOneHQ/Client/Models/Components/Internal.cs
   - src/StackOneHQ/Client/Models/Components/Interview.cs
   - src/StackOneHQ/Client/Models/Components/InterviewInterviewStage.cs
   - src/StackOneHQ/Client/Models/Components/InterviewInterviewStatus.cs
@@ -3263,6 +3280,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/InterviewsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/InterviewsResult.cs
   - src/StackOneHQ/Client/Models/Components/InviteEmployeeResult.cs
+  - src/StackOneHQ/Client/Models/Components/IsPaid.cs
+  - src/StackOneHQ/Client/Models/Components/IsPaidEnum.cs
   - src/StackOneHQ/Client/Models/Components/IsRoot.cs
   - src/StackOneHQ/Client/Models/Components/IsRootEnum.cs
   - src/StackOneHQ/Client/Models/Components/Job.cs
@@ -3300,6 +3319,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/JobPostingLocation.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingQuestionnaire.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingQuestionnaireInternalEnum.cs
+  - src/StackOneHQ/Client/Models/Components/JobPostingQuestionnaireInternalUnion.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingResult.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingSourceValueEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingSourceValueEmploymentType.cs
@@ -3569,8 +3589,12 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/TicketingAttachmentValue.cs
   - src/StackOneHQ/Client/Models/Components/TicketingAttachmentsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/TicketingComment.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingCommentInternalEnum.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingCommentInternalUnion.cs
   - src/StackOneHQ/Client/Models/Components/TicketingCommentResult.cs
   - src/StackOneHQ/Client/Models/Components/TicketingCommentResultData.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingCommentResultInternalEnum.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingCommentResultInternalUnion.cs
   - src/StackOneHQ/Client/Models/Components/TicketingCommentsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/TicketingComponent.cs
   - src/StackOneHQ/Client/Models/Components/TicketingComponentResult.cs
@@ -3633,7 +3657,11 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/TicketingTicketUpdateRequestDtoType.cs
   - src/StackOneHQ/Client/Models/Components/TicketingTicketsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/TicketingUser.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingUserActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingUserActiveUnion.cs
   - src/StackOneHQ/Client/Models/Components/TicketingUserResult.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingUserResultActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/TicketingUserResultActiveUnion.cs
   - src/StackOneHQ/Client/Models/Components/TicketingUserResultData.cs
   - src/StackOneHQ/Client/Models/Components/TicketingUserResultSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/TicketingUserResultSourceValueUnion.cs

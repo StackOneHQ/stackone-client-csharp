@@ -14,10 +14,12 @@ List Jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_jobs" method="get" path="/unified/hris/jobs" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ HrisListJobsRequest req = new HrisListJobsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
     Filter = new HrisListJobsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,6 +78,7 @@ Get Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_get_job" method="get" path="/unified/hris/jobs/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [List](#list) - List Offers
-* [Create](#create) - Creates an offer
+* [Create](#create) - Create Offer
 * [Get](#get) - Get Offer
 
 ## List
@@ -15,10 +15,12 @@ List Offers
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_list_offers" method="get" path="/unified/ats/offers" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -29,7 +31,7 @@ AtsListOffersRequest req = new AtsListOffersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history",
     Filter = new AtsListOffersFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -73,10 +75,11 @@ while(res != null)
 
 ## Create
 
-Creates an offer
+Create Offer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_create_offer" method="post" path="/unified/ats/offers" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -149,6 +152,7 @@ Get Offer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_offer" method="get" path="/unified/ats/offers/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

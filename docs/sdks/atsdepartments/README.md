@@ -13,6 +13,7 @@ Get Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="ats_get_department" method="get" path="/unified/ats/departments/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

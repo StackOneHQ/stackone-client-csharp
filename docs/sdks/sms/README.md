@@ -13,6 +13,7 @@ Get SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="marketing_get_sms_template" method="get" path="/unified/marketing/templates/sms/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

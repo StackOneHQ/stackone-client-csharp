@@ -13,6 +13,7 @@ Get Skill
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="lms_get_skill" method="get" path="/unified/lms/skills/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;

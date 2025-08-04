@@ -13,10 +13,12 @@ List Companies Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="hris_list_companies_groups" method="get" path="/unified/hris/groups/companies" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -27,7 +29,7 @@ HrisListCompaniesGroupsRequest req = new HrisListCompaniesGroupsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at",
     Filter = new HrisListCompaniesGroupsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 

@@ -14,10 +14,12 @@ Get all Lists
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_list_lists" method="get" path="/unified/crm/lists" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
+using System;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
@@ -28,7 +30,7 @@ CrmListListsRequest req = new CrmListListsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,created_at,updated_at,items,type",
     Filter = new CrmListListsFilter() {
-        UpdatedAfter = "2020-01-01T00:00:00.000Z",
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
 };
 
@@ -76,6 +78,7 @@ Get List
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="crm_get_list" method="get" path="/unified/crm/lists/{id}" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
