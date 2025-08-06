@@ -12,6 +12,9 @@ sources:
             - location: https://api.eu1.stackone.com/oas/lms.json
             - location: https://api.eu1.stackone.com/oas/ticketing.json
             - location: https://api.eu1.stackone.com/oas/documents.json
+            - location: https://api.eu1.stackone.com/oas/screening.json
+            - location: https://api.eu1.stackone.com/oas/messaging.json
+            - location: https://api.eu1.stackone.com/oas/accounting.json
         overlays:
             - location: .speakeasy/speakeasy-modifications-overlay.yaml
         output: .speakeasy/out.openapi.yaml
