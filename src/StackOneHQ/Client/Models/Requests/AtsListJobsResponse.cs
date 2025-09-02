@@ -26,7 +26,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// <summary>
         /// The list of jobs was retrieved.
         /// </summary>
-        public JobsPaginated? JobsPaginated { get; set; }
+        public AtsJobsPaginated? AtsJobsPaginated { get; set; }
 
         public Dictionary<string, List<string>> Headers { get; set; } = default!;
     }

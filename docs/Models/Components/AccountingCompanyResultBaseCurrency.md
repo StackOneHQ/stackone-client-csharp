@@ -1,0 +1,11 @@
+# AccountingCompanyResultBaseCurrency
+
+Default currency for the company
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                       | [AccountingCompanyResultValue](../../Models/Components/AccountingCompanyResultValue.md)                       | :heavy_minus_sign:                                                                                            | Default currency for the company                                                                              | USD                                                                                                           |
+| `SourceValue`                                                                                                 | [AccountingCompanyResultSourceValueUnion](../../Models/Components/AccountingCompanyResultSourceValueUnion.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           | USD                                                                                                           |

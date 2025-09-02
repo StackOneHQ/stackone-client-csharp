@@ -42,8 +42,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.8";
-        private const string _sdkGenVersion = "2.672.0";
+        private const string _sdkVersion = "0.3.0";
+        private const string _sdkGenVersion = "2.687.13";
         private const string _openapiDocVersion = "1.0.0";
 
         public HrisJobs(SDKConfig config)
@@ -174,7 +174,7 @@ namespace StackOneHQ.Client
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<JobsPaginated>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisJobsPaginated>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new HrisListJobsResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
@@ -184,7 +184,7 @@ namespace StackOneHQ.Client
                         },
                         Next = nextFunc
                     };
-                    response.JobsPaginated = obj;
+                    response.HrisJobsPaginated = obj;
                     return response;
                 }
 
@@ -470,7 +470,7 @@ namespace StackOneHQ.Client
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<JobResult>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisJobResult>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new HrisGetJobResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
@@ -479,7 +479,7 @@ namespace StackOneHQ.Client
                             Request = httpRequest
                         }
                     };
-                    response.JobResult = obj;
+                    response.HrisJobResult = obj;
                     return response;
                 }
 

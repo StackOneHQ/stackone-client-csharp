@@ -1,21 +1,21 @@
-speakeasyVersion: 1.596.0
+speakeasyVersion: 1.606.10
 sources:
     StackOne:
         sourceNamespace: stack-one
-        sourceRevisionDigest: sha256:2001d445513c261e7c3d52d4e2c3774cc037bdd036264026375a9a9ab2f02d57
-        sourceBlobDigest: sha256:4fa9447918350d3dbe7c4d109a312c018f8346813624ed1b4a806c05c32305e4
+        sourceRevisionDigest: sha256:2dc52bd9ba5c3f2e4c87ed0f870a60b425583cf01971703eecebc9e12e0844cf
+        sourceBlobDigest: sha256:789aaaf4354bd58cf3141220ae4bc6a4c10e8d76adfa0cc00ffef1ed014eeea9
         tags:
             - latest
-            - speakeasy-sdk-regen-1754298456
+            - speakeasy-sdk-regen-1756806644
             - 1.0.0
 targets:
     stack-one:
         source: StackOne
         sourceNamespace: stack-one
-        sourceRevisionDigest: sha256:2001d445513c261e7c3d52d4e2c3774cc037bdd036264026375a9a9ab2f02d57
-        sourceBlobDigest: sha256:4fa9447918350d3dbe7c4d109a312c018f8346813624ed1b4a806c05c32305e4
+        sourceRevisionDigest: sha256:2dc52bd9ba5c3f2e4c87ed0f870a60b425583cf01971703eecebc9e12e0844cf
+        sourceBlobDigest: sha256:789aaaf4354bd58cf3141220ae4bc6a4c10e8d76adfa0cc00ffef1ed014eeea9
         codeSamplesNamespace: stack-one-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:65ce3137c2dc5f3b47eff3ebb101c3bb244370321ab378fb42b3c73e428965c2
+        codeSamplesRevisionDigest: sha256:d370820163d972c45628f7161dbe8734a813a2d799535e7f22258884c030ac94
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -31,6 +31,8 @@ workflow:
                 - location: https://api.eu1.stackone.com/oas/lms.json
                 - location: https://api.eu1.stackone.com/oas/ticketing.json
                 - location: https://api.eu1.stackone.com/oas/documents.json
+                - location: https://api.eu1.stackone.com/oas/messaging.json
+                - location: https://api.eu1.stackone.com/oas/accounting.json
             overlays:
                 - location: .speakeasy/speakeasy-modifications-overlay.yaml
             output: .speakeasy/out.openapi.yaml

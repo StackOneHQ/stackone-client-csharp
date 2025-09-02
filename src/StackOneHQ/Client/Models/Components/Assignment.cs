@@ -110,6 +110,24 @@ namespace StackOneHQ.Client.Models.Components
         public string? RemoteUserId { get; set; } = null;
 
         /// <summary>
+        /// The certification URL associated with this assignment
+        /// </summary>
+        [JsonProperty("certificate_url")]
+        public string? CertificateUrl { get; set; } = null;
+
+        /// <summary>
+        /// The result of the assignment
+        /// </summary>
+        [JsonProperty("result")]
+        public AssignmentResult1? Result { get; set; } = null;
+
+        /// <summary>
+        /// The date the content was completed
+        /// </summary>
+        [JsonProperty("completed_at")]
+        public DateTime? CompletedAt { get; set; } = null;
+
+        /// <summary>
         /// The course ID associated with this assignment
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]

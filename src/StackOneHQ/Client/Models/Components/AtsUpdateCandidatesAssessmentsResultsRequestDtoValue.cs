@@ -22,6 +22,8 @@ namespace StackOneHQ.Client.Models.Components
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AtsUpdateCandidatesAssessmentsResultsRequestDtoValue : IEquatable<AtsUpdateCandidatesAssessmentsResultsRequestDtoValue>
     {
+        public static readonly AtsUpdateCandidatesAssessmentsResultsRequestDtoValue Initiated = new AtsUpdateCandidatesAssessmentsResultsRequestDtoValue("initiated");
+        public static readonly AtsUpdateCandidatesAssessmentsResultsRequestDtoValue InProgress = new AtsUpdateCandidatesAssessmentsResultsRequestDtoValue("in_progress");
         public static readonly AtsUpdateCandidatesAssessmentsResultsRequestDtoValue Cancelled = new AtsUpdateCandidatesAssessmentsResultsRequestDtoValue("cancelled");
         public static readonly AtsUpdateCandidatesAssessmentsResultsRequestDtoValue Completed = new AtsUpdateCandidatesAssessmentsResultsRequestDtoValue("completed");
         public static readonly AtsUpdateCandidatesAssessmentsResultsRequestDtoValue Expired = new AtsUpdateCandidatesAssessmentsResultsRequestDtoValue("expired");
@@ -32,6 +34,8 @@ namespace StackOneHQ.Client.Models.Components
         private static readonly Dictionary <string, AtsUpdateCandidatesAssessmentsResultsRequestDtoValue> _knownValues =
             new Dictionary <string, AtsUpdateCandidatesAssessmentsResultsRequestDtoValue> ()
             {
+                ["initiated"] = Initiated,
+                ["in_progress"] = InProgress,
                 ["cancelled"] = Cancelled,
                 ["completed"] = Completed,
                 ["expired"] = Expired,

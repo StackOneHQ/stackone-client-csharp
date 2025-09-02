@@ -21,14 +21,14 @@ namespace StackOneHQ.Client
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Documents: The documentation for the StackOne Unified API - DOCUMENTS
+    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING
     /// </summary>
     public interface IStackOneHQClient
     {
         public IConnectSessions ConnectSessions { get; }
 
         /// <summary>
-        /// Customer or business accounts.
+        /// Chart of accounts.
         /// </summary>
         public IAccounts Accounts { get; }
 
@@ -59,19 +59,21 @@ namespace StackOneHQ.Client
         public ILms Lms { get; }
         public ITicketing Ticketing { get; }
         public IDrives Drives { get; }
+        public IMessaging Messaging { get; }
+        public IAccounting Accounting { get; }
     }
 
 
     /// <summary>
-    /// Documents: The documentation for the StackOne Unified API - DOCUMENTS
+    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING
     /// </summary>
     public class StackOneHQClient: IStackOneHQClient
     {
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.8";
-        private const string _sdkGenVersion = "2.672.0";
+        private const string _sdkVersion = "0.3.0";
+        private const string _sdkGenVersion = "2.687.13";
         private const string _openapiDocVersion = "1.0.0";
         public IConnectSessions ConnectSessions { get; private set; }
         public IAccounts Accounts { get; private set; }
@@ -91,6 +93,8 @@ namespace StackOneHQ.Client
         public ILms Lms { get; private set; }
         public ITicketing Ticketing { get; private set; }
         public IDrives Drives { get; private set; }
+        public IMessaging Messaging { get; private set; }
+        public IAccounting Accounting { get; private set; }
 
         public StackOneHQClient(SDKConfig config)
         {
@@ -132,6 +136,10 @@ namespace StackOneHQ.Client
             Ticketing = new Ticketing(SDKConfiguration);
 
             Drives = new Drives(SDKConfiguration);
+
+            Messaging = new Messaging(SDKConfiguration);
+
+            Accounting = new Accounting(SDKConfiguration);
         }
 
         public StackOneHQClient(StackOneHQ.Client.Models.Components.Security? security = null, Func<StackOneHQ.Client.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
@@ -211,6 +219,10 @@ namespace StackOneHQ.Client
             Ticketing = new Ticketing(SDKConfiguration);
 
             Drives = new Drives(SDKConfiguration);
+
+            Messaging = new Messaging(SDKConfiguration);
+
+            Accounting = new Accounting(SDKConfiguration);
         }
 
         private void InitHooks()

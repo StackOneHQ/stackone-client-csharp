@@ -25,6 +25,6 @@ namespace StackOneHQ.Client.Models.Requests
         public string Id { get; set; } = default!;
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public UnifiedUploadRequestDto UnifiedUploadRequestDto { get; set; } = default!;
+        public AtsDocumentsUploadRequestDto AtsDocumentsUploadRequestDto { get; set; } = default!;
     }
 }

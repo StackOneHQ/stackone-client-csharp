@@ -18,7 +18,7 @@ namespace StackOneHQ.Client.Models.Components
     {
 
         [JsonProperty("data")]
-        public List<Task>? Data { get; set; } = null;
+        public TaskResultData? Data { get; set; } = null;
 
         [JsonProperty("raw")]
         public List<RawResponse>? Raw { get; set; } = null;

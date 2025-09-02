@@ -1,0 +1,9 @@
+# UpdateTaskRequestDto
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         | Example                                                                             |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `Comment`                                                                           | *string*                                                                            | :heavy_minus_sign:                                                                  | Comment or note about the task update                                               | All required documents have been submitted                                          |
+| `Status`                                                                            | [UpdateTaskRequestDtoStatus](../../Models/Components/UpdateTaskRequestDtoStatus.md) | :heavy_minus_sign:                                                                  | The status to apply to this Task                                                    | blocked                                                                             |

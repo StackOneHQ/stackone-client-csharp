@@ -9,11 +9,13 @@
 #nullable enable
 namespace StackOneHQ.Client.Models.Requests
 {
+    using StackOneHQ.Client.Models.Components;
+    using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
     
     /// <summary>
-    /// Filter parameters that allow greater customisation of the list response
+    /// LMS Courses Filter
     /// </summary>
     public class LmsListContentFilter
     {
@@ -23,5 +25,11 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
+
+        /// <summary>
+        /// Filter to allow filtering of only active content
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=active")]
+        public LmsListContentActive? Active { get; set; } = null;
     }
 }

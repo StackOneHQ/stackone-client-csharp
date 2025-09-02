@@ -20,10 +20,7 @@ namespace StackOneHQ.Client.Models.Requests
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
-        /// <summary>
-        /// The document related to the application with the given identifiers was retrieved.
-        /// </summary>
-        public byte[]? Bytes { get; set; }
+        public byte[]? Body { get; set; }
 
         public Dictionary<string, List<string>> Headers { get; set; } = default!;
     }

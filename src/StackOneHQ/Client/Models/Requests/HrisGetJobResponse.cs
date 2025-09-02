@@ -23,7 +23,7 @@ namespace StackOneHQ.Client.Models.Requests
         /// <summary>
         /// The job with the given identifier was retrieved.
         /// </summary>
-        public JobResult? JobResult { get; set; }
+        public HrisJobResult? HrisJobResult { get; set; }
 
         public Dictionary<string, List<string>> Headers { get; set; } = default!;
     }

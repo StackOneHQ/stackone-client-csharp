@@ -9,6 +9,8 @@
 #nullable enable
 namespace StackOneHQ.Client.Models.Requests
 {
+    using StackOneHQ.Client.Models.Components;
+    using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
     
@@ -29,5 +31,11 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=external_reference")]
         public string? ExternalReference { get; set; } = null;
+
+        /// <summary>
+        /// Filter to allow filtering of only active courses
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=active")]
+        public LmsListCoursesActive? Active { get; set; } = null;
     }
 }

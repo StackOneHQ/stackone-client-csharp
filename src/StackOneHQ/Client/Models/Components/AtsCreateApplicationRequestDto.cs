@@ -69,6 +69,6 @@ namespace StackOneHQ.Client.Models.Components
         /// Document Properties. Providing this attempts to upload files with the application.
         /// </summary>
         [JsonProperty("documents")]
-        public List<UnifiedUploadRequestDto>? Documents { get; set; } = null;
+        public List<AtsDocumentsUploadRequestDto>? Documents { get; set; } = null;
     }
 }

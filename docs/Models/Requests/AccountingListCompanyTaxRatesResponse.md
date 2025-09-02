@@ -1,0 +1,10 @@
+# AccountingListCompanyTaxRatesResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `HttpMeta`                                                                            | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `AccountingTaxRatesPaginated`                                                         | [AccountingTaxRatesPaginated](../../Models/Components/AccountingTaxRatesPaginated.md) | :heavy_minus_sign:                                                                    | The list of tax rates was retrieved.                                                  |
+| `Headers`                                                                             | Dictionary<String, List<*string*>>                                                    | :heavy_check_mark:                                                                    | N/A                                                                                   |

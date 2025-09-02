@@ -22,7 +22,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.2.8
+  version: 0.3.0
   additionalDependencies: []
   author: stackone
   baseErrorName: StackOneError
@@ -33,6 +33,7 @@ csharp:
   enableSourceLink: true
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first
+  httpClientPrefix: Speakeasy
   imports:
     option: openapi
     paths:

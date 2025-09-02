@@ -34,3 +34,9 @@ CustomFieldsValueUnion.CreateCustomFieldsValue(/* values here */);
 ```csharp
 CustomFieldsValueUnion.CreateArrayOfAny(/* values here */);
 ```
+
+### DateTime
+
+```csharp
+CustomFieldsValueUnion.CreateDateTime(/* values here */);
+```

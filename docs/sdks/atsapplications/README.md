@@ -110,25 +110,25 @@ var res = await sdk.Ats.Applications.CreateAsync(
                 },
             },
         },
-        Documents = new List<UnifiedUploadRequestDto>() {
-            new UnifiedUploadRequestDto() {
+        Documents = new List<AtsDocumentsUploadRequestDto>() {
+            new AtsDocumentsUploadRequestDto() {
                 Name = "weather-forecast",
-                FileFormat = new UnifiedUploadRequestDtoFileFormat() {
-                    Value = UnifiedUploadRequestDtoFileFormatValue.Pdf,
-                    SourceValue = UnifiedUploadRequestDtoFileFormatSourceValueUnion.CreateStr(
+                FileFormat = new AtsDocumentsUploadRequestDtoFileFormat() {
+                    Value = AtsDocumentsUploadRequestDtoFileFormatValue.Pdf,
+                    SourceValue = AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion.CreateStr(
                         "application/pdf"
                     ),
                 },
                 Content = "VGhpcyBpc24ndCByZWFsbHkgYSBzYW1wbGUgZmlsZSwgYnV0IG5vIG9uZSB3aWxsIGV2ZXIga25vdyE",
                 CategoryId = "6530",
                 Path = "/path/to/file",
-                Category = null,
-                Confidential = new UnifiedUploadRequestDtoConfidential() {
-                    Value = UnifiedUploadRequestDtoConfidentialValue.True,
-                    SourceValue = UnifiedUploadRequestDtoConfidentialSourceValueUnion.CreateStr(
+                Confidential = new AtsDocumentsUploadRequestDtoConfidential() {
+                    Value = AtsDocumentsUploadRequestDtoConfidentialValue.True,
+                    SourceValue = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion.CreateStr(
                         "public"
                     ),
                 },
+                Category = null,
             },
         },
     }

@@ -41,8 +41,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.8";
-        private const string _sdkGenVersion = "2.672.0";
+        private const string _sdkVersion = "0.3.0";
+        private const string _sdkGenVersion = "2.687.13";
         private const string _openapiDocVersion = "1.0.0";
 
         public Proxy(SDKConfig config)
@@ -146,7 +146,7 @@ namespace StackOneHQ.Client
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode == 200)
+            if(new List<int>{200, 201, 202, 204}.Contains(responseStatusCode))
             {                
                 return new StackoneProxyRequestResponse()
                 {

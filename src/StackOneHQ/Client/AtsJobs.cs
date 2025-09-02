@@ -35,8 +35,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.8";
-        private const string _sdkGenVersion = "2.672.0";
+        private const string _sdkVersion = "0.3.0";
+        private const string _sdkGenVersion = "2.687.13";
         private const string _openapiDocVersion = "1.0.0";
 
         public AtsJobs(SDKConfig config)
@@ -132,7 +132,7 @@ namespace StackOneHQ.Client
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<JobResult>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<AtsJobResult>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new AtsGetJobResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
@@ -141,7 +141,7 @@ namespace StackOneHQ.Client
                             Request = httpRequest
                         }
                     };
-                    response.JobResult = obj;
+                    response.AtsJobResult = obj;
                     return response;
                 }
 

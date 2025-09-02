@@ -147,6 +147,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Provider&apos;s unique identifier of the manager
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("remote_manager_id")]
         public string? RemoteManagerId { get; set; } = null;
 

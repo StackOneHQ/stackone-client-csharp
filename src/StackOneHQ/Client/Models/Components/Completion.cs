@@ -110,6 +110,12 @@ namespace StackOneHQ.Client.Models.Components
         public string? TimeSpent { get; set; } = null;
 
         /// <summary>
+        /// The certification URL associated with this completion
+        /// </summary>
+        [JsonProperty("certificate_url")]
+        public string? CertificateUrl { get; set; } = null;
+
+        /// <summary>
         /// The external ID associated with this completion
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]

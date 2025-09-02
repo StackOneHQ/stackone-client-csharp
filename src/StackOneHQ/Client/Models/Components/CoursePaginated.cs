@@ -25,6 +25,9 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("next")]
         public string? Next { get; set; } = null;
 
+        [JsonProperty("total")]
+        public double? Total { get; set; } = null;
+
         [JsonProperty("data")]
         public List<Course> Data { get; set; } = default!;
 

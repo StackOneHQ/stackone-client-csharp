@@ -18,12 +18,6 @@ namespace StackOneHQ.Client.Models.Components
     public class AtsUpdateBackgroundCheckResultRequestDto
     {
 
-        /// <summary>
-        /// Unique identifier
-        /// </summary>
-        [JsonProperty("id")]
-        public string? Id { get; set; } = null;
-
         [JsonProperty("score")]
         public AtsUpdateBackgroundCheckResultRequestDtoScore? Score { get; set; } = null;
 

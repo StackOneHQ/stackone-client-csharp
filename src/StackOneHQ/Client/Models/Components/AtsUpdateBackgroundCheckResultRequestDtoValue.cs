@@ -22,6 +22,8 @@ namespace StackOneHQ.Client.Models.Components
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AtsUpdateBackgroundCheckResultRequestDtoValue : IEquatable<AtsUpdateBackgroundCheckResultRequestDtoValue>
     {
+        public static readonly AtsUpdateBackgroundCheckResultRequestDtoValue Initiated = new AtsUpdateBackgroundCheckResultRequestDtoValue("initiated");
+        public static readonly AtsUpdateBackgroundCheckResultRequestDtoValue InProgress = new AtsUpdateBackgroundCheckResultRequestDtoValue("in_progress");
         public static readonly AtsUpdateBackgroundCheckResultRequestDtoValue Cancelled = new AtsUpdateBackgroundCheckResultRequestDtoValue("cancelled");
         public static readonly AtsUpdateBackgroundCheckResultRequestDtoValue Completed = new AtsUpdateBackgroundCheckResultRequestDtoValue("completed");
         public static readonly AtsUpdateBackgroundCheckResultRequestDtoValue Expired = new AtsUpdateBackgroundCheckResultRequestDtoValue("expired");
@@ -32,6 +34,8 @@ namespace StackOneHQ.Client.Models.Components
         private static readonly Dictionary <string, AtsUpdateBackgroundCheckResultRequestDtoValue> _knownValues =
             new Dictionary <string, AtsUpdateBackgroundCheckResultRequestDtoValue> ()
             {
+                ["initiated"] = Initiated,
+                ["in_progress"] = InProgress,
                 ["cancelled"] = Cancelled,
                 ["completed"] = Completed,
                 ["expired"] = Expired,

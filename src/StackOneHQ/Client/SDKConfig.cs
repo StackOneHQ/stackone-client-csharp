@@ -42,7 +42,7 @@ namespace StackOneHQ.Client
             Client = client ?? new SpeakeasyHttpClient();
             ServerUrl = "";
             ServerIndex = 0;
-            UserAgent = "speakeasy-sdk/csharp 0.2.8 2.672.0 1.0.0 StackOneHQ.Client";
+            UserAgent = "speakeasy-sdk/csharp 0.3.0 2.687.13 1.0.0 StackOneHQ.Client";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;
