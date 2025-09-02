@@ -42,6 +42,12 @@ namespace StackOneHQ.Client.Models.Requests
         public string? OriginOwnerId { get; set; } = null;
 
         /// <summary>
+        /// The origin owner identifiers of the results to fetch (supports multiple IDs)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=origin_owner_ids")]
+        public List<string>? OriginOwnerIds { get; set; }
+
+        /// <summary>
         /// The providers list of the results to fetch
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=providers")]

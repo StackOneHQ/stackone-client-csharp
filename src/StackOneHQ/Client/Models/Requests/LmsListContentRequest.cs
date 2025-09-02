@@ -42,7 +42,7 @@ namespace StackOneHQ.Client.Models.Requests
         public string? Fields { get; set; } = null;
 
         /// <summary>
-        /// Filter parameters that allow greater customisation of the list response
+        /// LMS Courses Filter
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=deepObject,explode=true,name=filter")]
         public LmsListContentFilter? Filter { get; set; } = null;

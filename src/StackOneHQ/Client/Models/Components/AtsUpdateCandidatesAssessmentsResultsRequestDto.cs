@@ -18,12 +18,6 @@ namespace StackOneHQ.Client.Models.Components
     public class AtsUpdateCandidatesAssessmentsResultsRequestDto
     {
 
-        /// <summary>
-        /// Unique identifier
-        /// </summary>
-        [JsonProperty("id")]
-        public string? Id { get; set; } = null;
-
         [JsonProperty("score")]
         public AtsUpdateCandidatesAssessmentsResultsRequestDtoScore? Score { get; set; } = null;
 

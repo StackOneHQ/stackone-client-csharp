@@ -39,7 +39,7 @@ namespace StackOneHQ.Client.Models.Components
         /// Hiring team for the job.
         /// </summary>
         [JsonProperty("hiring_team")]
-        public List<JobHiringTeam>? HiringTeam { get; set; } = null;
+        public List<AtsJobHiringTeam>? HiringTeam { get; set; } = null;
 
         /// <summary>
         /// Value to pass through to the provider

@@ -1,0 +1,11 @@
+# AccountingJournalResultStatus
+
+Status of the journal
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                       | [AccountingJournalResultValue](../../Models/Components/AccountingJournalResultValue.md)                       | :heavy_minus_sign:                                                                                            | The journal status                                                                                            | draft                                                                                                         |
+| `SourceValue`                                                                                                 | [AccountingJournalResultSourceValueUnion](../../Models/Components/AccountingJournalResultSourceValueUnion.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           | draft                                                                                                         |

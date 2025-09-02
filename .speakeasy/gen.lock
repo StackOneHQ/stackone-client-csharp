@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: cd4b5c081ac5fa7513e3ae4d1c65685d
+  docChecksum: a8ddf965834b9ac75634abfe6f16b11a
   docVersion: 1.0.0
-  speakeasyVersion: 1.596.0
-  generationVersion: 2.672.0
-  releaseVersion: 0.2.8
-  configChecksum: 12f0a3937aeaaf2d799c782d9baa28ad
+  speakeasyVersion: 1.606.10
+  generationVersion: 2.687.13
+  releaseVersion: 0.3.0
+  configChecksum: 1973c3db4d08fa5b999f866c30a3c1eb
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.11.2
+    core: 3.12.0
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
@@ -50,6 +50,63 @@ generatedFiles:
   - docs/Models/Components/AccountAddressSourceValueCountry.md
   - docs/Models/Components/AccountAddressSourceValueLocationType.md
   - docs/Models/Components/AccountResult.md
+  - docs/Models/Components/AccountType.md
+  - docs/Models/Components/AccountTypeSourceValueUnion.md
+  - docs/Models/Components/AccountTypeValue.md
+  - docs/Models/Components/AccountingAccount.md
+  - docs/Models/Components/AccountingAccountActiveEnum.md
+  - docs/Models/Components/AccountingAccountActiveUnion.md
+  - docs/Models/Components/AccountingAccountResult.md
+  - docs/Models/Components/AccountingAccountResultActiveEnum.md
+  - docs/Models/Components/AccountingAccountResultActiveUnion.md
+  - docs/Models/Components/AccountingAccountResultData.md
+  - docs/Models/Components/AccountingAccountResultSourceValue.md
+  - docs/Models/Components/AccountingAccountResultSourceValueUnion.md
+  - docs/Models/Components/AccountingAccountResultType.md
+  - docs/Models/Components/AccountingAccountResultValue.md
+  - docs/Models/Components/AccountingAccountSourceValue.md
+  - docs/Models/Components/AccountingAccountSourceValueUnion.md
+  - docs/Models/Components/AccountingAccountType.md
+  - docs/Models/Components/AccountingAccountValue.md
+  - docs/Models/Components/AccountingAccountsPaginated.md
+  - docs/Models/Components/AccountingCompaniesPaginated.md
+  - docs/Models/Components/AccountingCompany.md
+  - docs/Models/Components/AccountingCompanyBaseCurrency.md
+  - docs/Models/Components/AccountingCompanyResult.md
+  - docs/Models/Components/AccountingCompanyResultBaseCurrency.md
+  - docs/Models/Components/AccountingCompanyResultData.md
+  - docs/Models/Components/AccountingCompanyResultSourceValue.md
+  - docs/Models/Components/AccountingCompanyResultSourceValueUnion.md
+  - docs/Models/Components/AccountingCompanyResultValue.md
+  - docs/Models/Components/AccountingCompanySourceValue.md
+  - docs/Models/Components/AccountingCompanySourceValueUnion.md
+  - docs/Models/Components/AccountingCompanyValue.md
+  - docs/Models/Components/AccountingJournal.md
+  - docs/Models/Components/AccountingJournalBatchCreateRequestDto.md
+  - docs/Models/Components/AccountingJournalCreateRequestDto.md
+  - docs/Models/Components/AccountingJournalCreateRequestDtoCurrencyCode.md
+  - docs/Models/Components/AccountingJournalCreateRequestDtoSourceValue.md
+  - docs/Models/Components/AccountingJournalCreateRequestDtoSourceValueUnion.md
+  - docs/Models/Components/AccountingJournalCreateRequestDtoValue.md
+  - docs/Models/Components/AccountingJournalResult.md
+  - docs/Models/Components/AccountingJournalResultData.md
+  - docs/Models/Components/AccountingJournalResultSourceValue.md
+  - docs/Models/Components/AccountingJournalResultSourceValueUnion.md
+  - docs/Models/Components/AccountingJournalResultStatus.md
+  - docs/Models/Components/AccountingJournalResultValue.md
+  - docs/Models/Components/AccountingJournalSourceValue.md
+  - docs/Models/Components/AccountingJournalSourceValueUnion.md
+  - docs/Models/Components/AccountingJournalStatus.md
+  - docs/Models/Components/AccountingJournalValue.md
+  - docs/Models/Components/AccountingJournalsPaginated.md
+  - docs/Models/Components/AccountingTaxRate.md
+  - docs/Models/Components/AccountingTaxRateActiveEnum.md
+  - docs/Models/Components/AccountingTaxRateActiveUnion.md
+  - docs/Models/Components/AccountingTaxRateResult.md
+  - docs/Models/Components/AccountingTaxRateResultActiveEnum.md
+  - docs/Models/Components/AccountingTaxRateResultActiveUnion.md
+  - docs/Models/Components/AccountingTaxRateResultData.md
+  - docs/Models/Components/AccountingTaxRatesPaginated.md
   - docs/Models/Components/AccountsPaginated.md
   - docs/Models/Components/Actor.md
   - docs/Models/Components/AdditionalData.md
@@ -82,6 +139,9 @@ generatedFiles:
   - docs/Models/Components/ApplicationSource.md
   - docs/Models/Components/ApplicationSourceValue.md
   - docs/Models/Components/ApplicationSourceValueUnion.md
+  - docs/Models/Components/ApplicationStage.md
+  - docs/Models/Components/ApplicationStageResult.md
+  - docs/Models/Components/ApplicationStagesPaginated.md
   - docs/Models/Components/ApplicationValue.md
   - docs/Models/Components/ApplicationsPaginated.md
   - docs/Models/Components/Archived.md
@@ -89,20 +149,16 @@ generatedFiles:
   - docs/Models/Components/AssessmentPackage.md
   - docs/Models/Components/AssessmentPackagePaginated.md
   - docs/Models/Components/AssessmentPackageResult.md
-  - docs/Models/Components/AssessmentResult.md
-  - docs/Models/Components/AssessmentResultCandidate.md
-  - docs/Models/Components/AssessmentResultResult.md
-  - docs/Models/Components/AssessmentResultScore.md
-  - docs/Models/Components/AssessmentResultSourceValue.md
-  - docs/Models/Components/AssessmentResultSourceValueUnion.md
-  - docs/Models/Components/AssessmentResultValue.md
-  - docs/Models/Components/AssessmentResultsResult.md
   - docs/Models/Components/Assignment.md
   - docs/Models/Components/AssignmentLearningObjectType.md
   - docs/Models/Components/AssignmentLearningObjectTypeSourceValueUnion.md
   - docs/Models/Components/AssignmentLearningObjectTypeValue.md
   - docs/Models/Components/AssignmentResult.md
+  - docs/Models/Components/AssignmentResult1.md
+  - docs/Models/Components/AssignmentResultSourceValueUnion.md
+  - docs/Models/Components/AssignmentResultValue.md
   - docs/Models/Components/AssignmentSourceValueLearningObjectType.md
+  - docs/Models/Components/AssignmentSourceValueResult.md
   - docs/Models/Components/AssignmentSourceValueStatus.md
   - docs/Models/Components/AssignmentStatus.md
   - docs/Models/Components/AssignmentStatusSourceValueUnion.md
@@ -167,6 +223,26 @@ generatedFiles:
   - docs/Models/Components/AtsDocumentApiModelTypeValue.md
   - docs/Models/Components/AtsDocumentResult.md
   - docs/Models/Components/AtsDocumentsPaginated.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDto.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoCategory.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoCategoryValue.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoConfidential.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoConfidentialValue.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoFileFormat.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoFileFormatValue.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoSourceValueConfidential.md
+  - docs/Models/Components/AtsDocumentsUploadRequestDtoSourceValueFileFormat.md
+  - docs/Models/Components/AtsJob.md
+  - docs/Models/Components/AtsJobConfidential.md
+  - docs/Models/Components/AtsJobHiringTeam.md
+  - docs/Models/Components/AtsJobJobStatus.md
+  - docs/Models/Components/AtsJobResult.md
+  - docs/Models/Components/AtsJobSourceValue.md
+  - docs/Models/Components/AtsJobSourceValueUnion.md
+  - docs/Models/Components/AtsJobValue.md
+  - docs/Models/Components/AtsJobsPaginated.md
   - docs/Models/Components/AtsMoveApplicationRequestDto.md
   - docs/Models/Components/AtsRejectApplicationRequestDto.md
   - docs/Models/Components/AtsUpdateApplicationRequestDto.md
@@ -214,14 +290,6 @@ generatedFiles:
   - docs/Models/Components/BackgroundCheckPackage.md
   - docs/Models/Components/BackgroundCheckPackagePaginated.md
   - docs/Models/Components/BackgroundCheckPackageResult.md
-  - docs/Models/Components/BackgroundCheckResult.md
-  - docs/Models/Components/BackgroundCheckResultCandidate.md
-  - docs/Models/Components/BackgroundCheckResultResult.md
-  - docs/Models/Components/BackgroundCheckResultScore.md
-  - docs/Models/Components/BackgroundCheckResultSourceValue.md
-  - docs/Models/Components/BackgroundCheckResultSourceValueUnion.md
-  - docs/Models/Components/BackgroundCheckResultValue.md
-  - docs/Models/Components/BackgroundCheckResultsResult.md
   - docs/Models/Components/BadRequestResponseData.md
   - docs/Models/Components/BadRequestResponseHeaders.md
   - docs/Models/Components/BalanceUnit.md
@@ -384,6 +452,7 @@ generatedFiles:
   - docs/Models/Components/CreateHRISBenefitSourceValue.md
   - docs/Models/Components/CreateHRISBenefitSourceValueUnion.md
   - docs/Models/Components/CreateHRISBenefitValue.md
+  - docs/Models/Components/CreateJournalLine.md
   - docs/Models/Components/CreateMessage.md
   - docs/Models/Components/CreateMessageEmailMessageContents.md
   - docs/Models/Components/CreateMessageMessageContent.md
@@ -419,6 +488,8 @@ generatedFiles:
   - docs/Models/Components/CustomFieldDefinitionValue.md
   - docs/Models/Components/CustomFieldDefinitionsPaginated.md
   - docs/Models/Components/CustomFieldOption.md
+  - docs/Models/Components/CustomFieldOptionValue.md
+  - docs/Models/Components/CustomFieldOptionValueUnion.md
   - docs/Models/Components/CustomFields.md
   - docs/Models/Components/CustomFieldsValue.md
   - docs/Models/Components/CustomFieldsValueUnion.md
@@ -435,6 +506,8 @@ generatedFiles:
   - docs/Models/Components/DivisionSourceValueUnion.md
   - docs/Models/Components/DivisionType.md
   - docs/Models/Components/DivisionValue.md
+  - docs/Models/Components/DownloadApiModel.md
+  - docs/Models/Components/DownloadHeadersApiModel.md
   - docs/Models/Components/Draft.md
   - docs/Models/Components/DraftEnum.md
   - docs/Models/Components/DriveResult.md
@@ -812,6 +885,13 @@ generatedFiles:
   - docs/Models/Components/HrisDocumentsUploadRequestDtoSourceValueConfidential.md
   - docs/Models/Components/HrisDocumentsUploadRequestDtoSourceValueFileFormat.md
   - docs/Models/Components/HrisInviteEmployeeRequestDto.md
+  - docs/Models/Components/HrisJob.md
+  - docs/Models/Components/HrisJobResult.md
+  - docs/Models/Components/HrisJobSourceValue.md
+  - docs/Models/Components/HrisJobSourceValueUnion.md
+  - docs/Models/Components/HrisJobStatus.md
+  - docs/Models/Components/HrisJobValue.md
+  - docs/Models/Components/HrisJobsPaginated.md
   - docs/Models/Components/HrisShift.md
   - docs/Models/Components/HrisShiftApprovalStatus.md
   - docs/Models/Components/HrisShiftApprovalStatusSourceValueUnion.md
@@ -1015,11 +1095,7 @@ generatedFiles:
   - docs/Models/Components/IsPaidEnum.md
   - docs/Models/Components/IsRoot.md
   - docs/Models/Components/IsRootEnum.md
-  - docs/Models/Components/Job.md
-  - docs/Models/Components/JobConfidential.md
   - docs/Models/Components/JobDescription.md
-  - docs/Models/Components/JobHiringTeam.md
-  - docs/Models/Components/JobJobStatus.md
   - docs/Models/Components/JobPosting.md
   - docs/Models/Components/JobPostingCompensation.md
   - docs/Models/Components/JobPostingCompensationPayFrequency.md
@@ -1059,11 +1135,11 @@ generatedFiles:
   - docs/Models/Components/JobPostingStatusSourceValueUnion.md
   - docs/Models/Components/JobPostingStatusValue.md
   - docs/Models/Components/JobPostingsPaginated.md
-  - docs/Models/Components/JobResult.md
-  - docs/Models/Components/JobSourceValue.md
-  - docs/Models/Components/JobSourceValueUnion.md
-  - docs/Models/Components/JobValue.md
-  - docs/Models/Components/JobsPaginated.md
+  - docs/Models/Components/JournalLine.md
+  - docs/Models/Components/JournalLineCurrencyCode.md
+  - docs/Models/Components/JournalLineCurrencyCodeSourceValueUnion.md
+  - docs/Models/Components/JournalLineCurrencyCodeValue.md
+  - docs/Models/Components/JournalLineSourceValueCurrencyCode.md
   - docs/Models/Components/Label.md
   - docs/Models/Components/LaborType.md
   - docs/Models/Components/LanguageEnum.md
@@ -1137,6 +1213,46 @@ generatedFiles:
   - docs/Models/Components/MessageSourceValue.md
   - docs/Models/Components/MessageSourceValueUnion.md
   - docs/Models/Components/MessageValue.md
+  - docs/Models/Components/MessagingAttachment.md
+  - docs/Models/Components/MessagingAttachmentResult.md
+  - docs/Models/Components/MessagingAttachmentResultData.md
+  - docs/Models/Components/MessagingAttachmentsPaginated.md
+  - docs/Models/Components/MessagingConversation.md
+  - docs/Models/Components/MessagingConversationPrivateEnum.md
+  - docs/Models/Components/MessagingConversationPrivateUnion.md
+  - docs/Models/Components/MessagingConversationResult.md
+  - docs/Models/Components/MessagingConversationResultData.md
+  - docs/Models/Components/MessagingConversationResultPrivateEnum.md
+  - docs/Models/Components/MessagingConversationResultPrivateUnion.md
+  - docs/Models/Components/MessagingConversationsPaginated.md
+  - docs/Models/Components/MessagingCreateConversationRequestDto.md
+  - docs/Models/Components/MessagingCreateConversationRequestDtoPrivateEnum.md
+  - docs/Models/Components/MessagingCreateConversationRequestDtoPrivateUnion.md
+  - docs/Models/Components/MessagingMessage.md
+  - docs/Models/Components/MessagingMessageActiveEnum.md
+  - docs/Models/Components/MessagingMessageActiveUnion.md
+  - docs/Models/Components/MessagingMessageAuthor.md
+  - docs/Models/Components/MessagingMessageContent.md
+  - docs/Models/Components/MessagingMessageResult.md
+  - docs/Models/Components/MessagingMessageResultActiveEnum.md
+  - docs/Models/Components/MessagingMessageResultActiveUnion.md
+  - docs/Models/Components/MessagingMessageResultAuthor.md
+  - docs/Models/Components/MessagingMessageResultContent.md
+  - docs/Models/Components/MessagingMessageResultData.md
+  - docs/Models/Components/MessagingMessageSendRequestDto.md
+  - docs/Models/Components/MessagingMessagesPaginated.md
+  - docs/Models/Components/MessagingUser.md
+  - docs/Models/Components/MessagingUserActiveEnum.md
+  - docs/Models/Components/MessagingUserActiveUnion.md
+  - docs/Models/Components/MessagingUserBotEnum.md
+  - docs/Models/Components/MessagingUserBotUnion.md
+  - docs/Models/Components/MessagingUserResult.md
+  - docs/Models/Components/MessagingUserResultActiveEnum.md
+  - docs/Models/Components/MessagingUserResultActiveUnion.md
+  - docs/Models/Components/MessagingUserResultBotEnum.md
+  - docs/Models/Components/MessagingUserResultBotUnion.md
+  - docs/Models/Components/MessagingUserResultData.md
+  - docs/Models/Components/MessagingUsersPaginated.md
   - docs/Models/Components/Method.md
   - docs/Models/Components/MoveApplicationResult.md
   - docs/Models/Components/NationalIdentityNumberApiModel.md
@@ -1273,6 +1389,7 @@ generatedFiles:
   - docs/Models/Components/SmsTemplateResult.md
   - docs/Models/Components/SmsTemplatesPaginated.md
   - docs/Models/Components/SocialLink.md
+  - docs/Models/Components/SourceValueAccountType.md
   - docs/Models/Components/SourceValueAvatarCategory.md
   - docs/Models/Components/SourceValueAvatarFileFormat.md
   - docs/Models/Components/SourceValueBalanceUnit.md
@@ -1295,6 +1412,15 @@ generatedFiles:
   - docs/Models/Components/Task.md
   - docs/Models/Components/TaskCommentApiModel.md
   - docs/Models/Components/TaskResult.md
+  - docs/Models/Components/TaskResultData.md
+  - docs/Models/Components/TaskResultSourceValueStatus.md
+  - docs/Models/Components/TaskResultSourceValueType.md
+  - docs/Models/Components/TaskResultStatus.md
+  - docs/Models/Components/TaskResultStatusSourceValueUnion.md
+  - docs/Models/Components/TaskResultStatusValue.md
+  - docs/Models/Components/TaskResultType.md
+  - docs/Models/Components/TaskResultTypeSourceValueUnion.md
+  - docs/Models/Components/TaskResultTypeValue.md
   - docs/Models/Components/TaskSourceValueStatus.md
   - docs/Models/Components/TaskSourceValueType.md
   - docs/Models/Components/TaskStatus.md
@@ -1480,6 +1606,11 @@ generatedFiles:
   - docs/Models/Components/UnifiedWarningApiModel.md
   - docs/Models/Components/UpdatePackage.md
   - docs/Models/Components/UpdateResult.md
+  - docs/Models/Components/UpdateTaskRequestDto.md
+  - docs/Models/Components/UpdateTaskRequestDtoSourceValue.md
+  - docs/Models/Components/UpdateTaskRequestDtoSourceValueUnion.md
+  - docs/Models/Components/UpdateTaskRequestDtoStatus.md
+  - docs/Models/Components/UpdateTaskRequestDtoValue.md
   - docs/Models/Components/UpsertResult.md
   - docs/Models/Components/UpsertResultDataExternalReferenceModel.md
   - docs/Models/Components/UserResult.md
@@ -1519,6 +1650,30 @@ generatedFiles:
   - docs/Models/Errors/TooManyRequestsResponseException.md
   - docs/Models/Errors/UnauthorizedResponseException.md
   - docs/Models/Errors/UnprocessableEntityResponseException.md
+  - docs/Models/Requests/AccountingBatchCreateCompanyJournalsRequest.md
+  - docs/Models/Requests/AccountingBatchCreateCompanyJournalsResponse.md
+  - docs/Models/Requests/AccountingCreateCompanyJournalRequest.md
+  - docs/Models/Requests/AccountingCreateCompanyJournalResponse.md
+  - docs/Models/Requests/AccountingGetCompanyAccountRequest.md
+  - docs/Models/Requests/AccountingGetCompanyAccountResponse.md
+  - docs/Models/Requests/AccountingGetCompanyJournalRequest.md
+  - docs/Models/Requests/AccountingGetCompanyJournalResponse.md
+  - docs/Models/Requests/AccountingGetCompanyRequest.md
+  - docs/Models/Requests/AccountingGetCompanyResponse.md
+  - docs/Models/Requests/AccountingGetCompanyTaxRateRequest.md
+  - docs/Models/Requests/AccountingGetCompanyTaxRateResponse.md
+  - docs/Models/Requests/AccountingListCompaniesFilter.md
+  - docs/Models/Requests/AccountingListCompaniesRequest.md
+  - docs/Models/Requests/AccountingListCompaniesResponse.md
+  - docs/Models/Requests/AccountingListCompanyAccountsFilter.md
+  - docs/Models/Requests/AccountingListCompanyAccountsRequest.md
+  - docs/Models/Requests/AccountingListCompanyAccountsResponse.md
+  - docs/Models/Requests/AccountingListCompanyJournalsFilter.md
+  - docs/Models/Requests/AccountingListCompanyJournalsRequest.md
+  - docs/Models/Requests/AccountingListCompanyJournalsResponse.md
+  - docs/Models/Requests/AccountingListCompanyTaxRatesFilter.md
+  - docs/Models/Requests/AccountingListCompanyTaxRatesRequest.md
+  - docs/Models/Requests/AccountingListCompanyTaxRatesResponse.md
   - docs/Models/Requests/AtsCreateApplicationNoteRequest.md
   - docs/Models/Requests/AtsCreateApplicationNoteResponse.md
   - docs/Models/Requests/AtsCreateApplicationRequest.md
@@ -1556,12 +1711,8 @@ generatedFiles:
   - docs/Models/Requests/AtsGetApplicationScorecardResponse.md
   - docs/Models/Requests/AtsGetAssessmentsPackageRequest.md
   - docs/Models/Requests/AtsGetAssessmentsPackageResponse.md
-  - docs/Models/Requests/AtsGetAssessmentsResultRequest.md
-  - docs/Models/Requests/AtsGetAssessmentsResultResponse.md
   - docs/Models/Requests/AtsGetBackgroundCheckPackageRequest.md
   - docs/Models/Requests/AtsGetBackgroundCheckPackageResponse.md
-  - docs/Models/Requests/AtsGetBackgroundCheckResultRequest.md
-  - docs/Models/Requests/AtsGetBackgroundCheckResultResponse.md
   - docs/Models/Requests/AtsGetCandidateCustomFieldDefinitionFilter.md
   - docs/Models/Requests/AtsGetCandidateCustomFieldDefinitionRequest.md
   - docs/Models/Requests/AtsGetCandidateCustomFieldDefinitionResponse.md
@@ -1575,6 +1726,8 @@ generatedFiles:
   - docs/Models/Requests/AtsGetInterviewResponse.md
   - docs/Models/Requests/AtsGetInterviewStageRequest.md
   - docs/Models/Requests/AtsGetInterviewStageResponse.md
+  - docs/Models/Requests/AtsGetJobApplicationStageRequest.md
+  - docs/Models/Requests/AtsGetJobApplicationStageResponse.md
   - docs/Models/Requests/AtsGetJobCustomFieldDefinitionFilter.md
   - docs/Models/Requests/AtsGetJobCustomFieldDefinitionRequest.md
   - docs/Models/Requests/AtsGetJobCustomFieldDefinitionResponse.md
@@ -1643,6 +1796,9 @@ generatedFiles:
   - docs/Models/Requests/AtsListInterviewsFilter.md
   - docs/Models/Requests/AtsListInterviewsRequest.md
   - docs/Models/Requests/AtsListInterviewsResponse.md
+  - docs/Models/Requests/AtsListJobApplicationStagesFilter.md
+  - docs/Models/Requests/AtsListJobApplicationStagesRequest.md
+  - docs/Models/Requests/AtsListJobApplicationStagesResponse.md
   - docs/Models/Requests/AtsListJobCustomFieldDefinitionsFilter.md
   - docs/Models/Requests/AtsListJobCustomFieldDefinitionsRequest.md
   - docs/Models/Requests/AtsListJobCustomFieldDefinitionsResponse.md
@@ -1907,6 +2063,8 @@ generatedFiles:
   - docs/Models/Requests/HrisUpdateEmployeeEmploymentResponse.md
   - docs/Models/Requests/HrisUpdateEmployeeRequest.md
   - docs/Models/Requests/HrisUpdateEmployeeResponse.md
+  - docs/Models/Requests/HrisUpdateEmployeeTaskRequest.md
+  - docs/Models/Requests/HrisUpdateEmployeeTaskResponse.md
   - docs/Models/Requests/HrisUpdateEmployeeTimeOffRequestRequest.md
   - docs/Models/Requests/HrisUpdateEmployeeTimeOffRequestResponse.md
   - docs/Models/Requests/HrisUpdateEmployeeWorkEligibilityRequestRequest.md
@@ -1974,9 +2132,11 @@ generatedFiles:
   - docs/Models/Requests/LmsListCompletionsFilter.md
   - docs/Models/Requests/LmsListCompletionsRequest.md
   - docs/Models/Requests/LmsListCompletionsResponse.md
+  - docs/Models/Requests/LmsListContentActive.md
   - docs/Models/Requests/LmsListContentFilter.md
   - docs/Models/Requests/LmsListContentRequest.md
   - docs/Models/Requests/LmsListContentResponse.md
+  - docs/Models/Requests/LmsListCoursesActive.md
   - docs/Models/Requests/LmsListCoursesFilter.md
   - docs/Models/Requests/LmsListCoursesRequest.md
   - docs/Models/Requests/LmsListCoursesResponse.md
@@ -2056,6 +2216,33 @@ generatedFiles:
   - docs/Models/Requests/MarketingUpdatePushTemplateResponse.md
   - docs/Models/Requests/MarketingUpdateSmsTemplateRequest.md
   - docs/Models/Requests/MarketingUpdateSmsTemplateResponse.md
+  - docs/Models/Requests/MessagingCreateConversationRequest.md
+  - docs/Models/Requests/MessagingCreateConversationResponse.md
+  - docs/Models/Requests/MessagingDownloadMessagingAttachmentRequest.md
+  - docs/Models/Requests/MessagingDownloadMessagingAttachmentResponse.md
+  - docs/Models/Requests/MessagingGetAttachmentRequest.md
+  - docs/Models/Requests/MessagingGetAttachmentResponse.md
+  - docs/Models/Requests/MessagingGetConversationRequest.md
+  - docs/Models/Requests/MessagingGetConversationResponse.md
+  - docs/Models/Requests/MessagingGetMessageFilter.md
+  - docs/Models/Requests/MessagingGetMessageRequest.md
+  - docs/Models/Requests/MessagingGetMessageResponse.md
+  - docs/Models/Requests/MessagingGetUserRequest.md
+  - docs/Models/Requests/MessagingGetUserResponse.md
+  - docs/Models/Requests/MessagingListAttachmentsFilter.md
+  - docs/Models/Requests/MessagingListAttachmentsRequest.md
+  - docs/Models/Requests/MessagingListAttachmentsResponse.md
+  - docs/Models/Requests/MessagingListConversationMessagesFilter.md
+  - docs/Models/Requests/MessagingListConversationMessagesRequest.md
+  - docs/Models/Requests/MessagingListConversationMessagesResponse.md
+  - docs/Models/Requests/MessagingListConversationsFilter.md
+  - docs/Models/Requests/MessagingListConversationsRequest.md
+  - docs/Models/Requests/MessagingListConversationsResponse.md
+  - docs/Models/Requests/MessagingListUsersFilter.md
+  - docs/Models/Requests/MessagingListUsersRequest.md
+  - docs/Models/Requests/MessagingListUsersResponse.md
+  - docs/Models/Requests/MessagingSendMessageRequest.md
+  - docs/Models/Requests/MessagingSendMessageResponse.md
   - docs/Models/Requests/StackoneAuthenticateConnectSessionResponse.md
   - docs/Models/Requests/StackoneCreateConnectSessionResponse.md
   - docs/Models/Requests/StackoneDeleteAccountRequest.md
@@ -2144,6 +2331,7 @@ generatedFiles:
   - docs/Models/Requests/TicketingListUsersResponse.md
   - docs/Models/Requests/TicketingUpdateTicketRequest.md
   - docs/Models/Requests/TicketingUpdateTicketResponse.md
+  - docs/sdks/accounting/README.md
   - docs/sdks/accounts/README.md
   - docs/sdks/applicationcategories/README.md
   - docs/sdks/applications/README.md
@@ -2212,6 +2400,7 @@ generatedFiles:
   - docs/sdks/lmsskills/README.md
   - docs/sdks/lmsusers/README.md
   - docs/sdks/marketing/README.md
+  - docs/sdks/messaging/README.md
   - docs/sdks/notes/README.md
   - docs/sdks/offers/README.md
   - docs/sdks/policies/README.md
@@ -2232,6 +2421,7 @@ generatedFiles:
   - docs/sdks/usersassignments/README.md
   - docs/sdks/workeligibility/README.md
   - global.json
+  - src/StackOneHQ/Client/Accounting.cs
   - src/StackOneHQ/Client/Accounts.cs
   - src/StackOneHQ/Client/ApplicationCategories.cs
   - src/StackOneHQ/Client/Applications.cs
@@ -2305,6 +2495,7 @@ generatedFiles:
   - src/StackOneHQ/Client/LmsSkills.cs
   - src/StackOneHQ/Client/LmsUsers.cs
   - src/StackOneHQ/Client/Marketing.cs
+  - src/StackOneHQ/Client/Messaging.cs
   - src/StackOneHQ/Client/Models/Components/ATSLocation.cs
   - src/StackOneHQ/Client/Models/Components/ATSLocationResult.cs
   - src/StackOneHQ/Client/Models/Components/ATSLocationsPaginated.cs
@@ -2319,6 +2510,63 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/AccountAddressSourceValueCountry.cs
   - src/StackOneHQ/Client/Models/Components/AccountAddressSourceValueLocationType.cs
   - src/StackOneHQ/Client/Models/Components/AccountResult.cs
+  - src/StackOneHQ/Client/Models/Components/AccountType.cs
+  - src/StackOneHQ/Client/Models/Components/AccountTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountTypeValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccount.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResult.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResultActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResultActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResultData.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResultSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResultSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResultType.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountResultValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountType.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingAccountsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompaniesPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompany.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyBaseCurrency.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyResult.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyResultBaseCurrency.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyResultData.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyResultSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyResultSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyResultValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanySourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanySourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingCompanyValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournal.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalBatchCreateRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalCreateRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalCreateRequestDtoCurrencyCode.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalCreateRequestDtoSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalCreateRequestDtoSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalCreateRequestDtoValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalResult.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalResultData.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalResultSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalResultSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalResultStatus.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalResultValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalStatus.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalValue.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingJournalsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRate.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRateActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRateActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRateResult.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRateResultActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRateResultActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRateResultData.cs
+  - src/StackOneHQ/Client/Models/Components/AccountingTaxRatesPaginated.cs
   - src/StackOneHQ/Client/Models/Components/AccountsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/Actor.cs
   - src/StackOneHQ/Client/Models/Components/AdditionalData.cs
@@ -2351,6 +2599,9 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/ApplicationSource.cs
   - src/StackOneHQ/Client/Models/Components/ApplicationSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/ApplicationSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/ApplicationStage.cs
+  - src/StackOneHQ/Client/Models/Components/ApplicationStageResult.cs
+  - src/StackOneHQ/Client/Models/Components/ApplicationStagesPaginated.cs
   - src/StackOneHQ/Client/Models/Components/ApplicationValue.cs
   - src/StackOneHQ/Client/Models/Components/ApplicationsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/Archived.cs
@@ -2358,20 +2609,16 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/AssessmentPackage.cs
   - src/StackOneHQ/Client/Models/Components/AssessmentPackagePaginated.cs
   - src/StackOneHQ/Client/Models/Components/AssessmentPackageResult.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResult.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResultCandidate.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResultResult.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResultScore.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResultSourceValue.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResultSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResultValue.cs
-  - src/StackOneHQ/Client/Models/Components/AssessmentResultsResult.cs
   - src/StackOneHQ/Client/Models/Components/Assignment.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentLearningObjectType.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentLearningObjectTypeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentLearningObjectTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentResult.cs
+  - src/StackOneHQ/Client/Models/Components/AssignmentResult1.cs
+  - src/StackOneHQ/Client/Models/Components/AssignmentResultSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AssignmentResultValue.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentSourceValueLearningObjectType.cs
+  - src/StackOneHQ/Client/Models/Components/AssignmentSourceValueResult.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentSourceValueStatus.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentStatus.cs
   - src/StackOneHQ/Client/Models/Components/AssignmentStatusSourceValueUnion.cs
@@ -2436,6 +2683,26 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/AtsDocumentApiModelTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/AtsDocumentResult.cs
   - src/StackOneHQ/Client/Models/Components/AtsDocumentsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoCategory.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoCategoryValue.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoConfidential.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoConfidentialValue.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoFileFormat.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoFileFormatValue.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoSourceValueConfidential.cs
+  - src/StackOneHQ/Client/Models/Components/AtsDocumentsUploadRequestDtoSourceValueFileFormat.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJob.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobConfidential.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobHiringTeam.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobJobStatus.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobResult.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobValue.cs
+  - src/StackOneHQ/Client/Models/Components/AtsJobsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/AtsMoveApplicationRequestDto.cs
   - src/StackOneHQ/Client/Models/Components/AtsRejectApplicationRequestDto.cs
   - src/StackOneHQ/Client/Models/Components/AtsUpdateApplicationRequestDto.cs
@@ -2483,14 +2750,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/BackgroundCheckPackage.cs
   - src/StackOneHQ/Client/Models/Components/BackgroundCheckPackagePaginated.cs
   - src/StackOneHQ/Client/Models/Components/BackgroundCheckPackageResult.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResult.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResultCandidate.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResultResult.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResultScore.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResultSourceValue.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResultSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResultValue.cs
-  - src/StackOneHQ/Client/Models/Components/BackgroundCheckResultsResult.cs
   - src/StackOneHQ/Client/Models/Components/BadRequestResponseData.cs
   - src/StackOneHQ/Client/Models/Components/BadRequestResponseHeaders.cs
   - src/StackOneHQ/Client/Models/Components/BalanceUnit.cs
@@ -2653,6 +2912,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/CreateHRISBenefitSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/CreateHRISBenefitSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/CreateHRISBenefitValue.cs
+  - src/StackOneHQ/Client/Models/Components/CreateJournalLine.cs
   - src/StackOneHQ/Client/Models/Components/CreateMessage.cs
   - src/StackOneHQ/Client/Models/Components/CreateMessageEmailMessageContents.cs
   - src/StackOneHQ/Client/Models/Components/CreateMessageMessageContent.cs
@@ -2688,6 +2948,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/CustomFieldDefinitionValue.cs
   - src/StackOneHQ/Client/Models/Components/CustomFieldDefinitionsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/CustomFieldOption.cs
+  - src/StackOneHQ/Client/Models/Components/CustomFieldOptionValue.cs
+  - src/StackOneHQ/Client/Models/Components/CustomFieldOptionValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/CustomFields.cs
   - src/StackOneHQ/Client/Models/Components/CustomFieldsValue.cs
   - src/StackOneHQ/Client/Models/Components/CustomFieldsValueUnion.cs
@@ -2704,6 +2966,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/DivisionSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/DivisionType.cs
   - src/StackOneHQ/Client/Models/Components/DivisionValue.cs
+  - src/StackOneHQ/Client/Models/Components/DownloadApiModel.cs
+  - src/StackOneHQ/Client/Models/Components/DownloadHeadersApiModel.cs
   - src/StackOneHQ/Client/Models/Components/Draft.cs
   - src/StackOneHQ/Client/Models/Components/DraftEnum.cs
   - src/StackOneHQ/Client/Models/Components/DriveResult.cs
@@ -3081,6 +3345,13 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisDocumentsUploadRequestDtoSourceValueConfidential.cs
   - src/StackOneHQ/Client/Models/Components/HrisDocumentsUploadRequestDtoSourceValueFileFormat.cs
   - src/StackOneHQ/Client/Models/Components/HrisInviteEmployeeRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/HrisJob.cs
+  - src/StackOneHQ/Client/Models/Components/HrisJobResult.cs
+  - src/StackOneHQ/Client/Models/Components/HrisJobSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisJobSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisJobStatus.cs
+  - src/StackOneHQ/Client/Models/Components/HrisJobValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisJobsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/HrisShift.cs
   - src/StackOneHQ/Client/Models/Components/HrisShiftApprovalStatus.cs
   - src/StackOneHQ/Client/Models/Components/HrisShiftApprovalStatusSourceValueUnion.cs
@@ -3284,11 +3555,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/IsPaidEnum.cs
   - src/StackOneHQ/Client/Models/Components/IsRoot.cs
   - src/StackOneHQ/Client/Models/Components/IsRootEnum.cs
-  - src/StackOneHQ/Client/Models/Components/Job.cs
-  - src/StackOneHQ/Client/Models/Components/JobConfidential.cs
   - src/StackOneHQ/Client/Models/Components/JobDescription.cs
-  - src/StackOneHQ/Client/Models/Components/JobHiringTeam.cs
-  - src/StackOneHQ/Client/Models/Components/JobJobStatus.cs
   - src/StackOneHQ/Client/Models/Components/JobPosting.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingCompensation.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingCompensationPayFrequency.cs
@@ -3328,11 +3595,11 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/JobPostingStatusSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingStatusValue.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingsPaginated.cs
-  - src/StackOneHQ/Client/Models/Components/JobResult.cs
-  - src/StackOneHQ/Client/Models/Components/JobSourceValue.cs
-  - src/StackOneHQ/Client/Models/Components/JobSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/JobValue.cs
-  - src/StackOneHQ/Client/Models/Components/JobsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLine.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCode.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCodeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCodeValue.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineSourceValueCurrencyCode.cs
   - src/StackOneHQ/Client/Models/Components/Label.cs
   - src/StackOneHQ/Client/Models/Components/LaborType.cs
   - src/StackOneHQ/Client/Models/Components/LanguageEnum.cs
@@ -3406,6 +3673,46 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/MessageSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/MessageSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/MessageValue.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingAttachment.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingAttachmentResult.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingAttachmentResultData.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingAttachmentsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversation.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversationPrivateEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversationPrivateUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversationResult.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversationResultData.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversationResultPrivateEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversationResultPrivateUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingConversationsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingCreateConversationRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingCreateConversationRequestDtoPrivateEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingCreateConversationRequestDtoPrivateUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessage.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageAuthor.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageContent.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageResult.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageResultActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageResultActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageResultAuthor.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageResultContent.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageResultData.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessageSendRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingMessagesPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUser.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserBotEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserBotUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserResult.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserResultActiveEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserResultActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserResultBotEnum.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserResultBotUnion.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUserResultData.cs
+  - src/StackOneHQ/Client/Models/Components/MessagingUsersPaginated.cs
   - src/StackOneHQ/Client/Models/Components/Method.cs
   - src/StackOneHQ/Client/Models/Components/MoveApplicationResult.cs
   - src/StackOneHQ/Client/Models/Components/NationalIdentityNumberApiModel.cs
@@ -3542,6 +3849,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/SmsTemplateResult.cs
   - src/StackOneHQ/Client/Models/Components/SmsTemplatesPaginated.cs
   - src/StackOneHQ/Client/Models/Components/SocialLink.cs
+  - src/StackOneHQ/Client/Models/Components/SourceValueAccountType.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueAvatarCategory.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueAvatarFileFormat.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueBalanceUnit.cs
@@ -3564,6 +3872,15 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/Task.cs
   - src/StackOneHQ/Client/Models/Components/TaskCommentApiModel.cs
   - src/StackOneHQ/Client/Models/Components/TaskResult.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultData.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultSourceValueStatus.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultSourceValueType.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultStatus.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultStatusSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultStatusValue.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultType.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/TaskResultTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/TaskSourceValueStatus.cs
   - src/StackOneHQ/Client/Models/Components/TaskSourceValueType.cs
   - src/StackOneHQ/Client/Models/Components/TaskStatus.cs
@@ -3749,6 +4066,11 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/UnifiedWarningApiModel.cs
   - src/StackOneHQ/Client/Models/Components/UpdatePackage.cs
   - src/StackOneHQ/Client/Models/Components/UpdateResult.cs
+  - src/StackOneHQ/Client/Models/Components/UpdateTaskRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/UpdateTaskRequestDtoSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/UpdateTaskRequestDtoSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/UpdateTaskRequestDtoStatus.cs
+  - src/StackOneHQ/Client/Models/Components/UpdateTaskRequestDtoValue.cs
   - src/StackOneHQ/Client/Models/Components/UpsertResult.cs
   - src/StackOneHQ/Client/Models/Components/UpsertResultDataExternalReferenceModel.cs
   - src/StackOneHQ/Client/Models/Components/UserResult.cs
@@ -3789,6 +4111,30 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Errors/TooManyRequestsResponseException.cs
   - src/StackOneHQ/Client/Models/Errors/UnauthorizedResponseException.cs
   - src/StackOneHQ/Client/Models/Errors/UnprocessableEntityResponseException.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingBatchCreateCompanyJournalsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingBatchCreateCompanyJournalsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingCreateCompanyJournalRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingCreateCompanyJournalResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyAccountRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyAccountResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyJournalRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyJournalResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyTaxRateRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingGetCompanyTaxRateResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompaniesFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompaniesRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompaniesResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyAccountsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyAccountsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyAccountsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyJournalsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyJournalsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyJournalsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyTaxRatesFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyTaxRatesRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AccountingListCompanyTaxRatesResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsCreateApplicationNoteRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsCreateApplicationNoteResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsCreateApplicationRequest.cs
@@ -3826,12 +4172,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/AtsGetApplicationScorecardResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetAssessmentsPackageRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetAssessmentsPackageResponse.cs
-  - src/StackOneHQ/Client/Models/Requests/AtsGetAssessmentsResultRequest.cs
-  - src/StackOneHQ/Client/Models/Requests/AtsGetAssessmentsResultResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetBackgroundCheckPackageRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetBackgroundCheckPackageResponse.cs
-  - src/StackOneHQ/Client/Models/Requests/AtsGetBackgroundCheckResultRequest.cs
-  - src/StackOneHQ/Client/Models/Requests/AtsGetBackgroundCheckResultResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetCandidateCustomFieldDefinitionFilter.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetCandidateCustomFieldDefinitionRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetCandidateCustomFieldDefinitionResponse.cs
@@ -3845,6 +4187,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/AtsGetInterviewResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetInterviewStageRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetInterviewStageResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsGetJobApplicationStageRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsGetJobApplicationStageResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetJobCustomFieldDefinitionFilter.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetJobCustomFieldDefinitionRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetJobCustomFieldDefinitionResponse.cs
@@ -3913,6 +4257,9 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/AtsListInterviewsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListInterviewsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListInterviewsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsListJobApplicationStagesFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsListJobApplicationStagesRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsListJobApplicationStagesResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListJobCustomFieldDefinitionsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListJobCustomFieldDefinitionsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListJobCustomFieldDefinitionsResponse.cs
@@ -4177,6 +4524,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeEmploymentResponse.cs
   - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeRequest.cs
   - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeTaskRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeTaskResponse.cs
   - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeTimeOffRequestRequest.cs
   - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeTimeOffRequestResponse.cs
   - src/StackOneHQ/Client/Models/Requests/HrisUpdateEmployeeWorkEligibilityRequestRequest.cs
@@ -4244,9 +4593,11 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/LmsListCompletionsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListCompletionsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListCompletionsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/LmsListContentActive.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListContentFilter.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListContentRequest.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListContentResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/LmsListCoursesActive.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListCoursesFilter.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListCoursesRequest.cs
   - src/StackOneHQ/Client/Models/Requests/LmsListCoursesResponse.cs
@@ -4326,6 +4677,33 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/MarketingUpdatePushTemplateResponse.cs
   - src/StackOneHQ/Client/Models/Requests/MarketingUpdateSmsTemplateRequest.cs
   - src/StackOneHQ/Client/Models/Requests/MarketingUpdateSmsTemplateResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingCreateConversationRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingCreateConversationResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingDownloadMessagingAttachmentRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingDownloadMessagingAttachmentResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetAttachmentRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetAttachmentResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetConversationRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetConversationResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetMessageFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetMessageRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetMessageResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetUserRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingGetUserResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListAttachmentsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListAttachmentsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListAttachmentsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListConversationMessagesFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListConversationMessagesRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListConversationMessagesResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListConversationsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListConversationsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListConversationsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListUsersFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListUsersRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingListUsersResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingSendMessageRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/MessagingSendMessageResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneAuthenticateConnectSessionResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneCreateConnectSessionResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneDeleteAccountRequest.cs
@@ -5002,7 +5380,7 @@ examples:
     speakeasy-default-hris-list-employees:
       parameters:
         query:
-          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills"
+          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "company,employments,work_location,home_location,groups,skills"
           include: "avatar_url,avatar,custom_fields,job_description,benefits"
@@ -5075,14 +5453,14 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills"
+          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills"
           expand: "company,employments,work_location,home_location,groups,skills"
           include: "avatar_url,avatar,custom_fields,job_description,benefits"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "remote_manager_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -5449,6 +5827,43 @@ examples:
       responses:
         "200":
           application/octet-stream: "0xD8a7d4EC38"
+          application/gzip: "0xD8a7d4EC38"
+          application/msword: "0x2fCA5f2BdE"
+          application/pdf: "0x2787fbBA5B"
+          application/rtf: "0x5E636dB592"
+          application/vnd.ms-excel: "0x228e85F828"
+          application/vnd.ms-outlook: "0x84d5f5DF5D"
+          application/vnd.ms-powerpoint: "0xeE5DDaEf5F"
+          application/vnd.oasis.opendocument.presentation: "0xBdC3e9094d"
+          application/vnd.oasis.opendocument.spreadsheet: "0xC5bf4ae9Fb"
+          application/vnd.oasis.opendocument.text: "0xEFAAA5FEf6"
+          application/vnd.openxmlformats-officedocument.presentationml.presentation: "0xc37c3f3042"
+          application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: "0xAccb6bF5c7"
+          application/vnd.openxmlformats-officedocument.wordprocessingml.document: "0x53dBaA0D24"
+          application/x-7z-compressed: "0x15cFE0D1c1"
+          application/x-rar-compressed: "0xDE9DA3f1fc"
+          application/xml: "0xEcAbE4Fde3"
+          application/zip: "0xbCdBCdD9Db"
+          audio/mp4: "0xB88ef7DE3B"
+          audio/mpeg: "0xC55c419fAe"
+          audio/wav: "0xAf65FAf186"
+          image/bmp: "0x96192FD83b"
+          image/gif: "0x00C0A53c9f"
+          image/heic: "0xF49E299baF"
+          image/jpeg: "0x42b05E3DA1"
+          image/png: "0x3f00EfB460"
+          image/tiff: "0x97fa658Df0"
+          image/webp: "0x214CFC4E3a"
+          message/rfc822: "0xb925d00B7a"
+          text/csv: "0x112a9BeaEd"
+          text/html: "0xD5EFfB35Ae"
+          text/rtf: "0xbFc3Ef110B"
+          video/avi: "0xa2BCDcA8E9"
+          video/mp4: "0x8E5A2bAdFC"
+          video/quicktime: "0xBa3f9432a1"
+          video/webm: "0x673DfC4bc6"
+          text/plain: "<value>"
+          application/json: {"headers": {"content-disposition": "attachment; filename=\"example.pdf\"", "content-type": "application/pdf", "content-length": 1024, "content-range": "bytes 0-1023/2048", "content-encoding": "gzip", "transfer-encoding": "chunked"}, "data": "0xeDAC87fBe2"}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -6491,7 +6906,7 @@ examples:
     speakeasy-default-hris-list-jobs:
       parameters:
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,code,title,description,status,created_at,updated_at"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6528,12 +6943,12 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,code,title,description,status,created_at,updated_at"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "code": "184919", "title": "Software Engineer", "description": "Responsible for identifying business requirements", "job_status": {"value": "published", "source_value": "Published"}, "department_ids": ["308570", "308571", "308572"], "remote_department_ids": ["e3cb75bf-aa84-466e-a6c1-b8322b257a48"], "location_ids": ["668570", "678571", "688572"], "remote_location_ids": ["668570", "678571", "688572"], "hiring_team": [{"user_id": "123456", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "first_name": "John", "last_name": "Doe", "email": "john.doe@gmail.com", "role": "Software Engineer"}], "interview_stages": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "code": "184919", "title": "Software Engineer", "description": "Responsible for identifying business requirements", "status": {"value": "open"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -7394,7 +7809,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": [{"comment": "Approved based on in-person assessment", "created_at": "2024-03-15T10:00:00.000Z"}], "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}]}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": [{"comment": "Approved based on in-person assessment", "created_at": "2024-03-15T10:00:00.000Z"}], "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -7462,7 +7877,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"passthrough": {"other_known_names": "John Doe"}, "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "job_posting_id": "1c702a20-8de8-4d03-ac18-cbf4ac42eb51", "location_id": "dd8d41d1-5eb8-4408-9c87-9ba44604eae4", "application_status": null, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "candidate": {"passthrough": {"other_known_names": "John Doe"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "phone_numbers": [{"phone": "+447700112233"}], "name": "Romain Sestier", "first_name": "Romain", "last_name": "Sestier", "email": "sestier.romain123@gmail.com", "social_links": [{"type": "linkedin", "url": "https://www.linkedin.com/in/romainsestier/"}], "company": "Company Inc.", "title": "Software Engineer", "hired_at": "2021-01-01T01:01:01.000Z", "country": "United States", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}, "documents": [{"name": "weather-forecast", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "content": "VGhpcyBpc24ndCByZWFsbHkgYSBzYW1wbGUgZmlsZSwgYnV0IG5vIG9uZSB3aWxsIGV2ZXIga25vdyE", "category_id": "6530", "path": "/path/to/file", "category": null, "confidential": {"value": "true", "source_value": "public"}}]}
+        application/json: {"passthrough": {"other_known_names": "John Doe"}, "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "job_posting_id": "1c702a20-8de8-4d03-ac18-cbf4ac42eb51", "location_id": "dd8d41d1-5eb8-4408-9c87-9ba44604eae4", "application_status": null, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "candidate": {"passthrough": {"other_known_names": "John Doe"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "phone_numbers": [{"phone": "+447700112233"}], "name": "Romain Sestier", "first_name": "Romain", "last_name": "Sestier", "email": "sestier.romain123@gmail.com", "social_links": [{"type": "linkedin", "url": "https://www.linkedin.com/in/romainsestier/"}], "company": "Company Inc.", "title": "Software Engineer", "hired_at": "2021-01-01T01:01:01.000Z", "country": "United States", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}, "documents": [{"name": "weather-forecast", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "content": "VGhpcyBpc24ndCByZWFsbHkgYSBzYW1wbGUgZmlsZSwgYnV0IG5vIG9uZSB3aWxsIGV2ZXIga25vdyE", "category_id": "6530", "path": "/path/to/file", "confidential": {"value": "true", "source_value": "public"}, "category": null}]}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
@@ -7503,7 +7918,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "remote_candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "remote_job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "interview_stage": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "remote_interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "rejected_reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "label": "Failed Phone Screen", "rejected_reason_type": {"value": "rejected_by_organization", "source_value": "RejectedByOrg"}}], "rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "remote_rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "rejected_at": "2021-01-01T01:01:01.000Z", "remote_location_id": "dd8d41d1-5eb8-4408-9c87-9ba44604eae4", "location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "remote_location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "application_status": {"value": "hired", "source_value": "Hired"}, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "candidate": null, "documents": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}], "result_links": [{"label": "test result link", "url": "http://example.com/test-result/4565765/data"}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "remote_candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "remote_job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "interview_stage": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "remote_interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "rejected_reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "label": "Failed Phone Screen", "rejected_reason_type": {"value": "rejected_by_organization", "source_value": "RejectedByOrg"}}], "rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "remote_rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "rejected_at": "2021-01-01T01:01:01.000Z", "location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "remote_location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "application_status": {"value": "hired", "source_value": "Hired"}, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "candidate": null, "documents": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}], "result_links": [{"label": "test result link", "url": "http://example.com/test-result/4565765/data"}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -8050,7 +8465,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"name": "weather-forecast", "file_format": null, "content": "VGhpcyBpc24ndCByZWFsbHkgYSBzYW1wbGUgZmlsZSwgYnV0IG5vIG9uZSB3aWxsIGV2ZXIga25vdyE", "category_id": "6530", "path": "/path/to/file", "category": {"value": "reports, resumes", "source_value": "550e8400-e29b-41d4-a716-446655440000, CUSTOM_CATEGORY_NAME"}, "confidential": {"value": "true", "source_value": "public"}}
+        application/json: {"name": "weather-forecast", "file_format": null, "content": "VGhpcyBpc24ndCByZWFsbHkgYSBzYW1wbGUgZmlsZSwgYnV0IG5vIG9uZSB3aWxsIGV2ZXIga25vdyE", "category_id": "6530", "path": "/path/to/file", "confidential": {"value": "true", "source_value": "public"}, "category": {}}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Employee created successfully", "timestamp": "2021-01-01T01:01:01.000Z", "provider_errors": [{"status": 400, "url": "https://api.someprovider.com/v1/endpoint", "raw": {}, "headers": {}}], "unified_warnings": [{"message": "The provided field type is not supported in the current model."}]}
@@ -8092,6 +8507,43 @@ examples:
       responses:
         "200":
           application/octet-stream: "0x22c19257bb"
+          application/gzip: "0x22c19257bb"
+          application/msword: "0xbCa44FeEb1"
+          application/pdf: "0xaa1eeCfc4A"
+          application/rtf: "0x01EFDC3bd1"
+          application/vnd.ms-excel: "0x2207DFEAf3"
+          application/vnd.ms-outlook: "0xD6FE8CEb2C"
+          application/vnd.ms-powerpoint: "0xc452638C15"
+          application/vnd.oasis.opendocument.presentation: "0x9d2ffFAe87"
+          application/vnd.oasis.opendocument.spreadsheet: "0x66f6d3F200"
+          application/vnd.oasis.opendocument.text: "0x2Dad9f0caf"
+          application/vnd.openxmlformats-officedocument.presentationml.presentation: "0x4D1E2fcecc"
+          application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: "0xa4dEaaC0Ea"
+          application/vnd.openxmlformats-officedocument.wordprocessingml.document: "0xed80bd88a3"
+          application/x-7z-compressed: "0x075F4b8773"
+          application/x-rar-compressed: "0xFbD277306C"
+          application/xml: "0x9cb30a1dee"
+          application/zip: "0x2C3EBDaf72"
+          audio/mp4: "0x85daC912dC"
+          audio/mpeg: "0xFfACa8e6b5"
+          audio/wav: "0x0c128B556D"
+          image/bmp: "0x63FdfEBeFE"
+          image/gif: "0x45f3688c63"
+          image/heic: "0x06E3eecF75"
+          image/jpeg: "0xADBaeF0eCA"
+          image/png: "0xbEF42fcc7c"
+          image/tiff: "0xE3fcf3Ef8B"
+          image/webp: "0xe27B8aa32f"
+          message/rfc822: "0xDAfDdF1e3d"
+          text/csv: "0xcdfbAb46FF"
+          text/html: "0x34fe613ca0"
+          text/rtf: "0x2405B72430"
+          video/avi: "0x4Db048Dcae"
+          video/mp4: "0xAeE9A02210"
+          video/quicktime: "0x8bb83A9B0e"
+          video/webm: "0x14b0d37bff"
+          text/plain: "<value>"
+          application/json: {"headers": {"content-disposition": "attachment; filename=\"example.pdf\"", "content-type": "application/pdf", "content-length": 1024, "content-range": "bytes 0-1023/2048", "content-encoding": "gzip", "transfer-encoding": "chunked"}, "data": "0xeaccaAAeBE"}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -9591,7 +10043,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "score": null, "start_date": "2021-01-01T01:01:01.000Z", "submission_date": "2021-01-01T01:01:01.000Z", "summary": "Test is passed", "result": {"value": "passed", "source_value": "Passed"}, "result_url": "https://exmaple.com/result?id=xyz", "attachments": [{"url": "http://example.com/resume.pdf", "content_type": {"value": "text", "source_value": "Text"}}], "candidate": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "profile_url": "https://exmaple.com/candidate?id=xyz"}, "passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"score": null, "start_date": "2021-01-01T01:01:01.000Z", "submission_date": "2021-01-01T01:01:01.000Z", "summary": "Test is passed", "result": {"value": "passed", "source_value": "Passed"}, "result_url": "https://exmaple.com/result?id=xyz", "attachments": [{"url": "http://example.com/resume.pdf", "content_type": {"value": "text", "source_value": "Text"}}], "candidate": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "profile_url": "https://exmaple.com/candidate?id=xyz"}, "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "200":
           application/json: {"statusCode": 200, "message": "Record updated successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
@@ -9872,7 +10324,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "score": {"label": "Percentage", "value": "80", "min": "0", "max": "100"}, "start_date": "2021-01-01T01:01:01.000Z", "submission_date": "2021-01-01T01:01:01.000Z", "summary": "Test is passed", "result": {"value": "passed", "source_value": "Passed"}, "result_url": "https://exmaple.com/result?id=xyz", "attachments": [{"url": "http://example.com/resume.pdf", "content_type": {"value": "text", "source_value": "Text"}}], "candidate": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "profile_url": "https://exmaple.com/candidate?id=xyz"}, "passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"score": {"label": "Percentage", "value": "80", "min": "0", "max": "100"}, "start_date": "2021-01-01T01:01:01.000Z", "submission_date": "2021-01-01T01:01:01.000Z", "summary": "Test is passed", "result": {"value": "passed", "source_value": "Passed"}, "result_url": "https://exmaple.com/result?id=xyz", "attachments": [{"url": "http://example.com/resume.pdf", "content_type": {"value": "text", "source_value": "Text"}}], "candidate": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "profile_url": "https://exmaple.com/candidate?id=xyz"}, "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "200":
           application/json: {"statusCode": 200, "message": "Record updated successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
@@ -11720,7 +12172,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference"
+          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           user_id: "c28xyrc55866bvuv"
           remote_user_id: "e3cb75bf-aa84-466e-a6c1-b8322b257a48"
@@ -11799,7 +12251,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "progress": 40, "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "status": null, "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "progress": 40, "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "status": null, "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "certificate_url": "https://example.com/certificate/12345", "completed_at": "2021-07-21T14:00:00.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12005,7 +12457,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent"
+          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent,certificate_url"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12082,7 +12534,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S", "certificate_url": "https://example.com/certificate/12345"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12146,7 +12598,7 @@ examples:
     speakeasy-default-lms-list-completions:
       parameters:
         query:
-          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent"
+          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent,certificate_url"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12186,7 +12638,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S", "certificate_url": "https://example.com/certificate/12345"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": null}
         "401":
@@ -12428,7 +12880,7 @@ examples:
     speakeasy-default-lms-list-assignments:
       parameters:
         query:
-          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference"
+          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           user_id: "c28xyrc55866bvuv"
           remote_user_id: "e3cb75bf-aa84-466e-a6c1-b8322b257a48"
@@ -12470,7 +12922,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "progress": 40, "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "status": {"value": "in_progress"}, "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "progress": 40, "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "status": {"value": "in_progress"}, "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "certificate_url": "https://example.com/certificate/12345", "completed_at": "2021-07-21T14:00:00.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -13614,4 +14066,876 @@ examples:
           application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  hris_update_employee_task:
+    speakeasy-default-hris-update-employee-task:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"comment": "All required documents have been submitted", "status": {"value": "open"}}
+      responses:
+        "200":
+          application/json: {"statusCode": 200, "message": "Record updated successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ats_list_job_application_stages:
+    speakeasy-default-ats-list-job-application-stages:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,name,order,created_at,updated_at"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Review", "order": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ats_get_job_application_stage:
+    speakeasy-default-ats-get-job-application-stage:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query:
+          fields: "id,remote_id,name,order,created_at,updated_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Review", "order": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_list_conversations:
+    speakeasy-default-messaging-list-conversations:
+      parameters:
+        query:
+          fields: "id,remote_id,participants,name,private,created_at,last_message_at"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "participants": ["c28xIQ1", "c28xIQ2"], "name": "Project Discussion", "private": true, "created_at": "2024-03-20T10:00:00Z", "last_message_at": "2024-03-20T11:30:00Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_create_conversation:
+    speakeasy-default-messaging-create-conversation:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"participants": ["c28xIQ1", "c28xIQ2"], "name": "Project Discussion", "private": true}
+      responses:
+        "201":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_get_conversation:
+    speakeasy-default-messaging-get-conversation:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,participants,name,private,created_at,last_message_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "participants": ["c28xIQ1", "c28xIQ2"], "name": "Project Discussion", "private": true, "created_at": "2024-03-20T10:00:00Z", "last_message_at": "2024-03-20T11:30:00Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_download_messaging_attachment:
+    speakeasy-default-messaging-download-messaging-attachment:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query:
+          format: "base64"
+          export_format: "text/plain"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          '*/*': "0xEbaCd8aC6D"
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_list_attachments:
+    speakeasy-default-messaging-list-attachments:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,file_name,file_size,file_type"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "file_name": "document.pdf", "file_size": 1024, "file_type": "application/pdf"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": null}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_get_attachment:
+    speakeasy-default-messaging-get-attachment:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query:
+          fields: "id,remote_id,file_name,file_size,file_type"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "file_name": "document.pdf", "file_size": 1024, "file_type": "application/pdf"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_list_users:
+    speakeasy-default-messaging-list-users:
+      parameters:
+        query:
+          fields: "id,remote_id,email,username,name,first_name,last_name,bot,active"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "email": "john.doe@example.com", "username": "johndoe", "name": "John Doe", "first_name": "John", "last_name": "Doe", "bot": false, "active": true}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_get_user:
+    speakeasy-default-messaging-get-user:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,email,username,name,first_name,last_name,bot,active"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "email": "john.doe@example.com", "username": "johndoe", "name": "John Doe", "first_name": "John", "last_name": "Doe", "bot": false, "active": true}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_list_conversation_messages:
+    speakeasy-default-messaging-list-conversation-messages:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "content": {"html": "<p>Hello world</p>", "plain": "Hello world"}, "parent_message_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "author": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "al60043", "name": "John Dew", "email": "john@dew.com", "phone_number": "+1234567890", "active": true, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_get_message:
+    speakeasy-default-messaging-get-message:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "content": {"html": "<p>Hello world</p>", "plain": "Hello world"}, "parent_message_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "author": null, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  messaging_send_message:
+    speakeasy-default-messaging-send-message:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"content": "Hello, world!", "recipient": "c28xyrc55866bvuv", "sender": "+34820398402"}
+      responses:
+        "201":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_list_companies:
+    speakeasy-default-accounting-list-companies:
+      parameters:
+        query:
+          fields: "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Acme Corp", "base_currency": {"value": "USD", "source_value": "USD"}, "fiscal_year_start_month": 1, "fiscal_year_start_day": 1}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": null}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_get_company:
+    speakeasy-default-accounting-get-company:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": null}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_list_company_accounts:
+    speakeasy-default-accounting-list-company-accounts:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,company_id,remote_company_id,code,name,type,active"
+          filter: null
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "company_id": "company_123", "code": "4000", "name": "Cash", "type": {"value": "asset", "source_value": "asset"}, "active": true}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_get_company_account:
+    speakeasy-default-accounting-get-company-account:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query:
+          fields: "id,remote_id,company_id,remote_company_id,code,name,type,active"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": null}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_list_company_tax_rates:
+    speakeasy-default-accounting-list-company-tax-rates:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,company_id,remote_company_id,name,code,rate,active"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "company_id": "company_123", "name": "VAT 7.5%", "code": "TAX001", "percentage": 7.5, "active": true}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_get_company_tax_rate:
+    speakeasy-default-accounting-get-company-tax-rate:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query:
+          fields: "id,remote_id,company_id,remote_company_id,name,code,rate,active"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "company_id": "company_123", "name": "VAT 7.5%", "code": "TAX001", "percentage": 7.5, "active": true}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_batch_create_company_journals:
+    speakeasy-default-accounting-batch-create-company-journals:
+      parameters:
+        path:
+          id: "<id>"
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"items": []}
+      responses:
+        "202":
+          application/json: {"statusCode": 202, "message": "Batch operation accepted", "timestamp": "2021-01-01T01:01:01.000Z", "errors": [["Missing field: name"], [], []]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_list_company_journals:
+    speakeasy-default-accounting-list-company-journals:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at"
+          filter: null
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "company_id": "comp_123456789", "reference": "JRN-2024-001", "memo": "Monthly closing entries", "transaction_date": "2024-03-20T10:00:00Z", "status": {"value": "draft", "source_value": "draft"}, "lines": [{"id": "line_1", "account_id": "acc_123", "description": "Payment for office supplies", "amount": 10010, "tax_amount": 2002}], "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z", "posted_at": "2024-03-20T10:00:00Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_create_company_journal:
+    speakeasy-default-accounting-create-company-journal:
+      parameters:
+        path:
+          id: "<id>"
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"reference": "JRN-2024-001", "memo": "Monthly closing entries", "currency_code": {"value": "USD", "source_value": "USD"}, "exchange_rate": 1, "transaction_date": "2024-03-20T10:00:00Z", "lines": [{"account_id": "acc_123456789", "description": "Payment for office supplies", "amount": 10010, "tax_rate_id": "tax_123456789", "tax_amount": 10010}]}
+      responses:
+        "200":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  accounting_get_company_journal:
+    speakeasy-default-accounting-get-company-journal:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query:
+          fields: "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "company_id": "comp_123456789", "reference": "JRN-2024-001", "memo": "Monthly closing entries", "transaction_date": "2024-03-20T10:00:00Z", "status": {"value": "draft", "source_value": "draft"}, "lines": [{"id": "line_1", "account_id": "acc_123", "description": "Payment for office supplies", "amount": 10010, "tax_amount": 2002}], "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z", "posted_at": "2024-03-20T10:00:00Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
+releaseNotes: "## SDK Changes Detected:\n* `StackOneHq.client.Ats.CustomFieldDefinitions.ListCandidates()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Jobs.Get()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Crm.CustomFieldDefinitions.Contacts.Get()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Crm.CustomFieldDefinitions.Contacts.List()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.CustomFieldDefinitions.GetJob()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Candidates.CustomFieldDefinitions.Get()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.GetCustomFieldDefinition()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.ListCustomFieldDefinitions()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.Create()`:  `request.atsCreateApplicationRequestDto` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.UpdateBackgroundCheckResult()`: \n  *  `request.atsUpdateBackgroundCheckResultRequestDto.Id` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.AssessmentsUpdateResult()`: \n  *  `request.atsUpdateCandidatesAssessmentsResultsRequestDto.Id` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.ListJobCustomFieldDefinitions()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.DocumentsUpload()`:  `request` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetTask()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Jobs.List()`:  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.ListCustomFieldDefinitions()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeTask()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeCustomFieldDefinition()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Proxy.Perform()`:  `response` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Accounting.BatchCreateCompanyJournals()`: **Added**\n* `StackOneHq.client.Messaging.GetUser()`: **Added**\n* `StackOneHq.client.Accounting.ListCompanyJournals()`: **Added**\n* `StackOneHq.client.Accounting.CreateCompanyJournal()`: **Added**\n* `StackOneHq.client.Accounting.GetCompanyJournal()`: **Added**\n* `StackOneHq.client.Ats.Assessments.GetResults()`: **Deleted** **Breaking** :warning:\n* `StackOneHq.client.Ats.BackgroundChecks.GetResults()`: **Deleted** **Breaking** :warning:\n* `StackOneHq.client.Accounts.List()`: \n  *  `request.OriginOwnerIds` **Added**\n* `StackOneHq.client.Accounting.ListCompanyTaxRates()`: **Added**\n* `StackOneHq.client.Accounting.GetCompanyAccount()`: **Added**\n* `StackOneHq.client.Hris.GetEmployee()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Accounting.ListCompanyAccounts()`: **Added**\n* `StackOneHq.client.Ats.ListApplications()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Accounting.GetCompany()`: **Added**\n* `StackOneHq.client.Hris.Employees.List()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Hris.Employees.Create()`: \n  *  `request.hrisCreateEmployeeRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Hris.Employees.Update()`: \n  *  `request.hrisUpdateEmployeeRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Hris.Employees.Documents.Download()`:  `response.status[200]` **Changed**\n* `StackOneHq.client.Accounting.ListCompanies()`: **Added**\n* `StackOneHq.client.Ats.ListJobApplicationStages()`: **Added**\n* `StackOneHq.client.Messaging.SendMessage()`: **Added**\n* `StackOneHq.client.Ats.ListJobs()`:  `response.data.[]` **Changed**\n* `StackOneHq.client.Messaging.GetMessage()`: **Added**\n* `StackOneHq.client.Ats.ListCandidates()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.UpdateCandidate()`: \n  *  `request.atsUpdateCandidateRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Messaging.ListConversationMessages()`: **Added**\n* `StackOneHq.client.Ats.Get()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.CreateJob()`: \n  *  `request.atsCreateJobRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.UpdateJob()`: \n  *  `request.atsUpdateJobRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Accounting.GetCompanyTaxRate()`: **Added**\n* `StackOneHq.client.Messaging.ListUsers()`: **Added**\n* `StackOneHq.client.Messaging.GetAttachment()`: **Added**\n* `StackOneHq.client.Ats.Applications.Update()`: \n  *  `request.atsUpdateApplicationRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.Applications.DownloadDocument()`:  `response.status[200]` **Changed**\n* `StackOneHq.client.Messaging.ListAttachments()`: **Added**\n* `StackOneHq.client.Messaging.DownloadMessagingAttachment()`: **Added**\n* `StackOneHq.client.Ats.Candidates.Create()`: \n  *  `request.atsCreateCandidateRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.Candidates.Get()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Messaging.GetConversation()`: **Added**\n* `StackOneHq.client.Hris.Employees.Tasks.Complete()`: **Added**\n* `StackOneHq.client.Messaging.CreateConversation()`: **Added**\n* `StackOneHq.client.Ats.Jobs.Get()`:  `response.data` **Changed**\n* `StackOneHq.client.Crm.GetContact()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Crm.UpdateContact()`: \n  *  `request.crmCreateContactRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n  *  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Crm.Contacts.List()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Crm.Contacts.Create()`: \n  *  `request.crmCreateContactRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n  *  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Messaging.ListConversations()`: **Added**\n* `StackOneHq.client.Ats.GetJobApplicationStage()`: **Added**\n* `StackOneHq.client.Courses.List()`: \n  *  `request.Filter` **Changed**\n  *  `response.total` **Added**\n* `StackOneHq.client.Lms.ListUserAssignments()`:  `response.data.[]` **Changed**\n* `StackOneHq.client.Lms.ListContent()`: \n  *  `request.Filter` **Changed**\n  *  `response.total` **Added**\n* `StackOneHq.client.Lms.GetUserCompletion()`:  `response.data.CertificateUrl` **Added**\n* `StackOneHq.client.Lms.Assignments.List()`:  `response.data.[]` **Changed**\n* `StackOneHq.client.Lms.Assignments.Get()`:  `response.data` **Changed**\n* `StackOneHq.client.Lms.UsersAssignments.Get()`:  `response.data` **Changed**\n* `StackOneHq.client.Lms.Users.ListCompletions()`:  `response.data.[].CertificateUrl` **Added**\n* `StackOneHq.client.Lms.Completions.List()`:  `response.data.[].CertificateUrl` **Added**\n* `StackOneHq.client.Lms.Completions.Get()`:  `response.data.CertificateUrl` **Added**\n"

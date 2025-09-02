@@ -22,7 +22,9 @@
 * [GetDepartments](#getdepartments) - List Departments
 * [ListJobs](#listjobs) - List Jobs
 * [CreateJob](#createjob) - Create Job
+* [ListJobApplicationStages](#listjobapplicationstages) - List Job Application Stages
 * [UpdateJob](#updatejob) - Update Job
+* [GetJobApplicationStage](#getjobapplicationstage) - Get Job Application Stage
 * [GetUser](#getuser) - Get User
 * [ListJobPostings](#listjobpostings) - List Job Postings
 * [OrderAssessments](#orderassessments) - Order Assessments Request
@@ -508,22 +510,19 @@ var sdk = new StackOneHQClient(security: new Security() {
 var res = await sdk.Ats.DocumentsUploadAsync(
     xAccountId: "<id>",
     id: "<id>",
-    unifiedUploadRequestDto: new UnifiedUploadRequestDto() {
+    atsDocumentsUploadRequestDto: new AtsDocumentsUploadRequestDto() {
         Name = "weather-forecast",
         FileFormat = null,
         Content = "VGhpcyBpc24ndCByZWFsbHkgYSBzYW1wbGUgZmlsZSwgYnV0IG5vIG9uZSB3aWxsIGV2ZXIga25vdyE",
         CategoryId = "6530",
         Path = "/path/to/file",
-        Category = new UnifiedUploadRequestDtoCategory() {
-            Value = "reports, resumes",
-            SourceValue = "550e8400-e29b-41d4-a716-446655440000, CUSTOM_CATEGORY_NAME",
-        },
-        Confidential = new UnifiedUploadRequestDtoConfidential() {
-            Value = UnifiedUploadRequestDtoConfidentialValue.True,
-            SourceValue = UnifiedUploadRequestDtoConfidentialSourceValueUnion.CreateStr(
+        Confidential = new AtsDocumentsUploadRequestDtoConfidential() {
+            Value = AtsDocumentsUploadRequestDtoConfidentialValue.True,
+            SourceValue = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion.CreateStr(
                 "public"
             ),
         },
+        Category = new AtsDocumentsUploadRequestDtoCategory() {},
     }
 );
 
@@ -532,11 +531,11 @@ var res = await sdk.Ats.DocumentsUploadAsync(
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `XAccountId`                                                                  | *string*                                                                      | :heavy_check_mark:                                                            | The account identifier                                                        |
-| `Id`                                                                          | *string*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
-| `UnifiedUploadRequestDto`                                                     | [UnifiedUploadRequestDto](../../Models/Components/UnifiedUploadRequestDto.md) | :heavy_check_mark:                                                            | N/A                                                                           |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                            | *string*                                                                                | :heavy_check_mark:                                                                      | The account identifier                                                                  |
+| `Id`                                                                                    | *string*                                                                                | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `AtsDocumentsUploadRequestDto`                                                          | [AtsDocumentsUploadRequestDto](../../Models/Components/AtsDocumentsUploadRequestDto.md) | :heavy_check_mark:                                                                      | N/A                                                                                     |
 
 ### Response
 
@@ -1146,8 +1145,8 @@ var res = await sdk.Ats.CreateJobAsync(
             "678571",
             "688572",
         },
-        HiringTeam = new List<JobHiringTeam>() {
-            new JobHiringTeam() {
+        HiringTeam = new List<AtsJobHiringTeam>() {
+            new AtsJobHiringTeam() {
                 UserId = "123456",
                 RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
                 FirstName = "John",
@@ -1218,6 +1217,71 @@ var res = await sdk.Ats.CreateJobAsync(
 | StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
 | StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
+## ListJobApplicationStages
+
+List Job Application Stages
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="ats_list_job_application_stages" method="get" path="/unified/ats/jobs/{id}/application_stages" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+using System;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+AtsListJobApplicationStagesRequest req = new AtsListJobApplicationStagesRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    Fields = "id,remote_id,name,order,created_at,updated_at",
+    Filter = new AtsListJobApplicationStagesFilter() {
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+    },
+};
+
+AtsListJobApplicationStagesResponse? res = await sdk.Ats.ListJobApplicationStagesAsync(req);
+
+while(res != null)
+{
+    // handle items
+
+    res = await res.Next!();
+}
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [AtsListJobApplicationStagesRequest](../../Models/Requests/AtsListJobApplicationStagesRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[AtsListJobApplicationStagesResponse](../../Models/Requests/AtsListJobApplicationStagesResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
 ## UpdateJob
 
 Update Job
@@ -1262,8 +1326,8 @@ var res = await sdk.Ats.UpdateJobAsync(
             "678571",
             "688572",
         },
-        HiringTeam = new List<JobHiringTeam>() {
-            new JobHiringTeam() {
+        HiringTeam = new List<AtsJobHiringTeam>() {
+            new AtsJobHiringTeam() {
                 UserId = "123456",
                 RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
                 FirstName = "John",
@@ -1294,6 +1358,63 @@ var res = await sdk.Ats.UpdateJobAsync(
 ### Response
 
 **[AtsUpdateJobResponse](../../Models/Requests/AtsUpdateJobResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## GetJobApplicationStage
+
+Get Job Application Stage
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="ats_get_job_application_stage" method="get" path="/unified/ats/jobs/{id}/application_stages/{subResourceId}" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+AtsGetJobApplicationStageRequest req = new AtsGetJobApplicationStageRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    SubResourceId = "<id>",
+    Fields = "id,remote_id,name,order,created_at,updated_at",
+};
+
+var res = await sdk.Ats.GetJobApplicationStageAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [AtsGetJobApplicationStageRequest](../../Models/Requests/AtsGetJobApplicationStageRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+
+### Response
+
+**[AtsGetJobApplicationStageResponse](../../Models/Requests/AtsGetJobApplicationStageResponse.md)**
 
 ### Errors
 
@@ -1479,8 +1600,8 @@ var res = await sdk.Ats.OrderAssessmentsAsync(
             Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             Title = "Software Engineer",
-            HiringTeam = new List<JobHiringTeam>() {
-                new JobHiringTeam() {
+            HiringTeam = new List<AtsJobHiringTeam>() {
+                new AtsJobHiringTeam() {
                     UserId = "123456",
                     RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
                     FirstName = "John",
@@ -1578,7 +1699,6 @@ var res = await sdk.Ats.AssessmentsUpdateResultAsync(
     xAccountId: "<id>",
     id: "<id>",
     atsUpdateCandidatesAssessmentsResultsRequestDto: new AtsUpdateCandidatesAssessmentsResultsRequestDto() {
-        Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
         Score = null,
         StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
         SubmissionDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
@@ -1848,7 +1968,6 @@ var res = await sdk.Ats.UpdateBackgroundCheckResultAsync(
     xAccountId: "<id>",
     id: "<id>",
     atsUpdateBackgroundCheckResultRequestDto: new AtsUpdateBackgroundCheckResultRequestDto() {
-        Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
         Score = new AtsUpdateBackgroundCheckResultRequestDtoScore() {
             Label = "Percentage",
             Value = "80",

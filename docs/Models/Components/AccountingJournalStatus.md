@@ -1,0 +1,11 @@
+# AccountingJournalStatus
+
+Status of the journal
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       | Example                                                                                           |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                           | [AccountingJournalValue](../../Models/Components/AccountingJournalValue.md)                       | :heavy_minus_sign:                                                                                | The journal status                                                                                | draft                                                                                             |
+| `SourceValue`                                                                                     | [AccountingJournalSourceValueUnion](../../Models/Components/AccountingJournalSourceValueUnion.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               | draft                                                                                             |

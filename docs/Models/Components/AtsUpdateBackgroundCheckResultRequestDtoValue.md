@@ -7,6 +7,8 @@ The result of the test.
 
 | Name            | Value           |
 | --------------- | --------------- |
+| `Initiated`     | initiated       |
+| `InProgress`    | in_progress     |
 | `Cancelled`     | cancelled       |
 | `Completed`     | completed       |
 | `Expired`       | expired         |

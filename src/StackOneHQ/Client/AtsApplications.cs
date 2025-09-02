@@ -93,8 +93,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.8";
-        private const string _sdkGenVersion = "2.672.0";
+        private const string _sdkVersion = "0.3.0";
+        private const string _sdkGenVersion = "2.687.13";
         private const string _openapiDocVersion = "1.0.0";
         public IApplicationsDocuments Documents { get; private set; }
 
@@ -3007,7 +3007,7 @@ namespace StackOneHQ.Client
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {
-                if(Utilities.IsContentTypeMatch("application/octet-stream", contentType))
+                if(Utilities.IsContentTypeMatch("application/gzip", contentType))
                 {
                     var response = new AtsDownloadApplicationDocumentResponse()
                     {
@@ -3017,7 +3017,489 @@ namespace StackOneHQ.Client
                             Request = httpRequest
                         }
                     };
-                    response.Bytes = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/msword", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/octet-stream", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/pdf", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/rtf", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.ms-excel", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.ms-outlook", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.ms-powerpoint", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.oasis.opendocument.presentation", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.oasis.opendocument.spreadsheet", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.oasis.opendocument.text", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.openxmlformats-officedocument.presentationml.presentation", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/vnd.openxmlformats-officedocument.wordprocessingml.document", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/x-7z-compressed", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/x-rar-compressed", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/zip", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("audio/mp4", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("audio/mpeg", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("audio/wav", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("image/bmp", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("image/gif", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("image/heic", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("image/jpeg", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("image/png", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("image/tiff", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("image/webp", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("message/rfc822", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/html", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/rtf", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("video/avi", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("video/mp4", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("video/quicktime", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("video/webm", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.DownloadApiModel = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<DownloadApiModel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new AtsDownloadApplicationDocumentResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.DownloadApiModel1 = obj;
                     return response;
                 }
 

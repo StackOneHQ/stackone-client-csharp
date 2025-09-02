@@ -1,0 +1,11 @@
+# JournalLineCurrencyCode
+
+Currency code for this line
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                       | [JournalLineCurrencyCodeValue](../../Models/Components/JournalLineCurrencyCodeValue.md)                       | :heavy_minus_sign:                                                                                            | Default currency for the company                                                                              | USD                                                                                                           |
+| `SourceValue`                                                                                                 | [JournalLineCurrencyCodeSourceValueUnion](../../Models/Components/JournalLineCurrencyCodeSourceValueUnion.md) | :heavy_minus_sign:                                                                                            | N/A                                                                                                           | USD                                                                                                           |

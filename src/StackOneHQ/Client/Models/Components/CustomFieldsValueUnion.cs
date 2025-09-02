@@ -34,6 +34,8 @@ namespace StackOneHQ.Client.Models.Components
         
         public static CustomFieldsValueUnionType ArrayOfAny { get { return new CustomFieldsValueUnionType("arrayOfAny"); } }
         
+        public static CustomFieldsValueUnionType DateTime { get { return new CustomFieldsValueUnionType("date-time"); } }
+        
         public static CustomFieldsValueUnionType Null { get { return new CustomFieldsValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -45,6 +47,7 @@ namespace StackOneHQ.Client.Models.Components
                 case "boolean": return Boolean;
                 case "CustomFields_value": return CustomFieldsValue;
                 case "arrayOfAny": return ArrayOfAny;
+                case "date-time": return DateTime;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CustomFieldsValueUnionType");
             }
@@ -89,6 +92,9 @@ namespace StackOneHQ.Client.Models.Components
         [SpeakeasyMetadata("form:explode=true")]
         public List<object>? ArrayOfAny { get; set; }
 
+        [SpeakeasyMetadata("form:explode=true")]
+        public DateTime? DateTime { get; set; }
+
         public CustomFieldsValueUnionType Type { get; set; }
 
 
@@ -129,6 +135,14 @@ namespace StackOneHQ.Client.Models.Components
 
             CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
             res.ArrayOfAny = arrayOfAny;
+            return res;
+        }
+
+        public static CustomFieldsValueUnion CreateDateTime(DateTime dateTime) {
+            CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.DateTime;
+
+            CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
+            res.DateTime = dateTime;
             return res;
         }
 
@@ -227,6 +241,26 @@ namespace StackOneHQ.Client.Models.Components
                     throw;
                 }
 
+                try
+                {
+                    return new CustomFieldsValueUnion(CustomFieldsValueUnionType.DateTime)
+                    {
+                        DateTime = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<DateTime>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(DateTime), new CustomFieldsValueUnion(CustomFieldsValueUnionType.DateTime), "DateTime"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
                 if (fallbackCandidates.Count > 0)
                 {
                     fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
@@ -285,6 +319,11 @@ namespace StackOneHQ.Client.Models.Components
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
+                    return;
+                }
+                if (res.DateTime != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.DateTime));
                     return;
                 }
 

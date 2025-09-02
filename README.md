@@ -12,7 +12,7 @@ Developer-friendly & type-safe Csharp SDK specifically catered to leverage *Stac
 <!-- Start Summary [summary] -->
 ## Summary
 
-Documents: The documentation for the StackOne Unified API - DOCUMENTS
+Accounting: The documentation for the StackOne Unified API - ACCOUNTING
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
@@ -69,7 +69,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills",
+    Fields = "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills",
     Filter = new HrisListEmployeesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -142,6 +142,19 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 <details open>
 <summary>Available methods</summary>
 
+### [Accounting](docs/sdks/accounting/README.md)
+
+* [ListCompanies](docs/sdks/accounting/README.md#listcompanies) - List Companies
+* [GetCompany](docs/sdks/accounting/README.md#getcompany) - Get Company
+* [ListCompanyAccounts](docs/sdks/accounting/README.md#listcompanyaccounts) - List Accounts
+* [GetCompanyAccount](docs/sdks/accounting/README.md#getcompanyaccount) - Get Account
+* [ListCompanyTaxRates](docs/sdks/accounting/README.md#listcompanytaxrates) - List Tax Rates
+* [GetCompanyTaxRate](docs/sdks/accounting/README.md#getcompanytaxrate) - Get Tax Rate
+* [BatchCreateCompanyJournals](docs/sdks/accounting/README.md#batchcreatecompanyjournals) - Batch Create Journals
+* [ListCompanyJournals](docs/sdks/accounting/README.md#listcompanyjournals) - List Journals
+* [CreateCompanyJournal](docs/sdks/accounting/README.md#createcompanyjournal) - Create Journal
+* [GetCompanyJournal](docs/sdks/accounting/README.md#getcompanyjournal) - Get Journal
+
 ### [Accounts](docs/sdks/accounts/README.md)
 
 * [List](docs/sdks/accounts/README.md#list) - List Accounts
@@ -173,7 +186,9 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 * [GetDepartments](docs/sdks/ats/README.md#getdepartments) - List Departments
 * [ListJobs](docs/sdks/ats/README.md#listjobs) - List Jobs
 * [CreateJob](docs/sdks/ats/README.md#createjob) - Create Job
+* [ListJobApplicationStages](docs/sdks/ats/README.md#listjobapplicationstages) - List Job Application Stages
 * [UpdateJob](docs/sdks/ats/README.md#updatejob) - Update Job
+* [GetJobApplicationStage](docs/sdks/ats/README.md#getjobapplicationstage) - Get Job Application Stage
 * [GetUser](docs/sdks/ats/README.md#getuser) - Get User
 * [ListJobPostings](docs/sdks/ats/README.md#listjobpostings) - List Job Postings
 * [OrderAssessments](docs/sdks/ats/README.md#orderassessments) - Order Assessments Request
@@ -204,7 +219,6 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 #### [Ats.Assessments](docs/sdks/assessments/README.md)
 
 * [PackagesList](docs/sdks/assessments/README.md#packageslist) - List Assessments Packages
-* [GetResults](docs/sdks/assessments/README.md#getresults) - Get Assessments Results
 
 #### [Ats.Assessments.Packages](docs/sdks/assessmentspackages/README.md)
 
@@ -214,7 +228,6 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 
 * [PackagesList](docs/sdks/atsbackgroundchecks/README.md#packageslist) - List Background Check Packages
 * [CreatePackage](docs/sdks/atsbackgroundchecks/README.md#createpackage) - Create Background Check Package
-* [GetResults](docs/sdks/atsbackgroundchecks/README.md#getresults) - Get Background Check Results
 
 #### [Ats.BackgroundChecks.Packages](docs/sdks/backgroundcheckspackages/README.md)
 
@@ -435,6 +448,7 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 #### [Hris.Employees.Tasks](docs/sdks/employeestasks/README.md)
 
 * [List](docs/sdks/employeestasks/README.md#list) - List Employee Tasks
+* [Complete](docs/sdks/employeestasks/README.md#complete) - Update Employee Task
 
 #### [Hris.Employees.WorkEligibility](docs/sdks/workeligibility/README.md)
 
@@ -605,6 +619,20 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 #### [Marketing.Templates.Sms](docs/sdks/sms/README.md)
 
 * [Get](docs/sdks/sms/README.md#get) - Get SMS Template
+
+### [Messaging](docs/sdks/messaging/README.md)
+
+* [ListConversations](docs/sdks/messaging/README.md#listconversations) - List Conversations
+* [CreateConversation](docs/sdks/messaging/README.md#createconversation) - Create Conversation
+* [GetConversation](docs/sdks/messaging/README.md#getconversation) - Get Conversation
+* [DownloadMessagingAttachment](docs/sdks/messaging/README.md#downloadmessagingattachment) - Download Attachment
+* [ListAttachments](docs/sdks/messaging/README.md#listattachments) - List Attachments
+* [GetAttachment](docs/sdks/messaging/README.md#getattachment) - Get Attachment
+* [ListUsers](docs/sdks/messaging/README.md#listusers) - List Users
+* [GetUser](docs/sdks/messaging/README.md#getuser) - Get User
+* [ListConversationMessages](docs/sdks/messaging/README.md#listconversationmessages) - List Conversation Messages
+* [GetMessage](docs/sdks/messaging/README.md#getmessage) - Get Message
+* [SendMessage](docs/sdks/messaging/README.md#sendmessage) - Send Message
 
 ### [Proxy](docs/sdks/proxy/README.md)
 

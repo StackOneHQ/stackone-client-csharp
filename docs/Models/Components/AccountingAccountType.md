@@ -1,0 +1,11 @@
+# AccountingAccountType
+
+Type of account
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       | Example                                                                                           |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                           | [AccountingAccountValue](../../Models/Components/AccountingAccountValue.md)                       | :heavy_minus_sign:                                                                                | Type of account                                                                                   | asset                                                                                             |
+| `SourceValue`                                                                                     | [AccountingAccountSourceValueUnion](../../Models/Components/AccountingAccountSourceValueUnion.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               | asset                                                                                             |

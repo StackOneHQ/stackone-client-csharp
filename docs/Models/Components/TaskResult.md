@@ -5,5 +5,5 @@
 
 | Field                                                       | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `Data`                                                      | List<[Task](../../Models/Components/Task.md)>               | :heavy_minus_sign:                                          | N/A                                                         |
+| `Data`                                                      | [TaskResultData](../../Models/Components/TaskResultData.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Raw`                                                       | List<[RawResponse](../../Models/Components/RawResponse.md)> | :heavy_minus_sign:                                          | N/A                                                         |

@@ -1,0 +1,11 @@
+# AccountingCompanyBaseCurrency
+
+Default currency for the company
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       | Example                                                                                           |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                           | [AccountingCompanyValue](../../Models/Components/AccountingCompanyValue.md)                       | :heavy_minus_sign:                                                                                | Default currency for the company                                                                  | USD                                                                                               |
+| `SourceValue`                                                                                     | [AccountingCompanySourceValueUnion](../../Models/Components/AccountingCompanySourceValueUnion.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               | USD                                                                                               |

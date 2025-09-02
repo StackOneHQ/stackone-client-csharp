@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
+    using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     
     public class CustomFieldOption
@@ -25,6 +26,6 @@ namespace StackOneHQ.Client.Models.Components
         /// The human readable value of the option
         /// </summary>
         [JsonProperty("value")]
-        public string Value { get; set; } = default!;
+        public CustomFieldOptionValueUnion Value { get; set; } = default!;
     }
 }
