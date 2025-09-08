@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class SkillsHierarchySourceValueUnionType
     {
         private SkillsHierarchySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static SkillsHierarchySourceValueUnionType Str { get { return new SkillsHierarchySourceValueUnionType("str"); } }
-        
+
         public static SkillsHierarchySourceValueUnionType Number { get { return new SkillsHierarchySourceValueUnionType("number"); } }
-        
+
         public static SkillsHierarchySourceValueUnionType Boolean { get { return new SkillsHierarchySourceValueUnionType("boolean"); } }
-        
+
         public static SkillsHierarchySourceValueUnionType SkillsSourceValueHierarchy { get { return new SkillsHierarchySourceValueUnionType("Skills_source_value_hierarchy"); } }
-        
+
         public static SkillsHierarchySourceValueUnionType ArrayOfAny { get { return new SkillsHierarchySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static SkillsHierarchySourceValueUnionType Null { get { return new SkillsHierarchySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(SkillsHierarchySourceValueUnion.SkillsHierarchySourceValueUnionConverter))]
-    public class SkillsHierarchySourceValueUnion {
-        public SkillsHierarchySourceValueUnion(SkillsHierarchySourceValueUnionType type) {
+    public class SkillsHierarchySourceValueUnion
+    {
+        public SkillsHierarchySourceValueUnion(SkillsHierarchySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public SkillsHierarchySourceValueUnionType Type { get; set; }
-
-
-        public static SkillsHierarchySourceValueUnion CreateStr(string str) {
+        public static SkillsHierarchySourceValueUnion CreateStr(string str)
+        {
             SkillsHierarchySourceValueUnionType typ = SkillsHierarchySourceValueUnionType.Str;
 
             SkillsHierarchySourceValueUnion res = new SkillsHierarchySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static SkillsHierarchySourceValueUnion CreateNumber(double number) {
+        public static SkillsHierarchySourceValueUnion CreateNumber(double number)
+        {
             SkillsHierarchySourceValueUnionType typ = SkillsHierarchySourceValueUnionType.Number;
 
             SkillsHierarchySourceValueUnion res = new SkillsHierarchySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static SkillsHierarchySourceValueUnion CreateBoolean(bool boolean) {
+        public static SkillsHierarchySourceValueUnion CreateBoolean(bool boolean)
+        {
             SkillsHierarchySourceValueUnionType typ = SkillsHierarchySourceValueUnionType.Boolean;
 
             SkillsHierarchySourceValueUnion res = new SkillsHierarchySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static SkillsHierarchySourceValueUnion CreateSkillsSourceValueHierarchy(SkillsSourceValueHierarchy skillsSourceValueHierarchy) {
+        public static SkillsHierarchySourceValueUnion CreateSkillsSourceValueHierarchy(SkillsSourceValueHierarchy skillsSourceValueHierarchy)
+        {
             SkillsHierarchySourceValueUnionType typ = SkillsHierarchySourceValueUnionType.SkillsSourceValueHierarchy;
 
             SkillsHierarchySourceValueUnion res = new SkillsHierarchySourceValueUnion(typ);
             res.SkillsSourceValueHierarchy = skillsSourceValueHierarchy;
             return res;
         }
-
-        public static SkillsHierarchySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static SkillsHierarchySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             SkillsHierarchySourceValueUnionType typ = SkillsHierarchySourceValueUnionType.ArrayOfAny;
 
             SkillsHierarchySourceValueUnion res = new SkillsHierarchySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static SkillsHierarchySourceValueUnion CreateNull() {
+        public static SkillsHierarchySourceValueUnion CreateNull()
+        {
             SkillsHierarchySourceValueUnionType typ = SkillsHierarchySourceValueUnionType.Null;
             return new SkillsHierarchySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 SkillsHierarchySourceValueUnion res = (SkillsHierarchySourceValueUnion)value;
                 if (SkillsHierarchySourceValueUnionType.FromString(res.Type).Equals(SkillsHierarchySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SkillsSourceValueHierarchy != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SkillsSourceValueHierarchy));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,25 +17,25 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CustomFieldsValueUnionType
     {
         private CustomFieldsValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CustomFieldsValueUnionType Str { get { return new CustomFieldsValueUnionType("str"); } }
-        
+
         public static CustomFieldsValueUnionType Number { get { return new CustomFieldsValueUnionType("number"); } }
-        
+
         public static CustomFieldsValueUnionType Boolean { get { return new CustomFieldsValueUnionType("boolean"); } }
-        
+
         public static CustomFieldsValueUnionType CustomFieldsValue { get { return new CustomFieldsValueUnionType("CustomFields_value"); } }
-        
+
         public static CustomFieldsValueUnionType ArrayOfAny { get { return new CustomFieldsValueUnionType("arrayOfAny"); } }
-        
+
         public static CustomFieldsValueUnionType DateTime { get { return new CustomFieldsValueUnionType("date-time"); } }
-        
+
         public static CustomFieldsValueUnionType Null { get { return new CustomFieldsValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -72,8 +72,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The value associated with the custom field.
     /// </summary>
     [JsonConverter(typeof(CustomFieldsValueUnion.CustomFieldsValueUnionConverter))]
-    public class CustomFieldsValueUnion {
-        public CustomFieldsValueUnion(CustomFieldsValueUnionType type) {
+    public class CustomFieldsValueUnion
+    {
+        public CustomFieldsValueUnion(CustomFieldsValueUnionType type)
+        {
             Type = type;
         }
 
@@ -96,49 +98,48 @@ namespace StackOneHQ.Client.Models.Components
         public DateTime? DateTime { get; set; }
 
         public CustomFieldsValueUnionType Type { get; set; }
-
-
-        public static CustomFieldsValueUnion CreateStr(string str) {
+        public static CustomFieldsValueUnion CreateStr(string str)
+        {
             CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.Str;
 
             CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CustomFieldsValueUnion CreateNumber(double number) {
+        public static CustomFieldsValueUnion CreateNumber(double number)
+        {
             CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.Number;
 
             CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CustomFieldsValueUnion CreateBoolean(bool boolean) {
+        public static CustomFieldsValueUnion CreateBoolean(bool boolean)
+        {
             CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.Boolean;
 
             CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CustomFieldsValueUnion CreateCustomFieldsValue(CustomFieldsValue customFieldsValue) {
+        public static CustomFieldsValueUnion CreateCustomFieldsValue(CustomFieldsValue customFieldsValue)
+        {
             CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.CustomFieldsValue;
 
             CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
             res.CustomFieldsValue = customFieldsValue;
             return res;
         }
-
-        public static CustomFieldsValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CustomFieldsValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.ArrayOfAny;
 
             CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
             res.ArrayOfAny = arrayOfAny;
             return res;
         }
-
-        public static CustomFieldsValueUnion CreateDateTime(DateTime dateTime) {
+        public static CustomFieldsValueUnion CreateDateTime(DateTime dateTime)
+        {
             CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.DateTime;
 
             CustomFieldsValueUnion res = new CustomFieldsValueUnion(typ);
@@ -146,7 +147,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CustomFieldsValueUnion CreateNull() {
+        public static CustomFieldsValueUnion CreateNull()
+        {
             CustomFieldsValueUnionType typ = CustomFieldsValueUnionType.Null;
             return new CustomFieldsValueUnion(typ);
         }
@@ -290,43 +292,49 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CustomFieldsValueUnion res = (CustomFieldsValueUnion)value;
                 if (CustomFieldsValueUnionType.FromString(res.Type).Equals(CustomFieldsValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CustomFieldsValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CustomFieldsValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
+
                 if (res.DateTime != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.DateTime));
                     return;
                 }
-
             }
 
         }

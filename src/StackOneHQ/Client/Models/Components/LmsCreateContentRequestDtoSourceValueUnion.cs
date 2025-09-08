@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LmsCreateContentRequestDtoSourceValueUnionType
     {
         private LmsCreateContentRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LmsCreateContentRequestDtoSourceValueUnionType Str { get { return new LmsCreateContentRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static LmsCreateContentRequestDtoSourceValueUnionType Number { get { return new LmsCreateContentRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static LmsCreateContentRequestDtoSourceValueUnionType Boolean { get { return new LmsCreateContentRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static LmsCreateContentRequestDtoSourceValueUnionType LmsCreateContentRequestDtoSourceValue { get { return new LmsCreateContentRequestDtoSourceValueUnionType("LmsCreateContentRequestDto_source_value"); } }
-        
+
         public static LmsCreateContentRequestDtoSourceValueUnionType ArrayOfAny { get { return new LmsCreateContentRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static LmsCreateContentRequestDtoSourceValueUnionType Null { get { return new LmsCreateContentRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(LmsCreateContentRequestDtoSourceValueUnion.LmsCreateContentRequestDtoSourceValueUnionConverter))]
-    public class LmsCreateContentRequestDtoSourceValueUnion {
-        public LmsCreateContentRequestDtoSourceValueUnion(LmsCreateContentRequestDtoSourceValueUnionType type) {
+    public class LmsCreateContentRequestDtoSourceValueUnion
+    {
+        public LmsCreateContentRequestDtoSourceValueUnion(LmsCreateContentRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public LmsCreateContentRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static LmsCreateContentRequestDtoSourceValueUnion CreateStr(string str) {
+        public static LmsCreateContentRequestDtoSourceValueUnion CreateStr(string str)
+        {
             LmsCreateContentRequestDtoSourceValueUnionType typ = LmsCreateContentRequestDtoSourceValueUnionType.Str;
 
             LmsCreateContentRequestDtoSourceValueUnion res = new LmsCreateContentRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static LmsCreateContentRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static LmsCreateContentRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             LmsCreateContentRequestDtoSourceValueUnionType typ = LmsCreateContentRequestDtoSourceValueUnionType.Number;
 
             LmsCreateContentRequestDtoSourceValueUnion res = new LmsCreateContentRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static LmsCreateContentRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static LmsCreateContentRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             LmsCreateContentRequestDtoSourceValueUnionType typ = LmsCreateContentRequestDtoSourceValueUnionType.Boolean;
 
             LmsCreateContentRequestDtoSourceValueUnion res = new LmsCreateContentRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LmsCreateContentRequestDtoSourceValueUnion CreateLmsCreateContentRequestDtoSourceValue(LmsCreateContentRequestDtoSourceValue lmsCreateContentRequestDtoSourceValue) {
+        public static LmsCreateContentRequestDtoSourceValueUnion CreateLmsCreateContentRequestDtoSourceValue(LmsCreateContentRequestDtoSourceValue lmsCreateContentRequestDtoSourceValue)
+        {
             LmsCreateContentRequestDtoSourceValueUnionType typ = LmsCreateContentRequestDtoSourceValueUnionType.LmsCreateContentRequestDtoSourceValue;
 
             LmsCreateContentRequestDtoSourceValueUnion res = new LmsCreateContentRequestDtoSourceValueUnion(typ);
             res.LmsCreateContentRequestDtoSourceValue = lmsCreateContentRequestDtoSourceValue;
             return res;
         }
-
-        public static LmsCreateContentRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static LmsCreateContentRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             LmsCreateContentRequestDtoSourceValueUnionType typ = LmsCreateContentRequestDtoSourceValueUnionType.ArrayOfAny;
 
             LmsCreateContentRequestDtoSourceValueUnion res = new LmsCreateContentRequestDtoSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static LmsCreateContentRequestDtoSourceValueUnion CreateNull() {
+        public static LmsCreateContentRequestDtoSourceValueUnion CreateNull()
+        {
             LmsCreateContentRequestDtoSourceValueUnionType typ = LmsCreateContentRequestDtoSourceValueUnionType.Null;
             return new LmsCreateContentRequestDtoSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LmsCreateContentRequestDtoSourceValueUnion res = (LmsCreateContentRequestDtoSourceValueUnion)value;
                 if (LmsCreateContentRequestDtoSourceValueUnionType.FromString(res.Type).Equals(LmsCreateContentRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.LmsCreateContentRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.LmsCreateContentRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

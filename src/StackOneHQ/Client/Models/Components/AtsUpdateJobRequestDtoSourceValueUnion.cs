@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsUpdateJobRequestDtoSourceValueUnionType
     {
         private AtsUpdateJobRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsUpdateJobRequestDtoSourceValueUnionType Str { get { return new AtsUpdateJobRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsUpdateJobRequestDtoSourceValueUnionType Number { get { return new AtsUpdateJobRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsUpdateJobRequestDtoSourceValueUnionType Boolean { get { return new AtsUpdateJobRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsUpdateJobRequestDtoSourceValueUnionType AtsUpdateJobRequestDtoSourceValue { get { return new AtsUpdateJobRequestDtoSourceValueUnionType("AtsUpdateJobRequestDto_source_value"); } }
-        
+
         public static AtsUpdateJobRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsUpdateJobRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsUpdateJobRequestDtoSourceValueUnionType Null { get { return new AtsUpdateJobRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the job status.
     /// </summary>
     [JsonConverter(typeof(AtsUpdateJobRequestDtoSourceValueUnion.AtsUpdateJobRequestDtoSourceValueUnionConverter))]
-    public class AtsUpdateJobRequestDtoSourceValueUnion {
-        public AtsUpdateJobRequestDtoSourceValueUnion(AtsUpdateJobRequestDtoSourceValueUnionType type) {
+    public class AtsUpdateJobRequestDtoSourceValueUnion
+    {
+        public AtsUpdateJobRequestDtoSourceValueUnion(AtsUpdateJobRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsUpdateJobRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsUpdateJobRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsUpdateJobRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsUpdateJobRequestDtoSourceValueUnionType typ = AtsUpdateJobRequestDtoSourceValueUnionType.Str;
 
             AtsUpdateJobRequestDtoSourceValueUnion res = new AtsUpdateJobRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsUpdateJobRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsUpdateJobRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsUpdateJobRequestDtoSourceValueUnionType typ = AtsUpdateJobRequestDtoSourceValueUnionType.Number;
 
             AtsUpdateJobRequestDtoSourceValueUnion res = new AtsUpdateJobRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsUpdateJobRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsUpdateJobRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsUpdateJobRequestDtoSourceValueUnionType typ = AtsUpdateJobRequestDtoSourceValueUnionType.Boolean;
 
             AtsUpdateJobRequestDtoSourceValueUnion res = new AtsUpdateJobRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsUpdateJobRequestDtoSourceValueUnion CreateAtsUpdateJobRequestDtoSourceValue(AtsUpdateJobRequestDtoSourceValue atsUpdateJobRequestDtoSourceValue) {
+        public static AtsUpdateJobRequestDtoSourceValueUnion CreateAtsUpdateJobRequestDtoSourceValue(AtsUpdateJobRequestDtoSourceValue atsUpdateJobRequestDtoSourceValue)
+        {
             AtsUpdateJobRequestDtoSourceValueUnionType typ = AtsUpdateJobRequestDtoSourceValueUnionType.AtsUpdateJobRequestDtoSourceValue;
 
             AtsUpdateJobRequestDtoSourceValueUnion res = new AtsUpdateJobRequestDtoSourceValueUnion(typ);
             res.AtsUpdateJobRequestDtoSourceValue = atsUpdateJobRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsUpdateJobRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsUpdateJobRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsUpdateJobRequestDtoSourceValueUnionType typ = AtsUpdateJobRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsUpdateJobRequestDtoSourceValueUnion res = new AtsUpdateJobRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsUpdateJobRequestDtoSourceValueUnion CreateNull() {
+        public static AtsUpdateJobRequestDtoSourceValueUnion CreateNull()
+        {
             AtsUpdateJobRequestDtoSourceValueUnionType typ = AtsUpdateJobRequestDtoSourceValueUnionType.Null;
             return new AtsUpdateJobRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsUpdateJobRequestDtoSourceValueUnion res = (AtsUpdateJobRequestDtoSourceValueUnion)value;
                 if (AtsUpdateJobRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsUpdateJobRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsUpdateJobRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsUpdateJobRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

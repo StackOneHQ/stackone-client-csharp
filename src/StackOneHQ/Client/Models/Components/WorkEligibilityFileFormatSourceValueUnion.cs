@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class WorkEligibilityFileFormatSourceValueUnionType
     {
         private WorkEligibilityFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static WorkEligibilityFileFormatSourceValueUnionType Str { get { return new WorkEligibilityFileFormatSourceValueUnionType("str"); } }
-        
+
         public static WorkEligibilityFileFormatSourceValueUnionType Number { get { return new WorkEligibilityFileFormatSourceValueUnionType("number"); } }
-        
+
         public static WorkEligibilityFileFormatSourceValueUnionType Boolean { get { return new WorkEligibilityFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static WorkEligibilityFileFormatSourceValueUnionType WorkEligibilitySourceValueFileFormat { get { return new WorkEligibilityFileFormatSourceValueUnionType("WorkEligibility_source_value_file_format"); } }
-        
+
         public static WorkEligibilityFileFormatSourceValueUnionType ArrayOfAny { get { return new WorkEligibilityFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static WorkEligibilityFileFormatSourceValueUnionType Null { get { return new WorkEligibilityFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(WorkEligibilityFileFormatSourceValueUnion.WorkEligibilityFileFormatSourceValueUnionConverter))]
-    public class WorkEligibilityFileFormatSourceValueUnion {
-        public WorkEligibilityFileFormatSourceValueUnion(WorkEligibilityFileFormatSourceValueUnionType type) {
+    public class WorkEligibilityFileFormatSourceValueUnion
+    {
+        public WorkEligibilityFileFormatSourceValueUnion(WorkEligibilityFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public WorkEligibilityFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static WorkEligibilityFileFormatSourceValueUnion CreateStr(string str) {
+        public static WorkEligibilityFileFormatSourceValueUnion CreateStr(string str)
+        {
             WorkEligibilityFileFormatSourceValueUnionType typ = WorkEligibilityFileFormatSourceValueUnionType.Str;
 
             WorkEligibilityFileFormatSourceValueUnion res = new WorkEligibilityFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static WorkEligibilityFileFormatSourceValueUnion CreateNumber(double number) {
+        public static WorkEligibilityFileFormatSourceValueUnion CreateNumber(double number)
+        {
             WorkEligibilityFileFormatSourceValueUnionType typ = WorkEligibilityFileFormatSourceValueUnionType.Number;
 
             WorkEligibilityFileFormatSourceValueUnion res = new WorkEligibilityFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static WorkEligibilityFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static WorkEligibilityFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             WorkEligibilityFileFormatSourceValueUnionType typ = WorkEligibilityFileFormatSourceValueUnionType.Boolean;
 
             WorkEligibilityFileFormatSourceValueUnion res = new WorkEligibilityFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static WorkEligibilityFileFormatSourceValueUnion CreateWorkEligibilitySourceValueFileFormat(WorkEligibilitySourceValueFileFormat workEligibilitySourceValueFileFormat) {
+        public static WorkEligibilityFileFormatSourceValueUnion CreateWorkEligibilitySourceValueFileFormat(WorkEligibilitySourceValueFileFormat workEligibilitySourceValueFileFormat)
+        {
             WorkEligibilityFileFormatSourceValueUnionType typ = WorkEligibilityFileFormatSourceValueUnionType.WorkEligibilitySourceValueFileFormat;
 
             WorkEligibilityFileFormatSourceValueUnion res = new WorkEligibilityFileFormatSourceValueUnion(typ);
             res.WorkEligibilitySourceValueFileFormat = workEligibilitySourceValueFileFormat;
             return res;
         }
-
-        public static WorkEligibilityFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static WorkEligibilityFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             WorkEligibilityFileFormatSourceValueUnionType typ = WorkEligibilityFileFormatSourceValueUnionType.ArrayOfAny;
 
             WorkEligibilityFileFormatSourceValueUnion res = new WorkEligibilityFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static WorkEligibilityFileFormatSourceValueUnion CreateNull() {
+        public static WorkEligibilityFileFormatSourceValueUnion CreateNull()
+        {
             WorkEligibilityFileFormatSourceValueUnionType typ = WorkEligibilityFileFormatSourceValueUnionType.Null;
             return new WorkEligibilityFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 WorkEligibilityFileFormatSourceValueUnion res = (WorkEligibilityFileFormatSourceValueUnion)value;
                 if (WorkEligibilityFileFormatSourceValueUnionType.FromString(res.Type).Equals(WorkEligibilityFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.WorkEligibilitySourceValueFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.WorkEligibilitySourceValueFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

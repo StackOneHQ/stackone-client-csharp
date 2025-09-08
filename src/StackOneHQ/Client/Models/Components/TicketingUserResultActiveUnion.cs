@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingUserResultActiveUnionType
     {
         private TicketingUserResultActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingUserResultActiveUnionType Boolean { get { return new TicketingUserResultActiveUnionType("boolean"); } }
-        
+
         public static TicketingUserResultActiveUnionType TicketingUserResultActiveEnum { get { return new TicketingUserResultActiveUnionType("TicketingUserResult_active_enum"); } }
-        
+
         public static TicketingUserResultActiveUnionType Null { get { return new TicketingUserResultActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// If the user is active
     /// </summary>
     [JsonConverter(typeof(TicketingUserResultActiveUnion.TicketingUserResultActiveUnionConverter))]
-    public class TicketingUserResultActiveUnion {
-        public TicketingUserResultActiveUnion(TicketingUserResultActiveUnionType type) {
+    public class TicketingUserResultActiveUnion
+    {
+        public TicketingUserResultActiveUnion(TicketingUserResultActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public TicketingUserResultActiveEnum? TicketingUserResultActiveEnum { get; set; }
 
         public TicketingUserResultActiveUnionType Type { get; set; }
-
-
-        public static TicketingUserResultActiveUnion CreateBoolean(bool boolean) {
+        public static TicketingUserResultActiveUnion CreateBoolean(bool boolean)
+        {
             TicketingUserResultActiveUnionType typ = TicketingUserResultActiveUnionType.Boolean;
 
             TicketingUserResultActiveUnion res = new TicketingUserResultActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingUserResultActiveUnion CreateTicketingUserResultActiveEnum(TicketingUserResultActiveEnum ticketingUserResultActiveEnum) {
+        public static TicketingUserResultActiveUnion CreateTicketingUserResultActiveEnum(TicketingUserResultActiveEnum ticketingUserResultActiveEnum)
+        {
             TicketingUserResultActiveUnionType typ = TicketingUserResultActiveUnionType.TicketingUserResultActiveEnum;
 
             TicketingUserResultActiveUnion res = new TicketingUserResultActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingUserResultActiveUnion CreateNull() {
+        public static TicketingUserResultActiveUnion CreateNull()
+        {
             TicketingUserResultActiveUnionType typ = TicketingUserResultActiveUnionType.Null;
             return new TicketingUserResultActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingUserResultActiveUnion res = (TicketingUserResultActiveUnion)value;
                 if (TicketingUserResultActiveUnionType.FromString(res.Type).Equals(TicketingUserResultActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingUserResultActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingUserResultActiveEnum));
                     return;
                 }
-
             }
 
         }

@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamUpdateUserRequestDtoIsBotUserUnionType
     {
         private IamUpdateUserRequestDtoIsBotUserUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamUpdateUserRequestDtoIsBotUserUnionType Boolean { get { return new IamUpdateUserRequestDtoIsBotUserUnionType("boolean"); } }
-        
+
         public static IamUpdateUserRequestDtoIsBotUserUnionType IamUpdateUserRequestDtoIsBotUserEnum { get { return new IamUpdateUserRequestDtoIsBotUserUnionType("IamUpdateUserRequestDto_is_bot_user_enum"); } }
-        
+
         public static IamUpdateUserRequestDtoIsBotUserUnionType Null { get { return new IamUpdateUserRequestDtoIsBotUserUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Indicates if the user is a bot or service user
     /// </summary>
     [JsonConverter(typeof(IamUpdateUserRequestDtoIsBotUserUnion.IamUpdateUserRequestDtoIsBotUserUnionConverter))]
-    public class IamUpdateUserRequestDtoIsBotUserUnion {
-        public IamUpdateUserRequestDtoIsBotUserUnion(IamUpdateUserRequestDtoIsBotUserUnionType type) {
+    public class IamUpdateUserRequestDtoIsBotUserUnion
+    {
+        public IamUpdateUserRequestDtoIsBotUserUnion(IamUpdateUserRequestDtoIsBotUserUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public IamUpdateUserRequestDtoIsBotUserEnum? IamUpdateUserRequestDtoIsBotUserEnum { get; set; }
 
         public IamUpdateUserRequestDtoIsBotUserUnionType Type { get; set; }
-
-
-        public static IamUpdateUserRequestDtoIsBotUserUnion CreateBoolean(bool boolean) {
+        public static IamUpdateUserRequestDtoIsBotUserUnion CreateBoolean(bool boolean)
+        {
             IamUpdateUserRequestDtoIsBotUserUnionType typ = IamUpdateUserRequestDtoIsBotUserUnionType.Boolean;
 
             IamUpdateUserRequestDtoIsBotUserUnion res = new IamUpdateUserRequestDtoIsBotUserUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamUpdateUserRequestDtoIsBotUserUnion CreateIamUpdateUserRequestDtoIsBotUserEnum(IamUpdateUserRequestDtoIsBotUserEnum iamUpdateUserRequestDtoIsBotUserEnum) {
+        public static IamUpdateUserRequestDtoIsBotUserUnion CreateIamUpdateUserRequestDtoIsBotUserEnum(IamUpdateUserRequestDtoIsBotUserEnum iamUpdateUserRequestDtoIsBotUserEnum)
+        {
             IamUpdateUserRequestDtoIsBotUserUnionType typ = IamUpdateUserRequestDtoIsBotUserUnionType.IamUpdateUserRequestDtoIsBotUserEnum;
 
             IamUpdateUserRequestDtoIsBotUserUnion res = new IamUpdateUserRequestDtoIsBotUserUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamUpdateUserRequestDtoIsBotUserUnion CreateNull() {
+        public static IamUpdateUserRequestDtoIsBotUserUnion CreateNull()
+        {
             IamUpdateUserRequestDtoIsBotUserUnionType typ = IamUpdateUserRequestDtoIsBotUserUnionType.Null;
             return new IamUpdateUserRequestDtoIsBotUserUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamUpdateUserRequestDtoIsBotUserUnion res = (IamUpdateUserRequestDtoIsBotUserUnion)value;
                 if (IamUpdateUserRequestDtoIsBotUserUnionType.FromString(res.Type).Equals(IamUpdateUserRequestDtoIsBotUserUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamUpdateUserRequestDtoIsBotUserEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamUpdateUserRequestDtoIsBotUserEnum));
                     return;
                 }
-
             }
 
         }

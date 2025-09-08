@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LanguageEnumSourceValueUnionType
     {
         private LanguageEnumSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LanguageEnumSourceValueUnionType Str { get { return new LanguageEnumSourceValueUnionType("str"); } }
-        
+
         public static LanguageEnumSourceValueUnionType Number { get { return new LanguageEnumSourceValueUnionType("number"); } }
-        
+
         public static LanguageEnumSourceValueUnionType Boolean { get { return new LanguageEnumSourceValueUnionType("boolean"); } }
-        
+
         public static LanguageEnumSourceValueUnionType LanguageEnumSourceValue { get { return new LanguageEnumSourceValueUnionType("LanguageEnum_source_value"); } }
-        
+
         public static LanguageEnumSourceValueUnionType ArrayOfAny { get { return new LanguageEnumSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static LanguageEnumSourceValueUnionType Null { get { return new LanguageEnumSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(LanguageEnumSourceValueUnion.LanguageEnumSourceValueUnionConverter))]
-    public class LanguageEnumSourceValueUnion {
-        public LanguageEnumSourceValueUnion(LanguageEnumSourceValueUnionType type) {
+    public class LanguageEnumSourceValueUnion
+    {
+        public LanguageEnumSourceValueUnion(LanguageEnumSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public LanguageEnumSourceValueUnionType Type { get; set; }
-
-
-        public static LanguageEnumSourceValueUnion CreateStr(string str) {
+        public static LanguageEnumSourceValueUnion CreateStr(string str)
+        {
             LanguageEnumSourceValueUnionType typ = LanguageEnumSourceValueUnionType.Str;
 
             LanguageEnumSourceValueUnion res = new LanguageEnumSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static LanguageEnumSourceValueUnion CreateNumber(double number) {
+        public static LanguageEnumSourceValueUnion CreateNumber(double number)
+        {
             LanguageEnumSourceValueUnionType typ = LanguageEnumSourceValueUnionType.Number;
 
             LanguageEnumSourceValueUnion res = new LanguageEnumSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static LanguageEnumSourceValueUnion CreateBoolean(bool boolean) {
+        public static LanguageEnumSourceValueUnion CreateBoolean(bool boolean)
+        {
             LanguageEnumSourceValueUnionType typ = LanguageEnumSourceValueUnionType.Boolean;
 
             LanguageEnumSourceValueUnion res = new LanguageEnumSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LanguageEnumSourceValueUnion CreateLanguageEnumSourceValue(LanguageEnumSourceValue languageEnumSourceValue) {
+        public static LanguageEnumSourceValueUnion CreateLanguageEnumSourceValue(LanguageEnumSourceValue languageEnumSourceValue)
+        {
             LanguageEnumSourceValueUnionType typ = LanguageEnumSourceValueUnionType.LanguageEnumSourceValue;
 
             LanguageEnumSourceValueUnion res = new LanguageEnumSourceValueUnion(typ);
             res.LanguageEnumSourceValue = languageEnumSourceValue;
             return res;
         }
-
-        public static LanguageEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static LanguageEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             LanguageEnumSourceValueUnionType typ = LanguageEnumSourceValueUnionType.ArrayOfAny;
 
             LanguageEnumSourceValueUnion res = new LanguageEnumSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static LanguageEnumSourceValueUnion CreateNull() {
+        public static LanguageEnumSourceValueUnion CreateNull()
+        {
             LanguageEnumSourceValueUnionType typ = LanguageEnumSourceValueUnionType.Null;
             return new LanguageEnumSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LanguageEnumSourceValueUnion res = (LanguageEnumSourceValueUnion)value;
                 if (LanguageEnumSourceValueUnionType.FromString(res.Type).Equals(LanguageEnumSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.LanguageEnumSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.LanguageEnumSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

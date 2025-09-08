@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingAttachmentResultSourceValueUnionType
     {
         private TicketingAttachmentResultSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingAttachmentResultSourceValueUnionType Str { get { return new TicketingAttachmentResultSourceValueUnionType("str"); } }
-        
+
         public static TicketingAttachmentResultSourceValueUnionType Number { get { return new TicketingAttachmentResultSourceValueUnionType("number"); } }
-        
+
         public static TicketingAttachmentResultSourceValueUnionType Boolean { get { return new TicketingAttachmentResultSourceValueUnionType("boolean"); } }
-        
+
         public static TicketingAttachmentResultSourceValueUnionType TicketingAttachmentResultSourceValue { get { return new TicketingAttachmentResultSourceValueUnionType("TicketingAttachmentResult_source_value"); } }
-        
+
         public static TicketingAttachmentResultSourceValueUnionType ArrayOfAny { get { return new TicketingAttachmentResultSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TicketingAttachmentResultSourceValueUnionType Null { get { return new TicketingAttachmentResultSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(TicketingAttachmentResultSourceValueUnion.TicketingAttachmentResultSourceValueUnionConverter))]
-    public class TicketingAttachmentResultSourceValueUnion {
-        public TicketingAttachmentResultSourceValueUnion(TicketingAttachmentResultSourceValueUnionType type) {
+    public class TicketingAttachmentResultSourceValueUnion
+    {
+        public TicketingAttachmentResultSourceValueUnion(TicketingAttachmentResultSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TicketingAttachmentResultSourceValueUnionType Type { get; set; }
-
-
-        public static TicketingAttachmentResultSourceValueUnion CreateStr(string str) {
+        public static TicketingAttachmentResultSourceValueUnion CreateStr(string str)
+        {
             TicketingAttachmentResultSourceValueUnionType typ = TicketingAttachmentResultSourceValueUnionType.Str;
 
             TicketingAttachmentResultSourceValueUnion res = new TicketingAttachmentResultSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TicketingAttachmentResultSourceValueUnion CreateNumber(double number) {
+        public static TicketingAttachmentResultSourceValueUnion CreateNumber(double number)
+        {
             TicketingAttachmentResultSourceValueUnionType typ = TicketingAttachmentResultSourceValueUnionType.Number;
 
             TicketingAttachmentResultSourceValueUnion res = new TicketingAttachmentResultSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TicketingAttachmentResultSourceValueUnion CreateBoolean(bool boolean) {
+        public static TicketingAttachmentResultSourceValueUnion CreateBoolean(bool boolean)
+        {
             TicketingAttachmentResultSourceValueUnionType typ = TicketingAttachmentResultSourceValueUnionType.Boolean;
 
             TicketingAttachmentResultSourceValueUnion res = new TicketingAttachmentResultSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingAttachmentResultSourceValueUnion CreateTicketingAttachmentResultSourceValue(TicketingAttachmentResultSourceValue ticketingAttachmentResultSourceValue) {
+        public static TicketingAttachmentResultSourceValueUnion CreateTicketingAttachmentResultSourceValue(TicketingAttachmentResultSourceValue ticketingAttachmentResultSourceValue)
+        {
             TicketingAttachmentResultSourceValueUnionType typ = TicketingAttachmentResultSourceValueUnionType.TicketingAttachmentResultSourceValue;
 
             TicketingAttachmentResultSourceValueUnion res = new TicketingAttachmentResultSourceValueUnion(typ);
             res.TicketingAttachmentResultSourceValue = ticketingAttachmentResultSourceValue;
             return res;
         }
-
-        public static TicketingAttachmentResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TicketingAttachmentResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TicketingAttachmentResultSourceValueUnionType typ = TicketingAttachmentResultSourceValueUnionType.ArrayOfAny;
 
             TicketingAttachmentResultSourceValueUnion res = new TicketingAttachmentResultSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingAttachmentResultSourceValueUnion CreateNull() {
+        public static TicketingAttachmentResultSourceValueUnion CreateNull()
+        {
             TicketingAttachmentResultSourceValueUnionType typ = TicketingAttachmentResultSourceValueUnionType.Null;
             return new TicketingAttachmentResultSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingAttachmentResultSourceValueUnion res = (TicketingAttachmentResultSourceValueUnion)value;
                 if (TicketingAttachmentResultSourceValueUnionType.FromString(res.Type).Equals(TicketingAttachmentResultSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingAttachmentResultSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingAttachmentResultSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

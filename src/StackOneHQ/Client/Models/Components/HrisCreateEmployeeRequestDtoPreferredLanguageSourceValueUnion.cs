@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType
     {
         private HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType Str { get { return new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType Number { get { return new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType Boolean { get { return new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage { get { return new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType("HrisCreateEmployeeRequestDto_source_value_preferred_language"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType ArrayOfAny { get { return new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType Null { get { return new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion.HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionConverter))]
-    public class HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion {
-        public HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType type) {
+    public class HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion
+    {
+        public HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateStr(string str) {
+        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateStr(string str)
+        {
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.Str;
 
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion res = new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.Number;
 
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion res = new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.Boolean;
 
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion res = new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValuePreferredLanguage(HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage hrisCreateEmployeeRequestDtoSourceValuePreferredLanguage) {
+        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValuePreferredLanguage(HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage hrisCreateEmployeeRequestDtoSourceValuePreferredLanguage)
+        {
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage;
 
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion res = new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(typ);
             res.HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage = hrisCreateEmployeeRequestDtoSourceValuePreferredLanguage;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.ArrayOfAny;
 
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion res = new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateNull() {
+        public static HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion CreateNull()
+        {
             HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.Null;
             return new HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion res = (HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion)value;
                 if (HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.FromString(res.Type).Equals(HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamUserIsBotUserUnionType
     {
         private IamUserIsBotUserUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamUserIsBotUserUnionType Boolean { get { return new IamUserIsBotUserUnionType("boolean"); } }
-        
+
         public static IamUserIsBotUserUnionType IamUserIsBotUserEnum { get { return new IamUserIsBotUserUnionType("IamUser_is_bot_user_enum"); } }
-        
+
         public static IamUserIsBotUserUnionType Null { get { return new IamUserIsBotUserUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Indicates if the user is a bot or service user
     /// </summary>
     [JsonConverter(typeof(IamUserIsBotUserUnion.IamUserIsBotUserUnionConverter))]
-    public class IamUserIsBotUserUnion {
-        public IamUserIsBotUserUnion(IamUserIsBotUserUnionType type) {
+    public class IamUserIsBotUserUnion
+    {
+        public IamUserIsBotUserUnion(IamUserIsBotUserUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public IamUserIsBotUserEnum? IamUserIsBotUserEnum { get; set; }
 
         public IamUserIsBotUserUnionType Type { get; set; }
-
-
-        public static IamUserIsBotUserUnion CreateBoolean(bool boolean) {
+        public static IamUserIsBotUserUnion CreateBoolean(bool boolean)
+        {
             IamUserIsBotUserUnionType typ = IamUserIsBotUserUnionType.Boolean;
 
             IamUserIsBotUserUnion res = new IamUserIsBotUserUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamUserIsBotUserUnion CreateIamUserIsBotUserEnum(IamUserIsBotUserEnum iamUserIsBotUserEnum) {
+        public static IamUserIsBotUserUnion CreateIamUserIsBotUserEnum(IamUserIsBotUserEnum iamUserIsBotUserEnum)
+        {
             IamUserIsBotUserUnionType typ = IamUserIsBotUserUnionType.IamUserIsBotUserEnum;
 
             IamUserIsBotUserUnion res = new IamUserIsBotUserUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamUserIsBotUserUnion CreateNull() {
+        public static IamUserIsBotUserUnion CreateNull()
+        {
             IamUserIsBotUserUnionType typ = IamUserIsBotUserUnionType.Null;
             return new IamUserIsBotUserUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamUserIsBotUserUnion res = (IamUserIsBotUserUnion)value;
                 if (IamUserIsBotUserUnionType.FromString(res.Type).Equals(IamUserIsBotUserUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamUserIsBotUserEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamUserIsBotUserEnum));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class JobPostingEmploymentTypeSourceValueUnionType
     {
         private JobPostingEmploymentTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static JobPostingEmploymentTypeSourceValueUnionType Str { get { return new JobPostingEmploymentTypeSourceValueUnionType("str"); } }
-        
+
         public static JobPostingEmploymentTypeSourceValueUnionType Number { get { return new JobPostingEmploymentTypeSourceValueUnionType("number"); } }
-        
+
         public static JobPostingEmploymentTypeSourceValueUnionType Boolean { get { return new JobPostingEmploymentTypeSourceValueUnionType("boolean"); } }
-        
+
         public static JobPostingEmploymentTypeSourceValueUnionType JobPostingSourceValueEmploymentType { get { return new JobPostingEmploymentTypeSourceValueUnionType("JobPosting_source_value_employment_type"); } }
-        
+
         public static JobPostingEmploymentTypeSourceValueUnionType ArrayOfAny { get { return new JobPostingEmploymentTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static JobPostingEmploymentTypeSourceValueUnionType Null { get { return new JobPostingEmploymentTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the employment type.
     /// </summary>
     [JsonConverter(typeof(JobPostingEmploymentTypeSourceValueUnion.JobPostingEmploymentTypeSourceValueUnionConverter))]
-    public class JobPostingEmploymentTypeSourceValueUnion {
-        public JobPostingEmploymentTypeSourceValueUnion(JobPostingEmploymentTypeSourceValueUnionType type) {
+    public class JobPostingEmploymentTypeSourceValueUnion
+    {
+        public JobPostingEmploymentTypeSourceValueUnion(JobPostingEmploymentTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public JobPostingEmploymentTypeSourceValueUnionType Type { get; set; }
-
-
-        public static JobPostingEmploymentTypeSourceValueUnion CreateStr(string str) {
+        public static JobPostingEmploymentTypeSourceValueUnion CreateStr(string str)
+        {
             JobPostingEmploymentTypeSourceValueUnionType typ = JobPostingEmploymentTypeSourceValueUnionType.Str;
 
             JobPostingEmploymentTypeSourceValueUnion res = new JobPostingEmploymentTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static JobPostingEmploymentTypeSourceValueUnion CreateNumber(double number) {
+        public static JobPostingEmploymentTypeSourceValueUnion CreateNumber(double number)
+        {
             JobPostingEmploymentTypeSourceValueUnionType typ = JobPostingEmploymentTypeSourceValueUnionType.Number;
 
             JobPostingEmploymentTypeSourceValueUnion res = new JobPostingEmploymentTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static JobPostingEmploymentTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static JobPostingEmploymentTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             JobPostingEmploymentTypeSourceValueUnionType typ = JobPostingEmploymentTypeSourceValueUnionType.Boolean;
 
             JobPostingEmploymentTypeSourceValueUnion res = new JobPostingEmploymentTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static JobPostingEmploymentTypeSourceValueUnion CreateJobPostingSourceValueEmploymentType(JobPostingSourceValueEmploymentType jobPostingSourceValueEmploymentType) {
+        public static JobPostingEmploymentTypeSourceValueUnion CreateJobPostingSourceValueEmploymentType(JobPostingSourceValueEmploymentType jobPostingSourceValueEmploymentType)
+        {
             JobPostingEmploymentTypeSourceValueUnionType typ = JobPostingEmploymentTypeSourceValueUnionType.JobPostingSourceValueEmploymentType;
 
             JobPostingEmploymentTypeSourceValueUnion res = new JobPostingEmploymentTypeSourceValueUnion(typ);
             res.JobPostingSourceValueEmploymentType = jobPostingSourceValueEmploymentType;
             return res;
         }
-
-        public static JobPostingEmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static JobPostingEmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             JobPostingEmploymentTypeSourceValueUnionType typ = JobPostingEmploymentTypeSourceValueUnionType.ArrayOfAny;
 
             JobPostingEmploymentTypeSourceValueUnion res = new JobPostingEmploymentTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static JobPostingEmploymentTypeSourceValueUnion CreateNull() {
+        public static JobPostingEmploymentTypeSourceValueUnion CreateNull()
+        {
             JobPostingEmploymentTypeSourceValueUnionType typ = JobPostingEmploymentTypeSourceValueUnionType.Null;
             return new JobPostingEmploymentTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 JobPostingEmploymentTypeSourceValueUnion res = (JobPostingEmploymentTypeSourceValueUnion)value;
                 if (JobPostingEmploymentTypeSourceValueUnionType.FromString(res.Type).Equals(JobPostingEmploymentTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.JobPostingSourceValueEmploymentType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.JobPostingSourceValueEmploymentType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

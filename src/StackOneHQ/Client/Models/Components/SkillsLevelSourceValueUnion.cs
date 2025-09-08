@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class SkillsLevelSourceValueUnionType
     {
         private SkillsLevelSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static SkillsLevelSourceValueUnionType Str { get { return new SkillsLevelSourceValueUnionType("str"); } }
-        
+
         public static SkillsLevelSourceValueUnionType Number { get { return new SkillsLevelSourceValueUnionType("number"); } }
-        
+
         public static SkillsLevelSourceValueUnionType Boolean { get { return new SkillsLevelSourceValueUnionType("boolean"); } }
-        
+
         public static SkillsLevelSourceValueUnionType SkillsSourceValueLevel { get { return new SkillsLevelSourceValueUnionType("Skills_source_value_level"); } }
-        
+
         public static SkillsLevelSourceValueUnionType ArrayOfAny { get { return new SkillsLevelSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static SkillsLevelSourceValueUnionType Null { get { return new SkillsLevelSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(SkillsLevelSourceValueUnion.SkillsLevelSourceValueUnionConverter))]
-    public class SkillsLevelSourceValueUnion {
-        public SkillsLevelSourceValueUnion(SkillsLevelSourceValueUnionType type) {
+    public class SkillsLevelSourceValueUnion
+    {
+        public SkillsLevelSourceValueUnion(SkillsLevelSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public SkillsLevelSourceValueUnionType Type { get; set; }
-
-
-        public static SkillsLevelSourceValueUnion CreateStr(string str) {
+        public static SkillsLevelSourceValueUnion CreateStr(string str)
+        {
             SkillsLevelSourceValueUnionType typ = SkillsLevelSourceValueUnionType.Str;
 
             SkillsLevelSourceValueUnion res = new SkillsLevelSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static SkillsLevelSourceValueUnion CreateNumber(double number) {
+        public static SkillsLevelSourceValueUnion CreateNumber(double number)
+        {
             SkillsLevelSourceValueUnionType typ = SkillsLevelSourceValueUnionType.Number;
 
             SkillsLevelSourceValueUnion res = new SkillsLevelSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static SkillsLevelSourceValueUnion CreateBoolean(bool boolean) {
+        public static SkillsLevelSourceValueUnion CreateBoolean(bool boolean)
+        {
             SkillsLevelSourceValueUnionType typ = SkillsLevelSourceValueUnionType.Boolean;
 
             SkillsLevelSourceValueUnion res = new SkillsLevelSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static SkillsLevelSourceValueUnion CreateSkillsSourceValueLevel(SkillsSourceValueLevel skillsSourceValueLevel) {
+        public static SkillsLevelSourceValueUnion CreateSkillsSourceValueLevel(SkillsSourceValueLevel skillsSourceValueLevel)
+        {
             SkillsLevelSourceValueUnionType typ = SkillsLevelSourceValueUnionType.SkillsSourceValueLevel;
 
             SkillsLevelSourceValueUnion res = new SkillsLevelSourceValueUnion(typ);
             res.SkillsSourceValueLevel = skillsSourceValueLevel;
             return res;
         }
-
-        public static SkillsLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static SkillsLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             SkillsLevelSourceValueUnionType typ = SkillsLevelSourceValueUnionType.ArrayOfAny;
 
             SkillsLevelSourceValueUnion res = new SkillsLevelSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static SkillsLevelSourceValueUnion CreateNull() {
+        public static SkillsLevelSourceValueUnion CreateNull()
+        {
             SkillsLevelSourceValueUnionType typ = SkillsLevelSourceValueUnionType.Null;
             return new SkillsLevelSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 SkillsLevelSourceValueUnion res = (SkillsLevelSourceValueUnion)value;
                 if (SkillsLevelSourceValueUnionType.FromString(res.Type).Equals(SkillsLevelSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SkillsSourceValueLevel != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SkillsSourceValueLevel));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

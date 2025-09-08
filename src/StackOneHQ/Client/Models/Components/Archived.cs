@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ArchivedType
     {
         private ArchivedType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ArchivedType Boolean { get { return new ArchivedType("boolean"); } }
-        
+
         public static ArchivedType ArchivedEnum { get { return new ArchivedType("archived_enum"); } }
-        
+
         public static ArchivedType Null { get { return new ArchivedType("null"); } }
 
         public override string ToString() { return Value; }
@@ -57,8 +57,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(Archived.ArchivedConverter))]
-    public class Archived {
-        public Archived(ArchivedType type) {
+    public class Archived
+    {
+        public Archived(ArchivedType type)
+        {
             Type = type;
         }
 
@@ -69,17 +71,16 @@ namespace StackOneHQ.Client.Models.Components
         public ArchivedEnum? ArchivedEnum { get; set; }
 
         public ArchivedType Type { get; set; }
-
-
-        public static Archived CreateBoolean(bool boolean) {
+        public static Archived CreateBoolean(bool boolean)
+        {
             ArchivedType typ = ArchivedType.Boolean;
 
             Archived res = new Archived(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static Archived CreateArchivedEnum(ArchivedEnum archivedEnum) {
+        public static Archived CreateArchivedEnum(ArchivedEnum archivedEnum)
+        {
             ArchivedType typ = ArchivedType.ArchivedEnum;
 
             Archived res = new Archived(typ);
@@ -87,7 +88,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static Archived CreateNull() {
+        public static Archived CreateNull()
+        {
             ArchivedType typ = ArchivedType.Null;
             return new Archived(typ);
         }
@@ -171,23 +173,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 Archived res = (Archived)value;
                 if (ArchivedType.FromString(res.Type).Equals(ArchivedType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArchivedEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArchivedEnum));
                     return;
                 }
-
             }
 
         }

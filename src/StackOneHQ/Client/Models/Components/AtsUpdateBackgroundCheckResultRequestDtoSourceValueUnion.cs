@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType
     {
         private AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType Str { get { return new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType Number { get { return new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType Boolean { get { return new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType AtsUpdateBackgroundCheckResultRequestDtoSourceValue { get { return new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType("AtsUpdateBackgroundCheckResultRequestDto_source_value"); } }
-        
+
         public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType Null { get { return new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the test result.
     /// </summary>
     [JsonConverter(typeof(AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion.AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionConverter))]
-    public class AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion {
-        public AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType type) {
+    public class AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion
+    {
+        public AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType typ = AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.Str;
 
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion res = new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType typ = AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.Number;
 
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion res = new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType typ = AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.Boolean;
 
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion res = new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateAtsUpdateBackgroundCheckResultRequestDtoSourceValue(AtsUpdateBackgroundCheckResultRequestDtoSourceValue atsUpdateBackgroundCheckResultRequestDtoSourceValue) {
+        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateAtsUpdateBackgroundCheckResultRequestDtoSourceValue(AtsUpdateBackgroundCheckResultRequestDtoSourceValue atsUpdateBackgroundCheckResultRequestDtoSourceValue)
+        {
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType typ = AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.AtsUpdateBackgroundCheckResultRequestDtoSourceValue;
 
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion res = new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(typ);
             res.AtsUpdateBackgroundCheckResultRequestDtoSourceValue = atsUpdateBackgroundCheckResultRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType typ = AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion res = new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateNull() {
+        public static AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion CreateNull()
+        {
             AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType typ = AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.Null;
             return new AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion res = (AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnion)value;
                 if (AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsUpdateBackgroundCheckResultRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsUpdateBackgroundCheckResultRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsUpdateBackgroundCheckResultRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

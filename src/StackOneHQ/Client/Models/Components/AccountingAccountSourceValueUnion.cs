@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountingAccountSourceValueUnionType
     {
         private AccountingAccountSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountingAccountSourceValueUnionType Str { get { return new AccountingAccountSourceValueUnionType("str"); } }
-        
+
         public static AccountingAccountSourceValueUnionType Number { get { return new AccountingAccountSourceValueUnionType("number"); } }
-        
+
         public static AccountingAccountSourceValueUnionType Boolean { get { return new AccountingAccountSourceValueUnionType("boolean"); } }
-        
+
         public static AccountingAccountSourceValueUnionType AccountingAccountSourceValue { get { return new AccountingAccountSourceValueUnionType("AccountingAccount_source_value"); } }
-        
+
         public static AccountingAccountSourceValueUnionType ArrayOfAny { get { return new AccountingAccountSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AccountingAccountSourceValueUnionType Null { get { return new AccountingAccountSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AccountingAccountSourceValueUnion.AccountingAccountSourceValueUnionConverter))]
-    public class AccountingAccountSourceValueUnion {
-        public AccountingAccountSourceValueUnion(AccountingAccountSourceValueUnionType type) {
+    public class AccountingAccountSourceValueUnion
+    {
+        public AccountingAccountSourceValueUnion(AccountingAccountSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AccountingAccountSourceValueUnionType Type { get; set; }
-
-
-        public static AccountingAccountSourceValueUnion CreateStr(string str) {
+        public static AccountingAccountSourceValueUnion CreateStr(string str)
+        {
             AccountingAccountSourceValueUnionType typ = AccountingAccountSourceValueUnionType.Str;
 
             AccountingAccountSourceValueUnion res = new AccountingAccountSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AccountingAccountSourceValueUnion CreateNumber(double number) {
+        public static AccountingAccountSourceValueUnion CreateNumber(double number)
+        {
             AccountingAccountSourceValueUnionType typ = AccountingAccountSourceValueUnionType.Number;
 
             AccountingAccountSourceValueUnion res = new AccountingAccountSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AccountingAccountSourceValueUnion CreateBoolean(bool boolean) {
+        public static AccountingAccountSourceValueUnion CreateBoolean(bool boolean)
+        {
             AccountingAccountSourceValueUnionType typ = AccountingAccountSourceValueUnionType.Boolean;
 
             AccountingAccountSourceValueUnion res = new AccountingAccountSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountingAccountSourceValueUnion CreateAccountingAccountSourceValue(AccountingAccountSourceValue accountingAccountSourceValue) {
+        public static AccountingAccountSourceValueUnion CreateAccountingAccountSourceValue(AccountingAccountSourceValue accountingAccountSourceValue)
+        {
             AccountingAccountSourceValueUnionType typ = AccountingAccountSourceValueUnionType.AccountingAccountSourceValue;
 
             AccountingAccountSourceValueUnion res = new AccountingAccountSourceValueUnion(typ);
             res.AccountingAccountSourceValue = accountingAccountSourceValue;
             return res;
         }
-
-        public static AccountingAccountSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AccountingAccountSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AccountingAccountSourceValueUnionType typ = AccountingAccountSourceValueUnionType.ArrayOfAny;
 
             AccountingAccountSourceValueUnion res = new AccountingAccountSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountingAccountSourceValueUnion CreateNull() {
+        public static AccountingAccountSourceValueUnion CreateNull()
+        {
             AccountingAccountSourceValueUnionType typ = AccountingAccountSourceValueUnionType.Null;
             return new AccountingAccountSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountingAccountSourceValueUnion res = (AccountingAccountSourceValueUnion)value;
                 if (AccountingAccountSourceValueUnionType.FromString(res.Type).Equals(AccountingAccountSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AccountingAccountSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AccountingAccountSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

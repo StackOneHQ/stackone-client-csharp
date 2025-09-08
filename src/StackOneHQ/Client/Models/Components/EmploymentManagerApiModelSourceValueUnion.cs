@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentManagerApiModelSourceValueUnionType
     {
         private EmploymentManagerApiModelSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentManagerApiModelSourceValueUnionType Str { get { return new EmploymentManagerApiModelSourceValueUnionType("str"); } }
-        
+
         public static EmploymentManagerApiModelSourceValueUnionType Number { get { return new EmploymentManagerApiModelSourceValueUnionType("number"); } }
-        
+
         public static EmploymentManagerApiModelSourceValueUnionType Boolean { get { return new EmploymentManagerApiModelSourceValueUnionType("boolean"); } }
-        
+
         public static EmploymentManagerApiModelSourceValueUnionType EmploymentManagerApiModelSourceValue { get { return new EmploymentManagerApiModelSourceValueUnionType("EmploymentManagerApiModel_source_value"); } }
-        
+
         public static EmploymentManagerApiModelSourceValueUnionType ArrayOfAny { get { return new EmploymentManagerApiModelSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmploymentManagerApiModelSourceValueUnionType Null { get { return new EmploymentManagerApiModelSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmploymentManagerApiModelSourceValueUnion.EmploymentManagerApiModelSourceValueUnionConverter))]
-    public class EmploymentManagerApiModelSourceValueUnion {
-        public EmploymentManagerApiModelSourceValueUnion(EmploymentManagerApiModelSourceValueUnionType type) {
+    public class EmploymentManagerApiModelSourceValueUnion
+    {
+        public EmploymentManagerApiModelSourceValueUnion(EmploymentManagerApiModelSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmploymentManagerApiModelSourceValueUnionType Type { get; set; }
-
-
-        public static EmploymentManagerApiModelSourceValueUnion CreateStr(string str) {
+        public static EmploymentManagerApiModelSourceValueUnion CreateStr(string str)
+        {
             EmploymentManagerApiModelSourceValueUnionType typ = EmploymentManagerApiModelSourceValueUnionType.Str;
 
             EmploymentManagerApiModelSourceValueUnion res = new EmploymentManagerApiModelSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmploymentManagerApiModelSourceValueUnion CreateNumber(double number) {
+        public static EmploymentManagerApiModelSourceValueUnion CreateNumber(double number)
+        {
             EmploymentManagerApiModelSourceValueUnionType typ = EmploymentManagerApiModelSourceValueUnionType.Number;
 
             EmploymentManagerApiModelSourceValueUnion res = new EmploymentManagerApiModelSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmploymentManagerApiModelSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmploymentManagerApiModelSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmploymentManagerApiModelSourceValueUnionType typ = EmploymentManagerApiModelSourceValueUnionType.Boolean;
 
             EmploymentManagerApiModelSourceValueUnion res = new EmploymentManagerApiModelSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentManagerApiModelSourceValueUnion CreateEmploymentManagerApiModelSourceValue(EmploymentManagerApiModelSourceValue employmentManagerAPIModelSourceValue) {
+        public static EmploymentManagerApiModelSourceValueUnion CreateEmploymentManagerApiModelSourceValue(EmploymentManagerApiModelSourceValue employmentManagerAPIModelSourceValue)
+        {
             EmploymentManagerApiModelSourceValueUnionType typ = EmploymentManagerApiModelSourceValueUnionType.EmploymentManagerApiModelSourceValue;
 
             EmploymentManagerApiModelSourceValueUnion res = new EmploymentManagerApiModelSourceValueUnion(typ);
             res.EmploymentManagerApiModelSourceValue = employmentManagerAPIModelSourceValue;
             return res;
         }
-
-        public static EmploymentManagerApiModelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmploymentManagerApiModelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmploymentManagerApiModelSourceValueUnionType typ = EmploymentManagerApiModelSourceValueUnionType.ArrayOfAny;
 
             EmploymentManagerApiModelSourceValueUnion res = new EmploymentManagerApiModelSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentManagerApiModelSourceValueUnion CreateNull() {
+        public static EmploymentManagerApiModelSourceValueUnion CreateNull()
+        {
             EmploymentManagerApiModelSourceValueUnionType typ = EmploymentManagerApiModelSourceValueUnionType.Null;
             return new EmploymentManagerApiModelSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentManagerApiModelSourceValueUnion res = (EmploymentManagerApiModelSourceValueUnion)value;
                 if (EmploymentManagerApiModelSourceValueUnionType.FromString(res.Type).Equals(EmploymentManagerApiModelSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentManagerApiModelSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentManagerApiModelSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

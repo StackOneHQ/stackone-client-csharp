@@ -112,16 +112,16 @@ namespace StackOneHQ.Client.Models.Components
         public TimeOffReason? Reason { get; set; } = null;
 
         /// <summary>
-        /// The created date of the time off request
+        /// Timestamp when the time off request was created
         /// </summary>
-        [JsonProperty("created_date")]
-        public DateTime? CreatedDate { get; set; } = null;
+        [JsonProperty("created_at")]
+        public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The updated date of the time off request
+        /// Timestamp when the time off request was last updated
         /// </summary>
-        [JsonProperty("updated_date")]
-        public DateTime? UpdatedDate { get; set; } = null;
+        [JsonProperty("updated_at")]
+        public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
         /// The time off policy associated with Time Off

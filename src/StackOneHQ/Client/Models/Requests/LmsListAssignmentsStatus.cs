@@ -24,6 +24,8 @@ namespace StackOneHQ.Client.Models.Requests
         InProgress,
         [JsonProperty("completed")]
         Completed,
+        [JsonProperty("unmapped_value")]
+        UnmappedValue,
     }
 
     public static class LmsListAssignmentsStatusExtension

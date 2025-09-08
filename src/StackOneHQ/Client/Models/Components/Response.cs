@@ -16,19 +16,19 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ResponseType
     {
         private ResponseType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ResponseType MapOfAny { get { return new ResponseType("mapOfAny"); } }
-        
+
         public static ResponseType ArrayOfAny { get { return new ResponseType("arrayOfAny"); } }
-        
+
         public static ResponseType Str { get { return new ResponseType("str"); } }
-        
+
         public static ResponseType Null { get { return new ResponseType("null"); } }
 
         public override string ToString() { return Value; }
@@ -59,8 +59,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(Response.ResponseConverter))]
-    public class Response {
-        public Response(ResponseType type) {
+    public class Response
+    {
+        public Response(ResponseType type)
+        {
             Type = type;
         }
 
@@ -74,25 +76,24 @@ namespace StackOneHQ.Client.Models.Components
         public string? Str { get; set; }
 
         public ResponseType Type { get; set; }
-
-
-        public static Response CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static Response CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             ResponseType typ = ResponseType.MapOfAny;
 
             Response res = new Response(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static Response CreateArrayOfAny(List<object> arrayOfAny) {
+        public static Response CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ResponseType typ = ResponseType.ArrayOfAny;
 
             Response res = new Response(typ);
             res.ArrayOfAny = arrayOfAny;
             return res;
         }
-
-        public static Response CreateStr(string str) {
+        public static Response CreateStr(string str)
+        {
             ResponseType typ = ResponseType.Str;
 
             Response res = new Response(typ);
@@ -100,7 +101,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static Response CreateNull() {
+        public static Response CreateNull()
+        {
             ResponseType typ = ResponseType.Null;
             return new Response(typ);
         }
@@ -198,28 +200,31 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 Response res = (Response)value;
                 if (ResponseType.FromString(res.Type).Equals(ResponseType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-
             }
 
         }

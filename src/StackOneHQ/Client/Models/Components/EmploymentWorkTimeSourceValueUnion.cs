@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentWorkTimeSourceValueUnionType
     {
         private EmploymentWorkTimeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentWorkTimeSourceValueUnionType Str { get { return new EmploymentWorkTimeSourceValueUnionType("str"); } }
-        
+
         public static EmploymentWorkTimeSourceValueUnionType Number { get { return new EmploymentWorkTimeSourceValueUnionType("number"); } }
-        
+
         public static EmploymentWorkTimeSourceValueUnionType Boolean { get { return new EmploymentWorkTimeSourceValueUnionType("boolean"); } }
-        
+
         public static EmploymentWorkTimeSourceValueUnionType EmploymentSourceValueWorkTime { get { return new EmploymentWorkTimeSourceValueUnionType("Employment_source_value_work_time"); } }
-        
+
         public static EmploymentWorkTimeSourceValueUnionType ArrayOfAny { get { return new EmploymentWorkTimeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmploymentWorkTimeSourceValueUnionType Null { get { return new EmploymentWorkTimeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmploymentWorkTimeSourceValueUnion.EmploymentWorkTimeSourceValueUnionConverter))]
-    public class EmploymentWorkTimeSourceValueUnion {
-        public EmploymentWorkTimeSourceValueUnion(EmploymentWorkTimeSourceValueUnionType type) {
+    public class EmploymentWorkTimeSourceValueUnion
+    {
+        public EmploymentWorkTimeSourceValueUnion(EmploymentWorkTimeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmploymentWorkTimeSourceValueUnionType Type { get; set; }
-
-
-        public static EmploymentWorkTimeSourceValueUnion CreateStr(string str) {
+        public static EmploymentWorkTimeSourceValueUnion CreateStr(string str)
+        {
             EmploymentWorkTimeSourceValueUnionType typ = EmploymentWorkTimeSourceValueUnionType.Str;
 
             EmploymentWorkTimeSourceValueUnion res = new EmploymentWorkTimeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmploymentWorkTimeSourceValueUnion CreateNumber(double number) {
+        public static EmploymentWorkTimeSourceValueUnion CreateNumber(double number)
+        {
             EmploymentWorkTimeSourceValueUnionType typ = EmploymentWorkTimeSourceValueUnionType.Number;
 
             EmploymentWorkTimeSourceValueUnion res = new EmploymentWorkTimeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmploymentWorkTimeSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmploymentWorkTimeSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmploymentWorkTimeSourceValueUnionType typ = EmploymentWorkTimeSourceValueUnionType.Boolean;
 
             EmploymentWorkTimeSourceValueUnion res = new EmploymentWorkTimeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentWorkTimeSourceValueUnion CreateEmploymentSourceValueWorkTime(EmploymentSourceValueWorkTime employmentSourceValueWorkTime) {
+        public static EmploymentWorkTimeSourceValueUnion CreateEmploymentSourceValueWorkTime(EmploymentSourceValueWorkTime employmentSourceValueWorkTime)
+        {
             EmploymentWorkTimeSourceValueUnionType typ = EmploymentWorkTimeSourceValueUnionType.EmploymentSourceValueWorkTime;
 
             EmploymentWorkTimeSourceValueUnion res = new EmploymentWorkTimeSourceValueUnion(typ);
             res.EmploymentSourceValueWorkTime = employmentSourceValueWorkTime;
             return res;
         }
-
-        public static EmploymentWorkTimeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmploymentWorkTimeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmploymentWorkTimeSourceValueUnionType typ = EmploymentWorkTimeSourceValueUnionType.ArrayOfAny;
 
             EmploymentWorkTimeSourceValueUnion res = new EmploymentWorkTimeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentWorkTimeSourceValueUnion CreateNull() {
+        public static EmploymentWorkTimeSourceValueUnion CreateNull()
+        {
             EmploymentWorkTimeSourceValueUnionType typ = EmploymentWorkTimeSourceValueUnionType.Null;
             return new EmploymentWorkTimeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentWorkTimeSourceValueUnion res = (EmploymentWorkTimeSourceValueUnion)value;
                 if (EmploymentWorkTimeSourceValueUnionType.FromString(res.Type).Equals(EmploymentWorkTimeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentSourceValueWorkTime != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentSourceValueWorkTime));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateEmploymentApiModelWorkTimeSourceValueUnionType
     {
         private CreateEmploymentApiModelWorkTimeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateEmploymentApiModelWorkTimeSourceValueUnionType Str { get { return new CreateEmploymentApiModelWorkTimeSourceValueUnionType("str"); } }
-        
+
         public static CreateEmploymentApiModelWorkTimeSourceValueUnionType Number { get { return new CreateEmploymentApiModelWorkTimeSourceValueUnionType("number"); } }
-        
+
         public static CreateEmploymentApiModelWorkTimeSourceValueUnionType Boolean { get { return new CreateEmploymentApiModelWorkTimeSourceValueUnionType("boolean"); } }
-        
+
         public static CreateEmploymentApiModelWorkTimeSourceValueUnionType CreateEmploymentApiModelSourceValueWorkTime { get { return new CreateEmploymentApiModelWorkTimeSourceValueUnionType("CreateEmploymentApiModel_source_value_work_time"); } }
-        
+
         public static CreateEmploymentApiModelWorkTimeSourceValueUnionType ArrayOfAny { get { return new CreateEmploymentApiModelWorkTimeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateEmploymentApiModelWorkTimeSourceValueUnionType Null { get { return new CreateEmploymentApiModelWorkTimeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateEmploymentApiModelWorkTimeSourceValueUnion.CreateEmploymentApiModelWorkTimeSourceValueUnionConverter))]
-    public class CreateEmploymentApiModelWorkTimeSourceValueUnion {
-        public CreateEmploymentApiModelWorkTimeSourceValueUnion(CreateEmploymentApiModelWorkTimeSourceValueUnionType type) {
+    public class CreateEmploymentApiModelWorkTimeSourceValueUnion
+    {
+        public CreateEmploymentApiModelWorkTimeSourceValueUnion(CreateEmploymentApiModelWorkTimeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateEmploymentApiModelWorkTimeSourceValueUnionType Type { get; set; }
-
-
-        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateStr(string str) {
+        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateStr(string str)
+        {
             CreateEmploymentApiModelWorkTimeSourceValueUnionType typ = CreateEmploymentApiModelWorkTimeSourceValueUnionType.Str;
 
             CreateEmploymentApiModelWorkTimeSourceValueUnion res = new CreateEmploymentApiModelWorkTimeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateNumber(double number) {
+        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateNumber(double number)
+        {
             CreateEmploymentApiModelWorkTimeSourceValueUnionType typ = CreateEmploymentApiModelWorkTimeSourceValueUnionType.Number;
 
             CreateEmploymentApiModelWorkTimeSourceValueUnion res = new CreateEmploymentApiModelWorkTimeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateEmploymentApiModelWorkTimeSourceValueUnionType typ = CreateEmploymentApiModelWorkTimeSourceValueUnionType.Boolean;
 
             CreateEmploymentApiModelWorkTimeSourceValueUnion res = new CreateEmploymentApiModelWorkTimeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateCreateEmploymentApiModelSourceValueWorkTime(CreateEmploymentApiModelSourceValueWorkTime createEmploymentAPIModelSourceValueWorkTime) {
+        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateCreateEmploymentApiModelSourceValueWorkTime(CreateEmploymentApiModelSourceValueWorkTime createEmploymentAPIModelSourceValueWorkTime)
+        {
             CreateEmploymentApiModelWorkTimeSourceValueUnionType typ = CreateEmploymentApiModelWorkTimeSourceValueUnionType.CreateEmploymentApiModelSourceValueWorkTime;
 
             CreateEmploymentApiModelWorkTimeSourceValueUnion res = new CreateEmploymentApiModelWorkTimeSourceValueUnion(typ);
             res.CreateEmploymentApiModelSourceValueWorkTime = createEmploymentAPIModelSourceValueWorkTime;
             return res;
         }
-
-        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateEmploymentApiModelWorkTimeSourceValueUnionType typ = CreateEmploymentApiModelWorkTimeSourceValueUnionType.ArrayOfAny;
 
             CreateEmploymentApiModelWorkTimeSourceValueUnion res = new CreateEmploymentApiModelWorkTimeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateNull() {
+        public static CreateEmploymentApiModelWorkTimeSourceValueUnion CreateNull()
+        {
             CreateEmploymentApiModelWorkTimeSourceValueUnionType typ = CreateEmploymentApiModelWorkTimeSourceValueUnionType.Null;
             return new CreateEmploymentApiModelWorkTimeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateEmploymentApiModelWorkTimeSourceValueUnion res = (CreateEmploymentApiModelWorkTimeSourceValueUnion)value;
                 if (CreateEmploymentApiModelWorkTimeSourceValueUnionType.FromString(res.Type).Equals(CreateEmploymentApiModelWorkTimeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateEmploymentApiModelSourceValueWorkTime != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateEmploymentApiModelSourceValueWorkTime));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

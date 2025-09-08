@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateEmploymentApiModelPayPeriodSourceValueUnionType
     {
         private CreateEmploymentApiModelPayPeriodSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateEmploymentApiModelPayPeriodSourceValueUnionType Str { get { return new CreateEmploymentApiModelPayPeriodSourceValueUnionType("str"); } }
-        
+
         public static CreateEmploymentApiModelPayPeriodSourceValueUnionType Number { get { return new CreateEmploymentApiModelPayPeriodSourceValueUnionType("number"); } }
-        
+
         public static CreateEmploymentApiModelPayPeriodSourceValueUnionType Boolean { get { return new CreateEmploymentApiModelPayPeriodSourceValueUnionType("boolean"); } }
-        
+
         public static CreateEmploymentApiModelPayPeriodSourceValueUnionType CreateEmploymentApiModelSourceValuePayPeriod { get { return new CreateEmploymentApiModelPayPeriodSourceValueUnionType("CreateEmploymentApiModel_source_value_pay_period"); } }
-        
+
         public static CreateEmploymentApiModelPayPeriodSourceValueUnionType ArrayOfAny { get { return new CreateEmploymentApiModelPayPeriodSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateEmploymentApiModelPayPeriodSourceValueUnionType Null { get { return new CreateEmploymentApiModelPayPeriodSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay period.
     /// </summary>
     [JsonConverter(typeof(CreateEmploymentApiModelPayPeriodSourceValueUnion.CreateEmploymentApiModelPayPeriodSourceValueUnionConverter))]
-    public class CreateEmploymentApiModelPayPeriodSourceValueUnion {
-        public CreateEmploymentApiModelPayPeriodSourceValueUnion(CreateEmploymentApiModelPayPeriodSourceValueUnionType type) {
+    public class CreateEmploymentApiModelPayPeriodSourceValueUnion
+    {
+        public CreateEmploymentApiModelPayPeriodSourceValueUnion(CreateEmploymentApiModelPayPeriodSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateEmploymentApiModelPayPeriodSourceValueUnionType Type { get; set; }
-
-
-        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateStr(string str) {
+        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateStr(string str)
+        {
             CreateEmploymentApiModelPayPeriodSourceValueUnionType typ = CreateEmploymentApiModelPayPeriodSourceValueUnionType.Str;
 
             CreateEmploymentApiModelPayPeriodSourceValueUnion res = new CreateEmploymentApiModelPayPeriodSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateNumber(double number) {
+        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateNumber(double number)
+        {
             CreateEmploymentApiModelPayPeriodSourceValueUnionType typ = CreateEmploymentApiModelPayPeriodSourceValueUnionType.Number;
 
             CreateEmploymentApiModelPayPeriodSourceValueUnion res = new CreateEmploymentApiModelPayPeriodSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateEmploymentApiModelPayPeriodSourceValueUnionType typ = CreateEmploymentApiModelPayPeriodSourceValueUnionType.Boolean;
 
             CreateEmploymentApiModelPayPeriodSourceValueUnion res = new CreateEmploymentApiModelPayPeriodSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateCreateEmploymentApiModelSourceValuePayPeriod(CreateEmploymentApiModelSourceValuePayPeriod createEmploymentAPIModelSourceValuePayPeriod) {
+        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateCreateEmploymentApiModelSourceValuePayPeriod(CreateEmploymentApiModelSourceValuePayPeriod createEmploymentAPIModelSourceValuePayPeriod)
+        {
             CreateEmploymentApiModelPayPeriodSourceValueUnionType typ = CreateEmploymentApiModelPayPeriodSourceValueUnionType.CreateEmploymentApiModelSourceValuePayPeriod;
 
             CreateEmploymentApiModelPayPeriodSourceValueUnion res = new CreateEmploymentApiModelPayPeriodSourceValueUnion(typ);
             res.CreateEmploymentApiModelSourceValuePayPeriod = createEmploymentAPIModelSourceValuePayPeriod;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateEmploymentApiModelPayPeriodSourceValueUnionType typ = CreateEmploymentApiModelPayPeriodSourceValueUnionType.ArrayOfAny;
 
             CreateEmploymentApiModelPayPeriodSourceValueUnion res = new CreateEmploymentApiModelPayPeriodSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateNull() {
+        public static CreateEmploymentApiModelPayPeriodSourceValueUnion CreateNull()
+        {
             CreateEmploymentApiModelPayPeriodSourceValueUnionType typ = CreateEmploymentApiModelPayPeriodSourceValueUnionType.Null;
             return new CreateEmploymentApiModelPayPeriodSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateEmploymentApiModelPayPeriodSourceValueUnion res = (CreateEmploymentApiModelPayPeriodSourceValueUnion)value;
                 if (CreateEmploymentApiModelPayPeriodSourceValueUnionType.FromString(res.Type).Equals(CreateEmploymentApiModelPayPeriodSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateEmploymentApiModelSourceValuePayPeriod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateEmploymentApiModelSourceValuePayPeriod));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmployeeTypeSourceValueUnionType
     {
         private EmployeeTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmployeeTypeSourceValueUnionType Str { get { return new EmployeeTypeSourceValueUnionType("str"); } }
-        
+
         public static EmployeeTypeSourceValueUnionType Number { get { return new EmployeeTypeSourceValueUnionType("number"); } }
-        
+
         public static EmployeeTypeSourceValueUnionType Boolean { get { return new EmployeeTypeSourceValueUnionType("boolean"); } }
-        
+
         public static EmployeeTypeSourceValueUnionType EmployeeSourceValueType { get { return new EmployeeTypeSourceValueUnionType("Employee_source_value_type"); } }
-        
+
         public static EmployeeTypeSourceValueUnionType ArrayOfAny { get { return new EmployeeTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmployeeTypeSourceValueUnionType Null { get { return new EmployeeTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmployeeTypeSourceValueUnion.EmployeeTypeSourceValueUnionConverter))]
-    public class EmployeeTypeSourceValueUnion {
-        public EmployeeTypeSourceValueUnion(EmployeeTypeSourceValueUnionType type) {
+    public class EmployeeTypeSourceValueUnion
+    {
+        public EmployeeTypeSourceValueUnion(EmployeeTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmployeeTypeSourceValueUnionType Type { get; set; }
-
-
-        public static EmployeeTypeSourceValueUnion CreateStr(string str) {
+        public static EmployeeTypeSourceValueUnion CreateStr(string str)
+        {
             EmployeeTypeSourceValueUnionType typ = EmployeeTypeSourceValueUnionType.Str;
 
             EmployeeTypeSourceValueUnion res = new EmployeeTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmployeeTypeSourceValueUnion CreateNumber(double number) {
+        public static EmployeeTypeSourceValueUnion CreateNumber(double number)
+        {
             EmployeeTypeSourceValueUnionType typ = EmployeeTypeSourceValueUnionType.Number;
 
             EmployeeTypeSourceValueUnion res = new EmployeeTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmployeeTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmployeeTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmployeeTypeSourceValueUnionType typ = EmployeeTypeSourceValueUnionType.Boolean;
 
             EmployeeTypeSourceValueUnion res = new EmployeeTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmployeeTypeSourceValueUnion CreateEmployeeSourceValueType(EmployeeSourceValueType employeeSourceValueType) {
+        public static EmployeeTypeSourceValueUnion CreateEmployeeSourceValueType(EmployeeSourceValueType employeeSourceValueType)
+        {
             EmployeeTypeSourceValueUnionType typ = EmployeeTypeSourceValueUnionType.EmployeeSourceValueType;
 
             EmployeeTypeSourceValueUnion res = new EmployeeTypeSourceValueUnion(typ);
             res.EmployeeSourceValueType = employeeSourceValueType;
             return res;
         }
-
-        public static EmployeeTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmployeeTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmployeeTypeSourceValueUnionType typ = EmployeeTypeSourceValueUnionType.ArrayOfAny;
 
             EmployeeTypeSourceValueUnion res = new EmployeeTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmployeeTypeSourceValueUnion CreateNull() {
+        public static EmployeeTypeSourceValueUnion CreateNull()
+        {
             EmployeeTypeSourceValueUnionType typ = EmployeeTypeSourceValueUnionType.Null;
             return new EmployeeTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmployeeTypeSourceValueUnion res = (EmployeeTypeSourceValueUnion)value;
                 if (EmployeeTypeSourceValueUnionType.FromString(res.Type).Equals(EmployeeTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmployeeSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmployeeSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

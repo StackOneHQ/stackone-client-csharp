@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType
     {
         private HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType Str { get { return new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType Number { get { return new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType Boolean { get { return new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType HrisCreateEmployeeRequestDtoSourceValueWorkLocationState { get { return new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType("HrisCreateEmployeeRequestDto_source_value_work_location_state"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType ArrayOfAny { get { return new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType Null { get { return new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion.HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionConverter))]
-    public class HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion {
-        public HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType type) {
+    public class HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion
+    {
+        public HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateStr(string str) {
+        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateStr(string str)
+        {
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType typ = HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.Str;
 
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion res = new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType typ = HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.Number;
 
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion res = new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType typ = HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.Boolean;
 
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion res = new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValueWorkLocationState(HrisCreateEmployeeRequestDtoSourceValueWorkLocationState hrisCreateEmployeeRequestDtoSourceValueWorkLocationState) {
+        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValueWorkLocationState(HrisCreateEmployeeRequestDtoSourceValueWorkLocationState hrisCreateEmployeeRequestDtoSourceValueWorkLocationState)
+        {
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType typ = HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.HrisCreateEmployeeRequestDtoSourceValueWorkLocationState;
 
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion res = new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(typ);
             res.HrisCreateEmployeeRequestDtoSourceValueWorkLocationState = hrisCreateEmployeeRequestDtoSourceValueWorkLocationState;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType typ = HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.ArrayOfAny;
 
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion res = new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateNull() {
+        public static HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion CreateNull()
+        {
             HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType typ = HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.Null;
             return new HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion res = (HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnion)value;
                 if (HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.FromString(res.Type).Equals(HrisCreateEmployeeRequestDtoWorkLocationStateSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateEmployeeRequestDtoSourceValueWorkLocationState != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateEmployeeRequestDtoSourceValueWorkLocationState));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

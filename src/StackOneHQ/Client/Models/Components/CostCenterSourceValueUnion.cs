@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CostCenterSourceValueUnionType
     {
         private CostCenterSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CostCenterSourceValueUnionType Str { get { return new CostCenterSourceValueUnionType("str"); } }
-        
+
         public static CostCenterSourceValueUnionType Number { get { return new CostCenterSourceValueUnionType("number"); } }
-        
+
         public static CostCenterSourceValueUnionType Boolean { get { return new CostCenterSourceValueUnionType("boolean"); } }
-        
+
         public static CostCenterSourceValueUnionType SourceValueCostCenter { get { return new CostCenterSourceValueUnionType("source_value_cost_center"); } }
-        
+
         public static CostCenterSourceValueUnionType ArrayOfAny { get { return new CostCenterSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CostCenterSourceValueUnionType Null { get { return new CostCenterSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CostCenterSourceValueUnion.CostCenterSourceValueUnionConverter))]
-    public class CostCenterSourceValueUnion {
-        public CostCenterSourceValueUnion(CostCenterSourceValueUnionType type) {
+    public class CostCenterSourceValueUnion
+    {
+        public CostCenterSourceValueUnion(CostCenterSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CostCenterSourceValueUnionType Type { get; set; }
-
-
-        public static CostCenterSourceValueUnion CreateStr(string str) {
+        public static CostCenterSourceValueUnion CreateStr(string str)
+        {
             CostCenterSourceValueUnionType typ = CostCenterSourceValueUnionType.Str;
 
             CostCenterSourceValueUnion res = new CostCenterSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CostCenterSourceValueUnion CreateNumber(double number) {
+        public static CostCenterSourceValueUnion CreateNumber(double number)
+        {
             CostCenterSourceValueUnionType typ = CostCenterSourceValueUnionType.Number;
 
             CostCenterSourceValueUnion res = new CostCenterSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CostCenterSourceValueUnion CreateBoolean(bool boolean) {
+        public static CostCenterSourceValueUnion CreateBoolean(bool boolean)
+        {
             CostCenterSourceValueUnionType typ = CostCenterSourceValueUnionType.Boolean;
 
             CostCenterSourceValueUnion res = new CostCenterSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CostCenterSourceValueUnion CreateSourceValueCostCenter(SourceValueCostCenter sourceValueCostCenter) {
+        public static CostCenterSourceValueUnion CreateSourceValueCostCenter(SourceValueCostCenter sourceValueCostCenter)
+        {
             CostCenterSourceValueUnionType typ = CostCenterSourceValueUnionType.SourceValueCostCenter;
 
             CostCenterSourceValueUnion res = new CostCenterSourceValueUnion(typ);
             res.SourceValueCostCenter = sourceValueCostCenter;
             return res;
         }
-
-        public static CostCenterSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CostCenterSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CostCenterSourceValueUnionType typ = CostCenterSourceValueUnionType.ArrayOfAny;
 
             CostCenterSourceValueUnion res = new CostCenterSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CostCenterSourceValueUnion CreateNull() {
+        public static CostCenterSourceValueUnion CreateNull()
+        {
             CostCenterSourceValueUnionType typ = CostCenterSourceValueUnionType.Null;
             return new CostCenterSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CostCenterSourceValueUnion res = (CostCenterSourceValueUnion)value;
                 if (CostCenterSourceValueUnionType.FromString(res.Type).Equals(CostCenterSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueCostCenter != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueCostCenter));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

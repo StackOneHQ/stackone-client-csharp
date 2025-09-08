@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountAddressCountrySourceValueUnionType
     {
         private AccountAddressCountrySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountAddressCountrySourceValueUnionType Str { get { return new AccountAddressCountrySourceValueUnionType("str"); } }
-        
+
         public static AccountAddressCountrySourceValueUnionType Number { get { return new AccountAddressCountrySourceValueUnionType("number"); } }
-        
+
         public static AccountAddressCountrySourceValueUnionType Boolean { get { return new AccountAddressCountrySourceValueUnionType("boolean"); } }
-        
+
         public static AccountAddressCountrySourceValueUnionType AccountAddressSourceValueCountry { get { return new AccountAddressCountrySourceValueUnionType("AccountAddress_source_value_country"); } }
-        
+
         public static AccountAddressCountrySourceValueUnionType ArrayOfAny { get { return new AccountAddressCountrySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AccountAddressCountrySourceValueUnionType Null { get { return new AccountAddressCountrySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the ISO 3166-1 alpha-2 code of the country.
     /// </summary>
     [JsonConverter(typeof(AccountAddressCountrySourceValueUnion.AccountAddressCountrySourceValueUnionConverter))]
-    public class AccountAddressCountrySourceValueUnion {
-        public AccountAddressCountrySourceValueUnion(AccountAddressCountrySourceValueUnionType type) {
+    public class AccountAddressCountrySourceValueUnion
+    {
+        public AccountAddressCountrySourceValueUnion(AccountAddressCountrySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AccountAddressCountrySourceValueUnionType Type { get; set; }
-
-
-        public static AccountAddressCountrySourceValueUnion CreateStr(string str) {
+        public static AccountAddressCountrySourceValueUnion CreateStr(string str)
+        {
             AccountAddressCountrySourceValueUnionType typ = AccountAddressCountrySourceValueUnionType.Str;
 
             AccountAddressCountrySourceValueUnion res = new AccountAddressCountrySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AccountAddressCountrySourceValueUnion CreateNumber(double number) {
+        public static AccountAddressCountrySourceValueUnion CreateNumber(double number)
+        {
             AccountAddressCountrySourceValueUnionType typ = AccountAddressCountrySourceValueUnionType.Number;
 
             AccountAddressCountrySourceValueUnion res = new AccountAddressCountrySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AccountAddressCountrySourceValueUnion CreateBoolean(bool boolean) {
+        public static AccountAddressCountrySourceValueUnion CreateBoolean(bool boolean)
+        {
             AccountAddressCountrySourceValueUnionType typ = AccountAddressCountrySourceValueUnionType.Boolean;
 
             AccountAddressCountrySourceValueUnion res = new AccountAddressCountrySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountAddressCountrySourceValueUnion CreateAccountAddressSourceValueCountry(AccountAddressSourceValueCountry accountAddressSourceValueCountry) {
+        public static AccountAddressCountrySourceValueUnion CreateAccountAddressSourceValueCountry(AccountAddressSourceValueCountry accountAddressSourceValueCountry)
+        {
             AccountAddressCountrySourceValueUnionType typ = AccountAddressCountrySourceValueUnionType.AccountAddressSourceValueCountry;
 
             AccountAddressCountrySourceValueUnion res = new AccountAddressCountrySourceValueUnion(typ);
             res.AccountAddressSourceValueCountry = accountAddressSourceValueCountry;
             return res;
         }
-
-        public static AccountAddressCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AccountAddressCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AccountAddressCountrySourceValueUnionType typ = AccountAddressCountrySourceValueUnionType.ArrayOfAny;
 
             AccountAddressCountrySourceValueUnion res = new AccountAddressCountrySourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountAddressCountrySourceValueUnion CreateNull() {
+        public static AccountAddressCountrySourceValueUnion CreateNull()
+        {
             AccountAddressCountrySourceValueUnionType typ = AccountAddressCountrySourceValueUnionType.Null;
             return new AccountAddressCountrySourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountAddressCountrySourceValueUnion res = (AccountAddressCountrySourceValueUnion)value;
                 if (AccountAddressCountrySourceValueUnionType.FromString(res.Type).Equals(AccountAddressCountrySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AccountAddressSourceValueCountry != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AccountAddressSourceValueCountry));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

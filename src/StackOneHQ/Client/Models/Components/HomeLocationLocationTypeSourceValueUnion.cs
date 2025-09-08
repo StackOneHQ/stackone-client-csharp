@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HomeLocationLocationTypeSourceValueUnionType
     {
         private HomeLocationLocationTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HomeLocationLocationTypeSourceValueUnionType Str { get { return new HomeLocationLocationTypeSourceValueUnionType("str"); } }
-        
+
         public static HomeLocationLocationTypeSourceValueUnionType Number { get { return new HomeLocationLocationTypeSourceValueUnionType("number"); } }
-        
+
         public static HomeLocationLocationTypeSourceValueUnionType Boolean { get { return new HomeLocationLocationTypeSourceValueUnionType("boolean"); } }
-        
+
         public static HomeLocationLocationTypeSourceValueUnionType SourceValueHomeLocationLocationType { get { return new HomeLocationLocationTypeSourceValueUnionType("source_value_home_location_location_type"); } }
-        
+
         public static HomeLocationLocationTypeSourceValueUnionType ArrayOfAny { get { return new HomeLocationLocationTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HomeLocationLocationTypeSourceValueUnionType Null { get { return new HomeLocationLocationTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the location type.
     /// </summary>
     [JsonConverter(typeof(HomeLocationLocationTypeSourceValueUnion.HomeLocationLocationTypeSourceValueUnionConverter))]
-    public class HomeLocationLocationTypeSourceValueUnion {
-        public HomeLocationLocationTypeSourceValueUnion(HomeLocationLocationTypeSourceValueUnionType type) {
+    public class HomeLocationLocationTypeSourceValueUnion
+    {
+        public HomeLocationLocationTypeSourceValueUnion(HomeLocationLocationTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HomeLocationLocationTypeSourceValueUnionType Type { get; set; }
-
-
-        public static HomeLocationLocationTypeSourceValueUnion CreateStr(string str) {
+        public static HomeLocationLocationTypeSourceValueUnion CreateStr(string str)
+        {
             HomeLocationLocationTypeSourceValueUnionType typ = HomeLocationLocationTypeSourceValueUnionType.Str;
 
             HomeLocationLocationTypeSourceValueUnion res = new HomeLocationLocationTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HomeLocationLocationTypeSourceValueUnion CreateNumber(double number) {
+        public static HomeLocationLocationTypeSourceValueUnion CreateNumber(double number)
+        {
             HomeLocationLocationTypeSourceValueUnionType typ = HomeLocationLocationTypeSourceValueUnionType.Number;
 
             HomeLocationLocationTypeSourceValueUnion res = new HomeLocationLocationTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HomeLocationLocationTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static HomeLocationLocationTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             HomeLocationLocationTypeSourceValueUnionType typ = HomeLocationLocationTypeSourceValueUnionType.Boolean;
 
             HomeLocationLocationTypeSourceValueUnion res = new HomeLocationLocationTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HomeLocationLocationTypeSourceValueUnion CreateSourceValueHomeLocationLocationType(SourceValueHomeLocationLocationType sourceValueHomeLocationLocationType) {
+        public static HomeLocationLocationTypeSourceValueUnion CreateSourceValueHomeLocationLocationType(SourceValueHomeLocationLocationType sourceValueHomeLocationLocationType)
+        {
             HomeLocationLocationTypeSourceValueUnionType typ = HomeLocationLocationTypeSourceValueUnionType.SourceValueHomeLocationLocationType;
 
             HomeLocationLocationTypeSourceValueUnion res = new HomeLocationLocationTypeSourceValueUnion(typ);
             res.SourceValueHomeLocationLocationType = sourceValueHomeLocationLocationType;
             return res;
         }
-
-        public static HomeLocationLocationTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HomeLocationLocationTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HomeLocationLocationTypeSourceValueUnionType typ = HomeLocationLocationTypeSourceValueUnionType.ArrayOfAny;
 
             HomeLocationLocationTypeSourceValueUnion res = new HomeLocationLocationTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HomeLocationLocationTypeSourceValueUnion CreateNull() {
+        public static HomeLocationLocationTypeSourceValueUnion CreateNull()
+        {
             HomeLocationLocationTypeSourceValueUnionType typ = HomeLocationLocationTypeSourceValueUnionType.Null;
             return new HomeLocationLocationTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HomeLocationLocationTypeSourceValueUnion res = (HomeLocationLocationTypeSourceValueUnion)value;
                 if (HomeLocationLocationTypeSourceValueUnionType.FromString(res.Type).Equals(HomeLocationLocationTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueHomeLocationLocationType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueHomeLocationLocationType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

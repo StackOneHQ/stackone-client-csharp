@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CampaignStatusSourceValueUnionType
     {
         private CampaignStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CampaignStatusSourceValueUnionType Str { get { return new CampaignStatusSourceValueUnionType("str"); } }
-        
+
         public static CampaignStatusSourceValueUnionType Number { get { return new CampaignStatusSourceValueUnionType("number"); } }
-        
+
         public static CampaignStatusSourceValueUnionType Boolean { get { return new CampaignStatusSourceValueUnionType("boolean"); } }
-        
+
         public static CampaignStatusSourceValueUnionType CampaignSourceValueStatus { get { return new CampaignStatusSourceValueUnionType("Campaign_source_value_status"); } }
-        
+
         public static CampaignStatusSourceValueUnionType ArrayOfAny { get { return new CampaignStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CampaignStatusSourceValueUnionType Null { get { return new CampaignStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the Status.
     /// </summary>
     [JsonConverter(typeof(CampaignStatusSourceValueUnion.CampaignStatusSourceValueUnionConverter))]
-    public class CampaignStatusSourceValueUnion {
-        public CampaignStatusSourceValueUnion(CampaignStatusSourceValueUnionType type) {
+    public class CampaignStatusSourceValueUnion
+    {
+        public CampaignStatusSourceValueUnion(CampaignStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CampaignStatusSourceValueUnionType Type { get; set; }
-
-
-        public static CampaignStatusSourceValueUnion CreateStr(string str) {
+        public static CampaignStatusSourceValueUnion CreateStr(string str)
+        {
             CampaignStatusSourceValueUnionType typ = CampaignStatusSourceValueUnionType.Str;
 
             CampaignStatusSourceValueUnion res = new CampaignStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CampaignStatusSourceValueUnion CreateNumber(double number) {
+        public static CampaignStatusSourceValueUnion CreateNumber(double number)
+        {
             CampaignStatusSourceValueUnionType typ = CampaignStatusSourceValueUnionType.Number;
 
             CampaignStatusSourceValueUnion res = new CampaignStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CampaignStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static CampaignStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             CampaignStatusSourceValueUnionType typ = CampaignStatusSourceValueUnionType.Boolean;
 
             CampaignStatusSourceValueUnion res = new CampaignStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CampaignStatusSourceValueUnion CreateCampaignSourceValueStatus(CampaignSourceValueStatus campaignSourceValueStatus) {
+        public static CampaignStatusSourceValueUnion CreateCampaignSourceValueStatus(CampaignSourceValueStatus campaignSourceValueStatus)
+        {
             CampaignStatusSourceValueUnionType typ = CampaignStatusSourceValueUnionType.CampaignSourceValueStatus;
 
             CampaignStatusSourceValueUnion res = new CampaignStatusSourceValueUnion(typ);
             res.CampaignSourceValueStatus = campaignSourceValueStatus;
             return res;
         }
-
-        public static CampaignStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CampaignStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CampaignStatusSourceValueUnionType typ = CampaignStatusSourceValueUnionType.ArrayOfAny;
 
             CampaignStatusSourceValueUnion res = new CampaignStatusSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CampaignStatusSourceValueUnion CreateNull() {
+        public static CampaignStatusSourceValueUnion CreateNull()
+        {
             CampaignStatusSourceValueUnionType typ = CampaignStatusSourceValueUnionType.Null;
             return new CampaignStatusSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CampaignStatusSourceValueUnion res = (CampaignStatusSourceValueUnion)value;
                 if (CampaignStatusSourceValueUnionType.FromString(res.Type).Equals(CampaignStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CampaignSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CampaignSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

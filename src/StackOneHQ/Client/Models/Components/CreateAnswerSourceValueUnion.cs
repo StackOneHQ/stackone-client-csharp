@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateAnswerSourceValueUnionType
     {
         private CreateAnswerSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateAnswerSourceValueUnionType Str { get { return new CreateAnswerSourceValueUnionType("str"); } }
-        
+
         public static CreateAnswerSourceValueUnionType Number { get { return new CreateAnswerSourceValueUnionType("number"); } }
-        
+
         public static CreateAnswerSourceValueUnionType Boolean { get { return new CreateAnswerSourceValueUnionType("boolean"); } }
-        
+
         public static CreateAnswerSourceValueUnionType CreateAnswerSourceValue { get { return new CreateAnswerSourceValueUnionType("CreateAnswer_source_value"); } }
-        
+
         public static CreateAnswerSourceValueUnionType ArrayOfAny { get { return new CreateAnswerSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateAnswerSourceValueUnionType Null { get { return new CreateAnswerSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the answer type.
     /// </summary>
     [JsonConverter(typeof(CreateAnswerSourceValueUnion.CreateAnswerSourceValueUnionConverter))]
-    public class CreateAnswerSourceValueUnion {
-        public CreateAnswerSourceValueUnion(CreateAnswerSourceValueUnionType type) {
+    public class CreateAnswerSourceValueUnion
+    {
+        public CreateAnswerSourceValueUnion(CreateAnswerSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateAnswerSourceValueUnionType Type { get; set; }
-
-
-        public static CreateAnswerSourceValueUnion CreateStr(string str) {
+        public static CreateAnswerSourceValueUnion CreateStr(string str)
+        {
             CreateAnswerSourceValueUnionType typ = CreateAnswerSourceValueUnionType.Str;
 
             CreateAnswerSourceValueUnion res = new CreateAnswerSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateAnswerSourceValueUnion CreateNumber(double number) {
+        public static CreateAnswerSourceValueUnion CreateNumber(double number)
+        {
             CreateAnswerSourceValueUnionType typ = CreateAnswerSourceValueUnionType.Number;
 
             CreateAnswerSourceValueUnion res = new CreateAnswerSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateAnswerSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateAnswerSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateAnswerSourceValueUnionType typ = CreateAnswerSourceValueUnionType.Boolean;
 
             CreateAnswerSourceValueUnion res = new CreateAnswerSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateAnswerSourceValueUnion CreateCreateAnswerSourceValue(CreateAnswerSourceValue createAnswerSourceValue) {
+        public static CreateAnswerSourceValueUnion CreateCreateAnswerSourceValue(CreateAnswerSourceValue createAnswerSourceValue)
+        {
             CreateAnswerSourceValueUnionType typ = CreateAnswerSourceValueUnionType.CreateAnswerSourceValue;
 
             CreateAnswerSourceValueUnion res = new CreateAnswerSourceValueUnion(typ);
             res.CreateAnswerSourceValue = createAnswerSourceValue;
             return res;
         }
-
-        public static CreateAnswerSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateAnswerSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateAnswerSourceValueUnionType typ = CreateAnswerSourceValueUnionType.ArrayOfAny;
 
             CreateAnswerSourceValueUnion res = new CreateAnswerSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateAnswerSourceValueUnion CreateNull() {
+        public static CreateAnswerSourceValueUnion CreateNull()
+        {
             CreateAnswerSourceValueUnionType typ = CreateAnswerSourceValueUnionType.Null;
             return new CreateAnswerSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateAnswerSourceValueUnion res = (CreateAnswerSourceValueUnion)value;
                 if (CreateAnswerSourceValueUnionType.FromString(res.Type).Equals(CreateAnswerSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateAnswerSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateAnswerSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

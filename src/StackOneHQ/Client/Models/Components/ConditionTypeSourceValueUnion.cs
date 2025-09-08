@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ConditionTypeSourceValueUnionType
     {
         private ConditionTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ConditionTypeSourceValueUnionType Str { get { return new ConditionTypeSourceValueUnionType("str"); } }
-        
+
         public static ConditionTypeSourceValueUnionType Number { get { return new ConditionTypeSourceValueUnionType("number"); } }
-        
+
         public static ConditionTypeSourceValueUnionType Boolean { get { return new ConditionTypeSourceValueUnionType("boolean"); } }
-        
+
         public static ConditionTypeSourceValueUnionType SourceValueConditionType { get { return new ConditionTypeSourceValueUnionType("source_value_condition_type"); } }
-        
+
         public static ConditionTypeSourceValueUnionType ArrayOfAny { get { return new ConditionTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ConditionTypeSourceValueUnionType Null { get { return new ConditionTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the question&apos;s condition type
     /// </summary>
     [JsonConverter(typeof(ConditionTypeSourceValueUnion.ConditionTypeSourceValueUnionConverter))]
-    public class ConditionTypeSourceValueUnion {
-        public ConditionTypeSourceValueUnion(ConditionTypeSourceValueUnionType type) {
+    public class ConditionTypeSourceValueUnion
+    {
+        public ConditionTypeSourceValueUnion(ConditionTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ConditionTypeSourceValueUnionType Type { get; set; }
-
-
-        public static ConditionTypeSourceValueUnion CreateStr(string str) {
+        public static ConditionTypeSourceValueUnion CreateStr(string str)
+        {
             ConditionTypeSourceValueUnionType typ = ConditionTypeSourceValueUnionType.Str;
 
             ConditionTypeSourceValueUnion res = new ConditionTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ConditionTypeSourceValueUnion CreateNumber(double number) {
+        public static ConditionTypeSourceValueUnion CreateNumber(double number)
+        {
             ConditionTypeSourceValueUnionType typ = ConditionTypeSourceValueUnionType.Number;
 
             ConditionTypeSourceValueUnion res = new ConditionTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ConditionTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static ConditionTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             ConditionTypeSourceValueUnionType typ = ConditionTypeSourceValueUnionType.Boolean;
 
             ConditionTypeSourceValueUnion res = new ConditionTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ConditionTypeSourceValueUnion CreateSourceValueConditionType(SourceValueConditionType sourceValueConditionType) {
+        public static ConditionTypeSourceValueUnion CreateSourceValueConditionType(SourceValueConditionType sourceValueConditionType)
+        {
             ConditionTypeSourceValueUnionType typ = ConditionTypeSourceValueUnionType.SourceValueConditionType;
 
             ConditionTypeSourceValueUnion res = new ConditionTypeSourceValueUnion(typ);
             res.SourceValueConditionType = sourceValueConditionType;
             return res;
         }
-
-        public static ConditionTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ConditionTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ConditionTypeSourceValueUnionType typ = ConditionTypeSourceValueUnionType.ArrayOfAny;
 
             ConditionTypeSourceValueUnion res = new ConditionTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ConditionTypeSourceValueUnion CreateNull() {
+        public static ConditionTypeSourceValueUnion CreateNull()
+        {
             ConditionTypeSourceValueUnionType typ = ConditionTypeSourceValueUnionType.Null;
             return new ConditionTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ConditionTypeSourceValueUnion res = (ConditionTypeSourceValueUnion)value;
                 if (ConditionTypeSourceValueUnionType.FromString(res.Type).Equals(ConditionTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueConditionType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueConditionType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CountryCodeEnumSourceValueUnionType
     {
         private CountryCodeEnumSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CountryCodeEnumSourceValueUnionType Str { get { return new CountryCodeEnumSourceValueUnionType("str"); } }
-        
+
         public static CountryCodeEnumSourceValueUnionType Number { get { return new CountryCodeEnumSourceValueUnionType("number"); } }
-        
+
         public static CountryCodeEnumSourceValueUnionType Boolean { get { return new CountryCodeEnumSourceValueUnionType("boolean"); } }
-        
+
         public static CountryCodeEnumSourceValueUnionType CountryCodeEnumSourceValue { get { return new CountryCodeEnumSourceValueUnionType("CountryCodeEnum_source_value"); } }
-        
+
         public static CountryCodeEnumSourceValueUnionType ArrayOfAny { get { return new CountryCodeEnumSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CountryCodeEnumSourceValueUnionType Null { get { return new CountryCodeEnumSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CountryCodeEnumSourceValueUnion.CountryCodeEnumSourceValueUnionConverter))]
-    public class CountryCodeEnumSourceValueUnion {
-        public CountryCodeEnumSourceValueUnion(CountryCodeEnumSourceValueUnionType type) {
+    public class CountryCodeEnumSourceValueUnion
+    {
+        public CountryCodeEnumSourceValueUnion(CountryCodeEnumSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CountryCodeEnumSourceValueUnionType Type { get; set; }
-
-
-        public static CountryCodeEnumSourceValueUnion CreateStr(string str) {
+        public static CountryCodeEnumSourceValueUnion CreateStr(string str)
+        {
             CountryCodeEnumSourceValueUnionType typ = CountryCodeEnumSourceValueUnionType.Str;
 
             CountryCodeEnumSourceValueUnion res = new CountryCodeEnumSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CountryCodeEnumSourceValueUnion CreateNumber(double number) {
+        public static CountryCodeEnumSourceValueUnion CreateNumber(double number)
+        {
             CountryCodeEnumSourceValueUnionType typ = CountryCodeEnumSourceValueUnionType.Number;
 
             CountryCodeEnumSourceValueUnion res = new CountryCodeEnumSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CountryCodeEnumSourceValueUnion CreateBoolean(bool boolean) {
+        public static CountryCodeEnumSourceValueUnion CreateBoolean(bool boolean)
+        {
             CountryCodeEnumSourceValueUnionType typ = CountryCodeEnumSourceValueUnionType.Boolean;
 
             CountryCodeEnumSourceValueUnion res = new CountryCodeEnumSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CountryCodeEnumSourceValueUnion CreateCountryCodeEnumSourceValue(CountryCodeEnumSourceValue countryCodeEnumSourceValue) {
+        public static CountryCodeEnumSourceValueUnion CreateCountryCodeEnumSourceValue(CountryCodeEnumSourceValue countryCodeEnumSourceValue)
+        {
             CountryCodeEnumSourceValueUnionType typ = CountryCodeEnumSourceValueUnionType.CountryCodeEnumSourceValue;
 
             CountryCodeEnumSourceValueUnion res = new CountryCodeEnumSourceValueUnion(typ);
             res.CountryCodeEnumSourceValue = countryCodeEnumSourceValue;
             return res;
         }
-
-        public static CountryCodeEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CountryCodeEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CountryCodeEnumSourceValueUnionType typ = CountryCodeEnumSourceValueUnionType.ArrayOfAny;
 
             CountryCodeEnumSourceValueUnion res = new CountryCodeEnumSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CountryCodeEnumSourceValueUnion CreateNull() {
+        public static CountryCodeEnumSourceValueUnion CreateNull()
+        {
             CountryCodeEnumSourceValueUnionType typ = CountryCodeEnumSourceValueUnionType.Null;
             return new CountryCodeEnumSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CountryCodeEnumSourceValueUnion res = (CountryCodeEnumSourceValueUnion)value;
                 if (CountryCodeEnumSourceValueUnionType.FromString(res.Type).Equals(CountryCodeEnumSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CountryCodeEnumSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CountryCodeEnumSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType
     {
         private EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType Str { get { return new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType("str"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType Number { get { return new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType("number"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType Boolean { get { return new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType("boolean"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType EntitySkillsCreateRequestDtoSourceValueMinimumProficiency { get { return new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType("EntitySkillsCreateRequestDto_source_value_minimum_proficiency"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType ArrayOfAny { get { return new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType Null { get { return new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion.EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionConverter))]
-    public class EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion {
-        public EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType type) {
+    public class EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion
+    {
+        public EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType Type { get; set; }
-
-
-        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateStr(string str) {
+        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateStr(string str)
+        {
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.Str;
 
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateNumber(double number) {
+        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateNumber(double number)
+        {
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.Number;
 
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateBoolean(bool boolean) {
+        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateBoolean(bool boolean)
+        {
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.Boolean;
 
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateEntitySkillsCreateRequestDtoSourceValueMinimumProficiency(EntitySkillsCreateRequestDtoSourceValueMinimumProficiency entitySkillsCreateRequestDtoSourceValueMinimumProficiency) {
+        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateEntitySkillsCreateRequestDtoSourceValueMinimumProficiency(EntitySkillsCreateRequestDtoSourceValueMinimumProficiency entitySkillsCreateRequestDtoSourceValueMinimumProficiency)
+        {
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.EntitySkillsCreateRequestDtoSourceValueMinimumProficiency;
 
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(typ);
             res.EntitySkillsCreateRequestDtoSourceValueMinimumProficiency = entitySkillsCreateRequestDtoSourceValueMinimumProficiency;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.ArrayOfAny;
 
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateNull() {
+        public static EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion CreateNull()
+        {
             EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.Null;
             return new EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion res = (EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnion)value;
                 if (EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.FromString(res.Type).Equals(EntitySkillsCreateRequestDtoMinimumProficiencySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EntitySkillsCreateRequestDtoSourceValueMinimumProficiency != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EntitySkillsCreateRequestDtoSourceValueMinimumProficiency));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

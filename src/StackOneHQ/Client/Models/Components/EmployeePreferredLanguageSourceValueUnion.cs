@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmployeePreferredLanguageSourceValueUnionType
     {
         private EmployeePreferredLanguageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmployeePreferredLanguageSourceValueUnionType Str { get { return new EmployeePreferredLanguageSourceValueUnionType("str"); } }
-        
+
         public static EmployeePreferredLanguageSourceValueUnionType Number { get { return new EmployeePreferredLanguageSourceValueUnionType("number"); } }
-        
+
         public static EmployeePreferredLanguageSourceValueUnionType Boolean { get { return new EmployeePreferredLanguageSourceValueUnionType("boolean"); } }
-        
+
         public static EmployeePreferredLanguageSourceValueUnionType EmployeeSourceValuePreferredLanguage { get { return new EmployeePreferredLanguageSourceValueUnionType("Employee_source_value_preferred_language"); } }
-        
+
         public static EmployeePreferredLanguageSourceValueUnionType ArrayOfAny { get { return new EmployeePreferredLanguageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmployeePreferredLanguageSourceValueUnionType Null { get { return new EmployeePreferredLanguageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmployeePreferredLanguageSourceValueUnion.EmployeePreferredLanguageSourceValueUnionConverter))]
-    public class EmployeePreferredLanguageSourceValueUnion {
-        public EmployeePreferredLanguageSourceValueUnion(EmployeePreferredLanguageSourceValueUnionType type) {
+    public class EmployeePreferredLanguageSourceValueUnion
+    {
+        public EmployeePreferredLanguageSourceValueUnion(EmployeePreferredLanguageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmployeePreferredLanguageSourceValueUnionType Type { get; set; }
-
-
-        public static EmployeePreferredLanguageSourceValueUnion CreateStr(string str) {
+        public static EmployeePreferredLanguageSourceValueUnion CreateStr(string str)
+        {
             EmployeePreferredLanguageSourceValueUnionType typ = EmployeePreferredLanguageSourceValueUnionType.Str;
 
             EmployeePreferredLanguageSourceValueUnion res = new EmployeePreferredLanguageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmployeePreferredLanguageSourceValueUnion CreateNumber(double number) {
+        public static EmployeePreferredLanguageSourceValueUnion CreateNumber(double number)
+        {
             EmployeePreferredLanguageSourceValueUnionType typ = EmployeePreferredLanguageSourceValueUnionType.Number;
 
             EmployeePreferredLanguageSourceValueUnion res = new EmployeePreferredLanguageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmployeePreferredLanguageSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmployeePreferredLanguageSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmployeePreferredLanguageSourceValueUnionType typ = EmployeePreferredLanguageSourceValueUnionType.Boolean;
 
             EmployeePreferredLanguageSourceValueUnion res = new EmployeePreferredLanguageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmployeePreferredLanguageSourceValueUnion CreateEmployeeSourceValuePreferredLanguage(EmployeeSourceValuePreferredLanguage employeeSourceValuePreferredLanguage) {
+        public static EmployeePreferredLanguageSourceValueUnion CreateEmployeeSourceValuePreferredLanguage(EmployeeSourceValuePreferredLanguage employeeSourceValuePreferredLanguage)
+        {
             EmployeePreferredLanguageSourceValueUnionType typ = EmployeePreferredLanguageSourceValueUnionType.EmployeeSourceValuePreferredLanguage;
 
             EmployeePreferredLanguageSourceValueUnion res = new EmployeePreferredLanguageSourceValueUnion(typ);
             res.EmployeeSourceValuePreferredLanguage = employeeSourceValuePreferredLanguage;
             return res;
         }
-
-        public static EmployeePreferredLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmployeePreferredLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmployeePreferredLanguageSourceValueUnionType typ = EmployeePreferredLanguageSourceValueUnionType.ArrayOfAny;
 
             EmployeePreferredLanguageSourceValueUnion res = new EmployeePreferredLanguageSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmployeePreferredLanguageSourceValueUnion CreateNull() {
+        public static EmployeePreferredLanguageSourceValueUnion CreateNull()
+        {
             EmployeePreferredLanguageSourceValueUnionType typ = EmployeePreferredLanguageSourceValueUnionType.Null;
             return new EmployeePreferredLanguageSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmployeePreferredLanguageSourceValueUnion res = (EmployeePreferredLanguageSourceValueUnion)value;
                 if (EmployeePreferredLanguageSourceValueUnionType.FromString(res.Type).Equals(EmployeePreferredLanguageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmployeeSourceValuePreferredLanguage != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmployeeSourceValuePreferredLanguage));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

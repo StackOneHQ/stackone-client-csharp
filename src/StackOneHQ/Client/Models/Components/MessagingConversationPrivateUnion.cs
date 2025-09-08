@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessagingConversationPrivateUnionType
     {
         private MessagingConversationPrivateUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessagingConversationPrivateUnionType Boolean { get { return new MessagingConversationPrivateUnionType("boolean"); } }
-        
+
         public static MessagingConversationPrivateUnionType MessagingConversationPrivateEnum { get { return new MessagingConversationPrivateUnionType("MessagingConversation_private_enum"); } }
-        
+
         public static MessagingConversationPrivateUnionType Null { get { return new MessagingConversationPrivateUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the conversation is private
     /// </summary>
     [JsonConverter(typeof(MessagingConversationPrivateUnion.MessagingConversationPrivateUnionConverter))]
-    public class MessagingConversationPrivateUnion {
-        public MessagingConversationPrivateUnion(MessagingConversationPrivateUnionType type) {
+    public class MessagingConversationPrivateUnion
+    {
+        public MessagingConversationPrivateUnion(MessagingConversationPrivateUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public MessagingConversationPrivateEnum? MessagingConversationPrivateEnum { get; set; }
 
         public MessagingConversationPrivateUnionType Type { get; set; }
-
-
-        public static MessagingConversationPrivateUnion CreateBoolean(bool boolean) {
+        public static MessagingConversationPrivateUnion CreateBoolean(bool boolean)
+        {
             MessagingConversationPrivateUnionType typ = MessagingConversationPrivateUnionType.Boolean;
 
             MessagingConversationPrivateUnion res = new MessagingConversationPrivateUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MessagingConversationPrivateUnion CreateMessagingConversationPrivateEnum(MessagingConversationPrivateEnum messagingConversationPrivateEnum) {
+        public static MessagingConversationPrivateUnion CreateMessagingConversationPrivateEnum(MessagingConversationPrivateEnum messagingConversationPrivateEnum)
+        {
             MessagingConversationPrivateUnionType typ = MessagingConversationPrivateUnionType.MessagingConversationPrivateEnum;
 
             MessagingConversationPrivateUnion res = new MessagingConversationPrivateUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessagingConversationPrivateUnion CreateNull() {
+        public static MessagingConversationPrivateUnion CreateNull()
+        {
             MessagingConversationPrivateUnionType typ = MessagingConversationPrivateUnionType.Null;
             return new MessagingConversationPrivateUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessagingConversationPrivateUnion res = (MessagingConversationPrivateUnion)value;
                 if (MessagingConversationPrivateUnionType.FromString(res.Type).Equals(MessagingConversationPrivateUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MessagingConversationPrivateEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessagingConversationPrivateEnum));
                     return;
                 }
-
             }
 
         }

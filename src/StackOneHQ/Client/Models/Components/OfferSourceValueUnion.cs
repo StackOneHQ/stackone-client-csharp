@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class OfferSourceValueUnionType
     {
         private OfferSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static OfferSourceValueUnionType Str { get { return new OfferSourceValueUnionType("str"); } }
-        
+
         public static OfferSourceValueUnionType Number { get { return new OfferSourceValueUnionType("number"); } }
-        
+
         public static OfferSourceValueUnionType Boolean { get { return new OfferSourceValueUnionType("boolean"); } }
-        
+
         public static OfferSourceValueUnionType OfferSourceValue { get { return new OfferSourceValueUnionType("Offer_source_value"); } }
-        
+
         public static OfferSourceValueUnionType ArrayOfAny { get { return new OfferSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static OfferSourceValueUnionType Null { get { return new OfferSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the offer status.
     /// </summary>
     [JsonConverter(typeof(OfferSourceValueUnion.OfferSourceValueUnionConverter))]
-    public class OfferSourceValueUnion {
-        public OfferSourceValueUnion(OfferSourceValueUnionType type) {
+    public class OfferSourceValueUnion
+    {
+        public OfferSourceValueUnion(OfferSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public OfferSourceValueUnionType Type { get; set; }
-
-
-        public static OfferSourceValueUnion CreateStr(string str) {
+        public static OfferSourceValueUnion CreateStr(string str)
+        {
             OfferSourceValueUnionType typ = OfferSourceValueUnionType.Str;
 
             OfferSourceValueUnion res = new OfferSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static OfferSourceValueUnion CreateNumber(double number) {
+        public static OfferSourceValueUnion CreateNumber(double number)
+        {
             OfferSourceValueUnionType typ = OfferSourceValueUnionType.Number;
 
             OfferSourceValueUnion res = new OfferSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static OfferSourceValueUnion CreateBoolean(bool boolean) {
+        public static OfferSourceValueUnion CreateBoolean(bool boolean)
+        {
             OfferSourceValueUnionType typ = OfferSourceValueUnionType.Boolean;
 
             OfferSourceValueUnion res = new OfferSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static OfferSourceValueUnion CreateOfferSourceValue(OfferSourceValue offerSourceValue) {
+        public static OfferSourceValueUnion CreateOfferSourceValue(OfferSourceValue offerSourceValue)
+        {
             OfferSourceValueUnionType typ = OfferSourceValueUnionType.OfferSourceValue;
 
             OfferSourceValueUnion res = new OfferSourceValueUnion(typ);
             res.OfferSourceValue = offerSourceValue;
             return res;
         }
-
-        public static OfferSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static OfferSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             OfferSourceValueUnionType typ = OfferSourceValueUnionType.ArrayOfAny;
 
             OfferSourceValueUnion res = new OfferSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static OfferSourceValueUnion CreateNull() {
+        public static OfferSourceValueUnion CreateNull()
+        {
             OfferSourceValueUnionType typ = OfferSourceValueUnionType.Null;
             return new OfferSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 OfferSourceValueUnion res = (OfferSourceValueUnion)value;
                 if (OfferSourceValueUnionType.FromString(res.Type).Equals(OfferSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.OfferSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.OfferSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

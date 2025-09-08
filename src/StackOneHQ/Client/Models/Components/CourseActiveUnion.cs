@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CourseActiveUnionType
     {
         private CourseActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CourseActiveUnionType Boolean { get { return new CourseActiveUnionType("boolean"); } }
-        
+
         public static CourseActiveUnionType CourseActiveEnum { get { return new CourseActiveUnionType("Course_active_enum"); } }
-        
+
         public static CourseActiveUnionType Null { get { return new CourseActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the course is active and available for users.
     /// </summary>
     [JsonConverter(typeof(CourseActiveUnion.CourseActiveUnionConverter))]
-    public class CourseActiveUnion {
-        public CourseActiveUnion(CourseActiveUnionType type) {
+    public class CourseActiveUnion
+    {
+        public CourseActiveUnion(CourseActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public CourseActiveEnum? CourseActiveEnum { get; set; }
 
         public CourseActiveUnionType Type { get; set; }
-
-
-        public static CourseActiveUnion CreateBoolean(bool boolean) {
+        public static CourseActiveUnion CreateBoolean(bool boolean)
+        {
             CourseActiveUnionType typ = CourseActiveUnionType.Boolean;
 
             CourseActiveUnion res = new CourseActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CourseActiveUnion CreateCourseActiveEnum(CourseActiveEnum courseActiveEnum) {
+        public static CourseActiveUnion CreateCourseActiveEnum(CourseActiveEnum courseActiveEnum)
+        {
             CourseActiveUnionType typ = CourseActiveUnionType.CourseActiveEnum;
 
             CourseActiveUnion res = new CourseActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CourseActiveUnion CreateNull() {
+        public static CourseActiveUnion CreateNull()
+        {
             CourseActiveUnionType typ = CourseActiveUnionType.Null;
             return new CourseActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CourseActiveUnion res = (CourseActiveUnion)value;
                 if (CourseActiveUnionType.FromString(res.Type).Equals(CourseActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CourseActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CourseActiveEnum));
                     return;
                 }
-
             }
 
         }

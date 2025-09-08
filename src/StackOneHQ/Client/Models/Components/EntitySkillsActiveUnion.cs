@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EntitySkillsActiveUnionType
     {
         private EntitySkillsActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EntitySkillsActiveUnionType Boolean { get { return new EntitySkillsActiveUnionType("boolean"); } }
-        
+
         public static EntitySkillsActiveUnionType EntitySkillsActiveEnum { get { return new EntitySkillsActiveUnionType("EntitySkills_active_enum"); } }
-        
+
         public static EntitySkillsActiveUnionType Null { get { return new EntitySkillsActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the skill is active and therefore available for use
     /// </summary>
     [JsonConverter(typeof(EntitySkillsActiveUnion.EntitySkillsActiveUnionConverter))]
-    public class EntitySkillsActiveUnion {
-        public EntitySkillsActiveUnion(EntitySkillsActiveUnionType type) {
+    public class EntitySkillsActiveUnion
+    {
+        public EntitySkillsActiveUnion(EntitySkillsActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public EntitySkillsActiveEnum? EntitySkillsActiveEnum { get; set; }
 
         public EntitySkillsActiveUnionType Type { get; set; }
-
-
-        public static EntitySkillsActiveUnion CreateBoolean(bool boolean) {
+        public static EntitySkillsActiveUnion CreateBoolean(bool boolean)
+        {
             EntitySkillsActiveUnionType typ = EntitySkillsActiveUnionType.Boolean;
 
             EntitySkillsActiveUnion res = new EntitySkillsActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EntitySkillsActiveUnion CreateEntitySkillsActiveEnum(EntitySkillsActiveEnum entitySkillsActiveEnum) {
+        public static EntitySkillsActiveUnion CreateEntitySkillsActiveEnum(EntitySkillsActiveEnum entitySkillsActiveEnum)
+        {
             EntitySkillsActiveUnionType typ = EntitySkillsActiveUnionType.EntitySkillsActiveEnum;
 
             EntitySkillsActiveUnion res = new EntitySkillsActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EntitySkillsActiveUnion CreateNull() {
+        public static EntitySkillsActiveUnion CreateNull()
+        {
             EntitySkillsActiveUnionType typ = EntitySkillsActiveUnionType.Null;
             return new EntitySkillsActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EntitySkillsActiveUnion res = (EntitySkillsActiveUnion)value;
                 if (EntitySkillsActiveUnionType.FromString(res.Type).Equals(EntitySkillsActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EntitySkillsActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EntitySkillsActiveEnum));
                     return;
                 }
-
             }
 
         }

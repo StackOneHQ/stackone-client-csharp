@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FilesHasChildrenUnionType
     {
         private FilesHasChildrenUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FilesHasChildrenUnionType Boolean { get { return new FilesHasChildrenUnionType("boolean"); } }
-        
+
         public static FilesHasChildrenUnionType FilesHasChildrenEnum { get { return new FilesHasChildrenUnionType("Files_has_children_enum"); } }
-        
+
         public static FilesHasChildrenUnionType Null { get { return new FilesHasChildrenUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the file has children
     /// </summary>
     [JsonConverter(typeof(FilesHasChildrenUnion.FilesHasChildrenUnionConverter))]
-    public class FilesHasChildrenUnion {
-        public FilesHasChildrenUnion(FilesHasChildrenUnionType type) {
+    public class FilesHasChildrenUnion
+    {
+        public FilesHasChildrenUnion(FilesHasChildrenUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public FilesHasChildrenEnum? FilesHasChildrenEnum { get; set; }
 
         public FilesHasChildrenUnionType Type { get; set; }
-
-
-        public static FilesHasChildrenUnion CreateBoolean(bool boolean) {
+        public static FilesHasChildrenUnion CreateBoolean(bool boolean)
+        {
             FilesHasChildrenUnionType typ = FilesHasChildrenUnionType.Boolean;
 
             FilesHasChildrenUnion res = new FilesHasChildrenUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FilesHasChildrenUnion CreateFilesHasChildrenEnum(FilesHasChildrenEnum filesHasChildrenEnum) {
+        public static FilesHasChildrenUnion CreateFilesHasChildrenEnum(FilesHasChildrenEnum filesHasChildrenEnum)
+        {
             FilesHasChildrenUnionType typ = FilesHasChildrenUnionType.FilesHasChildrenEnum;
 
             FilesHasChildrenUnion res = new FilesHasChildrenUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FilesHasChildrenUnion CreateNull() {
+        public static FilesHasChildrenUnion CreateNull()
+        {
             FilesHasChildrenUnionType typ = FilesHasChildrenUnionType.Null;
             return new FilesHasChildrenUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FilesHasChildrenUnion res = (FilesHasChildrenUnion)value;
                 if (FilesHasChildrenUnionType.FromString(res.Type).Equals(FilesHasChildrenUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FilesHasChildrenEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FilesHasChildrenEnum));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmployeeNationalIdentityNumberCountrySourceValueUnionType
     {
         private EmployeeNationalIdentityNumberCountrySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmployeeNationalIdentityNumberCountrySourceValueUnionType Str { get { return new EmployeeNationalIdentityNumberCountrySourceValueUnionType("str"); } }
-        
+
         public static EmployeeNationalIdentityNumberCountrySourceValueUnionType Number { get { return new EmployeeNationalIdentityNumberCountrySourceValueUnionType("number"); } }
-        
+
         public static EmployeeNationalIdentityNumberCountrySourceValueUnionType Boolean { get { return new EmployeeNationalIdentityNumberCountrySourceValueUnionType("boolean"); } }
-        
+
         public static EmployeeNationalIdentityNumberCountrySourceValueUnionType EmployeeSourceValueNationalIdentityNumberCountry { get { return new EmployeeNationalIdentityNumberCountrySourceValueUnionType("Employee_source_value_national_identity_number_country"); } }
-        
+
         public static EmployeeNationalIdentityNumberCountrySourceValueUnionType ArrayOfAny { get { return new EmployeeNationalIdentityNumberCountrySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmployeeNationalIdentityNumberCountrySourceValueUnionType Null { get { return new EmployeeNationalIdentityNumberCountrySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmployeeNationalIdentityNumberCountrySourceValueUnion.EmployeeNationalIdentityNumberCountrySourceValueUnionConverter))]
-    public class EmployeeNationalIdentityNumberCountrySourceValueUnion {
-        public EmployeeNationalIdentityNumberCountrySourceValueUnion(EmployeeNationalIdentityNumberCountrySourceValueUnionType type) {
+    public class EmployeeNationalIdentityNumberCountrySourceValueUnion
+    {
+        public EmployeeNationalIdentityNumberCountrySourceValueUnion(EmployeeNationalIdentityNumberCountrySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmployeeNationalIdentityNumberCountrySourceValueUnionType Type { get; set; }
-
-
-        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateStr(string str) {
+        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateStr(string str)
+        {
             EmployeeNationalIdentityNumberCountrySourceValueUnionType typ = EmployeeNationalIdentityNumberCountrySourceValueUnionType.Str;
 
             EmployeeNationalIdentityNumberCountrySourceValueUnion res = new EmployeeNationalIdentityNumberCountrySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateNumber(double number) {
+        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateNumber(double number)
+        {
             EmployeeNationalIdentityNumberCountrySourceValueUnionType typ = EmployeeNationalIdentityNumberCountrySourceValueUnionType.Number;
 
             EmployeeNationalIdentityNumberCountrySourceValueUnion res = new EmployeeNationalIdentityNumberCountrySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateBoolean(bool boolean) {
+        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateBoolean(bool boolean)
+        {
             EmployeeNationalIdentityNumberCountrySourceValueUnionType typ = EmployeeNationalIdentityNumberCountrySourceValueUnionType.Boolean;
 
             EmployeeNationalIdentityNumberCountrySourceValueUnion res = new EmployeeNationalIdentityNumberCountrySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateEmployeeSourceValueNationalIdentityNumberCountry(EmployeeSourceValueNationalIdentityNumberCountry employeeSourceValueNationalIdentityNumberCountry) {
+        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateEmployeeSourceValueNationalIdentityNumberCountry(EmployeeSourceValueNationalIdentityNumberCountry employeeSourceValueNationalIdentityNumberCountry)
+        {
             EmployeeNationalIdentityNumberCountrySourceValueUnionType typ = EmployeeNationalIdentityNumberCountrySourceValueUnionType.EmployeeSourceValueNationalIdentityNumberCountry;
 
             EmployeeNationalIdentityNumberCountrySourceValueUnion res = new EmployeeNationalIdentityNumberCountrySourceValueUnion(typ);
             res.EmployeeSourceValueNationalIdentityNumberCountry = employeeSourceValueNationalIdentityNumberCountry;
             return res;
         }
-
-        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmployeeNationalIdentityNumberCountrySourceValueUnionType typ = EmployeeNationalIdentityNumberCountrySourceValueUnionType.ArrayOfAny;
 
             EmployeeNationalIdentityNumberCountrySourceValueUnion res = new EmployeeNationalIdentityNumberCountrySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateNull() {
+        public static EmployeeNationalIdentityNumberCountrySourceValueUnion CreateNull()
+        {
             EmployeeNationalIdentityNumberCountrySourceValueUnionType typ = EmployeeNationalIdentityNumberCountrySourceValueUnionType.Null;
             return new EmployeeNationalIdentityNumberCountrySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmployeeNationalIdentityNumberCountrySourceValueUnion res = (EmployeeNationalIdentityNumberCountrySourceValueUnion)value;
                 if (EmployeeNationalIdentityNumberCountrySourceValueUnionType.FromString(res.Type).Equals(EmployeeNationalIdentityNumberCountrySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmployeeSourceValueNationalIdentityNumberCountry != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmployeeSourceValueNationalIdentityNumberCountry));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

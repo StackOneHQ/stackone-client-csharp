@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamMfaTypeEnumSourceValueUnionType
     {
         private IamMfaTypeEnumSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamMfaTypeEnumSourceValueUnionType Str { get { return new IamMfaTypeEnumSourceValueUnionType("str"); } }
-        
+
         public static IamMfaTypeEnumSourceValueUnionType Number { get { return new IamMfaTypeEnumSourceValueUnionType("number"); } }
-        
+
         public static IamMfaTypeEnumSourceValueUnionType Boolean { get { return new IamMfaTypeEnumSourceValueUnionType("boolean"); } }
-        
+
         public static IamMfaTypeEnumSourceValueUnionType IamMfaTypeEnumSourceValue { get { return new IamMfaTypeEnumSourceValueUnionType("IamMfaTypeEnum_source_value"); } }
-        
+
         public static IamMfaTypeEnumSourceValueUnionType ArrayOfAny { get { return new IamMfaTypeEnumSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static IamMfaTypeEnumSourceValueUnionType Null { get { return new IamMfaTypeEnumSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(IamMfaTypeEnumSourceValueUnion.IamMfaTypeEnumSourceValueUnionConverter))]
-    public class IamMfaTypeEnumSourceValueUnion {
-        public IamMfaTypeEnumSourceValueUnion(IamMfaTypeEnumSourceValueUnionType type) {
+    public class IamMfaTypeEnumSourceValueUnion
+    {
+        public IamMfaTypeEnumSourceValueUnion(IamMfaTypeEnumSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public IamMfaTypeEnumSourceValueUnionType Type { get; set; }
-
-
-        public static IamMfaTypeEnumSourceValueUnion CreateStr(string str) {
+        public static IamMfaTypeEnumSourceValueUnion CreateStr(string str)
+        {
             IamMfaTypeEnumSourceValueUnionType typ = IamMfaTypeEnumSourceValueUnionType.Str;
 
             IamMfaTypeEnumSourceValueUnion res = new IamMfaTypeEnumSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static IamMfaTypeEnumSourceValueUnion CreateNumber(double number) {
+        public static IamMfaTypeEnumSourceValueUnion CreateNumber(double number)
+        {
             IamMfaTypeEnumSourceValueUnionType typ = IamMfaTypeEnumSourceValueUnionType.Number;
 
             IamMfaTypeEnumSourceValueUnion res = new IamMfaTypeEnumSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static IamMfaTypeEnumSourceValueUnion CreateBoolean(bool boolean) {
+        public static IamMfaTypeEnumSourceValueUnion CreateBoolean(bool boolean)
+        {
             IamMfaTypeEnumSourceValueUnionType typ = IamMfaTypeEnumSourceValueUnionType.Boolean;
 
             IamMfaTypeEnumSourceValueUnion res = new IamMfaTypeEnumSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamMfaTypeEnumSourceValueUnion CreateIamMfaTypeEnumSourceValue(IamMfaTypeEnumSourceValue iamMfaTypeEnumSourceValue) {
+        public static IamMfaTypeEnumSourceValueUnion CreateIamMfaTypeEnumSourceValue(IamMfaTypeEnumSourceValue iamMfaTypeEnumSourceValue)
+        {
             IamMfaTypeEnumSourceValueUnionType typ = IamMfaTypeEnumSourceValueUnionType.IamMfaTypeEnumSourceValue;
 
             IamMfaTypeEnumSourceValueUnion res = new IamMfaTypeEnumSourceValueUnion(typ);
             res.IamMfaTypeEnumSourceValue = iamMfaTypeEnumSourceValue;
             return res;
         }
-
-        public static IamMfaTypeEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static IamMfaTypeEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             IamMfaTypeEnumSourceValueUnionType typ = IamMfaTypeEnumSourceValueUnionType.ArrayOfAny;
 
             IamMfaTypeEnumSourceValueUnion res = new IamMfaTypeEnumSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamMfaTypeEnumSourceValueUnion CreateNull() {
+        public static IamMfaTypeEnumSourceValueUnion CreateNull()
+        {
             IamMfaTypeEnumSourceValueUnionType typ = IamMfaTypeEnumSourceValueUnionType.Null;
             return new IamMfaTypeEnumSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamMfaTypeEnumSourceValueUnion res = (IamMfaTypeEnumSourceValueUnion)value;
                 if (IamMfaTypeEnumSourceValueUnionType.FromString(res.Type).Equals(IamMfaTypeEnumSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamMfaTypeEnumSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamMfaTypeEnumSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

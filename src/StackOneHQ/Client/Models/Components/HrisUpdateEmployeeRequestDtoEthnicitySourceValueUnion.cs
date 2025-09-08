@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType
     {
         private HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType Str { get { return new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType("str"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType Number { get { return new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType("number"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType Boolean { get { return new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType("boolean"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType HrisUpdateEmployeeRequestDtoSourceValueEthnicity { get { return new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType("HrisUpdateEmployeeRequestDto_source_value_ethnicity"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType ArrayOfAny { get { return new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType Null { get { return new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion.HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionConverter))]
-    public class HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion {
-        public HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType type) {
+    public class HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion
+    {
+        public HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType Type { get; set; }
-
-
-        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateStr(string str) {
+        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateStr(string str)
+        {
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType typ = HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.Str;
 
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion res = new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateNumber(double number) {
+        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateNumber(double number)
+        {
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType typ = HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.Number;
 
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion res = new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType typ = HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.Boolean;
 
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion res = new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateHrisUpdateEmployeeRequestDtoSourceValueEthnicity(HrisUpdateEmployeeRequestDtoSourceValueEthnicity hrisUpdateEmployeeRequestDtoSourceValueEthnicity) {
+        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateHrisUpdateEmployeeRequestDtoSourceValueEthnicity(HrisUpdateEmployeeRequestDtoSourceValueEthnicity hrisUpdateEmployeeRequestDtoSourceValueEthnicity)
+        {
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType typ = HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.HrisUpdateEmployeeRequestDtoSourceValueEthnicity;
 
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion res = new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(typ);
             res.HrisUpdateEmployeeRequestDtoSourceValueEthnicity = hrisUpdateEmployeeRequestDtoSourceValueEthnicity;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType typ = HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.ArrayOfAny;
 
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion res = new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateNull() {
+        public static HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion CreateNull()
+        {
             HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType typ = HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.Null;
             return new HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion res = (HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion)value;
                 if (HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.FromString(res.Type).Equals(HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisUpdateEmployeeRequestDtoSourceValueEthnicity != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisUpdateEmployeeRequestDtoSourceValueEthnicity));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

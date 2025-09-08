@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class SmsMessagesSourceValueUnionType
     {
         private SmsMessagesSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static SmsMessagesSourceValueUnionType Str { get { return new SmsMessagesSourceValueUnionType("str"); } }
-        
+
         public static SmsMessagesSourceValueUnionType Number { get { return new SmsMessagesSourceValueUnionType("number"); } }
-        
+
         public static SmsMessagesSourceValueUnionType Boolean { get { return new SmsMessagesSourceValueUnionType("boolean"); } }
-        
+
         public static SmsMessagesSourceValueUnionType SmsMessagesSourceValue { get { return new SmsMessagesSourceValueUnionType("SmsMessages_source_value"); } }
-        
+
         public static SmsMessagesSourceValueUnionType ArrayOfAny { get { return new SmsMessagesSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static SmsMessagesSourceValueUnionType Null { get { return new SmsMessagesSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The original value from the provider used to derive the unified message type.
     /// </summary>
     [JsonConverter(typeof(SmsMessagesSourceValueUnion.SmsMessagesSourceValueUnionConverter))]
-    public class SmsMessagesSourceValueUnion {
-        public SmsMessagesSourceValueUnion(SmsMessagesSourceValueUnionType type) {
+    public class SmsMessagesSourceValueUnion
+    {
+        public SmsMessagesSourceValueUnion(SmsMessagesSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public SmsMessagesSourceValueUnionType Type { get; set; }
-
-
-        public static SmsMessagesSourceValueUnion CreateStr(string str) {
+        public static SmsMessagesSourceValueUnion CreateStr(string str)
+        {
             SmsMessagesSourceValueUnionType typ = SmsMessagesSourceValueUnionType.Str;
 
             SmsMessagesSourceValueUnion res = new SmsMessagesSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static SmsMessagesSourceValueUnion CreateNumber(double number) {
+        public static SmsMessagesSourceValueUnion CreateNumber(double number)
+        {
             SmsMessagesSourceValueUnionType typ = SmsMessagesSourceValueUnionType.Number;
 
             SmsMessagesSourceValueUnion res = new SmsMessagesSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static SmsMessagesSourceValueUnion CreateBoolean(bool boolean) {
+        public static SmsMessagesSourceValueUnion CreateBoolean(bool boolean)
+        {
             SmsMessagesSourceValueUnionType typ = SmsMessagesSourceValueUnionType.Boolean;
 
             SmsMessagesSourceValueUnion res = new SmsMessagesSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static SmsMessagesSourceValueUnion CreateSmsMessagesSourceValue(SmsMessagesSourceValue smsMessagesSourceValue) {
+        public static SmsMessagesSourceValueUnion CreateSmsMessagesSourceValue(SmsMessagesSourceValue smsMessagesSourceValue)
+        {
             SmsMessagesSourceValueUnionType typ = SmsMessagesSourceValueUnionType.SmsMessagesSourceValue;
 
             SmsMessagesSourceValueUnion res = new SmsMessagesSourceValueUnion(typ);
             res.SmsMessagesSourceValue = smsMessagesSourceValue;
             return res;
         }
-
-        public static SmsMessagesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static SmsMessagesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             SmsMessagesSourceValueUnionType typ = SmsMessagesSourceValueUnionType.ArrayOfAny;
 
             SmsMessagesSourceValueUnion res = new SmsMessagesSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static SmsMessagesSourceValueUnion CreateNull() {
+        public static SmsMessagesSourceValueUnion CreateNull()
+        {
             SmsMessagesSourceValueUnionType typ = SmsMessagesSourceValueUnionType.Null;
             return new SmsMessagesSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 SmsMessagesSourceValueUnion res = (SmsMessagesSourceValueUnion)value;
                 if (SmsMessagesSourceValueUnionType.FromString(res.Type).Equals(SmsMessagesSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SmsMessagesSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SmsMessagesSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

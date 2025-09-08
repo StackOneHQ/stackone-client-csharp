@@ -11886,7 +11886,7 @@ paths:
                 nullable: true
               "stage":
                 type: "string"
-                description: "Filter to select applications by stage and sub-stage"
+                description: "Filter to select applications by application_stage id"
                 nullable: true
             nullable: true
         - name: "page"
@@ -28007,6 +28007,7 @@ paths:
                   - "pending"
                   - "in_progress"
                   - "completed"
+                  - "unmapped_value"
                   - null
                 description: "Filter to select assignment by status"
                 nullable: true
@@ -30606,6 +30607,7 @@ paths:
                   - "pending"
                   - "in_progress"
                   - "completed"
+                  - "unmapped_value"
                   - null
                 description: "Filter to select assignment by status"
                 nullable: true
@@ -46106,16 +46108,16 @@ components:
           allOf:
             - {"$ref": "#/components/schemas/Reason"}
           nullable: true
-        "created_date":
+        "created_at":
           type: "string"
           format: "date-time"
-          description: "The created date of the time off request"
+          description: "Timestamp when the time off request was created"
           nullable: true
           example: "2021-01-01T01:01:01.000Z"
-        "updated_date":
+        "updated_at":
           type: "string"
           format: "date-time"
-          description: "The updated date of the time off request"
+          description: "Timestamp when the time off request was last updated"
           nullable: true
           example: "2021-01-01T01:01:01.000Z"
         "policy":

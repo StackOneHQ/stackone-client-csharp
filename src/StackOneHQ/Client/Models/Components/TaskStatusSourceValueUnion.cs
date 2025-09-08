@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TaskStatusSourceValueUnionType
     {
         private TaskStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TaskStatusSourceValueUnionType Str { get { return new TaskStatusSourceValueUnionType("str"); } }
-        
+
         public static TaskStatusSourceValueUnionType Number { get { return new TaskStatusSourceValueUnionType("number"); } }
-        
+
         public static TaskStatusSourceValueUnionType Boolean { get { return new TaskStatusSourceValueUnionType("boolean"); } }
-        
+
         public static TaskStatusSourceValueUnionType TaskSourceValueStatus { get { return new TaskStatusSourceValueUnionType("Task_source_value_status"); } }
-        
+
         public static TaskStatusSourceValueUnionType ArrayOfAny { get { return new TaskStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TaskStatusSourceValueUnionType Null { get { return new TaskStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(TaskStatusSourceValueUnion.TaskStatusSourceValueUnionConverter))]
-    public class TaskStatusSourceValueUnion {
-        public TaskStatusSourceValueUnion(TaskStatusSourceValueUnionType type) {
+    public class TaskStatusSourceValueUnion
+    {
+        public TaskStatusSourceValueUnion(TaskStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TaskStatusSourceValueUnionType Type { get; set; }
-
-
-        public static TaskStatusSourceValueUnion CreateStr(string str) {
+        public static TaskStatusSourceValueUnion CreateStr(string str)
+        {
             TaskStatusSourceValueUnionType typ = TaskStatusSourceValueUnionType.Str;
 
             TaskStatusSourceValueUnion res = new TaskStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TaskStatusSourceValueUnion CreateNumber(double number) {
+        public static TaskStatusSourceValueUnion CreateNumber(double number)
+        {
             TaskStatusSourceValueUnionType typ = TaskStatusSourceValueUnionType.Number;
 
             TaskStatusSourceValueUnion res = new TaskStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TaskStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static TaskStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             TaskStatusSourceValueUnionType typ = TaskStatusSourceValueUnionType.Boolean;
 
             TaskStatusSourceValueUnion res = new TaskStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TaskStatusSourceValueUnion CreateTaskSourceValueStatus(TaskSourceValueStatus taskSourceValueStatus) {
+        public static TaskStatusSourceValueUnion CreateTaskSourceValueStatus(TaskSourceValueStatus taskSourceValueStatus)
+        {
             TaskStatusSourceValueUnionType typ = TaskStatusSourceValueUnionType.TaskSourceValueStatus;
 
             TaskStatusSourceValueUnion res = new TaskStatusSourceValueUnion(typ);
             res.TaskSourceValueStatus = taskSourceValueStatus;
             return res;
         }
-
-        public static TaskStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TaskStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TaskStatusSourceValueUnionType typ = TaskStatusSourceValueUnionType.ArrayOfAny;
 
             TaskStatusSourceValueUnion res = new TaskStatusSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TaskStatusSourceValueUnion CreateNull() {
+        public static TaskStatusSourceValueUnion CreateNull()
+        {
             TaskStatusSourceValueUnionType typ = TaskStatusSourceValueUnionType.Null;
             return new TaskStatusSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TaskStatusSourceValueUnion res = (TaskStatusSourceValueUnion)value;
                 if (TaskStatusSourceValueUnionType.FromString(res.Type).Equals(TaskStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TaskSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TaskSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

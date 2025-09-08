@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AnswerSourceValueUnionType
     {
         private AnswerSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AnswerSourceValueUnionType Str { get { return new AnswerSourceValueUnionType("str"); } }
-        
+
         public static AnswerSourceValueUnionType Number { get { return new AnswerSourceValueUnionType("number"); } }
-        
+
         public static AnswerSourceValueUnionType Boolean { get { return new AnswerSourceValueUnionType("boolean"); } }
-        
+
         public static AnswerSourceValueUnionType AnswerSourceValue { get { return new AnswerSourceValueUnionType("Answer_source_value"); } }
-        
+
         public static AnswerSourceValueUnionType ArrayOfAny { get { return new AnswerSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AnswerSourceValueUnionType Null { get { return new AnswerSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the answer type.
     /// </summary>
     [JsonConverter(typeof(AnswerSourceValueUnion.AnswerSourceValueUnionConverter))]
-    public class AnswerSourceValueUnion {
-        public AnswerSourceValueUnion(AnswerSourceValueUnionType type) {
+    public class AnswerSourceValueUnion
+    {
+        public AnswerSourceValueUnion(AnswerSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AnswerSourceValueUnionType Type { get; set; }
-
-
-        public static AnswerSourceValueUnion CreateStr(string str) {
+        public static AnswerSourceValueUnion CreateStr(string str)
+        {
             AnswerSourceValueUnionType typ = AnswerSourceValueUnionType.Str;
 
             AnswerSourceValueUnion res = new AnswerSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AnswerSourceValueUnion CreateNumber(double number) {
+        public static AnswerSourceValueUnion CreateNumber(double number)
+        {
             AnswerSourceValueUnionType typ = AnswerSourceValueUnionType.Number;
 
             AnswerSourceValueUnion res = new AnswerSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AnswerSourceValueUnion CreateBoolean(bool boolean) {
+        public static AnswerSourceValueUnion CreateBoolean(bool boolean)
+        {
             AnswerSourceValueUnionType typ = AnswerSourceValueUnionType.Boolean;
 
             AnswerSourceValueUnion res = new AnswerSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AnswerSourceValueUnion CreateAnswerSourceValue(AnswerSourceValue answerSourceValue) {
+        public static AnswerSourceValueUnion CreateAnswerSourceValue(AnswerSourceValue answerSourceValue)
+        {
             AnswerSourceValueUnionType typ = AnswerSourceValueUnionType.AnswerSourceValue;
 
             AnswerSourceValueUnion res = new AnswerSourceValueUnion(typ);
             res.AnswerSourceValue = answerSourceValue;
             return res;
         }
-
-        public static AnswerSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AnswerSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AnswerSourceValueUnionType typ = AnswerSourceValueUnionType.ArrayOfAny;
 
             AnswerSourceValueUnion res = new AnswerSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AnswerSourceValueUnion CreateNull() {
+        public static AnswerSourceValueUnion CreateNull()
+        {
             AnswerSourceValueUnionType typ = AnswerSourceValueUnionType.Null;
             return new AnswerSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AnswerSourceValueUnion res = (AnswerSourceValueUnion)value;
                 if (AnswerSourceValueUnionType.FromString(res.Type).Equals(AnswerSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AnswerSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AnswerSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HRISDepartmentSourceValueUnionType
     {
         private HRISDepartmentSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HRISDepartmentSourceValueUnionType Str { get { return new HRISDepartmentSourceValueUnionType("str"); } }
-        
+
         public static HRISDepartmentSourceValueUnionType Number { get { return new HRISDepartmentSourceValueUnionType("number"); } }
-        
+
         public static HRISDepartmentSourceValueUnionType Boolean { get { return new HRISDepartmentSourceValueUnionType("boolean"); } }
-        
+
         public static HRISDepartmentSourceValueUnionType HRISDepartmentSourceValue { get { return new HRISDepartmentSourceValueUnionType("HRISDepartment_source_value"); } }
-        
+
         public static HRISDepartmentSourceValueUnionType ArrayOfAny { get { return new HRISDepartmentSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HRISDepartmentSourceValueUnionType Null { get { return new HRISDepartmentSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HRISDepartmentSourceValueUnion.HRISDepartmentSourceValueUnionConverter))]
-    public class HRISDepartmentSourceValueUnion {
-        public HRISDepartmentSourceValueUnion(HRISDepartmentSourceValueUnionType type) {
+    public class HRISDepartmentSourceValueUnion
+    {
+        public HRISDepartmentSourceValueUnion(HRISDepartmentSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HRISDepartmentSourceValueUnionType Type { get; set; }
-
-
-        public static HRISDepartmentSourceValueUnion CreateStr(string str) {
+        public static HRISDepartmentSourceValueUnion CreateStr(string str)
+        {
             HRISDepartmentSourceValueUnionType typ = HRISDepartmentSourceValueUnionType.Str;
 
             HRISDepartmentSourceValueUnion res = new HRISDepartmentSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HRISDepartmentSourceValueUnion CreateNumber(double number) {
+        public static HRISDepartmentSourceValueUnion CreateNumber(double number)
+        {
             HRISDepartmentSourceValueUnionType typ = HRISDepartmentSourceValueUnionType.Number;
 
             HRISDepartmentSourceValueUnion res = new HRISDepartmentSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HRISDepartmentSourceValueUnion CreateBoolean(bool boolean) {
+        public static HRISDepartmentSourceValueUnion CreateBoolean(bool boolean)
+        {
             HRISDepartmentSourceValueUnionType typ = HRISDepartmentSourceValueUnionType.Boolean;
 
             HRISDepartmentSourceValueUnion res = new HRISDepartmentSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HRISDepartmentSourceValueUnion CreateHRISDepartmentSourceValue(HRISDepartmentSourceValue hrisDepartmentSourceValue) {
+        public static HRISDepartmentSourceValueUnion CreateHRISDepartmentSourceValue(HRISDepartmentSourceValue hrisDepartmentSourceValue)
+        {
             HRISDepartmentSourceValueUnionType typ = HRISDepartmentSourceValueUnionType.HRISDepartmentSourceValue;
 
             HRISDepartmentSourceValueUnion res = new HRISDepartmentSourceValueUnion(typ);
             res.HRISDepartmentSourceValue = hrisDepartmentSourceValue;
             return res;
         }
-
-        public static HRISDepartmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HRISDepartmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HRISDepartmentSourceValueUnionType typ = HRISDepartmentSourceValueUnionType.ArrayOfAny;
 
             HRISDepartmentSourceValueUnion res = new HRISDepartmentSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HRISDepartmentSourceValueUnion CreateNull() {
+        public static HRISDepartmentSourceValueUnion CreateNull()
+        {
             HRISDepartmentSourceValueUnionType typ = HRISDepartmentSourceValueUnionType.Null;
             return new HRISDepartmentSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HRISDepartmentSourceValueUnion res = (HRISDepartmentSourceValueUnion)value;
                 if (HRISDepartmentSourceValueUnionType.FromString(res.Type).Equals(HRISDepartmentSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HRISDepartmentSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HRISDepartmentSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

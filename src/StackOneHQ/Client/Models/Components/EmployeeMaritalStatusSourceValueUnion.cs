@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmployeeMaritalStatusSourceValueUnionType
     {
         private EmployeeMaritalStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmployeeMaritalStatusSourceValueUnionType Str { get { return new EmployeeMaritalStatusSourceValueUnionType("str"); } }
-        
+
         public static EmployeeMaritalStatusSourceValueUnionType Number { get { return new EmployeeMaritalStatusSourceValueUnionType("number"); } }
-        
+
         public static EmployeeMaritalStatusSourceValueUnionType Boolean { get { return new EmployeeMaritalStatusSourceValueUnionType("boolean"); } }
-        
+
         public static EmployeeMaritalStatusSourceValueUnionType EmployeeSourceValueMaritalStatus { get { return new EmployeeMaritalStatusSourceValueUnionType("Employee_source_value_marital_status"); } }
-        
+
         public static EmployeeMaritalStatusSourceValueUnionType ArrayOfAny { get { return new EmployeeMaritalStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmployeeMaritalStatusSourceValueUnionType Null { get { return new EmployeeMaritalStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmployeeMaritalStatusSourceValueUnion.EmployeeMaritalStatusSourceValueUnionConverter))]
-    public class EmployeeMaritalStatusSourceValueUnion {
-        public EmployeeMaritalStatusSourceValueUnion(EmployeeMaritalStatusSourceValueUnionType type) {
+    public class EmployeeMaritalStatusSourceValueUnion
+    {
+        public EmployeeMaritalStatusSourceValueUnion(EmployeeMaritalStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmployeeMaritalStatusSourceValueUnionType Type { get; set; }
-
-
-        public static EmployeeMaritalStatusSourceValueUnion CreateStr(string str) {
+        public static EmployeeMaritalStatusSourceValueUnion CreateStr(string str)
+        {
             EmployeeMaritalStatusSourceValueUnionType typ = EmployeeMaritalStatusSourceValueUnionType.Str;
 
             EmployeeMaritalStatusSourceValueUnion res = new EmployeeMaritalStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmployeeMaritalStatusSourceValueUnion CreateNumber(double number) {
+        public static EmployeeMaritalStatusSourceValueUnion CreateNumber(double number)
+        {
             EmployeeMaritalStatusSourceValueUnionType typ = EmployeeMaritalStatusSourceValueUnionType.Number;
 
             EmployeeMaritalStatusSourceValueUnion res = new EmployeeMaritalStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmployeeMaritalStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmployeeMaritalStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmployeeMaritalStatusSourceValueUnionType typ = EmployeeMaritalStatusSourceValueUnionType.Boolean;
 
             EmployeeMaritalStatusSourceValueUnion res = new EmployeeMaritalStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmployeeMaritalStatusSourceValueUnion CreateEmployeeSourceValueMaritalStatus(EmployeeSourceValueMaritalStatus employeeSourceValueMaritalStatus) {
+        public static EmployeeMaritalStatusSourceValueUnion CreateEmployeeSourceValueMaritalStatus(EmployeeSourceValueMaritalStatus employeeSourceValueMaritalStatus)
+        {
             EmployeeMaritalStatusSourceValueUnionType typ = EmployeeMaritalStatusSourceValueUnionType.EmployeeSourceValueMaritalStatus;
 
             EmployeeMaritalStatusSourceValueUnion res = new EmployeeMaritalStatusSourceValueUnion(typ);
             res.EmployeeSourceValueMaritalStatus = employeeSourceValueMaritalStatus;
             return res;
         }
-
-        public static EmployeeMaritalStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmployeeMaritalStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmployeeMaritalStatusSourceValueUnionType typ = EmployeeMaritalStatusSourceValueUnionType.ArrayOfAny;
 
             EmployeeMaritalStatusSourceValueUnion res = new EmployeeMaritalStatusSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmployeeMaritalStatusSourceValueUnion CreateNull() {
+        public static EmployeeMaritalStatusSourceValueUnion CreateNull()
+        {
             EmployeeMaritalStatusSourceValueUnionType typ = EmployeeMaritalStatusSourceValueUnionType.Null;
             return new EmployeeMaritalStatusSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmployeeMaritalStatusSourceValueUnion res = (EmployeeMaritalStatusSourceValueUnion)value;
                 if (EmployeeMaritalStatusSourceValueUnionType.FromString(res.Type).Equals(EmployeeMaritalStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmployeeSourceValueMaritalStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmployeeSourceValueMaritalStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

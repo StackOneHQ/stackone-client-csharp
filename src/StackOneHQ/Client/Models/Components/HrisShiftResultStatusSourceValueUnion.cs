@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisShiftResultStatusSourceValueUnionType
     {
         private HrisShiftResultStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisShiftResultStatusSourceValueUnionType Str { get { return new HrisShiftResultStatusSourceValueUnionType("str"); } }
-        
+
         public static HrisShiftResultStatusSourceValueUnionType Number { get { return new HrisShiftResultStatusSourceValueUnionType("number"); } }
-        
+
         public static HrisShiftResultStatusSourceValueUnionType Boolean { get { return new HrisShiftResultStatusSourceValueUnionType("boolean"); } }
-        
+
         public static HrisShiftResultStatusSourceValueUnionType HrisShiftResultSourceValueStatus { get { return new HrisShiftResultStatusSourceValueUnionType("HrisShiftResult_source_value_status"); } }
-        
+
         public static HrisShiftResultStatusSourceValueUnionType ArrayOfAny { get { return new HrisShiftResultStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisShiftResultStatusSourceValueUnionType Null { get { return new HrisShiftResultStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisShiftResultStatusSourceValueUnion.HrisShiftResultStatusSourceValueUnionConverter))]
-    public class HrisShiftResultStatusSourceValueUnion {
-        public HrisShiftResultStatusSourceValueUnion(HrisShiftResultStatusSourceValueUnionType type) {
+    public class HrisShiftResultStatusSourceValueUnion
+    {
+        public HrisShiftResultStatusSourceValueUnion(HrisShiftResultStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisShiftResultStatusSourceValueUnionType Type { get; set; }
-
-
-        public static HrisShiftResultStatusSourceValueUnion CreateStr(string str) {
+        public static HrisShiftResultStatusSourceValueUnion CreateStr(string str)
+        {
             HrisShiftResultStatusSourceValueUnionType typ = HrisShiftResultStatusSourceValueUnionType.Str;
 
             HrisShiftResultStatusSourceValueUnion res = new HrisShiftResultStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisShiftResultStatusSourceValueUnion CreateNumber(double number) {
+        public static HrisShiftResultStatusSourceValueUnion CreateNumber(double number)
+        {
             HrisShiftResultStatusSourceValueUnionType typ = HrisShiftResultStatusSourceValueUnionType.Number;
 
             HrisShiftResultStatusSourceValueUnion res = new HrisShiftResultStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisShiftResultStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisShiftResultStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisShiftResultStatusSourceValueUnionType typ = HrisShiftResultStatusSourceValueUnionType.Boolean;
 
             HrisShiftResultStatusSourceValueUnion res = new HrisShiftResultStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisShiftResultStatusSourceValueUnion CreateHrisShiftResultSourceValueStatus(HrisShiftResultSourceValueStatus hrisShiftResultSourceValueStatus) {
+        public static HrisShiftResultStatusSourceValueUnion CreateHrisShiftResultSourceValueStatus(HrisShiftResultSourceValueStatus hrisShiftResultSourceValueStatus)
+        {
             HrisShiftResultStatusSourceValueUnionType typ = HrisShiftResultStatusSourceValueUnionType.HrisShiftResultSourceValueStatus;
 
             HrisShiftResultStatusSourceValueUnion res = new HrisShiftResultStatusSourceValueUnion(typ);
             res.HrisShiftResultSourceValueStatus = hrisShiftResultSourceValueStatus;
             return res;
         }
-
-        public static HrisShiftResultStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisShiftResultStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisShiftResultStatusSourceValueUnionType typ = HrisShiftResultStatusSourceValueUnionType.ArrayOfAny;
 
             HrisShiftResultStatusSourceValueUnion res = new HrisShiftResultStatusSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisShiftResultStatusSourceValueUnion CreateNull() {
+        public static HrisShiftResultStatusSourceValueUnion CreateNull()
+        {
             HrisShiftResultStatusSourceValueUnionType typ = HrisShiftResultStatusSourceValueUnionType.Null;
             return new HrisShiftResultStatusSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisShiftResultStatusSourceValueUnion res = (HrisShiftResultStatusSourceValueUnion)value;
                 if (HrisShiftResultStatusSourceValueUnionType.FromString(res.Type).Equals(HrisShiftResultStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisShiftResultSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisShiftResultSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

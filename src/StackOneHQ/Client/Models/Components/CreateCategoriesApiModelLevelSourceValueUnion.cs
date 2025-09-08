@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateCategoriesApiModelLevelSourceValueUnionType
     {
         private CreateCategoriesApiModelLevelSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateCategoriesApiModelLevelSourceValueUnionType Str { get { return new CreateCategoriesApiModelLevelSourceValueUnionType("str"); } }
-        
+
         public static CreateCategoriesApiModelLevelSourceValueUnionType Number { get { return new CreateCategoriesApiModelLevelSourceValueUnionType("number"); } }
-        
+
         public static CreateCategoriesApiModelLevelSourceValueUnionType Boolean { get { return new CreateCategoriesApiModelLevelSourceValueUnionType("boolean"); } }
-        
+
         public static CreateCategoriesApiModelLevelSourceValueUnionType CreateCategoriesApiModelSourceValueLevel { get { return new CreateCategoriesApiModelLevelSourceValueUnionType("CreateCategoriesApiModel_source_value_level"); } }
-        
+
         public static CreateCategoriesApiModelLevelSourceValueUnionType ArrayOfAny { get { return new CreateCategoriesApiModelLevelSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateCategoriesApiModelLevelSourceValueUnionType Null { get { return new CreateCategoriesApiModelLevelSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateCategoriesApiModelLevelSourceValueUnion.CreateCategoriesApiModelLevelSourceValueUnionConverter))]
-    public class CreateCategoriesApiModelLevelSourceValueUnion {
-        public CreateCategoriesApiModelLevelSourceValueUnion(CreateCategoriesApiModelLevelSourceValueUnionType type) {
+    public class CreateCategoriesApiModelLevelSourceValueUnion
+    {
+        public CreateCategoriesApiModelLevelSourceValueUnion(CreateCategoriesApiModelLevelSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateCategoriesApiModelLevelSourceValueUnionType Type { get; set; }
-
-
-        public static CreateCategoriesApiModelLevelSourceValueUnion CreateStr(string str) {
+        public static CreateCategoriesApiModelLevelSourceValueUnion CreateStr(string str)
+        {
             CreateCategoriesApiModelLevelSourceValueUnionType typ = CreateCategoriesApiModelLevelSourceValueUnionType.Str;
 
             CreateCategoriesApiModelLevelSourceValueUnion res = new CreateCategoriesApiModelLevelSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateCategoriesApiModelLevelSourceValueUnion CreateNumber(double number) {
+        public static CreateCategoriesApiModelLevelSourceValueUnion CreateNumber(double number)
+        {
             CreateCategoriesApiModelLevelSourceValueUnionType typ = CreateCategoriesApiModelLevelSourceValueUnionType.Number;
 
             CreateCategoriesApiModelLevelSourceValueUnion res = new CreateCategoriesApiModelLevelSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateCategoriesApiModelLevelSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateCategoriesApiModelLevelSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateCategoriesApiModelLevelSourceValueUnionType typ = CreateCategoriesApiModelLevelSourceValueUnionType.Boolean;
 
             CreateCategoriesApiModelLevelSourceValueUnion res = new CreateCategoriesApiModelLevelSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateCategoriesApiModelLevelSourceValueUnion CreateCreateCategoriesApiModelSourceValueLevel(CreateCategoriesApiModelSourceValueLevel createCategoriesAPIModelSourceValueLevel) {
+        public static CreateCategoriesApiModelLevelSourceValueUnion CreateCreateCategoriesApiModelSourceValueLevel(CreateCategoriesApiModelSourceValueLevel createCategoriesAPIModelSourceValueLevel)
+        {
             CreateCategoriesApiModelLevelSourceValueUnionType typ = CreateCategoriesApiModelLevelSourceValueUnionType.CreateCategoriesApiModelSourceValueLevel;
 
             CreateCategoriesApiModelLevelSourceValueUnion res = new CreateCategoriesApiModelLevelSourceValueUnion(typ);
             res.CreateCategoriesApiModelSourceValueLevel = createCategoriesAPIModelSourceValueLevel;
             return res;
         }
-
-        public static CreateCategoriesApiModelLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateCategoriesApiModelLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateCategoriesApiModelLevelSourceValueUnionType typ = CreateCategoriesApiModelLevelSourceValueUnionType.ArrayOfAny;
 
             CreateCategoriesApiModelLevelSourceValueUnion res = new CreateCategoriesApiModelLevelSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateCategoriesApiModelLevelSourceValueUnion CreateNull() {
+        public static CreateCategoriesApiModelLevelSourceValueUnion CreateNull()
+        {
             CreateCategoriesApiModelLevelSourceValueUnionType typ = CreateCategoriesApiModelLevelSourceValueUnionType.Null;
             return new CreateCategoriesApiModelLevelSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateCategoriesApiModelLevelSourceValueUnion res = (CreateCategoriesApiModelLevelSourceValueUnion)value;
                 if (CreateCategoriesApiModelLevelSourceValueUnionType.FromString(res.Type).Equals(CreateCategoriesApiModelLevelSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateCategoriesApiModelSourceValueLevel != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateCategoriesApiModelSourceValueLevel));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

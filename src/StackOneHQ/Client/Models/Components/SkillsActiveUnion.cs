@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class SkillsActiveUnionType
     {
         private SkillsActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static SkillsActiveUnionType Boolean { get { return new SkillsActiveUnionType("boolean"); } }
-        
+
         public static SkillsActiveUnionType SkillsActiveEnum { get { return new SkillsActiveUnionType("Skills_active_enum"); } }
-        
+
         public static SkillsActiveUnionType Null { get { return new SkillsActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the skill is active and therefore available for use
     /// </summary>
     [JsonConverter(typeof(SkillsActiveUnion.SkillsActiveUnionConverter))]
-    public class SkillsActiveUnion {
-        public SkillsActiveUnion(SkillsActiveUnionType type) {
+    public class SkillsActiveUnion
+    {
+        public SkillsActiveUnion(SkillsActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public SkillsActiveEnum? SkillsActiveEnum { get; set; }
 
         public SkillsActiveUnionType Type { get; set; }
-
-
-        public static SkillsActiveUnion CreateBoolean(bool boolean) {
+        public static SkillsActiveUnion CreateBoolean(bool boolean)
+        {
             SkillsActiveUnionType typ = SkillsActiveUnionType.Boolean;
 
             SkillsActiveUnion res = new SkillsActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static SkillsActiveUnion CreateSkillsActiveEnum(SkillsActiveEnum skillsActiveEnum) {
+        public static SkillsActiveUnion CreateSkillsActiveEnum(SkillsActiveEnum skillsActiveEnum)
+        {
             SkillsActiveUnionType typ = SkillsActiveUnionType.SkillsActiveEnum;
 
             SkillsActiveUnion res = new SkillsActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static SkillsActiveUnion CreateNull() {
+        public static SkillsActiveUnion CreateNull()
+        {
             SkillsActiveUnionType typ = SkillsActiveUnionType.Null;
             return new SkillsActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 SkillsActiveUnion res = (SkillsActiveUnion)value;
                 if (SkillsActiveUnionType.FromString(res.Type).Equals(SkillsActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SkillsActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SkillsActiveEnum));
                     return;
                 }
-
             }
 
         }

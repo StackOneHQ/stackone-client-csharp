@@ -17,19 +17,19 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessageMessageContentType
     {
         private MessageMessageContentType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessageMessageContentType MessageSmsMessageContents { get { return new MessageMessageContentType("Message_SmsMessageContents"); } }
-        
+
         public static MessageMessageContentType MessageEmailMessageContents { get { return new MessageMessageContentType("Message_EmailMessageContents"); } }
-        
+
         public static MessageMessageContentType MessagePushMessageContents { get { return new MessageMessageContentType("Message_PushMessageContents"); } }
-        
+
         public static MessageMessageContentType Null { get { return new MessageMessageContentType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(MessageMessageContent.MessageMessageContentConverter))]
-    public class MessageMessageContent {
-        public MessageMessageContent(MessageMessageContentType type) {
+    public class MessageMessageContent
+    {
+        public MessageMessageContent(MessageMessageContentType type)
+        {
             Type = type;
         }
 
@@ -75,25 +77,24 @@ namespace StackOneHQ.Client.Models.Components
         public MessagePushMessageContents? MessagePushMessageContents { get; set; }
 
         public MessageMessageContentType Type { get; set; }
-
-
-        public static MessageMessageContent CreateMessageSmsMessageContents(MessageSmsMessageContents messageSmsMessageContents) {
+        public static MessageMessageContent CreateMessageSmsMessageContents(MessageSmsMessageContents messageSmsMessageContents)
+        {
             MessageMessageContentType typ = MessageMessageContentType.MessageSmsMessageContents;
 
             MessageMessageContent res = new MessageMessageContent(typ);
             res.MessageSmsMessageContents = messageSmsMessageContents;
             return res;
         }
-
-        public static MessageMessageContent CreateMessageEmailMessageContents(MessageEmailMessageContents messageEmailMessageContents) {
+        public static MessageMessageContent CreateMessageEmailMessageContents(MessageEmailMessageContents messageEmailMessageContents)
+        {
             MessageMessageContentType typ = MessageMessageContentType.MessageEmailMessageContents;
 
             MessageMessageContent res = new MessageMessageContent(typ);
             res.MessageEmailMessageContents = messageEmailMessageContents;
             return res;
         }
-
-        public static MessageMessageContent CreateMessagePushMessageContents(MessagePushMessageContents messagePushMessageContents) {
+        public static MessageMessageContent CreateMessagePushMessageContents(MessagePushMessageContents messagePushMessageContents)
+        {
             MessageMessageContentType typ = MessageMessageContentType.MessagePushMessageContents;
 
             MessageMessageContent res = new MessageMessageContent(typ);
@@ -101,7 +102,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessageMessageContent CreateNull() {
+        public static MessageMessageContent CreateNull()
+        {
             MessageMessageContentType typ = MessageMessageContentType.Null;
             return new MessageMessageContent(typ);
         }
@@ -212,28 +214,31 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessageMessageContent res = (MessageMessageContent)value;
                 if (MessageMessageContentType.FromString(res.Type).Equals(MessageMessageContentType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.MessageSmsMessageContents != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessageSmsMessageContents));
                     return;
                 }
+
                 if (res.MessageEmailMessageContents != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessageEmailMessageContents));
                     return;
                 }
+
                 if (res.MessagePushMessageContents != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessagePushMessageContents));
                     return;
                 }
-
             }
 
         }

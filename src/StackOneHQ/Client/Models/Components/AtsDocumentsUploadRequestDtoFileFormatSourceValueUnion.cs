@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType
     {
         private AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType Str { get { return new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType("str"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType Number { get { return new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType("number"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType Boolean { get { return new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType AtsDocumentsUploadRequestDtoSourceValueFileFormat { get { return new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType("AtsDocumentsUploadRequestDto_source_value_file_format"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType ArrayOfAny { get { return new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType Null { get { return new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion.AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionConverter))]
-    public class AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion {
-        public AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType type) {
+    public class AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion
+    {
+        public AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateStr(string str) {
+        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateStr(string str)
+        {
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Str;
 
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNumber(double number) {
+        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNumber(double number)
+        {
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Number;
 
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Boolean;
 
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateAtsDocumentsUploadRequestDtoSourceValueFileFormat(AtsDocumentsUploadRequestDtoSourceValueFileFormat atsDocumentsUploadRequestDtoSourceValueFileFormat) {
+        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateAtsDocumentsUploadRequestDtoSourceValueFileFormat(AtsDocumentsUploadRequestDtoSourceValueFileFormat atsDocumentsUploadRequestDtoSourceValueFileFormat)
+        {
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.AtsDocumentsUploadRequestDtoSourceValueFileFormat;
 
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.AtsDocumentsUploadRequestDtoSourceValueFileFormat = atsDocumentsUploadRequestDtoSourceValueFileFormat;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.ArrayOfAny;
 
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNull() {
+        public static AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNull()
+        {
             AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Null;
             return new AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion res = (AtsDocumentsUploadRequestDtoFileFormatSourceValueUnion)value;
                 if (AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.FromString(res.Type).Equals(AtsDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsDocumentsUploadRequestDtoSourceValueFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsDocumentsUploadRequestDtoSourceValueFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

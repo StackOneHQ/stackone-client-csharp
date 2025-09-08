@@ -16,17 +16,17 @@ namespace StackOneHQ.Client.Models.Requests
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LmsListCoursesActiveType
     {
         private LmsListCoursesActiveType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LmsListCoursesActiveType Boolean { get { return new LmsListCoursesActiveType("boolean"); } }
-        
+
         public static LmsListCoursesActiveType Str { get { return new LmsListCoursesActiveType("str"); } }
-        
+
         public static LmsListCoursesActiveType Null { get { return new LmsListCoursesActiveType("null"); } }
 
         public override string ToString() { return Value; }
@@ -59,8 +59,10 @@ namespace StackOneHQ.Client.Models.Requests
     /// Filter to allow filtering of only active courses
     /// </summary>
     [JsonConverter(typeof(LmsListCoursesActive.LmsListCoursesActiveConverter))]
-    public class LmsListCoursesActive {
-        public LmsListCoursesActive(LmsListCoursesActiveType type) {
+    public class LmsListCoursesActive
+    {
+        public LmsListCoursesActive(LmsListCoursesActiveType type)
+        {
             Type = type;
         }
 
@@ -71,17 +73,16 @@ namespace StackOneHQ.Client.Models.Requests
         public string? Str { get; set; }
 
         public LmsListCoursesActiveType Type { get; set; }
-
-
-        public static LmsListCoursesActive CreateBoolean(bool boolean) {
+        public static LmsListCoursesActive CreateBoolean(bool boolean)
+        {
             LmsListCoursesActiveType typ = LmsListCoursesActiveType.Boolean;
 
             LmsListCoursesActive res = new LmsListCoursesActive(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LmsListCoursesActive CreateStr(string str) {
+        public static LmsListCoursesActive CreateStr(string str)
+        {
             LmsListCoursesActiveType typ = LmsListCoursesActiveType.Str;
 
             LmsListCoursesActive res = new LmsListCoursesActive(typ);
@@ -89,7 +90,8 @@ namespace StackOneHQ.Client.Models.Requests
             return res;
         }
 
-        public static LmsListCoursesActive CreateNull() {
+        public static LmsListCoursesActive CreateNull()
+        {
             LmsListCoursesActiveType typ = LmsListCoursesActiveType.Null;
             return new LmsListCoursesActive(typ);
         }
@@ -160,23 +162,25 @@ namespace StackOneHQ.Client.Models.Requests
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LmsListCoursesActive res = (LmsListCoursesActive)value;
                 if (LmsListCoursesActiveType.FromString(res.Type).Equals(LmsListCoursesActiveType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-
             }
 
         }
