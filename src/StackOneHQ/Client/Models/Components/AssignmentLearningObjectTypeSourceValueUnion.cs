@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AssignmentLearningObjectTypeSourceValueUnionType
     {
         private AssignmentLearningObjectTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AssignmentLearningObjectTypeSourceValueUnionType Str { get { return new AssignmentLearningObjectTypeSourceValueUnionType("str"); } }
-        
+
         public static AssignmentLearningObjectTypeSourceValueUnionType Number { get { return new AssignmentLearningObjectTypeSourceValueUnionType("number"); } }
-        
+
         public static AssignmentLearningObjectTypeSourceValueUnionType Boolean { get { return new AssignmentLearningObjectTypeSourceValueUnionType("boolean"); } }
-        
+
         public static AssignmentLearningObjectTypeSourceValueUnionType AssignmentSourceValueLearningObjectType { get { return new AssignmentLearningObjectTypeSourceValueUnionType("Assignment_source_value_learning_object_type"); } }
-        
+
         public static AssignmentLearningObjectTypeSourceValueUnionType ArrayOfAny { get { return new AssignmentLearningObjectTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AssignmentLearningObjectTypeSourceValueUnionType Null { get { return new AssignmentLearningObjectTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AssignmentLearningObjectTypeSourceValueUnion.AssignmentLearningObjectTypeSourceValueUnionConverter))]
-    public class AssignmentLearningObjectTypeSourceValueUnion {
-        public AssignmentLearningObjectTypeSourceValueUnion(AssignmentLearningObjectTypeSourceValueUnionType type) {
+    public class AssignmentLearningObjectTypeSourceValueUnion
+    {
+        public AssignmentLearningObjectTypeSourceValueUnion(AssignmentLearningObjectTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AssignmentLearningObjectTypeSourceValueUnionType Type { get; set; }
-
-
-        public static AssignmentLearningObjectTypeSourceValueUnion CreateStr(string str) {
+        public static AssignmentLearningObjectTypeSourceValueUnion CreateStr(string str)
+        {
             AssignmentLearningObjectTypeSourceValueUnionType typ = AssignmentLearningObjectTypeSourceValueUnionType.Str;
 
             AssignmentLearningObjectTypeSourceValueUnion res = new AssignmentLearningObjectTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AssignmentLearningObjectTypeSourceValueUnion CreateNumber(double number) {
+        public static AssignmentLearningObjectTypeSourceValueUnion CreateNumber(double number)
+        {
             AssignmentLearningObjectTypeSourceValueUnionType typ = AssignmentLearningObjectTypeSourceValueUnionType.Number;
 
             AssignmentLearningObjectTypeSourceValueUnion res = new AssignmentLearningObjectTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AssignmentLearningObjectTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static AssignmentLearningObjectTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             AssignmentLearningObjectTypeSourceValueUnionType typ = AssignmentLearningObjectTypeSourceValueUnionType.Boolean;
 
             AssignmentLearningObjectTypeSourceValueUnion res = new AssignmentLearningObjectTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AssignmentLearningObjectTypeSourceValueUnion CreateAssignmentSourceValueLearningObjectType(AssignmentSourceValueLearningObjectType assignmentSourceValueLearningObjectType) {
+        public static AssignmentLearningObjectTypeSourceValueUnion CreateAssignmentSourceValueLearningObjectType(AssignmentSourceValueLearningObjectType assignmentSourceValueLearningObjectType)
+        {
             AssignmentLearningObjectTypeSourceValueUnionType typ = AssignmentLearningObjectTypeSourceValueUnionType.AssignmentSourceValueLearningObjectType;
 
             AssignmentLearningObjectTypeSourceValueUnion res = new AssignmentLearningObjectTypeSourceValueUnion(typ);
             res.AssignmentSourceValueLearningObjectType = assignmentSourceValueLearningObjectType;
             return res;
         }
-
-        public static AssignmentLearningObjectTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AssignmentLearningObjectTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AssignmentLearningObjectTypeSourceValueUnionType typ = AssignmentLearningObjectTypeSourceValueUnionType.ArrayOfAny;
 
             AssignmentLearningObjectTypeSourceValueUnion res = new AssignmentLearningObjectTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AssignmentLearningObjectTypeSourceValueUnion CreateNull() {
+        public static AssignmentLearningObjectTypeSourceValueUnion CreateNull()
+        {
             AssignmentLearningObjectTypeSourceValueUnionType typ = AssignmentLearningObjectTypeSourceValueUnionType.Null;
             return new AssignmentLearningObjectTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AssignmentLearningObjectTypeSourceValueUnion res = (AssignmentLearningObjectTypeSourceValueUnion)value;
                 if (AssignmentLearningObjectTypeSourceValueUnionType.FromString(res.Type).Equals(AssignmentLearningObjectTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AssignmentSourceValueLearningObjectType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AssignmentSourceValueLearningObjectType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

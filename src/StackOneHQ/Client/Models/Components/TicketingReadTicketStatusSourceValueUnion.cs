@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingReadTicketStatusSourceValueUnionType
     {
         private TicketingReadTicketStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingReadTicketStatusSourceValueUnionType Str { get { return new TicketingReadTicketStatusSourceValueUnionType("str"); } }
-        
+
         public static TicketingReadTicketStatusSourceValueUnionType Number { get { return new TicketingReadTicketStatusSourceValueUnionType("number"); } }
-        
+
         public static TicketingReadTicketStatusSourceValueUnionType Boolean { get { return new TicketingReadTicketStatusSourceValueUnionType("boolean"); } }
-        
+
         public static TicketingReadTicketStatusSourceValueUnionType TicketingReadTicketSourceValueStatus { get { return new TicketingReadTicketStatusSourceValueUnionType("TicketingReadTicket_source_value_status"); } }
-        
+
         public static TicketingReadTicketStatusSourceValueUnionType ArrayOfAny { get { return new TicketingReadTicketStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TicketingReadTicketStatusSourceValueUnionType Null { get { return new TicketingReadTicketStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of this status type
     /// </summary>
     [JsonConverter(typeof(TicketingReadTicketStatusSourceValueUnion.TicketingReadTicketStatusSourceValueUnionConverter))]
-    public class TicketingReadTicketStatusSourceValueUnion {
-        public TicketingReadTicketStatusSourceValueUnion(TicketingReadTicketStatusSourceValueUnionType type) {
+    public class TicketingReadTicketStatusSourceValueUnion
+    {
+        public TicketingReadTicketStatusSourceValueUnion(TicketingReadTicketStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TicketingReadTicketStatusSourceValueUnionType Type { get; set; }
-
-
-        public static TicketingReadTicketStatusSourceValueUnion CreateStr(string str) {
+        public static TicketingReadTicketStatusSourceValueUnion CreateStr(string str)
+        {
             TicketingReadTicketStatusSourceValueUnionType typ = TicketingReadTicketStatusSourceValueUnionType.Str;
 
             TicketingReadTicketStatusSourceValueUnion res = new TicketingReadTicketStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TicketingReadTicketStatusSourceValueUnion CreateNumber(double number) {
+        public static TicketingReadTicketStatusSourceValueUnion CreateNumber(double number)
+        {
             TicketingReadTicketStatusSourceValueUnionType typ = TicketingReadTicketStatusSourceValueUnionType.Number;
 
             TicketingReadTicketStatusSourceValueUnion res = new TicketingReadTicketStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TicketingReadTicketStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static TicketingReadTicketStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             TicketingReadTicketStatusSourceValueUnionType typ = TicketingReadTicketStatusSourceValueUnionType.Boolean;
 
             TicketingReadTicketStatusSourceValueUnion res = new TicketingReadTicketStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingReadTicketStatusSourceValueUnion CreateTicketingReadTicketSourceValueStatus(TicketingReadTicketSourceValueStatus ticketingReadTicketSourceValueStatus) {
+        public static TicketingReadTicketStatusSourceValueUnion CreateTicketingReadTicketSourceValueStatus(TicketingReadTicketSourceValueStatus ticketingReadTicketSourceValueStatus)
+        {
             TicketingReadTicketStatusSourceValueUnionType typ = TicketingReadTicketStatusSourceValueUnionType.TicketingReadTicketSourceValueStatus;
 
             TicketingReadTicketStatusSourceValueUnion res = new TicketingReadTicketStatusSourceValueUnion(typ);
             res.TicketingReadTicketSourceValueStatus = ticketingReadTicketSourceValueStatus;
             return res;
         }
-
-        public static TicketingReadTicketStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TicketingReadTicketStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TicketingReadTicketStatusSourceValueUnionType typ = TicketingReadTicketStatusSourceValueUnionType.ArrayOfAny;
 
             TicketingReadTicketStatusSourceValueUnion res = new TicketingReadTicketStatusSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingReadTicketStatusSourceValueUnion CreateNull() {
+        public static TicketingReadTicketStatusSourceValueUnion CreateNull()
+        {
             TicketingReadTicketStatusSourceValueUnionType typ = TicketingReadTicketStatusSourceValueUnionType.Null;
             return new TicketingReadTicketStatusSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingReadTicketStatusSourceValueUnion res = (TicketingReadTicketStatusSourceValueUnion)value;
                 if (TicketingReadTicketStatusSourceValueUnionType.FromString(res.Type).Equals(TicketingReadTicketStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingReadTicketSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingReadTicketSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

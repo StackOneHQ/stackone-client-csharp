@@ -72,8 +72,8 @@ namespace StackOneHQ.Client
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.3.0";
-        private const string _sdkGenVersion = "2.687.13";
+        private const string _sdkVersion = "0.3.1";
+        private const string _sdkGenVersion = "2.694.1";
         private const string _openapiDocVersion = "1.0.0";
         public IConnectSessions ConnectSessions { get; private set; }
         public IAccounts Accounts { get; private set; }

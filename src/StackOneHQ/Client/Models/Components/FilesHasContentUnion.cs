@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FilesHasContentUnionType
     {
         private FilesHasContentUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FilesHasContentUnionType Boolean { get { return new FilesHasContentUnionType("boolean"); } }
-        
+
         public static FilesHasContentUnionType FilesHasContentEnum { get { return new FilesHasContentUnionType("Files_has_content_enum"); } }
-        
+
         public static FilesHasContentUnionType Null { get { return new FilesHasContentUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the file has content
     /// </summary>
     [JsonConverter(typeof(FilesHasContentUnion.FilesHasContentUnionConverter))]
-    public class FilesHasContentUnion {
-        public FilesHasContentUnion(FilesHasContentUnionType type) {
+    public class FilesHasContentUnion
+    {
+        public FilesHasContentUnion(FilesHasContentUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public FilesHasContentEnum? FilesHasContentEnum { get; set; }
 
         public FilesHasContentUnionType Type { get; set; }
-
-
-        public static FilesHasContentUnion CreateBoolean(bool boolean) {
+        public static FilesHasContentUnion CreateBoolean(bool boolean)
+        {
             FilesHasContentUnionType typ = FilesHasContentUnionType.Boolean;
 
             FilesHasContentUnion res = new FilesHasContentUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FilesHasContentUnion CreateFilesHasContentEnum(FilesHasContentEnum filesHasContentEnum) {
+        public static FilesHasContentUnion CreateFilesHasContentEnum(FilesHasContentEnum filesHasContentEnum)
+        {
             FilesHasContentUnionType typ = FilesHasContentUnionType.FilesHasContentEnum;
 
             FilesHasContentUnion res = new FilesHasContentUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FilesHasContentUnion CreateNull() {
+        public static FilesHasContentUnion CreateNull()
+        {
             FilesHasContentUnionType typ = FilesHasContentUnionType.Null;
             return new FilesHasContentUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FilesHasContentUnion res = (FilesHasContentUnion)value;
                 if (FilesHasContentUnionType.FromString(res.Type).Equals(FilesHasContentUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FilesHasContentEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FilesHasContentEnum));
                     return;
                 }
-
             }
 
         }

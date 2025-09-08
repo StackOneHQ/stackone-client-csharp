@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ApplicationChangesDataModelSourceValueUnionType
     {
         private ApplicationChangesDataModelSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ApplicationChangesDataModelSourceValueUnionType Str { get { return new ApplicationChangesDataModelSourceValueUnionType("str"); } }
-        
+
         public static ApplicationChangesDataModelSourceValueUnionType Number { get { return new ApplicationChangesDataModelSourceValueUnionType("number"); } }
-        
+
         public static ApplicationChangesDataModelSourceValueUnionType Boolean { get { return new ApplicationChangesDataModelSourceValueUnionType("boolean"); } }
-        
+
         public static ApplicationChangesDataModelSourceValueUnionType ApplicationChangesDataModelSourceValue { get { return new ApplicationChangesDataModelSourceValueUnionType("ApplicationChangesDataModel_source_value"); } }
-        
+
         public static ApplicationChangesDataModelSourceValueUnionType ArrayOfAny { get { return new ApplicationChangesDataModelSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ApplicationChangesDataModelSourceValueUnionType Null { get { return new ApplicationChangesDataModelSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the application status.
     /// </summary>
     [JsonConverter(typeof(ApplicationChangesDataModelSourceValueUnion.ApplicationChangesDataModelSourceValueUnionConverter))]
-    public class ApplicationChangesDataModelSourceValueUnion {
-        public ApplicationChangesDataModelSourceValueUnion(ApplicationChangesDataModelSourceValueUnionType type) {
+    public class ApplicationChangesDataModelSourceValueUnion
+    {
+        public ApplicationChangesDataModelSourceValueUnion(ApplicationChangesDataModelSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ApplicationChangesDataModelSourceValueUnionType Type { get; set; }
-
-
-        public static ApplicationChangesDataModelSourceValueUnion CreateStr(string str) {
+        public static ApplicationChangesDataModelSourceValueUnion CreateStr(string str)
+        {
             ApplicationChangesDataModelSourceValueUnionType typ = ApplicationChangesDataModelSourceValueUnionType.Str;
 
             ApplicationChangesDataModelSourceValueUnion res = new ApplicationChangesDataModelSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ApplicationChangesDataModelSourceValueUnion CreateNumber(double number) {
+        public static ApplicationChangesDataModelSourceValueUnion CreateNumber(double number)
+        {
             ApplicationChangesDataModelSourceValueUnionType typ = ApplicationChangesDataModelSourceValueUnionType.Number;
 
             ApplicationChangesDataModelSourceValueUnion res = new ApplicationChangesDataModelSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ApplicationChangesDataModelSourceValueUnion CreateBoolean(bool boolean) {
+        public static ApplicationChangesDataModelSourceValueUnion CreateBoolean(bool boolean)
+        {
             ApplicationChangesDataModelSourceValueUnionType typ = ApplicationChangesDataModelSourceValueUnionType.Boolean;
 
             ApplicationChangesDataModelSourceValueUnion res = new ApplicationChangesDataModelSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ApplicationChangesDataModelSourceValueUnion CreateApplicationChangesDataModelSourceValue(ApplicationChangesDataModelSourceValue applicationChangesDataModelSourceValue) {
+        public static ApplicationChangesDataModelSourceValueUnion CreateApplicationChangesDataModelSourceValue(ApplicationChangesDataModelSourceValue applicationChangesDataModelSourceValue)
+        {
             ApplicationChangesDataModelSourceValueUnionType typ = ApplicationChangesDataModelSourceValueUnionType.ApplicationChangesDataModelSourceValue;
 
             ApplicationChangesDataModelSourceValueUnion res = new ApplicationChangesDataModelSourceValueUnion(typ);
             res.ApplicationChangesDataModelSourceValue = applicationChangesDataModelSourceValue;
             return res;
         }
-
-        public static ApplicationChangesDataModelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ApplicationChangesDataModelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ApplicationChangesDataModelSourceValueUnionType typ = ApplicationChangesDataModelSourceValueUnionType.ArrayOfAny;
 
             ApplicationChangesDataModelSourceValueUnion res = new ApplicationChangesDataModelSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ApplicationChangesDataModelSourceValueUnion CreateNull() {
+        public static ApplicationChangesDataModelSourceValueUnion CreateNull()
+        {
             ApplicationChangesDataModelSourceValueUnionType typ = ApplicationChangesDataModelSourceValueUnionType.Null;
             return new ApplicationChangesDataModelSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ApplicationChangesDataModelSourceValueUnion res = (ApplicationChangesDataModelSourceValueUnion)value;
                 if (ApplicationChangesDataModelSourceValueUnionType.FromString(res.Type).Equals(ApplicationChangesDataModelSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ApplicationChangesDataModelSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ApplicationChangesDataModelSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

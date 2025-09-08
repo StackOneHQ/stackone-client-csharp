@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType
     {
         private HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType Str { get { return new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType("str"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType Number { get { return new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType("number"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType Boolean { get { return new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry { get { return new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType("HrisCreateEmployeeRequestDto_source_value_national_identity_number_country"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType ArrayOfAny { get { return new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType Null { get { return new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion.HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionConverter))]
-    public class HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion {
-        public HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType type) {
+    public class HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion
+    {
+        public HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateStr(string str) {
+        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateStr(string str)
+        {
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType typ = HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.Str;
 
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion res = new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateNumber(double number) {
+        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateNumber(double number)
+        {
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType typ = HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.Number;
 
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion res = new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType typ = HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.Boolean;
 
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion res = new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry(HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry hrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry) {
+        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry(HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry hrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry)
+        {
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType typ = HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry;
 
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion res = new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(typ);
             res.HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry = hrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType typ = HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.ArrayOfAny;
 
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion res = new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateNull() {
+        public static HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion CreateNull()
+        {
             HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType typ = HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.Null;
             return new HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion res = (HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion)value;
                 if (HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.FromString(res.Type).Equals(HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

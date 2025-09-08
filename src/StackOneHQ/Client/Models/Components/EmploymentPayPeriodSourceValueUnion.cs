@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentPayPeriodSourceValueUnionType
     {
         private EmploymentPayPeriodSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentPayPeriodSourceValueUnionType Str { get { return new EmploymentPayPeriodSourceValueUnionType("str"); } }
-        
+
         public static EmploymentPayPeriodSourceValueUnionType Number { get { return new EmploymentPayPeriodSourceValueUnionType("number"); } }
-        
+
         public static EmploymentPayPeriodSourceValueUnionType Boolean { get { return new EmploymentPayPeriodSourceValueUnionType("boolean"); } }
-        
+
         public static EmploymentPayPeriodSourceValueUnionType EmploymentSourceValuePayPeriod { get { return new EmploymentPayPeriodSourceValueUnionType("Employment_source_value_pay_period"); } }
-        
+
         public static EmploymentPayPeriodSourceValueUnionType ArrayOfAny { get { return new EmploymentPayPeriodSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmploymentPayPeriodSourceValueUnionType Null { get { return new EmploymentPayPeriodSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay period.
     /// </summary>
     [JsonConverter(typeof(EmploymentPayPeriodSourceValueUnion.EmploymentPayPeriodSourceValueUnionConverter))]
-    public class EmploymentPayPeriodSourceValueUnion {
-        public EmploymentPayPeriodSourceValueUnion(EmploymentPayPeriodSourceValueUnionType type) {
+    public class EmploymentPayPeriodSourceValueUnion
+    {
+        public EmploymentPayPeriodSourceValueUnion(EmploymentPayPeriodSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmploymentPayPeriodSourceValueUnionType Type { get; set; }
-
-
-        public static EmploymentPayPeriodSourceValueUnion CreateStr(string str) {
+        public static EmploymentPayPeriodSourceValueUnion CreateStr(string str)
+        {
             EmploymentPayPeriodSourceValueUnionType typ = EmploymentPayPeriodSourceValueUnionType.Str;
 
             EmploymentPayPeriodSourceValueUnion res = new EmploymentPayPeriodSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmploymentPayPeriodSourceValueUnion CreateNumber(double number) {
+        public static EmploymentPayPeriodSourceValueUnion CreateNumber(double number)
+        {
             EmploymentPayPeriodSourceValueUnionType typ = EmploymentPayPeriodSourceValueUnionType.Number;
 
             EmploymentPayPeriodSourceValueUnion res = new EmploymentPayPeriodSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmploymentPayPeriodSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmploymentPayPeriodSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmploymentPayPeriodSourceValueUnionType typ = EmploymentPayPeriodSourceValueUnionType.Boolean;
 
             EmploymentPayPeriodSourceValueUnion res = new EmploymentPayPeriodSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentPayPeriodSourceValueUnion CreateEmploymentSourceValuePayPeriod(EmploymentSourceValuePayPeriod employmentSourceValuePayPeriod) {
+        public static EmploymentPayPeriodSourceValueUnion CreateEmploymentSourceValuePayPeriod(EmploymentSourceValuePayPeriod employmentSourceValuePayPeriod)
+        {
             EmploymentPayPeriodSourceValueUnionType typ = EmploymentPayPeriodSourceValueUnionType.EmploymentSourceValuePayPeriod;
 
             EmploymentPayPeriodSourceValueUnion res = new EmploymentPayPeriodSourceValueUnion(typ);
             res.EmploymentSourceValuePayPeriod = employmentSourceValuePayPeriod;
             return res;
         }
-
-        public static EmploymentPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmploymentPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmploymentPayPeriodSourceValueUnionType typ = EmploymentPayPeriodSourceValueUnionType.ArrayOfAny;
 
             EmploymentPayPeriodSourceValueUnion res = new EmploymentPayPeriodSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentPayPeriodSourceValueUnion CreateNull() {
+        public static EmploymentPayPeriodSourceValueUnion CreateNull()
+        {
             EmploymentPayPeriodSourceValueUnionType typ = EmploymentPayPeriodSourceValueUnionType.Null;
             return new EmploymentPayPeriodSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentPayPeriodSourceValueUnion res = (EmploymentPayPeriodSourceValueUnion)value;
                 if (EmploymentPayPeriodSourceValueUnionType.FromString(res.Type).Equals(EmploymentPayPeriodSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentSourceValuePayPeriod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentSourceValuePayPeriod));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

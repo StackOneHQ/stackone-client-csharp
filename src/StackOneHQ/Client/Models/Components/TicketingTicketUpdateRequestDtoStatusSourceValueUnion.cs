@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingTicketUpdateRequestDtoStatusSourceValueUnionType
     {
         private TicketingTicketUpdateRequestDtoStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingTicketUpdateRequestDtoStatusSourceValueUnionType Str { get { return new TicketingTicketUpdateRequestDtoStatusSourceValueUnionType("str"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoStatusSourceValueUnionType Number { get { return new TicketingTicketUpdateRequestDtoStatusSourceValueUnionType("number"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoStatusSourceValueUnionType Boolean { get { return new TicketingTicketUpdateRequestDtoStatusSourceValueUnionType("boolean"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoStatusSourceValueUnionType TicketingTicketUpdateRequestDtoSourceValueStatus { get { return new TicketingTicketUpdateRequestDtoStatusSourceValueUnionType("TicketingTicketUpdateRequestDto_source_value_status"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoStatusSourceValueUnionType ArrayOfAny { get { return new TicketingTicketUpdateRequestDtoStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoStatusSourceValueUnionType Null { get { return new TicketingTicketUpdateRequestDtoStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of this status type
     /// </summary>
     [JsonConverter(typeof(TicketingTicketUpdateRequestDtoStatusSourceValueUnion.TicketingTicketUpdateRequestDtoStatusSourceValueUnionConverter))]
-    public class TicketingTicketUpdateRequestDtoStatusSourceValueUnion {
-        public TicketingTicketUpdateRequestDtoStatusSourceValueUnion(TicketingTicketUpdateRequestDtoStatusSourceValueUnionType type) {
+    public class TicketingTicketUpdateRequestDtoStatusSourceValueUnion
+    {
+        public TicketingTicketUpdateRequestDtoStatusSourceValueUnion(TicketingTicketUpdateRequestDtoStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TicketingTicketUpdateRequestDtoStatusSourceValueUnionType Type { get; set; }
-
-
-        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateStr(string str) {
+        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateStr(string str)
+        {
             TicketingTicketUpdateRequestDtoStatusSourceValueUnionType typ = TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.Str;
 
             TicketingTicketUpdateRequestDtoStatusSourceValueUnion res = new TicketingTicketUpdateRequestDtoStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateNumber(double number) {
+        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateNumber(double number)
+        {
             TicketingTicketUpdateRequestDtoStatusSourceValueUnionType typ = TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.Number;
 
             TicketingTicketUpdateRequestDtoStatusSourceValueUnion res = new TicketingTicketUpdateRequestDtoStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             TicketingTicketUpdateRequestDtoStatusSourceValueUnionType typ = TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.Boolean;
 
             TicketingTicketUpdateRequestDtoStatusSourceValueUnion res = new TicketingTicketUpdateRequestDtoStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateTicketingTicketUpdateRequestDtoSourceValueStatus(TicketingTicketUpdateRequestDtoSourceValueStatus ticketingTicketUpdateRequestDtoSourceValueStatus) {
+        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateTicketingTicketUpdateRequestDtoSourceValueStatus(TicketingTicketUpdateRequestDtoSourceValueStatus ticketingTicketUpdateRequestDtoSourceValueStatus)
+        {
             TicketingTicketUpdateRequestDtoStatusSourceValueUnionType typ = TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.TicketingTicketUpdateRequestDtoSourceValueStatus;
 
             TicketingTicketUpdateRequestDtoStatusSourceValueUnion res = new TicketingTicketUpdateRequestDtoStatusSourceValueUnion(typ);
             res.TicketingTicketUpdateRequestDtoSourceValueStatus = ticketingTicketUpdateRequestDtoSourceValueStatus;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TicketingTicketUpdateRequestDtoStatusSourceValueUnionType typ = TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.ArrayOfAny;
 
             TicketingTicketUpdateRequestDtoStatusSourceValueUnion res = new TicketingTicketUpdateRequestDtoStatusSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateNull() {
+        public static TicketingTicketUpdateRequestDtoStatusSourceValueUnion CreateNull()
+        {
             TicketingTicketUpdateRequestDtoStatusSourceValueUnionType typ = TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.Null;
             return new TicketingTicketUpdateRequestDtoStatusSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingTicketUpdateRequestDtoStatusSourceValueUnion res = (TicketingTicketUpdateRequestDtoStatusSourceValueUnion)value;
                 if (TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.FromString(res.Type).Equals(TicketingTicketUpdateRequestDtoStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingTicketUpdateRequestDtoSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingTicketUpdateRequestDtoSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

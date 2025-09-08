@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsJobSourceValueUnionType
     {
         private AtsJobSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsJobSourceValueUnionType Str { get { return new AtsJobSourceValueUnionType("str"); } }
-        
+
         public static AtsJobSourceValueUnionType Number { get { return new AtsJobSourceValueUnionType("number"); } }
-        
+
         public static AtsJobSourceValueUnionType Boolean { get { return new AtsJobSourceValueUnionType("boolean"); } }
-        
+
         public static AtsJobSourceValueUnionType AtsJobSourceValue { get { return new AtsJobSourceValueUnionType("AtsJob_source_value"); } }
-        
+
         public static AtsJobSourceValueUnionType ArrayOfAny { get { return new AtsJobSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsJobSourceValueUnionType Null { get { return new AtsJobSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the job status.
     /// </summary>
     [JsonConverter(typeof(AtsJobSourceValueUnion.AtsJobSourceValueUnionConverter))]
-    public class AtsJobSourceValueUnion {
-        public AtsJobSourceValueUnion(AtsJobSourceValueUnionType type) {
+    public class AtsJobSourceValueUnion
+    {
+        public AtsJobSourceValueUnion(AtsJobSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsJobSourceValueUnionType Type { get; set; }
-
-
-        public static AtsJobSourceValueUnion CreateStr(string str) {
+        public static AtsJobSourceValueUnion CreateStr(string str)
+        {
             AtsJobSourceValueUnionType typ = AtsJobSourceValueUnionType.Str;
 
             AtsJobSourceValueUnion res = new AtsJobSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsJobSourceValueUnion CreateNumber(double number) {
+        public static AtsJobSourceValueUnion CreateNumber(double number)
+        {
             AtsJobSourceValueUnionType typ = AtsJobSourceValueUnionType.Number;
 
             AtsJobSourceValueUnion res = new AtsJobSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsJobSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsJobSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsJobSourceValueUnionType typ = AtsJobSourceValueUnionType.Boolean;
 
             AtsJobSourceValueUnion res = new AtsJobSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsJobSourceValueUnion CreateAtsJobSourceValue(AtsJobSourceValue atsJobSourceValue) {
+        public static AtsJobSourceValueUnion CreateAtsJobSourceValue(AtsJobSourceValue atsJobSourceValue)
+        {
             AtsJobSourceValueUnionType typ = AtsJobSourceValueUnionType.AtsJobSourceValue;
 
             AtsJobSourceValueUnion res = new AtsJobSourceValueUnion(typ);
             res.AtsJobSourceValue = atsJobSourceValue;
             return res;
         }
-
-        public static AtsJobSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsJobSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsJobSourceValueUnionType typ = AtsJobSourceValueUnionType.ArrayOfAny;
 
             AtsJobSourceValueUnion res = new AtsJobSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsJobSourceValueUnion CreateNull() {
+        public static AtsJobSourceValueUnion CreateNull()
+        {
             AtsJobSourceValueUnionType typ = AtsJobSourceValueUnionType.Null;
             return new AtsJobSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsJobSourceValueUnion res = (AtsJobSourceValueUnion)value;
                 if (AtsJobSourceValueUnionType.FromString(res.Type).Equals(AtsJobSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsJobSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsJobSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

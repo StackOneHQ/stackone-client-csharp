@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ChannelsEnumSourceValueUnionType
     {
         private ChannelsEnumSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ChannelsEnumSourceValueUnionType Str { get { return new ChannelsEnumSourceValueUnionType("str"); } }
-        
+
         public static ChannelsEnumSourceValueUnionType Number { get { return new ChannelsEnumSourceValueUnionType("number"); } }
-        
+
         public static ChannelsEnumSourceValueUnionType Boolean { get { return new ChannelsEnumSourceValueUnionType("boolean"); } }
-        
+
         public static ChannelsEnumSourceValueUnionType ChannelsEnumSourceValue { get { return new ChannelsEnumSourceValueUnionType("ChannelsEnum_source_value"); } }
-        
+
         public static ChannelsEnumSourceValueUnionType ArrayOfAny { get { return new ChannelsEnumSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ChannelsEnumSourceValueUnionType Null { get { return new ChannelsEnumSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the Channels.
     /// </summary>
     [JsonConverter(typeof(ChannelsEnumSourceValueUnion.ChannelsEnumSourceValueUnionConverter))]
-    public class ChannelsEnumSourceValueUnion {
-        public ChannelsEnumSourceValueUnion(ChannelsEnumSourceValueUnionType type) {
+    public class ChannelsEnumSourceValueUnion
+    {
+        public ChannelsEnumSourceValueUnion(ChannelsEnumSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ChannelsEnumSourceValueUnionType Type { get; set; }
-
-
-        public static ChannelsEnumSourceValueUnion CreateStr(string str) {
+        public static ChannelsEnumSourceValueUnion CreateStr(string str)
+        {
             ChannelsEnumSourceValueUnionType typ = ChannelsEnumSourceValueUnionType.Str;
 
             ChannelsEnumSourceValueUnion res = new ChannelsEnumSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ChannelsEnumSourceValueUnion CreateNumber(double number) {
+        public static ChannelsEnumSourceValueUnion CreateNumber(double number)
+        {
             ChannelsEnumSourceValueUnionType typ = ChannelsEnumSourceValueUnionType.Number;
 
             ChannelsEnumSourceValueUnion res = new ChannelsEnumSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ChannelsEnumSourceValueUnion CreateBoolean(bool boolean) {
+        public static ChannelsEnumSourceValueUnion CreateBoolean(bool boolean)
+        {
             ChannelsEnumSourceValueUnionType typ = ChannelsEnumSourceValueUnionType.Boolean;
 
             ChannelsEnumSourceValueUnion res = new ChannelsEnumSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ChannelsEnumSourceValueUnion CreateChannelsEnumSourceValue(ChannelsEnumSourceValue channelsEnumSourceValue) {
+        public static ChannelsEnumSourceValueUnion CreateChannelsEnumSourceValue(ChannelsEnumSourceValue channelsEnumSourceValue)
+        {
             ChannelsEnumSourceValueUnionType typ = ChannelsEnumSourceValueUnionType.ChannelsEnumSourceValue;
 
             ChannelsEnumSourceValueUnion res = new ChannelsEnumSourceValueUnion(typ);
             res.ChannelsEnumSourceValue = channelsEnumSourceValue;
             return res;
         }
-
-        public static ChannelsEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ChannelsEnumSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ChannelsEnumSourceValueUnionType typ = ChannelsEnumSourceValueUnionType.ArrayOfAny;
 
             ChannelsEnumSourceValueUnion res = new ChannelsEnumSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ChannelsEnumSourceValueUnion CreateNull() {
+        public static ChannelsEnumSourceValueUnion CreateNull()
+        {
             ChannelsEnumSourceValueUnionType typ = ChannelsEnumSourceValueUnionType.Null;
             return new ChannelsEnumSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ChannelsEnumSourceValueUnion res = (ChannelsEnumSourceValueUnion)value;
                 if (ChannelsEnumSourceValueUnionType.FromString(res.Type).Equals(ChannelsEnumSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ChannelsEnumSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ChannelsEnumSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentPayFrequencySourceValueUnionType
     {
         private EmploymentPayFrequencySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentPayFrequencySourceValueUnionType Str { get { return new EmploymentPayFrequencySourceValueUnionType("str"); } }
-        
+
         public static EmploymentPayFrequencySourceValueUnionType Number { get { return new EmploymentPayFrequencySourceValueUnionType("number"); } }
-        
+
         public static EmploymentPayFrequencySourceValueUnionType Boolean { get { return new EmploymentPayFrequencySourceValueUnionType("boolean"); } }
-        
+
         public static EmploymentPayFrequencySourceValueUnionType EmploymentSourceValuePayFrequency { get { return new EmploymentPayFrequencySourceValueUnionType("Employment_source_value_pay_frequency"); } }
-        
+
         public static EmploymentPayFrequencySourceValueUnionType ArrayOfAny { get { return new EmploymentPayFrequencySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmploymentPayFrequencySourceValueUnionType Null { get { return new EmploymentPayFrequencySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay frequency.
     /// </summary>
     [JsonConverter(typeof(EmploymentPayFrequencySourceValueUnion.EmploymentPayFrequencySourceValueUnionConverter))]
-    public class EmploymentPayFrequencySourceValueUnion {
-        public EmploymentPayFrequencySourceValueUnion(EmploymentPayFrequencySourceValueUnionType type) {
+    public class EmploymentPayFrequencySourceValueUnion
+    {
+        public EmploymentPayFrequencySourceValueUnion(EmploymentPayFrequencySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmploymentPayFrequencySourceValueUnionType Type { get; set; }
-
-
-        public static EmploymentPayFrequencySourceValueUnion CreateStr(string str) {
+        public static EmploymentPayFrequencySourceValueUnion CreateStr(string str)
+        {
             EmploymentPayFrequencySourceValueUnionType typ = EmploymentPayFrequencySourceValueUnionType.Str;
 
             EmploymentPayFrequencySourceValueUnion res = new EmploymentPayFrequencySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmploymentPayFrequencySourceValueUnion CreateNumber(double number) {
+        public static EmploymentPayFrequencySourceValueUnion CreateNumber(double number)
+        {
             EmploymentPayFrequencySourceValueUnionType typ = EmploymentPayFrequencySourceValueUnionType.Number;
 
             EmploymentPayFrequencySourceValueUnion res = new EmploymentPayFrequencySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmploymentPayFrequencySourceValueUnion CreateBoolean(bool boolean) {
+        public static EmploymentPayFrequencySourceValueUnion CreateBoolean(bool boolean)
+        {
             EmploymentPayFrequencySourceValueUnionType typ = EmploymentPayFrequencySourceValueUnionType.Boolean;
 
             EmploymentPayFrequencySourceValueUnion res = new EmploymentPayFrequencySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentPayFrequencySourceValueUnion CreateEmploymentSourceValuePayFrequency(EmploymentSourceValuePayFrequency employmentSourceValuePayFrequency) {
+        public static EmploymentPayFrequencySourceValueUnion CreateEmploymentSourceValuePayFrequency(EmploymentSourceValuePayFrequency employmentSourceValuePayFrequency)
+        {
             EmploymentPayFrequencySourceValueUnionType typ = EmploymentPayFrequencySourceValueUnionType.EmploymentSourceValuePayFrequency;
 
             EmploymentPayFrequencySourceValueUnion res = new EmploymentPayFrequencySourceValueUnion(typ);
             res.EmploymentSourceValuePayFrequency = employmentSourceValuePayFrequency;
             return res;
         }
-
-        public static EmploymentPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmploymentPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmploymentPayFrequencySourceValueUnionType typ = EmploymentPayFrequencySourceValueUnionType.ArrayOfAny;
 
             EmploymentPayFrequencySourceValueUnion res = new EmploymentPayFrequencySourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentPayFrequencySourceValueUnion CreateNull() {
+        public static EmploymentPayFrequencySourceValueUnion CreateNull()
+        {
             EmploymentPayFrequencySourceValueUnionType typ = EmploymentPayFrequencySourceValueUnionType.Null;
             return new EmploymentPayFrequencySourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentPayFrequencySourceValueUnion res = (EmploymentPayFrequencySourceValueUnion)value;
                 if (EmploymentPayFrequencySourceValueUnionType.FromString(res.Type).Equals(EmploymentPayFrequencySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentSourceValuePayFrequency != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentSourceValuePayFrequency));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

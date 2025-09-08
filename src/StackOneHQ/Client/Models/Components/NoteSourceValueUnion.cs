@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class NoteSourceValueUnionType
     {
         private NoteSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static NoteSourceValueUnionType Str { get { return new NoteSourceValueUnionType("str"); } }
-        
+
         public static NoteSourceValueUnionType Number { get { return new NoteSourceValueUnionType("number"); } }
-        
+
         public static NoteSourceValueUnionType Boolean { get { return new NoteSourceValueUnionType("boolean"); } }
-        
+
         public static NoteSourceValueUnionType NoteSourceValue { get { return new NoteSourceValueUnionType("Note_source_value"); } }
-        
+
         public static NoteSourceValueUnionType ArrayOfAny { get { return new NoteSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static NoteSourceValueUnionType Null { get { return new NoteSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the notes visibility.
     /// </summary>
     [JsonConverter(typeof(NoteSourceValueUnion.NoteSourceValueUnionConverter))]
-    public class NoteSourceValueUnion {
-        public NoteSourceValueUnion(NoteSourceValueUnionType type) {
+    public class NoteSourceValueUnion
+    {
+        public NoteSourceValueUnion(NoteSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public NoteSourceValueUnionType Type { get; set; }
-
-
-        public static NoteSourceValueUnion CreateStr(string str) {
+        public static NoteSourceValueUnion CreateStr(string str)
+        {
             NoteSourceValueUnionType typ = NoteSourceValueUnionType.Str;
 
             NoteSourceValueUnion res = new NoteSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static NoteSourceValueUnion CreateNumber(double number) {
+        public static NoteSourceValueUnion CreateNumber(double number)
+        {
             NoteSourceValueUnionType typ = NoteSourceValueUnionType.Number;
 
             NoteSourceValueUnion res = new NoteSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static NoteSourceValueUnion CreateBoolean(bool boolean) {
+        public static NoteSourceValueUnion CreateBoolean(bool boolean)
+        {
             NoteSourceValueUnionType typ = NoteSourceValueUnionType.Boolean;
 
             NoteSourceValueUnion res = new NoteSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static NoteSourceValueUnion CreateNoteSourceValue(NoteSourceValue noteSourceValue) {
+        public static NoteSourceValueUnion CreateNoteSourceValue(NoteSourceValue noteSourceValue)
+        {
             NoteSourceValueUnionType typ = NoteSourceValueUnionType.NoteSourceValue;
 
             NoteSourceValueUnion res = new NoteSourceValueUnion(typ);
             res.NoteSourceValue = noteSourceValue;
             return res;
         }
-
-        public static NoteSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static NoteSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             NoteSourceValueUnionType typ = NoteSourceValueUnionType.ArrayOfAny;
 
             NoteSourceValueUnion res = new NoteSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static NoteSourceValueUnion CreateNull() {
+        public static NoteSourceValueUnion CreateNull()
+        {
             NoteSourceValueUnionType typ = NoteSourceValueUnionType.Null;
             return new NoteSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 NoteSourceValueUnion res = (NoteSourceValueUnion)value;
                 if (NoteSourceValueUnionType.FromString(res.Type).Equals(NoteSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.NoteSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.NoteSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

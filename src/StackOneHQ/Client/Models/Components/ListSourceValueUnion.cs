@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ListSourceValueUnionType
     {
         private ListSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ListSourceValueUnionType Str { get { return new ListSourceValueUnionType("str"); } }
-        
+
         public static ListSourceValueUnionType Number { get { return new ListSourceValueUnionType("number"); } }
-        
+
         public static ListSourceValueUnionType Boolean { get { return new ListSourceValueUnionType("boolean"); } }
-        
+
         public static ListSourceValueUnionType ListSourceValue { get { return new ListSourceValueUnionType("List_source_value"); } }
-        
+
         public static ListSourceValueUnionType ArrayOfAny { get { return new ListSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ListSourceValueUnionType Null { get { return new ListSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the list type.
     /// </summary>
     [JsonConverter(typeof(ListSourceValueUnion.ListSourceValueUnionConverter))]
-    public class ListSourceValueUnion {
-        public ListSourceValueUnion(ListSourceValueUnionType type) {
+    public class ListSourceValueUnion
+    {
+        public ListSourceValueUnion(ListSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ListSourceValueUnionType Type { get; set; }
-
-
-        public static ListSourceValueUnion CreateStr(string str) {
+        public static ListSourceValueUnion CreateStr(string str)
+        {
             ListSourceValueUnionType typ = ListSourceValueUnionType.Str;
 
             ListSourceValueUnion res = new ListSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ListSourceValueUnion CreateNumber(double number) {
+        public static ListSourceValueUnion CreateNumber(double number)
+        {
             ListSourceValueUnionType typ = ListSourceValueUnionType.Number;
 
             ListSourceValueUnion res = new ListSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ListSourceValueUnion CreateBoolean(bool boolean) {
+        public static ListSourceValueUnion CreateBoolean(bool boolean)
+        {
             ListSourceValueUnionType typ = ListSourceValueUnionType.Boolean;
 
             ListSourceValueUnion res = new ListSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ListSourceValueUnion CreateListSourceValue(ListSourceValue listSourceValue) {
+        public static ListSourceValueUnion CreateListSourceValue(ListSourceValue listSourceValue)
+        {
             ListSourceValueUnionType typ = ListSourceValueUnionType.ListSourceValue;
 
             ListSourceValueUnion res = new ListSourceValueUnion(typ);
             res.ListSourceValue = listSourceValue;
             return res;
         }
-
-        public static ListSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ListSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ListSourceValueUnionType typ = ListSourceValueUnionType.ArrayOfAny;
 
             ListSourceValueUnion res = new ListSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ListSourceValueUnion CreateNull() {
+        public static ListSourceValueUnion CreateNull()
+        {
             ListSourceValueUnionType typ = ListSourceValueUnionType.Null;
             return new ListSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ListSourceValueUnion res = (ListSourceValueUnion)value;
                 if (ListSourceValueUnionType.FromString(res.Type).Equals(ListSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ListSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ListSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

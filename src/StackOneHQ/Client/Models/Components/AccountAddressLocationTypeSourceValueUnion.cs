@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountAddressLocationTypeSourceValueUnionType
     {
         private AccountAddressLocationTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountAddressLocationTypeSourceValueUnionType Str { get { return new AccountAddressLocationTypeSourceValueUnionType("str"); } }
-        
+
         public static AccountAddressLocationTypeSourceValueUnionType Number { get { return new AccountAddressLocationTypeSourceValueUnionType("number"); } }
-        
+
         public static AccountAddressLocationTypeSourceValueUnionType Boolean { get { return new AccountAddressLocationTypeSourceValueUnionType("boolean"); } }
-        
+
         public static AccountAddressLocationTypeSourceValueUnionType AccountAddressSourceValueLocationType { get { return new AccountAddressLocationTypeSourceValueUnionType("AccountAddress_source_value_location_type"); } }
-        
+
         public static AccountAddressLocationTypeSourceValueUnionType ArrayOfAny { get { return new AccountAddressLocationTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AccountAddressLocationTypeSourceValueUnionType Null { get { return new AccountAddressLocationTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the location type.
     /// </summary>
     [JsonConverter(typeof(AccountAddressLocationTypeSourceValueUnion.AccountAddressLocationTypeSourceValueUnionConverter))]
-    public class AccountAddressLocationTypeSourceValueUnion {
-        public AccountAddressLocationTypeSourceValueUnion(AccountAddressLocationTypeSourceValueUnionType type) {
+    public class AccountAddressLocationTypeSourceValueUnion
+    {
+        public AccountAddressLocationTypeSourceValueUnion(AccountAddressLocationTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AccountAddressLocationTypeSourceValueUnionType Type { get; set; }
-
-
-        public static AccountAddressLocationTypeSourceValueUnion CreateStr(string str) {
+        public static AccountAddressLocationTypeSourceValueUnion CreateStr(string str)
+        {
             AccountAddressLocationTypeSourceValueUnionType typ = AccountAddressLocationTypeSourceValueUnionType.Str;
 
             AccountAddressLocationTypeSourceValueUnion res = new AccountAddressLocationTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AccountAddressLocationTypeSourceValueUnion CreateNumber(double number) {
+        public static AccountAddressLocationTypeSourceValueUnion CreateNumber(double number)
+        {
             AccountAddressLocationTypeSourceValueUnionType typ = AccountAddressLocationTypeSourceValueUnionType.Number;
 
             AccountAddressLocationTypeSourceValueUnion res = new AccountAddressLocationTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AccountAddressLocationTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static AccountAddressLocationTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             AccountAddressLocationTypeSourceValueUnionType typ = AccountAddressLocationTypeSourceValueUnionType.Boolean;
 
             AccountAddressLocationTypeSourceValueUnion res = new AccountAddressLocationTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountAddressLocationTypeSourceValueUnion CreateAccountAddressSourceValueLocationType(AccountAddressSourceValueLocationType accountAddressSourceValueLocationType) {
+        public static AccountAddressLocationTypeSourceValueUnion CreateAccountAddressSourceValueLocationType(AccountAddressSourceValueLocationType accountAddressSourceValueLocationType)
+        {
             AccountAddressLocationTypeSourceValueUnionType typ = AccountAddressLocationTypeSourceValueUnionType.AccountAddressSourceValueLocationType;
 
             AccountAddressLocationTypeSourceValueUnion res = new AccountAddressLocationTypeSourceValueUnion(typ);
             res.AccountAddressSourceValueLocationType = accountAddressSourceValueLocationType;
             return res;
         }
-
-        public static AccountAddressLocationTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AccountAddressLocationTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AccountAddressLocationTypeSourceValueUnionType typ = AccountAddressLocationTypeSourceValueUnionType.ArrayOfAny;
 
             AccountAddressLocationTypeSourceValueUnion res = new AccountAddressLocationTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountAddressLocationTypeSourceValueUnion CreateNull() {
+        public static AccountAddressLocationTypeSourceValueUnion CreateNull()
+        {
             AccountAddressLocationTypeSourceValueUnionType typ = AccountAddressLocationTypeSourceValueUnionType.Null;
             return new AccountAddressLocationTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountAddressLocationTypeSourceValueUnion res = (AccountAddressLocationTypeSourceValueUnion)value;
                 if (AccountAddressLocationTypeSourceValueUnionType.FromString(res.Type).Equals(AccountAddressLocationTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AccountAddressSourceValueLocationType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AccountAddressSourceValueLocationType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

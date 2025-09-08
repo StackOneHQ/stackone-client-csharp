@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountingAccountActiveUnionType
     {
         private AccountingAccountActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountingAccountActiveUnionType Boolean { get { return new AccountingAccountActiveUnionType("boolean"); } }
-        
+
         public static AccountingAccountActiveUnionType AccountingAccountActiveEnum { get { return new AccountingAccountActiveUnionType("AccountingAccount_active_enum"); } }
-        
+
         public static AccountingAccountActiveUnionType Null { get { return new AccountingAccountActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the account is active
     /// </summary>
     [JsonConverter(typeof(AccountingAccountActiveUnion.AccountingAccountActiveUnionConverter))]
-    public class AccountingAccountActiveUnion {
-        public AccountingAccountActiveUnion(AccountingAccountActiveUnionType type) {
+    public class AccountingAccountActiveUnion
+    {
+        public AccountingAccountActiveUnion(AccountingAccountActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public AccountingAccountActiveEnum? AccountingAccountActiveEnum { get; set; }
 
         public AccountingAccountActiveUnionType Type { get; set; }
-
-
-        public static AccountingAccountActiveUnion CreateBoolean(bool boolean) {
+        public static AccountingAccountActiveUnion CreateBoolean(bool boolean)
+        {
             AccountingAccountActiveUnionType typ = AccountingAccountActiveUnionType.Boolean;
 
             AccountingAccountActiveUnion res = new AccountingAccountActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountingAccountActiveUnion CreateAccountingAccountActiveEnum(AccountingAccountActiveEnum accountingAccountActiveEnum) {
+        public static AccountingAccountActiveUnion CreateAccountingAccountActiveEnum(AccountingAccountActiveEnum accountingAccountActiveEnum)
+        {
             AccountingAccountActiveUnionType typ = AccountingAccountActiveUnionType.AccountingAccountActiveEnum;
 
             AccountingAccountActiveUnion res = new AccountingAccountActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountingAccountActiveUnion CreateNull() {
+        public static AccountingAccountActiveUnion CreateNull()
+        {
             AccountingAccountActiveUnionType typ = AccountingAccountActiveUnionType.Null;
             return new AccountingAccountActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountingAccountActiveUnion res = (AccountingAccountActiveUnion)value;
                 if (AccountingAccountActiveUnionType.FromString(res.Type).Equals(AccountingAccountActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AccountingAccountActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AccountingAccountActiveEnum));
                     return;
                 }
-
             }
 
         }

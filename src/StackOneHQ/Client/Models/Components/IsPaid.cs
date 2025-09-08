@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IsPaidType
     {
         private IsPaidType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IsPaidType Boolean { get { return new IsPaidType("boolean"); } }
-        
+
         public static IsPaidType IsPaidEnum { get { return new IsPaidType("is_paid_enum"); } }
-        
+
         public static IsPaidType Null { get { return new IsPaidType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the break is paid
     /// </summary>
     [JsonConverter(typeof(IsPaid.IsPaidConverter))]
-    public class IsPaid {
-        public IsPaid(IsPaidType type) {
+    public class IsPaid
+    {
+        public IsPaid(IsPaidType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public IsPaidEnum? IsPaidEnum { get; set; }
 
         public IsPaidType Type { get; set; }
-
-
-        public static IsPaid CreateBoolean(bool boolean) {
+        public static IsPaid CreateBoolean(bool boolean)
+        {
             IsPaidType typ = IsPaidType.Boolean;
 
             IsPaid res = new IsPaid(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IsPaid CreateIsPaidEnum(IsPaidEnum isPaidEnum) {
+        public static IsPaid CreateIsPaidEnum(IsPaidEnum isPaidEnum)
+        {
             IsPaidType typ = IsPaidType.IsPaidEnum;
 
             IsPaid res = new IsPaid(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IsPaid CreateNull() {
+        public static IsPaid CreateNull()
+        {
             IsPaidType typ = IsPaidType.Null;
             return new IsPaid(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IsPaid res = (IsPaid)value;
                 if (IsPaidType.FromString(res.Type).Equals(IsPaidType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IsPaidEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IsPaidEnum));
                     return;
                 }
-
             }
 
         }

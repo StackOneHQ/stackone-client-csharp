@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class JobPostingQuestionnaireInternalUnionType
     {
         private JobPostingQuestionnaireInternalUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static JobPostingQuestionnaireInternalUnionType Boolean { get { return new JobPostingQuestionnaireInternalUnionType("boolean"); } }
-        
+
         public static JobPostingQuestionnaireInternalUnionType JobPostingQuestionnaireInternalEnum { get { return new JobPostingQuestionnaireInternalUnionType("JobPostingQuestionnaire_internal_enum"); } }
-        
+
         public static JobPostingQuestionnaireInternalUnionType Null { get { return new JobPostingQuestionnaireInternalUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -57,8 +57,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(JobPostingQuestionnaireInternalUnion.JobPostingQuestionnaireInternalUnionConverter))]
-    public class JobPostingQuestionnaireInternalUnion {
-        public JobPostingQuestionnaireInternalUnion(JobPostingQuestionnaireInternalUnionType type) {
+    public class JobPostingQuestionnaireInternalUnion
+    {
+        public JobPostingQuestionnaireInternalUnion(JobPostingQuestionnaireInternalUnionType type)
+        {
             Type = type;
         }
 
@@ -69,17 +71,16 @@ namespace StackOneHQ.Client.Models.Components
         public JobPostingQuestionnaireInternalEnum? JobPostingQuestionnaireInternalEnum { get; set; }
 
         public JobPostingQuestionnaireInternalUnionType Type { get; set; }
-
-
-        public static JobPostingQuestionnaireInternalUnion CreateBoolean(bool boolean) {
+        public static JobPostingQuestionnaireInternalUnion CreateBoolean(bool boolean)
+        {
             JobPostingQuestionnaireInternalUnionType typ = JobPostingQuestionnaireInternalUnionType.Boolean;
 
             JobPostingQuestionnaireInternalUnion res = new JobPostingQuestionnaireInternalUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static JobPostingQuestionnaireInternalUnion CreateJobPostingQuestionnaireInternalEnum(JobPostingQuestionnaireInternalEnum jobPostingQuestionnaireInternalEnum) {
+        public static JobPostingQuestionnaireInternalUnion CreateJobPostingQuestionnaireInternalEnum(JobPostingQuestionnaireInternalEnum jobPostingQuestionnaireInternalEnum)
+        {
             JobPostingQuestionnaireInternalUnionType typ = JobPostingQuestionnaireInternalUnionType.JobPostingQuestionnaireInternalEnum;
 
             JobPostingQuestionnaireInternalUnion res = new JobPostingQuestionnaireInternalUnion(typ);
@@ -87,7 +88,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static JobPostingQuestionnaireInternalUnion CreateNull() {
+        public static JobPostingQuestionnaireInternalUnion CreateNull()
+        {
             JobPostingQuestionnaireInternalUnionType typ = JobPostingQuestionnaireInternalUnionType.Null;
             return new JobPostingQuestionnaireInternalUnion(typ);
         }
@@ -171,23 +173,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 JobPostingQuestionnaireInternalUnion res = (JobPostingQuestionnaireInternalUnion)value;
                 if (JobPostingQuestionnaireInternalUnionType.FromString(res.Type).Equals(JobPostingQuestionnaireInternalUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.JobPostingQuestionnaireInternalEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.JobPostingQuestionnaireInternalEnum));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType
     {
         private AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType Str { get { return new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType("str"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType Number { get { return new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType("number"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType Boolean { get { return new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType("boolean"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType AtsDocumentsUploadRequestDtoSourceValueConfidential { get { return new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType("AtsDocumentsUploadRequestDto_source_value_confidential"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType ArrayOfAny { get { return new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType Null { get { return new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion.AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionConverter))]
-    public class AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion {
-        public AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType type) {
+    public class AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion
+    {
+        public AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType Type { get; set; }
-
-
-        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateStr(string str) {
+        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateStr(string str)
+        {
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Str;
 
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNumber(double number) {
+        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNumber(double number)
+        {
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Number;
 
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Boolean;
 
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateAtsDocumentsUploadRequestDtoSourceValueConfidential(AtsDocumentsUploadRequestDtoSourceValueConfidential atsDocumentsUploadRequestDtoSourceValueConfidential) {
+        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateAtsDocumentsUploadRequestDtoSourceValueConfidential(AtsDocumentsUploadRequestDtoSourceValueConfidential atsDocumentsUploadRequestDtoSourceValueConfidential)
+        {
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.AtsDocumentsUploadRequestDtoSourceValueConfidential;
 
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.AtsDocumentsUploadRequestDtoSourceValueConfidential = atsDocumentsUploadRequestDtoSourceValueConfidential;
             return res;
         }
-
-        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.ArrayOfAny;
 
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNull() {
+        public static AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNull()
+        {
             AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Null;
             return new AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion res = (AtsDocumentsUploadRequestDtoConfidentialSourceValueUnion)value;
                 if (AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.FromString(res.Type).Equals(AtsDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsDocumentsUploadRequestDtoSourceValueConfidential != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsDocumentsUploadRequestDtoSourceValueConfidential));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

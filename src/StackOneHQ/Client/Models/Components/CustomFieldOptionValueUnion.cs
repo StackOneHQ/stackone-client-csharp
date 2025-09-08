@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CustomFieldOptionValueUnionType
     {
         private CustomFieldOptionValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CustomFieldOptionValueUnionType Str { get { return new CustomFieldOptionValueUnionType("str"); } }
-        
+
         public static CustomFieldOptionValueUnionType Number { get { return new CustomFieldOptionValueUnionType("number"); } }
-        
+
         public static CustomFieldOptionValueUnionType Boolean { get { return new CustomFieldOptionValueUnionType("boolean"); } }
-        
+
         public static CustomFieldOptionValueUnionType CustomFieldOptionValue { get { return new CustomFieldOptionValueUnionType("CustomFieldOption_value"); } }
-        
+
         public static CustomFieldOptionValueUnionType ArrayOfAny { get { return new CustomFieldOptionValueUnionType("arrayOfAny"); } }
-        
+
         public static CustomFieldOptionValueUnionType Null { get { return new CustomFieldOptionValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The human readable value of the option
     /// </summary>
     [JsonConverter(typeof(CustomFieldOptionValueUnion.CustomFieldOptionValueUnionConverter))]
-    public class CustomFieldOptionValueUnion {
-        public CustomFieldOptionValueUnion(CustomFieldOptionValueUnionType type) {
+    public class CustomFieldOptionValueUnion
+    {
+        public CustomFieldOptionValueUnion(CustomFieldOptionValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CustomFieldOptionValueUnionType Type { get; set; }
-
-
-        public static CustomFieldOptionValueUnion CreateStr(string str) {
+        public static CustomFieldOptionValueUnion CreateStr(string str)
+        {
             CustomFieldOptionValueUnionType typ = CustomFieldOptionValueUnionType.Str;
 
             CustomFieldOptionValueUnion res = new CustomFieldOptionValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CustomFieldOptionValueUnion CreateNumber(double number) {
+        public static CustomFieldOptionValueUnion CreateNumber(double number)
+        {
             CustomFieldOptionValueUnionType typ = CustomFieldOptionValueUnionType.Number;
 
             CustomFieldOptionValueUnion res = new CustomFieldOptionValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CustomFieldOptionValueUnion CreateBoolean(bool boolean) {
+        public static CustomFieldOptionValueUnion CreateBoolean(bool boolean)
+        {
             CustomFieldOptionValueUnionType typ = CustomFieldOptionValueUnionType.Boolean;
 
             CustomFieldOptionValueUnion res = new CustomFieldOptionValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CustomFieldOptionValueUnion CreateCustomFieldOptionValue(CustomFieldOptionValue customFieldOptionValue) {
+        public static CustomFieldOptionValueUnion CreateCustomFieldOptionValue(CustomFieldOptionValue customFieldOptionValue)
+        {
             CustomFieldOptionValueUnionType typ = CustomFieldOptionValueUnionType.CustomFieldOptionValue;
 
             CustomFieldOptionValueUnion res = new CustomFieldOptionValueUnion(typ);
             res.CustomFieldOptionValue = customFieldOptionValue;
             return res;
         }
-
-        public static CustomFieldOptionValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CustomFieldOptionValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CustomFieldOptionValueUnionType typ = CustomFieldOptionValueUnionType.ArrayOfAny;
 
             CustomFieldOptionValueUnion res = new CustomFieldOptionValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CustomFieldOptionValueUnion CreateNull() {
+        public static CustomFieldOptionValueUnion CreateNull()
+        {
             CustomFieldOptionValueUnionType typ = CustomFieldOptionValueUnionType.Null;
             return new CustomFieldOptionValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CustomFieldOptionValueUnion res = (CustomFieldOptionValueUnion)value;
                 if (CustomFieldOptionValueUnionType.FromString(res.Type).Equals(CustomFieldOptionValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CustomFieldOptionValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CustomFieldOptionValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

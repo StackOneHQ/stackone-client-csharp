@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ApplicationChangesSourceValueUnionType
     {
         private ApplicationChangesSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ApplicationChangesSourceValueUnionType Str { get { return new ApplicationChangesSourceValueUnionType("str"); } }
-        
+
         public static ApplicationChangesSourceValueUnionType Number { get { return new ApplicationChangesSourceValueUnionType("number"); } }
-        
+
         public static ApplicationChangesSourceValueUnionType Boolean { get { return new ApplicationChangesSourceValueUnionType("boolean"); } }
-        
+
         public static ApplicationChangesSourceValueUnionType ApplicationChangesSourceValue { get { return new ApplicationChangesSourceValueUnionType("ApplicationChanges_source_value"); } }
-        
+
         public static ApplicationChangesSourceValueUnionType ArrayOfAny { get { return new ApplicationChangesSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ApplicationChangesSourceValueUnionType Null { get { return new ApplicationChangesSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the change type
     /// </summary>
     [JsonConverter(typeof(ApplicationChangesSourceValueUnion.ApplicationChangesSourceValueUnionConverter))]
-    public class ApplicationChangesSourceValueUnion {
-        public ApplicationChangesSourceValueUnion(ApplicationChangesSourceValueUnionType type) {
+    public class ApplicationChangesSourceValueUnion
+    {
+        public ApplicationChangesSourceValueUnion(ApplicationChangesSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ApplicationChangesSourceValueUnionType Type { get; set; }
-
-
-        public static ApplicationChangesSourceValueUnion CreateStr(string str) {
+        public static ApplicationChangesSourceValueUnion CreateStr(string str)
+        {
             ApplicationChangesSourceValueUnionType typ = ApplicationChangesSourceValueUnionType.Str;
 
             ApplicationChangesSourceValueUnion res = new ApplicationChangesSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ApplicationChangesSourceValueUnion CreateNumber(double number) {
+        public static ApplicationChangesSourceValueUnion CreateNumber(double number)
+        {
             ApplicationChangesSourceValueUnionType typ = ApplicationChangesSourceValueUnionType.Number;
 
             ApplicationChangesSourceValueUnion res = new ApplicationChangesSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ApplicationChangesSourceValueUnion CreateBoolean(bool boolean) {
+        public static ApplicationChangesSourceValueUnion CreateBoolean(bool boolean)
+        {
             ApplicationChangesSourceValueUnionType typ = ApplicationChangesSourceValueUnionType.Boolean;
 
             ApplicationChangesSourceValueUnion res = new ApplicationChangesSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ApplicationChangesSourceValueUnion CreateApplicationChangesSourceValue(ApplicationChangesSourceValue applicationChangesSourceValue) {
+        public static ApplicationChangesSourceValueUnion CreateApplicationChangesSourceValue(ApplicationChangesSourceValue applicationChangesSourceValue)
+        {
             ApplicationChangesSourceValueUnionType typ = ApplicationChangesSourceValueUnionType.ApplicationChangesSourceValue;
 
             ApplicationChangesSourceValueUnion res = new ApplicationChangesSourceValueUnion(typ);
             res.ApplicationChangesSourceValue = applicationChangesSourceValue;
             return res;
         }
-
-        public static ApplicationChangesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ApplicationChangesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ApplicationChangesSourceValueUnionType typ = ApplicationChangesSourceValueUnionType.ArrayOfAny;
 
             ApplicationChangesSourceValueUnion res = new ApplicationChangesSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ApplicationChangesSourceValueUnion CreateNull() {
+        public static ApplicationChangesSourceValueUnion CreateNull()
+        {
             ApplicationChangesSourceValueUnionType typ = ApplicationChangesSourceValueUnionType.Null;
             return new ApplicationChangesSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ApplicationChangesSourceValueUnion res = (ApplicationChangesSourceValueUnion)value;
                 if (ApplicationChangesSourceValueUnionType.FromString(res.Type).Equals(ApplicationChangesSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ApplicationChangesSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ApplicationChangesSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

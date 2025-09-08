@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsCreateOfferRequestDtoSourceValueUnionType
     {
         private AtsCreateOfferRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsCreateOfferRequestDtoSourceValueUnionType Str { get { return new AtsCreateOfferRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsCreateOfferRequestDtoSourceValueUnionType Number { get { return new AtsCreateOfferRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsCreateOfferRequestDtoSourceValueUnionType Boolean { get { return new AtsCreateOfferRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsCreateOfferRequestDtoSourceValueUnionType AtsCreateOfferRequestDtoSourceValue { get { return new AtsCreateOfferRequestDtoSourceValueUnionType("AtsCreateOfferRequestDto_source_value"); } }
-        
+
         public static AtsCreateOfferRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsCreateOfferRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsCreateOfferRequestDtoSourceValueUnionType Null { get { return new AtsCreateOfferRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the offer status.
     /// </summary>
     [JsonConverter(typeof(AtsCreateOfferRequestDtoSourceValueUnion.AtsCreateOfferRequestDtoSourceValueUnionConverter))]
-    public class AtsCreateOfferRequestDtoSourceValueUnion {
-        public AtsCreateOfferRequestDtoSourceValueUnion(AtsCreateOfferRequestDtoSourceValueUnionType type) {
+    public class AtsCreateOfferRequestDtoSourceValueUnion
+    {
+        public AtsCreateOfferRequestDtoSourceValueUnion(AtsCreateOfferRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsCreateOfferRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsCreateOfferRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsCreateOfferRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsCreateOfferRequestDtoSourceValueUnionType typ = AtsCreateOfferRequestDtoSourceValueUnionType.Str;
 
             AtsCreateOfferRequestDtoSourceValueUnion res = new AtsCreateOfferRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsCreateOfferRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsCreateOfferRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsCreateOfferRequestDtoSourceValueUnionType typ = AtsCreateOfferRequestDtoSourceValueUnionType.Number;
 
             AtsCreateOfferRequestDtoSourceValueUnion res = new AtsCreateOfferRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsCreateOfferRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsCreateOfferRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsCreateOfferRequestDtoSourceValueUnionType typ = AtsCreateOfferRequestDtoSourceValueUnionType.Boolean;
 
             AtsCreateOfferRequestDtoSourceValueUnion res = new AtsCreateOfferRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsCreateOfferRequestDtoSourceValueUnion CreateAtsCreateOfferRequestDtoSourceValue(AtsCreateOfferRequestDtoSourceValue atsCreateOfferRequestDtoSourceValue) {
+        public static AtsCreateOfferRequestDtoSourceValueUnion CreateAtsCreateOfferRequestDtoSourceValue(AtsCreateOfferRequestDtoSourceValue atsCreateOfferRequestDtoSourceValue)
+        {
             AtsCreateOfferRequestDtoSourceValueUnionType typ = AtsCreateOfferRequestDtoSourceValueUnionType.AtsCreateOfferRequestDtoSourceValue;
 
             AtsCreateOfferRequestDtoSourceValueUnion res = new AtsCreateOfferRequestDtoSourceValueUnion(typ);
             res.AtsCreateOfferRequestDtoSourceValue = atsCreateOfferRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsCreateOfferRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsCreateOfferRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsCreateOfferRequestDtoSourceValueUnionType typ = AtsCreateOfferRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsCreateOfferRequestDtoSourceValueUnion res = new AtsCreateOfferRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsCreateOfferRequestDtoSourceValueUnion CreateNull() {
+        public static AtsCreateOfferRequestDtoSourceValueUnion CreateNull()
+        {
             AtsCreateOfferRequestDtoSourceValueUnionType typ = AtsCreateOfferRequestDtoSourceValueUnionType.Null;
             return new AtsCreateOfferRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsCreateOfferRequestDtoSourceValueUnion res = (AtsCreateOfferRequestDtoSourceValueUnion)value;
                 if (AtsCreateOfferRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsCreateOfferRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsCreateOfferRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsCreateOfferRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

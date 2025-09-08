@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LmsUpsertContentRequestDtoActiveUnionType
     {
         private LmsUpsertContentRequestDtoActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LmsUpsertContentRequestDtoActiveUnionType Boolean { get { return new LmsUpsertContentRequestDtoActiveUnionType("boolean"); } }
-        
+
         public static LmsUpsertContentRequestDtoActiveUnionType LmsUpsertContentRequestDtoActiveEnum { get { return new LmsUpsertContentRequestDtoActiveUnionType("LmsUpsertContentRequestDto_active_enum"); } }
-        
+
         public static LmsUpsertContentRequestDtoActiveUnionType Null { get { return new LmsUpsertContentRequestDtoActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the content is active and available for users.
     /// </summary>
     [JsonConverter(typeof(LmsUpsertContentRequestDtoActiveUnion.LmsUpsertContentRequestDtoActiveUnionConverter))]
-    public class LmsUpsertContentRequestDtoActiveUnion {
-        public LmsUpsertContentRequestDtoActiveUnion(LmsUpsertContentRequestDtoActiveUnionType type) {
+    public class LmsUpsertContentRequestDtoActiveUnion
+    {
+        public LmsUpsertContentRequestDtoActiveUnion(LmsUpsertContentRequestDtoActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public LmsUpsertContentRequestDtoActiveEnum? LmsUpsertContentRequestDtoActiveEnum { get; set; }
 
         public LmsUpsertContentRequestDtoActiveUnionType Type { get; set; }
-
-
-        public static LmsUpsertContentRequestDtoActiveUnion CreateBoolean(bool boolean) {
+        public static LmsUpsertContentRequestDtoActiveUnion CreateBoolean(bool boolean)
+        {
             LmsUpsertContentRequestDtoActiveUnionType typ = LmsUpsertContentRequestDtoActiveUnionType.Boolean;
 
             LmsUpsertContentRequestDtoActiveUnion res = new LmsUpsertContentRequestDtoActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LmsUpsertContentRequestDtoActiveUnion CreateLmsUpsertContentRequestDtoActiveEnum(LmsUpsertContentRequestDtoActiveEnum lmsUpsertContentRequestDtoActiveEnum) {
+        public static LmsUpsertContentRequestDtoActiveUnion CreateLmsUpsertContentRequestDtoActiveEnum(LmsUpsertContentRequestDtoActiveEnum lmsUpsertContentRequestDtoActiveEnum)
+        {
             LmsUpsertContentRequestDtoActiveUnionType typ = LmsUpsertContentRequestDtoActiveUnionType.LmsUpsertContentRequestDtoActiveEnum;
 
             LmsUpsertContentRequestDtoActiveUnion res = new LmsUpsertContentRequestDtoActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static LmsUpsertContentRequestDtoActiveUnion CreateNull() {
+        public static LmsUpsertContentRequestDtoActiveUnion CreateNull()
+        {
             LmsUpsertContentRequestDtoActiveUnionType typ = LmsUpsertContentRequestDtoActiveUnionType.Null;
             return new LmsUpsertContentRequestDtoActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LmsUpsertContentRequestDtoActiveUnion res = (LmsUpsertContentRequestDtoActiveUnion)value;
                 if (LmsUpsertContentRequestDtoActiveUnionType.FromString(res.Type).Equals(LmsUpsertContentRequestDtoActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.LmsUpsertContentRequestDtoActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.LmsUpsertContentRequestDtoActiveEnum));
                     return;
                 }
-
             }
 
         }

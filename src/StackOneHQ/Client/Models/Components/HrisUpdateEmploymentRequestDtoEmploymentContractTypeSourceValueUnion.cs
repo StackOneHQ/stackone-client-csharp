@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType
     {
         private HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType Str { get { return new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType("str"); } }
-        
+
         public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType Number { get { return new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType("number"); } }
-        
+
         public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType Boolean { get { return new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType("boolean"); } }
-        
+
         public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType { get { return new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType("HrisUpdateEmploymentRequestDto_source_value_employment_contract_type"); } }
-        
+
         public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType ArrayOfAny { get { return new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType Null { get { return new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion.HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionConverter))]
-    public class HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion {
-        public HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType type) {
+    public class HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion
+    {
+        public HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType Type { get; set; }
-
-
-        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateStr(string str) {
+        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateStr(string str)
+        {
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType typ = HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.Str;
 
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion res = new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateNumber(double number) {
+        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateNumber(double number)
+        {
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType typ = HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.Number;
 
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion res = new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType typ = HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.Boolean;
 
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion res = new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateHrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType(HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType hrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType) {
+        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateHrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType(HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType hrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType)
+        {
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType typ = HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType;
 
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion res = new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(typ);
             res.HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType = hrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType;
             return res;
         }
-
-        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType typ = HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.ArrayOfAny;
 
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion res = new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateNull() {
+        public static HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion CreateNull()
+        {
             HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType typ = HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.Null;
             return new HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion res = (HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion)value;
                 if (HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.FromString(res.Type).Equals(HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

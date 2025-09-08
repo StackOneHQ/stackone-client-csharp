@@ -37,7 +37,7 @@ namespace StackOneHQ.Client.Models.Requests
         public string? JobId { get; set; } = null;
 
         /// <summary>
-        /// Filter to select applications by stage and sub-stage
+        /// Filter to select applications by application_stage id
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=stage")]
         public string? Stage { get; set; } = null;

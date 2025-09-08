@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmployeeHomeLocationCountrySourceValueUnionType
     {
         private EmployeeHomeLocationCountrySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmployeeHomeLocationCountrySourceValueUnionType Str { get { return new EmployeeHomeLocationCountrySourceValueUnionType("str"); } }
-        
+
         public static EmployeeHomeLocationCountrySourceValueUnionType Number { get { return new EmployeeHomeLocationCountrySourceValueUnionType("number"); } }
-        
+
         public static EmployeeHomeLocationCountrySourceValueUnionType Boolean { get { return new EmployeeHomeLocationCountrySourceValueUnionType("boolean"); } }
-        
+
         public static EmployeeHomeLocationCountrySourceValueUnionType EmployeeSourceValueHomeLocationCountry { get { return new EmployeeHomeLocationCountrySourceValueUnionType("Employee_source_value_home_location_country"); } }
-        
+
         public static EmployeeHomeLocationCountrySourceValueUnionType ArrayOfAny { get { return new EmployeeHomeLocationCountrySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmployeeHomeLocationCountrySourceValueUnionType Null { get { return new EmployeeHomeLocationCountrySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmployeeHomeLocationCountrySourceValueUnion.EmployeeHomeLocationCountrySourceValueUnionConverter))]
-    public class EmployeeHomeLocationCountrySourceValueUnion {
-        public EmployeeHomeLocationCountrySourceValueUnion(EmployeeHomeLocationCountrySourceValueUnionType type) {
+    public class EmployeeHomeLocationCountrySourceValueUnion
+    {
+        public EmployeeHomeLocationCountrySourceValueUnion(EmployeeHomeLocationCountrySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmployeeHomeLocationCountrySourceValueUnionType Type { get; set; }
-
-
-        public static EmployeeHomeLocationCountrySourceValueUnion CreateStr(string str) {
+        public static EmployeeHomeLocationCountrySourceValueUnion CreateStr(string str)
+        {
             EmployeeHomeLocationCountrySourceValueUnionType typ = EmployeeHomeLocationCountrySourceValueUnionType.Str;
 
             EmployeeHomeLocationCountrySourceValueUnion res = new EmployeeHomeLocationCountrySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmployeeHomeLocationCountrySourceValueUnion CreateNumber(double number) {
+        public static EmployeeHomeLocationCountrySourceValueUnion CreateNumber(double number)
+        {
             EmployeeHomeLocationCountrySourceValueUnionType typ = EmployeeHomeLocationCountrySourceValueUnionType.Number;
 
             EmployeeHomeLocationCountrySourceValueUnion res = new EmployeeHomeLocationCountrySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmployeeHomeLocationCountrySourceValueUnion CreateBoolean(bool boolean) {
+        public static EmployeeHomeLocationCountrySourceValueUnion CreateBoolean(bool boolean)
+        {
             EmployeeHomeLocationCountrySourceValueUnionType typ = EmployeeHomeLocationCountrySourceValueUnionType.Boolean;
 
             EmployeeHomeLocationCountrySourceValueUnion res = new EmployeeHomeLocationCountrySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmployeeHomeLocationCountrySourceValueUnion CreateEmployeeSourceValueHomeLocationCountry(EmployeeSourceValueHomeLocationCountry employeeSourceValueHomeLocationCountry) {
+        public static EmployeeHomeLocationCountrySourceValueUnion CreateEmployeeSourceValueHomeLocationCountry(EmployeeSourceValueHomeLocationCountry employeeSourceValueHomeLocationCountry)
+        {
             EmployeeHomeLocationCountrySourceValueUnionType typ = EmployeeHomeLocationCountrySourceValueUnionType.EmployeeSourceValueHomeLocationCountry;
 
             EmployeeHomeLocationCountrySourceValueUnion res = new EmployeeHomeLocationCountrySourceValueUnion(typ);
             res.EmployeeSourceValueHomeLocationCountry = employeeSourceValueHomeLocationCountry;
             return res;
         }
-
-        public static EmployeeHomeLocationCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmployeeHomeLocationCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmployeeHomeLocationCountrySourceValueUnionType typ = EmployeeHomeLocationCountrySourceValueUnionType.ArrayOfAny;
 
             EmployeeHomeLocationCountrySourceValueUnion res = new EmployeeHomeLocationCountrySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmployeeHomeLocationCountrySourceValueUnion CreateNull() {
+        public static EmployeeHomeLocationCountrySourceValueUnion CreateNull()
+        {
             EmployeeHomeLocationCountrySourceValueUnionType typ = EmployeeHomeLocationCountrySourceValueUnionType.Null;
             return new EmployeeHomeLocationCountrySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmployeeHomeLocationCountrySourceValueUnion res = (EmployeeHomeLocationCountrySourceValueUnion)value;
                 if (EmployeeHomeLocationCountrySourceValueUnionType.FromString(res.Type).Equals(EmployeeHomeLocationCountrySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmployeeSourceValueHomeLocationCountry != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmployeeSourceValueHomeLocationCountry));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

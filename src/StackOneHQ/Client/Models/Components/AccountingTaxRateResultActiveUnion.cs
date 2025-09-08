@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountingTaxRateResultActiveUnionType
     {
         private AccountingTaxRateResultActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountingTaxRateResultActiveUnionType Boolean { get { return new AccountingTaxRateResultActiveUnionType("boolean"); } }
-        
+
         public static AccountingTaxRateResultActiveUnionType AccountingTaxRateResultActiveEnum { get { return new AccountingTaxRateResultActiveUnionType("AccountingTaxRateResult_active_enum"); } }
-        
+
         public static AccountingTaxRateResultActiveUnionType Null { get { return new AccountingTaxRateResultActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the tax rate is active
     /// </summary>
     [JsonConverter(typeof(AccountingTaxRateResultActiveUnion.AccountingTaxRateResultActiveUnionConverter))]
-    public class AccountingTaxRateResultActiveUnion {
-        public AccountingTaxRateResultActiveUnion(AccountingTaxRateResultActiveUnionType type) {
+    public class AccountingTaxRateResultActiveUnion
+    {
+        public AccountingTaxRateResultActiveUnion(AccountingTaxRateResultActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public AccountingTaxRateResultActiveEnum? AccountingTaxRateResultActiveEnum { get; set; }
 
         public AccountingTaxRateResultActiveUnionType Type { get; set; }
-
-
-        public static AccountingTaxRateResultActiveUnion CreateBoolean(bool boolean) {
+        public static AccountingTaxRateResultActiveUnion CreateBoolean(bool boolean)
+        {
             AccountingTaxRateResultActiveUnionType typ = AccountingTaxRateResultActiveUnionType.Boolean;
 
             AccountingTaxRateResultActiveUnion res = new AccountingTaxRateResultActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountingTaxRateResultActiveUnion CreateAccountingTaxRateResultActiveEnum(AccountingTaxRateResultActiveEnum accountingTaxRateResultActiveEnum) {
+        public static AccountingTaxRateResultActiveUnion CreateAccountingTaxRateResultActiveEnum(AccountingTaxRateResultActiveEnum accountingTaxRateResultActiveEnum)
+        {
             AccountingTaxRateResultActiveUnionType typ = AccountingTaxRateResultActiveUnionType.AccountingTaxRateResultActiveEnum;
 
             AccountingTaxRateResultActiveUnion res = new AccountingTaxRateResultActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountingTaxRateResultActiveUnion CreateNull() {
+        public static AccountingTaxRateResultActiveUnion CreateNull()
+        {
             AccountingTaxRateResultActiveUnionType typ = AccountingTaxRateResultActiveUnionType.Null;
             return new AccountingTaxRateResultActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountingTaxRateResultActiveUnion res = (AccountingTaxRateResultActiveUnion)value;
                 if (AccountingTaxRateResultActiveUnionType.FromString(res.Type).Equals(AccountingTaxRateResultActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AccountingTaxRateResultActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AccountingTaxRateResultActiveEnum));
                     return;
                 }
-
             }
 
         }

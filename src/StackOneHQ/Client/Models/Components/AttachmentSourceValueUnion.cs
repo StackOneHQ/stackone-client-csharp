@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AttachmentSourceValueUnionType
     {
         private AttachmentSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AttachmentSourceValueUnionType Str { get { return new AttachmentSourceValueUnionType("str"); } }
-        
+
         public static AttachmentSourceValueUnionType Number { get { return new AttachmentSourceValueUnionType("number"); } }
-        
+
         public static AttachmentSourceValueUnionType Boolean { get { return new AttachmentSourceValueUnionType("boolean"); } }
-        
+
         public static AttachmentSourceValueUnionType AttachmentSourceValue { get { return new AttachmentSourceValueUnionType("Attachment_source_value"); } }
-        
+
         public static AttachmentSourceValueUnionType ArrayOfAny { get { return new AttachmentSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AttachmentSourceValueUnionType Null { get { return new AttachmentSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the content type.
     /// </summary>
     [JsonConverter(typeof(AttachmentSourceValueUnion.AttachmentSourceValueUnionConverter))]
-    public class AttachmentSourceValueUnion {
-        public AttachmentSourceValueUnion(AttachmentSourceValueUnionType type) {
+    public class AttachmentSourceValueUnion
+    {
+        public AttachmentSourceValueUnion(AttachmentSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AttachmentSourceValueUnionType Type { get; set; }
-
-
-        public static AttachmentSourceValueUnion CreateStr(string str) {
+        public static AttachmentSourceValueUnion CreateStr(string str)
+        {
             AttachmentSourceValueUnionType typ = AttachmentSourceValueUnionType.Str;
 
             AttachmentSourceValueUnion res = new AttachmentSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AttachmentSourceValueUnion CreateNumber(double number) {
+        public static AttachmentSourceValueUnion CreateNumber(double number)
+        {
             AttachmentSourceValueUnionType typ = AttachmentSourceValueUnionType.Number;
 
             AttachmentSourceValueUnion res = new AttachmentSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AttachmentSourceValueUnion CreateBoolean(bool boolean) {
+        public static AttachmentSourceValueUnion CreateBoolean(bool boolean)
+        {
             AttachmentSourceValueUnionType typ = AttachmentSourceValueUnionType.Boolean;
 
             AttachmentSourceValueUnion res = new AttachmentSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AttachmentSourceValueUnion CreateAttachmentSourceValue(AttachmentSourceValue attachmentSourceValue) {
+        public static AttachmentSourceValueUnion CreateAttachmentSourceValue(AttachmentSourceValue attachmentSourceValue)
+        {
             AttachmentSourceValueUnionType typ = AttachmentSourceValueUnionType.AttachmentSourceValue;
 
             AttachmentSourceValueUnion res = new AttachmentSourceValueUnion(typ);
             res.AttachmentSourceValue = attachmentSourceValue;
             return res;
         }
-
-        public static AttachmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AttachmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AttachmentSourceValueUnionType typ = AttachmentSourceValueUnionType.ArrayOfAny;
 
             AttachmentSourceValueUnion res = new AttachmentSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AttachmentSourceValueUnion CreateNull() {
+        public static AttachmentSourceValueUnion CreateNull()
+        {
             AttachmentSourceValueUnionType typ = AttachmentSourceValueUnionType.Null;
             return new AttachmentSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AttachmentSourceValueUnion res = (AttachmentSourceValueUnion)value;
                 if (AttachmentSourceValueUnionType.FromString(res.Type).Equals(AttachmentSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AttachmentSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AttachmentSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

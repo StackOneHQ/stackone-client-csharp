@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateSkillsApiModelLanguageSourceValueUnionType
     {
         private CreateSkillsApiModelLanguageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateSkillsApiModelLanguageSourceValueUnionType Str { get { return new CreateSkillsApiModelLanguageSourceValueUnionType("str"); } }
-        
+
         public static CreateSkillsApiModelLanguageSourceValueUnionType Number { get { return new CreateSkillsApiModelLanguageSourceValueUnionType("number"); } }
-        
+
         public static CreateSkillsApiModelLanguageSourceValueUnionType Boolean { get { return new CreateSkillsApiModelLanguageSourceValueUnionType("boolean"); } }
-        
+
         public static CreateSkillsApiModelLanguageSourceValueUnionType CreateSkillsApiModelSourceValueLanguage { get { return new CreateSkillsApiModelLanguageSourceValueUnionType("CreateSkillsApiModel_source_value_language"); } }
-        
+
         public static CreateSkillsApiModelLanguageSourceValueUnionType ArrayOfAny { get { return new CreateSkillsApiModelLanguageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateSkillsApiModelLanguageSourceValueUnionType Null { get { return new CreateSkillsApiModelLanguageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateSkillsApiModelLanguageSourceValueUnion.CreateSkillsApiModelLanguageSourceValueUnionConverter))]
-    public class CreateSkillsApiModelLanguageSourceValueUnion {
-        public CreateSkillsApiModelLanguageSourceValueUnion(CreateSkillsApiModelLanguageSourceValueUnionType type) {
+    public class CreateSkillsApiModelLanguageSourceValueUnion
+    {
+        public CreateSkillsApiModelLanguageSourceValueUnion(CreateSkillsApiModelLanguageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateSkillsApiModelLanguageSourceValueUnionType Type { get; set; }
-
-
-        public static CreateSkillsApiModelLanguageSourceValueUnion CreateStr(string str) {
+        public static CreateSkillsApiModelLanguageSourceValueUnion CreateStr(string str)
+        {
             CreateSkillsApiModelLanguageSourceValueUnionType typ = CreateSkillsApiModelLanguageSourceValueUnionType.Str;
 
             CreateSkillsApiModelLanguageSourceValueUnion res = new CreateSkillsApiModelLanguageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateSkillsApiModelLanguageSourceValueUnion CreateNumber(double number) {
+        public static CreateSkillsApiModelLanguageSourceValueUnion CreateNumber(double number)
+        {
             CreateSkillsApiModelLanguageSourceValueUnionType typ = CreateSkillsApiModelLanguageSourceValueUnionType.Number;
 
             CreateSkillsApiModelLanguageSourceValueUnion res = new CreateSkillsApiModelLanguageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateSkillsApiModelLanguageSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateSkillsApiModelLanguageSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateSkillsApiModelLanguageSourceValueUnionType typ = CreateSkillsApiModelLanguageSourceValueUnionType.Boolean;
 
             CreateSkillsApiModelLanguageSourceValueUnion res = new CreateSkillsApiModelLanguageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateSkillsApiModelLanguageSourceValueUnion CreateCreateSkillsApiModelSourceValueLanguage(CreateSkillsApiModelSourceValueLanguage createSkillsAPIModelSourceValueLanguage) {
+        public static CreateSkillsApiModelLanguageSourceValueUnion CreateCreateSkillsApiModelSourceValueLanguage(CreateSkillsApiModelSourceValueLanguage createSkillsAPIModelSourceValueLanguage)
+        {
             CreateSkillsApiModelLanguageSourceValueUnionType typ = CreateSkillsApiModelLanguageSourceValueUnionType.CreateSkillsApiModelSourceValueLanguage;
 
             CreateSkillsApiModelLanguageSourceValueUnion res = new CreateSkillsApiModelLanguageSourceValueUnion(typ);
             res.CreateSkillsApiModelSourceValueLanguage = createSkillsAPIModelSourceValueLanguage;
             return res;
         }
-
-        public static CreateSkillsApiModelLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateSkillsApiModelLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateSkillsApiModelLanguageSourceValueUnionType typ = CreateSkillsApiModelLanguageSourceValueUnionType.ArrayOfAny;
 
             CreateSkillsApiModelLanguageSourceValueUnion res = new CreateSkillsApiModelLanguageSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateSkillsApiModelLanguageSourceValueUnion CreateNull() {
+        public static CreateSkillsApiModelLanguageSourceValueUnion CreateNull()
+        {
             CreateSkillsApiModelLanguageSourceValueUnionType typ = CreateSkillsApiModelLanguageSourceValueUnionType.Null;
             return new CreateSkillsApiModelLanguageSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateSkillsApiModelLanguageSourceValueUnion res = (CreateSkillsApiModelLanguageSourceValueUnion)value;
                 if (CreateSkillsApiModelLanguageSourceValueUnionType.FromString(res.Type).Equals(CreateSkillsApiModelLanguageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateSkillsApiModelSourceValueLanguage != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateSkillsApiModelSourceValueLanguage));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

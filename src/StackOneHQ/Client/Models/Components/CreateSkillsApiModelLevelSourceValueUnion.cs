@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateSkillsApiModelLevelSourceValueUnionType
     {
         private CreateSkillsApiModelLevelSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateSkillsApiModelLevelSourceValueUnionType Str { get { return new CreateSkillsApiModelLevelSourceValueUnionType("str"); } }
-        
+
         public static CreateSkillsApiModelLevelSourceValueUnionType Number { get { return new CreateSkillsApiModelLevelSourceValueUnionType("number"); } }
-        
+
         public static CreateSkillsApiModelLevelSourceValueUnionType Boolean { get { return new CreateSkillsApiModelLevelSourceValueUnionType("boolean"); } }
-        
+
         public static CreateSkillsApiModelLevelSourceValueUnionType CreateSkillsApiModelSourceValueLevel { get { return new CreateSkillsApiModelLevelSourceValueUnionType("CreateSkillsApiModel_source_value_level"); } }
-        
+
         public static CreateSkillsApiModelLevelSourceValueUnionType ArrayOfAny { get { return new CreateSkillsApiModelLevelSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateSkillsApiModelLevelSourceValueUnionType Null { get { return new CreateSkillsApiModelLevelSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateSkillsApiModelLevelSourceValueUnion.CreateSkillsApiModelLevelSourceValueUnionConverter))]
-    public class CreateSkillsApiModelLevelSourceValueUnion {
-        public CreateSkillsApiModelLevelSourceValueUnion(CreateSkillsApiModelLevelSourceValueUnionType type) {
+    public class CreateSkillsApiModelLevelSourceValueUnion
+    {
+        public CreateSkillsApiModelLevelSourceValueUnion(CreateSkillsApiModelLevelSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateSkillsApiModelLevelSourceValueUnionType Type { get; set; }
-
-
-        public static CreateSkillsApiModelLevelSourceValueUnion CreateStr(string str) {
+        public static CreateSkillsApiModelLevelSourceValueUnion CreateStr(string str)
+        {
             CreateSkillsApiModelLevelSourceValueUnionType typ = CreateSkillsApiModelLevelSourceValueUnionType.Str;
 
             CreateSkillsApiModelLevelSourceValueUnion res = new CreateSkillsApiModelLevelSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateSkillsApiModelLevelSourceValueUnion CreateNumber(double number) {
+        public static CreateSkillsApiModelLevelSourceValueUnion CreateNumber(double number)
+        {
             CreateSkillsApiModelLevelSourceValueUnionType typ = CreateSkillsApiModelLevelSourceValueUnionType.Number;
 
             CreateSkillsApiModelLevelSourceValueUnion res = new CreateSkillsApiModelLevelSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateSkillsApiModelLevelSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateSkillsApiModelLevelSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateSkillsApiModelLevelSourceValueUnionType typ = CreateSkillsApiModelLevelSourceValueUnionType.Boolean;
 
             CreateSkillsApiModelLevelSourceValueUnion res = new CreateSkillsApiModelLevelSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateSkillsApiModelLevelSourceValueUnion CreateCreateSkillsApiModelSourceValueLevel(CreateSkillsApiModelSourceValueLevel createSkillsAPIModelSourceValueLevel) {
+        public static CreateSkillsApiModelLevelSourceValueUnion CreateCreateSkillsApiModelSourceValueLevel(CreateSkillsApiModelSourceValueLevel createSkillsAPIModelSourceValueLevel)
+        {
             CreateSkillsApiModelLevelSourceValueUnionType typ = CreateSkillsApiModelLevelSourceValueUnionType.CreateSkillsApiModelSourceValueLevel;
 
             CreateSkillsApiModelLevelSourceValueUnion res = new CreateSkillsApiModelLevelSourceValueUnion(typ);
             res.CreateSkillsApiModelSourceValueLevel = createSkillsAPIModelSourceValueLevel;
             return res;
         }
-
-        public static CreateSkillsApiModelLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateSkillsApiModelLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateSkillsApiModelLevelSourceValueUnionType typ = CreateSkillsApiModelLevelSourceValueUnionType.ArrayOfAny;
 
             CreateSkillsApiModelLevelSourceValueUnion res = new CreateSkillsApiModelLevelSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateSkillsApiModelLevelSourceValueUnion CreateNull() {
+        public static CreateSkillsApiModelLevelSourceValueUnion CreateNull()
+        {
             CreateSkillsApiModelLevelSourceValueUnionType typ = CreateSkillsApiModelLevelSourceValueUnionType.Null;
             return new CreateSkillsApiModelLevelSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateSkillsApiModelLevelSourceValueUnion res = (CreateSkillsApiModelLevelSourceValueUnion)value;
                 if (CreateSkillsApiModelLevelSourceValueUnionType.FromString(res.Type).Equals(CreateSkillsApiModelLevelSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateSkillsApiModelSourceValueLevel != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateSkillsApiModelSourceValueLevel));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

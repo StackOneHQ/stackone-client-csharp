@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class QuestionRequiredUnionType
     {
         private QuestionRequiredUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static QuestionRequiredUnionType Boolean { get { return new QuestionRequiredUnionType("boolean"); } }
-        
+
         public static QuestionRequiredUnionType QuestionRequiredEnum { get { return new QuestionRequiredUnionType("Question_required_enum"); } }
-        
+
         public static QuestionRequiredUnionType Null { get { return new QuestionRequiredUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -57,8 +57,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(QuestionRequiredUnion.QuestionRequiredUnionConverter))]
-    public class QuestionRequiredUnion {
-        public QuestionRequiredUnion(QuestionRequiredUnionType type) {
+    public class QuestionRequiredUnion
+    {
+        public QuestionRequiredUnion(QuestionRequiredUnionType type)
+        {
             Type = type;
         }
 
@@ -69,17 +71,16 @@ namespace StackOneHQ.Client.Models.Components
         public QuestionRequiredEnum? QuestionRequiredEnum { get; set; }
 
         public QuestionRequiredUnionType Type { get; set; }
-
-
-        public static QuestionRequiredUnion CreateBoolean(bool boolean) {
+        public static QuestionRequiredUnion CreateBoolean(bool boolean)
+        {
             QuestionRequiredUnionType typ = QuestionRequiredUnionType.Boolean;
 
             QuestionRequiredUnion res = new QuestionRequiredUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static QuestionRequiredUnion CreateQuestionRequiredEnum(QuestionRequiredEnum questionRequiredEnum) {
+        public static QuestionRequiredUnion CreateQuestionRequiredEnum(QuestionRequiredEnum questionRequiredEnum)
+        {
             QuestionRequiredUnionType typ = QuestionRequiredUnionType.QuestionRequiredEnum;
 
             QuestionRequiredUnion res = new QuestionRequiredUnion(typ);
@@ -87,7 +88,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static QuestionRequiredUnion CreateNull() {
+        public static QuestionRequiredUnion CreateNull()
+        {
             QuestionRequiredUnionType typ = QuestionRequiredUnionType.Null;
             return new QuestionRequiredUnion(typ);
         }
@@ -171,23 +173,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 QuestionRequiredUnion res = (QuestionRequiredUnion)value;
                 if (QuestionRequiredUnionType.FromString(res.Type).Equals(QuestionRequiredUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.QuestionRequiredEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.QuestionRequiredEnum));
                     return;
                 }
-
             }
 
         }

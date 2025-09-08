@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FileFileFormatSourceValueUnionType
     {
         private FileFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FileFileFormatSourceValueUnionType Str { get { return new FileFileFormatSourceValueUnionType("str"); } }
-        
+
         public static FileFileFormatSourceValueUnionType Number { get { return new FileFileFormatSourceValueUnionType("number"); } }
-        
+
         public static FileFileFormatSourceValueUnionType Boolean { get { return new FileFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static FileFileFormatSourceValueUnionType FileSourceValueFileFormat { get { return new FileFileFormatSourceValueUnionType("File_source_value_file_format"); } }
-        
+
         public static FileFileFormatSourceValueUnionType ArrayOfAny { get { return new FileFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static FileFileFormatSourceValueUnionType Null { get { return new FileFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(FileFileFormatSourceValueUnion.FileFileFormatSourceValueUnionConverter))]
-    public class FileFileFormatSourceValueUnion {
-        public FileFileFormatSourceValueUnion(FileFileFormatSourceValueUnionType type) {
+    public class FileFileFormatSourceValueUnion
+    {
+        public FileFileFormatSourceValueUnion(FileFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public FileFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static FileFileFormatSourceValueUnion CreateStr(string str) {
+        public static FileFileFormatSourceValueUnion CreateStr(string str)
+        {
             FileFileFormatSourceValueUnionType typ = FileFileFormatSourceValueUnionType.Str;
 
             FileFileFormatSourceValueUnion res = new FileFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static FileFileFormatSourceValueUnion CreateNumber(double number) {
+        public static FileFileFormatSourceValueUnion CreateNumber(double number)
+        {
             FileFileFormatSourceValueUnionType typ = FileFileFormatSourceValueUnionType.Number;
 
             FileFileFormatSourceValueUnion res = new FileFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static FileFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static FileFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             FileFileFormatSourceValueUnionType typ = FileFileFormatSourceValueUnionType.Boolean;
 
             FileFileFormatSourceValueUnion res = new FileFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FileFileFormatSourceValueUnion CreateFileSourceValueFileFormat(FileSourceValueFileFormat fileSourceValueFileFormat) {
+        public static FileFileFormatSourceValueUnion CreateFileSourceValueFileFormat(FileSourceValueFileFormat fileSourceValueFileFormat)
+        {
             FileFileFormatSourceValueUnionType typ = FileFileFormatSourceValueUnionType.FileSourceValueFileFormat;
 
             FileFileFormatSourceValueUnion res = new FileFileFormatSourceValueUnion(typ);
             res.FileSourceValueFileFormat = fileSourceValueFileFormat;
             return res;
         }
-
-        public static FileFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static FileFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             FileFileFormatSourceValueUnionType typ = FileFileFormatSourceValueUnionType.ArrayOfAny;
 
             FileFileFormatSourceValueUnion res = new FileFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FileFileFormatSourceValueUnion CreateNull() {
+        public static FileFileFormatSourceValueUnion CreateNull()
+        {
             FileFileFormatSourceValueUnionType typ = FileFileFormatSourceValueUnionType.Null;
             return new FileFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FileFileFormatSourceValueUnion res = (FileFileFormatSourceValueUnion)value;
                 if (FileFileFormatSourceValueUnionType.FromString(res.Type).Equals(FileFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FileSourceValueFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FileSourceValueFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

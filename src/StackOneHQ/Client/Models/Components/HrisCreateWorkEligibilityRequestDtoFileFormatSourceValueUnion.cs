@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType
     {
         private HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType Str { get { return new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType Number { get { return new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType Boolean { get { return new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType HrisCreateWorkEligibilityRequestDtoSourceValueFileFormat { get { return new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType("HrisCreateWorkEligibilityRequestDto_source_value_file_format"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType ArrayOfAny { get { return new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType Null { get { return new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion.HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionConverter))]
-    public class HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion {
-        public HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType type) {
+    public class HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion
+    {
+        public HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateStr(string str) {
+        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateStr(string str)
+        {
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.Str;
 
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.Number;
 
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.Boolean;
 
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateHrisCreateWorkEligibilityRequestDtoSourceValueFileFormat(HrisCreateWorkEligibilityRequestDtoSourceValueFileFormat hrisCreateWorkEligibilityRequestDtoSourceValueFileFormat) {
+        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateHrisCreateWorkEligibilityRequestDtoSourceValueFileFormat(HrisCreateWorkEligibilityRequestDtoSourceValueFileFormat hrisCreateWorkEligibilityRequestDtoSourceValueFileFormat)
+        {
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.HrisCreateWorkEligibilityRequestDtoSourceValueFileFormat;
 
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(typ);
             res.HrisCreateWorkEligibilityRequestDtoSourceValueFileFormat = hrisCreateWorkEligibilityRequestDtoSourceValueFileFormat;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.ArrayOfAny;
 
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateNull() {
+        public static HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion CreateNull()
+        {
             HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.Null;
             return new HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion res = (HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion)value;
                 if (HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.FromString(res.Type).Equals(HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateWorkEligibilityRequestDtoSourceValueFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateWorkEligibilityRequestDtoSourceValueFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FoldersHasChildrenUnionType
     {
         private FoldersHasChildrenUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FoldersHasChildrenUnionType Boolean { get { return new FoldersHasChildrenUnionType("boolean"); } }
-        
+
         public static FoldersHasChildrenUnionType FoldersHasChildrenEnum { get { return new FoldersHasChildrenUnionType("Folders_has_children_enum"); } }
-        
+
         public static FoldersHasChildrenUnionType Null { get { return new FoldersHasChildrenUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the folder has children
     /// </summary>
     [JsonConverter(typeof(FoldersHasChildrenUnion.FoldersHasChildrenUnionConverter))]
-    public class FoldersHasChildrenUnion {
-        public FoldersHasChildrenUnion(FoldersHasChildrenUnionType type) {
+    public class FoldersHasChildrenUnion
+    {
+        public FoldersHasChildrenUnion(FoldersHasChildrenUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public FoldersHasChildrenEnum? FoldersHasChildrenEnum { get; set; }
 
         public FoldersHasChildrenUnionType Type { get; set; }
-
-
-        public static FoldersHasChildrenUnion CreateBoolean(bool boolean) {
+        public static FoldersHasChildrenUnion CreateBoolean(bool boolean)
+        {
             FoldersHasChildrenUnionType typ = FoldersHasChildrenUnionType.Boolean;
 
             FoldersHasChildrenUnion res = new FoldersHasChildrenUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FoldersHasChildrenUnion CreateFoldersHasChildrenEnum(FoldersHasChildrenEnum foldersHasChildrenEnum) {
+        public static FoldersHasChildrenUnion CreateFoldersHasChildrenEnum(FoldersHasChildrenEnum foldersHasChildrenEnum)
+        {
             FoldersHasChildrenUnionType typ = FoldersHasChildrenUnionType.FoldersHasChildrenEnum;
 
             FoldersHasChildrenUnion res = new FoldersHasChildrenUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FoldersHasChildrenUnion CreateNull() {
+        public static FoldersHasChildrenUnion CreateNull()
+        {
             FoldersHasChildrenUnionType typ = FoldersHasChildrenUnionType.Null;
             return new FoldersHasChildrenUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FoldersHasChildrenUnion res = (FoldersHasChildrenUnion)value;
                 if (FoldersHasChildrenUnionType.FromString(res.Type).Equals(FoldersHasChildrenUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FoldersHasChildrenEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FoldersHasChildrenEnum));
                     return;
                 }
-
             }
 
         }

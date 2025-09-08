@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType
     {
         private HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType Str { get { return new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType Number { get { return new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType Boolean { get { return new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType HrisCreateEmployeeRequestDtoSourceValuePayPeriod { get { return new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType("HrisCreateEmployeeRequestDto_source_value_pay_period"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType ArrayOfAny { get { return new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType Null { get { return new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay period.
     /// </summary>
     [JsonConverter(typeof(HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion.HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionConverter))]
-    public class HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion {
-        public HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType type) {
+    public class HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion
+    {
+        public HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateStr(string str) {
+        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateStr(string str)
+        {
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.Str;
 
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion res = new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.Number;
 
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion res = new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.Boolean;
 
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion res = new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValuePayPeriod(HrisCreateEmployeeRequestDtoSourceValuePayPeriod hrisCreateEmployeeRequestDtoSourceValuePayPeriod) {
+        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValuePayPeriod(HrisCreateEmployeeRequestDtoSourceValuePayPeriod hrisCreateEmployeeRequestDtoSourceValuePayPeriod)
+        {
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.HrisCreateEmployeeRequestDtoSourceValuePayPeriod;
 
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion res = new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(typ);
             res.HrisCreateEmployeeRequestDtoSourceValuePayPeriod = hrisCreateEmployeeRequestDtoSourceValuePayPeriod;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.ArrayOfAny;
 
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion res = new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateNull() {
+        public static HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion CreateNull()
+        {
             HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType typ = HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.Null;
             return new HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion res = (HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnion)value;
                 if (HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.FromString(res.Type).Equals(HrisCreateEmployeeRequestDtoPayPeriodSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateEmployeeRequestDtoSourceValuePayPeriod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateEmployeeRequestDtoSourceValuePayPeriod));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType
     {
         private HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType Str { get { return new HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType("str"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType Number { get { return new HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType("number"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType Boolean { get { return new HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType("boolean"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType HrisUpdateEmployeeRequestDtoSourceValueType { get { return new HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType("HrisUpdateEmployeeRequestDto_source_value_type"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType ArrayOfAny { get { return new HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType Null { get { return new HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisUpdateEmployeeRequestDtoTypeSourceValueUnion.HrisUpdateEmployeeRequestDtoTypeSourceValueUnionConverter))]
-    public class HrisUpdateEmployeeRequestDtoTypeSourceValueUnion {
-        public HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType type) {
+    public class HrisUpdateEmployeeRequestDtoTypeSourceValueUnion
+    {
+        public HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType Type { get; set; }
-
-
-        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateStr(string str) {
+        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateStr(string str)
+        {
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType typ = HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.Str;
 
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnion res = new HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateNumber(double number) {
+        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateNumber(double number)
+        {
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType typ = HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.Number;
 
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnion res = new HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType typ = HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.Boolean;
 
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnion res = new HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateHrisUpdateEmployeeRequestDtoSourceValueType(HrisUpdateEmployeeRequestDtoSourceValueType hrisUpdateEmployeeRequestDtoSourceValueType) {
+        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateHrisUpdateEmployeeRequestDtoSourceValueType(HrisUpdateEmployeeRequestDtoSourceValueType hrisUpdateEmployeeRequestDtoSourceValueType)
+        {
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType typ = HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.HrisUpdateEmployeeRequestDtoSourceValueType;
 
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnion res = new HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(typ);
             res.HrisUpdateEmployeeRequestDtoSourceValueType = hrisUpdateEmployeeRequestDtoSourceValueType;
             return res;
         }
-
-        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType typ = HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.ArrayOfAny;
 
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnion res = new HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateNull() {
+        public static HrisUpdateEmployeeRequestDtoTypeSourceValueUnion CreateNull()
+        {
             HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType typ = HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.Null;
             return new HrisUpdateEmployeeRequestDtoTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisUpdateEmployeeRequestDtoTypeSourceValueUnion res = (HrisUpdateEmployeeRequestDtoTypeSourceValueUnion)value;
                 if (HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.FromString(res.Type).Equals(HrisUpdateEmployeeRequestDtoTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisUpdateEmployeeRequestDtoSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisUpdateEmployeeRequestDtoSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

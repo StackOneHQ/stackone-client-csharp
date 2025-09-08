@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ScheduledInterviewSourceValueUnionType
     {
         private ScheduledInterviewSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ScheduledInterviewSourceValueUnionType Str { get { return new ScheduledInterviewSourceValueUnionType("str"); } }
-        
+
         public static ScheduledInterviewSourceValueUnionType Number { get { return new ScheduledInterviewSourceValueUnionType("number"); } }
-        
+
         public static ScheduledInterviewSourceValueUnionType Boolean { get { return new ScheduledInterviewSourceValueUnionType("boolean"); } }
-        
+
         public static ScheduledInterviewSourceValueUnionType ScheduledInterviewSourceValue { get { return new ScheduledInterviewSourceValueUnionType("ScheduledInterview_source_value"); } }
-        
+
         public static ScheduledInterviewSourceValueUnionType ArrayOfAny { get { return new ScheduledInterviewSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ScheduledInterviewSourceValueUnionType Null { get { return new ScheduledInterviewSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the interview status.
     /// </summary>
     [JsonConverter(typeof(ScheduledInterviewSourceValueUnion.ScheduledInterviewSourceValueUnionConverter))]
-    public class ScheduledInterviewSourceValueUnion {
-        public ScheduledInterviewSourceValueUnion(ScheduledInterviewSourceValueUnionType type) {
+    public class ScheduledInterviewSourceValueUnion
+    {
+        public ScheduledInterviewSourceValueUnion(ScheduledInterviewSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ScheduledInterviewSourceValueUnionType Type { get; set; }
-
-
-        public static ScheduledInterviewSourceValueUnion CreateStr(string str) {
+        public static ScheduledInterviewSourceValueUnion CreateStr(string str)
+        {
             ScheduledInterviewSourceValueUnionType typ = ScheduledInterviewSourceValueUnionType.Str;
 
             ScheduledInterviewSourceValueUnion res = new ScheduledInterviewSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ScheduledInterviewSourceValueUnion CreateNumber(double number) {
+        public static ScheduledInterviewSourceValueUnion CreateNumber(double number)
+        {
             ScheduledInterviewSourceValueUnionType typ = ScheduledInterviewSourceValueUnionType.Number;
 
             ScheduledInterviewSourceValueUnion res = new ScheduledInterviewSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ScheduledInterviewSourceValueUnion CreateBoolean(bool boolean) {
+        public static ScheduledInterviewSourceValueUnion CreateBoolean(bool boolean)
+        {
             ScheduledInterviewSourceValueUnionType typ = ScheduledInterviewSourceValueUnionType.Boolean;
 
             ScheduledInterviewSourceValueUnion res = new ScheduledInterviewSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ScheduledInterviewSourceValueUnion CreateScheduledInterviewSourceValue(ScheduledInterviewSourceValue scheduledInterviewSourceValue) {
+        public static ScheduledInterviewSourceValueUnion CreateScheduledInterviewSourceValue(ScheduledInterviewSourceValue scheduledInterviewSourceValue)
+        {
             ScheduledInterviewSourceValueUnionType typ = ScheduledInterviewSourceValueUnionType.ScheduledInterviewSourceValue;
 
             ScheduledInterviewSourceValueUnion res = new ScheduledInterviewSourceValueUnion(typ);
             res.ScheduledInterviewSourceValue = scheduledInterviewSourceValue;
             return res;
         }
-
-        public static ScheduledInterviewSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ScheduledInterviewSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ScheduledInterviewSourceValueUnionType typ = ScheduledInterviewSourceValueUnionType.ArrayOfAny;
 
             ScheduledInterviewSourceValueUnion res = new ScheduledInterviewSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ScheduledInterviewSourceValueUnion CreateNull() {
+        public static ScheduledInterviewSourceValueUnion CreateNull()
+        {
             ScheduledInterviewSourceValueUnionType typ = ScheduledInterviewSourceValueUnionType.Null;
             return new ScheduledInterviewSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ScheduledInterviewSourceValueUnion res = (ScheduledInterviewSourceValueUnion)value;
                 if (ScheduledInterviewSourceValueUnionType.FromString(res.Type).Equals(ScheduledInterviewSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ScheduledInterviewSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ScheduledInterviewSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamResourceSourceValueUnionType
     {
         private IamResourceSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamResourceSourceValueUnionType Str { get { return new IamResourceSourceValueUnionType("str"); } }
-        
+
         public static IamResourceSourceValueUnionType Number { get { return new IamResourceSourceValueUnionType("number"); } }
-        
+
         public static IamResourceSourceValueUnionType Boolean { get { return new IamResourceSourceValueUnionType("boolean"); } }
-        
+
         public static IamResourceSourceValueUnionType IamResourceSourceValue { get { return new IamResourceSourceValueUnionType("IamResource_source_value"); } }
-        
+
         public static IamResourceSourceValueUnionType ArrayOfAny { get { return new IamResourceSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static IamResourceSourceValueUnionType Null { get { return new IamResourceSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(IamResourceSourceValueUnion.IamResourceSourceValueUnionConverter))]
-    public class IamResourceSourceValueUnion {
-        public IamResourceSourceValueUnion(IamResourceSourceValueUnionType type) {
+    public class IamResourceSourceValueUnion
+    {
+        public IamResourceSourceValueUnion(IamResourceSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public IamResourceSourceValueUnionType Type { get; set; }
-
-
-        public static IamResourceSourceValueUnion CreateStr(string str) {
+        public static IamResourceSourceValueUnion CreateStr(string str)
+        {
             IamResourceSourceValueUnionType typ = IamResourceSourceValueUnionType.Str;
 
             IamResourceSourceValueUnion res = new IamResourceSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static IamResourceSourceValueUnion CreateNumber(double number) {
+        public static IamResourceSourceValueUnion CreateNumber(double number)
+        {
             IamResourceSourceValueUnionType typ = IamResourceSourceValueUnionType.Number;
 
             IamResourceSourceValueUnion res = new IamResourceSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static IamResourceSourceValueUnion CreateBoolean(bool boolean) {
+        public static IamResourceSourceValueUnion CreateBoolean(bool boolean)
+        {
             IamResourceSourceValueUnionType typ = IamResourceSourceValueUnionType.Boolean;
 
             IamResourceSourceValueUnion res = new IamResourceSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamResourceSourceValueUnion CreateIamResourceSourceValue(IamResourceSourceValue iamResourceSourceValue) {
+        public static IamResourceSourceValueUnion CreateIamResourceSourceValue(IamResourceSourceValue iamResourceSourceValue)
+        {
             IamResourceSourceValueUnionType typ = IamResourceSourceValueUnionType.IamResourceSourceValue;
 
             IamResourceSourceValueUnion res = new IamResourceSourceValueUnion(typ);
             res.IamResourceSourceValue = iamResourceSourceValue;
             return res;
         }
-
-        public static IamResourceSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static IamResourceSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             IamResourceSourceValueUnionType typ = IamResourceSourceValueUnionType.ArrayOfAny;
 
             IamResourceSourceValueUnion res = new IamResourceSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamResourceSourceValueUnion CreateNull() {
+        public static IamResourceSourceValueUnion CreateNull()
+        {
             IamResourceSourceValueUnionType typ = IamResourceSourceValueUnionType.Null;
             return new IamResourceSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamResourceSourceValueUnion res = (IamResourceSourceValueUnion)value;
                 if (IamResourceSourceValueUnionType.FromString(res.Type).Equals(IamResourceSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamResourceSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamResourceSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType
     {
         private AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType Str { get { return new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType Number { get { return new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType Boolean { get { return new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType AtsCreateBackgroundCheckOrderRequestDtoSourceValue { get { return new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType("AtsCreateBackgroundCheckOrderRequestDto_source_value"); } }
-        
+
         public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType Null { get { return new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the application status.
     /// </summary>
     [JsonConverter(typeof(AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion.AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionConverter))]
-    public class AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion {
-        public AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType type) {
+    public class AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion
+    {
+        public AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType typ = AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.Str;
 
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion res = new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType typ = AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.Number;
 
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion res = new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType typ = AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.Boolean;
 
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion res = new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateAtsCreateBackgroundCheckOrderRequestDtoSourceValue(AtsCreateBackgroundCheckOrderRequestDtoSourceValue atsCreateBackgroundCheckOrderRequestDtoSourceValue) {
+        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateAtsCreateBackgroundCheckOrderRequestDtoSourceValue(AtsCreateBackgroundCheckOrderRequestDtoSourceValue atsCreateBackgroundCheckOrderRequestDtoSourceValue)
+        {
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType typ = AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.AtsCreateBackgroundCheckOrderRequestDtoSourceValue;
 
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion res = new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(typ);
             res.AtsCreateBackgroundCheckOrderRequestDtoSourceValue = atsCreateBackgroundCheckOrderRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType typ = AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion res = new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateNull() {
+        public static AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion CreateNull()
+        {
             AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType typ = AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.Null;
             return new AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion res = (AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnion)value;
                 if (AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsCreateBackgroundCheckOrderRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsCreateBackgroundCheckOrderRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsCreateBackgroundCheckOrderRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

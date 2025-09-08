@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingCommentResultInternalUnionType
     {
         private TicketingCommentResultInternalUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingCommentResultInternalUnionType Boolean { get { return new TicketingCommentResultInternalUnionType("boolean"); } }
-        
+
         public static TicketingCommentResultInternalUnionType TicketingCommentResultInternalEnum { get { return new TicketingCommentResultInternalUnionType("TicketingCommentResult_internal_enum"); } }
-        
+
         public static TicketingCommentResultInternalUnionType Null { get { return new TicketingCommentResultInternalUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the comment is internal
     /// </summary>
     [JsonConverter(typeof(TicketingCommentResultInternalUnion.TicketingCommentResultInternalUnionConverter))]
-    public class TicketingCommentResultInternalUnion {
-        public TicketingCommentResultInternalUnion(TicketingCommentResultInternalUnionType type) {
+    public class TicketingCommentResultInternalUnion
+    {
+        public TicketingCommentResultInternalUnion(TicketingCommentResultInternalUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public TicketingCommentResultInternalEnum? TicketingCommentResultInternalEnum { get; set; }
 
         public TicketingCommentResultInternalUnionType Type { get; set; }
-
-
-        public static TicketingCommentResultInternalUnion CreateBoolean(bool boolean) {
+        public static TicketingCommentResultInternalUnion CreateBoolean(bool boolean)
+        {
             TicketingCommentResultInternalUnionType typ = TicketingCommentResultInternalUnionType.Boolean;
 
             TicketingCommentResultInternalUnion res = new TicketingCommentResultInternalUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingCommentResultInternalUnion CreateTicketingCommentResultInternalEnum(TicketingCommentResultInternalEnum ticketingCommentResultInternalEnum) {
+        public static TicketingCommentResultInternalUnion CreateTicketingCommentResultInternalEnum(TicketingCommentResultInternalEnum ticketingCommentResultInternalEnum)
+        {
             TicketingCommentResultInternalUnionType typ = TicketingCommentResultInternalUnionType.TicketingCommentResultInternalEnum;
 
             TicketingCommentResultInternalUnion res = new TicketingCommentResultInternalUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingCommentResultInternalUnion CreateNull() {
+        public static TicketingCommentResultInternalUnion CreateNull()
+        {
             TicketingCommentResultInternalUnionType typ = TicketingCommentResultInternalUnionType.Null;
             return new TicketingCommentResultInternalUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingCommentResultInternalUnion res = (TicketingCommentResultInternalUnion)value;
                 if (TicketingCommentResultInternalUnionType.FromString(res.Type).Equals(TicketingCommentResultInternalUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingCommentResultInternalEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingCommentResultInternalEnum));
                     return;
                 }
-
             }
 
         }

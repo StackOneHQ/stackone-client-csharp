@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentTypeSourceValueUnionType
     {
         private EmploymentTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentTypeSourceValueUnionType Str { get { return new EmploymentTypeSourceValueUnionType("str"); } }
-        
+
         public static EmploymentTypeSourceValueUnionType Number { get { return new EmploymentTypeSourceValueUnionType("number"); } }
-        
+
         public static EmploymentTypeSourceValueUnionType Boolean { get { return new EmploymentTypeSourceValueUnionType("boolean"); } }
-        
+
         public static EmploymentTypeSourceValueUnionType EmploymentSourceValueType { get { return new EmploymentTypeSourceValueUnionType("Employment_source_value_type"); } }
-        
+
         public static EmploymentTypeSourceValueUnionType ArrayOfAny { get { return new EmploymentTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmploymentTypeSourceValueUnionType Null { get { return new EmploymentTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmploymentTypeSourceValueUnion.EmploymentTypeSourceValueUnionConverter))]
-    public class EmploymentTypeSourceValueUnion {
-        public EmploymentTypeSourceValueUnion(EmploymentTypeSourceValueUnionType type) {
+    public class EmploymentTypeSourceValueUnion
+    {
+        public EmploymentTypeSourceValueUnion(EmploymentTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmploymentTypeSourceValueUnionType Type { get; set; }
-
-
-        public static EmploymentTypeSourceValueUnion CreateStr(string str) {
+        public static EmploymentTypeSourceValueUnion CreateStr(string str)
+        {
             EmploymentTypeSourceValueUnionType typ = EmploymentTypeSourceValueUnionType.Str;
 
             EmploymentTypeSourceValueUnion res = new EmploymentTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmploymentTypeSourceValueUnion CreateNumber(double number) {
+        public static EmploymentTypeSourceValueUnion CreateNumber(double number)
+        {
             EmploymentTypeSourceValueUnionType typ = EmploymentTypeSourceValueUnionType.Number;
 
             EmploymentTypeSourceValueUnion res = new EmploymentTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmploymentTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmploymentTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmploymentTypeSourceValueUnionType typ = EmploymentTypeSourceValueUnionType.Boolean;
 
             EmploymentTypeSourceValueUnion res = new EmploymentTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentTypeSourceValueUnion CreateEmploymentSourceValueType(EmploymentSourceValueType employmentSourceValueType) {
+        public static EmploymentTypeSourceValueUnion CreateEmploymentSourceValueType(EmploymentSourceValueType employmentSourceValueType)
+        {
             EmploymentTypeSourceValueUnionType typ = EmploymentTypeSourceValueUnionType.EmploymentSourceValueType;
 
             EmploymentTypeSourceValueUnion res = new EmploymentTypeSourceValueUnion(typ);
             res.EmploymentSourceValueType = employmentSourceValueType;
             return res;
         }
-
-        public static EmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmploymentTypeSourceValueUnionType typ = EmploymentTypeSourceValueUnionType.ArrayOfAny;
 
             EmploymentTypeSourceValueUnion res = new EmploymentTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentTypeSourceValueUnion CreateNull() {
+        public static EmploymentTypeSourceValueUnion CreateNull()
+        {
             EmploymentTypeSourceValueUnionType typ = EmploymentTypeSourceValueUnionType.Null;
             return new EmploymentTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentTypeSourceValueUnion res = (EmploymentTypeSourceValueUnion)value;
                 if (EmploymentTypeSourceValueUnionType.FromString(res.Type).Equals(EmploymentTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

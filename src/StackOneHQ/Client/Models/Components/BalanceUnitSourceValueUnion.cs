@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class BalanceUnitSourceValueUnionType
     {
         private BalanceUnitSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static BalanceUnitSourceValueUnionType Str { get { return new BalanceUnitSourceValueUnionType("str"); } }
-        
+
         public static BalanceUnitSourceValueUnionType Number { get { return new BalanceUnitSourceValueUnionType("number"); } }
-        
+
         public static BalanceUnitSourceValueUnionType Boolean { get { return new BalanceUnitSourceValueUnionType("boolean"); } }
-        
+
         public static BalanceUnitSourceValueUnionType SourceValueBalanceUnit { get { return new BalanceUnitSourceValueUnionType("source_value_balance_unit"); } }
-        
+
         public static BalanceUnitSourceValueUnionType ArrayOfAny { get { return new BalanceUnitSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static BalanceUnitSourceValueUnionType Null { get { return new BalanceUnitSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(BalanceUnitSourceValueUnion.BalanceUnitSourceValueUnionConverter))]
-    public class BalanceUnitSourceValueUnion {
-        public BalanceUnitSourceValueUnion(BalanceUnitSourceValueUnionType type) {
+    public class BalanceUnitSourceValueUnion
+    {
+        public BalanceUnitSourceValueUnion(BalanceUnitSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public BalanceUnitSourceValueUnionType Type { get; set; }
-
-
-        public static BalanceUnitSourceValueUnion CreateStr(string str) {
+        public static BalanceUnitSourceValueUnion CreateStr(string str)
+        {
             BalanceUnitSourceValueUnionType typ = BalanceUnitSourceValueUnionType.Str;
 
             BalanceUnitSourceValueUnion res = new BalanceUnitSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static BalanceUnitSourceValueUnion CreateNumber(double number) {
+        public static BalanceUnitSourceValueUnion CreateNumber(double number)
+        {
             BalanceUnitSourceValueUnionType typ = BalanceUnitSourceValueUnionType.Number;
 
             BalanceUnitSourceValueUnion res = new BalanceUnitSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static BalanceUnitSourceValueUnion CreateBoolean(bool boolean) {
+        public static BalanceUnitSourceValueUnion CreateBoolean(bool boolean)
+        {
             BalanceUnitSourceValueUnionType typ = BalanceUnitSourceValueUnionType.Boolean;
 
             BalanceUnitSourceValueUnion res = new BalanceUnitSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static BalanceUnitSourceValueUnion CreateSourceValueBalanceUnit(SourceValueBalanceUnit sourceValueBalanceUnit) {
+        public static BalanceUnitSourceValueUnion CreateSourceValueBalanceUnit(SourceValueBalanceUnit sourceValueBalanceUnit)
+        {
             BalanceUnitSourceValueUnionType typ = BalanceUnitSourceValueUnionType.SourceValueBalanceUnit;
 
             BalanceUnitSourceValueUnion res = new BalanceUnitSourceValueUnion(typ);
             res.SourceValueBalanceUnit = sourceValueBalanceUnit;
             return res;
         }
-
-        public static BalanceUnitSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static BalanceUnitSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             BalanceUnitSourceValueUnionType typ = BalanceUnitSourceValueUnionType.ArrayOfAny;
 
             BalanceUnitSourceValueUnion res = new BalanceUnitSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static BalanceUnitSourceValueUnion CreateNull() {
+        public static BalanceUnitSourceValueUnion CreateNull()
+        {
             BalanceUnitSourceValueUnionType typ = BalanceUnitSourceValueUnionType.Null;
             return new BalanceUnitSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 BalanceUnitSourceValueUnion res = (BalanceUnitSourceValueUnion)value;
                 if (BalanceUnitSourceValueUnionType.FromString(res.Type).Equals(BalanceUnitSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueBalanceUnit != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueBalanceUnit));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

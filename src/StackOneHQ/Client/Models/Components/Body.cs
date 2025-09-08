@@ -16,19 +16,19 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class BodyType
     {
         private BodyType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static BodyType Str { get { return new BodyType("str"); } }
-        
+
         public static BodyType MapOfAny { get { return new BodyType("mapOfAny"); } }
-        
+
         public static BodyType ArrayOfInt32 { get { return new BodyType("arrayOfInt32"); } }
-        
+
         public static BodyType Null { get { return new BodyType("null"); } }
 
         public override string ToString() { return Value; }
@@ -59,8 +59,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(Body.BodyConverter))]
-    public class Body {
-        public Body(BodyType type) {
+    public class Body
+    {
+        public Body(BodyType type)
+        {
             Type = type;
         }
 
@@ -74,25 +76,24 @@ namespace StackOneHQ.Client.Models.Components
         public List<int>? ArrayOfInt32 { get; set; }
 
         public BodyType Type { get; set; }
-
-
-        public static Body CreateStr(string str) {
+        public static Body CreateStr(string str)
+        {
             BodyType typ = BodyType.Str;
 
             Body res = new Body(typ);
             res.Str = str;
             return res;
         }
-
-        public static Body CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static Body CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             BodyType typ = BodyType.MapOfAny;
 
             Body res = new Body(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static Body CreateArrayOfInt32(List<int> arrayOfInt32) {
+        public static Body CreateArrayOfInt32(List<int> arrayOfInt32)
+        {
             BodyType typ = BodyType.ArrayOfInt32;
 
             Body res = new Body(typ);
@@ -100,7 +101,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static Body CreateNull() {
+        public static Body CreateNull()
+        {
             BodyType typ = BodyType.Null;
             return new Body(typ);
         }
@@ -198,28 +200,31 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 Body res = (Body)value;
                 if (BodyType.FromString(res.Type).Equals(BodyType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.ArrayOfInt32 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfInt32));
                     return;
                 }
-
             }
 
         }

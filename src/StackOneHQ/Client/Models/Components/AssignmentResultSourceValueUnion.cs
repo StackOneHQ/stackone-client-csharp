@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AssignmentResultSourceValueUnionType
     {
         private AssignmentResultSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AssignmentResultSourceValueUnionType Str { get { return new AssignmentResultSourceValueUnionType("str"); } }
-        
+
         public static AssignmentResultSourceValueUnionType Number { get { return new AssignmentResultSourceValueUnionType("number"); } }
-        
+
         public static AssignmentResultSourceValueUnionType Boolean { get { return new AssignmentResultSourceValueUnionType("boolean"); } }
-        
+
         public static AssignmentResultSourceValueUnionType AssignmentSourceValueResult { get { return new AssignmentResultSourceValueUnionType("Assignment_source_value_result"); } }
-        
+
         public static AssignmentResultSourceValueUnionType ArrayOfAny { get { return new AssignmentResultSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AssignmentResultSourceValueUnionType Null { get { return new AssignmentResultSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AssignmentResultSourceValueUnion.AssignmentResultSourceValueUnionConverter))]
-    public class AssignmentResultSourceValueUnion {
-        public AssignmentResultSourceValueUnion(AssignmentResultSourceValueUnionType type) {
+    public class AssignmentResultSourceValueUnion
+    {
+        public AssignmentResultSourceValueUnion(AssignmentResultSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AssignmentResultSourceValueUnionType Type { get; set; }
-
-
-        public static AssignmentResultSourceValueUnion CreateStr(string str) {
+        public static AssignmentResultSourceValueUnion CreateStr(string str)
+        {
             AssignmentResultSourceValueUnionType typ = AssignmentResultSourceValueUnionType.Str;
 
             AssignmentResultSourceValueUnion res = new AssignmentResultSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AssignmentResultSourceValueUnion CreateNumber(double number) {
+        public static AssignmentResultSourceValueUnion CreateNumber(double number)
+        {
             AssignmentResultSourceValueUnionType typ = AssignmentResultSourceValueUnionType.Number;
 
             AssignmentResultSourceValueUnion res = new AssignmentResultSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AssignmentResultSourceValueUnion CreateBoolean(bool boolean) {
+        public static AssignmentResultSourceValueUnion CreateBoolean(bool boolean)
+        {
             AssignmentResultSourceValueUnionType typ = AssignmentResultSourceValueUnionType.Boolean;
 
             AssignmentResultSourceValueUnion res = new AssignmentResultSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AssignmentResultSourceValueUnion CreateAssignmentSourceValueResult(AssignmentSourceValueResult assignmentSourceValueResult) {
+        public static AssignmentResultSourceValueUnion CreateAssignmentSourceValueResult(AssignmentSourceValueResult assignmentSourceValueResult)
+        {
             AssignmentResultSourceValueUnionType typ = AssignmentResultSourceValueUnionType.AssignmentSourceValueResult;
 
             AssignmentResultSourceValueUnion res = new AssignmentResultSourceValueUnion(typ);
             res.AssignmentSourceValueResult = assignmentSourceValueResult;
             return res;
         }
-
-        public static AssignmentResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AssignmentResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AssignmentResultSourceValueUnionType typ = AssignmentResultSourceValueUnionType.ArrayOfAny;
 
             AssignmentResultSourceValueUnion res = new AssignmentResultSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AssignmentResultSourceValueUnion CreateNull() {
+        public static AssignmentResultSourceValueUnion CreateNull()
+        {
             AssignmentResultSourceValueUnionType typ = AssignmentResultSourceValueUnionType.Null;
             return new AssignmentResultSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AssignmentResultSourceValueUnion res = (AssignmentResultSourceValueUnion)value;
                 if (AssignmentResultSourceValueUnionType.FromString(res.Type).Equals(AssignmentResultSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AssignmentSourceValueResult != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AssignmentSourceValueResult));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

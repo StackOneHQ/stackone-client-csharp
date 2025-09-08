@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType
     {
         private HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType Str { get { return new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType("str"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType Number { get { return new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType("number"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType Boolean { get { return new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType("boolean"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType HrisDocumentsUploadRequestDtoSourceValueConfidential { get { return new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType("HrisDocumentsUploadRequestDto_source_value_confidential"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType ArrayOfAny { get { return new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType Null { get { return new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion.HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionConverter))]
-    public class HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion {
-        public HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType type) {
+    public class HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion
+    {
+        public HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType Type { get; set; }
-
-
-        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateStr(string str) {
+        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateStr(string str)
+        {
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Str;
 
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNumber(double number) {
+        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNumber(double number)
+        {
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Number;
 
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Boolean;
 
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateHrisDocumentsUploadRequestDtoSourceValueConfidential(HrisDocumentsUploadRequestDtoSourceValueConfidential hrisDocumentsUploadRequestDtoSourceValueConfidential) {
+        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateHrisDocumentsUploadRequestDtoSourceValueConfidential(HrisDocumentsUploadRequestDtoSourceValueConfidential hrisDocumentsUploadRequestDtoSourceValueConfidential)
+        {
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.HrisDocumentsUploadRequestDtoSourceValueConfidential;
 
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.HrisDocumentsUploadRequestDtoSourceValueConfidential = hrisDocumentsUploadRequestDtoSourceValueConfidential;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.ArrayOfAny;
 
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion res = new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNull() {
+        public static HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion CreateNull()
+        {
             HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType typ = HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Null;
             return new HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion res = (HrisDocumentsUploadRequestDtoConfidentialSourceValueUnion)value;
                 if (HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.FromString(res.Type).Equals(HrisDocumentsUploadRequestDtoConfidentialSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisDocumentsUploadRequestDtoSourceValueConfidential != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisDocumentsUploadRequestDtoSourceValueConfidential));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class DivisionSourceValueUnionType
     {
         private DivisionSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static DivisionSourceValueUnionType Str { get { return new DivisionSourceValueUnionType("str"); } }
-        
+
         public static DivisionSourceValueUnionType Number { get { return new DivisionSourceValueUnionType("number"); } }
-        
+
         public static DivisionSourceValueUnionType Boolean { get { return new DivisionSourceValueUnionType("boolean"); } }
-        
+
         public static DivisionSourceValueUnionType SourceValueDivision { get { return new DivisionSourceValueUnionType("source_value_division"); } }
-        
+
         public static DivisionSourceValueUnionType ArrayOfAny { get { return new DivisionSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static DivisionSourceValueUnionType Null { get { return new DivisionSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(DivisionSourceValueUnion.DivisionSourceValueUnionConverter))]
-    public class DivisionSourceValueUnion {
-        public DivisionSourceValueUnion(DivisionSourceValueUnionType type) {
+    public class DivisionSourceValueUnion
+    {
+        public DivisionSourceValueUnion(DivisionSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public DivisionSourceValueUnionType Type { get; set; }
-
-
-        public static DivisionSourceValueUnion CreateStr(string str) {
+        public static DivisionSourceValueUnion CreateStr(string str)
+        {
             DivisionSourceValueUnionType typ = DivisionSourceValueUnionType.Str;
 
             DivisionSourceValueUnion res = new DivisionSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static DivisionSourceValueUnion CreateNumber(double number) {
+        public static DivisionSourceValueUnion CreateNumber(double number)
+        {
             DivisionSourceValueUnionType typ = DivisionSourceValueUnionType.Number;
 
             DivisionSourceValueUnion res = new DivisionSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static DivisionSourceValueUnion CreateBoolean(bool boolean) {
+        public static DivisionSourceValueUnion CreateBoolean(bool boolean)
+        {
             DivisionSourceValueUnionType typ = DivisionSourceValueUnionType.Boolean;
 
             DivisionSourceValueUnion res = new DivisionSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static DivisionSourceValueUnion CreateSourceValueDivision(SourceValueDivision sourceValueDivision) {
+        public static DivisionSourceValueUnion CreateSourceValueDivision(SourceValueDivision sourceValueDivision)
+        {
             DivisionSourceValueUnionType typ = DivisionSourceValueUnionType.SourceValueDivision;
 
             DivisionSourceValueUnion res = new DivisionSourceValueUnion(typ);
             res.SourceValueDivision = sourceValueDivision;
             return res;
         }
-
-        public static DivisionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static DivisionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             DivisionSourceValueUnionType typ = DivisionSourceValueUnionType.ArrayOfAny;
 
             DivisionSourceValueUnion res = new DivisionSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static DivisionSourceValueUnion CreateNull() {
+        public static DivisionSourceValueUnion CreateNull()
+        {
             DivisionSourceValueUnionType typ = DivisionSourceValueUnionType.Null;
             return new DivisionSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 DivisionSourceValueUnion res = (DivisionSourceValueUnion)value;
                 if (DivisionSourceValueUnionType.FromString(res.Type).Equals(DivisionSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueDivision != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueDivision));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FieldRequiredUnionType
     {
         private FieldRequiredUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FieldRequiredUnionType Boolean { get { return new FieldRequiredUnionType("boolean"); } }
-        
+
         public static FieldRequiredUnionType FieldRequiredEnum { get { return new FieldRequiredUnionType("Field_required_enum"); } }
-        
+
         public static FieldRequiredUnionType Null { get { return new FieldRequiredUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Indicates if the field is required
     /// </summary>
     [JsonConverter(typeof(FieldRequiredUnion.FieldRequiredUnionConverter))]
-    public class FieldRequiredUnion {
-        public FieldRequiredUnion(FieldRequiredUnionType type) {
+    public class FieldRequiredUnion
+    {
+        public FieldRequiredUnion(FieldRequiredUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public FieldRequiredEnum? FieldRequiredEnum { get; set; }
 
         public FieldRequiredUnionType Type { get; set; }
-
-
-        public static FieldRequiredUnion CreateBoolean(bool boolean) {
+        public static FieldRequiredUnion CreateBoolean(bool boolean)
+        {
             FieldRequiredUnionType typ = FieldRequiredUnionType.Boolean;
 
             FieldRequiredUnion res = new FieldRequiredUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FieldRequiredUnion CreateFieldRequiredEnum(FieldRequiredEnum fieldRequiredEnum) {
+        public static FieldRequiredUnion CreateFieldRequiredEnum(FieldRequiredEnum fieldRequiredEnum)
+        {
             FieldRequiredUnionType typ = FieldRequiredUnionType.FieldRequiredEnum;
 
             FieldRequiredUnion res = new FieldRequiredUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FieldRequiredUnion CreateNull() {
+        public static FieldRequiredUnion CreateNull()
+        {
             FieldRequiredUnionType typ = FieldRequiredUnionType.Null;
             return new FieldRequiredUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FieldRequiredUnion res = (FieldRequiredUnion)value;
                 if (FieldRequiredUnionType.FromString(res.Type).Equals(FieldRequiredUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FieldRequiredEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FieldRequiredEnum));
                     return;
                 }
-
             }
 
         }

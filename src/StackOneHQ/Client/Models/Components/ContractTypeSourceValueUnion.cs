@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ContractTypeSourceValueUnionType
     {
         private ContractTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ContractTypeSourceValueUnionType Str { get { return new ContractTypeSourceValueUnionType("str"); } }
-        
+
         public static ContractTypeSourceValueUnionType Number { get { return new ContractTypeSourceValueUnionType("number"); } }
-        
+
         public static ContractTypeSourceValueUnionType Boolean { get { return new ContractTypeSourceValueUnionType("boolean"); } }
-        
+
         public static ContractTypeSourceValueUnionType SourceValueContractType { get { return new ContractTypeSourceValueUnionType("source_value_contract_type"); } }
-        
+
         public static ContractTypeSourceValueUnionType ArrayOfAny { get { return new ContractTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ContractTypeSourceValueUnionType Null { get { return new ContractTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(ContractTypeSourceValueUnion.ContractTypeSourceValueUnionConverter))]
-    public class ContractTypeSourceValueUnion {
-        public ContractTypeSourceValueUnion(ContractTypeSourceValueUnionType type) {
+    public class ContractTypeSourceValueUnion
+    {
+        public ContractTypeSourceValueUnion(ContractTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ContractTypeSourceValueUnionType Type { get; set; }
-
-
-        public static ContractTypeSourceValueUnion CreateStr(string str) {
+        public static ContractTypeSourceValueUnion CreateStr(string str)
+        {
             ContractTypeSourceValueUnionType typ = ContractTypeSourceValueUnionType.Str;
 
             ContractTypeSourceValueUnion res = new ContractTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ContractTypeSourceValueUnion CreateNumber(double number) {
+        public static ContractTypeSourceValueUnion CreateNumber(double number)
+        {
             ContractTypeSourceValueUnionType typ = ContractTypeSourceValueUnionType.Number;
 
             ContractTypeSourceValueUnion res = new ContractTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ContractTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static ContractTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             ContractTypeSourceValueUnionType typ = ContractTypeSourceValueUnionType.Boolean;
 
             ContractTypeSourceValueUnion res = new ContractTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ContractTypeSourceValueUnion CreateSourceValueContractType(SourceValueContractType sourceValueContractType) {
+        public static ContractTypeSourceValueUnion CreateSourceValueContractType(SourceValueContractType sourceValueContractType)
+        {
             ContractTypeSourceValueUnionType typ = ContractTypeSourceValueUnionType.SourceValueContractType;
 
             ContractTypeSourceValueUnion res = new ContractTypeSourceValueUnion(typ);
             res.SourceValueContractType = sourceValueContractType;
             return res;
         }
-
-        public static ContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ContractTypeSourceValueUnionType typ = ContractTypeSourceValueUnionType.ArrayOfAny;
 
             ContractTypeSourceValueUnion res = new ContractTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ContractTypeSourceValueUnion CreateNull() {
+        public static ContractTypeSourceValueUnion CreateNull()
+        {
             ContractTypeSourceValueUnionType typ = ContractTypeSourceValueUnionType.Null;
             return new ContractTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ContractTypeSourceValueUnion res = (ContractTypeSourceValueUnion)value;
                 if (ContractTypeSourceValueUnionType.FromString(res.Type).Equals(ContractTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueContractType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueContractType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

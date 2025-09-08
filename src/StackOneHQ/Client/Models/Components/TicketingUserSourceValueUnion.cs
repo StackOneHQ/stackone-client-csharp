@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingUserSourceValueUnionType
     {
         private TicketingUserSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingUserSourceValueUnionType Str { get { return new TicketingUserSourceValueUnionType("str"); } }
-        
+
         public static TicketingUserSourceValueUnionType Number { get { return new TicketingUserSourceValueUnionType("number"); } }
-        
+
         public static TicketingUserSourceValueUnionType Boolean { get { return new TicketingUserSourceValueUnionType("boolean"); } }
-        
+
         public static TicketingUserSourceValueUnionType TicketingUserSourceValue { get { return new TicketingUserSourceValueUnionType("TicketingUser_source_value"); } }
-        
+
         public static TicketingUserSourceValueUnionType ArrayOfAny { get { return new TicketingUserSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TicketingUserSourceValueUnionType Null { get { return new TicketingUserSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the user type.
     /// </summary>
     [JsonConverter(typeof(TicketingUserSourceValueUnion.TicketingUserSourceValueUnionConverter))]
-    public class TicketingUserSourceValueUnion {
-        public TicketingUserSourceValueUnion(TicketingUserSourceValueUnionType type) {
+    public class TicketingUserSourceValueUnion
+    {
+        public TicketingUserSourceValueUnion(TicketingUserSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TicketingUserSourceValueUnionType Type { get; set; }
-
-
-        public static TicketingUserSourceValueUnion CreateStr(string str) {
+        public static TicketingUserSourceValueUnion CreateStr(string str)
+        {
             TicketingUserSourceValueUnionType typ = TicketingUserSourceValueUnionType.Str;
 
             TicketingUserSourceValueUnion res = new TicketingUserSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TicketingUserSourceValueUnion CreateNumber(double number) {
+        public static TicketingUserSourceValueUnion CreateNumber(double number)
+        {
             TicketingUserSourceValueUnionType typ = TicketingUserSourceValueUnionType.Number;
 
             TicketingUserSourceValueUnion res = new TicketingUserSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TicketingUserSourceValueUnion CreateBoolean(bool boolean) {
+        public static TicketingUserSourceValueUnion CreateBoolean(bool boolean)
+        {
             TicketingUserSourceValueUnionType typ = TicketingUserSourceValueUnionType.Boolean;
 
             TicketingUserSourceValueUnion res = new TicketingUserSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingUserSourceValueUnion CreateTicketingUserSourceValue(TicketingUserSourceValue ticketingUserSourceValue) {
+        public static TicketingUserSourceValueUnion CreateTicketingUserSourceValue(TicketingUserSourceValue ticketingUserSourceValue)
+        {
             TicketingUserSourceValueUnionType typ = TicketingUserSourceValueUnionType.TicketingUserSourceValue;
 
             TicketingUserSourceValueUnion res = new TicketingUserSourceValueUnion(typ);
             res.TicketingUserSourceValue = ticketingUserSourceValue;
             return res;
         }
-
-        public static TicketingUserSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TicketingUserSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TicketingUserSourceValueUnionType typ = TicketingUserSourceValueUnionType.ArrayOfAny;
 
             TicketingUserSourceValueUnion res = new TicketingUserSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingUserSourceValueUnion CreateNull() {
+        public static TicketingUserSourceValueUnion CreateNull()
+        {
             TicketingUserSourceValueUnionType typ = TicketingUserSourceValueUnionType.Null;
             return new TicketingUserSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingUserSourceValueUnion res = (TicketingUserSourceValueUnion)value;
                 if (TicketingUserSourceValueUnionType.FromString(res.Type).Equals(TicketingUserSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingUserSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingUserSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

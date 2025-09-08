@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamRoleSourceValueUnionType
     {
         private IamRoleSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamRoleSourceValueUnionType Str { get { return new IamRoleSourceValueUnionType("str"); } }
-        
+
         public static IamRoleSourceValueUnionType Number { get { return new IamRoleSourceValueUnionType("number"); } }
-        
+
         public static IamRoleSourceValueUnionType Boolean { get { return new IamRoleSourceValueUnionType("boolean"); } }
-        
+
         public static IamRoleSourceValueUnionType IamRoleSourceValue { get { return new IamRoleSourceValueUnionType("IamRole_source_value"); } }
-        
+
         public static IamRoleSourceValueUnionType ArrayOfAny { get { return new IamRoleSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static IamRoleSourceValueUnionType Null { get { return new IamRoleSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(IamRoleSourceValueUnion.IamRoleSourceValueUnionConverter))]
-    public class IamRoleSourceValueUnion {
-        public IamRoleSourceValueUnion(IamRoleSourceValueUnionType type) {
+    public class IamRoleSourceValueUnion
+    {
+        public IamRoleSourceValueUnion(IamRoleSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public IamRoleSourceValueUnionType Type { get; set; }
-
-
-        public static IamRoleSourceValueUnion CreateStr(string str) {
+        public static IamRoleSourceValueUnion CreateStr(string str)
+        {
             IamRoleSourceValueUnionType typ = IamRoleSourceValueUnionType.Str;
 
             IamRoleSourceValueUnion res = new IamRoleSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static IamRoleSourceValueUnion CreateNumber(double number) {
+        public static IamRoleSourceValueUnion CreateNumber(double number)
+        {
             IamRoleSourceValueUnionType typ = IamRoleSourceValueUnionType.Number;
 
             IamRoleSourceValueUnion res = new IamRoleSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static IamRoleSourceValueUnion CreateBoolean(bool boolean) {
+        public static IamRoleSourceValueUnion CreateBoolean(bool boolean)
+        {
             IamRoleSourceValueUnionType typ = IamRoleSourceValueUnionType.Boolean;
 
             IamRoleSourceValueUnion res = new IamRoleSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamRoleSourceValueUnion CreateIamRoleSourceValue(IamRoleSourceValue iamRoleSourceValue) {
+        public static IamRoleSourceValueUnion CreateIamRoleSourceValue(IamRoleSourceValue iamRoleSourceValue)
+        {
             IamRoleSourceValueUnionType typ = IamRoleSourceValueUnionType.IamRoleSourceValue;
 
             IamRoleSourceValueUnion res = new IamRoleSourceValueUnion(typ);
             res.IamRoleSourceValue = iamRoleSourceValue;
             return res;
         }
-
-        public static IamRoleSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static IamRoleSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             IamRoleSourceValueUnionType typ = IamRoleSourceValueUnionType.ArrayOfAny;
 
             IamRoleSourceValueUnion res = new IamRoleSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamRoleSourceValueUnion CreateNull() {
+        public static IamRoleSourceValueUnion CreateNull()
+        {
             IamRoleSourceValueUnionType typ = IamRoleSourceValueUnionType.Null;
             return new IamRoleSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamRoleSourceValueUnion res = (IamRoleSourceValueUnion)value;
                 if (IamRoleSourceValueUnionType.FromString(res.Type).Equals(IamRoleSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamRoleSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamRoleSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

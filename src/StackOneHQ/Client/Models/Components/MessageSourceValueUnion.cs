@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessageSourceValueUnionType
     {
         private MessageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessageSourceValueUnionType Str { get { return new MessageSourceValueUnionType("str"); } }
-        
+
         public static MessageSourceValueUnionType Number { get { return new MessageSourceValueUnionType("number"); } }
-        
+
         public static MessageSourceValueUnionType Boolean { get { return new MessageSourceValueUnionType("boolean"); } }
-        
+
         public static MessageSourceValueUnionType MessageSourceValue { get { return new MessageSourceValueUnionType("Message_source_value"); } }
-        
+
         public static MessageSourceValueUnionType ArrayOfAny { get { return new MessageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static MessageSourceValueUnionType Null { get { return new MessageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The original value from the provider used to derive the unified message type.
     /// </summary>
     [JsonConverter(typeof(MessageSourceValueUnion.MessageSourceValueUnionConverter))]
-    public class MessageSourceValueUnion {
-        public MessageSourceValueUnion(MessageSourceValueUnionType type) {
+    public class MessageSourceValueUnion
+    {
+        public MessageSourceValueUnion(MessageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public MessageSourceValueUnionType Type { get; set; }
-
-
-        public static MessageSourceValueUnion CreateStr(string str) {
+        public static MessageSourceValueUnion CreateStr(string str)
+        {
             MessageSourceValueUnionType typ = MessageSourceValueUnionType.Str;
 
             MessageSourceValueUnion res = new MessageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static MessageSourceValueUnion CreateNumber(double number) {
+        public static MessageSourceValueUnion CreateNumber(double number)
+        {
             MessageSourceValueUnionType typ = MessageSourceValueUnionType.Number;
 
             MessageSourceValueUnion res = new MessageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static MessageSourceValueUnion CreateBoolean(bool boolean) {
+        public static MessageSourceValueUnion CreateBoolean(bool boolean)
+        {
             MessageSourceValueUnionType typ = MessageSourceValueUnionType.Boolean;
 
             MessageSourceValueUnion res = new MessageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MessageSourceValueUnion CreateMessageSourceValue(MessageSourceValue messageSourceValue) {
+        public static MessageSourceValueUnion CreateMessageSourceValue(MessageSourceValue messageSourceValue)
+        {
             MessageSourceValueUnionType typ = MessageSourceValueUnionType.MessageSourceValue;
 
             MessageSourceValueUnion res = new MessageSourceValueUnion(typ);
             res.MessageSourceValue = messageSourceValue;
             return res;
         }
-
-        public static MessageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static MessageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             MessageSourceValueUnionType typ = MessageSourceValueUnionType.ArrayOfAny;
 
             MessageSourceValueUnion res = new MessageSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessageSourceValueUnion CreateNull() {
+        public static MessageSourceValueUnion CreateNull()
+        {
             MessageSourceValueUnionType typ = MessageSourceValueUnionType.Null;
             return new MessageSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessageSourceValueUnion res = (MessageSourceValueUnion)value;
                 if (MessageSourceValueUnionType.FromString(res.Type).Equals(MessageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MessageSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessageSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

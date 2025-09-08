@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisJobSourceValueUnionType
     {
         private HrisJobSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisJobSourceValueUnionType Str { get { return new HrisJobSourceValueUnionType("str"); } }
-        
+
         public static HrisJobSourceValueUnionType Number { get { return new HrisJobSourceValueUnionType("number"); } }
-        
+
         public static HrisJobSourceValueUnionType Boolean { get { return new HrisJobSourceValueUnionType("boolean"); } }
-        
+
         public static HrisJobSourceValueUnionType HrisJobSourceValue { get { return new HrisJobSourceValueUnionType("HrisJob_source_value"); } }
-        
+
         public static HrisJobSourceValueUnionType ArrayOfAny { get { return new HrisJobSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisJobSourceValueUnionType Null { get { return new HrisJobSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the job status.
     /// </summary>
     [JsonConverter(typeof(HrisJobSourceValueUnion.HrisJobSourceValueUnionConverter))]
-    public class HrisJobSourceValueUnion {
-        public HrisJobSourceValueUnion(HrisJobSourceValueUnionType type) {
+    public class HrisJobSourceValueUnion
+    {
+        public HrisJobSourceValueUnion(HrisJobSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisJobSourceValueUnionType Type { get; set; }
-
-
-        public static HrisJobSourceValueUnion CreateStr(string str) {
+        public static HrisJobSourceValueUnion CreateStr(string str)
+        {
             HrisJobSourceValueUnionType typ = HrisJobSourceValueUnionType.Str;
 
             HrisJobSourceValueUnion res = new HrisJobSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisJobSourceValueUnion CreateNumber(double number) {
+        public static HrisJobSourceValueUnion CreateNumber(double number)
+        {
             HrisJobSourceValueUnionType typ = HrisJobSourceValueUnionType.Number;
 
             HrisJobSourceValueUnion res = new HrisJobSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisJobSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisJobSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisJobSourceValueUnionType typ = HrisJobSourceValueUnionType.Boolean;
 
             HrisJobSourceValueUnion res = new HrisJobSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisJobSourceValueUnion CreateHrisJobSourceValue(HrisJobSourceValue hrisJobSourceValue) {
+        public static HrisJobSourceValueUnion CreateHrisJobSourceValue(HrisJobSourceValue hrisJobSourceValue)
+        {
             HrisJobSourceValueUnionType typ = HrisJobSourceValueUnionType.HrisJobSourceValue;
 
             HrisJobSourceValueUnion res = new HrisJobSourceValueUnion(typ);
             res.HrisJobSourceValue = hrisJobSourceValue;
             return res;
         }
-
-        public static HrisJobSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisJobSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisJobSourceValueUnionType typ = HrisJobSourceValueUnionType.ArrayOfAny;
 
             HrisJobSourceValueUnion res = new HrisJobSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisJobSourceValueUnion CreateNull() {
+        public static HrisJobSourceValueUnion CreateNull()
+        {
             HrisJobSourceValueUnionType typ = HrisJobSourceValueUnionType.Null;
             return new HrisJobSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisJobSourceValueUnion res = (HrisJobSourceValueUnion)value;
                 if (HrisJobSourceValueUnionType.FromString(res.Type).Equals(HrisJobSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisJobSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisJobSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisDocumentApiModelCategorySourceValueUnionType
     {
         private HrisDocumentApiModelCategorySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisDocumentApiModelCategorySourceValueUnionType Str { get { return new HrisDocumentApiModelCategorySourceValueUnionType("str"); } }
-        
+
         public static HrisDocumentApiModelCategorySourceValueUnionType Number { get { return new HrisDocumentApiModelCategorySourceValueUnionType("number"); } }
-        
+
         public static HrisDocumentApiModelCategorySourceValueUnionType Boolean { get { return new HrisDocumentApiModelCategorySourceValueUnionType("boolean"); } }
-        
+
         public static HrisDocumentApiModelCategorySourceValueUnionType HrisDocumentApiModelSourceValueCategory { get { return new HrisDocumentApiModelCategorySourceValueUnionType("HrisDocumentApiModel_source_value_category"); } }
-        
+
         public static HrisDocumentApiModelCategorySourceValueUnionType ArrayOfAny { get { return new HrisDocumentApiModelCategorySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisDocumentApiModelCategorySourceValueUnionType Null { get { return new HrisDocumentApiModelCategorySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisDocumentApiModelCategorySourceValueUnion.HrisDocumentApiModelCategorySourceValueUnionConverter))]
-    public class HrisDocumentApiModelCategorySourceValueUnion {
-        public HrisDocumentApiModelCategorySourceValueUnion(HrisDocumentApiModelCategorySourceValueUnionType type) {
+    public class HrisDocumentApiModelCategorySourceValueUnion
+    {
+        public HrisDocumentApiModelCategorySourceValueUnion(HrisDocumentApiModelCategorySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisDocumentApiModelCategorySourceValueUnionType Type { get; set; }
-
-
-        public static HrisDocumentApiModelCategorySourceValueUnion CreateStr(string str) {
+        public static HrisDocumentApiModelCategorySourceValueUnion CreateStr(string str)
+        {
             HrisDocumentApiModelCategorySourceValueUnionType typ = HrisDocumentApiModelCategorySourceValueUnionType.Str;
 
             HrisDocumentApiModelCategorySourceValueUnion res = new HrisDocumentApiModelCategorySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisDocumentApiModelCategorySourceValueUnion CreateNumber(double number) {
+        public static HrisDocumentApiModelCategorySourceValueUnion CreateNumber(double number)
+        {
             HrisDocumentApiModelCategorySourceValueUnionType typ = HrisDocumentApiModelCategorySourceValueUnionType.Number;
 
             HrisDocumentApiModelCategorySourceValueUnion res = new HrisDocumentApiModelCategorySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisDocumentApiModelCategorySourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisDocumentApiModelCategorySourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisDocumentApiModelCategorySourceValueUnionType typ = HrisDocumentApiModelCategorySourceValueUnionType.Boolean;
 
             HrisDocumentApiModelCategorySourceValueUnion res = new HrisDocumentApiModelCategorySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisDocumentApiModelCategorySourceValueUnion CreateHrisDocumentApiModelSourceValueCategory(HrisDocumentApiModelSourceValueCategory hrisDocumentAPIModelSourceValueCategory) {
+        public static HrisDocumentApiModelCategorySourceValueUnion CreateHrisDocumentApiModelSourceValueCategory(HrisDocumentApiModelSourceValueCategory hrisDocumentAPIModelSourceValueCategory)
+        {
             HrisDocumentApiModelCategorySourceValueUnionType typ = HrisDocumentApiModelCategorySourceValueUnionType.HrisDocumentApiModelSourceValueCategory;
 
             HrisDocumentApiModelCategorySourceValueUnion res = new HrisDocumentApiModelCategorySourceValueUnion(typ);
             res.HrisDocumentApiModelSourceValueCategory = hrisDocumentAPIModelSourceValueCategory;
             return res;
         }
-
-        public static HrisDocumentApiModelCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisDocumentApiModelCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisDocumentApiModelCategorySourceValueUnionType typ = HrisDocumentApiModelCategorySourceValueUnionType.ArrayOfAny;
 
             HrisDocumentApiModelCategorySourceValueUnion res = new HrisDocumentApiModelCategorySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisDocumentApiModelCategorySourceValueUnion CreateNull() {
+        public static HrisDocumentApiModelCategorySourceValueUnion CreateNull()
+        {
             HrisDocumentApiModelCategorySourceValueUnionType typ = HrisDocumentApiModelCategorySourceValueUnionType.Null;
             return new HrisDocumentApiModelCategorySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisDocumentApiModelCategorySourceValueUnion res = (HrisDocumentApiModelCategorySourceValueUnion)value;
                 if (HrisDocumentApiModelCategorySourceValueUnionType.FromString(res.Type).Equals(HrisDocumentApiModelCategorySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisDocumentApiModelSourceValueCategory != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisDocumentApiModelSourceValueCategory));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }
