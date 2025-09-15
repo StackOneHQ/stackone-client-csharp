@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateTimeOffRequestDtoTypeSourceValueUnionType
     {
         private HrisCreateTimeOffRequestDtoTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateTimeOffRequestDtoTypeSourceValueUnionType Str { get { return new HrisCreateTimeOffRequestDtoTypeSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateTimeOffRequestDtoTypeSourceValueUnionType Number { get { return new HrisCreateTimeOffRequestDtoTypeSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateTimeOffRequestDtoTypeSourceValueUnionType Boolean { get { return new HrisCreateTimeOffRequestDtoTypeSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateTimeOffRequestDtoTypeSourceValueUnionType HrisCreateTimeOffRequestDtoSourceValueType { get { return new HrisCreateTimeOffRequestDtoTypeSourceValueUnionType("HrisCreateTimeOffRequestDto_source_value_type"); } }
-        
+
         public static HrisCreateTimeOffRequestDtoTypeSourceValueUnionType ArrayOfAny { get { return new HrisCreateTimeOffRequestDtoTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateTimeOffRequestDtoTypeSourceValueUnionType Null { get { return new HrisCreateTimeOffRequestDtoTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateTimeOffRequestDtoTypeSourceValueUnion.HrisCreateTimeOffRequestDtoTypeSourceValueUnionConverter))]
-    public class HrisCreateTimeOffRequestDtoTypeSourceValueUnion {
-        public HrisCreateTimeOffRequestDtoTypeSourceValueUnion(HrisCreateTimeOffRequestDtoTypeSourceValueUnionType type) {
+    public class HrisCreateTimeOffRequestDtoTypeSourceValueUnion
+    {
+        public HrisCreateTimeOffRequestDtoTypeSourceValueUnion(HrisCreateTimeOffRequestDtoTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateTimeOffRequestDtoTypeSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateStr(string str) {
+        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateStr(string str)
+        {
             HrisCreateTimeOffRequestDtoTypeSourceValueUnionType typ = HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.Str;
 
             HrisCreateTimeOffRequestDtoTypeSourceValueUnion res = new HrisCreateTimeOffRequestDtoTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateTimeOffRequestDtoTypeSourceValueUnionType typ = HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.Number;
 
             HrisCreateTimeOffRequestDtoTypeSourceValueUnion res = new HrisCreateTimeOffRequestDtoTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateTimeOffRequestDtoTypeSourceValueUnionType typ = HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.Boolean;
 
             HrisCreateTimeOffRequestDtoTypeSourceValueUnion res = new HrisCreateTimeOffRequestDtoTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateHrisCreateTimeOffRequestDtoSourceValueType(HrisCreateTimeOffRequestDtoSourceValueType hrisCreateTimeOffRequestDtoSourceValueType) {
+        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateHrisCreateTimeOffRequestDtoSourceValueType(HrisCreateTimeOffRequestDtoSourceValueType hrisCreateTimeOffRequestDtoSourceValueType)
+        {
             HrisCreateTimeOffRequestDtoTypeSourceValueUnionType typ = HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.HrisCreateTimeOffRequestDtoSourceValueType;
 
             HrisCreateTimeOffRequestDtoTypeSourceValueUnion res = new HrisCreateTimeOffRequestDtoTypeSourceValueUnion(typ);
             res.HrisCreateTimeOffRequestDtoSourceValueType = hrisCreateTimeOffRequestDtoSourceValueType;
             return res;
         }
-
-        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateTimeOffRequestDtoTypeSourceValueUnionType typ = HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.ArrayOfAny;
 
             HrisCreateTimeOffRequestDtoTypeSourceValueUnion res = new HrisCreateTimeOffRequestDtoTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateNull() {
+        public static HrisCreateTimeOffRequestDtoTypeSourceValueUnion CreateNull()
+        {
             HrisCreateTimeOffRequestDtoTypeSourceValueUnionType typ = HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.Null;
             return new HrisCreateTimeOffRequestDtoTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateTimeOffRequestDtoTypeSourceValueUnion res = (HrisCreateTimeOffRequestDtoTypeSourceValueUnion)value;
                 if (HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.FromString(res.Type).Equals(HrisCreateTimeOffRequestDtoTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateTimeOffRequestDtoSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateTimeOffRequestDtoSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

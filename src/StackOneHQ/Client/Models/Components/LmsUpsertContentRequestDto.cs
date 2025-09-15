@@ -61,12 +61,6 @@ namespace StackOneHQ.Client.Models.Components
         public string? MobileLaunchContentUrl { get; set; } = null;
 
         /// <summary>
-        /// The type of content
-        /// </summary>
-        [JsonProperty("content_type")]
-        public LmsUpsertContentRequestDtoContentType? ContentType { get; set; } = null;
-
-        /// <summary>
         /// The URL of the thumbnail image associated with the content.
         /// </summary>
         [JsonProperty("cover_url")]
@@ -144,5 +138,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("additional_data")]
         public List<AdditionalData>? AdditionalData { get; set; } = null;
+
+        /// <summary>
+        /// The type of content
+        /// </summary>
+        [JsonProperty("content_type")]
+        public LmsUpsertContentRequestDtoContentType? ContentType { get; set; } = null;
     }
 }

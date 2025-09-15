@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class SkillsLanguageSourceValueUnionType
     {
         private SkillsLanguageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static SkillsLanguageSourceValueUnionType Str { get { return new SkillsLanguageSourceValueUnionType("str"); } }
-        
+
         public static SkillsLanguageSourceValueUnionType Number { get { return new SkillsLanguageSourceValueUnionType("number"); } }
-        
+
         public static SkillsLanguageSourceValueUnionType Boolean { get { return new SkillsLanguageSourceValueUnionType("boolean"); } }
-        
+
         public static SkillsLanguageSourceValueUnionType SkillsSourceValueLanguage { get { return new SkillsLanguageSourceValueUnionType("Skills_source_value_language"); } }
-        
+
         public static SkillsLanguageSourceValueUnionType ArrayOfAny { get { return new SkillsLanguageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static SkillsLanguageSourceValueUnionType Null { get { return new SkillsLanguageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(SkillsLanguageSourceValueUnion.SkillsLanguageSourceValueUnionConverter))]
-    public class SkillsLanguageSourceValueUnion {
-        public SkillsLanguageSourceValueUnion(SkillsLanguageSourceValueUnionType type) {
+    public class SkillsLanguageSourceValueUnion
+    {
+        public SkillsLanguageSourceValueUnion(SkillsLanguageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public SkillsLanguageSourceValueUnionType Type { get; set; }
-
-
-        public static SkillsLanguageSourceValueUnion CreateStr(string str) {
+        public static SkillsLanguageSourceValueUnion CreateStr(string str)
+        {
             SkillsLanguageSourceValueUnionType typ = SkillsLanguageSourceValueUnionType.Str;
 
             SkillsLanguageSourceValueUnion res = new SkillsLanguageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static SkillsLanguageSourceValueUnion CreateNumber(double number) {
+        public static SkillsLanguageSourceValueUnion CreateNumber(double number)
+        {
             SkillsLanguageSourceValueUnionType typ = SkillsLanguageSourceValueUnionType.Number;
 
             SkillsLanguageSourceValueUnion res = new SkillsLanguageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static SkillsLanguageSourceValueUnion CreateBoolean(bool boolean) {
+        public static SkillsLanguageSourceValueUnion CreateBoolean(bool boolean)
+        {
             SkillsLanguageSourceValueUnionType typ = SkillsLanguageSourceValueUnionType.Boolean;
 
             SkillsLanguageSourceValueUnion res = new SkillsLanguageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static SkillsLanguageSourceValueUnion CreateSkillsSourceValueLanguage(SkillsSourceValueLanguage skillsSourceValueLanguage) {
+        public static SkillsLanguageSourceValueUnion CreateSkillsSourceValueLanguage(SkillsSourceValueLanguage skillsSourceValueLanguage)
+        {
             SkillsLanguageSourceValueUnionType typ = SkillsLanguageSourceValueUnionType.SkillsSourceValueLanguage;
 
             SkillsLanguageSourceValueUnion res = new SkillsLanguageSourceValueUnion(typ);
             res.SkillsSourceValueLanguage = skillsSourceValueLanguage;
             return res;
         }
-
-        public static SkillsLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static SkillsLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             SkillsLanguageSourceValueUnionType typ = SkillsLanguageSourceValueUnionType.ArrayOfAny;
 
             SkillsLanguageSourceValueUnion res = new SkillsLanguageSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static SkillsLanguageSourceValueUnion CreateNull() {
+        public static SkillsLanguageSourceValueUnion CreateNull()
+        {
             SkillsLanguageSourceValueUnionType typ = SkillsLanguageSourceValueUnionType.Null;
             return new SkillsLanguageSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 SkillsLanguageSourceValueUnion res = (SkillsLanguageSourceValueUnion)value;
                 if (SkillsLanguageSourceValueUnionType.FromString(res.Type).Equals(SkillsLanguageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SkillsSourceValueLanguage != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SkillsSourceValueLanguage));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

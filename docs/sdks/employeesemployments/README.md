@@ -29,7 +29,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisListEmployeeEmploymentsRequest req = new HrisListEmployeeEmploymentsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager",
+    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager",
     Filter = new HrisListEmployeeEmploymentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -123,6 +123,18 @@ var res = await sdk.Hris.Employees.Employments.UpdateAsync(
             RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             Name = "1687-4",
             Description = "Mid-level employee demonstrating proficiency and autonomy.",
+        },
+        Type = new HrisUpdateEmploymentRequestDtoType() {
+            Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            Label = "Permanent",
+            Type = new HrisUpdateEmploymentRequestDtoTypeType() {},
+        },
+        ContractType = new HrisUpdateEmploymentRequestDtoContractType() {
+            Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            Label = "Full-Time",
+            ContractType = new HrisUpdateEmploymentRequestDtoContractTypeContractType() {},
         },
         WorkTime = new HrisUpdateEmploymentRequestDtoWorkTime() {
             Duration = "P0Y0M0DT8H0M0S",

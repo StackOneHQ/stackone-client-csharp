@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class InterviewPartSourceValueUnionType
     {
         private InterviewPartSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static InterviewPartSourceValueUnionType Str { get { return new InterviewPartSourceValueUnionType("str"); } }
-        
+
         public static InterviewPartSourceValueUnionType Number { get { return new InterviewPartSourceValueUnionType("number"); } }
-        
+
         public static InterviewPartSourceValueUnionType Boolean { get { return new InterviewPartSourceValueUnionType("boolean"); } }
-        
+
         public static InterviewPartSourceValueUnionType InterviewPartSourceValue { get { return new InterviewPartSourceValueUnionType("InterviewPart_source_value"); } }
-        
+
         public static InterviewPartSourceValueUnionType ArrayOfAny { get { return new InterviewPartSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static InterviewPartSourceValueUnionType Null { get { return new InterviewPartSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the interview type.
     /// </summary>
     [JsonConverter(typeof(InterviewPartSourceValueUnion.InterviewPartSourceValueUnionConverter))]
-    public class InterviewPartSourceValueUnion {
-        public InterviewPartSourceValueUnion(InterviewPartSourceValueUnionType type) {
+    public class InterviewPartSourceValueUnion
+    {
+        public InterviewPartSourceValueUnion(InterviewPartSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public InterviewPartSourceValueUnionType Type { get; set; }
-
-
-        public static InterviewPartSourceValueUnion CreateStr(string str) {
+        public static InterviewPartSourceValueUnion CreateStr(string str)
+        {
             InterviewPartSourceValueUnionType typ = InterviewPartSourceValueUnionType.Str;
 
             InterviewPartSourceValueUnion res = new InterviewPartSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static InterviewPartSourceValueUnion CreateNumber(double number) {
+        public static InterviewPartSourceValueUnion CreateNumber(double number)
+        {
             InterviewPartSourceValueUnionType typ = InterviewPartSourceValueUnionType.Number;
 
             InterviewPartSourceValueUnion res = new InterviewPartSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static InterviewPartSourceValueUnion CreateBoolean(bool boolean) {
+        public static InterviewPartSourceValueUnion CreateBoolean(bool boolean)
+        {
             InterviewPartSourceValueUnionType typ = InterviewPartSourceValueUnionType.Boolean;
 
             InterviewPartSourceValueUnion res = new InterviewPartSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static InterviewPartSourceValueUnion CreateInterviewPartSourceValue(InterviewPartSourceValue interviewPartSourceValue) {
+        public static InterviewPartSourceValueUnion CreateInterviewPartSourceValue(InterviewPartSourceValue interviewPartSourceValue)
+        {
             InterviewPartSourceValueUnionType typ = InterviewPartSourceValueUnionType.InterviewPartSourceValue;
 
             InterviewPartSourceValueUnion res = new InterviewPartSourceValueUnion(typ);
             res.InterviewPartSourceValue = interviewPartSourceValue;
             return res;
         }
-
-        public static InterviewPartSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static InterviewPartSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             InterviewPartSourceValueUnionType typ = InterviewPartSourceValueUnionType.ArrayOfAny;
 
             InterviewPartSourceValueUnion res = new InterviewPartSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static InterviewPartSourceValueUnion CreateNull() {
+        public static InterviewPartSourceValueUnion CreateNull()
+        {
             InterviewPartSourceValueUnionType typ = InterviewPartSourceValueUnionType.Null;
             return new InterviewPartSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 InterviewPartSourceValueUnion res = (InterviewPartSourceValueUnion)value;
                 if (InterviewPartSourceValueUnionType.FromString(res.Type).Equals(InterviewPartSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.InterviewPartSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.InterviewPartSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

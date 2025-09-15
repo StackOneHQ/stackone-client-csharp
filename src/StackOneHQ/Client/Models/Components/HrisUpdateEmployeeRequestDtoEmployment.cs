@@ -83,6 +83,18 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("employment_contract_type")]
         public HrisUpdateEmployeeRequestDtoEmploymentEmploymentContractType? EmploymentContractType { get; set; } = null;
 
+        /// <summary>
+        /// The type of employment
+        /// </summary>
+        [JsonProperty("type")]
+        public HrisUpdateEmployeeRequestDtoEmploymentType2? Type { get; set; } = null;
+
+        /// <summary>
+        /// The employment work schedule type
+        /// </summary>
+        [JsonProperty("contract_type")]
+        public HrisUpdateEmployeeRequestDtoContractType? ContractType { get; set; } = null;
+
         [JsonProperty("work_time")]
         public HrisUpdateEmployeeRequestDtoWorkTime? WorkTime { get; set; } = null;
 

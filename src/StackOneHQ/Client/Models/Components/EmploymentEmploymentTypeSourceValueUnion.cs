@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentEmploymentTypeSourceValueUnionType
     {
         private EmploymentEmploymentTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentEmploymentTypeSourceValueUnionType Str { get { return new EmploymentEmploymentTypeSourceValueUnionType("str"); } }
-        
+
         public static EmploymentEmploymentTypeSourceValueUnionType Number { get { return new EmploymentEmploymentTypeSourceValueUnionType("number"); } }
-        
+
         public static EmploymentEmploymentTypeSourceValueUnionType Boolean { get { return new EmploymentEmploymentTypeSourceValueUnionType("boolean"); } }
-        
+
         public static EmploymentEmploymentTypeSourceValueUnionType EmploymentSourceValueEmploymentType { get { return new EmploymentEmploymentTypeSourceValueUnionType("Employment_source_value_employment_type"); } }
-        
+
         public static EmploymentEmploymentTypeSourceValueUnionType ArrayOfAny { get { return new EmploymentEmploymentTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmploymentEmploymentTypeSourceValueUnionType Null { get { return new EmploymentEmploymentTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the employment type.
     /// </summary>
     [JsonConverter(typeof(EmploymentEmploymentTypeSourceValueUnion.EmploymentEmploymentTypeSourceValueUnionConverter))]
-    public class EmploymentEmploymentTypeSourceValueUnion {
-        public EmploymentEmploymentTypeSourceValueUnion(EmploymentEmploymentTypeSourceValueUnionType type) {
+    public class EmploymentEmploymentTypeSourceValueUnion
+    {
+        public EmploymentEmploymentTypeSourceValueUnion(EmploymentEmploymentTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmploymentEmploymentTypeSourceValueUnionType Type { get; set; }
-
-
-        public static EmploymentEmploymentTypeSourceValueUnion CreateStr(string str) {
+        public static EmploymentEmploymentTypeSourceValueUnion CreateStr(string str)
+        {
             EmploymentEmploymentTypeSourceValueUnionType typ = EmploymentEmploymentTypeSourceValueUnionType.Str;
 
             EmploymentEmploymentTypeSourceValueUnion res = new EmploymentEmploymentTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmploymentEmploymentTypeSourceValueUnion CreateNumber(double number) {
+        public static EmploymentEmploymentTypeSourceValueUnion CreateNumber(double number)
+        {
             EmploymentEmploymentTypeSourceValueUnionType typ = EmploymentEmploymentTypeSourceValueUnionType.Number;
 
             EmploymentEmploymentTypeSourceValueUnion res = new EmploymentEmploymentTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmploymentEmploymentTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmploymentEmploymentTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmploymentEmploymentTypeSourceValueUnionType typ = EmploymentEmploymentTypeSourceValueUnionType.Boolean;
 
             EmploymentEmploymentTypeSourceValueUnion res = new EmploymentEmploymentTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentEmploymentTypeSourceValueUnion CreateEmploymentSourceValueEmploymentType(EmploymentSourceValueEmploymentType employmentSourceValueEmploymentType) {
+        public static EmploymentEmploymentTypeSourceValueUnion CreateEmploymentSourceValueEmploymentType(EmploymentSourceValueEmploymentType employmentSourceValueEmploymentType)
+        {
             EmploymentEmploymentTypeSourceValueUnionType typ = EmploymentEmploymentTypeSourceValueUnionType.EmploymentSourceValueEmploymentType;
 
             EmploymentEmploymentTypeSourceValueUnion res = new EmploymentEmploymentTypeSourceValueUnion(typ);
             res.EmploymentSourceValueEmploymentType = employmentSourceValueEmploymentType;
             return res;
         }
-
-        public static EmploymentEmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmploymentEmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmploymentEmploymentTypeSourceValueUnionType typ = EmploymentEmploymentTypeSourceValueUnionType.ArrayOfAny;
 
             EmploymentEmploymentTypeSourceValueUnion res = new EmploymentEmploymentTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentEmploymentTypeSourceValueUnion CreateNull() {
+        public static EmploymentEmploymentTypeSourceValueUnion CreateNull()
+        {
             EmploymentEmploymentTypeSourceValueUnionType typ = EmploymentEmploymentTypeSourceValueUnionType.Null;
             return new EmploymentEmploymentTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentEmploymentTypeSourceValueUnion res = (EmploymentEmploymentTypeSourceValueUnion)value;
                 if (EmploymentEmploymentTypeSourceValueUnionType.FromString(res.Type).Equals(EmploymentEmploymentTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentSourceValueEmploymentType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentSourceValueEmploymentType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

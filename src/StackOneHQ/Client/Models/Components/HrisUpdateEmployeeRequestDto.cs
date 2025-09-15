@@ -168,7 +168,7 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("employment_type")]
-        public HrisUpdateEmployeeRequestDtoEmploymentType? EmploymentType { get; set; } = null;
+        public HrisUpdateEmployeeRequestDtoEmploymentType1? EmploymentType { get; set; } = null;
 
         /// <summary>
         /// The employment work schedule type (e.g., full-time, part-time)

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentEmploymentContractTypeSourceValueUnionType
     {
         private EmploymentEmploymentContractTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentEmploymentContractTypeSourceValueUnionType Str { get { return new EmploymentEmploymentContractTypeSourceValueUnionType("str"); } }
-        
+
         public static EmploymentEmploymentContractTypeSourceValueUnionType Number { get { return new EmploymentEmploymentContractTypeSourceValueUnionType("number"); } }
-        
+
         public static EmploymentEmploymentContractTypeSourceValueUnionType Boolean { get { return new EmploymentEmploymentContractTypeSourceValueUnionType("boolean"); } }
-        
+
         public static EmploymentEmploymentContractTypeSourceValueUnionType EmploymentSourceValueEmploymentContractType { get { return new EmploymentEmploymentContractTypeSourceValueUnionType("Employment_source_value_employment_contract_type"); } }
-        
+
         public static EmploymentEmploymentContractTypeSourceValueUnionType ArrayOfAny { get { return new EmploymentEmploymentContractTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmploymentEmploymentContractTypeSourceValueUnionType Null { get { return new EmploymentEmploymentContractTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmploymentEmploymentContractTypeSourceValueUnion.EmploymentEmploymentContractTypeSourceValueUnionConverter))]
-    public class EmploymentEmploymentContractTypeSourceValueUnion {
-        public EmploymentEmploymentContractTypeSourceValueUnion(EmploymentEmploymentContractTypeSourceValueUnionType type) {
+    public class EmploymentEmploymentContractTypeSourceValueUnion
+    {
+        public EmploymentEmploymentContractTypeSourceValueUnion(EmploymentEmploymentContractTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmploymentEmploymentContractTypeSourceValueUnionType Type { get; set; }
-
-
-        public static EmploymentEmploymentContractTypeSourceValueUnion CreateStr(string str) {
+        public static EmploymentEmploymentContractTypeSourceValueUnion CreateStr(string str)
+        {
             EmploymentEmploymentContractTypeSourceValueUnionType typ = EmploymentEmploymentContractTypeSourceValueUnionType.Str;
 
             EmploymentEmploymentContractTypeSourceValueUnion res = new EmploymentEmploymentContractTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmploymentEmploymentContractTypeSourceValueUnion CreateNumber(double number) {
+        public static EmploymentEmploymentContractTypeSourceValueUnion CreateNumber(double number)
+        {
             EmploymentEmploymentContractTypeSourceValueUnionType typ = EmploymentEmploymentContractTypeSourceValueUnionType.Number;
 
             EmploymentEmploymentContractTypeSourceValueUnion res = new EmploymentEmploymentContractTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmploymentEmploymentContractTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmploymentEmploymentContractTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmploymentEmploymentContractTypeSourceValueUnionType typ = EmploymentEmploymentContractTypeSourceValueUnionType.Boolean;
 
             EmploymentEmploymentContractTypeSourceValueUnion res = new EmploymentEmploymentContractTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentEmploymentContractTypeSourceValueUnion CreateEmploymentSourceValueEmploymentContractType(EmploymentSourceValueEmploymentContractType employmentSourceValueEmploymentContractType) {
+        public static EmploymentEmploymentContractTypeSourceValueUnion CreateEmploymentSourceValueEmploymentContractType(EmploymentSourceValueEmploymentContractType employmentSourceValueEmploymentContractType)
+        {
             EmploymentEmploymentContractTypeSourceValueUnionType typ = EmploymentEmploymentContractTypeSourceValueUnionType.EmploymentSourceValueEmploymentContractType;
 
             EmploymentEmploymentContractTypeSourceValueUnion res = new EmploymentEmploymentContractTypeSourceValueUnion(typ);
             res.EmploymentSourceValueEmploymentContractType = employmentSourceValueEmploymentContractType;
             return res;
         }
-
-        public static EmploymentEmploymentContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmploymentEmploymentContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmploymentEmploymentContractTypeSourceValueUnionType typ = EmploymentEmploymentContractTypeSourceValueUnionType.ArrayOfAny;
 
             EmploymentEmploymentContractTypeSourceValueUnion res = new EmploymentEmploymentContractTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentEmploymentContractTypeSourceValueUnion CreateNull() {
+        public static EmploymentEmploymentContractTypeSourceValueUnion CreateNull()
+        {
             EmploymentEmploymentContractTypeSourceValueUnionType typ = EmploymentEmploymentContractTypeSourceValueUnionType.Null;
             return new EmploymentEmploymentContractTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentEmploymentContractTypeSourceValueUnion res = (EmploymentEmploymentContractTypeSourceValueUnion)value;
                 if (EmploymentEmploymentContractTypeSourceValueUnionType.FromString(res.Type).Equals(EmploymentEmploymentContractTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentSourceValueEmploymentContractType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentSourceValueEmploymentContractType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

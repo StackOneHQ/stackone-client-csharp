@@ -5,12 +5,14 @@
 
 ### Available Operations
 
-* [List](#list) - List Interview Stages
-* [Get](#get) - Get Interview Stage
+* [~~List~~](#list) - List Interview Stages :warning: **Deprecated**
+* [~~Get~~](#get) - Get Interview Stage :warning: **Deprecated**
 
-## List
+## ~~List~~
 
 List Interview Stages
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -72,9 +74,11 @@ while(res != null)
 | StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
 | StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
-## Get
+## ~~Get~~
 
 Get Interview Stage
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

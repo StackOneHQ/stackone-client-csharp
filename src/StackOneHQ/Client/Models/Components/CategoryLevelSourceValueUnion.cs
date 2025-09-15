@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CategoryLevelSourceValueUnionType
     {
         private CategoryLevelSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CategoryLevelSourceValueUnionType Str { get { return new CategoryLevelSourceValueUnionType("str"); } }
-        
+
         public static CategoryLevelSourceValueUnionType Number { get { return new CategoryLevelSourceValueUnionType("number"); } }
-        
+
         public static CategoryLevelSourceValueUnionType Boolean { get { return new CategoryLevelSourceValueUnionType("boolean"); } }
-        
+
         public static CategoryLevelSourceValueUnionType CategorySourceValueLevel { get { return new CategoryLevelSourceValueUnionType("Category_source_value_level"); } }
-        
+
         public static CategoryLevelSourceValueUnionType ArrayOfAny { get { return new CategoryLevelSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CategoryLevelSourceValueUnionType Null { get { return new CategoryLevelSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CategoryLevelSourceValueUnion.CategoryLevelSourceValueUnionConverter))]
-    public class CategoryLevelSourceValueUnion {
-        public CategoryLevelSourceValueUnion(CategoryLevelSourceValueUnionType type) {
+    public class CategoryLevelSourceValueUnion
+    {
+        public CategoryLevelSourceValueUnion(CategoryLevelSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CategoryLevelSourceValueUnionType Type { get; set; }
-
-
-        public static CategoryLevelSourceValueUnion CreateStr(string str) {
+        public static CategoryLevelSourceValueUnion CreateStr(string str)
+        {
             CategoryLevelSourceValueUnionType typ = CategoryLevelSourceValueUnionType.Str;
 
             CategoryLevelSourceValueUnion res = new CategoryLevelSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CategoryLevelSourceValueUnion CreateNumber(double number) {
+        public static CategoryLevelSourceValueUnion CreateNumber(double number)
+        {
             CategoryLevelSourceValueUnionType typ = CategoryLevelSourceValueUnionType.Number;
 
             CategoryLevelSourceValueUnion res = new CategoryLevelSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CategoryLevelSourceValueUnion CreateBoolean(bool boolean) {
+        public static CategoryLevelSourceValueUnion CreateBoolean(bool boolean)
+        {
             CategoryLevelSourceValueUnionType typ = CategoryLevelSourceValueUnionType.Boolean;
 
             CategoryLevelSourceValueUnion res = new CategoryLevelSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CategoryLevelSourceValueUnion CreateCategorySourceValueLevel(CategorySourceValueLevel categorySourceValueLevel) {
+        public static CategoryLevelSourceValueUnion CreateCategorySourceValueLevel(CategorySourceValueLevel categorySourceValueLevel)
+        {
             CategoryLevelSourceValueUnionType typ = CategoryLevelSourceValueUnionType.CategorySourceValueLevel;
 
             CategoryLevelSourceValueUnion res = new CategoryLevelSourceValueUnion(typ);
             res.CategorySourceValueLevel = categorySourceValueLevel;
             return res;
         }
-
-        public static CategoryLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CategoryLevelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CategoryLevelSourceValueUnionType typ = CategoryLevelSourceValueUnionType.ArrayOfAny;
 
             CategoryLevelSourceValueUnion res = new CategoryLevelSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CategoryLevelSourceValueUnion CreateNull() {
+        public static CategoryLevelSourceValueUnion CreateNull()
+        {
             CategoryLevelSourceValueUnionType typ = CategoryLevelSourceValueUnionType.Null;
             return new CategoryLevelSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CategoryLevelSourceValueUnion res = (CategoryLevelSourceValueUnion)value;
                 if (CategoryLevelSourceValueUnionType.FromString(res.Type).Equals(CategoryLevelSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CategorySourceValueLevel != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CategorySourceValueLevel));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

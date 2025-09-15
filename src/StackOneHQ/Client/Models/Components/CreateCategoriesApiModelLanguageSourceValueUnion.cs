@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateCategoriesApiModelLanguageSourceValueUnionType
     {
         private CreateCategoriesApiModelLanguageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateCategoriesApiModelLanguageSourceValueUnionType Str { get { return new CreateCategoriesApiModelLanguageSourceValueUnionType("str"); } }
-        
+
         public static CreateCategoriesApiModelLanguageSourceValueUnionType Number { get { return new CreateCategoriesApiModelLanguageSourceValueUnionType("number"); } }
-        
+
         public static CreateCategoriesApiModelLanguageSourceValueUnionType Boolean { get { return new CreateCategoriesApiModelLanguageSourceValueUnionType("boolean"); } }
-        
+
         public static CreateCategoriesApiModelLanguageSourceValueUnionType CreateCategoriesApiModelSourceValueLanguage { get { return new CreateCategoriesApiModelLanguageSourceValueUnionType("CreateCategoriesApiModel_source_value_language"); } }
-        
+
         public static CreateCategoriesApiModelLanguageSourceValueUnionType ArrayOfAny { get { return new CreateCategoriesApiModelLanguageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateCategoriesApiModelLanguageSourceValueUnionType Null { get { return new CreateCategoriesApiModelLanguageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateCategoriesApiModelLanguageSourceValueUnion.CreateCategoriesApiModelLanguageSourceValueUnionConverter))]
-    public class CreateCategoriesApiModelLanguageSourceValueUnion {
-        public CreateCategoriesApiModelLanguageSourceValueUnion(CreateCategoriesApiModelLanguageSourceValueUnionType type) {
+    public class CreateCategoriesApiModelLanguageSourceValueUnion
+    {
+        public CreateCategoriesApiModelLanguageSourceValueUnion(CreateCategoriesApiModelLanguageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateCategoriesApiModelLanguageSourceValueUnionType Type { get; set; }
-
-
-        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateStr(string str) {
+        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateStr(string str)
+        {
             CreateCategoriesApiModelLanguageSourceValueUnionType typ = CreateCategoriesApiModelLanguageSourceValueUnionType.Str;
 
             CreateCategoriesApiModelLanguageSourceValueUnion res = new CreateCategoriesApiModelLanguageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateNumber(double number) {
+        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateNumber(double number)
+        {
             CreateCategoriesApiModelLanguageSourceValueUnionType typ = CreateCategoriesApiModelLanguageSourceValueUnionType.Number;
 
             CreateCategoriesApiModelLanguageSourceValueUnion res = new CreateCategoriesApiModelLanguageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateCategoriesApiModelLanguageSourceValueUnionType typ = CreateCategoriesApiModelLanguageSourceValueUnionType.Boolean;
 
             CreateCategoriesApiModelLanguageSourceValueUnion res = new CreateCategoriesApiModelLanguageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateCreateCategoriesApiModelSourceValueLanguage(CreateCategoriesApiModelSourceValueLanguage createCategoriesAPIModelSourceValueLanguage) {
+        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateCreateCategoriesApiModelSourceValueLanguage(CreateCategoriesApiModelSourceValueLanguage createCategoriesAPIModelSourceValueLanguage)
+        {
             CreateCategoriesApiModelLanguageSourceValueUnionType typ = CreateCategoriesApiModelLanguageSourceValueUnionType.CreateCategoriesApiModelSourceValueLanguage;
 
             CreateCategoriesApiModelLanguageSourceValueUnion res = new CreateCategoriesApiModelLanguageSourceValueUnion(typ);
             res.CreateCategoriesApiModelSourceValueLanguage = createCategoriesAPIModelSourceValueLanguage;
             return res;
         }
-
-        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateCategoriesApiModelLanguageSourceValueUnionType typ = CreateCategoriesApiModelLanguageSourceValueUnionType.ArrayOfAny;
 
             CreateCategoriesApiModelLanguageSourceValueUnion res = new CreateCategoriesApiModelLanguageSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateNull() {
+        public static CreateCategoriesApiModelLanguageSourceValueUnion CreateNull()
+        {
             CreateCategoriesApiModelLanguageSourceValueUnionType typ = CreateCategoriesApiModelLanguageSourceValueUnionType.Null;
             return new CreateCategoriesApiModelLanguageSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateCategoriesApiModelLanguageSourceValueUnion res = (CreateCategoriesApiModelLanguageSourceValueUnion)value;
                 if (CreateCategoriesApiModelLanguageSourceValueUnionType.FromString(res.Type).Equals(CreateCategoriesApiModelLanguageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateCategoriesApiModelSourceValueLanguage != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateCategoriesApiModelSourceValueLanguage));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

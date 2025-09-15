@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class UpdateTaskRequestDtoSourceValueUnionType
     {
         private UpdateTaskRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static UpdateTaskRequestDtoSourceValueUnionType Str { get { return new UpdateTaskRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static UpdateTaskRequestDtoSourceValueUnionType Number { get { return new UpdateTaskRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static UpdateTaskRequestDtoSourceValueUnionType Boolean { get { return new UpdateTaskRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static UpdateTaskRequestDtoSourceValueUnionType UpdateTaskRequestDtoSourceValue { get { return new UpdateTaskRequestDtoSourceValueUnionType("UpdateTaskRequestDto_source_value"); } }
-        
+
         public static UpdateTaskRequestDtoSourceValueUnionType ArrayOfAny { get { return new UpdateTaskRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static UpdateTaskRequestDtoSourceValueUnionType Null { get { return new UpdateTaskRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(UpdateTaskRequestDtoSourceValueUnion.UpdateTaskRequestDtoSourceValueUnionConverter))]
-    public class UpdateTaskRequestDtoSourceValueUnion {
-        public UpdateTaskRequestDtoSourceValueUnion(UpdateTaskRequestDtoSourceValueUnionType type) {
+    public class UpdateTaskRequestDtoSourceValueUnion
+    {
+        public UpdateTaskRequestDtoSourceValueUnion(UpdateTaskRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public UpdateTaskRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static UpdateTaskRequestDtoSourceValueUnion CreateStr(string str) {
+        public static UpdateTaskRequestDtoSourceValueUnion CreateStr(string str)
+        {
             UpdateTaskRequestDtoSourceValueUnionType typ = UpdateTaskRequestDtoSourceValueUnionType.Str;
 
             UpdateTaskRequestDtoSourceValueUnion res = new UpdateTaskRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static UpdateTaskRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static UpdateTaskRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             UpdateTaskRequestDtoSourceValueUnionType typ = UpdateTaskRequestDtoSourceValueUnionType.Number;
 
             UpdateTaskRequestDtoSourceValueUnion res = new UpdateTaskRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static UpdateTaskRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static UpdateTaskRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             UpdateTaskRequestDtoSourceValueUnionType typ = UpdateTaskRequestDtoSourceValueUnionType.Boolean;
 
             UpdateTaskRequestDtoSourceValueUnion res = new UpdateTaskRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static UpdateTaskRequestDtoSourceValueUnion CreateUpdateTaskRequestDtoSourceValue(UpdateTaskRequestDtoSourceValue updateTaskRequestDtoSourceValue) {
+        public static UpdateTaskRequestDtoSourceValueUnion CreateUpdateTaskRequestDtoSourceValue(UpdateTaskRequestDtoSourceValue updateTaskRequestDtoSourceValue)
+        {
             UpdateTaskRequestDtoSourceValueUnionType typ = UpdateTaskRequestDtoSourceValueUnionType.UpdateTaskRequestDtoSourceValue;
 
             UpdateTaskRequestDtoSourceValueUnion res = new UpdateTaskRequestDtoSourceValueUnion(typ);
             res.UpdateTaskRequestDtoSourceValue = updateTaskRequestDtoSourceValue;
             return res;
         }
-
-        public static UpdateTaskRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static UpdateTaskRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             UpdateTaskRequestDtoSourceValueUnionType typ = UpdateTaskRequestDtoSourceValueUnionType.ArrayOfAny;
 
             UpdateTaskRequestDtoSourceValueUnion res = new UpdateTaskRequestDtoSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static UpdateTaskRequestDtoSourceValueUnion CreateNull() {
+        public static UpdateTaskRequestDtoSourceValueUnion CreateNull()
+        {
             UpdateTaskRequestDtoSourceValueUnionType typ = UpdateTaskRequestDtoSourceValueUnionType.Null;
             return new UpdateTaskRequestDtoSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 UpdateTaskRequestDtoSourceValueUnion res = (UpdateTaskRequestDtoSourceValueUnion)value;
                 if (UpdateTaskRequestDtoSourceValueUnionType.FromString(res.Type).Equals(UpdateTaskRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.UpdateTaskRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.UpdateTaskRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

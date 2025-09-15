@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AvatarFileFormatSourceValueUnionType
     {
         private AvatarFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AvatarFileFormatSourceValueUnionType Str { get { return new AvatarFileFormatSourceValueUnionType("str"); } }
-        
+
         public static AvatarFileFormatSourceValueUnionType Number { get { return new AvatarFileFormatSourceValueUnionType("number"); } }
-        
+
         public static AvatarFileFormatSourceValueUnionType Boolean { get { return new AvatarFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static AvatarFileFormatSourceValueUnionType SourceValueAvatarFileFormat { get { return new AvatarFileFormatSourceValueUnionType("source_value_avatar_file_format"); } }
-        
+
         public static AvatarFileFormatSourceValueUnionType ArrayOfAny { get { return new AvatarFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AvatarFileFormatSourceValueUnionType Null { get { return new AvatarFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AvatarFileFormatSourceValueUnion.AvatarFileFormatSourceValueUnionConverter))]
-    public class AvatarFileFormatSourceValueUnion {
-        public AvatarFileFormatSourceValueUnion(AvatarFileFormatSourceValueUnionType type) {
+    public class AvatarFileFormatSourceValueUnion
+    {
+        public AvatarFileFormatSourceValueUnion(AvatarFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AvatarFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static AvatarFileFormatSourceValueUnion CreateStr(string str) {
+        public static AvatarFileFormatSourceValueUnion CreateStr(string str)
+        {
             AvatarFileFormatSourceValueUnionType typ = AvatarFileFormatSourceValueUnionType.Str;
 
             AvatarFileFormatSourceValueUnion res = new AvatarFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AvatarFileFormatSourceValueUnion CreateNumber(double number) {
+        public static AvatarFileFormatSourceValueUnion CreateNumber(double number)
+        {
             AvatarFileFormatSourceValueUnionType typ = AvatarFileFormatSourceValueUnionType.Number;
 
             AvatarFileFormatSourceValueUnion res = new AvatarFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AvatarFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static AvatarFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             AvatarFileFormatSourceValueUnionType typ = AvatarFileFormatSourceValueUnionType.Boolean;
 
             AvatarFileFormatSourceValueUnion res = new AvatarFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AvatarFileFormatSourceValueUnion CreateSourceValueAvatarFileFormat(SourceValueAvatarFileFormat sourceValueAvatarFileFormat) {
+        public static AvatarFileFormatSourceValueUnion CreateSourceValueAvatarFileFormat(SourceValueAvatarFileFormat sourceValueAvatarFileFormat)
+        {
             AvatarFileFormatSourceValueUnionType typ = AvatarFileFormatSourceValueUnionType.SourceValueAvatarFileFormat;
 
             AvatarFileFormatSourceValueUnion res = new AvatarFileFormatSourceValueUnion(typ);
             res.SourceValueAvatarFileFormat = sourceValueAvatarFileFormat;
             return res;
         }
-
-        public static AvatarFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AvatarFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AvatarFileFormatSourceValueUnionType typ = AvatarFileFormatSourceValueUnionType.ArrayOfAny;
 
             AvatarFileFormatSourceValueUnion res = new AvatarFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AvatarFileFormatSourceValueUnion CreateNull() {
+        public static AvatarFileFormatSourceValueUnion CreateNull()
+        {
             AvatarFileFormatSourceValueUnionType typ = AvatarFileFormatSourceValueUnionType.Null;
             return new AvatarFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AvatarFileFormatSourceValueUnion res = (AvatarFileFormatSourceValueUnion)value;
                 if (AvatarFileFormatSourceValueUnionType.FromString(res.Type).Equals(AvatarFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueAvatarFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueAvatarFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

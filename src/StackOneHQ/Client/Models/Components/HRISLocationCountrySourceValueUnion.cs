@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HRISLocationCountrySourceValueUnionType
     {
         private HRISLocationCountrySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HRISLocationCountrySourceValueUnionType Str { get { return new HRISLocationCountrySourceValueUnionType("str"); } }
-        
+
         public static HRISLocationCountrySourceValueUnionType Number { get { return new HRISLocationCountrySourceValueUnionType("number"); } }
-        
+
         public static HRISLocationCountrySourceValueUnionType Boolean { get { return new HRISLocationCountrySourceValueUnionType("boolean"); } }
-        
+
         public static HRISLocationCountrySourceValueUnionType HRISLocationSourceValueCountry { get { return new HRISLocationCountrySourceValueUnionType("HRISLocation_source_value_country"); } }
-        
+
         public static HRISLocationCountrySourceValueUnionType ArrayOfAny { get { return new HRISLocationCountrySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HRISLocationCountrySourceValueUnionType Null { get { return new HRISLocationCountrySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HRISLocationCountrySourceValueUnion.HRISLocationCountrySourceValueUnionConverter))]
-    public class HRISLocationCountrySourceValueUnion {
-        public HRISLocationCountrySourceValueUnion(HRISLocationCountrySourceValueUnionType type) {
+    public class HRISLocationCountrySourceValueUnion
+    {
+        public HRISLocationCountrySourceValueUnion(HRISLocationCountrySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HRISLocationCountrySourceValueUnionType Type { get; set; }
-
-
-        public static HRISLocationCountrySourceValueUnion CreateStr(string str) {
+        public static HRISLocationCountrySourceValueUnion CreateStr(string str)
+        {
             HRISLocationCountrySourceValueUnionType typ = HRISLocationCountrySourceValueUnionType.Str;
 
             HRISLocationCountrySourceValueUnion res = new HRISLocationCountrySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HRISLocationCountrySourceValueUnion CreateNumber(double number) {
+        public static HRISLocationCountrySourceValueUnion CreateNumber(double number)
+        {
             HRISLocationCountrySourceValueUnionType typ = HRISLocationCountrySourceValueUnionType.Number;
 
             HRISLocationCountrySourceValueUnion res = new HRISLocationCountrySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HRISLocationCountrySourceValueUnion CreateBoolean(bool boolean) {
+        public static HRISLocationCountrySourceValueUnion CreateBoolean(bool boolean)
+        {
             HRISLocationCountrySourceValueUnionType typ = HRISLocationCountrySourceValueUnionType.Boolean;
 
             HRISLocationCountrySourceValueUnion res = new HRISLocationCountrySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HRISLocationCountrySourceValueUnion CreateHRISLocationSourceValueCountry(HRISLocationSourceValueCountry hrisLocationSourceValueCountry) {
+        public static HRISLocationCountrySourceValueUnion CreateHRISLocationSourceValueCountry(HRISLocationSourceValueCountry hrisLocationSourceValueCountry)
+        {
             HRISLocationCountrySourceValueUnionType typ = HRISLocationCountrySourceValueUnionType.HRISLocationSourceValueCountry;
 
             HRISLocationCountrySourceValueUnion res = new HRISLocationCountrySourceValueUnion(typ);
             res.HRISLocationSourceValueCountry = hrisLocationSourceValueCountry;
             return res;
         }
-
-        public static HRISLocationCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HRISLocationCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HRISLocationCountrySourceValueUnionType typ = HRISLocationCountrySourceValueUnionType.ArrayOfAny;
 
             HRISLocationCountrySourceValueUnion res = new HRISLocationCountrySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HRISLocationCountrySourceValueUnion CreateNull() {
+        public static HRISLocationCountrySourceValueUnion CreateNull()
+        {
             HRISLocationCountrySourceValueUnionType typ = HRISLocationCountrySourceValueUnionType.Null;
             return new HRISLocationCountrySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HRISLocationCountrySourceValueUnion res = (HRISLocationCountrySourceValueUnion)value;
                 if (HRISLocationCountrySourceValueUnionType.FromString(res.Type).Equals(HRISLocationCountrySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HRISLocationSourceValueCountry != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HRISLocationSourceValueCountry));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

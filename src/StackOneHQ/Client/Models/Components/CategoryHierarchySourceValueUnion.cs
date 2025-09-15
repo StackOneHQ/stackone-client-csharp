@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CategoryHierarchySourceValueUnionType
     {
         private CategoryHierarchySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CategoryHierarchySourceValueUnionType Str { get { return new CategoryHierarchySourceValueUnionType("str"); } }
-        
+
         public static CategoryHierarchySourceValueUnionType Number { get { return new CategoryHierarchySourceValueUnionType("number"); } }
-        
+
         public static CategoryHierarchySourceValueUnionType Boolean { get { return new CategoryHierarchySourceValueUnionType("boolean"); } }
-        
+
         public static CategoryHierarchySourceValueUnionType CategorySourceValueHierarchy { get { return new CategoryHierarchySourceValueUnionType("Category_source_value_hierarchy"); } }
-        
+
         public static CategoryHierarchySourceValueUnionType ArrayOfAny { get { return new CategoryHierarchySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CategoryHierarchySourceValueUnionType Null { get { return new CategoryHierarchySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CategoryHierarchySourceValueUnion.CategoryHierarchySourceValueUnionConverter))]
-    public class CategoryHierarchySourceValueUnion {
-        public CategoryHierarchySourceValueUnion(CategoryHierarchySourceValueUnionType type) {
+    public class CategoryHierarchySourceValueUnion
+    {
+        public CategoryHierarchySourceValueUnion(CategoryHierarchySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CategoryHierarchySourceValueUnionType Type { get; set; }
-
-
-        public static CategoryHierarchySourceValueUnion CreateStr(string str) {
+        public static CategoryHierarchySourceValueUnion CreateStr(string str)
+        {
             CategoryHierarchySourceValueUnionType typ = CategoryHierarchySourceValueUnionType.Str;
 
             CategoryHierarchySourceValueUnion res = new CategoryHierarchySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CategoryHierarchySourceValueUnion CreateNumber(double number) {
+        public static CategoryHierarchySourceValueUnion CreateNumber(double number)
+        {
             CategoryHierarchySourceValueUnionType typ = CategoryHierarchySourceValueUnionType.Number;
 
             CategoryHierarchySourceValueUnion res = new CategoryHierarchySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CategoryHierarchySourceValueUnion CreateBoolean(bool boolean) {
+        public static CategoryHierarchySourceValueUnion CreateBoolean(bool boolean)
+        {
             CategoryHierarchySourceValueUnionType typ = CategoryHierarchySourceValueUnionType.Boolean;
 
             CategoryHierarchySourceValueUnion res = new CategoryHierarchySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CategoryHierarchySourceValueUnion CreateCategorySourceValueHierarchy(CategorySourceValueHierarchy categorySourceValueHierarchy) {
+        public static CategoryHierarchySourceValueUnion CreateCategorySourceValueHierarchy(CategorySourceValueHierarchy categorySourceValueHierarchy)
+        {
             CategoryHierarchySourceValueUnionType typ = CategoryHierarchySourceValueUnionType.CategorySourceValueHierarchy;
 
             CategoryHierarchySourceValueUnion res = new CategoryHierarchySourceValueUnion(typ);
             res.CategorySourceValueHierarchy = categorySourceValueHierarchy;
             return res;
         }
-
-        public static CategoryHierarchySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CategoryHierarchySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CategoryHierarchySourceValueUnionType typ = CategoryHierarchySourceValueUnionType.ArrayOfAny;
 
             CategoryHierarchySourceValueUnion res = new CategoryHierarchySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CategoryHierarchySourceValueUnion CreateNull() {
+        public static CategoryHierarchySourceValueUnion CreateNull()
+        {
             CategoryHierarchySourceValueUnionType typ = CategoryHierarchySourceValueUnionType.Null;
             return new CategoryHierarchySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CategoryHierarchySourceValueUnion res = (CategoryHierarchySourceValueUnion)value;
                 if (CategoryHierarchySourceValueUnionType.FromString(res.Type).Equals(CategoryHierarchySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CategorySourceValueHierarchy != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CategorySourceValueHierarchy));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

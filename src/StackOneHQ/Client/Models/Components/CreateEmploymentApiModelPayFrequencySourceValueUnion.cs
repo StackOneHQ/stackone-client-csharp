@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateEmploymentApiModelPayFrequencySourceValueUnionType
     {
         private CreateEmploymentApiModelPayFrequencySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateEmploymentApiModelPayFrequencySourceValueUnionType Str { get { return new CreateEmploymentApiModelPayFrequencySourceValueUnionType("str"); } }
-        
+
         public static CreateEmploymentApiModelPayFrequencySourceValueUnionType Number { get { return new CreateEmploymentApiModelPayFrequencySourceValueUnionType("number"); } }
-        
+
         public static CreateEmploymentApiModelPayFrequencySourceValueUnionType Boolean { get { return new CreateEmploymentApiModelPayFrequencySourceValueUnionType("boolean"); } }
-        
+
         public static CreateEmploymentApiModelPayFrequencySourceValueUnionType CreateEmploymentApiModelSourceValuePayFrequency { get { return new CreateEmploymentApiModelPayFrequencySourceValueUnionType("CreateEmploymentApiModel_source_value_pay_frequency"); } }
-        
+
         public static CreateEmploymentApiModelPayFrequencySourceValueUnionType ArrayOfAny { get { return new CreateEmploymentApiModelPayFrequencySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateEmploymentApiModelPayFrequencySourceValueUnionType Null { get { return new CreateEmploymentApiModelPayFrequencySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay frequency.
     /// </summary>
     [JsonConverter(typeof(CreateEmploymentApiModelPayFrequencySourceValueUnion.CreateEmploymentApiModelPayFrequencySourceValueUnionConverter))]
-    public class CreateEmploymentApiModelPayFrequencySourceValueUnion {
-        public CreateEmploymentApiModelPayFrequencySourceValueUnion(CreateEmploymentApiModelPayFrequencySourceValueUnionType type) {
+    public class CreateEmploymentApiModelPayFrequencySourceValueUnion
+    {
+        public CreateEmploymentApiModelPayFrequencySourceValueUnion(CreateEmploymentApiModelPayFrequencySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateEmploymentApiModelPayFrequencySourceValueUnionType Type { get; set; }
-
-
-        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateStr(string str) {
+        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateStr(string str)
+        {
             CreateEmploymentApiModelPayFrequencySourceValueUnionType typ = CreateEmploymentApiModelPayFrequencySourceValueUnionType.Str;
 
             CreateEmploymentApiModelPayFrequencySourceValueUnion res = new CreateEmploymentApiModelPayFrequencySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateNumber(double number) {
+        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateNumber(double number)
+        {
             CreateEmploymentApiModelPayFrequencySourceValueUnionType typ = CreateEmploymentApiModelPayFrequencySourceValueUnionType.Number;
 
             CreateEmploymentApiModelPayFrequencySourceValueUnion res = new CreateEmploymentApiModelPayFrequencySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateEmploymentApiModelPayFrequencySourceValueUnionType typ = CreateEmploymentApiModelPayFrequencySourceValueUnionType.Boolean;
 
             CreateEmploymentApiModelPayFrequencySourceValueUnion res = new CreateEmploymentApiModelPayFrequencySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateCreateEmploymentApiModelSourceValuePayFrequency(CreateEmploymentApiModelSourceValuePayFrequency createEmploymentAPIModelSourceValuePayFrequency) {
+        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateCreateEmploymentApiModelSourceValuePayFrequency(CreateEmploymentApiModelSourceValuePayFrequency createEmploymentAPIModelSourceValuePayFrequency)
+        {
             CreateEmploymentApiModelPayFrequencySourceValueUnionType typ = CreateEmploymentApiModelPayFrequencySourceValueUnionType.CreateEmploymentApiModelSourceValuePayFrequency;
 
             CreateEmploymentApiModelPayFrequencySourceValueUnion res = new CreateEmploymentApiModelPayFrequencySourceValueUnion(typ);
             res.CreateEmploymentApiModelSourceValuePayFrequency = createEmploymentAPIModelSourceValuePayFrequency;
             return res;
         }
-
-        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateEmploymentApiModelPayFrequencySourceValueUnionType typ = CreateEmploymentApiModelPayFrequencySourceValueUnionType.ArrayOfAny;
 
             CreateEmploymentApiModelPayFrequencySourceValueUnion res = new CreateEmploymentApiModelPayFrequencySourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateNull() {
+        public static CreateEmploymentApiModelPayFrequencySourceValueUnion CreateNull()
+        {
             CreateEmploymentApiModelPayFrequencySourceValueUnionType typ = CreateEmploymentApiModelPayFrequencySourceValueUnionType.Null;
             return new CreateEmploymentApiModelPayFrequencySourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateEmploymentApiModelPayFrequencySourceValueUnion res = (CreateEmploymentApiModelPayFrequencySourceValueUnion)value;
                 if (CreateEmploymentApiModelPayFrequencySourceValueUnionType.FromString(res.Type).Equals(CreateEmploymentApiModelPayFrequencySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateEmploymentApiModelSourceValuePayFrequency != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateEmploymentApiModelSourceValuePayFrequency));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

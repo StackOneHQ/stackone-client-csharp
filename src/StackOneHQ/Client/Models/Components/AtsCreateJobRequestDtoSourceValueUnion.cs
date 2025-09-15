@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsCreateJobRequestDtoSourceValueUnionType
     {
         private AtsCreateJobRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsCreateJobRequestDtoSourceValueUnionType Str { get { return new AtsCreateJobRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsCreateJobRequestDtoSourceValueUnionType Number { get { return new AtsCreateJobRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsCreateJobRequestDtoSourceValueUnionType Boolean { get { return new AtsCreateJobRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsCreateJobRequestDtoSourceValueUnionType AtsCreateJobRequestDtoSourceValue { get { return new AtsCreateJobRequestDtoSourceValueUnionType("AtsCreateJobRequestDto_source_value"); } }
-        
+
         public static AtsCreateJobRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsCreateJobRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsCreateJobRequestDtoSourceValueUnionType Null { get { return new AtsCreateJobRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the job status.
     /// </summary>
     [JsonConverter(typeof(AtsCreateJobRequestDtoSourceValueUnion.AtsCreateJobRequestDtoSourceValueUnionConverter))]
-    public class AtsCreateJobRequestDtoSourceValueUnion {
-        public AtsCreateJobRequestDtoSourceValueUnion(AtsCreateJobRequestDtoSourceValueUnionType type) {
+    public class AtsCreateJobRequestDtoSourceValueUnion
+    {
+        public AtsCreateJobRequestDtoSourceValueUnion(AtsCreateJobRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsCreateJobRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsCreateJobRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsCreateJobRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsCreateJobRequestDtoSourceValueUnionType typ = AtsCreateJobRequestDtoSourceValueUnionType.Str;
 
             AtsCreateJobRequestDtoSourceValueUnion res = new AtsCreateJobRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsCreateJobRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsCreateJobRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsCreateJobRequestDtoSourceValueUnionType typ = AtsCreateJobRequestDtoSourceValueUnionType.Number;
 
             AtsCreateJobRequestDtoSourceValueUnion res = new AtsCreateJobRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsCreateJobRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsCreateJobRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsCreateJobRequestDtoSourceValueUnionType typ = AtsCreateJobRequestDtoSourceValueUnionType.Boolean;
 
             AtsCreateJobRequestDtoSourceValueUnion res = new AtsCreateJobRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsCreateJobRequestDtoSourceValueUnion CreateAtsCreateJobRequestDtoSourceValue(AtsCreateJobRequestDtoSourceValue atsCreateJobRequestDtoSourceValue) {
+        public static AtsCreateJobRequestDtoSourceValueUnion CreateAtsCreateJobRequestDtoSourceValue(AtsCreateJobRequestDtoSourceValue atsCreateJobRequestDtoSourceValue)
+        {
             AtsCreateJobRequestDtoSourceValueUnionType typ = AtsCreateJobRequestDtoSourceValueUnionType.AtsCreateJobRequestDtoSourceValue;
 
             AtsCreateJobRequestDtoSourceValueUnion res = new AtsCreateJobRequestDtoSourceValueUnion(typ);
             res.AtsCreateJobRequestDtoSourceValue = atsCreateJobRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsCreateJobRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsCreateJobRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsCreateJobRequestDtoSourceValueUnionType typ = AtsCreateJobRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsCreateJobRequestDtoSourceValueUnion res = new AtsCreateJobRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsCreateJobRequestDtoSourceValueUnion CreateNull() {
+        public static AtsCreateJobRequestDtoSourceValueUnion CreateNull()
+        {
             AtsCreateJobRequestDtoSourceValueUnionType typ = AtsCreateJobRequestDtoSourceValueUnionType.Null;
             return new AtsCreateJobRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsCreateJobRequestDtoSourceValueUnion res = (AtsCreateJobRequestDtoSourceValueUnion)value;
                 if (AtsCreateJobRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsCreateJobRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsCreateJobRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsCreateJobRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

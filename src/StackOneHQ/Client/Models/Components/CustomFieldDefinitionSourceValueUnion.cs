@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CustomFieldDefinitionSourceValueUnionType
     {
         private CustomFieldDefinitionSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CustomFieldDefinitionSourceValueUnionType Str { get { return new CustomFieldDefinitionSourceValueUnionType("str"); } }
-        
+
         public static CustomFieldDefinitionSourceValueUnionType Number { get { return new CustomFieldDefinitionSourceValueUnionType("number"); } }
-        
+
         public static CustomFieldDefinitionSourceValueUnionType Boolean { get { return new CustomFieldDefinitionSourceValueUnionType("boolean"); } }
-        
+
         public static CustomFieldDefinitionSourceValueUnionType CustomFieldDefinitionSourceValue { get { return new CustomFieldDefinitionSourceValueUnionType("CustomFieldDefinition_source_value"); } }
-        
+
         public static CustomFieldDefinitionSourceValueUnionType ArrayOfAny { get { return new CustomFieldDefinitionSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CustomFieldDefinitionSourceValueUnionType Null { get { return new CustomFieldDefinitionSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CustomFieldDefinitionSourceValueUnion.CustomFieldDefinitionSourceValueUnionConverter))]
-    public class CustomFieldDefinitionSourceValueUnion {
-        public CustomFieldDefinitionSourceValueUnion(CustomFieldDefinitionSourceValueUnionType type) {
+    public class CustomFieldDefinitionSourceValueUnion
+    {
+        public CustomFieldDefinitionSourceValueUnion(CustomFieldDefinitionSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CustomFieldDefinitionSourceValueUnionType Type { get; set; }
-
-
-        public static CustomFieldDefinitionSourceValueUnion CreateStr(string str) {
+        public static CustomFieldDefinitionSourceValueUnion CreateStr(string str)
+        {
             CustomFieldDefinitionSourceValueUnionType typ = CustomFieldDefinitionSourceValueUnionType.Str;
 
             CustomFieldDefinitionSourceValueUnion res = new CustomFieldDefinitionSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CustomFieldDefinitionSourceValueUnion CreateNumber(double number) {
+        public static CustomFieldDefinitionSourceValueUnion CreateNumber(double number)
+        {
             CustomFieldDefinitionSourceValueUnionType typ = CustomFieldDefinitionSourceValueUnionType.Number;
 
             CustomFieldDefinitionSourceValueUnion res = new CustomFieldDefinitionSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CustomFieldDefinitionSourceValueUnion CreateBoolean(bool boolean) {
+        public static CustomFieldDefinitionSourceValueUnion CreateBoolean(bool boolean)
+        {
             CustomFieldDefinitionSourceValueUnionType typ = CustomFieldDefinitionSourceValueUnionType.Boolean;
 
             CustomFieldDefinitionSourceValueUnion res = new CustomFieldDefinitionSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CustomFieldDefinitionSourceValueUnion CreateCustomFieldDefinitionSourceValue(CustomFieldDefinitionSourceValue customFieldDefinitionSourceValue) {
+        public static CustomFieldDefinitionSourceValueUnion CreateCustomFieldDefinitionSourceValue(CustomFieldDefinitionSourceValue customFieldDefinitionSourceValue)
+        {
             CustomFieldDefinitionSourceValueUnionType typ = CustomFieldDefinitionSourceValueUnionType.CustomFieldDefinitionSourceValue;
 
             CustomFieldDefinitionSourceValueUnion res = new CustomFieldDefinitionSourceValueUnion(typ);
             res.CustomFieldDefinitionSourceValue = customFieldDefinitionSourceValue;
             return res;
         }
-
-        public static CustomFieldDefinitionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CustomFieldDefinitionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CustomFieldDefinitionSourceValueUnionType typ = CustomFieldDefinitionSourceValueUnionType.ArrayOfAny;
 
             CustomFieldDefinitionSourceValueUnion res = new CustomFieldDefinitionSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CustomFieldDefinitionSourceValueUnion CreateNull() {
+        public static CustomFieldDefinitionSourceValueUnion CreateNull()
+        {
             CustomFieldDefinitionSourceValueUnionType typ = CustomFieldDefinitionSourceValueUnionType.Null;
             return new CustomFieldDefinitionSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CustomFieldDefinitionSourceValueUnion res = (CustomFieldDefinitionSourceValueUnion)value;
                 if (CustomFieldDefinitionSourceValueUnionType.FromString(res.Type).Equals(CustomFieldDefinitionSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CustomFieldDefinitionSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CustomFieldDefinitionSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

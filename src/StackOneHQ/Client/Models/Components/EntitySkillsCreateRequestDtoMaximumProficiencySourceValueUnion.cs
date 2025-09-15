@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType
     {
         private EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType Str { get { return new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType("str"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType Number { get { return new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType("number"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType Boolean { get { return new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType("boolean"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType EntitySkillsCreateRequestDtoSourceValueMaximumProficiency { get { return new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType("EntitySkillsCreateRequestDto_source_value_maximum_proficiency"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType ArrayOfAny { get { return new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType Null { get { return new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion.EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionConverter))]
-    public class EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion {
-        public EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType type) {
+    public class EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion
+    {
+        public EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType Type { get; set; }
-
-
-        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateStr(string str) {
+        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateStr(string str)
+        {
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.Str;
 
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateNumber(double number) {
+        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateNumber(double number)
+        {
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.Number;
 
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateBoolean(bool boolean) {
+        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateBoolean(bool boolean)
+        {
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.Boolean;
 
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateEntitySkillsCreateRequestDtoSourceValueMaximumProficiency(EntitySkillsCreateRequestDtoSourceValueMaximumProficiency entitySkillsCreateRequestDtoSourceValueMaximumProficiency) {
+        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateEntitySkillsCreateRequestDtoSourceValueMaximumProficiency(EntitySkillsCreateRequestDtoSourceValueMaximumProficiency entitySkillsCreateRequestDtoSourceValueMaximumProficiency)
+        {
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.EntitySkillsCreateRequestDtoSourceValueMaximumProficiency;
 
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(typ);
             res.EntitySkillsCreateRequestDtoSourceValueMaximumProficiency = entitySkillsCreateRequestDtoSourceValueMaximumProficiency;
             return res;
         }
-
-        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.ArrayOfAny;
 
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion res = new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateNull() {
+        public static EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion CreateNull()
+        {
             EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType typ = EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.Null;
             return new EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion res = (EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnion)value;
                 if (EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.FromString(res.Type).Equals(EntitySkillsCreateRequestDtoMaximumProficiencySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EntitySkillsCreateRequestDtoSourceValueMaximumProficiency != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EntitySkillsCreateRequestDtoSourceValueMaximumProficiency));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

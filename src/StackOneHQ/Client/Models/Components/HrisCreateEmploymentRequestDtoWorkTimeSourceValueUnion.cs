@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType
     {
         private HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType Str { get { return new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType Number { get { return new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType Boolean { get { return new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType HrisCreateEmploymentRequestDtoSourceValueWorkTime { get { return new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType("HrisCreateEmploymentRequestDto_source_value_work_time"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType ArrayOfAny { get { return new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType Null { get { return new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion.HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionConverter))]
-    public class HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion {
-        public HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType type) {
+    public class HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion
+    {
+        public HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateStr(string str) {
+        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateStr(string str)
+        {
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType typ = HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.Str;
 
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion res = new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType typ = HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.Number;
 
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion res = new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType typ = HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.Boolean;
 
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion res = new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateHrisCreateEmploymentRequestDtoSourceValueWorkTime(HrisCreateEmploymentRequestDtoSourceValueWorkTime hrisCreateEmploymentRequestDtoSourceValueWorkTime) {
+        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateHrisCreateEmploymentRequestDtoSourceValueWorkTime(HrisCreateEmploymentRequestDtoSourceValueWorkTime hrisCreateEmploymentRequestDtoSourceValueWorkTime)
+        {
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType typ = HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.HrisCreateEmploymentRequestDtoSourceValueWorkTime;
 
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion res = new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(typ);
             res.HrisCreateEmploymentRequestDtoSourceValueWorkTime = hrisCreateEmploymentRequestDtoSourceValueWorkTime;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType typ = HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.ArrayOfAny;
 
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion res = new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateNull() {
+        public static HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion CreateNull()
+        {
             HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType typ = HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.Null;
             return new HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion res = (HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion)value;
                 if (HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.FromString(res.Type).Equals(HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateEmploymentRequestDtoSourceValueWorkTime != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateEmploymentRequestDtoSourceValueWorkTime));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

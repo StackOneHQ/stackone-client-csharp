@@ -16,8 +16,8 @@ namespace StackOneHQ.Client.Models.Components
     public class JobPostingCompensation
     {
 
-        [JsonProperty("name")]
-        public string? Name { get; set; } = null;
+        [JsonProperty("title")]
+        public string? Title { get; set; } = null;
 
         [JsonProperty("type")]
         public JobPostingCompensationType? Type { get; set; } = null;
@@ -34,10 +34,10 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public string? Value { get; set; } = null;
 
-        [JsonProperty("min_value")]
-        public string? MinValue { get; set; } = null;
+        [JsonProperty("min_value_range")]
+        public string? MinValueRange { get; set; } = null;
 
-        [JsonProperty("max_value")]
-        public string? MaxValue { get; set; } = null;
+        [JsonProperty("max_value_range")]
+        public string? MaxValueRange { get; set; } = null;
     }
 }

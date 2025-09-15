@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FoldersHasContentUnionType
     {
         private FoldersHasContentUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FoldersHasContentUnionType Boolean { get { return new FoldersHasContentUnionType("boolean"); } }
-        
+
         public static FoldersHasContentUnionType FoldersHasContentEnum { get { return new FoldersHasContentUnionType("Folders_has_content_enum"); } }
-        
+
         public static FoldersHasContentUnionType Null { get { return new FoldersHasContentUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the folder has content
     /// </summary>
     [JsonConverter(typeof(FoldersHasContentUnion.FoldersHasContentUnionConverter))]
-    public class FoldersHasContentUnion {
-        public FoldersHasContentUnion(FoldersHasContentUnionType type) {
+    public class FoldersHasContentUnion
+    {
+        public FoldersHasContentUnion(FoldersHasContentUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public FoldersHasContentEnum? FoldersHasContentEnum { get; set; }
 
         public FoldersHasContentUnionType Type { get; set; }
-
-
-        public static FoldersHasContentUnion CreateBoolean(bool boolean) {
+        public static FoldersHasContentUnion CreateBoolean(bool boolean)
+        {
             FoldersHasContentUnionType typ = FoldersHasContentUnionType.Boolean;
 
             FoldersHasContentUnion res = new FoldersHasContentUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FoldersHasContentUnion CreateFoldersHasContentEnum(FoldersHasContentEnum foldersHasContentEnum) {
+        public static FoldersHasContentUnion CreateFoldersHasContentEnum(FoldersHasContentEnum foldersHasContentEnum)
+        {
             FoldersHasContentUnionType typ = FoldersHasContentUnionType.FoldersHasContentEnum;
 
             FoldersHasContentUnion res = new FoldersHasContentUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FoldersHasContentUnion CreateNull() {
+        public static FoldersHasContentUnion CreateNull()
+        {
             FoldersHasContentUnionType typ = FoldersHasContentUnionType.Null;
             return new FoldersHasContentUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FoldersHasContentUnion res = (FoldersHasContentUnion)value;
                 if (FoldersHasContentUnionType.FromString(res.Type).Equals(FoldersHasContentUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FoldersHasContentEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FoldersHasContentEnum));
                     return;
                 }
-
             }
 
         }

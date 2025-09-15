@@ -16,17 +16,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AdditionalDataValueType
     {
         private AdditionalDataValueType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AdditionalDataValueType Str { get { return new AdditionalDataValueType("str"); } }
-        
+
         public static AdditionalDataValueType ArrayOfStr { get { return new AdditionalDataValueType("arrayOfStr"); } }
-        
+
         public static AdditionalDataValueType Null { get { return new AdditionalDataValueType("null"); } }
 
         public override string ToString() { return Value; }
@@ -59,8 +59,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The value of the additional data
     /// </summary>
     [JsonConverter(typeof(AdditionalDataValue.AdditionalDataValueConverter))]
-    public class AdditionalDataValue {
-        public AdditionalDataValue(AdditionalDataValueType type) {
+    public class AdditionalDataValue
+    {
+        public AdditionalDataValue(AdditionalDataValueType type)
+        {
             Type = type;
         }
 
@@ -71,17 +73,16 @@ namespace StackOneHQ.Client.Models.Components
         public List<string>? ArrayOfStr { get; set; }
 
         public AdditionalDataValueType Type { get; set; }
-
-
-        public static AdditionalDataValue CreateStr(string str) {
+        public static AdditionalDataValue CreateStr(string str)
+        {
             AdditionalDataValueType typ = AdditionalDataValueType.Str;
 
             AdditionalDataValue res = new AdditionalDataValue(typ);
             res.Str = str;
             return res;
         }
-
-        public static AdditionalDataValue CreateArrayOfStr(List<string> arrayOfStr) {
+        public static AdditionalDataValue CreateArrayOfStr(List<string> arrayOfStr)
+        {
             AdditionalDataValueType typ = AdditionalDataValueType.ArrayOfStr;
 
             AdditionalDataValue res = new AdditionalDataValue(typ);
@@ -89,7 +90,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AdditionalDataValue CreateNull() {
+        public static AdditionalDataValue CreateNull()
+        {
             AdditionalDataValueType typ = AdditionalDataValueType.Null;
             return new AdditionalDataValue(typ);
         }
@@ -167,23 +169,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AdditionalDataValue res = (AdditionalDataValue)value;
                 if (AdditionalDataValueType.FromString(res.Type).Equals(AdditionalDataValueType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.ArrayOfStr != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfStr));
                     return;
                 }
-
             }
 
         }

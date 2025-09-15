@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class JobPostingCompensationPayFrequencySourceValueUnionType
     {
         private JobPostingCompensationPayFrequencySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static JobPostingCompensationPayFrequencySourceValueUnionType Str { get { return new JobPostingCompensationPayFrequencySourceValueUnionType("str"); } }
-        
+
         public static JobPostingCompensationPayFrequencySourceValueUnionType Number { get { return new JobPostingCompensationPayFrequencySourceValueUnionType("number"); } }
-        
+
         public static JobPostingCompensationPayFrequencySourceValueUnionType Boolean { get { return new JobPostingCompensationPayFrequencySourceValueUnionType("boolean"); } }
-        
+
         public static JobPostingCompensationPayFrequencySourceValueUnionType JobPostingCompensationSourceValuePayFrequency { get { return new JobPostingCompensationPayFrequencySourceValueUnionType("JobPostingCompensation_source_value_pay_frequency"); } }
-        
+
         public static JobPostingCompensationPayFrequencySourceValueUnionType ArrayOfAny { get { return new JobPostingCompensationPayFrequencySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static JobPostingCompensationPayFrequencySourceValueUnionType Null { get { return new JobPostingCompensationPayFrequencySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay frequency.
     /// </summary>
     [JsonConverter(typeof(JobPostingCompensationPayFrequencySourceValueUnion.JobPostingCompensationPayFrequencySourceValueUnionConverter))]
-    public class JobPostingCompensationPayFrequencySourceValueUnion {
-        public JobPostingCompensationPayFrequencySourceValueUnion(JobPostingCompensationPayFrequencySourceValueUnionType type) {
+    public class JobPostingCompensationPayFrequencySourceValueUnion
+    {
+        public JobPostingCompensationPayFrequencySourceValueUnion(JobPostingCompensationPayFrequencySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public JobPostingCompensationPayFrequencySourceValueUnionType Type { get; set; }
-
-
-        public static JobPostingCompensationPayFrequencySourceValueUnion CreateStr(string str) {
+        public static JobPostingCompensationPayFrequencySourceValueUnion CreateStr(string str)
+        {
             JobPostingCompensationPayFrequencySourceValueUnionType typ = JobPostingCompensationPayFrequencySourceValueUnionType.Str;
 
             JobPostingCompensationPayFrequencySourceValueUnion res = new JobPostingCompensationPayFrequencySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static JobPostingCompensationPayFrequencySourceValueUnion CreateNumber(double number) {
+        public static JobPostingCompensationPayFrequencySourceValueUnion CreateNumber(double number)
+        {
             JobPostingCompensationPayFrequencySourceValueUnionType typ = JobPostingCompensationPayFrequencySourceValueUnionType.Number;
 
             JobPostingCompensationPayFrequencySourceValueUnion res = new JobPostingCompensationPayFrequencySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static JobPostingCompensationPayFrequencySourceValueUnion CreateBoolean(bool boolean) {
+        public static JobPostingCompensationPayFrequencySourceValueUnion CreateBoolean(bool boolean)
+        {
             JobPostingCompensationPayFrequencySourceValueUnionType typ = JobPostingCompensationPayFrequencySourceValueUnionType.Boolean;
 
             JobPostingCompensationPayFrequencySourceValueUnion res = new JobPostingCompensationPayFrequencySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static JobPostingCompensationPayFrequencySourceValueUnion CreateJobPostingCompensationSourceValuePayFrequency(JobPostingCompensationSourceValuePayFrequency jobPostingCompensationSourceValuePayFrequency) {
+        public static JobPostingCompensationPayFrequencySourceValueUnion CreateJobPostingCompensationSourceValuePayFrequency(JobPostingCompensationSourceValuePayFrequency jobPostingCompensationSourceValuePayFrequency)
+        {
             JobPostingCompensationPayFrequencySourceValueUnionType typ = JobPostingCompensationPayFrequencySourceValueUnionType.JobPostingCompensationSourceValuePayFrequency;
 
             JobPostingCompensationPayFrequencySourceValueUnion res = new JobPostingCompensationPayFrequencySourceValueUnion(typ);
             res.JobPostingCompensationSourceValuePayFrequency = jobPostingCompensationSourceValuePayFrequency;
             return res;
         }
-
-        public static JobPostingCompensationPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static JobPostingCompensationPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             JobPostingCompensationPayFrequencySourceValueUnionType typ = JobPostingCompensationPayFrequencySourceValueUnionType.ArrayOfAny;
 
             JobPostingCompensationPayFrequencySourceValueUnion res = new JobPostingCompensationPayFrequencySourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static JobPostingCompensationPayFrequencySourceValueUnion CreateNull() {
+        public static JobPostingCompensationPayFrequencySourceValueUnion CreateNull()
+        {
             JobPostingCompensationPayFrequencySourceValueUnionType typ = JobPostingCompensationPayFrequencySourceValueUnionType.Null;
             return new JobPostingCompensationPayFrequencySourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 JobPostingCompensationPayFrequencySourceValueUnion res = (JobPostingCompensationPayFrequencySourceValueUnion)value;
                 if (JobPostingCompensationPayFrequencySourceValueUnionType.FromString(res.Type).Equals(JobPostingCompensationPayFrequencySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.JobPostingCompensationSourceValuePayFrequency != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.JobPostingCompensationSourceValuePayFrequency));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

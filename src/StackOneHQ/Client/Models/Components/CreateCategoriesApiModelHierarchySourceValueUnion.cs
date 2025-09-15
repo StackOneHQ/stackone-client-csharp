@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateCategoriesApiModelHierarchySourceValueUnionType
     {
         private CreateCategoriesApiModelHierarchySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateCategoriesApiModelHierarchySourceValueUnionType Str { get { return new CreateCategoriesApiModelHierarchySourceValueUnionType("str"); } }
-        
+
         public static CreateCategoriesApiModelHierarchySourceValueUnionType Number { get { return new CreateCategoriesApiModelHierarchySourceValueUnionType("number"); } }
-        
+
         public static CreateCategoriesApiModelHierarchySourceValueUnionType Boolean { get { return new CreateCategoriesApiModelHierarchySourceValueUnionType("boolean"); } }
-        
+
         public static CreateCategoriesApiModelHierarchySourceValueUnionType CreateCategoriesApiModelSourceValueHierarchy { get { return new CreateCategoriesApiModelHierarchySourceValueUnionType("CreateCategoriesApiModel_source_value_hierarchy"); } }
-        
+
         public static CreateCategoriesApiModelHierarchySourceValueUnionType ArrayOfAny { get { return new CreateCategoriesApiModelHierarchySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateCategoriesApiModelHierarchySourceValueUnionType Null { get { return new CreateCategoriesApiModelHierarchySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateCategoriesApiModelHierarchySourceValueUnion.CreateCategoriesApiModelHierarchySourceValueUnionConverter))]
-    public class CreateCategoriesApiModelHierarchySourceValueUnion {
-        public CreateCategoriesApiModelHierarchySourceValueUnion(CreateCategoriesApiModelHierarchySourceValueUnionType type) {
+    public class CreateCategoriesApiModelHierarchySourceValueUnion
+    {
+        public CreateCategoriesApiModelHierarchySourceValueUnion(CreateCategoriesApiModelHierarchySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateCategoriesApiModelHierarchySourceValueUnionType Type { get; set; }
-
-
-        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateStr(string str) {
+        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateStr(string str)
+        {
             CreateCategoriesApiModelHierarchySourceValueUnionType typ = CreateCategoriesApiModelHierarchySourceValueUnionType.Str;
 
             CreateCategoriesApiModelHierarchySourceValueUnion res = new CreateCategoriesApiModelHierarchySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateNumber(double number) {
+        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateNumber(double number)
+        {
             CreateCategoriesApiModelHierarchySourceValueUnionType typ = CreateCategoriesApiModelHierarchySourceValueUnionType.Number;
 
             CreateCategoriesApiModelHierarchySourceValueUnion res = new CreateCategoriesApiModelHierarchySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateCategoriesApiModelHierarchySourceValueUnionType typ = CreateCategoriesApiModelHierarchySourceValueUnionType.Boolean;
 
             CreateCategoriesApiModelHierarchySourceValueUnion res = new CreateCategoriesApiModelHierarchySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateCreateCategoriesApiModelSourceValueHierarchy(CreateCategoriesApiModelSourceValueHierarchy createCategoriesAPIModelSourceValueHierarchy) {
+        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateCreateCategoriesApiModelSourceValueHierarchy(CreateCategoriesApiModelSourceValueHierarchy createCategoriesAPIModelSourceValueHierarchy)
+        {
             CreateCategoriesApiModelHierarchySourceValueUnionType typ = CreateCategoriesApiModelHierarchySourceValueUnionType.CreateCategoriesApiModelSourceValueHierarchy;
 
             CreateCategoriesApiModelHierarchySourceValueUnion res = new CreateCategoriesApiModelHierarchySourceValueUnion(typ);
             res.CreateCategoriesApiModelSourceValueHierarchy = createCategoriesAPIModelSourceValueHierarchy;
             return res;
         }
-
-        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateCategoriesApiModelHierarchySourceValueUnionType typ = CreateCategoriesApiModelHierarchySourceValueUnionType.ArrayOfAny;
 
             CreateCategoriesApiModelHierarchySourceValueUnion res = new CreateCategoriesApiModelHierarchySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateNull() {
+        public static CreateCategoriesApiModelHierarchySourceValueUnion CreateNull()
+        {
             CreateCategoriesApiModelHierarchySourceValueUnionType typ = CreateCategoriesApiModelHierarchySourceValueUnionType.Null;
             return new CreateCategoriesApiModelHierarchySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateCategoriesApiModelHierarchySourceValueUnion res = (CreateCategoriesApiModelHierarchySourceValueUnion)value;
                 if (CreateCategoriesApiModelHierarchySourceValueUnionType.FromString(res.Type).Equals(CreateCategoriesApiModelHierarchySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateCategoriesApiModelSourceValueHierarchy != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateCategoriesApiModelSourceValueHierarchy));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

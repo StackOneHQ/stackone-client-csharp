@@ -26,9 +26,9 @@ namespace StackOneHQ.Client.Models.Requests
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// List of time off type ids to filter by.
+        /// List of time off policy ids to filter by.
         /// </summary>
-        [SpeakeasyMetadata("queryParam:name=type_ids")]
-        public List<string>? TypeIds { get; set; } = null;
+        [SpeakeasyMetadata("queryParam:name=policy_ids")]
+        public List<string>? PolicyIds { get; set; } = null;
     }
 }

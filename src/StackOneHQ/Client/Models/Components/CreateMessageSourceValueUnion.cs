@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateMessageSourceValueUnionType
     {
         private CreateMessageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateMessageSourceValueUnionType Str { get { return new CreateMessageSourceValueUnionType("str"); } }
-        
+
         public static CreateMessageSourceValueUnionType Number { get { return new CreateMessageSourceValueUnionType("number"); } }
-        
+
         public static CreateMessageSourceValueUnionType Boolean { get { return new CreateMessageSourceValueUnionType("boolean"); } }
-        
+
         public static CreateMessageSourceValueUnionType CreateMessageSourceValue { get { return new CreateMessageSourceValueUnionType("CreateMessage_source_value"); } }
-        
+
         public static CreateMessageSourceValueUnionType ArrayOfAny { get { return new CreateMessageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateMessageSourceValueUnionType Null { get { return new CreateMessageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The original value from the provider used to derive the unified message type.
     /// </summary>
     [JsonConverter(typeof(CreateMessageSourceValueUnion.CreateMessageSourceValueUnionConverter))]
-    public class CreateMessageSourceValueUnion {
-        public CreateMessageSourceValueUnion(CreateMessageSourceValueUnionType type) {
+    public class CreateMessageSourceValueUnion
+    {
+        public CreateMessageSourceValueUnion(CreateMessageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateMessageSourceValueUnionType Type { get; set; }
-
-
-        public static CreateMessageSourceValueUnion CreateStr(string str) {
+        public static CreateMessageSourceValueUnion CreateStr(string str)
+        {
             CreateMessageSourceValueUnionType typ = CreateMessageSourceValueUnionType.Str;
 
             CreateMessageSourceValueUnion res = new CreateMessageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateMessageSourceValueUnion CreateNumber(double number) {
+        public static CreateMessageSourceValueUnion CreateNumber(double number)
+        {
             CreateMessageSourceValueUnionType typ = CreateMessageSourceValueUnionType.Number;
 
             CreateMessageSourceValueUnion res = new CreateMessageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateMessageSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateMessageSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateMessageSourceValueUnionType typ = CreateMessageSourceValueUnionType.Boolean;
 
             CreateMessageSourceValueUnion res = new CreateMessageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateMessageSourceValueUnion CreateCreateMessageSourceValue(CreateMessageSourceValue createMessageSourceValue) {
+        public static CreateMessageSourceValueUnion CreateCreateMessageSourceValue(CreateMessageSourceValue createMessageSourceValue)
+        {
             CreateMessageSourceValueUnionType typ = CreateMessageSourceValueUnionType.CreateMessageSourceValue;
 
             CreateMessageSourceValueUnion res = new CreateMessageSourceValueUnion(typ);
             res.CreateMessageSourceValue = createMessageSourceValue;
             return res;
         }
-
-        public static CreateMessageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateMessageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateMessageSourceValueUnionType typ = CreateMessageSourceValueUnionType.ArrayOfAny;
 
             CreateMessageSourceValueUnion res = new CreateMessageSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateMessageSourceValueUnion CreateNull() {
+        public static CreateMessageSourceValueUnion CreateNull()
+        {
             CreateMessageSourceValueUnionType typ = CreateMessageSourceValueUnionType.Null;
             return new CreateMessageSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateMessageSourceValueUnion res = (CreateMessageSourceValueUnion)value;
                 if (CreateMessageSourceValueUnionType.FromString(res.Type).Equals(CreateMessageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateMessageSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateMessageSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

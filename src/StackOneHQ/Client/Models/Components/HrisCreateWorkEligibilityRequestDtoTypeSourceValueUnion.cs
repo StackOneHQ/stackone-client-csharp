@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType
     {
         private HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType Str { get { return new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType Number { get { return new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType Boolean { get { return new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType HrisCreateWorkEligibilityRequestDtoSourceValueType { get { return new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType("HrisCreateWorkEligibilityRequestDto_source_value_type"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType ArrayOfAny { get { return new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType Null { get { return new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion.HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionConverter))]
-    public class HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion {
-        public HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType type) {
+    public class HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion
+    {
+        public HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateStr(string str) {
+        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateStr(string str)
+        {
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.Str;
 
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.Number;
 
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.Boolean;
 
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateHrisCreateWorkEligibilityRequestDtoSourceValueType(HrisCreateWorkEligibilityRequestDtoSourceValueType hrisCreateWorkEligibilityRequestDtoSourceValueType) {
+        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateHrisCreateWorkEligibilityRequestDtoSourceValueType(HrisCreateWorkEligibilityRequestDtoSourceValueType hrisCreateWorkEligibilityRequestDtoSourceValueType)
+        {
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.HrisCreateWorkEligibilityRequestDtoSourceValueType;
 
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(typ);
             res.HrisCreateWorkEligibilityRequestDtoSourceValueType = hrisCreateWorkEligibilityRequestDtoSourceValueType;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.ArrayOfAny;
 
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateNull() {
+        public static HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion CreateNull()
+        {
             HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.Null;
             return new HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion res = (HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnion)value;
                 if (HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.FromString(res.Type).Equals(HrisCreateWorkEligibilityRequestDtoTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateWorkEligibilityRequestDtoSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateWorkEligibilityRequestDtoSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

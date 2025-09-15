@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ContentSourceValueUnionType
     {
         private ContentSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ContentSourceValueUnionType Str { get { return new ContentSourceValueUnionType("str"); } }
-        
+
         public static ContentSourceValueUnionType Number { get { return new ContentSourceValueUnionType("number"); } }
-        
+
         public static ContentSourceValueUnionType Boolean { get { return new ContentSourceValueUnionType("boolean"); } }
-        
+
         public static ContentSourceValueUnionType ContentSourceValue { get { return new ContentSourceValueUnionType("Content_source_value"); } }
-        
+
         public static ContentSourceValueUnionType ArrayOfAny { get { return new ContentSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ContentSourceValueUnionType Null { get { return new ContentSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(ContentSourceValueUnion.ContentSourceValueUnionConverter))]
-    public class ContentSourceValueUnion {
-        public ContentSourceValueUnion(ContentSourceValueUnionType type) {
+    public class ContentSourceValueUnion
+    {
+        public ContentSourceValueUnion(ContentSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ContentSourceValueUnionType Type { get; set; }
-
-
-        public static ContentSourceValueUnion CreateStr(string str) {
+        public static ContentSourceValueUnion CreateStr(string str)
+        {
             ContentSourceValueUnionType typ = ContentSourceValueUnionType.Str;
 
             ContentSourceValueUnion res = new ContentSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ContentSourceValueUnion CreateNumber(double number) {
+        public static ContentSourceValueUnion CreateNumber(double number)
+        {
             ContentSourceValueUnionType typ = ContentSourceValueUnionType.Number;
 
             ContentSourceValueUnion res = new ContentSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ContentSourceValueUnion CreateBoolean(bool boolean) {
+        public static ContentSourceValueUnion CreateBoolean(bool boolean)
+        {
             ContentSourceValueUnionType typ = ContentSourceValueUnionType.Boolean;
 
             ContentSourceValueUnion res = new ContentSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ContentSourceValueUnion CreateContentSourceValue(ContentSourceValue contentSourceValue) {
+        public static ContentSourceValueUnion CreateContentSourceValue(ContentSourceValue contentSourceValue)
+        {
             ContentSourceValueUnionType typ = ContentSourceValueUnionType.ContentSourceValue;
 
             ContentSourceValueUnion res = new ContentSourceValueUnion(typ);
             res.ContentSourceValue = contentSourceValue;
             return res;
         }
-
-        public static ContentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ContentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ContentSourceValueUnionType typ = ContentSourceValueUnionType.ArrayOfAny;
 
             ContentSourceValueUnion res = new ContentSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ContentSourceValueUnion CreateNull() {
+        public static ContentSourceValueUnion CreateNull()
+        {
             ContentSourceValueUnionType typ = ContentSourceValueUnionType.Null;
             return new ContentSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ContentSourceValueUnion res = (ContentSourceValueUnion)value;
                 if (ContentSourceValueUnionType.FromString(res.Type).Equals(ContentSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ContentSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ContentSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

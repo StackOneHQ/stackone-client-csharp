@@ -1721,6 +1721,518 @@ paths:
         - basic: []
       x-speakeasy-name-override: "perform"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  "/mcp":
+    get:
+      tags:
+        - "MCP"
+      summary: "Open MCP SSE stream"
+      description: "Open a dedicated Server-Sent Events stream for MCP notifications"
+      operationId: "stackone_mcp_get"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "Account secure id for the target provider account"
+          required: true
+          schema:
+            type: "string"
+        - name: "Accept"
+          in: "header"
+          description: "Must be text/event-stream"
+          required: true
+          schema:
+            type: "string"
+        - name: "mcp-session-id"
+          in: "header"
+          description: "Session id"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "SSE stream opened"
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+        - ApiKey: []
+      x-speakeasy-name-override: "mcp_get"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+    post:
+      tags:
+        - "MCP"
+      summary: "Send MCP JSON-RPC message"
+      description: "Send JSON-RPC request to the MCP server over HTTP streaming transport"
+      operationId: "stackone_mcp_post"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "Account secure id for the target provider account"
+          required: true
+          schema:
+            type: "string"
+        - name: "mcp-session-id"
+          in: "header"
+          description: "Session id; omit for initialize, include for subsequent calls"
+          required: false
+          schema:
+            type: "string"
+      requestBody:
+        description: "JSON-RPC 2.0 message"
+        content:
+          "application/json":
+            schema: {"$ref": "#/components/schemas/JsonRpcMessageDto"}
+            examples:
+              "initialize":
+                summary: "Initialize session"
+                value: {"jsonrpc": "2.0", "method": "initialize", "params": {"clientInfo": {"name": "my-client", "version": "1.0.0"}, "protocolVersion": "2025-03-26", "capabilities": {}}, "id": "init-1"}
+              "toolsList":
+                summary: "List tools"
+                value: {"jsonrpc": "2.0", "method": "tools/list", "params": {}, "id": "tools-1"}
+              "toolsCall":
+                summary: "Call a tool"
+                value: {"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "unified_hris_list_employees", "arguments": {}}, "id": "call-1"}
+        required: true
+      responses:
+        "200":
+          description: "Processed successfully"
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+        - ApiKey: []
+      x-speakeasy-name-override: "mcp_post"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+    delete:
+      tags:
+        - "MCP"
+      summary: "Delete MCP session"
+      description: "Close an existing MCP session for the provided session id"
+      operationId: "stackone_mcp_delete"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "Account secure id for the target provider account"
+          required: true
+          schema:
+            type: "string"
+        - name: "mcp-session-id"
+          in: "header"
+          description: "Session id"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Session closed"
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+        - ApiKey: []
+      x-speakeasy-name-override: "mcp_delete"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  "/actions":
+    get:
+      tags:
+        - "Actions"
+      summary: "List all actions metadata"
+      description: "Retrieves a list of all actions metadata"
+      operationId: "stackone_list_actions_meta"
+      parameters:
+        - name: "page"
+          in: "query"
+          description: "The page number of the results to fetch"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            nullable: true
+        - name: "page_size"
+          in: "query"
+          description: "The number of results per page (default value is 25)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "next"
+          in: "query"
+          description: "The unified cursor"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "group_by"
+          in: "query"
+          description: "The relation to group the results by"
+          required: false
+          schema:
+            type: "string"
+            default: "connector"
+            nullable: true
+            example: ["connector"]
+        - name: "filter"
+          in: "query"
+          description: "Actions Metadata filters"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            properties:
+              "connectors":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of connectors to filter the results by."
+                nullable: true
+                example: "connector1,connector2"
+              "account_ids":
+                type: "string"
+                additionalProperties: false
+                description: "A comma-separated list of account IDs to filter the results by."
+                nullable: true
+                example: "account1,account2"
+              "action_key":
+                type: "string"
+                additionalProperties: false
+                description: "The action key to filter the results by"
+                nullable: true
+                example: "action1"
+            nullable: true
+        - name: "include"
+          in: "query"
+          description: "Additional data to include in the response"
+          required: false
+          schema:
+            type: "array"
+            items:
+              type: "string"
+              enum:
+                - "operation_details"
+            nullable: true
+            example: ["operation_details"]
+      responses:
+        "200":
+          description: "List of actions metadata"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ActionsMetaPaginated"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      x-speakeasy-name-override: "list_actions_meta"
+      x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  "/actions/rpc":
+    post:
+      tags:
+        - "Actions"
+      summary: "Make an RPC call to an action"
+      description: "Makes a remote procedure call to the specified action"
+      operationId: "stackone_rpc_action"
+      requestBody:
+        content:
+          "application/json":
+            schema: {"$ref": "#/components/schemas/ActionsRpcRequestDto"}
+        required: true
+      responses:
+        "200":
+          description: "Action response"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ActionsRpcResponse"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      x-speakeasy-name-override: "rpc_action"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/companies:
     get:
       tags:
@@ -3010,11 +3522,11 @@ paths:
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
-              "type_ids":
+              "policy_ids":
                 type: "array"
                 items:
                   type: "string"
-                description: "List of time off type ids to filter by."
+                description: "List of time off policy ids to filter by."
                 nullable: true
             nullable: true
         - name: "page"
@@ -4004,7 +4516,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+            example: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -4179,7 +4691,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+            example: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
       responses:
         "200":
           description: "The document related to the employee with the given identifiers was retrieved."
@@ -5388,7 +5900,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -5565,7 +6077,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -5693,7 +6205,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -5975,7 +6487,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -9078,11 +9590,11 @@ paths:
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
-              "type_ids":
+              "policy_ids":
                 type: "array"
                 items:
                   type: "string"
-                description: "List of time off type ids to filter by."
+                description: "List of time off policy ids to filter by."
                 nullable: true
             nullable: true
         - name: "page"
@@ -11886,7 +12398,7 @@ paths:
                 nullable: true
               "stage":
                 type: "string"
-                description: "Filter to select applications by stage and sub-stage"
+                description: "Filter to select applications by application_stage id"
                 nullable: true
             nullable: true
         - name: "page"
@@ -14463,7 +14975,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+            example: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
         - name: "filter"
           in: "query"
           description: "ATS Document Filter"
@@ -14650,7 +15162,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+            example: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
       responses:
         "200":
           description: "The document related to the application with the given identifiers was retrieved."
@@ -16928,7 +17440,7 @@ paths:
   /unified/ats/interview_stages:
     get:
       tags:
-        - "Interview Stages"
+        - "Application Stages"
       summary: "List Interview Stages"
       operationId: "ats_list_interview_stages"
       parameters:
@@ -17091,6 +17603,7 @@ paths:
           content:
             "application/json":
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      deprecated: true
       security:
         - basic: []
       x-speakeasy-group: "ats.interviewStages"
@@ -17100,7 +17613,7 @@ paths:
   /unified/ats/interview_stages/{id}:
     get:
       tags:
-        - "Interview Stages"
+        - "Application Stages"
       summary: "Get Interview Stage"
       operationId: "ats_get_interview_stage"
       parameters:
@@ -17211,10 +17724,302 @@ paths:
           content:
             "application/json":
               schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      deprecated: true
       security:
         - basic: []
       x-speakeasy-group: "ats.interviewStages"
       x-speakeasy-name-override: "get"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/ats/application_stages:
+    get:
+      tags:
+        - "Application Stages"
+      summary: "List Application Stages"
+      operationId: "ats_list_application_stages"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "raw"
+          in: "query"
+          description: "Indicates that the raw request result should be returned in addition to the mapped result (default value is false)"
+          required: false
+          schema:
+            type: "boolean"
+            nullable: true
+        - name: "proxy"
+          in: "query"
+          description: "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            additionalProperties: true
+            nullable: true
+        - name: "fields"
+          in: "query"
+          description: "The comma separated list of fields that will be returned in the response (if empty, all fields are returned)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "id,remote_id,name,order,created_at,updated_at"
+        - name: "filter"
+          in: "query"
+          description: "Filter parameters that allow greater customisation of the list response"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            properties:
+              "updated_after":
+                type: "string"
+                format: "date-time"
+                additionalProperties: false
+                description: "Use a string with a date to only select results updated after that given date"
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+            nullable: true
+        - name: "page"
+          in: "query"
+          description: "The page number of the results to fetch"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            nullable: true
+        - name: "page_size"
+          in: "query"
+          description: "The number of results per page (default value is 25)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "next"
+          in: "query"
+          description: "The unified cursor"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "updated_after"
+          in: "query"
+          description: "Use a string with a date to only select results updated after that given date"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            format: "date-time"
+            nullable: true
+            example: "2020-01-01T00:00:00.000Z"
+        - name: "sync_token"
+          in: "query"
+          description: "The sync token to select the only updated results"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            nullable: true
+      responses:
+        "200":
+          description: "The list of application stages was retrieved."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InterviewStagesPaginated"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "ats"
+      x-speakeasy-name-override: "list_application_stages"
+      x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/ats/application_stages/{id}:
+    get:
+      tags:
+        - "Application Stages"
+      summary: "Get Application Stage"
+      operationId: "ats_get_application_stage"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "raw"
+          in: "query"
+          description: "Indicates that the raw request result should be returned in addition to the mapped result (default value is false)"
+          required: false
+          schema:
+            type: "boolean"
+            nullable: true
+        - name: "proxy"
+          in: "query"
+          description: "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            additionalProperties: true
+            nullable: true
+        - name: "fields"
+          in: "query"
+          description: "The comma separated list of fields that will be returned in the response (if empty, all fields are returned)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+            example: "id,remote_id,name,order,created_at,updated_at"
+      responses:
+        "200":
+          description: "The application-stage with the given identifier was retrieved."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InterviewStageResult"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "ats"
+      x-speakeasy-name-override: "get_application_stage"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/interviews:
     get:
@@ -18234,6 +19039,7 @@ paths:
     get:
       tags:
         - "Jobs"
+        - "Application Stages"
       summary: "Get Job Application Stage"
       operationId: "ats_get_job_application_stage"
       parameters:
@@ -28007,6 +28813,7 @@ paths:
                   - "pending"
                   - "in_progress"
                   - "completed"
+                  - "unmapped_value"
                   - null
                 description: "Filter to select assignment by status"
                 nullable: true
@@ -30606,6 +31413,7 @@ paths:
                   - "pending"
                   - "in_progress"
                   - "completed"
+                  - "unmapped_value"
                   - null
                 description: "Filter to select assignment by status"
                 nullable: true
@@ -36792,7 +37600,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,company_id,remote_company_id,name,code,rate,active"
+            example: "id,remote_id,company_id,remote_company_id,name,code,percentage,active"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -36967,7 +37775,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,company_id,remote_company_id,name,code,rate,active"
+            example: "id,remote_id,company_id,remote_company_id,name,code,percentage,active"
       responses:
         "200":
           description: "The tax rate with the given identifier was retrieved."
@@ -37540,6 +38348,131 @@ paths:
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
 components:
   schemas:
+    "ActionMetaItem":
+      type: "object"
+      properties:
+        "id":
+          type: "string"
+          description: "The action ID"
+          nullable: true
+        "name":
+          type: "string"
+          description: "The action name"
+          nullable: true
+        "description":
+          type: "string"
+          description: "The action description"
+          nullable: true
+        "schema_type":
+          type: "string"
+          description: "The schema type for the action"
+          nullable: true
+        "authentication":
+          type: "array"
+          items: {"$ref": "#/components/schemas/AuthenticationMetaItem"}
+          description: "The authentication methods supported by this action"
+          nullable: true
+        "operation_details":
+          type: "object"
+          additionalProperties: true
+          description: "The operation details for the action"
+          nullable: true
+    "ActionsMeta":
+      type: "object"
+      properties:
+        "version":
+          type: "string"
+          description: "The version of the actions metadata"
+          nullable: true
+        "name":
+          type: "string"
+          description: "The name of the provider"
+          nullable: true
+        "key":
+          type: "string"
+          description: "The unique key for the provider"
+          nullable: true
+        "icon":
+          type: "string"
+          description: "The icon URL for the provider"
+          nullable: true
+        "description":
+          type: "string"
+          description: "The description of the provider"
+          nullable: true
+        "authentication":
+          type: "array"
+          items: {"$ref": "#/components/schemas/AuthenticationMetaItem"}
+          description: "The authentication methods supported by the provider"
+          nullable: true
+        "actions":
+          type: "array"
+          items: {"$ref": "#/components/schemas/ActionMetaItem"}
+          description: "The list of actions available for this provider"
+          nullable: true
+    "ActionsMetaPaginated":
+      type: "object"
+      properties:
+        "next":
+          type: "string"
+          description: "Cursor for fetching the next page of results"
+          nullable: true
+        "data":
+          type: "array"
+          items: {"$ref": "#/components/schemas/ActionsMeta"}
+          description: "The list of actions metadata"
+          nullable: true
+    "ActionsRpcInputDto":
+      type: "object"
+      properties:
+        "query":
+          type: "object"
+          additionalProperties: true
+          description: "Query parameters for the action"
+          nullable: true
+          example: {"param1": "value1", "param2": "value2"}
+        "headers":
+          type: "object"
+          additionalProperties: true
+          description: "Headers for the action"
+          nullable: true
+          example: {"Content-Type": "application/json"}
+        "body":
+          type: "object"
+          additionalProperties: true
+          description: "Request body for the action"
+          nullable: true
+          example: {"data": "example"}
+    "ActionsRpcRequestDto":
+      type: "object"
+      properties:
+        "action":
+          type: "string"
+          description: "The action to execute"
+          example: "create_employee"
+        "input":
+          allOf:
+            - {"$ref": "#/components/schemas/ActionsRpcInputDto"}
+          description: "Input parameters for the action"
+          nullable: true
+      required:
+        - "action"
+    "ActionsRpcResponse":
+      type: "object"
+      properties:
+        "next":
+          type: "string"
+          description: "Cursor for fetching the next page of results"
+          nullable: true
+        "data":
+          oneOf:
+            - type: "object"
+            - type: "array"
+              items:
+                type: "object"
+            - type: "null"
+          description: "The response data from the action RPC call"
+          nullable: true
     "AdvancedLogRequestData":
       type: "object"
       properties:
@@ -37641,6 +38574,21 @@ components:
           type: "array"
           items: {"$ref": "#/components/schemas/ProviderError"}
           description: "The provider errors"
+          nullable: true
+    "AuthenticationMetaItem":
+      type: "object"
+      properties:
+        "type":
+          type: "string"
+          description: "The authentication type"
+          nullable: true
+        "label":
+          type: "string"
+          description: "The authentication label"
+          nullable: true
+        "key":
+          type: "string"
+          description: "The authentication key"
           nullable: true
     "BadGatewayResponse":
       type: "object"
@@ -38089,6 +39037,26 @@ components:
         - "statusCode"
         - "message"
         - "timestamp"
+    "JsonRpcMessageDto":
+      type: "object"
+      properties:
+        "jsonrpc":
+          type: "string"
+          description: "JSON-RPC protocol version"
+          example: "2.0"
+        "method":
+          type: "string"
+          description: "JSON-RPC method name"
+          example: "initialize"
+        "params":
+          type: "object"
+          description: "Method parameters (arbitrary JSON)"
+        "id":
+          type: "object"
+          description: "Request id (arbitrary JSON scalar)"
+      required:
+        - "jsonrpc"
+        - "method"
     "LinkedAccount":
       type: "object"
       properties:
@@ -38459,7 +39427,7 @@ components:
           x-speakeasy-unknown-values: "allow"
         "path":
           type: "string"
-          description: "The path of the request including any query paramters"
+          description: "The path of the request including any query parameters"
           nullable: true
           example: "/employees/directory"
         "headers":
@@ -39800,6 +40768,16 @@ components:
           nullable: true
           example: "full_time"
           deprecated: true
+        "type":
+          allOf:
+            - {"$ref": "#/components/schemas/TypeApiModel"}
+          description: "The type of employment"
+          nullable: true
+        "contract_type":
+          allOf:
+            - {"$ref": "#/components/schemas/ContractTypeApiModel"}
+          description: "The employment work schedule type"
+          nullable: true
         "work_time":
           allOf:
             - {"$ref": "#/components/schemas/WorkTimeApiModel"}
@@ -39944,6 +40922,16 @@ components:
           nullable: true
           example: "full_time"
           deprecated: true
+        "type":
+          allOf:
+            - {"$ref": "#/components/schemas/TypeApiModel"}
+          description: "The type of employment"
+          nullable: true
+        "contract_type":
+          allOf:
+            - {"$ref": "#/components/schemas/ContractTypeApiModel"}
+          description: "The employment work schedule type"
+          nullable: true
         "work_time":
           allOf:
             - {"$ref": "#/components/schemas/WorkTimeApiModel"}
@@ -40692,6 +41680,16 @@ components:
           nullable: true
           example: "full_time"
           deprecated: true
+        "type":
+          allOf:
+            - {"$ref": "#/components/schemas/TypeApiModel"}
+          description: "The type of employment"
+          nullable: true
+        "contract_type":
+          allOf:
+            - {"$ref": "#/components/schemas/ContractTypeApiModel"}
+          description: "The employment work schedule type"
+          nullable: true
         "work_time":
           allOf:
             - {"$ref": "#/components/schemas/WorkTimeApiModel"}
@@ -40770,16 +41768,6 @@ components:
           allOf:
             - {"$ref": "#/components/schemas/EmploymentJobApiModel"}
           description: "The job of employee"
-          nullable: true
-        "type":
-          allOf:
-            - {"$ref": "#/components/schemas/TypeApiModel"}
-          description: "The type of employment"
-          nullable: true
-        "contract_type":
-          allOf:
-            - {"$ref": "#/components/schemas/ContractTypeApiModel"}
-          description: "The employment work schedule type"
           nullable: true
         "manager":
           type: "array"
@@ -41112,11 +42100,6 @@ components:
           description: "The name of the file"
           nullable: true
           example: "My Document"
-        "path":
-          type: "string"
-          description: "The path where the file is stored"
-          nullable: true
-          example: "/path/to/file"
         "category":
           allOf:
             - {"$ref": "#/components/schemas/FileCategoryEnumApiModel"}
@@ -42939,6 +43922,16 @@ components:
           nullable: true
           example: "full_time"
           deprecated: true
+        "type":
+          allOf:
+            - {"$ref": "#/components/schemas/TypeApiModel"}
+          description: "The type of employment"
+          nullable: true
+        "contract_type":
+          allOf:
+            - {"$ref": "#/components/schemas/ContractTypeApiModel"}
+          description: "The employment work schedule type"
+          nullable: true
         "work_time":
           allOf:
             - {"$ref": "#/components/schemas/WorkTimeApiModel"}
@@ -43283,11 +44276,6 @@ components:
           description: "The name of the file"
           nullable: true
           example: "My Document"
-        "path":
-          type: "string"
-          description: "The path where the file is stored"
-          nullable: true
-          example: "/path/to/file"
         "category":
           allOf:
             - {"$ref": "#/components/schemas/HrisDocumentTypeEnum"}
@@ -44298,6 +45286,16 @@ components:
           nullable: true
           example: "full_time"
           deprecated: true
+        "type":
+          allOf:
+            - {"$ref": "#/components/schemas/TypeApiModel"}
+          description: "The type of employment"
+          nullable: true
+        "contract_type":
+          allOf:
+            - {"$ref": "#/components/schemas/ContractTypeApiModel"}
+          description: "The employment work schedule type"
+          nullable: true
         "work_time":
           allOf:
             - {"$ref": "#/components/schemas/WorkTimeApiModel"}
@@ -46106,16 +47104,16 @@ components:
           allOf:
             - {"$ref": "#/components/schemas/Reason"}
           nullable: true
-        "created_date":
+        "created_at":
           type: "string"
           format: "date-time"
-          description: "The created date of the time off request"
+          description: "Timestamp when the time off request was created"
           nullable: true
           example: "2021-01-01T01:01:01.000Z"
-        "updated_date":
+        "updated_at":
           type: "string"
           format: "date-time"
-          description: "The updated date of the time off request"
+          description: "Timestamp when the time off request was last updated"
           nullable: true
           example: "2021-01-01T01:01:01.000Z"
         "policy":
@@ -47720,11 +48718,6 @@ components:
           description: "The name of the file"
           nullable: true
           example: "My Document"
-        "path":
-          type: "string"
-          description: "The path where the file is stored"
-          nullable: true
-          example: "/path/to/file"
         "category":
           allOf:
             - {"$ref": "#/components/schemas/FileCategoryEnumApiModel"}
@@ -49543,7 +50536,7 @@ components:
           type: "array"
           items: {"$ref": "#/components/schemas/JobPostingCompensation"}
           nullable: true
-          example: [{"name": "Base Salary", "type": "salary", "pay_period": "month", "pay_frequency": "yearly", "currency": "USD", "value": "50000", "min_value": "45000", "max_value": "55000"}, {"name": "Bonus", "type": "bonus", "pay_frequency": "quarterly", "currency": "USD", "value": "10%"}]
+          example: [{"title": "Base Salary", "type": "salary", "pay_period": "month", "pay_frequency": "yearly", "currency": "USD", "value": "50000", "min_value_range": "45000", "max_value_range": "55000"}, {"title": "Bonus", "type": "bonus", "pay_frequency": "quarterly", "currency": "USD", "value": "10%"}]
         "employment_type":
           allOf:
             - {"$ref": "#/components/schemas/EmploymentTypeEnum"}
@@ -49586,7 +50579,7 @@ components:
     JobPostingCompensation:
       type: "object"
       properties:
-        "name":
+        "title":
           type: "string"
           nullable: true
         "type":
@@ -49607,10 +50600,10 @@ components:
         "value":
           type: "string"
           nullable: true
-        "min_value":
+        "min_value_range":
           type: "string"
           nullable: true
-        "max_value":
+        "max_value_range":
           type: "string"
           nullable: true
     JobPostingContent:
@@ -54208,11 +55201,6 @@ components:
           description: "The mobile friendly URL of the content"
           nullable: true
           example: "https://www.mobile.youtube.com/watch?v=16873"
-        "content_type":
-          allOf:
-            - {"$ref": "#/components/schemas/ContentTypeEnum"}
-          description: "The type of content"
-          nullable: true
         "cover_url":
           type: "string"
           description: "The URL of the thumbnail image associated with the content."
@@ -54292,6 +55280,11 @@ components:
           type: "array"
           items: {"$ref": "#/components/schemas/AdditionalData"}
           description: "The additional_data associated with this content"
+          nullable: true
+        "content_type":
+          allOf:
+            - {"$ref": "#/components/schemas/WriteContentTypeEnum"}
+          description: "The type of content"
           nullable: true
     LmsUser:
       type: "object"
@@ -54528,6 +55521,35 @@ components:
           description: "The external identifier"
           nullable: true
           example: "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"
+    WriteContentTypeEnum:
+      type: "object"
+      properties:
+        "value":
+          type: "string"
+          enum:
+            - "video"
+            - "quiz"
+            - "document"
+            - "audio"
+            - "article"
+            - "book"
+            - "event"
+            - "course"
+            - "collection"
+            - "interactive"
+            - "unmapped_value"
+            - null
+          nullable: true
+          x-speakeasy-unknown-values: "allow"
+        "source_value":
+          oneOf:
+            - type: "string"
+            - type: "number"
+            - type: "boolean"
+            - type: "object"
+            - type: "array"
+              items: {}
+          nullable: true
     TicketingAttachment:
       type: "object"
       properties:
@@ -56779,12 +57801,16 @@ components:
 tags:
   - name: "Accounts"
     description: "Chart of accounts."
+  - name: "Actions"
+    description: "Retrieve Actions metadata and definitions."
   - name: "AI"
     description: "AI-powered features."
   - name: "Connect Sessions"
     description: "Generate connection session tokens or auth URLs to allow your customers to connect their accounts."
   - name: "Connectors"
     description: "Retrieve metadata for connectors."
+  - name: "MCP"
+    description: "Model Context Protocol endpoint."
   - name: "Proxy"
     description: "Routing API requests through StackOne directly to the underlying provider."
   - name: "Request Logs"
@@ -56847,8 +57873,6 @@ tags:
     description: "People applying for jobs."
   - name: "Departments"
     description: "Departments within an organization."
-  - name: "Interview Stages"
-    description: "Stages in the interview process."
   - name: "Interviews"
     description: "Scheduled interviews with candidates."
   - name: "Job Postings"

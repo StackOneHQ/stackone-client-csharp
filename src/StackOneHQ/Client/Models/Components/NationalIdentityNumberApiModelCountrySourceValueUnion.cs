@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class NationalIdentityNumberApiModelCountrySourceValueUnionType
     {
         private NationalIdentityNumberApiModelCountrySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static NationalIdentityNumberApiModelCountrySourceValueUnionType Str { get { return new NationalIdentityNumberApiModelCountrySourceValueUnionType("str"); } }
-        
+
         public static NationalIdentityNumberApiModelCountrySourceValueUnionType Number { get { return new NationalIdentityNumberApiModelCountrySourceValueUnionType("number"); } }
-        
+
         public static NationalIdentityNumberApiModelCountrySourceValueUnionType Boolean { get { return new NationalIdentityNumberApiModelCountrySourceValueUnionType("boolean"); } }
-        
+
         public static NationalIdentityNumberApiModelCountrySourceValueUnionType NationalIdentityNumberApiModelSourceValueCountry { get { return new NationalIdentityNumberApiModelCountrySourceValueUnionType("NationalIdentityNumberApiModel_source_value_country"); } }
-        
+
         public static NationalIdentityNumberApiModelCountrySourceValueUnionType ArrayOfAny { get { return new NationalIdentityNumberApiModelCountrySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static NationalIdentityNumberApiModelCountrySourceValueUnionType Null { get { return new NationalIdentityNumberApiModelCountrySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(NationalIdentityNumberApiModelCountrySourceValueUnion.NationalIdentityNumberApiModelCountrySourceValueUnionConverter))]
-    public class NationalIdentityNumberApiModelCountrySourceValueUnion {
-        public NationalIdentityNumberApiModelCountrySourceValueUnion(NationalIdentityNumberApiModelCountrySourceValueUnionType type) {
+    public class NationalIdentityNumberApiModelCountrySourceValueUnion
+    {
+        public NationalIdentityNumberApiModelCountrySourceValueUnion(NationalIdentityNumberApiModelCountrySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public NationalIdentityNumberApiModelCountrySourceValueUnionType Type { get; set; }
-
-
-        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateStr(string str) {
+        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateStr(string str)
+        {
             NationalIdentityNumberApiModelCountrySourceValueUnionType typ = NationalIdentityNumberApiModelCountrySourceValueUnionType.Str;
 
             NationalIdentityNumberApiModelCountrySourceValueUnion res = new NationalIdentityNumberApiModelCountrySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateNumber(double number) {
+        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateNumber(double number)
+        {
             NationalIdentityNumberApiModelCountrySourceValueUnionType typ = NationalIdentityNumberApiModelCountrySourceValueUnionType.Number;
 
             NationalIdentityNumberApiModelCountrySourceValueUnion res = new NationalIdentityNumberApiModelCountrySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateBoolean(bool boolean) {
+        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateBoolean(bool boolean)
+        {
             NationalIdentityNumberApiModelCountrySourceValueUnionType typ = NationalIdentityNumberApiModelCountrySourceValueUnionType.Boolean;
 
             NationalIdentityNumberApiModelCountrySourceValueUnion res = new NationalIdentityNumberApiModelCountrySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateNationalIdentityNumberApiModelSourceValueCountry(NationalIdentityNumberApiModelSourceValueCountry nationalIdentityNumberAPIModelSourceValueCountry) {
+        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateNationalIdentityNumberApiModelSourceValueCountry(NationalIdentityNumberApiModelSourceValueCountry nationalIdentityNumberAPIModelSourceValueCountry)
+        {
             NationalIdentityNumberApiModelCountrySourceValueUnionType typ = NationalIdentityNumberApiModelCountrySourceValueUnionType.NationalIdentityNumberApiModelSourceValueCountry;
 
             NationalIdentityNumberApiModelCountrySourceValueUnion res = new NationalIdentityNumberApiModelCountrySourceValueUnion(typ);
             res.NationalIdentityNumberApiModelSourceValueCountry = nationalIdentityNumberAPIModelSourceValueCountry;
             return res;
         }
-
-        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             NationalIdentityNumberApiModelCountrySourceValueUnionType typ = NationalIdentityNumberApiModelCountrySourceValueUnionType.ArrayOfAny;
 
             NationalIdentityNumberApiModelCountrySourceValueUnion res = new NationalIdentityNumberApiModelCountrySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateNull() {
+        public static NationalIdentityNumberApiModelCountrySourceValueUnion CreateNull()
+        {
             NationalIdentityNumberApiModelCountrySourceValueUnionType typ = NationalIdentityNumberApiModelCountrySourceValueUnionType.Null;
             return new NationalIdentityNumberApiModelCountrySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 NationalIdentityNumberApiModelCountrySourceValueUnion res = (NationalIdentityNumberApiModelCountrySourceValueUnion)value;
                 if (NationalIdentityNumberApiModelCountrySourceValueUnionType.FromString(res.Type).Equals(NationalIdentityNumberApiModelCountrySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.NationalIdentityNumberApiModelSourceValueCountry != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.NationalIdentityNumberApiModelSourceValueCountry));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

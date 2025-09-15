@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmployeeEthnicitySourceValueUnionType
     {
         private EmployeeEthnicitySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmployeeEthnicitySourceValueUnionType Str { get { return new EmployeeEthnicitySourceValueUnionType("str"); } }
-        
+
         public static EmployeeEthnicitySourceValueUnionType Number { get { return new EmployeeEthnicitySourceValueUnionType("number"); } }
-        
+
         public static EmployeeEthnicitySourceValueUnionType Boolean { get { return new EmployeeEthnicitySourceValueUnionType("boolean"); } }
-        
+
         public static EmployeeEthnicitySourceValueUnionType EmployeeSourceValueEthnicity { get { return new EmployeeEthnicitySourceValueUnionType("Employee_source_value_ethnicity"); } }
-        
+
         public static EmployeeEthnicitySourceValueUnionType ArrayOfAny { get { return new EmployeeEthnicitySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmployeeEthnicitySourceValueUnionType Null { get { return new EmployeeEthnicitySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmployeeEthnicitySourceValueUnion.EmployeeEthnicitySourceValueUnionConverter))]
-    public class EmployeeEthnicitySourceValueUnion {
-        public EmployeeEthnicitySourceValueUnion(EmployeeEthnicitySourceValueUnionType type) {
+    public class EmployeeEthnicitySourceValueUnion
+    {
+        public EmployeeEthnicitySourceValueUnion(EmployeeEthnicitySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmployeeEthnicitySourceValueUnionType Type { get; set; }
-
-
-        public static EmployeeEthnicitySourceValueUnion CreateStr(string str) {
+        public static EmployeeEthnicitySourceValueUnion CreateStr(string str)
+        {
             EmployeeEthnicitySourceValueUnionType typ = EmployeeEthnicitySourceValueUnionType.Str;
 
             EmployeeEthnicitySourceValueUnion res = new EmployeeEthnicitySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmployeeEthnicitySourceValueUnion CreateNumber(double number) {
+        public static EmployeeEthnicitySourceValueUnion CreateNumber(double number)
+        {
             EmployeeEthnicitySourceValueUnionType typ = EmployeeEthnicitySourceValueUnionType.Number;
 
             EmployeeEthnicitySourceValueUnion res = new EmployeeEthnicitySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmployeeEthnicitySourceValueUnion CreateBoolean(bool boolean) {
+        public static EmployeeEthnicitySourceValueUnion CreateBoolean(bool boolean)
+        {
             EmployeeEthnicitySourceValueUnionType typ = EmployeeEthnicitySourceValueUnionType.Boolean;
 
             EmployeeEthnicitySourceValueUnion res = new EmployeeEthnicitySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmployeeEthnicitySourceValueUnion CreateEmployeeSourceValueEthnicity(EmployeeSourceValueEthnicity employeeSourceValueEthnicity) {
+        public static EmployeeEthnicitySourceValueUnion CreateEmployeeSourceValueEthnicity(EmployeeSourceValueEthnicity employeeSourceValueEthnicity)
+        {
             EmployeeEthnicitySourceValueUnionType typ = EmployeeEthnicitySourceValueUnionType.EmployeeSourceValueEthnicity;
 
             EmployeeEthnicitySourceValueUnion res = new EmployeeEthnicitySourceValueUnion(typ);
             res.EmployeeSourceValueEthnicity = employeeSourceValueEthnicity;
             return res;
         }
-
-        public static EmployeeEthnicitySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmployeeEthnicitySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmployeeEthnicitySourceValueUnionType typ = EmployeeEthnicitySourceValueUnionType.ArrayOfAny;
 
             EmployeeEthnicitySourceValueUnion res = new EmployeeEthnicitySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmployeeEthnicitySourceValueUnion CreateNull() {
+        public static EmployeeEthnicitySourceValueUnion CreateNull()
+        {
             EmployeeEthnicitySourceValueUnionType typ = EmployeeEthnicitySourceValueUnionType.Null;
             return new EmployeeEthnicitySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmployeeEthnicitySourceValueUnion res = (EmployeeEthnicitySourceValueUnion)value;
                 if (EmployeeEthnicitySourceValueUnionType.FromString(res.Type).Equals(EmployeeEthnicitySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmployeeSourceValueEthnicity != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmployeeSourceValueEthnicity));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

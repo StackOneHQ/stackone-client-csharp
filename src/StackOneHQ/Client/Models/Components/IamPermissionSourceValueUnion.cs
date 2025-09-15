@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamPermissionSourceValueUnionType
     {
         private IamPermissionSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamPermissionSourceValueUnionType Str { get { return new IamPermissionSourceValueUnionType("str"); } }
-        
+
         public static IamPermissionSourceValueUnionType Number { get { return new IamPermissionSourceValueUnionType("number"); } }
-        
+
         public static IamPermissionSourceValueUnionType Boolean { get { return new IamPermissionSourceValueUnionType("boolean"); } }
-        
+
         public static IamPermissionSourceValueUnionType IamPermissionSourceValue { get { return new IamPermissionSourceValueUnionType("IamPermission_source_value"); } }
-        
+
         public static IamPermissionSourceValueUnionType ArrayOfAny { get { return new IamPermissionSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static IamPermissionSourceValueUnionType Null { get { return new IamPermissionSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(IamPermissionSourceValueUnion.IamPermissionSourceValueUnionConverter))]
-    public class IamPermissionSourceValueUnion {
-        public IamPermissionSourceValueUnion(IamPermissionSourceValueUnionType type) {
+    public class IamPermissionSourceValueUnion
+    {
+        public IamPermissionSourceValueUnion(IamPermissionSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public IamPermissionSourceValueUnionType Type { get; set; }
-
-
-        public static IamPermissionSourceValueUnion CreateStr(string str) {
+        public static IamPermissionSourceValueUnion CreateStr(string str)
+        {
             IamPermissionSourceValueUnionType typ = IamPermissionSourceValueUnionType.Str;
 
             IamPermissionSourceValueUnion res = new IamPermissionSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static IamPermissionSourceValueUnion CreateNumber(double number) {
+        public static IamPermissionSourceValueUnion CreateNumber(double number)
+        {
             IamPermissionSourceValueUnionType typ = IamPermissionSourceValueUnionType.Number;
 
             IamPermissionSourceValueUnion res = new IamPermissionSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static IamPermissionSourceValueUnion CreateBoolean(bool boolean) {
+        public static IamPermissionSourceValueUnion CreateBoolean(bool boolean)
+        {
             IamPermissionSourceValueUnionType typ = IamPermissionSourceValueUnionType.Boolean;
 
             IamPermissionSourceValueUnion res = new IamPermissionSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamPermissionSourceValueUnion CreateIamPermissionSourceValue(IamPermissionSourceValue iamPermissionSourceValue) {
+        public static IamPermissionSourceValueUnion CreateIamPermissionSourceValue(IamPermissionSourceValue iamPermissionSourceValue)
+        {
             IamPermissionSourceValueUnionType typ = IamPermissionSourceValueUnionType.IamPermissionSourceValue;
 
             IamPermissionSourceValueUnion res = new IamPermissionSourceValueUnion(typ);
             res.IamPermissionSourceValue = iamPermissionSourceValue;
             return res;
         }
-
-        public static IamPermissionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static IamPermissionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             IamPermissionSourceValueUnionType typ = IamPermissionSourceValueUnionType.ArrayOfAny;
 
             IamPermissionSourceValueUnion res = new IamPermissionSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamPermissionSourceValueUnion CreateNull() {
+        public static IamPermissionSourceValueUnion CreateNull()
+        {
             IamPermissionSourceValueUnionType typ = IamPermissionSourceValueUnionType.Null;
             return new IamPermissionSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamPermissionSourceValueUnion res = (IamPermissionSourceValueUnion)value;
                 if (IamPermissionSourceValueUnionType.FromString(res.Type).Equals(IamPermissionSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamPermissionSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamPermissionSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

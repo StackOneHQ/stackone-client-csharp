@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType
     {
         private HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType Str { get { return new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType("str"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType Number { get { return new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType("number"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType Boolean { get { return new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType HrisCreateWorkEligibilityRequestDtoSourceValueCategory { get { return new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType("HrisCreateWorkEligibilityRequestDto_source_value_category"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType ArrayOfAny { get { return new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType Null { get { return new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion.HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionConverter))]
-    public class HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion {
-        public HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType type) {
+    public class HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion
+    {
+        public HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateStr(string str) {
+        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateStr(string str)
+        {
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.Str;
 
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateNumber(double number) {
+        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateNumber(double number)
+        {
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.Number;
 
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.Boolean;
 
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateHrisCreateWorkEligibilityRequestDtoSourceValueCategory(HrisCreateWorkEligibilityRequestDtoSourceValueCategory hrisCreateWorkEligibilityRequestDtoSourceValueCategory) {
+        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateHrisCreateWorkEligibilityRequestDtoSourceValueCategory(HrisCreateWorkEligibilityRequestDtoSourceValueCategory hrisCreateWorkEligibilityRequestDtoSourceValueCategory)
+        {
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.HrisCreateWorkEligibilityRequestDtoSourceValueCategory;
 
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(typ);
             res.HrisCreateWorkEligibilityRequestDtoSourceValueCategory = hrisCreateWorkEligibilityRequestDtoSourceValueCategory;
             return res;
         }
-
-        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.ArrayOfAny;
 
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion res = new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateNull() {
+        public static HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion CreateNull()
+        {
             HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType typ = HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.Null;
             return new HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion res = (HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnion)value;
                 if (HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.FromString(res.Type).Equals(HrisCreateWorkEligibilityRequestDtoCategorySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateWorkEligibilityRequestDtoSourceValueCategory != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateWorkEligibilityRequestDtoSourceValueCategory));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

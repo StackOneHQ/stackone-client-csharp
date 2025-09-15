@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class DepartmentSourceValueUnionType
     {
         private DepartmentSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static DepartmentSourceValueUnionType Str { get { return new DepartmentSourceValueUnionType("str"); } }
-        
+
         public static DepartmentSourceValueUnionType Number { get { return new DepartmentSourceValueUnionType("number"); } }
-        
+
         public static DepartmentSourceValueUnionType Boolean { get { return new DepartmentSourceValueUnionType("boolean"); } }
-        
+
         public static DepartmentSourceValueUnionType SourceValueDepartment { get { return new DepartmentSourceValueUnionType("source_value_department"); } }
-        
+
         public static DepartmentSourceValueUnionType ArrayOfAny { get { return new DepartmentSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static DepartmentSourceValueUnionType Null { get { return new DepartmentSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(DepartmentSourceValueUnion.DepartmentSourceValueUnionConverter))]
-    public class DepartmentSourceValueUnion {
-        public DepartmentSourceValueUnion(DepartmentSourceValueUnionType type) {
+    public class DepartmentSourceValueUnion
+    {
+        public DepartmentSourceValueUnion(DepartmentSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public DepartmentSourceValueUnionType Type { get; set; }
-
-
-        public static DepartmentSourceValueUnion CreateStr(string str) {
+        public static DepartmentSourceValueUnion CreateStr(string str)
+        {
             DepartmentSourceValueUnionType typ = DepartmentSourceValueUnionType.Str;
 
             DepartmentSourceValueUnion res = new DepartmentSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static DepartmentSourceValueUnion CreateNumber(double number) {
+        public static DepartmentSourceValueUnion CreateNumber(double number)
+        {
             DepartmentSourceValueUnionType typ = DepartmentSourceValueUnionType.Number;
 
             DepartmentSourceValueUnion res = new DepartmentSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static DepartmentSourceValueUnion CreateBoolean(bool boolean) {
+        public static DepartmentSourceValueUnion CreateBoolean(bool boolean)
+        {
             DepartmentSourceValueUnionType typ = DepartmentSourceValueUnionType.Boolean;
 
             DepartmentSourceValueUnion res = new DepartmentSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static DepartmentSourceValueUnion CreateSourceValueDepartment(SourceValueDepartment sourceValueDepartment) {
+        public static DepartmentSourceValueUnion CreateSourceValueDepartment(SourceValueDepartment sourceValueDepartment)
+        {
             DepartmentSourceValueUnionType typ = DepartmentSourceValueUnionType.SourceValueDepartment;
 
             DepartmentSourceValueUnion res = new DepartmentSourceValueUnion(typ);
             res.SourceValueDepartment = sourceValueDepartment;
             return res;
         }
-
-        public static DepartmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static DepartmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             DepartmentSourceValueUnionType typ = DepartmentSourceValueUnionType.ArrayOfAny;
 
             DepartmentSourceValueUnion res = new DepartmentSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static DepartmentSourceValueUnion CreateNull() {
+        public static DepartmentSourceValueUnion CreateNull()
+        {
             DepartmentSourceValueUnionType typ = DepartmentSourceValueUnionType.Null;
             return new DepartmentSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 DepartmentSourceValueUnion res = (DepartmentSourceValueUnion)value;
                 if (DepartmentSourceValueUnionType.FromString(res.Type).Equals(DepartmentSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueDepartment != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueDepartment));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

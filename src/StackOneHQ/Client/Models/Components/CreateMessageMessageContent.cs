@@ -17,19 +17,19 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateMessageMessageContentType
     {
         private CreateMessageMessageContentType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateMessageMessageContentType CreateMessageSmsMessageContents { get { return new CreateMessageMessageContentType("CreateMessage_SmsMessageContents"); } }
-        
+
         public static CreateMessageMessageContentType CreateMessageEmailMessageContents { get { return new CreateMessageMessageContentType("CreateMessage_EmailMessageContents"); } }
-        
+
         public static CreateMessageMessageContentType CreateMessagePushMessageContents { get { return new CreateMessageMessageContentType("CreateMessage_PushMessageContents"); } }
-        
+
         public static CreateMessageMessageContentType Null { get { return new CreateMessageMessageContentType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateMessageMessageContent.CreateMessageMessageContentConverter))]
-    public class CreateMessageMessageContent {
-        public CreateMessageMessageContent(CreateMessageMessageContentType type) {
+    public class CreateMessageMessageContent
+    {
+        public CreateMessageMessageContent(CreateMessageMessageContentType type)
+        {
             Type = type;
         }
 
@@ -75,25 +77,24 @@ namespace StackOneHQ.Client.Models.Components
         public CreateMessagePushMessageContents? CreateMessagePushMessageContents { get; set; }
 
         public CreateMessageMessageContentType Type { get; set; }
-
-
-        public static CreateMessageMessageContent CreateCreateMessageSmsMessageContents(CreateMessageSmsMessageContents createMessageSmsMessageContents) {
+        public static CreateMessageMessageContent CreateCreateMessageSmsMessageContents(CreateMessageSmsMessageContents createMessageSmsMessageContents)
+        {
             CreateMessageMessageContentType typ = CreateMessageMessageContentType.CreateMessageSmsMessageContents;
 
             CreateMessageMessageContent res = new CreateMessageMessageContent(typ);
             res.CreateMessageSmsMessageContents = createMessageSmsMessageContents;
             return res;
         }
-
-        public static CreateMessageMessageContent CreateCreateMessageEmailMessageContents(CreateMessageEmailMessageContents createMessageEmailMessageContents) {
+        public static CreateMessageMessageContent CreateCreateMessageEmailMessageContents(CreateMessageEmailMessageContents createMessageEmailMessageContents)
+        {
             CreateMessageMessageContentType typ = CreateMessageMessageContentType.CreateMessageEmailMessageContents;
 
             CreateMessageMessageContent res = new CreateMessageMessageContent(typ);
             res.CreateMessageEmailMessageContents = createMessageEmailMessageContents;
             return res;
         }
-
-        public static CreateMessageMessageContent CreateCreateMessagePushMessageContents(CreateMessagePushMessageContents createMessagePushMessageContents) {
+        public static CreateMessageMessageContent CreateCreateMessagePushMessageContents(CreateMessagePushMessageContents createMessagePushMessageContents)
+        {
             CreateMessageMessageContentType typ = CreateMessageMessageContentType.CreateMessagePushMessageContents;
 
             CreateMessageMessageContent res = new CreateMessageMessageContent(typ);
@@ -101,7 +102,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateMessageMessageContent CreateNull() {
+        public static CreateMessageMessageContent CreateNull()
+        {
             CreateMessageMessageContentType typ = CreateMessageMessageContentType.Null;
             return new CreateMessageMessageContent(typ);
         }
@@ -212,28 +214,31 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateMessageMessageContent res = (CreateMessageMessageContent)value;
                 if (CreateMessageMessageContentType.FromString(res.Type).Equals(CreateMessageMessageContentType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.CreateMessageSmsMessageContents != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateMessageSmsMessageContents));
                     return;
                 }
+
                 if (res.CreateMessageEmailMessageContents != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateMessageEmailMessageContents));
                     return;
                 }
+
                 if (res.CreateMessagePushMessageContents != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateMessagePushMessageContents));
                     return;
                 }
-
             }
 
         }

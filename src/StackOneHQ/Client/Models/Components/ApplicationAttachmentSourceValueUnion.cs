@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ApplicationAttachmentSourceValueUnionType
     {
         private ApplicationAttachmentSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ApplicationAttachmentSourceValueUnionType Str { get { return new ApplicationAttachmentSourceValueUnionType("str"); } }
-        
+
         public static ApplicationAttachmentSourceValueUnionType Number { get { return new ApplicationAttachmentSourceValueUnionType("number"); } }
-        
+
         public static ApplicationAttachmentSourceValueUnionType Boolean { get { return new ApplicationAttachmentSourceValueUnionType("boolean"); } }
-        
+
         public static ApplicationAttachmentSourceValueUnionType ApplicationAttachmentSourceValue { get { return new ApplicationAttachmentSourceValueUnionType("ApplicationAttachment_source_value"); } }
-        
+
         public static ApplicationAttachmentSourceValueUnionType ArrayOfAny { get { return new ApplicationAttachmentSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ApplicationAttachmentSourceValueUnionType Null { get { return new ApplicationAttachmentSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the content type.
     /// </summary>
     [JsonConverter(typeof(ApplicationAttachmentSourceValueUnion.ApplicationAttachmentSourceValueUnionConverter))]
-    public class ApplicationAttachmentSourceValueUnion {
-        public ApplicationAttachmentSourceValueUnion(ApplicationAttachmentSourceValueUnionType type) {
+    public class ApplicationAttachmentSourceValueUnion
+    {
+        public ApplicationAttachmentSourceValueUnion(ApplicationAttachmentSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ApplicationAttachmentSourceValueUnionType Type { get; set; }
-
-
-        public static ApplicationAttachmentSourceValueUnion CreateStr(string str) {
+        public static ApplicationAttachmentSourceValueUnion CreateStr(string str)
+        {
             ApplicationAttachmentSourceValueUnionType typ = ApplicationAttachmentSourceValueUnionType.Str;
 
             ApplicationAttachmentSourceValueUnion res = new ApplicationAttachmentSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ApplicationAttachmentSourceValueUnion CreateNumber(double number) {
+        public static ApplicationAttachmentSourceValueUnion CreateNumber(double number)
+        {
             ApplicationAttachmentSourceValueUnionType typ = ApplicationAttachmentSourceValueUnionType.Number;
 
             ApplicationAttachmentSourceValueUnion res = new ApplicationAttachmentSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ApplicationAttachmentSourceValueUnion CreateBoolean(bool boolean) {
+        public static ApplicationAttachmentSourceValueUnion CreateBoolean(bool boolean)
+        {
             ApplicationAttachmentSourceValueUnionType typ = ApplicationAttachmentSourceValueUnionType.Boolean;
 
             ApplicationAttachmentSourceValueUnion res = new ApplicationAttachmentSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ApplicationAttachmentSourceValueUnion CreateApplicationAttachmentSourceValue(ApplicationAttachmentSourceValue applicationAttachmentSourceValue) {
+        public static ApplicationAttachmentSourceValueUnion CreateApplicationAttachmentSourceValue(ApplicationAttachmentSourceValue applicationAttachmentSourceValue)
+        {
             ApplicationAttachmentSourceValueUnionType typ = ApplicationAttachmentSourceValueUnionType.ApplicationAttachmentSourceValue;
 
             ApplicationAttachmentSourceValueUnion res = new ApplicationAttachmentSourceValueUnion(typ);
             res.ApplicationAttachmentSourceValue = applicationAttachmentSourceValue;
             return res;
         }
-
-        public static ApplicationAttachmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ApplicationAttachmentSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ApplicationAttachmentSourceValueUnionType typ = ApplicationAttachmentSourceValueUnionType.ArrayOfAny;
 
             ApplicationAttachmentSourceValueUnion res = new ApplicationAttachmentSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ApplicationAttachmentSourceValueUnion CreateNull() {
+        public static ApplicationAttachmentSourceValueUnion CreateNull()
+        {
             ApplicationAttachmentSourceValueUnionType typ = ApplicationAttachmentSourceValueUnionType.Null;
             return new ApplicationAttachmentSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ApplicationAttachmentSourceValueUnion res = (ApplicationAttachmentSourceValueUnion)value;
                 if (ApplicationAttachmentSourceValueUnionType.FromString(res.Type).Equals(ApplicationAttachmentSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ApplicationAttachmentSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ApplicationAttachmentSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

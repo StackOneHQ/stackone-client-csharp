@@ -15,7 +15,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-
+    
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LmsUpsertContentRequestDtoValue : IEquatable<LmsUpsertContentRequestDtoValue>
     {
@@ -24,6 +24,11 @@ namespace StackOneHQ.Client.Models.Components
         public static readonly LmsUpsertContentRequestDtoValue Document = new LmsUpsertContentRequestDtoValue("document");
         public static readonly LmsUpsertContentRequestDtoValue Audio = new LmsUpsertContentRequestDtoValue("audio");
         public static readonly LmsUpsertContentRequestDtoValue Article = new LmsUpsertContentRequestDtoValue("article");
+        public static readonly LmsUpsertContentRequestDtoValue Book = new LmsUpsertContentRequestDtoValue("book");
+        public static readonly LmsUpsertContentRequestDtoValue Event = new LmsUpsertContentRequestDtoValue("event");
+        public static readonly LmsUpsertContentRequestDtoValue Course = new LmsUpsertContentRequestDtoValue("course");
+        public static readonly LmsUpsertContentRequestDtoValue Collection = new LmsUpsertContentRequestDtoValue("collection");
+        public static readonly LmsUpsertContentRequestDtoValue Interactive = new LmsUpsertContentRequestDtoValue("interactive");
         public static readonly LmsUpsertContentRequestDtoValue UnmappedValue = new LmsUpsertContentRequestDtoValue("unmapped_value");
 
         private static readonly Dictionary <string, LmsUpsertContentRequestDtoValue> _knownValues =
@@ -34,6 +39,11 @@ namespace StackOneHQ.Client.Models.Components
                 ["document"] = Document,
                 ["audio"] = Audio,
                 ["article"] = Article,
+                ["book"] = Book,
+                ["event"] = Event,
+                ["course"] = Course,
+                ["collection"] = Collection,
+                ["interactive"] = Interactive,
                 ["unmapped_value"] = UnmappedValue
             };
 

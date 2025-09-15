@@ -757,7 +757,6 @@ var res = await sdk.Hris.Employees.CreateWorkEligibilityRequestAsync(
             Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             Name = "My Document",
-            Path = "/path/to/file",
             Category = new HrisCreateWorkEligibilityRequestDtoCategory() {},
             CategoryId = "6530",
             CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
@@ -918,6 +917,18 @@ var res = await sdk.Hris.Employees.CreateEmploymentAsync(
             Name = "1687-4",
             Description = "Mid-level employee demonstrating proficiency and autonomy.",
         },
+        Type = new HrisCreateEmploymentRequestDtoType() {
+            Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            Label = "Permanent",
+            Type = new HrisCreateEmploymentRequestDtoTypeType() {},
+        },
+        ContractType = new HrisCreateEmploymentRequestDtoContractType() {
+            Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            Label = "Full-Time",
+            ContractType = new HrisCreateEmploymentRequestDtoContractTypeContractType() {},
+        },
         WorkTime = new HrisCreateEmploymentRequestDtoWorkTime() {
             Duration = "P0Y0M0DT8H0M0S",
             DurationUnit = new HrisCreateEmploymentRequestDtoDurationUnit() {
@@ -986,7 +997,7 @@ HrisGetEmployeeEmploymentRequest req = new HrisGetEmployeeEmploymentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager",
+    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager",
     Expand = "groups",
 };
 

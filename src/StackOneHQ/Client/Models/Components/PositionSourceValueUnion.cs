@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class PositionSourceValueUnionType
     {
         private PositionSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static PositionSourceValueUnionType Str { get { return new PositionSourceValueUnionType("str"); } }
-        
+
         public static PositionSourceValueUnionType Number { get { return new PositionSourceValueUnionType("number"); } }
-        
+
         public static PositionSourceValueUnionType Boolean { get { return new PositionSourceValueUnionType("boolean"); } }
-        
+
         public static PositionSourceValueUnionType PositionSourceValue { get { return new PositionSourceValueUnionType("Position_source_value"); } }
-        
+
         public static PositionSourceValueUnionType ArrayOfAny { get { return new PositionSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static PositionSourceValueUnionType Null { get { return new PositionSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the position status.
     /// </summary>
     [JsonConverter(typeof(PositionSourceValueUnion.PositionSourceValueUnionConverter))]
-    public class PositionSourceValueUnion {
-        public PositionSourceValueUnion(PositionSourceValueUnionType type) {
+    public class PositionSourceValueUnion
+    {
+        public PositionSourceValueUnion(PositionSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public PositionSourceValueUnionType Type { get; set; }
-
-
-        public static PositionSourceValueUnion CreateStr(string str) {
+        public static PositionSourceValueUnion CreateStr(string str)
+        {
             PositionSourceValueUnionType typ = PositionSourceValueUnionType.Str;
 
             PositionSourceValueUnion res = new PositionSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static PositionSourceValueUnion CreateNumber(double number) {
+        public static PositionSourceValueUnion CreateNumber(double number)
+        {
             PositionSourceValueUnionType typ = PositionSourceValueUnionType.Number;
 
             PositionSourceValueUnion res = new PositionSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static PositionSourceValueUnion CreateBoolean(bool boolean) {
+        public static PositionSourceValueUnion CreateBoolean(bool boolean)
+        {
             PositionSourceValueUnionType typ = PositionSourceValueUnionType.Boolean;
 
             PositionSourceValueUnion res = new PositionSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static PositionSourceValueUnion CreatePositionSourceValue(PositionSourceValue positionSourceValue) {
+        public static PositionSourceValueUnion CreatePositionSourceValue(PositionSourceValue positionSourceValue)
+        {
             PositionSourceValueUnionType typ = PositionSourceValueUnionType.PositionSourceValue;
 
             PositionSourceValueUnion res = new PositionSourceValueUnion(typ);
             res.PositionSourceValue = positionSourceValue;
             return res;
         }
-
-        public static PositionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static PositionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             PositionSourceValueUnionType typ = PositionSourceValueUnionType.ArrayOfAny;
 
             PositionSourceValueUnion res = new PositionSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static PositionSourceValueUnion CreateNull() {
+        public static PositionSourceValueUnion CreateNull()
+        {
             PositionSourceValueUnionType typ = PositionSourceValueUnionType.Null;
             return new PositionSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 PositionSourceValueUnion res = (PositionSourceValueUnion)value;
                 if (PositionSourceValueUnionType.FromString(res.Type).Equals(PositionSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.PositionSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.PositionSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

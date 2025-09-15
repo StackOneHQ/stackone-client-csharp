@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamUserStatusSourceValueUnionType
     {
         private IamUserStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamUserStatusSourceValueUnionType Str { get { return new IamUserStatusSourceValueUnionType("str"); } }
-        
+
         public static IamUserStatusSourceValueUnionType Number { get { return new IamUserStatusSourceValueUnionType("number"); } }
-        
+
         public static IamUserStatusSourceValueUnionType Boolean { get { return new IamUserStatusSourceValueUnionType("boolean"); } }
-        
+
         public static IamUserStatusSourceValueUnionType IamUserSourceValueStatus { get { return new IamUserStatusSourceValueUnionType("IamUser_source_value_status"); } }
-        
+
         public static IamUserStatusSourceValueUnionType ArrayOfAny { get { return new IamUserStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static IamUserStatusSourceValueUnionType Null { get { return new IamUserStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(IamUserStatusSourceValueUnion.IamUserStatusSourceValueUnionConverter))]
-    public class IamUserStatusSourceValueUnion {
-        public IamUserStatusSourceValueUnion(IamUserStatusSourceValueUnionType type) {
+    public class IamUserStatusSourceValueUnion
+    {
+        public IamUserStatusSourceValueUnion(IamUserStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public IamUserStatusSourceValueUnionType Type { get; set; }
-
-
-        public static IamUserStatusSourceValueUnion CreateStr(string str) {
+        public static IamUserStatusSourceValueUnion CreateStr(string str)
+        {
             IamUserStatusSourceValueUnionType typ = IamUserStatusSourceValueUnionType.Str;
 
             IamUserStatusSourceValueUnion res = new IamUserStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static IamUserStatusSourceValueUnion CreateNumber(double number) {
+        public static IamUserStatusSourceValueUnion CreateNumber(double number)
+        {
             IamUserStatusSourceValueUnionType typ = IamUserStatusSourceValueUnionType.Number;
 
             IamUserStatusSourceValueUnion res = new IamUserStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static IamUserStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static IamUserStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             IamUserStatusSourceValueUnionType typ = IamUserStatusSourceValueUnionType.Boolean;
 
             IamUserStatusSourceValueUnion res = new IamUserStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamUserStatusSourceValueUnion CreateIamUserSourceValueStatus(IamUserSourceValueStatus iamUserSourceValueStatus) {
+        public static IamUserStatusSourceValueUnion CreateIamUserSourceValueStatus(IamUserSourceValueStatus iamUserSourceValueStatus)
+        {
             IamUserStatusSourceValueUnionType typ = IamUserStatusSourceValueUnionType.IamUserSourceValueStatus;
 
             IamUserStatusSourceValueUnion res = new IamUserStatusSourceValueUnion(typ);
             res.IamUserSourceValueStatus = iamUserSourceValueStatus;
             return res;
         }
-
-        public static IamUserStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static IamUserStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             IamUserStatusSourceValueUnionType typ = IamUserStatusSourceValueUnionType.ArrayOfAny;
 
             IamUserStatusSourceValueUnion res = new IamUserStatusSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamUserStatusSourceValueUnion CreateNull() {
+        public static IamUserStatusSourceValueUnion CreateNull()
+        {
             IamUserStatusSourceValueUnionType typ = IamUserStatusSourceValueUnionType.Null;
             return new IamUserStatusSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamUserStatusSourceValueUnion res = (IamUserStatusSourceValueUnion)value;
                 if (IamUserStatusSourceValueUnionType.FromString(res.Type).Equals(IamUserStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamUserSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamUserSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamGroupSourceValueUnionType
     {
         private IamGroupSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamGroupSourceValueUnionType Str { get { return new IamGroupSourceValueUnionType("str"); } }
-        
+
         public static IamGroupSourceValueUnionType Number { get { return new IamGroupSourceValueUnionType("number"); } }
-        
+
         public static IamGroupSourceValueUnionType Boolean { get { return new IamGroupSourceValueUnionType("boolean"); } }
-        
+
         public static IamGroupSourceValueUnionType IamGroupSourceValue { get { return new IamGroupSourceValueUnionType("IamGroup_source_value"); } }
-        
+
         public static IamGroupSourceValueUnionType ArrayOfAny { get { return new IamGroupSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static IamGroupSourceValueUnionType Null { get { return new IamGroupSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(IamGroupSourceValueUnion.IamGroupSourceValueUnionConverter))]
-    public class IamGroupSourceValueUnion {
-        public IamGroupSourceValueUnion(IamGroupSourceValueUnionType type) {
+    public class IamGroupSourceValueUnion
+    {
+        public IamGroupSourceValueUnion(IamGroupSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public IamGroupSourceValueUnionType Type { get; set; }
-
-
-        public static IamGroupSourceValueUnion CreateStr(string str) {
+        public static IamGroupSourceValueUnion CreateStr(string str)
+        {
             IamGroupSourceValueUnionType typ = IamGroupSourceValueUnionType.Str;
 
             IamGroupSourceValueUnion res = new IamGroupSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static IamGroupSourceValueUnion CreateNumber(double number) {
+        public static IamGroupSourceValueUnion CreateNumber(double number)
+        {
             IamGroupSourceValueUnionType typ = IamGroupSourceValueUnionType.Number;
 
             IamGroupSourceValueUnion res = new IamGroupSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static IamGroupSourceValueUnion CreateBoolean(bool boolean) {
+        public static IamGroupSourceValueUnion CreateBoolean(bool boolean)
+        {
             IamGroupSourceValueUnionType typ = IamGroupSourceValueUnionType.Boolean;
 
             IamGroupSourceValueUnion res = new IamGroupSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamGroupSourceValueUnion CreateIamGroupSourceValue(IamGroupSourceValue iamGroupSourceValue) {
+        public static IamGroupSourceValueUnion CreateIamGroupSourceValue(IamGroupSourceValue iamGroupSourceValue)
+        {
             IamGroupSourceValueUnionType typ = IamGroupSourceValueUnionType.IamGroupSourceValue;
 
             IamGroupSourceValueUnion res = new IamGroupSourceValueUnion(typ);
             res.IamGroupSourceValue = iamGroupSourceValue;
             return res;
         }
-
-        public static IamGroupSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static IamGroupSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             IamGroupSourceValueUnionType typ = IamGroupSourceValueUnionType.ArrayOfAny;
 
             IamGroupSourceValueUnion res = new IamGroupSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamGroupSourceValueUnion CreateNull() {
+        public static IamGroupSourceValueUnion CreateNull()
+        {
             IamGroupSourceValueUnionType typ = IamGroupSourceValueUnionType.Null;
             return new IamGroupSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamGroupSourceValueUnion res = (IamGroupSourceValueUnion)value;
                 if (IamGroupSourceValueUnionType.FromString(res.Type).Equals(IamGroupSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamGroupSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamGroupSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

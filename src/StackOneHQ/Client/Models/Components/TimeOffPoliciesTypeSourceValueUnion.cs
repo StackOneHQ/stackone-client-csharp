@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TimeOffPoliciesTypeSourceValueUnionType
     {
         private TimeOffPoliciesTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TimeOffPoliciesTypeSourceValueUnionType Str { get { return new TimeOffPoliciesTypeSourceValueUnionType("str"); } }
-        
+
         public static TimeOffPoliciesTypeSourceValueUnionType Number { get { return new TimeOffPoliciesTypeSourceValueUnionType("number"); } }
-        
+
         public static TimeOffPoliciesTypeSourceValueUnionType Boolean { get { return new TimeOffPoliciesTypeSourceValueUnionType("boolean"); } }
-        
+
         public static TimeOffPoliciesTypeSourceValueUnionType TimeOffPoliciesSourceValueType { get { return new TimeOffPoliciesTypeSourceValueUnionType("TimeOffPolicies_source_value_type"); } }
-        
+
         public static TimeOffPoliciesTypeSourceValueUnionType ArrayOfAny { get { return new TimeOffPoliciesTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TimeOffPoliciesTypeSourceValueUnionType Null { get { return new TimeOffPoliciesTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(TimeOffPoliciesTypeSourceValueUnion.TimeOffPoliciesTypeSourceValueUnionConverter))]
-    public class TimeOffPoliciesTypeSourceValueUnion {
-        public TimeOffPoliciesTypeSourceValueUnion(TimeOffPoliciesTypeSourceValueUnionType type) {
+    public class TimeOffPoliciesTypeSourceValueUnion
+    {
+        public TimeOffPoliciesTypeSourceValueUnion(TimeOffPoliciesTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TimeOffPoliciesTypeSourceValueUnionType Type { get; set; }
-
-
-        public static TimeOffPoliciesTypeSourceValueUnion CreateStr(string str) {
+        public static TimeOffPoliciesTypeSourceValueUnion CreateStr(string str)
+        {
             TimeOffPoliciesTypeSourceValueUnionType typ = TimeOffPoliciesTypeSourceValueUnionType.Str;
 
             TimeOffPoliciesTypeSourceValueUnion res = new TimeOffPoliciesTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TimeOffPoliciesTypeSourceValueUnion CreateNumber(double number) {
+        public static TimeOffPoliciesTypeSourceValueUnion CreateNumber(double number)
+        {
             TimeOffPoliciesTypeSourceValueUnionType typ = TimeOffPoliciesTypeSourceValueUnionType.Number;
 
             TimeOffPoliciesTypeSourceValueUnion res = new TimeOffPoliciesTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TimeOffPoliciesTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static TimeOffPoliciesTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             TimeOffPoliciesTypeSourceValueUnionType typ = TimeOffPoliciesTypeSourceValueUnionType.Boolean;
 
             TimeOffPoliciesTypeSourceValueUnion res = new TimeOffPoliciesTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TimeOffPoliciesTypeSourceValueUnion CreateTimeOffPoliciesSourceValueType(TimeOffPoliciesSourceValueType timeOffPoliciesSourceValueType) {
+        public static TimeOffPoliciesTypeSourceValueUnion CreateTimeOffPoliciesSourceValueType(TimeOffPoliciesSourceValueType timeOffPoliciesSourceValueType)
+        {
             TimeOffPoliciesTypeSourceValueUnionType typ = TimeOffPoliciesTypeSourceValueUnionType.TimeOffPoliciesSourceValueType;
 
             TimeOffPoliciesTypeSourceValueUnion res = new TimeOffPoliciesTypeSourceValueUnion(typ);
             res.TimeOffPoliciesSourceValueType = timeOffPoliciesSourceValueType;
             return res;
         }
-
-        public static TimeOffPoliciesTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TimeOffPoliciesTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TimeOffPoliciesTypeSourceValueUnionType typ = TimeOffPoliciesTypeSourceValueUnionType.ArrayOfAny;
 
             TimeOffPoliciesTypeSourceValueUnion res = new TimeOffPoliciesTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TimeOffPoliciesTypeSourceValueUnion CreateNull() {
+        public static TimeOffPoliciesTypeSourceValueUnion CreateNull()
+        {
             TimeOffPoliciesTypeSourceValueUnionType typ = TimeOffPoliciesTypeSourceValueUnionType.Null;
             return new TimeOffPoliciesTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TimeOffPoliciesTypeSourceValueUnion res = (TimeOffPoliciesTypeSourceValueUnion)value;
                 if (TimeOffPoliciesTypeSourceValueUnionType.FromString(res.Type).Equals(TimeOffPoliciesTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TimeOffPoliciesSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TimeOffPoliciesSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

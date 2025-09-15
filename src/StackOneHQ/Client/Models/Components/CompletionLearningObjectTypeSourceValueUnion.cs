@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CompletionLearningObjectTypeSourceValueUnionType
     {
         private CompletionLearningObjectTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CompletionLearningObjectTypeSourceValueUnionType Str { get { return new CompletionLearningObjectTypeSourceValueUnionType("str"); } }
-        
+
         public static CompletionLearningObjectTypeSourceValueUnionType Number { get { return new CompletionLearningObjectTypeSourceValueUnionType("number"); } }
-        
+
         public static CompletionLearningObjectTypeSourceValueUnionType Boolean { get { return new CompletionLearningObjectTypeSourceValueUnionType("boolean"); } }
-        
+
         public static CompletionLearningObjectTypeSourceValueUnionType CompletionSourceValueLearningObjectType { get { return new CompletionLearningObjectTypeSourceValueUnionType("Completion_source_value_learning_object_type"); } }
-        
+
         public static CompletionLearningObjectTypeSourceValueUnionType ArrayOfAny { get { return new CompletionLearningObjectTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CompletionLearningObjectTypeSourceValueUnionType Null { get { return new CompletionLearningObjectTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CompletionLearningObjectTypeSourceValueUnion.CompletionLearningObjectTypeSourceValueUnionConverter))]
-    public class CompletionLearningObjectTypeSourceValueUnion {
-        public CompletionLearningObjectTypeSourceValueUnion(CompletionLearningObjectTypeSourceValueUnionType type) {
+    public class CompletionLearningObjectTypeSourceValueUnion
+    {
+        public CompletionLearningObjectTypeSourceValueUnion(CompletionLearningObjectTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CompletionLearningObjectTypeSourceValueUnionType Type { get; set; }
-
-
-        public static CompletionLearningObjectTypeSourceValueUnion CreateStr(string str) {
+        public static CompletionLearningObjectTypeSourceValueUnion CreateStr(string str)
+        {
             CompletionLearningObjectTypeSourceValueUnionType typ = CompletionLearningObjectTypeSourceValueUnionType.Str;
 
             CompletionLearningObjectTypeSourceValueUnion res = new CompletionLearningObjectTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CompletionLearningObjectTypeSourceValueUnion CreateNumber(double number) {
+        public static CompletionLearningObjectTypeSourceValueUnion CreateNumber(double number)
+        {
             CompletionLearningObjectTypeSourceValueUnionType typ = CompletionLearningObjectTypeSourceValueUnionType.Number;
 
             CompletionLearningObjectTypeSourceValueUnion res = new CompletionLearningObjectTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CompletionLearningObjectTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static CompletionLearningObjectTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             CompletionLearningObjectTypeSourceValueUnionType typ = CompletionLearningObjectTypeSourceValueUnionType.Boolean;
 
             CompletionLearningObjectTypeSourceValueUnion res = new CompletionLearningObjectTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CompletionLearningObjectTypeSourceValueUnion CreateCompletionSourceValueLearningObjectType(CompletionSourceValueLearningObjectType completionSourceValueLearningObjectType) {
+        public static CompletionLearningObjectTypeSourceValueUnion CreateCompletionSourceValueLearningObjectType(CompletionSourceValueLearningObjectType completionSourceValueLearningObjectType)
+        {
             CompletionLearningObjectTypeSourceValueUnionType typ = CompletionLearningObjectTypeSourceValueUnionType.CompletionSourceValueLearningObjectType;
 
             CompletionLearningObjectTypeSourceValueUnion res = new CompletionLearningObjectTypeSourceValueUnion(typ);
             res.CompletionSourceValueLearningObjectType = completionSourceValueLearningObjectType;
             return res;
         }
-
-        public static CompletionLearningObjectTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CompletionLearningObjectTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CompletionLearningObjectTypeSourceValueUnionType typ = CompletionLearningObjectTypeSourceValueUnionType.ArrayOfAny;
 
             CompletionLearningObjectTypeSourceValueUnion res = new CompletionLearningObjectTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CompletionLearningObjectTypeSourceValueUnion CreateNull() {
+        public static CompletionLearningObjectTypeSourceValueUnion CreateNull()
+        {
             CompletionLearningObjectTypeSourceValueUnionType typ = CompletionLearningObjectTypeSourceValueUnionType.Null;
             return new CompletionLearningObjectTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CompletionLearningObjectTypeSourceValueUnion res = (CompletionLearningObjectTypeSourceValueUnion)value;
                 if (CompletionLearningObjectTypeSourceValueUnionType.FromString(res.Type).Equals(CompletionLearningObjectTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CompletionSourceValueLearningObjectType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CompletionSourceValueLearningObjectType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

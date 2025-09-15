@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessagingUserResultActiveUnionType
     {
         private MessagingUserResultActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessagingUserResultActiveUnionType Boolean { get { return new MessagingUserResultActiveUnionType("boolean"); } }
-        
+
         public static MessagingUserResultActiveUnionType MessagingUserResultActiveEnum { get { return new MessagingUserResultActiveUnionType("MessagingUserResult_active_enum"); } }
-        
+
         public static MessagingUserResultActiveUnionType Null { get { return new MessagingUserResultActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the user is active
     /// </summary>
     [JsonConverter(typeof(MessagingUserResultActiveUnion.MessagingUserResultActiveUnionConverter))]
-    public class MessagingUserResultActiveUnion {
-        public MessagingUserResultActiveUnion(MessagingUserResultActiveUnionType type) {
+    public class MessagingUserResultActiveUnion
+    {
+        public MessagingUserResultActiveUnion(MessagingUserResultActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public MessagingUserResultActiveEnum? MessagingUserResultActiveEnum { get; set; }
 
         public MessagingUserResultActiveUnionType Type { get; set; }
-
-
-        public static MessagingUserResultActiveUnion CreateBoolean(bool boolean) {
+        public static MessagingUserResultActiveUnion CreateBoolean(bool boolean)
+        {
             MessagingUserResultActiveUnionType typ = MessagingUserResultActiveUnionType.Boolean;
 
             MessagingUserResultActiveUnion res = new MessagingUserResultActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MessagingUserResultActiveUnion CreateMessagingUserResultActiveEnum(MessagingUserResultActiveEnum messagingUserResultActiveEnum) {
+        public static MessagingUserResultActiveUnion CreateMessagingUserResultActiveEnum(MessagingUserResultActiveEnum messagingUserResultActiveEnum)
+        {
             MessagingUserResultActiveUnionType typ = MessagingUserResultActiveUnionType.MessagingUserResultActiveEnum;
 
             MessagingUserResultActiveUnion res = new MessagingUserResultActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessagingUserResultActiveUnion CreateNull() {
+        public static MessagingUserResultActiveUnion CreateNull()
+        {
             MessagingUserResultActiveUnionType typ = MessagingUserResultActiveUnionType.Null;
             return new MessagingUserResultActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessagingUserResultActiveUnion res = (MessagingUserResultActiveUnion)value;
                 if (MessagingUserResultActiveUnionType.FromString(res.Type).Equals(MessagingUserResultActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MessagingUserResultActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessagingUserResultActiveEnum));
                     return;
                 }
-
             }
 
         }

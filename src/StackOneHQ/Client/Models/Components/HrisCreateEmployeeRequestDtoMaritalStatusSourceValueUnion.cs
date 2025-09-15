@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType
     {
         private HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType Str { get { return new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType("str"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType Number { get { return new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType("number"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType Boolean { get { return new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType HrisCreateEmployeeRequestDtoSourceValueMaritalStatus { get { return new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType("HrisCreateEmployeeRequestDto_source_value_marital_status"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType ArrayOfAny { get { return new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType Null { get { return new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion.HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionConverter))]
-    public class HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion {
-        public HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType type) {
+    public class HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion
+    {
+        public HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateStr(string str) {
+        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateStr(string str)
+        {
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType typ = HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.Str;
 
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion res = new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateNumber(double number) {
+        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateNumber(double number)
+        {
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType typ = HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.Number;
 
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion res = new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType typ = HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.Boolean;
 
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion res = new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValueMaritalStatus(HrisCreateEmployeeRequestDtoSourceValueMaritalStatus hrisCreateEmployeeRequestDtoSourceValueMaritalStatus) {
+        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateHrisCreateEmployeeRequestDtoSourceValueMaritalStatus(HrisCreateEmployeeRequestDtoSourceValueMaritalStatus hrisCreateEmployeeRequestDtoSourceValueMaritalStatus)
+        {
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType typ = HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.HrisCreateEmployeeRequestDtoSourceValueMaritalStatus;
 
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion res = new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(typ);
             res.HrisCreateEmployeeRequestDtoSourceValueMaritalStatus = hrisCreateEmployeeRequestDtoSourceValueMaritalStatus;
             return res;
         }
-
-        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType typ = HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.ArrayOfAny;
 
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion res = new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateNull() {
+        public static HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion CreateNull()
+        {
             HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType typ = HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.Null;
             return new HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion res = (HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnion)value;
                 if (HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.FromString(res.Type).Equals(HrisCreateEmployeeRequestDtoMaritalStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateEmployeeRequestDtoSourceValueMaritalStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateEmployeeRequestDtoSourceValueMaritalStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

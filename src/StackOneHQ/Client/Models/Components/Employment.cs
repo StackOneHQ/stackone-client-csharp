@@ -98,6 +98,18 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("employment_contract_type")]
         public EmploymentEmploymentContractType? EmploymentContractType { get; set; } = null;
 
+        /// <summary>
+        /// The type of employment
+        /// </summary>
+        [JsonProperty("type")]
+        public EmploymentType? Type { get; set; } = null;
+
+        /// <summary>
+        /// The employment work schedule type
+        /// </summary>
+        [JsonProperty("contract_type")]
+        public EmploymentContractType? ContractType { get; set; } = null;
+
         [JsonProperty("work_time")]
         public EmploymentWorkTime? WorkTime { get; set; } = null;
 
@@ -180,18 +192,6 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("job")]
         public EmploymentJob? Job { get; set; } = null;
-
-        /// <summary>
-        /// The type of employment
-        /// </summary>
-        [JsonProperty("type")]
-        public EmploymentType? Type { get; set; } = null;
-
-        /// <summary>
-        /// The employment work schedule type
-        /// </summary>
-        [JsonProperty("contract_type")]
-        public ContractType? ContractType { get; set; } = null;
 
         /// <summary>
         /// The employee manager

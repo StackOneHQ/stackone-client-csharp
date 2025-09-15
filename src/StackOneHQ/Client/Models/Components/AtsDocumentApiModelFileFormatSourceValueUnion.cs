@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsDocumentApiModelFileFormatSourceValueUnionType
     {
         private AtsDocumentApiModelFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsDocumentApiModelFileFormatSourceValueUnionType Str { get { return new AtsDocumentApiModelFileFormatSourceValueUnionType("str"); } }
-        
+
         public static AtsDocumentApiModelFileFormatSourceValueUnionType Number { get { return new AtsDocumentApiModelFileFormatSourceValueUnionType("number"); } }
-        
+
         public static AtsDocumentApiModelFileFormatSourceValueUnionType Boolean { get { return new AtsDocumentApiModelFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static AtsDocumentApiModelFileFormatSourceValueUnionType AtsDocumentApiModelSourceValueFileFormat { get { return new AtsDocumentApiModelFileFormatSourceValueUnionType("AtsDocumentApiModel_source_value_file_format"); } }
-        
+
         public static AtsDocumentApiModelFileFormatSourceValueUnionType ArrayOfAny { get { return new AtsDocumentApiModelFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsDocumentApiModelFileFormatSourceValueUnionType Null { get { return new AtsDocumentApiModelFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AtsDocumentApiModelFileFormatSourceValueUnion.AtsDocumentApiModelFileFormatSourceValueUnionConverter))]
-    public class AtsDocumentApiModelFileFormatSourceValueUnion {
-        public AtsDocumentApiModelFileFormatSourceValueUnion(AtsDocumentApiModelFileFormatSourceValueUnionType type) {
+    public class AtsDocumentApiModelFileFormatSourceValueUnion
+    {
+        public AtsDocumentApiModelFileFormatSourceValueUnion(AtsDocumentApiModelFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsDocumentApiModelFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateStr(string str) {
+        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateStr(string str)
+        {
             AtsDocumentApiModelFileFormatSourceValueUnionType typ = AtsDocumentApiModelFileFormatSourceValueUnionType.Str;
 
             AtsDocumentApiModelFileFormatSourceValueUnion res = new AtsDocumentApiModelFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateNumber(double number) {
+        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateNumber(double number)
+        {
             AtsDocumentApiModelFileFormatSourceValueUnionType typ = AtsDocumentApiModelFileFormatSourceValueUnionType.Number;
 
             AtsDocumentApiModelFileFormatSourceValueUnion res = new AtsDocumentApiModelFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsDocumentApiModelFileFormatSourceValueUnionType typ = AtsDocumentApiModelFileFormatSourceValueUnionType.Boolean;
 
             AtsDocumentApiModelFileFormatSourceValueUnion res = new AtsDocumentApiModelFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateAtsDocumentApiModelSourceValueFileFormat(AtsDocumentApiModelSourceValueFileFormat atsDocumentAPIModelSourceValueFileFormat) {
+        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateAtsDocumentApiModelSourceValueFileFormat(AtsDocumentApiModelSourceValueFileFormat atsDocumentAPIModelSourceValueFileFormat)
+        {
             AtsDocumentApiModelFileFormatSourceValueUnionType typ = AtsDocumentApiModelFileFormatSourceValueUnionType.AtsDocumentApiModelSourceValueFileFormat;
 
             AtsDocumentApiModelFileFormatSourceValueUnion res = new AtsDocumentApiModelFileFormatSourceValueUnion(typ);
             res.AtsDocumentApiModelSourceValueFileFormat = atsDocumentAPIModelSourceValueFileFormat;
             return res;
         }
-
-        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsDocumentApiModelFileFormatSourceValueUnionType typ = AtsDocumentApiModelFileFormatSourceValueUnionType.ArrayOfAny;
 
             AtsDocumentApiModelFileFormatSourceValueUnion res = new AtsDocumentApiModelFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateNull() {
+        public static AtsDocumentApiModelFileFormatSourceValueUnion CreateNull()
+        {
             AtsDocumentApiModelFileFormatSourceValueUnionType typ = AtsDocumentApiModelFileFormatSourceValueUnionType.Null;
             return new AtsDocumentApiModelFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsDocumentApiModelFileFormatSourceValueUnion res = (AtsDocumentApiModelFileFormatSourceValueUnion)value;
                 if (AtsDocumentApiModelFileFormatSourceValueUnionType.FromString(res.Type).Equals(AtsDocumentApiModelFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsDocumentApiModelSourceValueFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsDocumentApiModelSourceValueFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

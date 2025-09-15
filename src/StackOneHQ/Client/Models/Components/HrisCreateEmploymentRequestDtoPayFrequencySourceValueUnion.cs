@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType
     {
         private HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType Str { get { return new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType("str"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType Number { get { return new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType("number"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType Boolean { get { return new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType("boolean"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType HrisCreateEmploymentRequestDtoSourceValuePayFrequency { get { return new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType("HrisCreateEmploymentRequestDto_source_value_pay_frequency"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType ArrayOfAny { get { return new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType Null { get { return new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay frequency.
     /// </summary>
     [JsonConverter(typeof(HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion.HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionConverter))]
-    public class HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion {
-        public HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType type) {
+    public class HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion
+    {
+        public HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType Type { get; set; }
-
-
-        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateStr(string str) {
+        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateStr(string str)
+        {
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType typ = HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.Str;
 
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion res = new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateNumber(double number) {
+        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateNumber(double number)
+        {
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType typ = HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.Number;
 
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion res = new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType typ = HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.Boolean;
 
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion res = new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateHrisCreateEmploymentRequestDtoSourceValuePayFrequency(HrisCreateEmploymentRequestDtoSourceValuePayFrequency hrisCreateEmploymentRequestDtoSourceValuePayFrequency) {
+        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateHrisCreateEmploymentRequestDtoSourceValuePayFrequency(HrisCreateEmploymentRequestDtoSourceValuePayFrequency hrisCreateEmploymentRequestDtoSourceValuePayFrequency)
+        {
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType typ = HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.HrisCreateEmploymentRequestDtoSourceValuePayFrequency;
 
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion res = new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(typ);
             res.HrisCreateEmploymentRequestDtoSourceValuePayFrequency = hrisCreateEmploymentRequestDtoSourceValuePayFrequency;
             return res;
         }
-
-        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType typ = HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.ArrayOfAny;
 
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion res = new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateNull() {
+        public static HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion CreateNull()
+        {
             HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType typ = HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.Null;
             return new HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion res = (HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnion)value;
                 if (HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.FromString(res.Type).Equals(HrisCreateEmploymentRequestDtoPayFrequencySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateEmploymentRequestDtoSourceValuePayFrequency != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateEmploymentRequestDtoSourceValuePayFrequency));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountingJournalResultSourceValueUnionType
     {
         private AccountingJournalResultSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountingJournalResultSourceValueUnionType Str { get { return new AccountingJournalResultSourceValueUnionType("str"); } }
-        
+
         public static AccountingJournalResultSourceValueUnionType Number { get { return new AccountingJournalResultSourceValueUnionType("number"); } }
-        
+
         public static AccountingJournalResultSourceValueUnionType Boolean { get { return new AccountingJournalResultSourceValueUnionType("boolean"); } }
-        
+
         public static AccountingJournalResultSourceValueUnionType AccountingJournalResultSourceValue { get { return new AccountingJournalResultSourceValueUnionType("AccountingJournalResult_source_value"); } }
-        
+
         public static AccountingJournalResultSourceValueUnionType ArrayOfAny { get { return new AccountingJournalResultSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AccountingJournalResultSourceValueUnionType Null { get { return new AccountingJournalResultSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AccountingJournalResultSourceValueUnion.AccountingJournalResultSourceValueUnionConverter))]
-    public class AccountingJournalResultSourceValueUnion {
-        public AccountingJournalResultSourceValueUnion(AccountingJournalResultSourceValueUnionType type) {
+    public class AccountingJournalResultSourceValueUnion
+    {
+        public AccountingJournalResultSourceValueUnion(AccountingJournalResultSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AccountingJournalResultSourceValueUnionType Type { get; set; }
-
-
-        public static AccountingJournalResultSourceValueUnion CreateStr(string str) {
+        public static AccountingJournalResultSourceValueUnion CreateStr(string str)
+        {
             AccountingJournalResultSourceValueUnionType typ = AccountingJournalResultSourceValueUnionType.Str;
 
             AccountingJournalResultSourceValueUnion res = new AccountingJournalResultSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AccountingJournalResultSourceValueUnion CreateNumber(double number) {
+        public static AccountingJournalResultSourceValueUnion CreateNumber(double number)
+        {
             AccountingJournalResultSourceValueUnionType typ = AccountingJournalResultSourceValueUnionType.Number;
 
             AccountingJournalResultSourceValueUnion res = new AccountingJournalResultSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AccountingJournalResultSourceValueUnion CreateBoolean(bool boolean) {
+        public static AccountingJournalResultSourceValueUnion CreateBoolean(bool boolean)
+        {
             AccountingJournalResultSourceValueUnionType typ = AccountingJournalResultSourceValueUnionType.Boolean;
 
             AccountingJournalResultSourceValueUnion res = new AccountingJournalResultSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountingJournalResultSourceValueUnion CreateAccountingJournalResultSourceValue(AccountingJournalResultSourceValue accountingJournalResultSourceValue) {
+        public static AccountingJournalResultSourceValueUnion CreateAccountingJournalResultSourceValue(AccountingJournalResultSourceValue accountingJournalResultSourceValue)
+        {
             AccountingJournalResultSourceValueUnionType typ = AccountingJournalResultSourceValueUnionType.AccountingJournalResultSourceValue;
 
             AccountingJournalResultSourceValueUnion res = new AccountingJournalResultSourceValueUnion(typ);
             res.AccountingJournalResultSourceValue = accountingJournalResultSourceValue;
             return res;
         }
-
-        public static AccountingJournalResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AccountingJournalResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AccountingJournalResultSourceValueUnionType typ = AccountingJournalResultSourceValueUnionType.ArrayOfAny;
 
             AccountingJournalResultSourceValueUnion res = new AccountingJournalResultSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountingJournalResultSourceValueUnion CreateNull() {
+        public static AccountingJournalResultSourceValueUnion CreateNull()
+        {
             AccountingJournalResultSourceValueUnionType typ = AccountingJournalResultSourceValueUnionType.Null;
             return new AccountingJournalResultSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountingJournalResultSourceValueUnion res = (AccountingJournalResultSourceValueUnion)value;
                 if (AccountingJournalResultSourceValueUnionType.FromString(res.Type).Equals(AccountingJournalResultSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AccountingJournalResultSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AccountingJournalResultSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

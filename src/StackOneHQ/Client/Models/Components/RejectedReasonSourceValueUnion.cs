@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class RejectedReasonSourceValueUnionType
     {
         private RejectedReasonSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static RejectedReasonSourceValueUnionType Str { get { return new RejectedReasonSourceValueUnionType("str"); } }
-        
+
         public static RejectedReasonSourceValueUnionType Number { get { return new RejectedReasonSourceValueUnionType("number"); } }
-        
+
         public static RejectedReasonSourceValueUnionType Boolean { get { return new RejectedReasonSourceValueUnionType("boolean"); } }
-        
+
         public static RejectedReasonSourceValueUnionType RejectedReasonSourceValue { get { return new RejectedReasonSourceValueUnionType("RejectedReason_source_value"); } }
-        
+
         public static RejectedReasonSourceValueUnionType ArrayOfAny { get { return new RejectedReasonSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static RejectedReasonSourceValueUnionType Null { get { return new RejectedReasonSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the rejected reason type.
     /// </summary>
     [JsonConverter(typeof(RejectedReasonSourceValueUnion.RejectedReasonSourceValueUnionConverter))]
-    public class RejectedReasonSourceValueUnion {
-        public RejectedReasonSourceValueUnion(RejectedReasonSourceValueUnionType type) {
+    public class RejectedReasonSourceValueUnion
+    {
+        public RejectedReasonSourceValueUnion(RejectedReasonSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public RejectedReasonSourceValueUnionType Type { get; set; }
-
-
-        public static RejectedReasonSourceValueUnion CreateStr(string str) {
+        public static RejectedReasonSourceValueUnion CreateStr(string str)
+        {
             RejectedReasonSourceValueUnionType typ = RejectedReasonSourceValueUnionType.Str;
 
             RejectedReasonSourceValueUnion res = new RejectedReasonSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static RejectedReasonSourceValueUnion CreateNumber(double number) {
+        public static RejectedReasonSourceValueUnion CreateNumber(double number)
+        {
             RejectedReasonSourceValueUnionType typ = RejectedReasonSourceValueUnionType.Number;
 
             RejectedReasonSourceValueUnion res = new RejectedReasonSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static RejectedReasonSourceValueUnion CreateBoolean(bool boolean) {
+        public static RejectedReasonSourceValueUnion CreateBoolean(bool boolean)
+        {
             RejectedReasonSourceValueUnionType typ = RejectedReasonSourceValueUnionType.Boolean;
 
             RejectedReasonSourceValueUnion res = new RejectedReasonSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static RejectedReasonSourceValueUnion CreateRejectedReasonSourceValue(RejectedReasonSourceValue rejectedReasonSourceValue) {
+        public static RejectedReasonSourceValueUnion CreateRejectedReasonSourceValue(RejectedReasonSourceValue rejectedReasonSourceValue)
+        {
             RejectedReasonSourceValueUnionType typ = RejectedReasonSourceValueUnionType.RejectedReasonSourceValue;
 
             RejectedReasonSourceValueUnion res = new RejectedReasonSourceValueUnion(typ);
             res.RejectedReasonSourceValue = rejectedReasonSourceValue;
             return res;
         }
-
-        public static RejectedReasonSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static RejectedReasonSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             RejectedReasonSourceValueUnionType typ = RejectedReasonSourceValueUnionType.ArrayOfAny;
 
             RejectedReasonSourceValueUnion res = new RejectedReasonSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static RejectedReasonSourceValueUnion CreateNull() {
+        public static RejectedReasonSourceValueUnion CreateNull()
+        {
             RejectedReasonSourceValueUnionType typ = RejectedReasonSourceValueUnionType.Null;
             return new RejectedReasonSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 RejectedReasonSourceValueUnion res = (RejectedReasonSourceValueUnion)value;
                 if (RejectedReasonSourceValueUnionType.FromString(res.Type).Equals(RejectedReasonSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.RejectedReasonSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.RejectedReasonSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

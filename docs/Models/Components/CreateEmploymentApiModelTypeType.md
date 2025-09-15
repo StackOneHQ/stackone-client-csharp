@@ -1,0 +1,11 @@
+# CreateEmploymentApiModelTypeType
+
+The type of employment (e.g., contractor, permanent)
+
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                 | [CreateEmploymentApiModelTypeValue](../../Models/Components/CreateEmploymentApiModelTypeValue.md)                       | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
+| `SourceValue`                                                                                                           | [CreateEmploymentApiModelTypeSourceValueUnion](../../Models/Components/CreateEmploymentApiModelTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |

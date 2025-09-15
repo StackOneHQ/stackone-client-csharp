@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ContentBlockStatusSourceValueUnionType
     {
         private ContentBlockStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ContentBlockStatusSourceValueUnionType Str { get { return new ContentBlockStatusSourceValueUnionType("str"); } }
-        
+
         public static ContentBlockStatusSourceValueUnionType Number { get { return new ContentBlockStatusSourceValueUnionType("number"); } }
-        
+
         public static ContentBlockStatusSourceValueUnionType Boolean { get { return new ContentBlockStatusSourceValueUnionType("boolean"); } }
-        
+
         public static ContentBlockStatusSourceValueUnionType ContentBlockSourceValueStatus { get { return new ContentBlockStatusSourceValueUnionType("ContentBlock_source_value_status"); } }
-        
+
         public static ContentBlockStatusSourceValueUnionType ArrayOfAny { get { return new ContentBlockStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ContentBlockStatusSourceValueUnionType Null { get { return new ContentBlockStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the status.
     /// </summary>
     [JsonConverter(typeof(ContentBlockStatusSourceValueUnion.ContentBlockStatusSourceValueUnionConverter))]
-    public class ContentBlockStatusSourceValueUnion {
-        public ContentBlockStatusSourceValueUnion(ContentBlockStatusSourceValueUnionType type) {
+    public class ContentBlockStatusSourceValueUnion
+    {
+        public ContentBlockStatusSourceValueUnion(ContentBlockStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ContentBlockStatusSourceValueUnionType Type { get; set; }
-
-
-        public static ContentBlockStatusSourceValueUnion CreateStr(string str) {
+        public static ContentBlockStatusSourceValueUnion CreateStr(string str)
+        {
             ContentBlockStatusSourceValueUnionType typ = ContentBlockStatusSourceValueUnionType.Str;
 
             ContentBlockStatusSourceValueUnion res = new ContentBlockStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ContentBlockStatusSourceValueUnion CreateNumber(double number) {
+        public static ContentBlockStatusSourceValueUnion CreateNumber(double number)
+        {
             ContentBlockStatusSourceValueUnionType typ = ContentBlockStatusSourceValueUnionType.Number;
 
             ContentBlockStatusSourceValueUnion res = new ContentBlockStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ContentBlockStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static ContentBlockStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             ContentBlockStatusSourceValueUnionType typ = ContentBlockStatusSourceValueUnionType.Boolean;
 
             ContentBlockStatusSourceValueUnion res = new ContentBlockStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ContentBlockStatusSourceValueUnion CreateContentBlockSourceValueStatus(ContentBlockSourceValueStatus contentBlockSourceValueStatus) {
+        public static ContentBlockStatusSourceValueUnion CreateContentBlockSourceValueStatus(ContentBlockSourceValueStatus contentBlockSourceValueStatus)
+        {
             ContentBlockStatusSourceValueUnionType typ = ContentBlockStatusSourceValueUnionType.ContentBlockSourceValueStatus;
 
             ContentBlockStatusSourceValueUnion res = new ContentBlockStatusSourceValueUnion(typ);
             res.ContentBlockSourceValueStatus = contentBlockSourceValueStatus;
             return res;
         }
-
-        public static ContentBlockStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ContentBlockStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ContentBlockStatusSourceValueUnionType typ = ContentBlockStatusSourceValueUnionType.ArrayOfAny;
 
             ContentBlockStatusSourceValueUnion res = new ContentBlockStatusSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ContentBlockStatusSourceValueUnion CreateNull() {
+        public static ContentBlockStatusSourceValueUnion CreateNull()
+        {
             ContentBlockStatusSourceValueUnionType typ = ContentBlockStatusSourceValueUnionType.Null;
             return new ContentBlockStatusSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ContentBlockStatusSourceValueUnion res = (ContentBlockStatusSourceValueUnion)value;
                 if (ContentBlockStatusSourceValueUnionType.FromString(res.Type).Equals(ContentBlockStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ContentBlockSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ContentBlockSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

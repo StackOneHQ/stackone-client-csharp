@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class JobPostingCompensationPayPeriodSourceValueUnionType
     {
         private JobPostingCompensationPayPeriodSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static JobPostingCompensationPayPeriodSourceValueUnionType Str { get { return new JobPostingCompensationPayPeriodSourceValueUnionType("str"); } }
-        
+
         public static JobPostingCompensationPayPeriodSourceValueUnionType Number { get { return new JobPostingCompensationPayPeriodSourceValueUnionType("number"); } }
-        
+
         public static JobPostingCompensationPayPeriodSourceValueUnionType Boolean { get { return new JobPostingCompensationPayPeriodSourceValueUnionType("boolean"); } }
-        
+
         public static JobPostingCompensationPayPeriodSourceValueUnionType JobPostingCompensationSourceValuePayPeriod { get { return new JobPostingCompensationPayPeriodSourceValueUnionType("JobPostingCompensation_source_value_pay_period"); } }
-        
+
         public static JobPostingCompensationPayPeriodSourceValueUnionType ArrayOfAny { get { return new JobPostingCompensationPayPeriodSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static JobPostingCompensationPayPeriodSourceValueUnionType Null { get { return new JobPostingCompensationPayPeriodSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the pay period.
     /// </summary>
     [JsonConverter(typeof(JobPostingCompensationPayPeriodSourceValueUnion.JobPostingCompensationPayPeriodSourceValueUnionConverter))]
-    public class JobPostingCompensationPayPeriodSourceValueUnion {
-        public JobPostingCompensationPayPeriodSourceValueUnion(JobPostingCompensationPayPeriodSourceValueUnionType type) {
+    public class JobPostingCompensationPayPeriodSourceValueUnion
+    {
+        public JobPostingCompensationPayPeriodSourceValueUnion(JobPostingCompensationPayPeriodSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public JobPostingCompensationPayPeriodSourceValueUnionType Type { get; set; }
-
-
-        public static JobPostingCompensationPayPeriodSourceValueUnion CreateStr(string str) {
+        public static JobPostingCompensationPayPeriodSourceValueUnion CreateStr(string str)
+        {
             JobPostingCompensationPayPeriodSourceValueUnionType typ = JobPostingCompensationPayPeriodSourceValueUnionType.Str;
 
             JobPostingCompensationPayPeriodSourceValueUnion res = new JobPostingCompensationPayPeriodSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static JobPostingCompensationPayPeriodSourceValueUnion CreateNumber(double number) {
+        public static JobPostingCompensationPayPeriodSourceValueUnion CreateNumber(double number)
+        {
             JobPostingCompensationPayPeriodSourceValueUnionType typ = JobPostingCompensationPayPeriodSourceValueUnionType.Number;
 
             JobPostingCompensationPayPeriodSourceValueUnion res = new JobPostingCompensationPayPeriodSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static JobPostingCompensationPayPeriodSourceValueUnion CreateBoolean(bool boolean) {
+        public static JobPostingCompensationPayPeriodSourceValueUnion CreateBoolean(bool boolean)
+        {
             JobPostingCompensationPayPeriodSourceValueUnionType typ = JobPostingCompensationPayPeriodSourceValueUnionType.Boolean;
 
             JobPostingCompensationPayPeriodSourceValueUnion res = new JobPostingCompensationPayPeriodSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static JobPostingCompensationPayPeriodSourceValueUnion CreateJobPostingCompensationSourceValuePayPeriod(JobPostingCompensationSourceValuePayPeriod jobPostingCompensationSourceValuePayPeriod) {
+        public static JobPostingCompensationPayPeriodSourceValueUnion CreateJobPostingCompensationSourceValuePayPeriod(JobPostingCompensationSourceValuePayPeriod jobPostingCompensationSourceValuePayPeriod)
+        {
             JobPostingCompensationPayPeriodSourceValueUnionType typ = JobPostingCompensationPayPeriodSourceValueUnionType.JobPostingCompensationSourceValuePayPeriod;
 
             JobPostingCompensationPayPeriodSourceValueUnion res = new JobPostingCompensationPayPeriodSourceValueUnion(typ);
             res.JobPostingCompensationSourceValuePayPeriod = jobPostingCompensationSourceValuePayPeriod;
             return res;
         }
-
-        public static JobPostingCompensationPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static JobPostingCompensationPayPeriodSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             JobPostingCompensationPayPeriodSourceValueUnionType typ = JobPostingCompensationPayPeriodSourceValueUnionType.ArrayOfAny;
 
             JobPostingCompensationPayPeriodSourceValueUnion res = new JobPostingCompensationPayPeriodSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static JobPostingCompensationPayPeriodSourceValueUnion CreateNull() {
+        public static JobPostingCompensationPayPeriodSourceValueUnion CreateNull()
+        {
             JobPostingCompensationPayPeriodSourceValueUnionType typ = JobPostingCompensationPayPeriodSourceValueUnionType.Null;
             return new JobPostingCompensationPayPeriodSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 JobPostingCompensationPayPeriodSourceValueUnion res = (JobPostingCompensationPayPeriodSourceValueUnion)value;
                 if (JobPostingCompensationPayPeriodSourceValueUnionType.FromString(res.Type).Equals(JobPostingCompensationPayPeriodSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.JobPostingCompensationSourceValuePayPeriod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.JobPostingCompensationSourceValuePayPeriod));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -1,0 +1,11 @@
+# HrisCreateEmploymentRequestDtoTypeType
+
+The type of employment (e.g., contractor, permanent)
+
+
+## Fields
+
+| Field                                                                                                                               | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                             | [HrisCreateEmploymentRequestDtoTypeValue](../../Models/Components/HrisCreateEmploymentRequestDtoTypeValue.md)                       | :heavy_minus_sign:                                                                                                                  | N/A                                                                                                                                 |
+| `SourceValue`                                                                                                                       | [HrisCreateEmploymentRequestDtoTypeSourceValueUnion](../../Models/Components/HrisCreateEmploymentRequestDtoTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                                                  | N/A                                                                                                                                 |

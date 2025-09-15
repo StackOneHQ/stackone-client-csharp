@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class UnifiedUploadRequestDtoConfidentialSourceValueUnionType
     {
         private UnifiedUploadRequestDtoConfidentialSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static UnifiedUploadRequestDtoConfidentialSourceValueUnionType Str { get { return new UnifiedUploadRequestDtoConfidentialSourceValueUnionType("str"); } }
-        
+
         public static UnifiedUploadRequestDtoConfidentialSourceValueUnionType Number { get { return new UnifiedUploadRequestDtoConfidentialSourceValueUnionType("number"); } }
-        
+
         public static UnifiedUploadRequestDtoConfidentialSourceValueUnionType Boolean { get { return new UnifiedUploadRequestDtoConfidentialSourceValueUnionType("boolean"); } }
-        
+
         public static UnifiedUploadRequestDtoConfidentialSourceValueUnionType UnifiedUploadRequestDtoSourceValueConfidential { get { return new UnifiedUploadRequestDtoConfidentialSourceValueUnionType("UnifiedUploadRequestDto_source_value_confidential"); } }
-        
+
         public static UnifiedUploadRequestDtoConfidentialSourceValueUnionType ArrayOfAny { get { return new UnifiedUploadRequestDtoConfidentialSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static UnifiedUploadRequestDtoConfidentialSourceValueUnionType Null { get { return new UnifiedUploadRequestDtoConfidentialSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(UnifiedUploadRequestDtoConfidentialSourceValueUnion.UnifiedUploadRequestDtoConfidentialSourceValueUnionConverter))]
-    public class UnifiedUploadRequestDtoConfidentialSourceValueUnion {
-        public UnifiedUploadRequestDtoConfidentialSourceValueUnion(UnifiedUploadRequestDtoConfidentialSourceValueUnionType type) {
+    public class UnifiedUploadRequestDtoConfidentialSourceValueUnion
+    {
+        public UnifiedUploadRequestDtoConfidentialSourceValueUnion(UnifiedUploadRequestDtoConfidentialSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public UnifiedUploadRequestDtoConfidentialSourceValueUnionType Type { get; set; }
-
-
-        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateStr(string str) {
+        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateStr(string str)
+        {
             UnifiedUploadRequestDtoConfidentialSourceValueUnionType typ = UnifiedUploadRequestDtoConfidentialSourceValueUnionType.Str;
 
             UnifiedUploadRequestDtoConfidentialSourceValueUnion res = new UnifiedUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateNumber(double number) {
+        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateNumber(double number)
+        {
             UnifiedUploadRequestDtoConfidentialSourceValueUnionType typ = UnifiedUploadRequestDtoConfidentialSourceValueUnionType.Number;
 
             UnifiedUploadRequestDtoConfidentialSourceValueUnion res = new UnifiedUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateBoolean(bool boolean) {
+        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateBoolean(bool boolean)
+        {
             UnifiedUploadRequestDtoConfidentialSourceValueUnionType typ = UnifiedUploadRequestDtoConfidentialSourceValueUnionType.Boolean;
 
             UnifiedUploadRequestDtoConfidentialSourceValueUnion res = new UnifiedUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateUnifiedUploadRequestDtoSourceValueConfidential(UnifiedUploadRequestDtoSourceValueConfidential unifiedUploadRequestDtoSourceValueConfidential) {
+        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateUnifiedUploadRequestDtoSourceValueConfidential(UnifiedUploadRequestDtoSourceValueConfidential unifiedUploadRequestDtoSourceValueConfidential)
+        {
             UnifiedUploadRequestDtoConfidentialSourceValueUnionType typ = UnifiedUploadRequestDtoConfidentialSourceValueUnionType.UnifiedUploadRequestDtoSourceValueConfidential;
 
             UnifiedUploadRequestDtoConfidentialSourceValueUnion res = new UnifiedUploadRequestDtoConfidentialSourceValueUnion(typ);
             res.UnifiedUploadRequestDtoSourceValueConfidential = unifiedUploadRequestDtoSourceValueConfidential;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             UnifiedUploadRequestDtoConfidentialSourceValueUnionType typ = UnifiedUploadRequestDtoConfidentialSourceValueUnionType.ArrayOfAny;
 
             UnifiedUploadRequestDtoConfidentialSourceValueUnion res = new UnifiedUploadRequestDtoConfidentialSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateNull() {
+        public static UnifiedUploadRequestDtoConfidentialSourceValueUnion CreateNull()
+        {
             UnifiedUploadRequestDtoConfidentialSourceValueUnionType typ = UnifiedUploadRequestDtoConfidentialSourceValueUnionType.Null;
             return new UnifiedUploadRequestDtoConfidentialSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 UnifiedUploadRequestDtoConfidentialSourceValueUnion res = (UnifiedUploadRequestDtoConfidentialSourceValueUnion)value;
                 if (UnifiedUploadRequestDtoConfidentialSourceValueUnionType.FromString(res.Type).Equals(UnifiedUploadRequestDtoConfidentialSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.UnifiedUploadRequestDtoSourceValueConfidential != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.UnifiedUploadRequestDtoSourceValueConfidential));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

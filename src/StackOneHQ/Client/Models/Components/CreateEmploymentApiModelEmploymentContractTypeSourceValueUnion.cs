@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType
     {
         private CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType Str { get { return new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType("str"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType Number { get { return new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType("number"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType Boolean { get { return new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType("boolean"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType CreateEmploymentApiModelSourceValueEmploymentContractType { get { return new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType("CreateEmploymentApiModel_source_value_employment_contract_type"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType ArrayOfAny { get { return new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType Null { get { return new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion.CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionConverter))]
-    public class CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion {
-        public CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType type) {
+    public class CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion
+    {
+        public CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType Type { get; set; }
-
-
-        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateStr(string str) {
+        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateStr(string str)
+        {
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.Str;
 
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateNumber(double number) {
+        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateNumber(double number)
+        {
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.Number;
 
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.Boolean;
 
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateCreateEmploymentApiModelSourceValueEmploymentContractType(CreateEmploymentApiModelSourceValueEmploymentContractType createEmploymentAPIModelSourceValueEmploymentContractType) {
+        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateCreateEmploymentApiModelSourceValueEmploymentContractType(CreateEmploymentApiModelSourceValueEmploymentContractType createEmploymentAPIModelSourceValueEmploymentContractType)
+        {
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.CreateEmploymentApiModelSourceValueEmploymentContractType;
 
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(typ);
             res.CreateEmploymentApiModelSourceValueEmploymentContractType = createEmploymentAPIModelSourceValueEmploymentContractType;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.ArrayOfAny;
 
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateNull() {
+        public static CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion CreateNull()
+        {
             CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.Null;
             return new CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion res = (CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion)value;
                 if (CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.FromString(res.Type).Equals(CreateEmploymentApiModelEmploymentContractTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateEmploymentApiModelSourceValueEmploymentContractType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateEmploymentApiModelSourceValueEmploymentContractType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsCreateNotesRequestDtoSourceValueUnionType
     {
         private AtsCreateNotesRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsCreateNotesRequestDtoSourceValueUnionType Str { get { return new AtsCreateNotesRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsCreateNotesRequestDtoSourceValueUnionType Number { get { return new AtsCreateNotesRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsCreateNotesRequestDtoSourceValueUnionType Boolean { get { return new AtsCreateNotesRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsCreateNotesRequestDtoSourceValueUnionType AtsCreateNotesRequestDtoSourceValue { get { return new AtsCreateNotesRequestDtoSourceValueUnionType("AtsCreateNotesRequestDto_source_value"); } }
-        
+
         public static AtsCreateNotesRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsCreateNotesRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsCreateNotesRequestDtoSourceValueUnionType Null { get { return new AtsCreateNotesRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the notes visibility.
     /// </summary>
     [JsonConverter(typeof(AtsCreateNotesRequestDtoSourceValueUnion.AtsCreateNotesRequestDtoSourceValueUnionConverter))]
-    public class AtsCreateNotesRequestDtoSourceValueUnion {
-        public AtsCreateNotesRequestDtoSourceValueUnion(AtsCreateNotesRequestDtoSourceValueUnionType type) {
+    public class AtsCreateNotesRequestDtoSourceValueUnion
+    {
+        public AtsCreateNotesRequestDtoSourceValueUnion(AtsCreateNotesRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsCreateNotesRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsCreateNotesRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsCreateNotesRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsCreateNotesRequestDtoSourceValueUnionType typ = AtsCreateNotesRequestDtoSourceValueUnionType.Str;
 
             AtsCreateNotesRequestDtoSourceValueUnion res = new AtsCreateNotesRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsCreateNotesRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsCreateNotesRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsCreateNotesRequestDtoSourceValueUnionType typ = AtsCreateNotesRequestDtoSourceValueUnionType.Number;
 
             AtsCreateNotesRequestDtoSourceValueUnion res = new AtsCreateNotesRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsCreateNotesRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsCreateNotesRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsCreateNotesRequestDtoSourceValueUnionType typ = AtsCreateNotesRequestDtoSourceValueUnionType.Boolean;
 
             AtsCreateNotesRequestDtoSourceValueUnion res = new AtsCreateNotesRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsCreateNotesRequestDtoSourceValueUnion CreateAtsCreateNotesRequestDtoSourceValue(AtsCreateNotesRequestDtoSourceValue atsCreateNotesRequestDtoSourceValue) {
+        public static AtsCreateNotesRequestDtoSourceValueUnion CreateAtsCreateNotesRequestDtoSourceValue(AtsCreateNotesRequestDtoSourceValue atsCreateNotesRequestDtoSourceValue)
+        {
             AtsCreateNotesRequestDtoSourceValueUnionType typ = AtsCreateNotesRequestDtoSourceValueUnionType.AtsCreateNotesRequestDtoSourceValue;
 
             AtsCreateNotesRequestDtoSourceValueUnion res = new AtsCreateNotesRequestDtoSourceValueUnion(typ);
             res.AtsCreateNotesRequestDtoSourceValue = atsCreateNotesRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsCreateNotesRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsCreateNotesRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsCreateNotesRequestDtoSourceValueUnionType typ = AtsCreateNotesRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsCreateNotesRequestDtoSourceValueUnion res = new AtsCreateNotesRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsCreateNotesRequestDtoSourceValueUnion CreateNull() {
+        public static AtsCreateNotesRequestDtoSourceValueUnion CreateNull()
+        {
             AtsCreateNotesRequestDtoSourceValueUnionType typ = AtsCreateNotesRequestDtoSourceValueUnionType.Null;
             return new AtsCreateNotesRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsCreateNotesRequestDtoSourceValueUnion res = (AtsCreateNotesRequestDtoSourceValueUnion)value;
                 if (AtsCreateNotesRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsCreateNotesRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsCreateNotesRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsCreateNotesRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

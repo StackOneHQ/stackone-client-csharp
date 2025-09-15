@@ -40,12 +40,6 @@ namespace StackOneHQ.Client.Models.Components
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The path where the file is stored
-        /// </summary>
-        [JsonProperty("path")]
-        public string? Path { get; set; } = null;
-
-        /// <summary>
         /// The category of the file
         /// </summary>
         [JsonProperty("category")]

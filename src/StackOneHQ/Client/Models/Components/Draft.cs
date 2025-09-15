@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class DraftType
     {
         private DraftType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static DraftType Boolean { get { return new DraftType("boolean"); } }
-        
+
         public static DraftType DraftEnum { get { return new DraftType("draft_enum"); } }
-        
+
         public static DraftType Null { get { return new DraftType("null"); } }
 
         public override string ToString() { return Value; }
@@ -57,8 +57,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(Draft.DraftConverter))]
-    public class Draft {
-        public Draft(DraftType type) {
+    public class Draft
+    {
+        public Draft(DraftType type)
+        {
             Type = type;
         }
 
@@ -69,17 +71,16 @@ namespace StackOneHQ.Client.Models.Components
         public DraftEnum? DraftEnum { get; set; }
 
         public DraftType Type { get; set; }
-
-
-        public static Draft CreateBoolean(bool boolean) {
+        public static Draft CreateBoolean(bool boolean)
+        {
             DraftType typ = DraftType.Boolean;
 
             Draft res = new Draft(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static Draft CreateDraftEnum(DraftEnum draftEnum) {
+        public static Draft CreateDraftEnum(DraftEnum draftEnum)
+        {
             DraftType typ = DraftType.DraftEnum;
 
             Draft res = new Draft(typ);
@@ -87,7 +88,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static Draft CreateNull() {
+        public static Draft CreateNull()
+        {
             DraftType typ = DraftType.Null;
             return new Draft(typ);
         }
@@ -171,23 +173,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 Draft res = (Draft)value;
                 if (DraftType.FromString(res.Type).Equals(DraftType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.DraftEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.DraftEnum));
                     return;
                 }
-
             }
 
         }

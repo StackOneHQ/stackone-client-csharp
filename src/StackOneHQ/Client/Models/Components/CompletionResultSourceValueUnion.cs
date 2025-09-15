@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CompletionResultSourceValueUnionType
     {
         private CompletionResultSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CompletionResultSourceValueUnionType Str { get { return new CompletionResultSourceValueUnionType("str"); } }
-        
+
         public static CompletionResultSourceValueUnionType Number { get { return new CompletionResultSourceValueUnionType("number"); } }
-        
+
         public static CompletionResultSourceValueUnionType Boolean { get { return new CompletionResultSourceValueUnionType("boolean"); } }
-        
+
         public static CompletionResultSourceValueUnionType CompletionSourceValueResult { get { return new CompletionResultSourceValueUnionType("Completion_source_value_result"); } }
-        
+
         public static CompletionResultSourceValueUnionType ArrayOfAny { get { return new CompletionResultSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CompletionResultSourceValueUnionType Null { get { return new CompletionResultSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CompletionResultSourceValueUnion.CompletionResultSourceValueUnionConverter))]
-    public class CompletionResultSourceValueUnion {
-        public CompletionResultSourceValueUnion(CompletionResultSourceValueUnionType type) {
+    public class CompletionResultSourceValueUnion
+    {
+        public CompletionResultSourceValueUnion(CompletionResultSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CompletionResultSourceValueUnionType Type { get; set; }
-
-
-        public static CompletionResultSourceValueUnion CreateStr(string str) {
+        public static CompletionResultSourceValueUnion CreateStr(string str)
+        {
             CompletionResultSourceValueUnionType typ = CompletionResultSourceValueUnionType.Str;
 
             CompletionResultSourceValueUnion res = new CompletionResultSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CompletionResultSourceValueUnion CreateNumber(double number) {
+        public static CompletionResultSourceValueUnion CreateNumber(double number)
+        {
             CompletionResultSourceValueUnionType typ = CompletionResultSourceValueUnionType.Number;
 
             CompletionResultSourceValueUnion res = new CompletionResultSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CompletionResultSourceValueUnion CreateBoolean(bool boolean) {
+        public static CompletionResultSourceValueUnion CreateBoolean(bool boolean)
+        {
             CompletionResultSourceValueUnionType typ = CompletionResultSourceValueUnionType.Boolean;
 
             CompletionResultSourceValueUnion res = new CompletionResultSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CompletionResultSourceValueUnion CreateCompletionSourceValueResult(CompletionSourceValueResult completionSourceValueResult) {
+        public static CompletionResultSourceValueUnion CreateCompletionSourceValueResult(CompletionSourceValueResult completionSourceValueResult)
+        {
             CompletionResultSourceValueUnionType typ = CompletionResultSourceValueUnionType.CompletionSourceValueResult;
 
             CompletionResultSourceValueUnion res = new CompletionResultSourceValueUnion(typ);
             res.CompletionSourceValueResult = completionSourceValueResult;
             return res;
         }
-
-        public static CompletionResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CompletionResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CompletionResultSourceValueUnionType typ = CompletionResultSourceValueUnionType.ArrayOfAny;
 
             CompletionResultSourceValueUnion res = new CompletionResultSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CompletionResultSourceValueUnion CreateNull() {
+        public static CompletionResultSourceValueUnion CreateNull()
+        {
             CompletionResultSourceValueUnionType typ = CompletionResultSourceValueUnionType.Null;
             return new CompletionResultSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CompletionResultSourceValueUnion res = (CompletionResultSourceValueUnion)value;
                 if (CompletionResultSourceValueUnionType.FromString(res.Type).Equals(CompletionResultSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CompletionSourceValueResult != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CompletionSourceValueResult));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

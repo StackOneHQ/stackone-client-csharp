@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MarketingCreateContentBlocksRequestDtoSourceValueUnionType
     {
         private MarketingCreateContentBlocksRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MarketingCreateContentBlocksRequestDtoSourceValueUnionType Str { get { return new MarketingCreateContentBlocksRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static MarketingCreateContentBlocksRequestDtoSourceValueUnionType Number { get { return new MarketingCreateContentBlocksRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static MarketingCreateContentBlocksRequestDtoSourceValueUnionType Boolean { get { return new MarketingCreateContentBlocksRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static MarketingCreateContentBlocksRequestDtoSourceValueUnionType MarketingCreateContentBlocksRequestDtoSourceValue { get { return new MarketingCreateContentBlocksRequestDtoSourceValueUnionType("MarketingCreateContentBlocksRequestDto_source_value"); } }
-        
+
         public static MarketingCreateContentBlocksRequestDtoSourceValueUnionType ArrayOfAny { get { return new MarketingCreateContentBlocksRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static MarketingCreateContentBlocksRequestDtoSourceValueUnionType Null { get { return new MarketingCreateContentBlocksRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the type.
     /// </summary>
     [JsonConverter(typeof(MarketingCreateContentBlocksRequestDtoSourceValueUnion.MarketingCreateContentBlocksRequestDtoSourceValueUnionConverter))]
-    public class MarketingCreateContentBlocksRequestDtoSourceValueUnion {
-        public MarketingCreateContentBlocksRequestDtoSourceValueUnion(MarketingCreateContentBlocksRequestDtoSourceValueUnionType type) {
+    public class MarketingCreateContentBlocksRequestDtoSourceValueUnion
+    {
+        public MarketingCreateContentBlocksRequestDtoSourceValueUnion(MarketingCreateContentBlocksRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public MarketingCreateContentBlocksRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateStr(string str) {
+        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateStr(string str)
+        {
             MarketingCreateContentBlocksRequestDtoSourceValueUnionType typ = MarketingCreateContentBlocksRequestDtoSourceValueUnionType.Str;
 
             MarketingCreateContentBlocksRequestDtoSourceValueUnion res = new MarketingCreateContentBlocksRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             MarketingCreateContentBlocksRequestDtoSourceValueUnionType typ = MarketingCreateContentBlocksRequestDtoSourceValueUnionType.Number;
 
             MarketingCreateContentBlocksRequestDtoSourceValueUnion res = new MarketingCreateContentBlocksRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             MarketingCreateContentBlocksRequestDtoSourceValueUnionType typ = MarketingCreateContentBlocksRequestDtoSourceValueUnionType.Boolean;
 
             MarketingCreateContentBlocksRequestDtoSourceValueUnion res = new MarketingCreateContentBlocksRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateMarketingCreateContentBlocksRequestDtoSourceValue(MarketingCreateContentBlocksRequestDtoSourceValue marketingCreateContentBlocksRequestDtoSourceValue) {
+        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateMarketingCreateContentBlocksRequestDtoSourceValue(MarketingCreateContentBlocksRequestDtoSourceValue marketingCreateContentBlocksRequestDtoSourceValue)
+        {
             MarketingCreateContentBlocksRequestDtoSourceValueUnionType typ = MarketingCreateContentBlocksRequestDtoSourceValueUnionType.MarketingCreateContentBlocksRequestDtoSourceValue;
 
             MarketingCreateContentBlocksRequestDtoSourceValueUnion res = new MarketingCreateContentBlocksRequestDtoSourceValueUnion(typ);
             res.MarketingCreateContentBlocksRequestDtoSourceValue = marketingCreateContentBlocksRequestDtoSourceValue;
             return res;
         }
-
-        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             MarketingCreateContentBlocksRequestDtoSourceValueUnionType typ = MarketingCreateContentBlocksRequestDtoSourceValueUnionType.ArrayOfAny;
 
             MarketingCreateContentBlocksRequestDtoSourceValueUnion res = new MarketingCreateContentBlocksRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateNull() {
+        public static MarketingCreateContentBlocksRequestDtoSourceValueUnion CreateNull()
+        {
             MarketingCreateContentBlocksRequestDtoSourceValueUnionType typ = MarketingCreateContentBlocksRequestDtoSourceValueUnionType.Null;
             return new MarketingCreateContentBlocksRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MarketingCreateContentBlocksRequestDtoSourceValueUnion res = (MarketingCreateContentBlocksRequestDtoSourceValueUnion)value;
                 if (MarketingCreateContentBlocksRequestDtoSourceValueUnionType.FromString(res.Type).Equals(MarketingCreateContentBlocksRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MarketingCreateContentBlocksRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MarketingCreateContentBlocksRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

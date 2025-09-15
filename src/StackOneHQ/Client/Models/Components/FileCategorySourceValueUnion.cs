@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FileCategorySourceValueUnionType
     {
         private FileCategorySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FileCategorySourceValueUnionType Str { get { return new FileCategorySourceValueUnionType("str"); } }
-        
+
         public static FileCategorySourceValueUnionType Number { get { return new FileCategorySourceValueUnionType("number"); } }
-        
+
         public static FileCategorySourceValueUnionType Boolean { get { return new FileCategorySourceValueUnionType("boolean"); } }
-        
+
         public static FileCategorySourceValueUnionType FileSourceValueCategory { get { return new FileCategorySourceValueUnionType("File_source_value_category"); } }
-        
+
         public static FileCategorySourceValueUnionType ArrayOfAny { get { return new FileCategorySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static FileCategorySourceValueUnionType Null { get { return new FileCategorySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(FileCategorySourceValueUnion.FileCategorySourceValueUnionConverter))]
-    public class FileCategorySourceValueUnion {
-        public FileCategorySourceValueUnion(FileCategorySourceValueUnionType type) {
+    public class FileCategorySourceValueUnion
+    {
+        public FileCategorySourceValueUnion(FileCategorySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public FileCategorySourceValueUnionType Type { get; set; }
-
-
-        public static FileCategorySourceValueUnion CreateStr(string str) {
+        public static FileCategorySourceValueUnion CreateStr(string str)
+        {
             FileCategorySourceValueUnionType typ = FileCategorySourceValueUnionType.Str;
 
             FileCategorySourceValueUnion res = new FileCategorySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static FileCategorySourceValueUnion CreateNumber(double number) {
+        public static FileCategorySourceValueUnion CreateNumber(double number)
+        {
             FileCategorySourceValueUnionType typ = FileCategorySourceValueUnionType.Number;
 
             FileCategorySourceValueUnion res = new FileCategorySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static FileCategorySourceValueUnion CreateBoolean(bool boolean) {
+        public static FileCategorySourceValueUnion CreateBoolean(bool boolean)
+        {
             FileCategorySourceValueUnionType typ = FileCategorySourceValueUnionType.Boolean;
 
             FileCategorySourceValueUnion res = new FileCategorySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FileCategorySourceValueUnion CreateFileSourceValueCategory(FileSourceValueCategory fileSourceValueCategory) {
+        public static FileCategorySourceValueUnion CreateFileSourceValueCategory(FileSourceValueCategory fileSourceValueCategory)
+        {
             FileCategorySourceValueUnionType typ = FileCategorySourceValueUnionType.FileSourceValueCategory;
 
             FileCategorySourceValueUnion res = new FileCategorySourceValueUnion(typ);
             res.FileSourceValueCategory = fileSourceValueCategory;
             return res;
         }
-
-        public static FileCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static FileCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             FileCategorySourceValueUnionType typ = FileCategorySourceValueUnionType.ArrayOfAny;
 
             FileCategorySourceValueUnion res = new FileCategorySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FileCategorySourceValueUnion CreateNull() {
+        public static FileCategorySourceValueUnion CreateNull()
+        {
             FileCategorySourceValueUnionType typ = FileCategorySourceValueUnionType.Null;
             return new FileCategorySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FileCategorySourceValueUnion res = (FileCategorySourceValueUnion)value;
                 if (FileCategorySourceValueUnionType.FromString(res.Type).Equals(FileCategorySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FileSourceValueCategory != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FileSourceValueCategory));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

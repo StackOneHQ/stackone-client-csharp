@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisCreateTimeOffRequestDtoEndHalfDayUnionType
     {
         private HrisCreateTimeOffRequestDtoEndHalfDayUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisCreateTimeOffRequestDtoEndHalfDayUnionType Boolean { get { return new HrisCreateTimeOffRequestDtoEndHalfDayUnionType("boolean"); } }
-        
+
         public static HrisCreateTimeOffRequestDtoEndHalfDayUnionType HrisCreateTimeOffRequestDtoEndHalfDayEnum { get { return new HrisCreateTimeOffRequestDtoEndHalfDayUnionType("HrisCreateTimeOffRequestDto_end_half_day_enum"); } }
-        
+
         public static HrisCreateTimeOffRequestDtoEndHalfDayUnionType Null { get { return new HrisCreateTimeOffRequestDtoEndHalfDayUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// True if the end of the time off request ends half way through the day
     /// </summary>
     [JsonConverter(typeof(HrisCreateTimeOffRequestDtoEndHalfDayUnion.HrisCreateTimeOffRequestDtoEndHalfDayUnionConverter))]
-    public class HrisCreateTimeOffRequestDtoEndHalfDayUnion {
-        public HrisCreateTimeOffRequestDtoEndHalfDayUnion(HrisCreateTimeOffRequestDtoEndHalfDayUnionType type) {
+    public class HrisCreateTimeOffRequestDtoEndHalfDayUnion
+    {
+        public HrisCreateTimeOffRequestDtoEndHalfDayUnion(HrisCreateTimeOffRequestDtoEndHalfDayUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public HrisCreateTimeOffRequestDtoEndHalfDayEnum? HrisCreateTimeOffRequestDtoEndHalfDayEnum { get; set; }
 
         public HrisCreateTimeOffRequestDtoEndHalfDayUnionType Type { get; set; }
-
-
-        public static HrisCreateTimeOffRequestDtoEndHalfDayUnion CreateBoolean(bool boolean) {
+        public static HrisCreateTimeOffRequestDtoEndHalfDayUnion CreateBoolean(bool boolean)
+        {
             HrisCreateTimeOffRequestDtoEndHalfDayUnionType typ = HrisCreateTimeOffRequestDtoEndHalfDayUnionType.Boolean;
 
             HrisCreateTimeOffRequestDtoEndHalfDayUnion res = new HrisCreateTimeOffRequestDtoEndHalfDayUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisCreateTimeOffRequestDtoEndHalfDayUnion CreateHrisCreateTimeOffRequestDtoEndHalfDayEnum(HrisCreateTimeOffRequestDtoEndHalfDayEnum hrisCreateTimeOffRequestDtoEndHalfDayEnum) {
+        public static HrisCreateTimeOffRequestDtoEndHalfDayUnion CreateHrisCreateTimeOffRequestDtoEndHalfDayEnum(HrisCreateTimeOffRequestDtoEndHalfDayEnum hrisCreateTimeOffRequestDtoEndHalfDayEnum)
+        {
             HrisCreateTimeOffRequestDtoEndHalfDayUnionType typ = HrisCreateTimeOffRequestDtoEndHalfDayUnionType.HrisCreateTimeOffRequestDtoEndHalfDayEnum;
 
             HrisCreateTimeOffRequestDtoEndHalfDayUnion res = new HrisCreateTimeOffRequestDtoEndHalfDayUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisCreateTimeOffRequestDtoEndHalfDayUnion CreateNull() {
+        public static HrisCreateTimeOffRequestDtoEndHalfDayUnion CreateNull()
+        {
             HrisCreateTimeOffRequestDtoEndHalfDayUnionType typ = HrisCreateTimeOffRequestDtoEndHalfDayUnionType.Null;
             return new HrisCreateTimeOffRequestDtoEndHalfDayUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisCreateTimeOffRequestDtoEndHalfDayUnion res = (HrisCreateTimeOffRequestDtoEndHalfDayUnion)value;
                 if (HrisCreateTimeOffRequestDtoEndHalfDayUnionType.FromString(res.Type).Equals(HrisCreateTimeOffRequestDtoEndHalfDayUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisCreateTimeOffRequestDtoEndHalfDayEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisCreateTimeOffRequestDtoEndHalfDayEnum));
                     return;
                 }
-
             }
 
         }

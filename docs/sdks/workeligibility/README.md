@@ -34,7 +34,6 @@ var res = await sdk.Hris.Employees.WorkEligibility.UpdateRequestAsync(
             Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             Name = "My Document",
-            Path = "/path/to/file",
             Category = new HrisCreateWorkEligibilityRequestDtoCategory() {},
             CategoryId = "6530",
             CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),

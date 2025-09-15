@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmploymentActiveUnionType
     {
         private EmploymentActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmploymentActiveUnionType Boolean { get { return new EmploymentActiveUnionType("boolean"); } }
-        
+
         public static EmploymentActiveUnionType EmploymentActiveEnum { get { return new EmploymentActiveUnionType("Employment_active_enum"); } }
-        
+
         public static EmploymentActiveUnionType Null { get { return new EmploymentActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The employment active status
     /// </summary>
     [JsonConverter(typeof(EmploymentActiveUnion.EmploymentActiveUnionConverter))]
-    public class EmploymentActiveUnion {
-        public EmploymentActiveUnion(EmploymentActiveUnionType type) {
+    public class EmploymentActiveUnion
+    {
+        public EmploymentActiveUnion(EmploymentActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public EmploymentActiveEnum? EmploymentActiveEnum { get; set; }
 
         public EmploymentActiveUnionType Type { get; set; }
-
-
-        public static EmploymentActiveUnion CreateBoolean(bool boolean) {
+        public static EmploymentActiveUnion CreateBoolean(bool boolean)
+        {
             EmploymentActiveUnionType typ = EmploymentActiveUnionType.Boolean;
 
             EmploymentActiveUnion res = new EmploymentActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmploymentActiveUnion CreateEmploymentActiveEnum(EmploymentActiveEnum employmentActiveEnum) {
+        public static EmploymentActiveUnion CreateEmploymentActiveEnum(EmploymentActiveEnum employmentActiveEnum)
+        {
             EmploymentActiveUnionType typ = EmploymentActiveUnionType.EmploymentActiveEnum;
 
             EmploymentActiveUnion res = new EmploymentActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmploymentActiveUnion CreateNull() {
+        public static EmploymentActiveUnion CreateNull()
+        {
             EmploymentActiveUnionType typ = EmploymentActiveUnionType.Null;
             return new EmploymentActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmploymentActiveUnion res = (EmploymentActiveUnion)value;
                 if (EmploymentActiveUnionType.FromString(res.Type).Equals(EmploymentActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmploymentActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmploymentActiveEnum));
                     return;
                 }
-
             }
 
         }

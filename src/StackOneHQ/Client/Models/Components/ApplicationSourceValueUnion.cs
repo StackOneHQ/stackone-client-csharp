@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ApplicationSourceValueUnionType
     {
         private ApplicationSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ApplicationSourceValueUnionType Str { get { return new ApplicationSourceValueUnionType("str"); } }
-        
+
         public static ApplicationSourceValueUnionType Number { get { return new ApplicationSourceValueUnionType("number"); } }
-        
+
         public static ApplicationSourceValueUnionType Boolean { get { return new ApplicationSourceValueUnionType("boolean"); } }
-        
+
         public static ApplicationSourceValueUnionType ApplicationSourceValue { get { return new ApplicationSourceValueUnionType("Application_source_value"); } }
-        
+
         public static ApplicationSourceValueUnionType ArrayOfAny { get { return new ApplicationSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ApplicationSourceValueUnionType Null { get { return new ApplicationSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the application status.
     /// </summary>
     [JsonConverter(typeof(ApplicationSourceValueUnion.ApplicationSourceValueUnionConverter))]
-    public class ApplicationSourceValueUnion {
-        public ApplicationSourceValueUnion(ApplicationSourceValueUnionType type) {
+    public class ApplicationSourceValueUnion
+    {
+        public ApplicationSourceValueUnion(ApplicationSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ApplicationSourceValueUnionType Type { get; set; }
-
-
-        public static ApplicationSourceValueUnion CreateStr(string str) {
+        public static ApplicationSourceValueUnion CreateStr(string str)
+        {
             ApplicationSourceValueUnionType typ = ApplicationSourceValueUnionType.Str;
 
             ApplicationSourceValueUnion res = new ApplicationSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ApplicationSourceValueUnion CreateNumber(double number) {
+        public static ApplicationSourceValueUnion CreateNumber(double number)
+        {
             ApplicationSourceValueUnionType typ = ApplicationSourceValueUnionType.Number;
 
             ApplicationSourceValueUnion res = new ApplicationSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ApplicationSourceValueUnion CreateBoolean(bool boolean) {
+        public static ApplicationSourceValueUnion CreateBoolean(bool boolean)
+        {
             ApplicationSourceValueUnionType typ = ApplicationSourceValueUnionType.Boolean;
 
             ApplicationSourceValueUnion res = new ApplicationSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ApplicationSourceValueUnion CreateApplicationSourceValue(ApplicationSourceValue applicationSourceValue) {
+        public static ApplicationSourceValueUnion CreateApplicationSourceValue(ApplicationSourceValue applicationSourceValue)
+        {
             ApplicationSourceValueUnionType typ = ApplicationSourceValueUnionType.ApplicationSourceValue;
 
             ApplicationSourceValueUnion res = new ApplicationSourceValueUnion(typ);
             res.ApplicationSourceValue = applicationSourceValue;
             return res;
         }
-
-        public static ApplicationSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ApplicationSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ApplicationSourceValueUnionType typ = ApplicationSourceValueUnionType.ArrayOfAny;
 
             ApplicationSourceValueUnion res = new ApplicationSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ApplicationSourceValueUnion CreateNull() {
+        public static ApplicationSourceValueUnion CreateNull()
+        {
             ApplicationSourceValueUnionType typ = ApplicationSourceValueUnionType.Null;
             return new ApplicationSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ApplicationSourceValueUnion res = (ApplicationSourceValueUnion)value;
                 if (ApplicationSourceValueUnionType.FromString(res.Type).Equals(ApplicationSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ApplicationSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ApplicationSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }
