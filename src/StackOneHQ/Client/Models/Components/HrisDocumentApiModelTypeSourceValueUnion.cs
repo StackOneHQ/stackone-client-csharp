@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisDocumentApiModelTypeSourceValueUnionType
     {
         private HrisDocumentApiModelTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisDocumentApiModelTypeSourceValueUnionType Str { get { return new HrisDocumentApiModelTypeSourceValueUnionType("str"); } }
-        
+
         public static HrisDocumentApiModelTypeSourceValueUnionType Number { get { return new HrisDocumentApiModelTypeSourceValueUnionType("number"); } }
-        
+
         public static HrisDocumentApiModelTypeSourceValueUnionType Boolean { get { return new HrisDocumentApiModelTypeSourceValueUnionType("boolean"); } }
-        
+
         public static HrisDocumentApiModelTypeSourceValueUnionType HrisDocumentApiModelSourceValueType { get { return new HrisDocumentApiModelTypeSourceValueUnionType("HrisDocumentApiModel_source_value_type"); } }
-        
+
         public static HrisDocumentApiModelTypeSourceValueUnionType ArrayOfAny { get { return new HrisDocumentApiModelTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisDocumentApiModelTypeSourceValueUnionType Null { get { return new HrisDocumentApiModelTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisDocumentApiModelTypeSourceValueUnion.HrisDocumentApiModelTypeSourceValueUnionConverter))]
-    public class HrisDocumentApiModelTypeSourceValueUnion {
-        public HrisDocumentApiModelTypeSourceValueUnion(HrisDocumentApiModelTypeSourceValueUnionType type) {
+    public class HrisDocumentApiModelTypeSourceValueUnion
+    {
+        public HrisDocumentApiModelTypeSourceValueUnion(HrisDocumentApiModelTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisDocumentApiModelTypeSourceValueUnionType Type { get; set; }
-
-
-        public static HrisDocumentApiModelTypeSourceValueUnion CreateStr(string str) {
+        public static HrisDocumentApiModelTypeSourceValueUnion CreateStr(string str)
+        {
             HrisDocumentApiModelTypeSourceValueUnionType typ = HrisDocumentApiModelTypeSourceValueUnionType.Str;
 
             HrisDocumentApiModelTypeSourceValueUnion res = new HrisDocumentApiModelTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisDocumentApiModelTypeSourceValueUnion CreateNumber(double number) {
+        public static HrisDocumentApiModelTypeSourceValueUnion CreateNumber(double number)
+        {
             HrisDocumentApiModelTypeSourceValueUnionType typ = HrisDocumentApiModelTypeSourceValueUnionType.Number;
 
             HrisDocumentApiModelTypeSourceValueUnion res = new HrisDocumentApiModelTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisDocumentApiModelTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisDocumentApiModelTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisDocumentApiModelTypeSourceValueUnionType typ = HrisDocumentApiModelTypeSourceValueUnionType.Boolean;
 
             HrisDocumentApiModelTypeSourceValueUnion res = new HrisDocumentApiModelTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisDocumentApiModelTypeSourceValueUnion CreateHrisDocumentApiModelSourceValueType(HrisDocumentApiModelSourceValueType hrisDocumentAPIModelSourceValueType) {
+        public static HrisDocumentApiModelTypeSourceValueUnion CreateHrisDocumentApiModelSourceValueType(HrisDocumentApiModelSourceValueType hrisDocumentAPIModelSourceValueType)
+        {
             HrisDocumentApiModelTypeSourceValueUnionType typ = HrisDocumentApiModelTypeSourceValueUnionType.HrisDocumentApiModelSourceValueType;
 
             HrisDocumentApiModelTypeSourceValueUnion res = new HrisDocumentApiModelTypeSourceValueUnion(typ);
             res.HrisDocumentApiModelSourceValueType = hrisDocumentAPIModelSourceValueType;
             return res;
         }
-
-        public static HrisDocumentApiModelTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisDocumentApiModelTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisDocumentApiModelTypeSourceValueUnionType typ = HrisDocumentApiModelTypeSourceValueUnionType.ArrayOfAny;
 
             HrisDocumentApiModelTypeSourceValueUnion res = new HrisDocumentApiModelTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisDocumentApiModelTypeSourceValueUnion CreateNull() {
+        public static HrisDocumentApiModelTypeSourceValueUnion CreateNull()
+        {
             HrisDocumentApiModelTypeSourceValueUnionType typ = HrisDocumentApiModelTypeSourceValueUnionType.Null;
             return new HrisDocumentApiModelTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisDocumentApiModelTypeSourceValueUnion res = (HrisDocumentApiModelTypeSourceValueUnion)value;
                 if (HrisDocumentApiModelTypeSourceValueUnionType.FromString(res.Type).Equals(HrisDocumentApiModelTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisDocumentApiModelSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisDocumentApiModelSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

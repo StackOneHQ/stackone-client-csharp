@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CategoryLanguageSourceValueUnionType
     {
         private CategoryLanguageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CategoryLanguageSourceValueUnionType Str { get { return new CategoryLanguageSourceValueUnionType("str"); } }
-        
+
         public static CategoryLanguageSourceValueUnionType Number { get { return new CategoryLanguageSourceValueUnionType("number"); } }
-        
+
         public static CategoryLanguageSourceValueUnionType Boolean { get { return new CategoryLanguageSourceValueUnionType("boolean"); } }
-        
+
         public static CategoryLanguageSourceValueUnionType CategorySourceValueLanguage { get { return new CategoryLanguageSourceValueUnionType("Category_source_value_language"); } }
-        
+
         public static CategoryLanguageSourceValueUnionType ArrayOfAny { get { return new CategoryLanguageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CategoryLanguageSourceValueUnionType Null { get { return new CategoryLanguageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CategoryLanguageSourceValueUnion.CategoryLanguageSourceValueUnionConverter))]
-    public class CategoryLanguageSourceValueUnion {
-        public CategoryLanguageSourceValueUnion(CategoryLanguageSourceValueUnionType type) {
+    public class CategoryLanguageSourceValueUnion
+    {
+        public CategoryLanguageSourceValueUnion(CategoryLanguageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CategoryLanguageSourceValueUnionType Type { get; set; }
-
-
-        public static CategoryLanguageSourceValueUnion CreateStr(string str) {
+        public static CategoryLanguageSourceValueUnion CreateStr(string str)
+        {
             CategoryLanguageSourceValueUnionType typ = CategoryLanguageSourceValueUnionType.Str;
 
             CategoryLanguageSourceValueUnion res = new CategoryLanguageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CategoryLanguageSourceValueUnion CreateNumber(double number) {
+        public static CategoryLanguageSourceValueUnion CreateNumber(double number)
+        {
             CategoryLanguageSourceValueUnionType typ = CategoryLanguageSourceValueUnionType.Number;
 
             CategoryLanguageSourceValueUnion res = new CategoryLanguageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CategoryLanguageSourceValueUnion CreateBoolean(bool boolean) {
+        public static CategoryLanguageSourceValueUnion CreateBoolean(bool boolean)
+        {
             CategoryLanguageSourceValueUnionType typ = CategoryLanguageSourceValueUnionType.Boolean;
 
             CategoryLanguageSourceValueUnion res = new CategoryLanguageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CategoryLanguageSourceValueUnion CreateCategorySourceValueLanguage(CategorySourceValueLanguage categorySourceValueLanguage) {
+        public static CategoryLanguageSourceValueUnion CreateCategorySourceValueLanguage(CategorySourceValueLanguage categorySourceValueLanguage)
+        {
             CategoryLanguageSourceValueUnionType typ = CategoryLanguageSourceValueUnionType.CategorySourceValueLanguage;
 
             CategoryLanguageSourceValueUnion res = new CategoryLanguageSourceValueUnion(typ);
             res.CategorySourceValueLanguage = categorySourceValueLanguage;
             return res;
         }
-
-        public static CategoryLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CategoryLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CategoryLanguageSourceValueUnionType typ = CategoryLanguageSourceValueUnionType.ArrayOfAny;
 
             CategoryLanguageSourceValueUnion res = new CategoryLanguageSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CategoryLanguageSourceValueUnion CreateNull() {
+        public static CategoryLanguageSourceValueUnion CreateNull()
+        {
             CategoryLanguageSourceValueUnionType typ = CategoryLanguageSourceValueUnionType.Null;
             return new CategoryLanguageSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CategoryLanguageSourceValueUnion res = (CategoryLanguageSourceValueUnion)value;
                 if (CategoryLanguageSourceValueUnionType.FromString(res.Type).Equals(CategoryLanguageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CategorySourceValueLanguage != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CategorySourceValueLanguage));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

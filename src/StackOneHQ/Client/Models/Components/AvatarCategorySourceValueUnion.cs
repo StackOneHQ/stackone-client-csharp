@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AvatarCategorySourceValueUnionType
     {
         private AvatarCategorySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AvatarCategorySourceValueUnionType Str { get { return new AvatarCategorySourceValueUnionType("str"); } }
-        
+
         public static AvatarCategorySourceValueUnionType Number { get { return new AvatarCategorySourceValueUnionType("number"); } }
-        
+
         public static AvatarCategorySourceValueUnionType Boolean { get { return new AvatarCategorySourceValueUnionType("boolean"); } }
-        
+
         public static AvatarCategorySourceValueUnionType SourceValueAvatarCategory { get { return new AvatarCategorySourceValueUnionType("source_value_avatar_category"); } }
-        
+
         public static AvatarCategorySourceValueUnionType ArrayOfAny { get { return new AvatarCategorySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AvatarCategorySourceValueUnionType Null { get { return new AvatarCategorySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AvatarCategorySourceValueUnion.AvatarCategorySourceValueUnionConverter))]
-    public class AvatarCategorySourceValueUnion {
-        public AvatarCategorySourceValueUnion(AvatarCategorySourceValueUnionType type) {
+    public class AvatarCategorySourceValueUnion
+    {
+        public AvatarCategorySourceValueUnion(AvatarCategorySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AvatarCategorySourceValueUnionType Type { get; set; }
-
-
-        public static AvatarCategorySourceValueUnion CreateStr(string str) {
+        public static AvatarCategorySourceValueUnion CreateStr(string str)
+        {
             AvatarCategorySourceValueUnionType typ = AvatarCategorySourceValueUnionType.Str;
 
             AvatarCategorySourceValueUnion res = new AvatarCategorySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AvatarCategorySourceValueUnion CreateNumber(double number) {
+        public static AvatarCategorySourceValueUnion CreateNumber(double number)
+        {
             AvatarCategorySourceValueUnionType typ = AvatarCategorySourceValueUnionType.Number;
 
             AvatarCategorySourceValueUnion res = new AvatarCategorySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AvatarCategorySourceValueUnion CreateBoolean(bool boolean) {
+        public static AvatarCategorySourceValueUnion CreateBoolean(bool boolean)
+        {
             AvatarCategorySourceValueUnionType typ = AvatarCategorySourceValueUnionType.Boolean;
 
             AvatarCategorySourceValueUnion res = new AvatarCategorySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AvatarCategorySourceValueUnion CreateSourceValueAvatarCategory(SourceValueAvatarCategory sourceValueAvatarCategory) {
+        public static AvatarCategorySourceValueUnion CreateSourceValueAvatarCategory(SourceValueAvatarCategory sourceValueAvatarCategory)
+        {
             AvatarCategorySourceValueUnionType typ = AvatarCategorySourceValueUnionType.SourceValueAvatarCategory;
 
             AvatarCategorySourceValueUnion res = new AvatarCategorySourceValueUnion(typ);
             res.SourceValueAvatarCategory = sourceValueAvatarCategory;
             return res;
         }
-
-        public static AvatarCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AvatarCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AvatarCategorySourceValueUnionType typ = AvatarCategorySourceValueUnionType.ArrayOfAny;
 
             AvatarCategorySourceValueUnion res = new AvatarCategorySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AvatarCategorySourceValueUnion CreateNull() {
+        public static AvatarCategorySourceValueUnion CreateNull()
+        {
             AvatarCategorySourceValueUnionType typ = AvatarCategorySourceValueUnionType.Null;
             return new AvatarCategorySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AvatarCategorySourceValueUnion res = (AvatarCategorySourceValueUnion)value;
                 if (AvatarCategorySourceValueUnionType.FromString(res.Type).Equals(AvatarCategorySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueAvatarCategory != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueAvatarCategory));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

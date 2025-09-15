@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessagingCreateConversationRequestDtoPrivateUnionType
     {
         private MessagingCreateConversationRequestDtoPrivateUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessagingCreateConversationRequestDtoPrivateUnionType Boolean { get { return new MessagingCreateConversationRequestDtoPrivateUnionType("boolean"); } }
-        
+
         public static MessagingCreateConversationRequestDtoPrivateUnionType MessagingCreateConversationRequestDtoPrivateEnum { get { return new MessagingCreateConversationRequestDtoPrivateUnionType("MessagingCreateConversationRequestDto_private_enum"); } }
-        
+
         public static MessagingCreateConversationRequestDtoPrivateUnionType Null { get { return new MessagingCreateConversationRequestDtoPrivateUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the conversation is private
     /// </summary>
     [JsonConverter(typeof(MessagingCreateConversationRequestDtoPrivateUnion.MessagingCreateConversationRequestDtoPrivateUnionConverter))]
-    public class MessagingCreateConversationRequestDtoPrivateUnion {
-        public MessagingCreateConversationRequestDtoPrivateUnion(MessagingCreateConversationRequestDtoPrivateUnionType type) {
+    public class MessagingCreateConversationRequestDtoPrivateUnion
+    {
+        public MessagingCreateConversationRequestDtoPrivateUnion(MessagingCreateConversationRequestDtoPrivateUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public MessagingCreateConversationRequestDtoPrivateEnum? MessagingCreateConversationRequestDtoPrivateEnum { get; set; }
 
         public MessagingCreateConversationRequestDtoPrivateUnionType Type { get; set; }
-
-
-        public static MessagingCreateConversationRequestDtoPrivateUnion CreateBoolean(bool boolean) {
+        public static MessagingCreateConversationRequestDtoPrivateUnion CreateBoolean(bool boolean)
+        {
             MessagingCreateConversationRequestDtoPrivateUnionType typ = MessagingCreateConversationRequestDtoPrivateUnionType.Boolean;
 
             MessagingCreateConversationRequestDtoPrivateUnion res = new MessagingCreateConversationRequestDtoPrivateUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MessagingCreateConversationRequestDtoPrivateUnion CreateMessagingCreateConversationRequestDtoPrivateEnum(MessagingCreateConversationRequestDtoPrivateEnum messagingCreateConversationRequestDtoPrivateEnum) {
+        public static MessagingCreateConversationRequestDtoPrivateUnion CreateMessagingCreateConversationRequestDtoPrivateEnum(MessagingCreateConversationRequestDtoPrivateEnum messagingCreateConversationRequestDtoPrivateEnum)
+        {
             MessagingCreateConversationRequestDtoPrivateUnionType typ = MessagingCreateConversationRequestDtoPrivateUnionType.MessagingCreateConversationRequestDtoPrivateEnum;
 
             MessagingCreateConversationRequestDtoPrivateUnion res = new MessagingCreateConversationRequestDtoPrivateUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessagingCreateConversationRequestDtoPrivateUnion CreateNull() {
+        public static MessagingCreateConversationRequestDtoPrivateUnion CreateNull()
+        {
             MessagingCreateConversationRequestDtoPrivateUnionType typ = MessagingCreateConversationRequestDtoPrivateUnionType.Null;
             return new MessagingCreateConversationRequestDtoPrivateUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessagingCreateConversationRequestDtoPrivateUnion res = (MessagingCreateConversationRequestDtoPrivateUnion)value;
                 if (MessagingCreateConversationRequestDtoPrivateUnionType.FromString(res.Type).Equals(MessagingCreateConversationRequestDtoPrivateUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MessagingCreateConversationRequestDtoPrivateEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessagingCreateConversationRequestDtoPrivateEnum));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LmsCreateCompletionRequestDtoSourceValueUnionType
     {
         private LmsCreateCompletionRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LmsCreateCompletionRequestDtoSourceValueUnionType Str { get { return new LmsCreateCompletionRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static LmsCreateCompletionRequestDtoSourceValueUnionType Number { get { return new LmsCreateCompletionRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static LmsCreateCompletionRequestDtoSourceValueUnionType Boolean { get { return new LmsCreateCompletionRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static LmsCreateCompletionRequestDtoSourceValueUnionType LmsCreateCompletionRequestDtoSourceValue { get { return new LmsCreateCompletionRequestDtoSourceValueUnionType("LmsCreateCompletionRequestDto_source_value"); } }
-        
+
         public static LmsCreateCompletionRequestDtoSourceValueUnionType ArrayOfAny { get { return new LmsCreateCompletionRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static LmsCreateCompletionRequestDtoSourceValueUnionType Null { get { return new LmsCreateCompletionRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(LmsCreateCompletionRequestDtoSourceValueUnion.LmsCreateCompletionRequestDtoSourceValueUnionConverter))]
-    public class LmsCreateCompletionRequestDtoSourceValueUnion {
-        public LmsCreateCompletionRequestDtoSourceValueUnion(LmsCreateCompletionRequestDtoSourceValueUnionType type) {
+    public class LmsCreateCompletionRequestDtoSourceValueUnion
+    {
+        public LmsCreateCompletionRequestDtoSourceValueUnion(LmsCreateCompletionRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public LmsCreateCompletionRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateStr(string str) {
+        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateStr(string str)
+        {
             LmsCreateCompletionRequestDtoSourceValueUnionType typ = LmsCreateCompletionRequestDtoSourceValueUnionType.Str;
 
             LmsCreateCompletionRequestDtoSourceValueUnion res = new LmsCreateCompletionRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             LmsCreateCompletionRequestDtoSourceValueUnionType typ = LmsCreateCompletionRequestDtoSourceValueUnionType.Number;
 
             LmsCreateCompletionRequestDtoSourceValueUnion res = new LmsCreateCompletionRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             LmsCreateCompletionRequestDtoSourceValueUnionType typ = LmsCreateCompletionRequestDtoSourceValueUnionType.Boolean;
 
             LmsCreateCompletionRequestDtoSourceValueUnion res = new LmsCreateCompletionRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateLmsCreateCompletionRequestDtoSourceValue(LmsCreateCompletionRequestDtoSourceValue lmsCreateCompletionRequestDtoSourceValue) {
+        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateLmsCreateCompletionRequestDtoSourceValue(LmsCreateCompletionRequestDtoSourceValue lmsCreateCompletionRequestDtoSourceValue)
+        {
             LmsCreateCompletionRequestDtoSourceValueUnionType typ = LmsCreateCompletionRequestDtoSourceValueUnionType.LmsCreateCompletionRequestDtoSourceValue;
 
             LmsCreateCompletionRequestDtoSourceValueUnion res = new LmsCreateCompletionRequestDtoSourceValueUnion(typ);
             res.LmsCreateCompletionRequestDtoSourceValue = lmsCreateCompletionRequestDtoSourceValue;
             return res;
         }
-
-        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             LmsCreateCompletionRequestDtoSourceValueUnionType typ = LmsCreateCompletionRequestDtoSourceValueUnionType.ArrayOfAny;
 
             LmsCreateCompletionRequestDtoSourceValueUnion res = new LmsCreateCompletionRequestDtoSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateNull() {
+        public static LmsCreateCompletionRequestDtoSourceValueUnion CreateNull()
+        {
             LmsCreateCompletionRequestDtoSourceValueUnionType typ = LmsCreateCompletionRequestDtoSourceValueUnionType.Null;
             return new LmsCreateCompletionRequestDtoSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LmsCreateCompletionRequestDtoSourceValueUnion res = (LmsCreateCompletionRequestDtoSourceValueUnion)value;
                 if (LmsCreateCompletionRequestDtoSourceValueUnionType.FromString(res.Type).Equals(LmsCreateCompletionRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.LmsCreateCompletionRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.LmsCreateCompletionRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

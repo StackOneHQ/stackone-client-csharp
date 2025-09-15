@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HRISDivisionSourceValueUnionType
     {
         private HRISDivisionSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HRISDivisionSourceValueUnionType Str { get { return new HRISDivisionSourceValueUnionType("str"); } }
-        
+
         public static HRISDivisionSourceValueUnionType Number { get { return new HRISDivisionSourceValueUnionType("number"); } }
-        
+
         public static HRISDivisionSourceValueUnionType Boolean { get { return new HRISDivisionSourceValueUnionType("boolean"); } }
-        
+
         public static HRISDivisionSourceValueUnionType HRISDivisionSourceValue { get { return new HRISDivisionSourceValueUnionType("HRISDivision_source_value"); } }
-        
+
         public static HRISDivisionSourceValueUnionType ArrayOfAny { get { return new HRISDivisionSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HRISDivisionSourceValueUnionType Null { get { return new HRISDivisionSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HRISDivisionSourceValueUnion.HRISDivisionSourceValueUnionConverter))]
-    public class HRISDivisionSourceValueUnion {
-        public HRISDivisionSourceValueUnion(HRISDivisionSourceValueUnionType type) {
+    public class HRISDivisionSourceValueUnion
+    {
+        public HRISDivisionSourceValueUnion(HRISDivisionSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HRISDivisionSourceValueUnionType Type { get; set; }
-
-
-        public static HRISDivisionSourceValueUnion CreateStr(string str) {
+        public static HRISDivisionSourceValueUnion CreateStr(string str)
+        {
             HRISDivisionSourceValueUnionType typ = HRISDivisionSourceValueUnionType.Str;
 
             HRISDivisionSourceValueUnion res = new HRISDivisionSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HRISDivisionSourceValueUnion CreateNumber(double number) {
+        public static HRISDivisionSourceValueUnion CreateNumber(double number)
+        {
             HRISDivisionSourceValueUnionType typ = HRISDivisionSourceValueUnionType.Number;
 
             HRISDivisionSourceValueUnion res = new HRISDivisionSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HRISDivisionSourceValueUnion CreateBoolean(bool boolean) {
+        public static HRISDivisionSourceValueUnion CreateBoolean(bool boolean)
+        {
             HRISDivisionSourceValueUnionType typ = HRISDivisionSourceValueUnionType.Boolean;
 
             HRISDivisionSourceValueUnion res = new HRISDivisionSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HRISDivisionSourceValueUnion CreateHRISDivisionSourceValue(HRISDivisionSourceValue hrisDivisionSourceValue) {
+        public static HRISDivisionSourceValueUnion CreateHRISDivisionSourceValue(HRISDivisionSourceValue hrisDivisionSourceValue)
+        {
             HRISDivisionSourceValueUnionType typ = HRISDivisionSourceValueUnionType.HRISDivisionSourceValue;
 
             HRISDivisionSourceValueUnion res = new HRISDivisionSourceValueUnion(typ);
             res.HRISDivisionSourceValue = hrisDivisionSourceValue;
             return res;
         }
-
-        public static HRISDivisionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HRISDivisionSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HRISDivisionSourceValueUnionType typ = HRISDivisionSourceValueUnionType.ArrayOfAny;
 
             HRISDivisionSourceValueUnion res = new HRISDivisionSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HRISDivisionSourceValueUnion CreateNull() {
+        public static HRISDivisionSourceValueUnion CreateNull()
+        {
             HRISDivisionSourceValueUnionType typ = HRISDivisionSourceValueUnionType.Null;
             return new HRISDivisionSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HRISDivisionSourceValueUnion res = (HRISDivisionSourceValueUnion)value;
                 if (HRISDivisionSourceValueUnionType.FromString(res.Type).Equals(HRISDivisionSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HRISDivisionSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HRISDivisionSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

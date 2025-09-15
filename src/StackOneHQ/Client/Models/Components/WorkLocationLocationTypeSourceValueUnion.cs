@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class WorkLocationLocationTypeSourceValueUnionType
     {
         private WorkLocationLocationTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static WorkLocationLocationTypeSourceValueUnionType Str { get { return new WorkLocationLocationTypeSourceValueUnionType("str"); } }
-        
+
         public static WorkLocationLocationTypeSourceValueUnionType Number { get { return new WorkLocationLocationTypeSourceValueUnionType("number"); } }
-        
+
         public static WorkLocationLocationTypeSourceValueUnionType Boolean { get { return new WorkLocationLocationTypeSourceValueUnionType("boolean"); } }
-        
+
         public static WorkLocationLocationTypeSourceValueUnionType SourceValueWorkLocationLocationType { get { return new WorkLocationLocationTypeSourceValueUnionType("source_value_work_location_location_type"); } }
-        
+
         public static WorkLocationLocationTypeSourceValueUnionType ArrayOfAny { get { return new WorkLocationLocationTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static WorkLocationLocationTypeSourceValueUnionType Null { get { return new WorkLocationLocationTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the location type.
     /// </summary>
     [JsonConverter(typeof(WorkLocationLocationTypeSourceValueUnion.WorkLocationLocationTypeSourceValueUnionConverter))]
-    public class WorkLocationLocationTypeSourceValueUnion {
-        public WorkLocationLocationTypeSourceValueUnion(WorkLocationLocationTypeSourceValueUnionType type) {
+    public class WorkLocationLocationTypeSourceValueUnion
+    {
+        public WorkLocationLocationTypeSourceValueUnion(WorkLocationLocationTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public WorkLocationLocationTypeSourceValueUnionType Type { get; set; }
-
-
-        public static WorkLocationLocationTypeSourceValueUnion CreateStr(string str) {
+        public static WorkLocationLocationTypeSourceValueUnion CreateStr(string str)
+        {
             WorkLocationLocationTypeSourceValueUnionType typ = WorkLocationLocationTypeSourceValueUnionType.Str;
 
             WorkLocationLocationTypeSourceValueUnion res = new WorkLocationLocationTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static WorkLocationLocationTypeSourceValueUnion CreateNumber(double number) {
+        public static WorkLocationLocationTypeSourceValueUnion CreateNumber(double number)
+        {
             WorkLocationLocationTypeSourceValueUnionType typ = WorkLocationLocationTypeSourceValueUnionType.Number;
 
             WorkLocationLocationTypeSourceValueUnion res = new WorkLocationLocationTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static WorkLocationLocationTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static WorkLocationLocationTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             WorkLocationLocationTypeSourceValueUnionType typ = WorkLocationLocationTypeSourceValueUnionType.Boolean;
 
             WorkLocationLocationTypeSourceValueUnion res = new WorkLocationLocationTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static WorkLocationLocationTypeSourceValueUnion CreateSourceValueWorkLocationLocationType(SourceValueWorkLocationLocationType sourceValueWorkLocationLocationType) {
+        public static WorkLocationLocationTypeSourceValueUnion CreateSourceValueWorkLocationLocationType(SourceValueWorkLocationLocationType sourceValueWorkLocationLocationType)
+        {
             WorkLocationLocationTypeSourceValueUnionType typ = WorkLocationLocationTypeSourceValueUnionType.SourceValueWorkLocationLocationType;
 
             WorkLocationLocationTypeSourceValueUnion res = new WorkLocationLocationTypeSourceValueUnion(typ);
             res.SourceValueWorkLocationLocationType = sourceValueWorkLocationLocationType;
             return res;
         }
-
-        public static WorkLocationLocationTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static WorkLocationLocationTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             WorkLocationLocationTypeSourceValueUnionType typ = WorkLocationLocationTypeSourceValueUnionType.ArrayOfAny;
 
             WorkLocationLocationTypeSourceValueUnion res = new WorkLocationLocationTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static WorkLocationLocationTypeSourceValueUnion CreateNull() {
+        public static WorkLocationLocationTypeSourceValueUnion CreateNull()
+        {
             WorkLocationLocationTypeSourceValueUnionType typ = WorkLocationLocationTypeSourceValueUnionType.Null;
             return new WorkLocationLocationTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 WorkLocationLocationTypeSourceValueUnion res = (WorkLocationLocationTypeSourceValueUnion)value;
                 if (WorkLocationLocationTypeSourceValueUnionType.FromString(res.Type).Equals(WorkLocationLocationTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueWorkLocationLocationType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueWorkLocationLocationType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

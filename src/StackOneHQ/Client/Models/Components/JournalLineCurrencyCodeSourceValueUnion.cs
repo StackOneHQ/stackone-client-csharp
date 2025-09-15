@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class JournalLineCurrencyCodeSourceValueUnionType
     {
         private JournalLineCurrencyCodeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static JournalLineCurrencyCodeSourceValueUnionType Str { get { return new JournalLineCurrencyCodeSourceValueUnionType("str"); } }
-        
+
         public static JournalLineCurrencyCodeSourceValueUnionType Number { get { return new JournalLineCurrencyCodeSourceValueUnionType("number"); } }
-        
+
         public static JournalLineCurrencyCodeSourceValueUnionType Boolean { get { return new JournalLineCurrencyCodeSourceValueUnionType("boolean"); } }
-        
+
         public static JournalLineCurrencyCodeSourceValueUnionType JournalLineSourceValueCurrencyCode { get { return new JournalLineCurrencyCodeSourceValueUnionType("JournalLine_source_value_currency_code"); } }
-        
+
         public static JournalLineCurrencyCodeSourceValueUnionType ArrayOfAny { get { return new JournalLineCurrencyCodeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static JournalLineCurrencyCodeSourceValueUnionType Null { get { return new JournalLineCurrencyCodeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(JournalLineCurrencyCodeSourceValueUnion.JournalLineCurrencyCodeSourceValueUnionConverter))]
-    public class JournalLineCurrencyCodeSourceValueUnion {
-        public JournalLineCurrencyCodeSourceValueUnion(JournalLineCurrencyCodeSourceValueUnionType type) {
+    public class JournalLineCurrencyCodeSourceValueUnion
+    {
+        public JournalLineCurrencyCodeSourceValueUnion(JournalLineCurrencyCodeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public JournalLineCurrencyCodeSourceValueUnionType Type { get; set; }
-
-
-        public static JournalLineCurrencyCodeSourceValueUnion CreateStr(string str) {
+        public static JournalLineCurrencyCodeSourceValueUnion CreateStr(string str)
+        {
             JournalLineCurrencyCodeSourceValueUnionType typ = JournalLineCurrencyCodeSourceValueUnionType.Str;
 
             JournalLineCurrencyCodeSourceValueUnion res = new JournalLineCurrencyCodeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static JournalLineCurrencyCodeSourceValueUnion CreateNumber(double number) {
+        public static JournalLineCurrencyCodeSourceValueUnion CreateNumber(double number)
+        {
             JournalLineCurrencyCodeSourceValueUnionType typ = JournalLineCurrencyCodeSourceValueUnionType.Number;
 
             JournalLineCurrencyCodeSourceValueUnion res = new JournalLineCurrencyCodeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static JournalLineCurrencyCodeSourceValueUnion CreateBoolean(bool boolean) {
+        public static JournalLineCurrencyCodeSourceValueUnion CreateBoolean(bool boolean)
+        {
             JournalLineCurrencyCodeSourceValueUnionType typ = JournalLineCurrencyCodeSourceValueUnionType.Boolean;
 
             JournalLineCurrencyCodeSourceValueUnion res = new JournalLineCurrencyCodeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static JournalLineCurrencyCodeSourceValueUnion CreateJournalLineSourceValueCurrencyCode(JournalLineSourceValueCurrencyCode journalLineSourceValueCurrencyCode) {
+        public static JournalLineCurrencyCodeSourceValueUnion CreateJournalLineSourceValueCurrencyCode(JournalLineSourceValueCurrencyCode journalLineSourceValueCurrencyCode)
+        {
             JournalLineCurrencyCodeSourceValueUnionType typ = JournalLineCurrencyCodeSourceValueUnionType.JournalLineSourceValueCurrencyCode;
 
             JournalLineCurrencyCodeSourceValueUnion res = new JournalLineCurrencyCodeSourceValueUnion(typ);
             res.JournalLineSourceValueCurrencyCode = journalLineSourceValueCurrencyCode;
             return res;
         }
-
-        public static JournalLineCurrencyCodeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static JournalLineCurrencyCodeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             JournalLineCurrencyCodeSourceValueUnionType typ = JournalLineCurrencyCodeSourceValueUnionType.ArrayOfAny;
 
             JournalLineCurrencyCodeSourceValueUnion res = new JournalLineCurrencyCodeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static JournalLineCurrencyCodeSourceValueUnion CreateNull() {
+        public static JournalLineCurrencyCodeSourceValueUnion CreateNull()
+        {
             JournalLineCurrencyCodeSourceValueUnionType typ = JournalLineCurrencyCodeSourceValueUnionType.Null;
             return new JournalLineCurrencyCodeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 JournalLineCurrencyCodeSourceValueUnion res = (JournalLineCurrencyCodeSourceValueUnion)value;
                 if (JournalLineCurrencyCodeSourceValueUnionType.FromString(res.Type).Equals(JournalLineCurrencyCodeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.JournalLineSourceValueCurrencyCode != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.JournalLineSourceValueCurrencyCode));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

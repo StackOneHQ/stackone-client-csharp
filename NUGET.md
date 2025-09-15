@@ -84,6 +84,30 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 
 // handle response
 ```
+
+### Per-Operation Security Schemes
+
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient();
+
+var res = await sdk.Mcp.McpGetAsync(
+    security: new StackoneMcpGetSecurity() {
+        Basic = new SchemeBasic() {
+            Username = "",
+            Password = "",
+        },
+    },
+    xAccountId: "<id>",
+    mcpSessionId: "<id>"
+);
+
+// handle response
+```
 <!-- End Authentication [security] -->
 
 <!-- Start Pagination [pagination] -->
@@ -98,22 +122,26 @@ Here's an example of one such pagination call:
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
 using StackOneHQ.Client.Models.Requests;
-using System;
+using System.Collections.Generic;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
 
-HrisListCompaniesRequest req = new HrisListCompaniesRequest() {
-    XAccountId = "<id>",
-    Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at",
-    Filter = new HrisListCompaniesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+StackoneListActionsMetaRequest req = new StackoneListActionsMetaRequest() {
+    GroupBy = "[\"connector\"]",
+    Filter = new StackoneListActionsMetaFilter() {
+        Connectors = "connector1,connector2",
+        AccountIds = "account1,account2",
+        ActionKey = "action1",
+    },
+    Include = new List<StackoneListActionsMetaInclude>() {
+        StackoneListActionsMetaInclude.OperationDetails,
     },
 };
 
-HrisListCompaniesResponse? res = await sdk.Hris.GetCompaniesAsync(req);
+StackoneListActionsMetaResponse? res = await sdk.Actions.ListActionsMetaAsync(req);
 
 while(res != null)
 {
@@ -229,32 +257,15 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or throw an exception.
-
-By default, an API error will raise a `StackOneHQ.Client.Models.Errors.APIException` exception, which has the following properties:
+[`StackOneError`](./src/StackOneHQ/Client/Models/Errors/StackOneError.cs) is the base exception class for all HTTP error responses. It has the following properties:
 
 | Property      | Type                  | Description           |
 |---------------|-----------------------|-----------------------|
-| `Message`     | *string*              | The error message     |
-| `Request`     | *HttpRequestMessage*  | The HTTP request      |
-| `Response`    | *HttpResponseMessage* | The HTTP response     |
+| `Message`     | *string*              | Error message         |
+| `Request`     | *HttpRequestMessage*  | HTTP request object   |
+| `Response`    | *HttpResponseMessage* | HTTP response object  |
 
-When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAsync` method throws the following exceptions:
-
-| Error Type                                                           | Status Code | Content Type     |
-| -------------------------------------------------------------------- | ----------- | ---------------- |
-| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400         | application/json |
-| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401         | application/json |
-| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403         | application/json |
-| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404         | application/json |
-| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408         | application/json |
-| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409         | application/json |
-| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422         | application/json |
-| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429         | application/json |
-| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500         | application/json |
-| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501         | application/json |
-| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502         | application/json |
-| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX    | \*/\*            |
+Some exceptions in this SDK include an additional `Payload` field, which will contain deserialized custom error data when present. Possible exceptions are listed in the [Error Classes](#error-classes) section.
 
 ### Example
 
@@ -295,70 +306,64 @@ try
 
     // handle response
 }
-catch (Exception ex)
+catch (StackOneError ex)  // all SDK exceptions inherit from StackOneError
 {
-    if (ex is BadRequestResponseException)
+    // ex.ToString() provides a detailed error message
+    System.Console.WriteLine(ex);
+
+    // Base exception fields
+    HttpRequestMessage request = ex.Request;
+    HttpResponseMessage response = ex.Response;
+    var statusCode = (int)response.StatusCode;
+    var responseBody = ex.Body;
+
+    if (ex is BadRequestResponseException) // different exceptions may be thrown depending on the method
     {
-        // Handle exception data
-        throw;
+        // Check error data fields
+        BadRequestResponseExceptionPayload payload = ex.Payload;
+        double StatusCode = payload.StatusCode;
+        string Message = payload.Message;
+        // ...
     }
-    else if (ex is UnauthorizedResponseException)
+
+    // An underlying cause may be provided
+    if (ex.InnerException != null)
     {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is ForbiddenResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is NotFoundResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is RequestTimedOutResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is ConflictResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is UnprocessableEntityResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is TooManyRequestsResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is InternalServerErrorResponse)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is NotImplementedResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is BadGatewayResponseException)
-    {
-        // Handle exception data
-        throw;
-    }
-    else if (ex is StackOneHQ.Client.Models.Errors.APIException)
-    {
-        // Handle default exception
-        throw;
+        Exception cause = ex.InnerException;
     }
 }
+catch (System.Net.Http.HttpRequestException ex)
+{
+    // Check ex.InnerException for Network connectivity errors
+}
 ```
+
+### Error Classes
+
+**Primary exceptions:**
+* [`StackOneError`](./src/StackOneHQ/Client/Models/Errors/StackOneError.cs): The base class for HTTP error responses.
+  * [`BadRequestResponseException`](./src/StackOneHQ/Client/Models/Errors/BadRequestResponseException.cs): Invalid request. Status code `400`.
+  * [`UnauthorizedResponseException`](./src/StackOneHQ/Client/Models/Errors/UnauthorizedResponseException.cs): Unauthorized access. Status code `401`.
+  * [`ForbiddenResponseException`](./src/StackOneHQ/Client/Models/Errors/ForbiddenResponseException.cs): Forbidden. Status code `403`.
+  * [`NotFoundResponseException`](./src/StackOneHQ/Client/Models/Errors/NotFoundResponseException.cs): Resource not found. Status code `404`.
+  * [`RequestTimedOutResponseException`](./src/StackOneHQ/Client/Models/Errors/RequestTimedOutResponseException.cs): The request has timed out. Status code `408`.
+  * [`ConflictResponseException`](./src/StackOneHQ/Client/Models/Errors/ConflictResponseException.cs): Conflict with current state. Status code `409`.
+  * [`UnprocessableEntityResponseException`](./src/StackOneHQ/Client/Models/Errors/UnprocessableEntityResponseException.cs): Validation error. Status code `422`.
+  * [`TooManyRequestsResponseException`](./src/StackOneHQ/Client/Models/Errors/TooManyRequestsResponseException.cs): Too many requests. Status code `429`.
+  * [`InternalServerErrorResponse`](./src/StackOneHQ/Client/Models/Errors/InternalServerErrorResponse.cs): Server error while executing the request. Status code `500`.
+  * [`NotImplementedResponseException`](./src/StackOneHQ/Client/Models/Errors/NotImplementedResponseException.cs): This functionality is not implemented. Status code `501`.
+  * [`BadGatewayResponseException`](./src/StackOneHQ/Client/Models/Errors/BadGatewayResponseException.cs): Bad gateway error. Status code `502`.
+  * [`PreconditionFailedResponseException`](./src/StackOneHQ/Client/Models/Errors/PreconditionFailedResponseException.cs): Precondition failed: linked account belongs to a disabled integration. Status code `412`. *
+
+<details><summary>Less common exceptions (2)</summary>
+
+* [`System.Net.Http.HttpRequestException`](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httprequestexception): Network connectivity error. For more details about the underlying cause, inspect the `ex.InnerException`.
+
+* Inheriting from [`StackOneError`](./src/StackOneHQ/Client/Models/Errors/StackOneError.cs):
+  * [`ResponseValidationError`](./src/StackOneHQ/Client/Models/Errors/ResponseValidationError.cs): Thrown when the response data could not be deserialized into the expected type.
+</details>
+
+\* Refer to the [relevant documentation](#available-resources-and-operations) to determine whether an exception applies to a specific operation.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->

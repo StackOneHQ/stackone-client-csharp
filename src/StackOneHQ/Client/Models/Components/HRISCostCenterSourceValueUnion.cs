@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HRISCostCenterSourceValueUnionType
     {
         private HRISCostCenterSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HRISCostCenterSourceValueUnionType Str { get { return new HRISCostCenterSourceValueUnionType("str"); } }
-        
+
         public static HRISCostCenterSourceValueUnionType Number { get { return new HRISCostCenterSourceValueUnionType("number"); } }
-        
+
         public static HRISCostCenterSourceValueUnionType Boolean { get { return new HRISCostCenterSourceValueUnionType("boolean"); } }
-        
+
         public static HRISCostCenterSourceValueUnionType HRISCostCenterSourceValue { get { return new HRISCostCenterSourceValueUnionType("HRISCostCenter_source_value"); } }
-        
+
         public static HRISCostCenterSourceValueUnionType ArrayOfAny { get { return new HRISCostCenterSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HRISCostCenterSourceValueUnionType Null { get { return new HRISCostCenterSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HRISCostCenterSourceValueUnion.HRISCostCenterSourceValueUnionConverter))]
-    public class HRISCostCenterSourceValueUnion {
-        public HRISCostCenterSourceValueUnion(HRISCostCenterSourceValueUnionType type) {
+    public class HRISCostCenterSourceValueUnion
+    {
+        public HRISCostCenterSourceValueUnion(HRISCostCenterSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HRISCostCenterSourceValueUnionType Type { get; set; }
-
-
-        public static HRISCostCenterSourceValueUnion CreateStr(string str) {
+        public static HRISCostCenterSourceValueUnion CreateStr(string str)
+        {
             HRISCostCenterSourceValueUnionType typ = HRISCostCenterSourceValueUnionType.Str;
 
             HRISCostCenterSourceValueUnion res = new HRISCostCenterSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HRISCostCenterSourceValueUnion CreateNumber(double number) {
+        public static HRISCostCenterSourceValueUnion CreateNumber(double number)
+        {
             HRISCostCenterSourceValueUnionType typ = HRISCostCenterSourceValueUnionType.Number;
 
             HRISCostCenterSourceValueUnion res = new HRISCostCenterSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HRISCostCenterSourceValueUnion CreateBoolean(bool boolean) {
+        public static HRISCostCenterSourceValueUnion CreateBoolean(bool boolean)
+        {
             HRISCostCenterSourceValueUnionType typ = HRISCostCenterSourceValueUnionType.Boolean;
 
             HRISCostCenterSourceValueUnion res = new HRISCostCenterSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HRISCostCenterSourceValueUnion CreateHRISCostCenterSourceValue(HRISCostCenterSourceValue hrisCostCenterSourceValue) {
+        public static HRISCostCenterSourceValueUnion CreateHRISCostCenterSourceValue(HRISCostCenterSourceValue hrisCostCenterSourceValue)
+        {
             HRISCostCenterSourceValueUnionType typ = HRISCostCenterSourceValueUnionType.HRISCostCenterSourceValue;
 
             HRISCostCenterSourceValueUnion res = new HRISCostCenterSourceValueUnion(typ);
             res.HRISCostCenterSourceValue = hrisCostCenterSourceValue;
             return res;
         }
-
-        public static HRISCostCenterSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HRISCostCenterSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HRISCostCenterSourceValueUnionType typ = HRISCostCenterSourceValueUnionType.ArrayOfAny;
 
             HRISCostCenterSourceValueUnion res = new HRISCostCenterSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HRISCostCenterSourceValueUnion CreateNull() {
+        public static HRISCostCenterSourceValueUnion CreateNull()
+        {
             HRISCostCenterSourceValueUnionType typ = HRISCostCenterSourceValueUnionType.Null;
             return new HRISCostCenterSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HRISCostCenterSourceValueUnion res = (HRISCostCenterSourceValueUnion)value;
                 if (HRISCostCenterSourceValueUnionType.FromString(res.Type).Equals(HRISCostCenterSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HRISCostCenterSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HRISCostCenterSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

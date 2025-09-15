@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessagingUserResultBotUnionType
     {
         private MessagingUserResultBotUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessagingUserResultBotUnionType Boolean { get { return new MessagingUserResultBotUnionType("boolean"); } }
-        
+
         public static MessagingUserResultBotUnionType MessagingUserResultBotEnum { get { return new MessagingUserResultBotUnionType("MessagingUserResult_bot_enum"); } }
-        
+
         public static MessagingUserResultBotUnionType Null { get { return new MessagingUserResultBotUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the user is a bot
     /// </summary>
     [JsonConverter(typeof(MessagingUserResultBotUnion.MessagingUserResultBotUnionConverter))]
-    public class MessagingUserResultBotUnion {
-        public MessagingUserResultBotUnion(MessagingUserResultBotUnionType type) {
+    public class MessagingUserResultBotUnion
+    {
+        public MessagingUserResultBotUnion(MessagingUserResultBotUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public MessagingUserResultBotEnum? MessagingUserResultBotEnum { get; set; }
 
         public MessagingUserResultBotUnionType Type { get; set; }
-
-
-        public static MessagingUserResultBotUnion CreateBoolean(bool boolean) {
+        public static MessagingUserResultBotUnion CreateBoolean(bool boolean)
+        {
             MessagingUserResultBotUnionType typ = MessagingUserResultBotUnionType.Boolean;
 
             MessagingUserResultBotUnion res = new MessagingUserResultBotUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MessagingUserResultBotUnion CreateMessagingUserResultBotEnum(MessagingUserResultBotEnum messagingUserResultBotEnum) {
+        public static MessagingUserResultBotUnion CreateMessagingUserResultBotEnum(MessagingUserResultBotEnum messagingUserResultBotEnum)
+        {
             MessagingUserResultBotUnionType typ = MessagingUserResultBotUnionType.MessagingUserResultBotEnum;
 
             MessagingUserResultBotUnion res = new MessagingUserResultBotUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessagingUserResultBotUnion CreateNull() {
+        public static MessagingUserResultBotUnion CreateNull()
+        {
             MessagingUserResultBotUnionType typ = MessagingUserResultBotUnionType.Null;
             return new MessagingUserResultBotUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessagingUserResultBotUnion res = (MessagingUserResultBotUnion)value;
                 if (MessagingUserResultBotUnionType.FromString(res.Type).Equals(MessagingUserResultBotUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MessagingUserResultBotEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessagingUserResultBotEnum));
                     return;
                 }
-
             }
 
         }

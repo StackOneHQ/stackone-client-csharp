@@ -1,31 +1,32 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: a8ddf965834b9ac75634abfe6f16b11a
+  docChecksum: ac46d8e11785f237b4ff6e0c523c0b1d
   docVersion: 1.0.0
-  speakeasyVersion: 1.606.10
-  generationVersion: 2.687.13
-  releaseVersion: 0.3.0
-  configChecksum: 1973c3db4d08fa5b999f866c30a3c1eb
+  speakeasyVersion: 1.615.2
+  generationVersion: 2.698.4
+  releaseVersion: 0.4.0
+  configChecksum: 90185d2577e93bc171272c8915206e2b
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.12.0
+    core: 3.12.2
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
-    globalSecurity: 2.83.7
+    globalSecurity: 2.83.8
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
     groups: 2.81.2
     intellisenseMarkdownSupport: 0.1.0
     methodArguments: 0.2.0
+    methodSecurity: 2.82.3
     nameOverrides: 2.81.2
     nullables: 0.1.1
-    openEnums: 0.1.0
+    openEnums: 0.1.1
     pagination: 0.2.6
     responseFormat: 0.0.4
     retries: 0.0.1
@@ -108,6 +109,13 @@ generatedFiles:
   - docs/Models/Components/AccountingTaxRateResultData.md
   - docs/Models/Components/AccountingTaxRatesPaginated.md
   - docs/Models/Components/AccountsPaginated.md
+  - docs/Models/Components/ActionMetaItem.md
+  - docs/Models/Components/ActionsMeta.md
+  - docs/Models/Components/ActionsMetaPaginated.md
+  - docs/Models/Components/ActionsRpcRequestDto.md
+  - docs/Models/Components/ActionsRpcResponse.md
+  - docs/Models/Components/ActionsRpcResponseData1.md
+  - docs/Models/Components/ActionsRpcResponseData2.md
   - docs/Models/Components/Actor.md
   - docs/Models/Components/AdditionalData.md
   - docs/Models/Components/AdditionalDataValue.md
@@ -283,6 +291,7 @@ generatedFiles:
   - docs/Models/Components/AttachmentSourceValue.md
   - docs/Models/Components/AttachmentSourceValueUnion.md
   - docs/Models/Components/AttachmentValue.md
+  - docs/Models/Components/AuthenticationMetaItem.md
   - docs/Models/Components/AuthorModel.md
   - docs/Models/Components/AvatarCategorySourceValueUnion.md
   - docs/Models/Components/AvatarFileFormatSourceValueUnion.md
@@ -385,10 +394,6 @@ generatedFiles:
   - docs/Models/Components/ContentSourceValue.md
   - docs/Models/Components/ContentSourceValueUnion.md
   - docs/Models/Components/ContentValue.md
-  - docs/Models/Components/ContractType.md
-  - docs/Models/Components/ContractTypeContractType.md
-  - docs/Models/Components/ContractTypeSourceValueUnion.md
-  - docs/Models/Components/ContractTypeValue.md
   - docs/Models/Components/CostCenter.md
   - docs/Models/Components/CostCenterSourceValueUnion.md
   - docs/Models/Components/CostCenterType.md
@@ -425,6 +430,10 @@ generatedFiles:
   - docs/Models/Components/CreateCategoriesApiModelSourceValueLevel.md
   - docs/Models/Components/CreateCostCenterApiModel.md
   - docs/Models/Components/CreateEmploymentApiModel.md
+  - docs/Models/Components/CreateEmploymentApiModelContractType.md
+  - docs/Models/Components/CreateEmploymentApiModelContractTypeContractType.md
+  - docs/Models/Components/CreateEmploymentApiModelContractTypeSourceValueUnion.md
+  - docs/Models/Components/CreateEmploymentApiModelContractTypeValue.md
   - docs/Models/Components/CreateEmploymentApiModelDurationUnit.md
   - docs/Models/Components/CreateEmploymentApiModelEmploymentContractType.md
   - docs/Models/Components/CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion.md
@@ -439,11 +448,17 @@ generatedFiles:
   - docs/Models/Components/CreateEmploymentApiModelPayPeriod.md
   - docs/Models/Components/CreateEmploymentApiModelPayPeriodSourceValueUnion.md
   - docs/Models/Components/CreateEmploymentApiModelPayPeriodValue.md
+  - docs/Models/Components/CreateEmploymentApiModelSourceValueContractType.md
   - docs/Models/Components/CreateEmploymentApiModelSourceValueEmploymentContractType.md
   - docs/Models/Components/CreateEmploymentApiModelSourceValueEmploymentType.md
   - docs/Models/Components/CreateEmploymentApiModelSourceValuePayFrequency.md
   - docs/Models/Components/CreateEmploymentApiModelSourceValuePayPeriod.md
+  - docs/Models/Components/CreateEmploymentApiModelSourceValueType.md
   - docs/Models/Components/CreateEmploymentApiModelSourceValueWorkTime.md
+  - docs/Models/Components/CreateEmploymentApiModelType.md
+  - docs/Models/Components/CreateEmploymentApiModelTypeSourceValueUnion.md
+  - docs/Models/Components/CreateEmploymentApiModelTypeType.md
+  - docs/Models/Components/CreateEmploymentApiModelTypeValue.md
   - docs/Models/Components/CreateEmploymentApiModelWorkTime.md
   - docs/Models/Components/CreateEmploymentApiModelWorkTimeSourceValueUnion.md
   - docs/Models/Components/CreateEmploymentApiModelWorkTimeValue.md
@@ -494,6 +509,7 @@ generatedFiles:
   - docs/Models/Components/CustomFieldsValue.md
   - docs/Models/Components/CustomFieldsValueUnion.md
   - docs/Models/Components/CustomMappingError.md
+  - docs/Models/Components/Data.md
   - docs/Models/Components/DeleteResult.md
   - docs/Models/Components/Department.md
   - docs/Models/Components/DepartmentResult.md
@@ -577,6 +593,10 @@ generatedFiles:
   - docs/Models/Components/Employment.md
   - docs/Models/Components/EmploymentActiveEnum.md
   - docs/Models/Components/EmploymentActiveUnion.md
+  - docs/Models/Components/EmploymentContractType.md
+  - docs/Models/Components/EmploymentContractTypeContractType.md
+  - docs/Models/Components/EmploymentContractTypeSourceValueUnion.md
+  - docs/Models/Components/EmploymentContractTypeValue.md
   - docs/Models/Components/EmploymentDepartment.md
   - docs/Models/Components/EmploymentDurationUnit.md
   - docs/Models/Components/EmploymentEmploymentContractType.md
@@ -598,6 +618,7 @@ generatedFiles:
   - docs/Models/Components/EmploymentPayPeriodSourceValueUnion.md
   - docs/Models/Components/EmploymentPayPeriodValue.md
   - docs/Models/Components/EmploymentResult.md
+  - docs/Models/Components/EmploymentSourceValueContractType.md
   - docs/Models/Components/EmploymentSourceValueEmploymentContractType.md
   - docs/Models/Components/EmploymentSourceValueEmploymentType.md
   - docs/Models/Components/EmploymentSourceValuePayFrequency.md
@@ -728,6 +749,10 @@ generatedFiles:
   - docs/Models/Components/HrisBatchDocumentUploadRequestDto.md
   - docs/Models/Components/HrisCreateEmployeeRequestDto.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoAvatar.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoContractType.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoContractTypeContractType.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoContractTypeSourceValueUnion.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoContractTypeValue.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoDurationUnit.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEmployment.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentContractType.md
@@ -742,9 +767,13 @@ generatedFiles:
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentStatus.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentStatusSourceValueUnion.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentStatusValue.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentType.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeSourceValueUnion.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeValue.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentType1.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentType2.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeSourceValueUnion1.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeSourceValueUnion2.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeType.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeValue1.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeValue2.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEthnicity.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEthnicitySourceValueUnion.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoEthnicityValue.md
@@ -765,6 +794,9 @@ generatedFiles:
   - docs/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberCountry.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberType.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberTypeSourceValueUnion.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberTypeValue.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoPayFrequency.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoPayFrequencySourceValueUnion.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoPayFrequencyValue.md
@@ -774,27 +806,26 @@ generatedFiles:
   - docs/Models/Components/HrisCreateEmployeeRequestDtoPreferredLanguage.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoPreferredLanguageValue.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueContractType.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentContractType.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentEmploymentContractType.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentEmploymentType.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentStatus.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentType.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentType1.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentType2.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEthnicity.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueGender.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueHomeLocationCountry.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueHomeLocationState.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueMaritalStatus.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry.md
+  - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberType.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValuePayFrequency.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValuePayPeriod.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueType.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueWorkLocationCountry.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueWorkLocationState.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoSourceValueWorkTime.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoType.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoTypeSourceValueUnion.md
-  - docs/Models/Components/HrisCreateEmployeeRequestDtoTypeValue.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoWorkLocation.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoWorkLocationCountry.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoWorkLocationCountrySourceValueUnion.md
@@ -805,6 +836,10 @@ generatedFiles:
   - docs/Models/Components/HrisCreateEmployeeRequestDtoWorkTimeSourceValueUnion.md
   - docs/Models/Components/HrisCreateEmployeeRequestDtoWorkTimeValue.md
   - docs/Models/Components/HrisCreateEmploymentRequestDto.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoContractType.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoContractTypeContractType.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoContractTypeSourceValueUnion.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoContractTypeValue.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoDurationUnit.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoEmploymentContractType.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion.md
@@ -819,11 +854,17 @@ generatedFiles:
   - docs/Models/Components/HrisCreateEmploymentRequestDtoPayPeriod.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoPayPeriodSourceValueUnion.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoPayPeriodValue.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoSourceValueContractType.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoSourceValueEmploymentContractType.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoSourceValueEmploymentType.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoSourceValuePayFrequency.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoSourceValuePayPeriod.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoSourceValueType.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoSourceValueWorkTime.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoType.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoTypeSourceValueUnion.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoTypeType.md
+  - docs/Models/Components/HrisCreateEmploymentRequestDtoTypeValue.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoWorkTime.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion.md
   - docs/Models/Components/HrisCreateEmploymentRequestDtoWorkTimeValue.md
@@ -914,6 +955,10 @@ generatedFiles:
   - docs/Models/Components/HrisShiftsPaginated.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDto.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoAvatar.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoContractType.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoContractTypeContractType.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoContractTypeSourceValueUnion.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoContractTypeValue.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoDurationUnit.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmployment.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentContractType.md
@@ -928,9 +973,13 @@ generatedFiles:
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentStatus.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentStatusSourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentStatusValue.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentType.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeSourceValueUnion.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeValue.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentType1.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentType2.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeSourceValueUnion1.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeSourceValueUnion2.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeType.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeValue1.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeValue2.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEthnicity.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoEthnicityValue.md
@@ -951,6 +1000,9 @@ generatedFiles:
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountry.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountryValue.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberType.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeSourceValueUnion.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeValue.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoPayFrequency.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoPayFrequencySourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoPayFrequencyValue.md
@@ -960,27 +1012,26 @@ generatedFiles:
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoPreferredLanguage.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoPreferredLanguageSourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoPreferredLanguageValue.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueContractType.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentContractType.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentEmploymentContractType.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentEmploymentType.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentStatus.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentType.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentType1.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentType2.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEthnicity.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueGender.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueHomeLocationCountry.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueHomeLocationState.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueMaritalStatus.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry.md
+  - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueNationalIdentityNumberType.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValuePayFrequency.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValuePayPeriod.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValuePreferredLanguage.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueType.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueWorkLocationCountry.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueWorkLocationState.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueWorkTime.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoType.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoTypeSourceValueUnion.md
-  - docs/Models/Components/HrisUpdateEmployeeRequestDtoTypeValue.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoWorkLocation.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoWorkLocationCountry.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoWorkLocationCountrySourceValueUnion.md
@@ -991,6 +1042,10 @@ generatedFiles:
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoWorkTimeSourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmployeeRequestDtoWorkTimeValue.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDto.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoContractType.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoContractTypeContractType.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoContractTypeSourceValueUnion.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoContractTypeValue.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoDurationUnit.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoEmploymentContractType.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion.md
@@ -1005,11 +1060,17 @@ generatedFiles:
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoPayPeriod.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoPayPeriodSourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoPayPeriodValue.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueContractType.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueEmploymentType.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoSourceValuePayFrequency.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoSourceValuePayPeriod.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueType.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueWorkTime.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoType.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoTypeSourceValueUnion.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoTypeType.md
+  - docs/Models/Components/HrisUpdateEmploymentRequestDtoTypeValue.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoWorkTime.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoWorkTimeSourceValueUnion.md
   - docs/Models/Components/HrisUpdateEmploymentRequestDtoWorkTimeValue.md
@@ -1063,6 +1124,7 @@ generatedFiles:
   - docs/Models/Components/IamUserStatusSourceValueUnion.md
   - docs/Models/Components/IamUserStatusValue.md
   - docs/Models/Components/IamUsersPaginated.md
+  - docs/Models/Components/Id.md
   - docs/Models/Components/Images.md
   - docs/Models/Components/InAppMessages.md
   - docs/Models/Components/InAppMessagesMessageContent.md
@@ -1073,6 +1135,7 @@ generatedFiles:
   - docs/Models/Components/InAppTemplate.md
   - docs/Models/Components/InAppTemplateResult.md
   - docs/Models/Components/InAppTemplatesPaginated.md
+  - docs/Models/Components/Input.md
   - docs/Models/Components/Interview.md
   - docs/Models/Components/InterviewInterviewStage.md
   - docs/Models/Components/InterviewInterviewStatus.md
@@ -1140,6 +1203,7 @@ generatedFiles:
   - docs/Models/Components/JournalLineCurrencyCodeSourceValueUnion.md
   - docs/Models/Components/JournalLineCurrencyCodeValue.md
   - docs/Models/Components/JournalLineSourceValueCurrencyCode.md
+  - docs/Models/Components/JsonRpcMessageDto.md
   - docs/Models/Components/Label.md
   - docs/Models/Components/LaborType.md
   - docs/Models/Components/LanguageEnum.md
@@ -1282,6 +1346,7 @@ generatedFiles:
   - docs/Models/Components/OffersResult.md
   - docs/Models/Components/OverallRecommendation.md
   - docs/Models/Components/Package.md
+  - docs/Models/Components/Params.md
   - docs/Models/Components/ParentQuestion.md
   - docs/Models/Components/PatchAccountExternalDto.md
   - docs/Models/Components/PatchAccountExternalDtoCredentials.md
@@ -1355,6 +1420,7 @@ generatedFiles:
   - docs/Models/Components/ScheduledInterviewValue.md
   - docs/Models/Components/ScheduledInterviewsPaginated.md
   - docs/Models/Components/ScheduledInterviewsResult.md
+  - docs/Models/Components/SchemeBasic.md
   - docs/Models/Components/Scorecard.md
   - docs/Models/Components/ScorecardSection.md
   - docs/Models/Components/ScorecardsPaginated.md
@@ -1394,7 +1460,6 @@ generatedFiles:
   - docs/Models/Components/SourceValueAvatarFileFormat.md
   - docs/Models/Components/SourceValueBalanceUnit.md
   - docs/Models/Components/SourceValueConditionType.md
-  - docs/Models/Components/SourceValueContractType.md
   - docs/Models/Components/SourceValueCostCenter.md
   - docs/Models/Components/SourceValueDepartment.md
   - docs/Models/Components/SourceValueDivision.md
@@ -1709,6 +1774,8 @@ generatedFiles:
   - docs/Models/Requests/AtsGetApplicationScheduledInterviewResponse.md
   - docs/Models/Requests/AtsGetApplicationScorecardRequest.md
   - docs/Models/Requests/AtsGetApplicationScorecardResponse.md
+  - docs/Models/Requests/AtsGetApplicationStageRequest.md
+  - docs/Models/Requests/AtsGetApplicationStageResponse.md
   - docs/Models/Requests/AtsGetAssessmentsPackageRequest.md
   - docs/Models/Requests/AtsGetAssessmentsPackageResponse.md
   - docs/Models/Requests/AtsGetBackgroundCheckPackageRequest.md
@@ -1763,6 +1830,9 @@ generatedFiles:
   - docs/Models/Requests/AtsListApplicationScorecardsFilter.md
   - docs/Models/Requests/AtsListApplicationScorecardsRequest.md
   - docs/Models/Requests/AtsListApplicationScorecardsResponse.md
+  - docs/Models/Requests/AtsListApplicationStagesFilter.md
+  - docs/Models/Requests/AtsListApplicationStagesRequest.md
+  - docs/Models/Requests/AtsListApplicationStagesResponse.md
   - docs/Models/Requests/AtsListApplicationsFilter.md
   - docs/Models/Requests/AtsListApplicationsOffersFilter.md
   - docs/Models/Requests/AtsListApplicationsOffersRequest.md
@@ -2256,6 +2326,10 @@ generatedFiles:
   - docs/Models/Requests/StackoneGetLogInclude.md
   - docs/Models/Requests/StackoneGetLogRequest.md
   - docs/Models/Requests/StackoneGetLogResponse.md
+  - docs/Models/Requests/StackoneListActionsMetaFilter.md
+  - docs/Models/Requests/StackoneListActionsMetaInclude.md
+  - docs/Models/Requests/StackoneListActionsMetaRequest.md
+  - docs/Models/Requests/StackoneListActionsMetaResponse.md
   - docs/Models/Requests/StackoneListConnectorsMetaRequest.md
   - docs/Models/Requests/StackoneListConnectorsMetaResponse.md
   - docs/Models/Requests/StackoneListLinkedAccountsRequest.md
@@ -2280,8 +2354,18 @@ generatedFiles:
   - docs/Models/Requests/StackoneListStepLogsOrderDirection.md
   - docs/Models/Requests/StackoneListStepLogsRequest.md
   - docs/Models/Requests/StackoneListStepLogsResponse.md
+  - docs/Models/Requests/StackoneMcpDeleteRequest.md
+  - docs/Models/Requests/StackoneMcpDeleteResponse.md
+  - docs/Models/Requests/StackoneMcpDeleteSecurity.md
+  - docs/Models/Requests/StackoneMcpGetRequest.md
+  - docs/Models/Requests/StackoneMcpGetResponse.md
+  - docs/Models/Requests/StackoneMcpGetSecurity.md
+  - docs/Models/Requests/StackoneMcpPostRequest.md
+  - docs/Models/Requests/StackoneMcpPostResponse.md
+  - docs/Models/Requests/StackoneMcpPostSecurity.md
   - docs/Models/Requests/StackoneProxyRequestRequest.md
   - docs/Models/Requests/StackoneProxyRequestResponse.md
+  - docs/Models/Requests/StackoneRpcActionResponse.md
   - docs/Models/Requests/StackoneUpdateAccountRequest.md
   - docs/Models/Requests/StackoneUpdateAccountResponse.md
   - docs/Models/Requests/TicketingCreateTicketRequest.md
@@ -2333,6 +2417,7 @@ generatedFiles:
   - docs/Models/Requests/TicketingUpdateTicketResponse.md
   - docs/sdks/accounting/README.md
   - docs/sdks/accounts/README.md
+  - docs/sdks/actions/README.md
   - docs/sdks/applicationcategories/README.md
   - docs/sdks/applications/README.md
   - docs/sdks/applicationsdocuments/README.md
@@ -2400,6 +2485,7 @@ generatedFiles:
   - docs/sdks/lmsskills/README.md
   - docs/sdks/lmsusers/README.md
   - docs/sdks/marketing/README.md
+  - docs/sdks/mcp/README.md
   - docs/sdks/messaging/README.md
   - docs/sdks/notes/README.md
   - docs/sdks/offers/README.md
@@ -2423,6 +2509,7 @@ generatedFiles:
   - global.json
   - src/StackOneHQ/Client/Accounting.cs
   - src/StackOneHQ/Client/Accounts.cs
+  - src/StackOneHQ/Client/Actions.cs
   - src/StackOneHQ/Client/ApplicationCategories.cs
   - src/StackOneHQ/Client/Applications.cs
   - src/StackOneHQ/Client/ApplicationsDocuments.cs
@@ -2495,6 +2582,7 @@ generatedFiles:
   - src/StackOneHQ/Client/LmsSkills.cs
   - src/StackOneHQ/Client/LmsUsers.cs
   - src/StackOneHQ/Client/Marketing.cs
+  - src/StackOneHQ/Client/Mcp.cs
   - src/StackOneHQ/Client/Messaging.cs
   - src/StackOneHQ/Client/Models/Components/ATSLocation.cs
   - src/StackOneHQ/Client/Models/Components/ATSLocationResult.cs
@@ -2568,6 +2656,13 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/AccountingTaxRateResultData.cs
   - src/StackOneHQ/Client/Models/Components/AccountingTaxRatesPaginated.cs
   - src/StackOneHQ/Client/Models/Components/AccountsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/ActionMetaItem.cs
+  - src/StackOneHQ/Client/Models/Components/ActionsMeta.cs
+  - src/StackOneHQ/Client/Models/Components/ActionsMetaPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/ActionsRpcRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/ActionsRpcResponse.cs
+  - src/StackOneHQ/Client/Models/Components/ActionsRpcResponseData1.cs
+  - src/StackOneHQ/Client/Models/Components/ActionsRpcResponseData2.cs
   - src/StackOneHQ/Client/Models/Components/Actor.cs
   - src/StackOneHQ/Client/Models/Components/AdditionalData.cs
   - src/StackOneHQ/Client/Models/Components/AdditionalDataValue.cs
@@ -2743,6 +2838,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/AttachmentSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/AttachmentSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/AttachmentValue.cs
+  - src/StackOneHQ/Client/Models/Components/AuthenticationMetaItem.cs
   - src/StackOneHQ/Client/Models/Components/AuthorModel.cs
   - src/StackOneHQ/Client/Models/Components/AvatarCategorySourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/AvatarFileFormatSourceValueUnion.cs
@@ -2845,10 +2941,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/ContentSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/ContentSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/ContentValue.cs
-  - src/StackOneHQ/Client/Models/Components/ContractType.cs
-  - src/StackOneHQ/Client/Models/Components/ContractTypeContractType.cs
-  - src/StackOneHQ/Client/Models/Components/ContractTypeSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/ContractTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/CostCenter.cs
   - src/StackOneHQ/Client/Models/Components/CostCenterSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/CostCenterType.cs
@@ -2885,6 +2977,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/CreateCategoriesApiModelSourceValueLevel.cs
   - src/StackOneHQ/Client/Models/Components/CreateCostCenterApiModel.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModel.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelContractType.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelContractTypeContractType.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelContractTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelContractTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelDurationUnit.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion.cs
@@ -2899,11 +2995,17 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelPayPeriod.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelPayPeriodSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelPayPeriodValue.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelSourceValueContractType.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelSourceValueEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelSourceValueEmploymentType.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelSourceValuePayFrequency.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelSourceValuePayPeriod.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelSourceValueType.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelSourceValueWorkTime.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelType.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelTypeType.cs
+  - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelWorkTime.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelWorkTimeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/CreateEmploymentApiModelWorkTimeValue.cs
@@ -2954,6 +3056,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/CustomFieldsValue.cs
   - src/StackOneHQ/Client/Models/Components/CustomFieldsValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/CustomMappingError.cs
+  - src/StackOneHQ/Client/Models/Components/Data.cs
   - src/StackOneHQ/Client/Models/Components/DeleteResult.cs
   - src/StackOneHQ/Client/Models/Components/Department.cs
   - src/StackOneHQ/Client/Models/Components/DepartmentResult.cs
@@ -3037,6 +3140,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/Employment.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentActiveEnum.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentActiveUnion.cs
+  - src/StackOneHQ/Client/Models/Components/EmploymentContractType.cs
+  - src/StackOneHQ/Client/Models/Components/EmploymentContractTypeContractType.cs
+  - src/StackOneHQ/Client/Models/Components/EmploymentContractTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/EmploymentContractTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentDepartment.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentDurationUnit.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentEmploymentContractType.cs
@@ -3058,6 +3165,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/EmploymentPayPeriodSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentPayPeriodValue.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentResult.cs
+  - src/StackOneHQ/Client/Models/Components/EmploymentSourceValueContractType.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentSourceValueEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentSourceValueEmploymentType.cs
   - src/StackOneHQ/Client/Models/Components/EmploymentSourceValuePayFrequency.cs
@@ -3188,6 +3296,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisBatchDocumentUploadRequestDto.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDto.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoAvatar.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoContractTypeContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoContractTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoContractTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoDurationUnit.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmployment.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentContractType.cs
@@ -3202,9 +3314,13 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentStatus.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentStatusSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentStatusValue.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentType.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentType1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentType2.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeSourceValueUnion1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeSourceValueUnion2.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeValue1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEmploymentTypeValue2.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEthnicity.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEthnicitySourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoEthnicityValue.cs
@@ -3225,6 +3341,9 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoNationalIdentityNumberTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoPayFrequency.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoPayFrequencySourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoPayFrequencyValue.cs
@@ -3234,27 +3353,26 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoPreferredLanguage.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoPreferredLanguageSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoPreferredLanguageValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentEmploymentType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentStatus.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentType1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEmploymentType2.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueEthnicity.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueGender.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueHomeLocationCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueHomeLocationState.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueMaritalStatus.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValuePayFrequency.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValuePayPeriod.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueWorkLocationCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueWorkLocationState.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoSourceValueWorkTime.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoType.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoTypeSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoWorkLocation.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoWorkLocationCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoWorkLocationCountrySourceValueUnion.cs
@@ -3265,6 +3383,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoWorkTimeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmployeeRequestDtoWorkTimeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoContractTypeContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoContractTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoContractTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoDurationUnit.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion.cs
@@ -3279,11 +3401,17 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoPayPeriod.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoPayPeriodSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoPayPeriodValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoSourceValueContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoSourceValueEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoSourceValueEmploymentType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoSourceValuePayFrequency.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoSourceValuePayPeriod.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoSourceValueType.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoSourceValueWorkTime.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoTypeType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoWorkTime.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoWorkTimeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisCreateEmploymentRequestDtoWorkTimeValue.cs
@@ -3374,6 +3502,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisShiftsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDto.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoAvatar.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoContractTypeContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoContractTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoContractTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoDurationUnit.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmployment.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentContractType.cs
@@ -3388,9 +3520,13 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentStatus.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentStatusSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentStatusValue.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentType.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentType1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentType2.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeSourceValueUnion1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeSourceValueUnion2.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeValue1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEmploymentTypeValue2.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEthnicity.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEthnicitySourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoEthnicityValue.cs
@@ -3411,6 +3547,9 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountrySourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountryValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoPayFrequency.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoPayFrequencySourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoPayFrequencyValue.cs
@@ -3420,27 +3559,26 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoPreferredLanguage.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoPreferredLanguageSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoPreferredLanguageValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentEmploymentType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentStatus.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentType1.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEmploymentType2.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueEthnicity.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueGender.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueHomeLocationCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueHomeLocationState.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueMaritalStatus.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueNationalIdentityNumberType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValuePayFrequency.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValuePayPeriod.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValuePreferredLanguage.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueWorkLocationCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueWorkLocationState.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoSourceValueWorkTime.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoType.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoTypeSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoWorkLocation.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoWorkLocationCountry.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoWorkLocationCountrySourceValueUnion.cs
@@ -3451,6 +3589,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoWorkTimeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmployeeRequestDtoWorkTimeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDto.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoContractTypeContractType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoContractTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoContractTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoDurationUnit.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion.cs
@@ -3465,11 +3607,17 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoPayPeriod.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoPayPeriodSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoPayPeriodValue.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueEmploymentContractType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueEmploymentType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoSourceValuePayFrequency.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoSourceValuePayPeriod.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueType.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoSourceValueWorkTime.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoTypeType.cs
+  - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoWorkTime.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoWorkTimeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/HrisUpdateEmploymentRequestDtoWorkTimeValue.cs
@@ -3523,6 +3671,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/IamUserStatusSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/IamUserStatusValue.cs
   - src/StackOneHQ/Client/Models/Components/IamUsersPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/Id.cs
   - src/StackOneHQ/Client/Models/Components/Images.cs
   - src/StackOneHQ/Client/Models/Components/InAppMessages.cs
   - src/StackOneHQ/Client/Models/Components/InAppMessagesMessageContent.cs
@@ -3533,6 +3682,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/InAppTemplate.cs
   - src/StackOneHQ/Client/Models/Components/InAppTemplateResult.cs
   - src/StackOneHQ/Client/Models/Components/InAppTemplatesPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/Input.cs
   - src/StackOneHQ/Client/Models/Components/Interview.cs
   - src/StackOneHQ/Client/Models/Components/InterviewInterviewStage.cs
   - src/StackOneHQ/Client/Models/Components/InterviewInterviewStatus.cs
@@ -3600,6 +3750,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCodeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCodeValue.cs
   - src/StackOneHQ/Client/Models/Components/JournalLineSourceValueCurrencyCode.cs
+  - src/StackOneHQ/Client/Models/Components/JsonRpcMessageDto.cs
   - src/StackOneHQ/Client/Models/Components/Label.cs
   - src/StackOneHQ/Client/Models/Components/LaborType.cs
   - src/StackOneHQ/Client/Models/Components/LanguageEnum.cs
@@ -3742,6 +3893,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/OffersResult.cs
   - src/StackOneHQ/Client/Models/Components/OverallRecommendation.cs
   - src/StackOneHQ/Client/Models/Components/Package.cs
+  - src/StackOneHQ/Client/Models/Components/Params.cs
   - src/StackOneHQ/Client/Models/Components/ParentQuestion.cs
   - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDto.cs
   - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDtoCredentials.cs
@@ -3815,6 +3967,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/ScheduledInterviewValue.cs
   - src/StackOneHQ/Client/Models/Components/ScheduledInterviewsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/ScheduledInterviewsResult.cs
+  - src/StackOneHQ/Client/Models/Components/SchemeBasic.cs
   - src/StackOneHQ/Client/Models/Components/Scorecard.cs
   - src/StackOneHQ/Client/Models/Components/ScorecardSection.cs
   - src/StackOneHQ/Client/Models/Components/ScorecardsPaginated.cs
@@ -3854,7 +4007,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/SourceValueAvatarFileFormat.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueBalanceUnit.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueConditionType.cs
-  - src/StackOneHQ/Client/Models/Components/SourceValueContractType.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueCostCenter.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueDepartment.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueDivision.cs
@@ -4108,6 +4260,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Errors/NotImplementedResponseException.cs
   - src/StackOneHQ/Client/Models/Errors/PreconditionFailedResponseException.cs
   - src/StackOneHQ/Client/Models/Errors/RequestTimedOutResponseException.cs
+  - src/StackOneHQ/Client/Models/Errors/ResponseValidationException.cs
+  - src/StackOneHQ/Client/Models/Errors/StackOneError.cs
   - src/StackOneHQ/Client/Models/Errors/TooManyRequestsResponseException.cs
   - src/StackOneHQ/Client/Models/Errors/UnauthorizedResponseException.cs
   - src/StackOneHQ/Client/Models/Errors/UnprocessableEntityResponseException.cs
@@ -4170,6 +4324,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/AtsGetApplicationScheduledInterviewResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetApplicationScorecardRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetApplicationScorecardResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsGetApplicationStageRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsGetApplicationStageResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetAssessmentsPackageRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetAssessmentsPackageResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsGetBackgroundCheckPackageRequest.cs
@@ -4224,6 +4380,9 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/AtsListApplicationScorecardsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListApplicationScorecardsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListApplicationScorecardsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsListApplicationStagesFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsListApplicationStagesRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/AtsListApplicationStagesResponse.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListApplicationsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListApplicationsOffersFilter.cs
   - src/StackOneHQ/Client/Models/Requests/AtsListApplicationsOffersRequest.cs
@@ -4717,6 +4876,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/StackoneGetLogInclude.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneGetLogRequest.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneGetLogResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListActionsMetaFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListActionsMetaInclude.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListActionsMetaRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneListActionsMetaResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListConnectorsMetaRequest.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListConnectorsMetaResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListLinkedAccountsRequest.cs
@@ -4741,8 +4904,18 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/StackoneListStepLogsOrderDirection.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListStepLogsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneListStepLogsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpDeleteRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpDeleteResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpDeleteSecurity.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpGetRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpGetResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpGetSecurity.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpPostRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpPostResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneMcpPostSecurity.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneProxyRequestRequest.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneProxyRequestResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/StackoneRpcActionResponse.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneUpdateAccountRequest.cs
   - src/StackOneHQ/Client/Models/Requests/StackoneUpdateAccountResponse.cs
   - src/StackOneHQ/Client/Models/Requests/TicketingCreateTicketRequest.cs
@@ -5460,7 +5633,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -5570,7 +5743,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "approver_id": "1687-4", "remote_approver_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "start_date": "2021-01-01T01:01:01.000", "end_date": "2021-01-01T01:01:01.000", "start_half_day": true, "end_half_day": true, "duration": "P3Y6M4DT12H30M5S", "time_off_policy_id": "cx280928933", "remote_time_off_policy_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "reason": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}, "created_date": "2021-01-01T01:01:01.000Z", "updated_date": "2021-01-01T01:01:01.000Z", "policy": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Holidays", "description": "Usable for regional and national holidays of employees.", "type": {"value": "holiday"}, "duration_unit": {"value": "hours"}, "reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "comment": "Taking a day off for personal reasons"}]}
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "approver_id": "1687-4", "remote_approver_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "start_date": "2021-01-01T01:01:01.000", "end_date": "2021-01-01T01:01:01.000", "start_half_day": true, "end_half_day": true, "duration": "P3Y6M4DT12H30M5S", "time_off_policy_id": "cx280928933", "remote_time_off_policy_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "reason": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}, "policy": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Holidays", "description": "Usable for regional and national holidays of employees.", "type": {"value": "holiday"}, "duration_unit": {"value": "hours"}, "reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "comment": "Taking a day off for personal reasons"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -5644,7 +5817,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "approver_id": "1687-4", "remote_approver_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "start_date": "2021-01-01T01:01:01.000", "end_date": "2021-01-01T01:01:01.000", "start_half_day": true, "end_half_day": true, "duration": "P3Y6M4DT12H30M5S", "time_off_policy_id": "cx280928933", "remote_time_off_policy_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "reason": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}, "created_date": "2021-01-01T01:01:01.000Z", "updated_date": "2021-01-01T01:01:01.000Z", "policy": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Holidays", "description": "Usable for regional and national holidays of employees.", "type": {"value": "holiday"}, "duration_unit": {"value": "hours"}, "reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "comment": "Taking a day off for personal reasons"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "approver_id": "1687-4", "remote_approver_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "start_date": "2021-01-01T01:01:01.000", "end_date": "2021-01-01T01:01:01.000", "start_half_day": true, "end_half_day": true, "duration": "P3Y6M4DT12H30M5S", "time_off_policy_id": "cx280928933", "remote_time_off_policy_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "reason": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "policy": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Holidays", "description": "Usable for regional and national holidays of employees.", "type": {"value": "holiday"}, "duration_unit": {"value": "hours"}, "reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "comment": "Taking a day off for personal reasons"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -5894,7 +6067,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -5932,12 +6105,12 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -6045,7 +6218,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {}, "sub_type": "H1B", "document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "issued_by": {"value": "US"}, "number": "1234567890"}]}
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {}, "sub_type": "H1B", "document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "issued_by": {"value": "US"}, "number": "1234567890"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -6078,7 +6251,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": null}, "issued_by": {"value": "US"}, "number": "1234567890", "sub_type": "H1B", "type": {}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": null}, "issued_by": {"value": "US"}, "number": "1234567890", "sub_type": "H1B", "type": {}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
@@ -6118,7 +6291,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {}, "sub_type": "H1B", "document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "issued_by": {"value": "US"}, "number": "1234567890"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {}, "sub_type": "H1B", "document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "issued_by": {"value": "US"}, "number": "1234567890"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -6152,7 +6325,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}, "issued_by": {"value": "US"}, "number": "1234567890", "sub_type": "H1B", "type": {}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"document": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}, "issued_by": {"value": "US"}, "number": "1234567890", "sub_type": "H1B", "type": {}, "valid_from": "2021-01-01T00:00:00.000Z", "valid_to": "2021-01-01T00:00:00.000Z", "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
@@ -6258,7 +6431,7 @@ examples:
     speakeasy-default-hris-list-employments:
       parameters:
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "groups"
         header:
@@ -6296,13 +6469,13 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
           expand: "groups"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": null, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": null}, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": null, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": null}, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -6333,7 +6506,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "groups"
         header:
@@ -6373,7 +6546,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "job_id": "5290", "passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "job_id": "5290", "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
@@ -6408,13 +6581,13 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
           expand: "groups"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": {"text": "Testing the laws of motion"}, "owner_id": "5356", "parent_id": "7577"}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": {"text": "Testing the laws of motion"}, "owner_id": "5356", "parent_id": "7577"}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -6448,7 +6621,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "200":
           application/json: {"statusCode": 200, "message": "Record updated successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
@@ -7232,7 +7405,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "approver_id": "1687-4", "remote_approver_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "start_date": "2021-01-01T01:01:01.000", "end_date": "2021-01-01T01:01:01.000", "start_half_day": true, "end_half_day": true, "duration": "P3Y6M4DT12H30M5S", "time_off_policy_id": "cx280928933", "remote_time_off_policy_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "reason": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}, "created_date": "2021-01-01T01:01:01.000Z", "updated_date": "2021-01-01T01:01:01.000Z", "policy": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Holidays", "description": "Usable for regional and national holidays of employees.", "type": {"value": "holiday"}, "duration_unit": {"value": "hours"}, "reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "comment": "Taking a day off for personal reasons"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "approver_id": "1687-4", "remote_approver_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "start_date": "2021-01-01T01:01:01.000", "end_date": "2021-01-01T01:01:01.000", "start_half_day": true, "end_half_day": true, "duration": "P3Y6M4DT12H30M5S", "time_off_policy_id": "cx280928933", "remote_time_off_policy_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "reason": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "policy": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Holidays", "description": "Usable for regional and national holidays of employees.", "type": {"value": "holiday"}, "duration_unit": {"value": "hours"}, "reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "comment": "Taking a day off for personal reasons"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -7698,7 +7871,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": [{"comment": "Approved based on in-person assessment", "created_at": "2024-03-15T10:00:00.000Z"}], "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}]}
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": [{"comment": "Approved based on in-person assessment", "created_at": "2024-03-15T10:00:00.000Z"}], "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -7772,7 +7945,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": null, "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": null}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}]}
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": null, "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": null}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -7809,7 +7982,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": [{"comment": "Approved based on in-person assessment", "created_at": "2024-03-15T10:00:00.000Z"}], "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "cx280928937", "name": "Complete onboarding documents", "description": "Please complete all required onboarding documents in the employee portal", "type": {"value": "action"}, "status": {"value": "open"}, "due_date": "2024-03-20T23:59:59.000Z", "completion_date": "2024-03-19T15:30:00.000Z", "assigned_by_employee_id": "cx280928938", "assigned_by_employee_name": "John Smith", "link_to_task": "https://provider.com/tasks/123", "extracted_links": ["https://provider.com/docs/1", "https://provider.com/forms/2"], "next_task_id": "cx280928939", "parent_process_name": "Onboarding Tasks", "comments": [{"comment": "Approved based on in-person assessment", "created_at": "2024-03-15T10:00:00.000Z"}], "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}], "created_at": "2024-03-15T10:00:00.000Z", "updated_at": "2024-03-19T15:30:00.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -7918,7 +8091,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "remote_candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "remote_job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "interview_stage": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "remote_interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "rejected_reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "label": "Failed Phone Screen", "rejected_reason_type": {"value": "rejected_by_organization", "source_value": "RejectedByOrg"}}], "rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "remote_rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "rejected_at": "2021-01-01T01:01:01.000Z", "location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "remote_location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "application_status": {"value": "hired", "source_value": "Hired"}, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "candidate": null, "documents": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}], "result_links": [{"label": "test result link", "url": "http://example.com/test-result/4565765/data"}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "remote_candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "remote_job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "interview_stage": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "remote_interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "rejected_reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "label": "Failed Phone Screen", "rejected_reason_type": {"value": "rejected_by_organization", "source_value": "RejectedByOrg"}}], "rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "remote_rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "rejected_at": "2021-01-01T01:01:01.000Z", "location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "remote_location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "application_status": {"value": "hired", "source_value": "Hired"}, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "candidate": null, "documents": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}], "result_links": [{"label": "test result link", "url": "http://example.com/test-result/4565765/data"}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -8574,7 +8747,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8612,12 +8785,12 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -9801,7 +9974,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "Software Engineer", "locations": [{"id": "12345", "name": "New York"}, {"id": "67890", "name": "Remote"}], "internal": "true", "status": {"value": "live", "source_value": "Live"}, "job_id": "job001", "remote_job_posting_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "content": {"plain": "This is a plain text description", "html": "<p>This is an HTML description</p>"}, "compensation": [{"name": "Base Salary", "type": {"value": "salary", "source_value": "Salary"}, "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "currency": "USD", "value": "50000", "min_value": "45000", "max_value": "55000"}, {"name": "Bonus", "type": {"value": "salary", "source_value": "Salary"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "currency": "USD", "value": "10%"}], "employment_type": {"value": "permanent", "source_value": "Permanent"}, "employment_contract_type": {"value": "full_time", "source_value": "FullTime"}, "external_url": "https://www.example.com/job-posting/abcd1234", "external_apply_url": "https://www.example.com/job-posting/abcd1234/apply", "questionnaires": [{"id": "about001", "name": "About", "internal": "false", "questions": [{"id": "question001", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What is your name?", "required": true, "parent_question": null}, {"id": "question002", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What are your hobbies?", "required": false, "parent_question": null}, {"id": "question003", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What is your favourite animal?", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Dog"}, {"id": "2", "text": "Cat"}, {"id": "3", "text": "Bird"}, {"id": "4", "text": "Other"}], "parent_question": null}, {"id": "question004", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Do you have previous work experience??", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Yes"}, {"id": "2", "text": "No"}], "parent_question": null}, {"id": "question005", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What was the duration of your last employment?", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Less than 1 year"}, {"id": "2", "text": "1-2 years"}, {"id": "2", "text": "More than 2 year"}], "parent_question": {"id": "question004", "option_ids": ["1"], "condition_type": {"value": "equals_to", "source_value": "EqualsTo"}}}]}, {"id": "experience001", "name": "Experience", "internal": "false", "questions": [{"id": "question004", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Please upload your resume.", "required": true, "parent_question": null}, {"id": "question005", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Select the programming languages you are proficient in.", "required": true, "multiple_choice_answers": [{"id": "1", "text": "JavaScript"}, {"id": "2", "text": "Python"}, {"id": "3", "text": "Java"}], "parent_question": null}, {"id": "question006", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Are you willing to relocate?", "parent_question": null}, {"id": "question007", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "How many years of experience do you have?", "parent_question": null}, {"id": "question008", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "When did you start your most recent position?", "parent_question": null}, {"id": "question009", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Do you have Project Management Experience?", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Yes"}, {"id": "2", "text": "No"}], "parent_question": null}, {"id": "question010", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "How much Project Management experience do you have?", "multiple_choice_answers": [{"id": "1", "text": "1-3 years"}, {"id": "2", "text": "3-5 years"}, {"id": "3", "text": "5-10 years"}, {"id": "4", "text": "More than 10 years"}], "parent_question": {"id": "question009", "option_ids": ["1"], "condition_type": {"value": "equals_to", "source_value": "EqualsTo"}}}]}], "start_date": "2021-01-01T00:00:00.000Z", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "Software Engineer", "locations": [{"id": "12345", "name": "New York"}, {"id": "67890", "name": "Remote"}], "internal": "true", "status": {"value": "live", "source_value": "Live"}, "job_id": "job001", "remote_job_posting_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "content": {"plain": "This is a plain text description", "html": "<p>This is an HTML description</p>"}, "compensation": [{"title": "Base Salary", "type": {"value": "salary", "source_value": "Salary"}, "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "currency": "USD", "value": "50000", "min_value_range": "45000", "max_value_range": "55000"}, {"title": "Bonus", "type": {"value": "salary", "source_value": "Salary"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "currency": "USD", "value": "10%"}], "employment_type": {"value": "permanent", "source_value": "Permanent"}, "employment_contract_type": {"value": "full_time", "source_value": "FullTime"}, "external_url": "https://www.example.com/job-posting/abcd1234", "external_apply_url": "https://www.example.com/job-posting/abcd1234/apply", "questionnaires": [{"id": "about001", "name": "About", "internal": "false", "questions": [{"id": "question001", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What is your name?", "required": true, "parent_question": null}, {"id": "question002", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What are your hobbies?", "required": false, "parent_question": null}, {"id": "question003", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What is your favourite animal?", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Dog"}, {"id": "2", "text": "Cat"}, {"id": "3", "text": "Bird"}, {"id": "4", "text": "Other"}], "parent_question": null}, {"id": "question004", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Do you have previous work experience??", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Yes"}, {"id": "2", "text": "No"}], "parent_question": null}, {"id": "question005", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "What was the duration of your last employment?", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Less than 1 year"}, {"id": "2", "text": "1-2 years"}, {"id": "2", "text": "More than 2 year"}], "parent_question": {"id": "question004", "option_ids": ["1"], "condition_type": {"value": "equals_to", "source_value": "EqualsTo"}}}]}, {"id": "experience001", "name": "Experience", "internal": "false", "questions": [{"id": "question004", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Please upload your resume.", "required": true, "parent_question": null}, {"id": "question005", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Select the programming languages you are proficient in.", "required": true, "multiple_choice_answers": [{"id": "1", "text": "JavaScript"}, {"id": "2", "text": "Python"}, {"id": "3", "text": "Java"}], "parent_question": null}, {"id": "question006", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Are you willing to relocate?", "parent_question": null}, {"id": "question007", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "How many years of experience do you have?", "parent_question": null}, {"id": "question008", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "When did you start your most recent position?", "parent_question": null}, {"id": "question009", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "Do you have Project Management Experience?", "required": true, "multiple_choice_answers": [{"id": "1", "text": "Yes"}, {"id": "2", "text": "No"}], "parent_question": null}, {"id": "question010", "type": {"value": "short_text", "source_value": "ShortText"}, "text": "How much Project Management experience do you have?", "multiple_choice_answers": [{"id": "1", "text": "1-3 years"}, {"id": "2", "text": "3-5 years"}, {"id": "3", "text": "5-10 years"}, {"id": "4", "text": "More than 10 years"}], "parent_question": {"id": "question009", "option_ids": ["1"], "condition_type": {"value": "equals_to", "source_value": "EqualsTo"}}}]}], "start_date": "2021-01-01T00:00:00.000Z", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -10827,7 +11000,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "primary_email_address": "han@stackone.com", "first_name": "Han", "last_name": "Solo", "name": "Han Solo", "username": "hansolo1977", "is_bot_user": true, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": null, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "team"}, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": null, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "remote_parent_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "status": {"value": "enabled"}, "last_active_at": "2021-01-01T01:01:01.000Z", "last_login_at": "2021-01-01T01:01:01.000Z", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "multi_factor_enabled": [{"value": "totp"}], "avatar": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}}]}
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "primary_email_address": "han@stackone.com", "first_name": "Han", "last_name": "Solo", "name": "Han Solo", "username": "hansolo1977", "is_bot_user": true, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": null, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "team"}, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": null, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "remote_parent_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "status": {"value": "enabled"}, "last_active_at": "2021-01-01T01:01:01.000Z", "last_login_at": "2021-01-01T01:01:01.000Z", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "multi_factor_enabled": [{"value": "totp"}], "avatar": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -10864,7 +11037,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "primary_email_address": "han@stackone.com", "first_name": "Han", "last_name": "Solo", "name": "Han Solo", "username": "hansolo1977", "is_bot_user": true, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Company History Records", "location": "s3://bucket-name/folder-name", "type": {"value": "file"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "team"}, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Company History Records", "location": "s3://bucket-name/folder-name", "type": {"value": "file"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "remote_parent_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "status": {"value": "enabled"}, "last_active_at": "2021-01-01T01:01:01.000Z", "last_login_at": "2021-01-01T01:01:01.000Z", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "multi_factor_enabled": [{"value": "totp"}], "avatar": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "path": "/path/to/file", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "primary_email_address": "han@stackone.com", "first_name": "Han", "last_name": "Solo", "name": "Han Solo", "username": "hansolo1977", "is_bot_user": true, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Company History Records", "location": "s3://bucket-name/folder-name", "type": {"value": "file"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "team"}, "roles": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "type": {"value": "admin"}, "policies": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Remote Contractor Policy", "permissions": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "read:users", "type": {"value": "read_write"}, "resources": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Company History Records", "location": "s3://bucket-name/folder-name", "type": {"value": "file"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "remote_parent_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}], "status": {"value": "enabled"}, "last_active_at": "2021-01-01T01:01:01.000Z", "last_login_at": "2021-01-01T01:01:01.000Z", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "multi_factor_enabled": [{"value": "totp"}], "avatar": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}}}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -14723,7 +14896,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,name,code,rate,active"
+          fields: "id,remote_id,company_id,remote_company_id,name,code,percentage,active"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14761,7 +14934,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,name,code,rate,active"
+          fields: "id,remote_id,company_id,remote_company_id,name,code,percentage,active"
         header:
           x-account-id: "<id>"
       responses:
@@ -14937,5 +15110,283 @@ examples:
           application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  stackone_mcp_get:
+    speakeasy-default-stackone-mcp-get:
+      parameters:
+        header:
+          x-account-id: "<id>"
+          mcp-session-id: "<id>"
+      responses:
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  stackone_mcp_post:
+    initialize:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"jsonrpc": "2.0", "method": "initialize", "params": {}, "id": {}}
+      responses:
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+    toolsList:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"jsonrpc": "2.0", "method": "tools/list", "params": {}, "id": {}}
+      responses:
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+    toolsCall:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"jsonrpc": "2.0", "method": "tools/call", "params": {}, "id": {}}
+      responses:
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  stackone_mcp_delete:
+    speakeasy-default-stackone-mcp-delete:
+      parameters:
+        header:
+          x-account-id: "<id>"
+          mcp-session-id: "<id>"
+      responses:
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": null, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  stackone_list_actions_meta:
+    speakeasy-default-stackone-list-actions-meta:
+      parameters:
+        query:
+          group_by: "[\"connector\"]"
+          filter: {"connectors": "connector1,connector2", "account_ids": "account1,account2", "action_key": "action1"}
+          include: ["operation_details"]
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  stackone_rpc_action:
+    speakeasy-default-stackone-rpc-action:
+      requestBody:
+        application/json: {"action": "create_employee", "input": {"query": {"param1": "value1", "param2": "value2"}, "headers": {"Content-Type": "application/json"}, "body": {"data": "example"}}}
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ats_list_application_stages:
+    speakeasy-default-ats-list-application-stages:
+      parameters:
+        query:
+          fields: "id,remote_id,name,order,created_at,updated_at"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  ats_get_application_stage:
+    speakeasy-default-ats-get-application-stage:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,name,order,created_at,updated_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
-releaseNotes: "## SDK Changes Detected:\n* `StackOneHq.client.Ats.CustomFieldDefinitions.ListCandidates()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Jobs.Get()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Crm.CustomFieldDefinitions.Contacts.Get()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Crm.CustomFieldDefinitions.Contacts.List()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.CustomFieldDefinitions.GetJob()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Candidates.CustomFieldDefinitions.Get()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.GetCustomFieldDefinition()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.ListCustomFieldDefinitions()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.Create()`:  `request.atsCreateApplicationRequestDto` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.UpdateBackgroundCheckResult()`: \n  *  `request.atsUpdateBackgroundCheckResultRequestDto.Id` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.AssessmentsUpdateResult()`: \n  *  `request.atsUpdateCandidatesAssessmentsResultsRequestDto.Id` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.ListJobCustomFieldDefinitions()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Ats.DocumentsUpload()`:  `request` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetTask()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Jobs.List()`:  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.ListCustomFieldDefinitions()`:  `response.data.[].Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeTask()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeCustomFieldDefinition()`:  `response.data.Options.[].Value` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Proxy.Perform()`:  `response` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Accounting.BatchCreateCompanyJournals()`: **Added**\n* `StackOneHq.client.Messaging.GetUser()`: **Added**\n* `StackOneHq.client.Accounting.ListCompanyJournals()`: **Added**\n* `StackOneHq.client.Accounting.CreateCompanyJournal()`: **Added**\n* `StackOneHq.client.Accounting.GetCompanyJournal()`: **Added**\n* `StackOneHq.client.Ats.Assessments.GetResults()`: **Deleted** **Breaking** :warning:\n* `StackOneHq.client.Ats.BackgroundChecks.GetResults()`: **Deleted** **Breaking** :warning:\n* `StackOneHq.client.Accounts.List()`: \n  *  `request.OriginOwnerIds` **Added**\n* `StackOneHq.client.Accounting.ListCompanyTaxRates()`: **Added**\n* `StackOneHq.client.Accounting.GetCompanyAccount()`: **Added**\n* `StackOneHq.client.Hris.GetEmployee()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Accounting.ListCompanyAccounts()`: **Added**\n* `StackOneHq.client.Ats.ListApplications()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Accounting.GetCompany()`: **Added**\n* `StackOneHq.client.Hris.Employees.List()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Hris.Employees.Create()`: \n  *  `request.hrisCreateEmployeeRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Hris.Employees.Update()`: \n  *  `request.hrisUpdateEmployeeRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Hris.Employees.Documents.Download()`:  `response.status[200]` **Changed**\n* `StackOneHq.client.Accounting.ListCompanies()`: **Added**\n* `StackOneHq.client.Ats.ListJobApplicationStages()`: **Added**\n* `StackOneHq.client.Messaging.SendMessage()`: **Added**\n* `StackOneHq.client.Ats.ListJobs()`:  `response.data.[]` **Changed**\n* `StackOneHq.client.Messaging.GetMessage()`: **Added**\n* `StackOneHq.client.Ats.ListCandidates()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.UpdateCandidate()`: \n  *  `request.atsUpdateCandidateRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Messaging.ListConversationMessages()`: **Added**\n* `StackOneHq.client.Ats.Get()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.CreateJob()`: \n  *  `request.atsCreateJobRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.UpdateJob()`: \n  *  `request.atsUpdateJobRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Accounting.GetCompanyTaxRate()`: **Added**\n* `StackOneHq.client.Messaging.ListUsers()`: **Added**\n* `StackOneHq.client.Messaging.GetAttachment()`: **Added**\n* `StackOneHq.client.Ats.Applications.Update()`: \n  *  `request.atsUpdateApplicationRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.Applications.DownloadDocument()`:  `response.status[200]` **Changed**\n* `StackOneHq.client.Messaging.ListAttachments()`: **Added**\n* `StackOneHq.client.Messaging.DownloadMessagingAttachment()`: **Added**\n* `StackOneHq.client.Ats.Candidates.Create()`: \n  *  `request.atsCreateCandidateRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Ats.Candidates.Get()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Messaging.GetConversation()`: **Added**\n* `StackOneHq.client.Hris.Employees.Tasks.Complete()`: **Added**\n* `StackOneHq.client.Messaging.CreateConversation()`: **Added**\n* `StackOneHq.client.Ats.Jobs.Get()`:  `response.data` **Changed**\n* `StackOneHq.client.Crm.GetContact()`:  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Crm.UpdateContact()`: \n  *  `request.crmCreateContactRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n  *  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Crm.Contacts.List()`:  `response.data.[].CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Crm.Contacts.Create()`: \n  *  `request.crmCreateContactRequestDto.CustomFields.[].Value.[date-Time]` **Added**\n  *  `response.data.CustomFields.[].Value.[date-Time]` **Added**\n* `StackOneHq.client.Messaging.ListConversations()`: **Added**\n* `StackOneHq.client.Ats.GetJobApplicationStage()`: **Added**\n* `StackOneHq.client.Courses.List()`: \n  *  `request.Filter` **Changed**\n  *  `response.total` **Added**\n* `StackOneHq.client.Lms.ListUserAssignments()`:  `response.data.[]` **Changed**\n* `StackOneHq.client.Lms.ListContent()`: \n  *  `request.Filter` **Changed**\n  *  `response.total` **Added**\n* `StackOneHq.client.Lms.GetUserCompletion()`:  `response.data.CertificateUrl` **Added**\n* `StackOneHq.client.Lms.Assignments.List()`:  `response.data.[]` **Changed**\n* `StackOneHq.client.Lms.Assignments.Get()`:  `response.data` **Changed**\n* `StackOneHq.client.Lms.UsersAssignments.Get()`:  `response.data` **Changed**\n* `StackOneHq.client.Lms.Users.ListCompletions()`:  `response.data.[].CertificateUrl` **Added**\n* `StackOneHq.client.Lms.Completions.List()`:  `response.data.[].CertificateUrl` **Added**\n* `StackOneHq.client.Lms.Completions.Get()`:  `response.data.CertificateUrl` **Added**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Hris.Employees.GetWorkEligibility()`:  `response.data.Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.ListJobPostings()`:  `response.data.[].Compensation.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Iam.Users.Get()`:  `response.data.Avatar.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Iam.Users.List()`:  `response.data.[].Avatar.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.JobPostings.Get()`:  `response.data.Compensation.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.WorkEligibility.UpdateRequest()`: \n  *  `request.hrisCreateWorkEligibilityRequestDto.Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.Documents.List()`:  `response.data.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListEmployeeTimeOffRequests()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeTimeOffRequest()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListEmployeeDocuments()`:  `response.data.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeDocument()`:  `response.data.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetTimeOffRequest()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeTask()`:  `response.data.Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetTask()`:  `response.data.Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.GetDocument()`:  `response.data.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Get()`:  `response.data.Documents.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.WorkEligibilityList()`:  `response.data.[].Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.CreateWorkEligibilityRequest()`: \n  *  `request.hrisCreateWorkEligibilityRequestDto.Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.ListApplications()`:  `response.data.[].Documents.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Tasks.List()`:  `response.data.[].Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.TimeOff.List()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.Tasks.List()`:  `response.data.[].Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.InterviewStages.List()`: **Deprecated**\n* `StackOneHq.client.Actions.RpcAction()`: **Added**\n* `StackOneHq.client.Hris.Employees.CreateEmployment()`:  `request.hrisCreateEmploymentRequestDto` **Changed**\n* `StackOneHq.client.Mcp.McpPost()`: **Added**\n* `StackOneHq.client.Hris.Employees.Update()`: \n  *  `request.hrisUpdateEmployeeRequestDto.Employment` **Changed**\n* `StackOneHq.client.Hris.Employees.Employments.Update()`:  `request.hrisUpdateEmploymentRequestDto` **Changed**\n* `StackOneHq.client.Ats.ListApplicationStages()`: **Added**\n* `StackOneHq.client.Mcp.McpGet()`: **Added**\n* `StackOneHq.client.Hris.Employees.Create()`:  `request.hrisCreateEmployeeRequestDto` **Changed**\n* `StackOneHq.client.Ats.InterviewStages.Get()`: **Deprecated**\n* `StackOneHq.client.Ats.GetApplicationStage()`: **Added**\n* `StackOneHq.client.Actions.ListActionsMeta()`: **Added**\n* `StackOneHq.client.Mcp.McpDelete()`: **Added**\n* `StackOneHq.client.Lms.ListUserAssignments()`: \n  *  `request.Filter` **Changed**\n* `StackOneHq.client.Lms.Assignments.List()`: \n  *  `request.Filter` **Changed**\n"

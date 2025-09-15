@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TimeEntriesActiveUnionType
     {
         private TimeEntriesActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TimeEntriesActiveUnionType Boolean { get { return new TimeEntriesActiveUnionType("boolean"); } }
-        
+
         public static TimeEntriesActiveUnionType TimeEntriesActiveEnum { get { return new TimeEntriesActiveUnionType("TimeEntries_active_enum"); } }
-        
+
         public static TimeEntriesActiveUnionType Null { get { return new TimeEntriesActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The reference status
     /// </summary>
     [JsonConverter(typeof(TimeEntriesActiveUnion.TimeEntriesActiveUnionConverter))]
-    public class TimeEntriesActiveUnion {
-        public TimeEntriesActiveUnion(TimeEntriesActiveUnionType type) {
+    public class TimeEntriesActiveUnion
+    {
+        public TimeEntriesActiveUnion(TimeEntriesActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public TimeEntriesActiveEnum? TimeEntriesActiveEnum { get; set; }
 
         public TimeEntriesActiveUnionType Type { get; set; }
-
-
-        public static TimeEntriesActiveUnion CreateBoolean(bool boolean) {
+        public static TimeEntriesActiveUnion CreateBoolean(bool boolean)
+        {
             TimeEntriesActiveUnionType typ = TimeEntriesActiveUnionType.Boolean;
 
             TimeEntriesActiveUnion res = new TimeEntriesActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TimeEntriesActiveUnion CreateTimeEntriesActiveEnum(TimeEntriesActiveEnum timeEntriesActiveEnum) {
+        public static TimeEntriesActiveUnion CreateTimeEntriesActiveEnum(TimeEntriesActiveEnum timeEntriesActiveEnum)
+        {
             TimeEntriesActiveUnionType typ = TimeEntriesActiveUnionType.TimeEntriesActiveEnum;
 
             TimeEntriesActiveUnion res = new TimeEntriesActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TimeEntriesActiveUnion CreateNull() {
+        public static TimeEntriesActiveUnion CreateNull()
+        {
             TimeEntriesActiveUnionType typ = TimeEntriesActiveUnionType.Null;
             return new TimeEntriesActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TimeEntriesActiveUnion res = (TimeEntriesActiveUnion)value;
                 if (TimeEntriesActiveUnionType.FromString(res.Type).Equals(TimeEntriesActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TimeEntriesActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TimeEntriesActiveEnum));
                     return;
                 }
-
             }
 
         }

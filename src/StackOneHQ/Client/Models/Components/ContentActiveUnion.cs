@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ContentActiveUnionType
     {
         private ContentActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ContentActiveUnionType Boolean { get { return new ContentActiveUnionType("boolean"); } }
-        
+
         public static ContentActiveUnionType ContentActiveEnum { get { return new ContentActiveUnionType("Content_active_enum"); } }
-        
+
         public static ContentActiveUnionType Null { get { return new ContentActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the content is active and available for users.
     /// </summary>
     [JsonConverter(typeof(ContentActiveUnion.ContentActiveUnionConverter))]
-    public class ContentActiveUnion {
-        public ContentActiveUnion(ContentActiveUnionType type) {
+    public class ContentActiveUnion
+    {
+        public ContentActiveUnion(ContentActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public ContentActiveEnum? ContentActiveEnum { get; set; }
 
         public ContentActiveUnionType Type { get; set; }
-
-
-        public static ContentActiveUnion CreateBoolean(bool boolean) {
+        public static ContentActiveUnion CreateBoolean(bool boolean)
+        {
             ContentActiveUnionType typ = ContentActiveUnionType.Boolean;
 
             ContentActiveUnion res = new ContentActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ContentActiveUnion CreateContentActiveEnum(ContentActiveEnum contentActiveEnum) {
+        public static ContentActiveUnion CreateContentActiveEnum(ContentActiveEnum contentActiveEnum)
+        {
             ContentActiveUnionType typ = ContentActiveUnionType.ContentActiveEnum;
 
             ContentActiveUnion res = new ContentActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ContentActiveUnion CreateNull() {
+        public static ContentActiveUnion CreateNull()
+        {
             ContentActiveUnionType typ = ContentActiveUnionType.Null;
             return new ContentActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ContentActiveUnion res = (ContentActiveUnion)value;
                 if (ContentActiveUnionType.FromString(res.Type).Equals(ContentActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ContentActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ContentActiveEnum));
                     return;
                 }
-
             }
 
         }

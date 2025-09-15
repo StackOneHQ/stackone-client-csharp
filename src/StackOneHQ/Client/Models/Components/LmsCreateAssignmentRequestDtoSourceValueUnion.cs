@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LmsCreateAssignmentRequestDtoSourceValueUnionType
     {
         private LmsCreateAssignmentRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LmsCreateAssignmentRequestDtoSourceValueUnionType Str { get { return new LmsCreateAssignmentRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static LmsCreateAssignmentRequestDtoSourceValueUnionType Number { get { return new LmsCreateAssignmentRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static LmsCreateAssignmentRequestDtoSourceValueUnionType Boolean { get { return new LmsCreateAssignmentRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static LmsCreateAssignmentRequestDtoSourceValueUnionType LmsCreateAssignmentRequestDtoSourceValue { get { return new LmsCreateAssignmentRequestDtoSourceValueUnionType("LmsCreateAssignmentRequestDto_source_value"); } }
-        
+
         public static LmsCreateAssignmentRequestDtoSourceValueUnionType ArrayOfAny { get { return new LmsCreateAssignmentRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static LmsCreateAssignmentRequestDtoSourceValueUnionType Null { get { return new LmsCreateAssignmentRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(LmsCreateAssignmentRequestDtoSourceValueUnion.LmsCreateAssignmentRequestDtoSourceValueUnionConverter))]
-    public class LmsCreateAssignmentRequestDtoSourceValueUnion {
-        public LmsCreateAssignmentRequestDtoSourceValueUnion(LmsCreateAssignmentRequestDtoSourceValueUnionType type) {
+    public class LmsCreateAssignmentRequestDtoSourceValueUnion
+    {
+        public LmsCreateAssignmentRequestDtoSourceValueUnion(LmsCreateAssignmentRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public LmsCreateAssignmentRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateStr(string str) {
+        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateStr(string str)
+        {
             LmsCreateAssignmentRequestDtoSourceValueUnionType typ = LmsCreateAssignmentRequestDtoSourceValueUnionType.Str;
 
             LmsCreateAssignmentRequestDtoSourceValueUnion res = new LmsCreateAssignmentRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             LmsCreateAssignmentRequestDtoSourceValueUnionType typ = LmsCreateAssignmentRequestDtoSourceValueUnionType.Number;
 
             LmsCreateAssignmentRequestDtoSourceValueUnion res = new LmsCreateAssignmentRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             LmsCreateAssignmentRequestDtoSourceValueUnionType typ = LmsCreateAssignmentRequestDtoSourceValueUnionType.Boolean;
 
             LmsCreateAssignmentRequestDtoSourceValueUnion res = new LmsCreateAssignmentRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateLmsCreateAssignmentRequestDtoSourceValue(LmsCreateAssignmentRequestDtoSourceValue lmsCreateAssignmentRequestDtoSourceValue) {
+        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateLmsCreateAssignmentRequestDtoSourceValue(LmsCreateAssignmentRequestDtoSourceValue lmsCreateAssignmentRequestDtoSourceValue)
+        {
             LmsCreateAssignmentRequestDtoSourceValueUnionType typ = LmsCreateAssignmentRequestDtoSourceValueUnionType.LmsCreateAssignmentRequestDtoSourceValue;
 
             LmsCreateAssignmentRequestDtoSourceValueUnion res = new LmsCreateAssignmentRequestDtoSourceValueUnion(typ);
             res.LmsCreateAssignmentRequestDtoSourceValue = lmsCreateAssignmentRequestDtoSourceValue;
             return res;
         }
-
-        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             LmsCreateAssignmentRequestDtoSourceValueUnionType typ = LmsCreateAssignmentRequestDtoSourceValueUnionType.ArrayOfAny;
 
             LmsCreateAssignmentRequestDtoSourceValueUnion res = new LmsCreateAssignmentRequestDtoSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateNull() {
+        public static LmsCreateAssignmentRequestDtoSourceValueUnion CreateNull()
+        {
             LmsCreateAssignmentRequestDtoSourceValueUnionType typ = LmsCreateAssignmentRequestDtoSourceValueUnionType.Null;
             return new LmsCreateAssignmentRequestDtoSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LmsCreateAssignmentRequestDtoSourceValueUnion res = (LmsCreateAssignmentRequestDtoSourceValueUnion)value;
                 if (LmsCreateAssignmentRequestDtoSourceValueUnionType.FromString(res.Type).Equals(LmsCreateAssignmentRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.LmsCreateAssignmentRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.LmsCreateAssignmentRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -624,7 +624,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisListEmployeeDocumentsRequest req = new HrisListEmployeeDocumentsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
+    Fields = "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
     Filter = new HrisListEmployeeDocumentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -689,7 +689,7 @@ HrisGetEmployeeDocumentRequest req = new HrisGetEmployeeDocumentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
+    Fields = "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
 };
 
 var res = await sdk.Hris.GetEmployeeDocumentAsync(req);
@@ -869,7 +869,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetEmploymentRequest req = new HrisGetEmploymentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager",
+    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager",
     Expand = "groups",
 };
 

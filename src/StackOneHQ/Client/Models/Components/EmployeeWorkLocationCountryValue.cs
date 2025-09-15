@@ -15,7 +15,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-
+    
     /// <summary>
     /// The ISO3166-1 Alpha2 Code of the Country
     /// </summary>

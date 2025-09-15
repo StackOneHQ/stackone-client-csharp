@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TaskResultTypeSourceValueUnionType
     {
         private TaskResultTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TaskResultTypeSourceValueUnionType Str { get { return new TaskResultTypeSourceValueUnionType("str"); } }
-        
+
         public static TaskResultTypeSourceValueUnionType Number { get { return new TaskResultTypeSourceValueUnionType("number"); } }
-        
+
         public static TaskResultTypeSourceValueUnionType Boolean { get { return new TaskResultTypeSourceValueUnionType("boolean"); } }
-        
+
         public static TaskResultTypeSourceValueUnionType TaskResultSourceValueType { get { return new TaskResultTypeSourceValueUnionType("TaskResult_source_value_type"); } }
-        
+
         public static TaskResultTypeSourceValueUnionType ArrayOfAny { get { return new TaskResultTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TaskResultTypeSourceValueUnionType Null { get { return new TaskResultTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(TaskResultTypeSourceValueUnion.TaskResultTypeSourceValueUnionConverter))]
-    public class TaskResultTypeSourceValueUnion {
-        public TaskResultTypeSourceValueUnion(TaskResultTypeSourceValueUnionType type) {
+    public class TaskResultTypeSourceValueUnion
+    {
+        public TaskResultTypeSourceValueUnion(TaskResultTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TaskResultTypeSourceValueUnionType Type { get; set; }
-
-
-        public static TaskResultTypeSourceValueUnion CreateStr(string str) {
+        public static TaskResultTypeSourceValueUnion CreateStr(string str)
+        {
             TaskResultTypeSourceValueUnionType typ = TaskResultTypeSourceValueUnionType.Str;
 
             TaskResultTypeSourceValueUnion res = new TaskResultTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TaskResultTypeSourceValueUnion CreateNumber(double number) {
+        public static TaskResultTypeSourceValueUnion CreateNumber(double number)
+        {
             TaskResultTypeSourceValueUnionType typ = TaskResultTypeSourceValueUnionType.Number;
 
             TaskResultTypeSourceValueUnion res = new TaskResultTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TaskResultTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static TaskResultTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             TaskResultTypeSourceValueUnionType typ = TaskResultTypeSourceValueUnionType.Boolean;
 
             TaskResultTypeSourceValueUnion res = new TaskResultTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TaskResultTypeSourceValueUnion CreateTaskResultSourceValueType(TaskResultSourceValueType taskResultSourceValueType) {
+        public static TaskResultTypeSourceValueUnion CreateTaskResultSourceValueType(TaskResultSourceValueType taskResultSourceValueType)
+        {
             TaskResultTypeSourceValueUnionType typ = TaskResultTypeSourceValueUnionType.TaskResultSourceValueType;
 
             TaskResultTypeSourceValueUnion res = new TaskResultTypeSourceValueUnion(typ);
             res.TaskResultSourceValueType = taskResultSourceValueType;
             return res;
         }
-
-        public static TaskResultTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TaskResultTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TaskResultTypeSourceValueUnionType typ = TaskResultTypeSourceValueUnionType.ArrayOfAny;
 
             TaskResultTypeSourceValueUnion res = new TaskResultTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TaskResultTypeSourceValueUnion CreateNull() {
+        public static TaskResultTypeSourceValueUnion CreateNull()
+        {
             TaskResultTypeSourceValueUnionType typ = TaskResultTypeSourceValueUnionType.Null;
             return new TaskResultTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TaskResultTypeSourceValueUnion res = (TaskResultTypeSourceValueUnion)value;
                 if (TaskResultTypeSourceValueUnionType.FromString(res.Type).Equals(TaskResultTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TaskResultSourceValueType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TaskResultSourceValueType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

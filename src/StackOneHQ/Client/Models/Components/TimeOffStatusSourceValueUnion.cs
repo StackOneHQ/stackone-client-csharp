@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TimeOffStatusSourceValueUnionType
     {
         private TimeOffStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TimeOffStatusSourceValueUnionType Str { get { return new TimeOffStatusSourceValueUnionType("str"); } }
-        
+
         public static TimeOffStatusSourceValueUnionType Number { get { return new TimeOffStatusSourceValueUnionType("number"); } }
-        
+
         public static TimeOffStatusSourceValueUnionType Boolean { get { return new TimeOffStatusSourceValueUnionType("boolean"); } }
-        
+
         public static TimeOffStatusSourceValueUnionType TimeOffSourceValueStatus { get { return new TimeOffStatusSourceValueUnionType("TimeOff_source_value_status"); } }
-        
+
         public static TimeOffStatusSourceValueUnionType ArrayOfAny { get { return new TimeOffStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TimeOffStatusSourceValueUnionType Null { get { return new TimeOffStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(TimeOffStatusSourceValueUnion.TimeOffStatusSourceValueUnionConverter))]
-    public class TimeOffStatusSourceValueUnion {
-        public TimeOffStatusSourceValueUnion(TimeOffStatusSourceValueUnionType type) {
+    public class TimeOffStatusSourceValueUnion
+    {
+        public TimeOffStatusSourceValueUnion(TimeOffStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TimeOffStatusSourceValueUnionType Type { get; set; }
-
-
-        public static TimeOffStatusSourceValueUnion CreateStr(string str) {
+        public static TimeOffStatusSourceValueUnion CreateStr(string str)
+        {
             TimeOffStatusSourceValueUnionType typ = TimeOffStatusSourceValueUnionType.Str;
 
             TimeOffStatusSourceValueUnion res = new TimeOffStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TimeOffStatusSourceValueUnion CreateNumber(double number) {
+        public static TimeOffStatusSourceValueUnion CreateNumber(double number)
+        {
             TimeOffStatusSourceValueUnionType typ = TimeOffStatusSourceValueUnionType.Number;
 
             TimeOffStatusSourceValueUnion res = new TimeOffStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TimeOffStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static TimeOffStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             TimeOffStatusSourceValueUnionType typ = TimeOffStatusSourceValueUnionType.Boolean;
 
             TimeOffStatusSourceValueUnion res = new TimeOffStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TimeOffStatusSourceValueUnion CreateTimeOffSourceValueStatus(TimeOffSourceValueStatus timeOffSourceValueStatus) {
+        public static TimeOffStatusSourceValueUnion CreateTimeOffSourceValueStatus(TimeOffSourceValueStatus timeOffSourceValueStatus)
+        {
             TimeOffStatusSourceValueUnionType typ = TimeOffStatusSourceValueUnionType.TimeOffSourceValueStatus;
 
             TimeOffStatusSourceValueUnion res = new TimeOffStatusSourceValueUnion(typ);
             res.TimeOffSourceValueStatus = timeOffSourceValueStatus;
             return res;
         }
-
-        public static TimeOffStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TimeOffStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TimeOffStatusSourceValueUnionType typ = TimeOffStatusSourceValueUnionType.ArrayOfAny;
 
             TimeOffStatusSourceValueUnion res = new TimeOffStatusSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TimeOffStatusSourceValueUnion CreateNull() {
+        public static TimeOffStatusSourceValueUnion CreateNull()
+        {
             TimeOffStatusSourceValueUnionType typ = TimeOffStatusSourceValueUnionType.Null;
             return new TimeOffStatusSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TimeOffStatusSourceValueUnion res = (TimeOffStatusSourceValueUnion)value;
                 if (TimeOffStatusSourceValueUnionType.FromString(res.Type).Equals(TimeOffStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TimeOffSourceValueStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TimeOffSourceValueStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

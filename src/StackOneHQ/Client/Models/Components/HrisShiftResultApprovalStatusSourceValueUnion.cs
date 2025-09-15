@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisShiftResultApprovalStatusSourceValueUnionType
     {
         private HrisShiftResultApprovalStatusSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisShiftResultApprovalStatusSourceValueUnionType Str { get { return new HrisShiftResultApprovalStatusSourceValueUnionType("str"); } }
-        
+
         public static HrisShiftResultApprovalStatusSourceValueUnionType Number { get { return new HrisShiftResultApprovalStatusSourceValueUnionType("number"); } }
-        
+
         public static HrisShiftResultApprovalStatusSourceValueUnionType Boolean { get { return new HrisShiftResultApprovalStatusSourceValueUnionType("boolean"); } }
-        
+
         public static HrisShiftResultApprovalStatusSourceValueUnionType HrisShiftResultSourceValueApprovalStatus { get { return new HrisShiftResultApprovalStatusSourceValueUnionType("HrisShiftResult_source_value_approval_status"); } }
-        
+
         public static HrisShiftResultApprovalStatusSourceValueUnionType ArrayOfAny { get { return new HrisShiftResultApprovalStatusSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisShiftResultApprovalStatusSourceValueUnionType Null { get { return new HrisShiftResultApprovalStatusSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisShiftResultApprovalStatusSourceValueUnion.HrisShiftResultApprovalStatusSourceValueUnionConverter))]
-    public class HrisShiftResultApprovalStatusSourceValueUnion {
-        public HrisShiftResultApprovalStatusSourceValueUnion(HrisShiftResultApprovalStatusSourceValueUnionType type) {
+    public class HrisShiftResultApprovalStatusSourceValueUnion
+    {
+        public HrisShiftResultApprovalStatusSourceValueUnion(HrisShiftResultApprovalStatusSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisShiftResultApprovalStatusSourceValueUnionType Type { get; set; }
-
-
-        public static HrisShiftResultApprovalStatusSourceValueUnion CreateStr(string str) {
+        public static HrisShiftResultApprovalStatusSourceValueUnion CreateStr(string str)
+        {
             HrisShiftResultApprovalStatusSourceValueUnionType typ = HrisShiftResultApprovalStatusSourceValueUnionType.Str;
 
             HrisShiftResultApprovalStatusSourceValueUnion res = new HrisShiftResultApprovalStatusSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisShiftResultApprovalStatusSourceValueUnion CreateNumber(double number) {
+        public static HrisShiftResultApprovalStatusSourceValueUnion CreateNumber(double number)
+        {
             HrisShiftResultApprovalStatusSourceValueUnionType typ = HrisShiftResultApprovalStatusSourceValueUnionType.Number;
 
             HrisShiftResultApprovalStatusSourceValueUnion res = new HrisShiftResultApprovalStatusSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisShiftResultApprovalStatusSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisShiftResultApprovalStatusSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisShiftResultApprovalStatusSourceValueUnionType typ = HrisShiftResultApprovalStatusSourceValueUnionType.Boolean;
 
             HrisShiftResultApprovalStatusSourceValueUnion res = new HrisShiftResultApprovalStatusSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisShiftResultApprovalStatusSourceValueUnion CreateHrisShiftResultSourceValueApprovalStatus(HrisShiftResultSourceValueApprovalStatus hrisShiftResultSourceValueApprovalStatus) {
+        public static HrisShiftResultApprovalStatusSourceValueUnion CreateHrisShiftResultSourceValueApprovalStatus(HrisShiftResultSourceValueApprovalStatus hrisShiftResultSourceValueApprovalStatus)
+        {
             HrisShiftResultApprovalStatusSourceValueUnionType typ = HrisShiftResultApprovalStatusSourceValueUnionType.HrisShiftResultSourceValueApprovalStatus;
 
             HrisShiftResultApprovalStatusSourceValueUnion res = new HrisShiftResultApprovalStatusSourceValueUnion(typ);
             res.HrisShiftResultSourceValueApprovalStatus = hrisShiftResultSourceValueApprovalStatus;
             return res;
         }
-
-        public static HrisShiftResultApprovalStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisShiftResultApprovalStatusSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisShiftResultApprovalStatusSourceValueUnionType typ = HrisShiftResultApprovalStatusSourceValueUnionType.ArrayOfAny;
 
             HrisShiftResultApprovalStatusSourceValueUnion res = new HrisShiftResultApprovalStatusSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisShiftResultApprovalStatusSourceValueUnion CreateNull() {
+        public static HrisShiftResultApprovalStatusSourceValueUnion CreateNull()
+        {
             HrisShiftResultApprovalStatusSourceValueUnionType typ = HrisShiftResultApprovalStatusSourceValueUnionType.Null;
             return new HrisShiftResultApprovalStatusSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisShiftResultApprovalStatusSourceValueUnion res = (HrisShiftResultApprovalStatusSourceValueUnion)value;
                 if (HrisShiftResultApprovalStatusSourceValueUnionType.FromString(res.Type).Equals(HrisShiftResultApprovalStatusSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisShiftResultSourceValueApprovalStatus != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisShiftResultSourceValueApprovalStatus));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

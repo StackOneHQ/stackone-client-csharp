@@ -20,6 +20,8 @@
 * [GetCandidateNote](#getcandidatenote) - Get Candidate Note
 * [ListJobCustomFieldDefinitions](#listjobcustomfielddefinitions) - List Job Custom Field Definitions
 * [GetDepartments](#getdepartments) - List Departments
+* [ListApplicationStages](#listapplicationstages) - List Application Stages
+* [GetApplicationStage](#getapplicationstage) - Get Application Stage
 * [ListJobs](#listjobs) - List Jobs
 * [CreateJob](#createjob) - Create Job
 * [ListJobApplicationStages](#listjobapplicationstages) - List Job Application Stages
@@ -580,7 +582,7 @@ AtsGetApplicationDocumentRequest req = new AtsGetApplicationDocumentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
+    Fields = "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
 };
 
 var res = await sdk.Ats.GetDocumentAsync(req);
@@ -1015,6 +1017,126 @@ while(res != null)
 ### Response
 
 **[AtsListDepartmentsResponse](../../Models/Requests/AtsListDepartmentsResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## ListApplicationStages
+
+List Application Stages
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="ats_list_application_stages" method="get" path="/unified/ats/application_stages" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+using System;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+AtsListApplicationStagesRequest req = new AtsListApplicationStagesRequest() {
+    XAccountId = "<id>",
+    Fields = "id,remote_id,name,order,created_at,updated_at",
+    Filter = new AtsListApplicationStagesFilter() {
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+    },
+};
+
+AtsListApplicationStagesResponse? res = await sdk.Ats.ListApplicationStagesAsync(req);
+
+while(res != null)
+{
+    // handle items
+
+    res = await res.Next!();
+}
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [AtsListApplicationStagesRequest](../../Models/Requests/AtsListApplicationStagesRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[AtsListApplicationStagesResponse](../../Models/Requests/AtsListApplicationStagesResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## GetApplicationStage
+
+Get Application Stage
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="ats_get_application_stage" method="get" path="/unified/ats/application_stages/{id}" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+AtsGetApplicationStageRequest req = new AtsGetApplicationStageRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    Fields = "id,remote_id,name,order,created_at,updated_at",
+};
+
+var res = await sdk.Ats.GetApplicationStageAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [AtsGetApplicationStageRequest](../../Models/Requests/AtsGetApplicationStageRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[AtsGetApplicationStageResponse](../../Models/Requests/AtsGetApplicationStageResponse.md)**
 
 ### Errors
 

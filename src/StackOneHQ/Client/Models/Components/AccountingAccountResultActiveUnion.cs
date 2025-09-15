@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountingAccountResultActiveUnionType
     {
         private AccountingAccountResultActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountingAccountResultActiveUnionType Boolean { get { return new AccountingAccountResultActiveUnionType("boolean"); } }
-        
+
         public static AccountingAccountResultActiveUnionType AccountingAccountResultActiveEnum { get { return new AccountingAccountResultActiveUnionType("AccountingAccountResult_active_enum"); } }
-        
+
         public static AccountingAccountResultActiveUnionType Null { get { return new AccountingAccountResultActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the account is active
     /// </summary>
     [JsonConverter(typeof(AccountingAccountResultActiveUnion.AccountingAccountResultActiveUnionConverter))]
-    public class AccountingAccountResultActiveUnion {
-        public AccountingAccountResultActiveUnion(AccountingAccountResultActiveUnionType type) {
+    public class AccountingAccountResultActiveUnion
+    {
+        public AccountingAccountResultActiveUnion(AccountingAccountResultActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public AccountingAccountResultActiveEnum? AccountingAccountResultActiveEnum { get; set; }
 
         public AccountingAccountResultActiveUnionType Type { get; set; }
-
-
-        public static AccountingAccountResultActiveUnion CreateBoolean(bool boolean) {
+        public static AccountingAccountResultActiveUnion CreateBoolean(bool boolean)
+        {
             AccountingAccountResultActiveUnionType typ = AccountingAccountResultActiveUnionType.Boolean;
 
             AccountingAccountResultActiveUnion res = new AccountingAccountResultActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountingAccountResultActiveUnion CreateAccountingAccountResultActiveEnum(AccountingAccountResultActiveEnum accountingAccountResultActiveEnum) {
+        public static AccountingAccountResultActiveUnion CreateAccountingAccountResultActiveEnum(AccountingAccountResultActiveEnum accountingAccountResultActiveEnum)
+        {
             AccountingAccountResultActiveUnionType typ = AccountingAccountResultActiveUnionType.AccountingAccountResultActiveEnum;
 
             AccountingAccountResultActiveUnion res = new AccountingAccountResultActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountingAccountResultActiveUnion CreateNull() {
+        public static AccountingAccountResultActiveUnion CreateNull()
+        {
             AccountingAccountResultActiveUnionType typ = AccountingAccountResultActiveUnionType.Null;
             return new AccountingAccountResultActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountingAccountResultActiveUnion res = (AccountingAccountResultActiveUnion)value;
                 if (AccountingAccountResultActiveUnionType.FromString(res.Type).Equals(AccountingAccountResultActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AccountingAccountResultActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AccountingAccountResultActiveEnum));
                     return;
                 }
-
             }
 
         }

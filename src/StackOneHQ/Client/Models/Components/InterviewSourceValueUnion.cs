@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class InterviewSourceValueUnionType
     {
         private InterviewSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static InterviewSourceValueUnionType Str { get { return new InterviewSourceValueUnionType("str"); } }
-        
+
         public static InterviewSourceValueUnionType Number { get { return new InterviewSourceValueUnionType("number"); } }
-        
+
         public static InterviewSourceValueUnionType Boolean { get { return new InterviewSourceValueUnionType("boolean"); } }
-        
+
         public static InterviewSourceValueUnionType InterviewSourceValue { get { return new InterviewSourceValueUnionType("Interview_source_value"); } }
-        
+
         public static InterviewSourceValueUnionType ArrayOfAny { get { return new InterviewSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static InterviewSourceValueUnionType Null { get { return new InterviewSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the interview status.
     /// </summary>
     [JsonConverter(typeof(InterviewSourceValueUnion.InterviewSourceValueUnionConverter))]
-    public class InterviewSourceValueUnion {
-        public InterviewSourceValueUnion(InterviewSourceValueUnionType type) {
+    public class InterviewSourceValueUnion
+    {
+        public InterviewSourceValueUnion(InterviewSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public InterviewSourceValueUnionType Type { get; set; }
-
-
-        public static InterviewSourceValueUnion CreateStr(string str) {
+        public static InterviewSourceValueUnion CreateStr(string str)
+        {
             InterviewSourceValueUnionType typ = InterviewSourceValueUnionType.Str;
 
             InterviewSourceValueUnion res = new InterviewSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static InterviewSourceValueUnion CreateNumber(double number) {
+        public static InterviewSourceValueUnion CreateNumber(double number)
+        {
             InterviewSourceValueUnionType typ = InterviewSourceValueUnionType.Number;
 
             InterviewSourceValueUnion res = new InterviewSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static InterviewSourceValueUnion CreateBoolean(bool boolean) {
+        public static InterviewSourceValueUnion CreateBoolean(bool boolean)
+        {
             InterviewSourceValueUnionType typ = InterviewSourceValueUnionType.Boolean;
 
             InterviewSourceValueUnion res = new InterviewSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static InterviewSourceValueUnion CreateInterviewSourceValue(InterviewSourceValue interviewSourceValue) {
+        public static InterviewSourceValueUnion CreateInterviewSourceValue(InterviewSourceValue interviewSourceValue)
+        {
             InterviewSourceValueUnionType typ = InterviewSourceValueUnionType.InterviewSourceValue;
 
             InterviewSourceValueUnion res = new InterviewSourceValueUnion(typ);
             res.InterviewSourceValue = interviewSourceValue;
             return res;
         }
-
-        public static InterviewSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static InterviewSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             InterviewSourceValueUnionType typ = InterviewSourceValueUnionType.ArrayOfAny;
 
             InterviewSourceValueUnion res = new InterviewSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static InterviewSourceValueUnion CreateNull() {
+        public static InterviewSourceValueUnion CreateNull()
+        {
             InterviewSourceValueUnionType typ = InterviewSourceValueUnionType.Null;
             return new InterviewSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 InterviewSourceValueUnion res = (InterviewSourceValueUnion)value;
                 if (InterviewSourceValueUnionType.FromString(res.Type).Equals(InterviewSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.InterviewSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.InterviewSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

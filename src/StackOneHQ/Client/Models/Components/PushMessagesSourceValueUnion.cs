@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class PushMessagesSourceValueUnionType
     {
         private PushMessagesSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static PushMessagesSourceValueUnionType Str { get { return new PushMessagesSourceValueUnionType("str"); } }
-        
+
         public static PushMessagesSourceValueUnionType Number { get { return new PushMessagesSourceValueUnionType("number"); } }
-        
+
         public static PushMessagesSourceValueUnionType Boolean { get { return new PushMessagesSourceValueUnionType("boolean"); } }
-        
+
         public static PushMessagesSourceValueUnionType PushMessagesSourceValue { get { return new PushMessagesSourceValueUnionType("PushMessages_source_value"); } }
-        
+
         public static PushMessagesSourceValueUnionType ArrayOfAny { get { return new PushMessagesSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static PushMessagesSourceValueUnionType Null { get { return new PushMessagesSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The original value from the provider used to derive the unified message type.
     /// </summary>
     [JsonConverter(typeof(PushMessagesSourceValueUnion.PushMessagesSourceValueUnionConverter))]
-    public class PushMessagesSourceValueUnion {
-        public PushMessagesSourceValueUnion(PushMessagesSourceValueUnionType type) {
+    public class PushMessagesSourceValueUnion
+    {
+        public PushMessagesSourceValueUnion(PushMessagesSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public PushMessagesSourceValueUnionType Type { get; set; }
-
-
-        public static PushMessagesSourceValueUnion CreateStr(string str) {
+        public static PushMessagesSourceValueUnion CreateStr(string str)
+        {
             PushMessagesSourceValueUnionType typ = PushMessagesSourceValueUnionType.Str;
 
             PushMessagesSourceValueUnion res = new PushMessagesSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static PushMessagesSourceValueUnion CreateNumber(double number) {
+        public static PushMessagesSourceValueUnion CreateNumber(double number)
+        {
             PushMessagesSourceValueUnionType typ = PushMessagesSourceValueUnionType.Number;
 
             PushMessagesSourceValueUnion res = new PushMessagesSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static PushMessagesSourceValueUnion CreateBoolean(bool boolean) {
+        public static PushMessagesSourceValueUnion CreateBoolean(bool boolean)
+        {
             PushMessagesSourceValueUnionType typ = PushMessagesSourceValueUnionType.Boolean;
 
             PushMessagesSourceValueUnion res = new PushMessagesSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static PushMessagesSourceValueUnion CreatePushMessagesSourceValue(PushMessagesSourceValue pushMessagesSourceValue) {
+        public static PushMessagesSourceValueUnion CreatePushMessagesSourceValue(PushMessagesSourceValue pushMessagesSourceValue)
+        {
             PushMessagesSourceValueUnionType typ = PushMessagesSourceValueUnionType.PushMessagesSourceValue;
 
             PushMessagesSourceValueUnion res = new PushMessagesSourceValueUnion(typ);
             res.PushMessagesSourceValue = pushMessagesSourceValue;
             return res;
         }
-
-        public static PushMessagesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static PushMessagesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             PushMessagesSourceValueUnionType typ = PushMessagesSourceValueUnionType.ArrayOfAny;
 
             PushMessagesSourceValueUnion res = new PushMessagesSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static PushMessagesSourceValueUnion CreateNull() {
+        public static PushMessagesSourceValueUnion CreateNull()
+        {
             PushMessagesSourceValueUnionType typ = PushMessagesSourceValueUnionType.Null;
             return new PushMessagesSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 PushMessagesSourceValueUnion res = (PushMessagesSourceValueUnion)value;
                 if (PushMessagesSourceValueUnionType.FromString(res.Type).Equals(PushMessagesSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.PushMessagesSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.PushMessagesSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

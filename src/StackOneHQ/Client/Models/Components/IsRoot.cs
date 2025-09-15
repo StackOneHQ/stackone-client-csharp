@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IsRootType
     {
         private IsRootType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IsRootType Boolean { get { return new IsRootType("boolean"); } }
-        
+
         public static IsRootType IsRootEnum { get { return new IsRootType("is_root_enum"); } }
-        
+
         public static IsRootType Null { get { return new IsRootType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the folder is at the root level of the drive
     /// </summary>
     [JsonConverter(typeof(IsRoot.IsRootConverter))]
-    public class IsRoot {
-        public IsRoot(IsRootType type) {
+    public class IsRoot
+    {
+        public IsRoot(IsRootType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public IsRootEnum? IsRootEnum { get; set; }
 
         public IsRootType Type { get; set; }
-
-
-        public static IsRoot CreateBoolean(bool boolean) {
+        public static IsRoot CreateBoolean(bool boolean)
+        {
             IsRootType typ = IsRootType.Boolean;
 
             IsRoot res = new IsRoot(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IsRoot CreateIsRootEnum(IsRootEnum isRootEnum) {
+        public static IsRoot CreateIsRootEnum(IsRootEnum isRootEnum)
+        {
             IsRootType typ = IsRootType.IsRootEnum;
 
             IsRoot res = new IsRoot(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IsRoot CreateNull() {
+        public static IsRoot CreateNull()
+        {
             IsRootType typ = IsRootType.Null;
             return new IsRoot(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IsRoot res = (IsRoot)value;
                 if (IsRootType.FromString(res.Type).Equals(IsRootType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IsRootEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IsRootEnum));
                     return;
                 }
-
             }
 
         }

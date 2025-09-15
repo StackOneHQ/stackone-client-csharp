@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AccountTypeSourceValueUnionType
     {
         private AccountTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AccountTypeSourceValueUnionType Str { get { return new AccountTypeSourceValueUnionType("str"); } }
-        
+
         public static AccountTypeSourceValueUnionType Number { get { return new AccountTypeSourceValueUnionType("number"); } }
-        
+
         public static AccountTypeSourceValueUnionType Boolean { get { return new AccountTypeSourceValueUnionType("boolean"); } }
-        
+
         public static AccountTypeSourceValueUnionType SourceValueAccountType { get { return new AccountTypeSourceValueUnionType("source_value_account_type"); } }
-        
+
         public static AccountTypeSourceValueUnionType ArrayOfAny { get { return new AccountTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AccountTypeSourceValueUnionType Null { get { return new AccountTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AccountTypeSourceValueUnion.AccountTypeSourceValueUnionConverter))]
-    public class AccountTypeSourceValueUnion {
-        public AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType type) {
+    public class AccountTypeSourceValueUnion
+    {
+        public AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AccountTypeSourceValueUnionType Type { get; set; }
-
-
-        public static AccountTypeSourceValueUnion CreateStr(string str) {
+        public static AccountTypeSourceValueUnion CreateStr(string str)
+        {
             AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Str;
 
             AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AccountTypeSourceValueUnion CreateNumber(double number) {
+        public static AccountTypeSourceValueUnion CreateNumber(double number)
+        {
             AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Number;
 
             AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AccountTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static AccountTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Boolean;
 
             AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AccountTypeSourceValueUnion CreateSourceValueAccountType(SourceValueAccountType sourceValueAccountType) {
+        public static AccountTypeSourceValueUnion CreateSourceValueAccountType(SourceValueAccountType sourceValueAccountType)
+        {
             AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.SourceValueAccountType;
 
             AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
             res.SourceValueAccountType = sourceValueAccountType;
             return res;
         }
-
-        public static AccountTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AccountTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.ArrayOfAny;
 
             AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AccountTypeSourceValueUnion CreateNull() {
+        public static AccountTypeSourceValueUnion CreateNull()
+        {
             AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Null;
             return new AccountTypeSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AccountTypeSourceValueUnion res = (AccountTypeSourceValueUnion)value;
                 if (AccountTypeSourceValueUnionType.FromString(res.Type).Equals(AccountTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueAccountType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueAccountType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

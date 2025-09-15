@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingUserResultSourceValueUnionType
     {
         private TicketingUserResultSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingUserResultSourceValueUnionType Str { get { return new TicketingUserResultSourceValueUnionType("str"); } }
-        
+
         public static TicketingUserResultSourceValueUnionType Number { get { return new TicketingUserResultSourceValueUnionType("number"); } }
-        
+
         public static TicketingUserResultSourceValueUnionType Boolean { get { return new TicketingUserResultSourceValueUnionType("boolean"); } }
-        
+
         public static TicketingUserResultSourceValueUnionType TicketingUserResultSourceValue { get { return new TicketingUserResultSourceValueUnionType("TicketingUserResult_source_value"); } }
-        
+
         public static TicketingUserResultSourceValueUnionType ArrayOfAny { get { return new TicketingUserResultSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TicketingUserResultSourceValueUnionType Null { get { return new TicketingUserResultSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the user type.
     /// </summary>
     [JsonConverter(typeof(TicketingUserResultSourceValueUnion.TicketingUserResultSourceValueUnionConverter))]
-    public class TicketingUserResultSourceValueUnion {
-        public TicketingUserResultSourceValueUnion(TicketingUserResultSourceValueUnionType type) {
+    public class TicketingUserResultSourceValueUnion
+    {
+        public TicketingUserResultSourceValueUnion(TicketingUserResultSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TicketingUserResultSourceValueUnionType Type { get; set; }
-
-
-        public static TicketingUserResultSourceValueUnion CreateStr(string str) {
+        public static TicketingUserResultSourceValueUnion CreateStr(string str)
+        {
             TicketingUserResultSourceValueUnionType typ = TicketingUserResultSourceValueUnionType.Str;
 
             TicketingUserResultSourceValueUnion res = new TicketingUserResultSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TicketingUserResultSourceValueUnion CreateNumber(double number) {
+        public static TicketingUserResultSourceValueUnion CreateNumber(double number)
+        {
             TicketingUserResultSourceValueUnionType typ = TicketingUserResultSourceValueUnionType.Number;
 
             TicketingUserResultSourceValueUnion res = new TicketingUserResultSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TicketingUserResultSourceValueUnion CreateBoolean(bool boolean) {
+        public static TicketingUserResultSourceValueUnion CreateBoolean(bool boolean)
+        {
             TicketingUserResultSourceValueUnionType typ = TicketingUserResultSourceValueUnionType.Boolean;
 
             TicketingUserResultSourceValueUnion res = new TicketingUserResultSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingUserResultSourceValueUnion CreateTicketingUserResultSourceValue(TicketingUserResultSourceValue ticketingUserResultSourceValue) {
+        public static TicketingUserResultSourceValueUnion CreateTicketingUserResultSourceValue(TicketingUserResultSourceValue ticketingUserResultSourceValue)
+        {
             TicketingUserResultSourceValueUnionType typ = TicketingUserResultSourceValueUnionType.TicketingUserResultSourceValue;
 
             TicketingUserResultSourceValueUnion res = new TicketingUserResultSourceValueUnion(typ);
             res.TicketingUserResultSourceValue = ticketingUserResultSourceValue;
             return res;
         }
-
-        public static TicketingUserResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TicketingUserResultSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TicketingUserResultSourceValueUnionType typ = TicketingUserResultSourceValueUnionType.ArrayOfAny;
 
             TicketingUserResultSourceValueUnion res = new TicketingUserResultSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingUserResultSourceValueUnion CreateNull() {
+        public static TicketingUserResultSourceValueUnion CreateNull()
+        {
             TicketingUserResultSourceValueUnionType typ = TicketingUserResultSourceValueUnionType.Null;
             return new TicketingUserResultSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingUserResultSourceValueUnion res = (TicketingUserResultSourceValueUnion)value;
                 if (TicketingUserResultSourceValueUnionType.FromString(res.Type).Equals(TicketingUserResultSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingUserResultSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingUserResultSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

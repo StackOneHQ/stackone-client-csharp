@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EntitySkillsLanguageSourceValueUnionType
     {
         private EntitySkillsLanguageSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EntitySkillsLanguageSourceValueUnionType Str { get { return new EntitySkillsLanguageSourceValueUnionType("str"); } }
-        
+
         public static EntitySkillsLanguageSourceValueUnionType Number { get { return new EntitySkillsLanguageSourceValueUnionType("number"); } }
-        
+
         public static EntitySkillsLanguageSourceValueUnionType Boolean { get { return new EntitySkillsLanguageSourceValueUnionType("boolean"); } }
-        
+
         public static EntitySkillsLanguageSourceValueUnionType EntitySkillsSourceValueLanguage { get { return new EntitySkillsLanguageSourceValueUnionType("EntitySkills_source_value_language"); } }
-        
+
         public static EntitySkillsLanguageSourceValueUnionType ArrayOfAny { get { return new EntitySkillsLanguageSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EntitySkillsLanguageSourceValueUnionType Null { get { return new EntitySkillsLanguageSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EntitySkillsLanguageSourceValueUnion.EntitySkillsLanguageSourceValueUnionConverter))]
-    public class EntitySkillsLanguageSourceValueUnion {
-        public EntitySkillsLanguageSourceValueUnion(EntitySkillsLanguageSourceValueUnionType type) {
+    public class EntitySkillsLanguageSourceValueUnion
+    {
+        public EntitySkillsLanguageSourceValueUnion(EntitySkillsLanguageSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EntitySkillsLanguageSourceValueUnionType Type { get; set; }
-
-
-        public static EntitySkillsLanguageSourceValueUnion CreateStr(string str) {
+        public static EntitySkillsLanguageSourceValueUnion CreateStr(string str)
+        {
             EntitySkillsLanguageSourceValueUnionType typ = EntitySkillsLanguageSourceValueUnionType.Str;
 
             EntitySkillsLanguageSourceValueUnion res = new EntitySkillsLanguageSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EntitySkillsLanguageSourceValueUnion CreateNumber(double number) {
+        public static EntitySkillsLanguageSourceValueUnion CreateNumber(double number)
+        {
             EntitySkillsLanguageSourceValueUnionType typ = EntitySkillsLanguageSourceValueUnionType.Number;
 
             EntitySkillsLanguageSourceValueUnion res = new EntitySkillsLanguageSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EntitySkillsLanguageSourceValueUnion CreateBoolean(bool boolean) {
+        public static EntitySkillsLanguageSourceValueUnion CreateBoolean(bool boolean)
+        {
             EntitySkillsLanguageSourceValueUnionType typ = EntitySkillsLanguageSourceValueUnionType.Boolean;
 
             EntitySkillsLanguageSourceValueUnion res = new EntitySkillsLanguageSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EntitySkillsLanguageSourceValueUnion CreateEntitySkillsSourceValueLanguage(EntitySkillsSourceValueLanguage entitySkillsSourceValueLanguage) {
+        public static EntitySkillsLanguageSourceValueUnion CreateEntitySkillsSourceValueLanguage(EntitySkillsSourceValueLanguage entitySkillsSourceValueLanguage)
+        {
             EntitySkillsLanguageSourceValueUnionType typ = EntitySkillsLanguageSourceValueUnionType.EntitySkillsSourceValueLanguage;
 
             EntitySkillsLanguageSourceValueUnion res = new EntitySkillsLanguageSourceValueUnion(typ);
             res.EntitySkillsSourceValueLanguage = entitySkillsSourceValueLanguage;
             return res;
         }
-
-        public static EntitySkillsLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EntitySkillsLanguageSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EntitySkillsLanguageSourceValueUnionType typ = EntitySkillsLanguageSourceValueUnionType.ArrayOfAny;
 
             EntitySkillsLanguageSourceValueUnion res = new EntitySkillsLanguageSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EntitySkillsLanguageSourceValueUnion CreateNull() {
+        public static EntitySkillsLanguageSourceValueUnion CreateNull()
+        {
             EntitySkillsLanguageSourceValueUnionType typ = EntitySkillsLanguageSourceValueUnionType.Null;
             return new EntitySkillsLanguageSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EntitySkillsLanguageSourceValueUnion res = (EntitySkillsLanguageSourceValueUnion)value;
                 if (EntitySkillsLanguageSourceValueUnionType.FromString(res.Type).Equals(EntitySkillsLanguageSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EntitySkillsSourceValueLanguage != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EntitySkillsSourceValueLanguage));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

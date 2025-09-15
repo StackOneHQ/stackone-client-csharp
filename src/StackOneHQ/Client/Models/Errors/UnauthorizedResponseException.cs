@@ -13,10 +13,10 @@ namespace StackOneHQ.Client.Models.Errors
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
-    public class UnauthorizedResponseException : Exception
-    {
+    using System.Net.Http;
 
+    public class UnauthorizedResponseExceptionPayload
+    {
         /// <summary>
         /// HTTP status code
         /// </summary>
@@ -27,8 +27,7 @@ namespace StackOneHQ.Client.Models.Errors
         /// Error message
         /// </summary>
         [JsonProperty("message")]
-        private string? _message { get; set; }
-        public override string Message { get {return _message ?? "";} }
+        public string Message { get; set; } = default!;
 
         /// <summary>
         /// Timestamp when the error occurred
@@ -39,4 +38,53 @@ namespace StackOneHQ.Client.Models.Errors
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
+
+    public class UnauthorizedResponseException : StackOneError
+    {
+        /// <summary>
+        ///  The original data that was passed to this exception.
+        /// </summary>
+        public UnauthorizedResponseExceptionPayload Payload { get; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UnauthorizedResponseException.Payload.StatusCode instead.")]
+        public double StatusCode { get; set; } = default!;
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UnauthorizedResponseException.Payload.Message instead.")]
+        private string? _message { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UnauthorizedResponseException.Payload.Timestamp instead.")]
+        public DateTime Timestamp { get; set; } = default!;
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UnauthorizedResponseException.Payload.HttpMeta instead.")]
+        public HTTPMetadata HttpMeta { get; set; } = default!;
+
+        private static string ErrorMessage(UnauthorizedResponseExceptionPayload payload, string body)
+        {
+            string? message = payload.Message;
+            if (!string.IsNullOrEmpty(message))
+            {
+                return message;
+            }
+
+            return "API error occurred";
+        }
+
+        public UnauthorizedResponseException(
+            UnauthorizedResponseExceptionPayload payload,
+            HttpRequestMessage request,
+            HttpResponseMessage response,
+            string body
+        ): base(ErrorMessage(payload, body), request, response, body)
+        {
+           Payload = payload;
+
+           #pragma warning disable CS0618
+           StatusCode = payload.StatusCode;
+           _message = payload.Message;
+           Timestamp = payload.Timestamp;
+           HttpMeta = payload.HttpMeta;
+           #pragma warning restore CS0618
+        }
+    }
+
 }

@@ -276,7 +276,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AccountingListCompanyTaxRatesRequest req = new AccountingListCompanyTaxRatesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,name,code,rate,active",
+    Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active",
     Filter = new AccountingListCompanyTaxRatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -341,7 +341,7 @@ AccountingGetCompanyTaxRateRequest req = new AccountingGetCompanyTaxRateRequest(
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,name,code,rate,active",
+    Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active",
 };
 
 var res = await sdk.Accounting.GetCompanyTaxRateAsync(req);

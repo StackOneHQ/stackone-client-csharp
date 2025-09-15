@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     {
 
         [SpeakeasyMetadata("security:scheme=true,type=http,subType=basic,name=username")]
-        public string Username { get; set; } = default!;
+        public string? Username { get; set; }
 
         [SpeakeasyMetadata("security:scheme=true,type=http,subType=basic,name=password")]
-        public string Password { get; set; } = default!;
+        public string? Password { get; set; }
     }
 }

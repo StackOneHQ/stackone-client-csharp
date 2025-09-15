@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ScheduleTypeSourceValueUnionType
     {
         private ScheduleTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ScheduleTypeSourceValueUnionType Str { get { return new ScheduleTypeSourceValueUnionType("str"); } }
-        
+
         public static ScheduleTypeSourceValueUnionType Number { get { return new ScheduleTypeSourceValueUnionType("number"); } }
-        
+
         public static ScheduleTypeSourceValueUnionType Boolean { get { return new ScheduleTypeSourceValueUnionType("boolean"); } }
-        
+
         public static ScheduleTypeSourceValueUnionType SourceValueScheduleType { get { return new ScheduleTypeSourceValueUnionType("source_value_schedule_type"); } }
-        
+
         public static ScheduleTypeSourceValueUnionType ArrayOfAny { get { return new ScheduleTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static ScheduleTypeSourceValueUnionType Null { get { return new ScheduleTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the schedule type.
     /// </summary>
     [JsonConverter(typeof(ScheduleTypeSourceValueUnion.ScheduleTypeSourceValueUnionConverter))]
-    public class ScheduleTypeSourceValueUnion {
-        public ScheduleTypeSourceValueUnion(ScheduleTypeSourceValueUnionType type) {
+    public class ScheduleTypeSourceValueUnion
+    {
+        public ScheduleTypeSourceValueUnion(ScheduleTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public ScheduleTypeSourceValueUnionType Type { get; set; }
-
-
-        public static ScheduleTypeSourceValueUnion CreateStr(string str) {
+        public static ScheduleTypeSourceValueUnion CreateStr(string str)
+        {
             ScheduleTypeSourceValueUnionType typ = ScheduleTypeSourceValueUnionType.Str;
 
             ScheduleTypeSourceValueUnion res = new ScheduleTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static ScheduleTypeSourceValueUnion CreateNumber(double number) {
+        public static ScheduleTypeSourceValueUnion CreateNumber(double number)
+        {
             ScheduleTypeSourceValueUnionType typ = ScheduleTypeSourceValueUnionType.Number;
 
             ScheduleTypeSourceValueUnion res = new ScheduleTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static ScheduleTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static ScheduleTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             ScheduleTypeSourceValueUnionType typ = ScheduleTypeSourceValueUnionType.Boolean;
 
             ScheduleTypeSourceValueUnion res = new ScheduleTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ScheduleTypeSourceValueUnion CreateSourceValueScheduleType(SourceValueScheduleType sourceValueScheduleType) {
+        public static ScheduleTypeSourceValueUnion CreateSourceValueScheduleType(SourceValueScheduleType sourceValueScheduleType)
+        {
             ScheduleTypeSourceValueUnionType typ = ScheduleTypeSourceValueUnionType.SourceValueScheduleType;
 
             ScheduleTypeSourceValueUnion res = new ScheduleTypeSourceValueUnion(typ);
             res.SourceValueScheduleType = sourceValueScheduleType;
             return res;
         }
-
-        public static ScheduleTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static ScheduleTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             ScheduleTypeSourceValueUnionType typ = ScheduleTypeSourceValueUnionType.ArrayOfAny;
 
             ScheduleTypeSourceValueUnion res = new ScheduleTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ScheduleTypeSourceValueUnion CreateNull() {
+        public static ScheduleTypeSourceValueUnion CreateNull()
+        {
             ScheduleTypeSourceValueUnionType typ = ScheduleTypeSourceValueUnionType.Null;
             return new ScheduleTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ScheduleTypeSourceValueUnion res = (ScheduleTypeSourceValueUnion)value;
                 if (ScheduleTypeSourceValueUnionType.FromString(res.Type).Equals(ScheduleTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.SourceValueScheduleType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueScheduleType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -46,6 +46,16 @@ namespace StackOneHQ.Client
         /// Routing API requests through StackOne directly to the underlying provider.
         /// </summary>
         public IProxy Proxy { get; }
+
+        /// <summary>
+        /// Model Context Protocol endpoint.
+        /// </summary>
+        public IMcp Mcp { get; }
+
+        /// <summary>
+        /// Retrieve Actions metadata and definitions.
+        /// </summary>
+        public IActions Actions { get; }
         public IHris Hris { get; }
         public IAts Ats { get; }
         public IApplications Applications { get; }
@@ -72,14 +82,16 @@ namespace StackOneHQ.Client
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.3.0";
-        private const string _sdkGenVersion = "2.687.13";
+        private const string _sdkVersion = "0.4.0";
+        private const string _sdkGenVersion = "2.698.4";
         private const string _openapiDocVersion = "1.0.0";
         public IConnectSessions ConnectSessions { get; private set; }
         public IAccounts Accounts { get; private set; }
         public IRequestLogs RequestLogs { get; private set; }
         public IConnectors Connectors { get; private set; }
         public IProxy Proxy { get; private set; }
+        public IMcp Mcp { get; private set; }
+        public IActions Actions { get; private set; }
         public IHris Hris { get; private set; }
         public IAts Ats { get; private set; }
         public IApplications Applications { get; private set; }
@@ -110,6 +122,10 @@ namespace StackOneHQ.Client
             Connectors = new Connectors(SDKConfiguration);
 
             Proxy = new Proxy(SDKConfiguration);
+
+            Mcp = new Mcp(SDKConfiguration);
+
+            Actions = new Actions(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
 
@@ -169,10 +185,6 @@ namespace StackOneHQ.Client
             {
                 _securitySource = () => security;
             }
-            else
-            {
-                throw new Exception("security and securitySource cannot both be null");
-            }
 
             SDKConfiguration = new SDKConfig(client)
             {
@@ -193,6 +205,10 @@ namespace StackOneHQ.Client
             Connectors = new Connectors(SDKConfiguration);
 
             Proxy = new Proxy(SDKConfiguration);
+
+            Mcp = new Mcp(SDKConfiguration);
+
+            Actions = new Actions(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
 
@@ -282,9 +298,6 @@ namespace StackOneHQ.Client
 
             public StackOneHQClient Build()
             {
-              if (_sdkConfig.SecuritySource == null) {
-                  throw new Exception("securitySource cannot be null. One of `Security` or `securitySource` needs to be defined.");
-              }
               return new StackOneHQClient(_sdkConfig);
             }
 

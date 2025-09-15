@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessagingConversationResultPrivateUnionType
     {
         private MessagingConversationResultPrivateUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessagingConversationResultPrivateUnionType Boolean { get { return new MessagingConversationResultPrivateUnionType("boolean"); } }
-        
+
         public static MessagingConversationResultPrivateUnionType MessagingConversationResultPrivateEnum { get { return new MessagingConversationResultPrivateUnionType("MessagingConversationResult_private_enum"); } }
-        
+
         public static MessagingConversationResultPrivateUnionType Null { get { return new MessagingConversationResultPrivateUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the conversation is private
     /// </summary>
     [JsonConverter(typeof(MessagingConversationResultPrivateUnion.MessagingConversationResultPrivateUnionConverter))]
-    public class MessagingConversationResultPrivateUnion {
-        public MessagingConversationResultPrivateUnion(MessagingConversationResultPrivateUnionType type) {
+    public class MessagingConversationResultPrivateUnion
+    {
+        public MessagingConversationResultPrivateUnion(MessagingConversationResultPrivateUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public MessagingConversationResultPrivateEnum? MessagingConversationResultPrivateEnum { get; set; }
 
         public MessagingConversationResultPrivateUnionType Type { get; set; }
-
-
-        public static MessagingConversationResultPrivateUnion CreateBoolean(bool boolean) {
+        public static MessagingConversationResultPrivateUnion CreateBoolean(bool boolean)
+        {
             MessagingConversationResultPrivateUnionType typ = MessagingConversationResultPrivateUnionType.Boolean;
 
             MessagingConversationResultPrivateUnion res = new MessagingConversationResultPrivateUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MessagingConversationResultPrivateUnion CreateMessagingConversationResultPrivateEnum(MessagingConversationResultPrivateEnum messagingConversationResultPrivateEnum) {
+        public static MessagingConversationResultPrivateUnion CreateMessagingConversationResultPrivateEnum(MessagingConversationResultPrivateEnum messagingConversationResultPrivateEnum)
+        {
             MessagingConversationResultPrivateUnionType typ = MessagingConversationResultPrivateUnionType.MessagingConversationResultPrivateEnum;
 
             MessagingConversationResultPrivateUnion res = new MessagingConversationResultPrivateUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessagingConversationResultPrivateUnion CreateNull() {
+        public static MessagingConversationResultPrivateUnion CreateNull()
+        {
             MessagingConversationResultPrivateUnionType typ = MessagingConversationResultPrivateUnionType.Null;
             return new MessagingConversationResultPrivateUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessagingConversationResultPrivateUnion res = (MessagingConversationResultPrivateUnion)value;
                 if (MessagingConversationResultPrivateUnionType.FromString(res.Type).Equals(MessagingConversationResultPrivateUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MessagingConversationResultPrivateEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessagingConversationResultPrivateEnum));
                     return;
                 }
-
             }
 
         }

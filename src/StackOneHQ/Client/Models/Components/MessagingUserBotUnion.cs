@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class MessagingUserBotUnionType
     {
         private MessagingUserBotUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static MessagingUserBotUnionType Boolean { get { return new MessagingUserBotUnionType("boolean"); } }
-        
+
         public static MessagingUserBotUnionType MessagingUserBotEnum { get { return new MessagingUserBotUnionType("MessagingUser_bot_enum"); } }
-        
+
         public static MessagingUserBotUnionType Null { get { return new MessagingUserBotUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the user is a bot
     /// </summary>
     [JsonConverter(typeof(MessagingUserBotUnion.MessagingUserBotUnionConverter))]
-    public class MessagingUserBotUnion {
-        public MessagingUserBotUnion(MessagingUserBotUnionType type) {
+    public class MessagingUserBotUnion
+    {
+        public MessagingUserBotUnion(MessagingUserBotUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public MessagingUserBotEnum? MessagingUserBotEnum { get; set; }
 
         public MessagingUserBotUnionType Type { get; set; }
-
-
-        public static MessagingUserBotUnion CreateBoolean(bool boolean) {
+        public static MessagingUserBotUnion CreateBoolean(bool boolean)
+        {
             MessagingUserBotUnionType typ = MessagingUserBotUnionType.Boolean;
 
             MessagingUserBotUnion res = new MessagingUserBotUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static MessagingUserBotUnion CreateMessagingUserBotEnum(MessagingUserBotEnum messagingUserBotEnum) {
+        public static MessagingUserBotUnion CreateMessagingUserBotEnum(MessagingUserBotEnum messagingUserBotEnum)
+        {
             MessagingUserBotUnionType typ = MessagingUserBotUnionType.MessagingUserBotEnum;
 
             MessagingUserBotUnion res = new MessagingUserBotUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static MessagingUserBotUnion CreateNull() {
+        public static MessagingUserBotUnion CreateNull()
+        {
             MessagingUserBotUnionType typ = MessagingUserBotUnionType.Null;
             return new MessagingUserBotUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 MessagingUserBotUnion res = (MessagingUserBotUnion)value;
                 if (MessagingUserBotUnionType.FromString(res.Type).Equals(MessagingUserBotUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.MessagingUserBotEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MessagingUserBotEnum));
                     return;
                 }
-
             }
 
         }

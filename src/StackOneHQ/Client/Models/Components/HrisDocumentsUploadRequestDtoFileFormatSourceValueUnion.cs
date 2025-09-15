@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType
     {
         private HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType Str { get { return new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType("str"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType Number { get { return new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType("number"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType Boolean { get { return new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType HrisDocumentsUploadRequestDtoSourceValueFileFormat { get { return new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType("HrisDocumentsUploadRequestDto_source_value_file_format"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType ArrayOfAny { get { return new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType Null { get { return new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion.HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionConverter))]
-    public class HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion {
-        public HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType type) {
+    public class HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion
+    {
+        public HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateStr(string str) {
+        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateStr(string str)
+        {
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Str;
 
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNumber(double number) {
+        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNumber(double number)
+        {
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Number;
 
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Boolean;
 
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateHrisDocumentsUploadRequestDtoSourceValueFileFormat(HrisDocumentsUploadRequestDtoSourceValueFileFormat hrisDocumentsUploadRequestDtoSourceValueFileFormat) {
+        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateHrisDocumentsUploadRequestDtoSourceValueFileFormat(HrisDocumentsUploadRequestDtoSourceValueFileFormat hrisDocumentsUploadRequestDtoSourceValueFileFormat)
+        {
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.HrisDocumentsUploadRequestDtoSourceValueFileFormat;
 
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.HrisDocumentsUploadRequestDtoSourceValueFileFormat = hrisDocumentsUploadRequestDtoSourceValueFileFormat;
             return res;
         }
-
-        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.ArrayOfAny;
 
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion res = new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNull() {
+        public static HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion CreateNull()
+        {
             HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType typ = HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Null;
             return new HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion res = (HrisDocumentsUploadRequestDtoFileFormatSourceValueUnion)value;
                 if (HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.FromString(res.Type).Equals(HrisDocumentsUploadRequestDtoFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HrisDocumentsUploadRequestDtoSourceValueFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisDocumentsUploadRequestDtoSourceValueFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

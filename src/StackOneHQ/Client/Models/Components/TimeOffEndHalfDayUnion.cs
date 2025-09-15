@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TimeOffEndHalfDayUnionType
     {
         private TimeOffEndHalfDayUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TimeOffEndHalfDayUnionType Boolean { get { return new TimeOffEndHalfDayUnionType("boolean"); } }
-        
+
         public static TimeOffEndHalfDayUnionType TimeOffEndHalfDayEnum { get { return new TimeOffEndHalfDayUnionType("TimeOff_end_half_day_enum"); } }
-        
+
         public static TimeOffEndHalfDayUnionType Null { get { return new TimeOffEndHalfDayUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// True if the end of the time off request ends half way through the day
     /// </summary>
     [JsonConverter(typeof(TimeOffEndHalfDayUnion.TimeOffEndHalfDayUnionConverter))]
-    public class TimeOffEndHalfDayUnion {
-        public TimeOffEndHalfDayUnion(TimeOffEndHalfDayUnionType type) {
+    public class TimeOffEndHalfDayUnion
+    {
+        public TimeOffEndHalfDayUnion(TimeOffEndHalfDayUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public TimeOffEndHalfDayEnum? TimeOffEndHalfDayEnum { get; set; }
 
         public TimeOffEndHalfDayUnionType Type { get; set; }
-
-
-        public static TimeOffEndHalfDayUnion CreateBoolean(bool boolean) {
+        public static TimeOffEndHalfDayUnion CreateBoolean(bool boolean)
+        {
             TimeOffEndHalfDayUnionType typ = TimeOffEndHalfDayUnionType.Boolean;
 
             TimeOffEndHalfDayUnion res = new TimeOffEndHalfDayUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TimeOffEndHalfDayUnion CreateTimeOffEndHalfDayEnum(TimeOffEndHalfDayEnum timeOffEndHalfDayEnum) {
+        public static TimeOffEndHalfDayUnion CreateTimeOffEndHalfDayEnum(TimeOffEndHalfDayEnum timeOffEndHalfDayEnum)
+        {
             TimeOffEndHalfDayUnionType typ = TimeOffEndHalfDayUnionType.TimeOffEndHalfDayEnum;
 
             TimeOffEndHalfDayUnion res = new TimeOffEndHalfDayUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TimeOffEndHalfDayUnion CreateNull() {
+        public static TimeOffEndHalfDayUnion CreateNull()
+        {
             TimeOffEndHalfDayUnionType typ = TimeOffEndHalfDayUnionType.Null;
             return new TimeOffEndHalfDayUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TimeOffEndHalfDayUnion res = (TimeOffEndHalfDayUnion)value;
                 if (TimeOffEndHalfDayUnionType.FromString(res.Type).Equals(TimeOffEndHalfDayUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TimeOffEndHalfDayEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TimeOffEndHalfDayEnum));
                     return;
                 }
-
             }
 
         }

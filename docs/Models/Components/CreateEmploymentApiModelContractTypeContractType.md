@@ -1,0 +1,11 @@
+# CreateEmploymentApiModelContractTypeContractType
+
+The employment work schedule type (e.g., full-time, part-time)
+
+
+## Fields
+
+| Field                                                                                                                                   | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                                                 | [CreateEmploymentApiModelContractTypeValue](../../Models/Components/CreateEmploymentApiModelContractTypeValue.md)                       | :heavy_minus_sign:                                                                                                                      | N/A                                                                                                                                     |
+| `SourceValue`                                                                                                                           | [CreateEmploymentApiModelContractTypeSourceValueUnion](../../Models/Components/CreateEmploymentApiModelContractTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                                                      | N/A                                                                                                                                     |

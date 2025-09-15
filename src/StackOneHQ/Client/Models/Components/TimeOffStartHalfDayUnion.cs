@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TimeOffStartHalfDayUnionType
     {
         private TimeOffStartHalfDayUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TimeOffStartHalfDayUnionType Boolean { get { return new TimeOffStartHalfDayUnionType("boolean"); } }
-        
+
         public static TimeOffStartHalfDayUnionType TimeOffStartHalfDayEnum { get { return new TimeOffStartHalfDayUnionType("TimeOff_start_half_day_enum"); } }
-        
+
         public static TimeOffStartHalfDayUnionType Null { get { return new TimeOffStartHalfDayUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// True if the start of the time off request begins half way through the day
     /// </summary>
     [JsonConverter(typeof(TimeOffStartHalfDayUnion.TimeOffStartHalfDayUnionConverter))]
-    public class TimeOffStartHalfDayUnion {
-        public TimeOffStartHalfDayUnion(TimeOffStartHalfDayUnionType type) {
+    public class TimeOffStartHalfDayUnion
+    {
+        public TimeOffStartHalfDayUnion(TimeOffStartHalfDayUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public TimeOffStartHalfDayEnum? TimeOffStartHalfDayEnum { get; set; }
 
         public TimeOffStartHalfDayUnionType Type { get; set; }
-
-
-        public static TimeOffStartHalfDayUnion CreateBoolean(bool boolean) {
+        public static TimeOffStartHalfDayUnion CreateBoolean(bool boolean)
+        {
             TimeOffStartHalfDayUnionType typ = TimeOffStartHalfDayUnionType.Boolean;
 
             TimeOffStartHalfDayUnion res = new TimeOffStartHalfDayUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TimeOffStartHalfDayUnion CreateTimeOffStartHalfDayEnum(TimeOffStartHalfDayEnum timeOffStartHalfDayEnum) {
+        public static TimeOffStartHalfDayUnion CreateTimeOffStartHalfDayEnum(TimeOffStartHalfDayEnum timeOffStartHalfDayEnum)
+        {
             TimeOffStartHalfDayUnionType typ = TimeOffStartHalfDayUnionType.TimeOffStartHalfDayEnum;
 
             TimeOffStartHalfDayUnion res = new TimeOffStartHalfDayUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TimeOffStartHalfDayUnion CreateNull() {
+        public static TimeOffStartHalfDayUnion CreateNull()
+        {
             TimeOffStartHalfDayUnionType typ = TimeOffStartHalfDayUnionType.Null;
             return new TimeOffStartHalfDayUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TimeOffStartHalfDayUnion res = (TimeOffStartHalfDayUnion)value;
                 if (TimeOffStartHalfDayUnionType.FromString(res.Type).Equals(TimeOffStartHalfDayUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TimeOffStartHalfDayEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TimeOffStartHalfDayEnum));
                     return;
                 }
-
             }
 
         }

@@ -25,7 +25,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? Value { get; set; } = null;
 
         [JsonProperty("type")]
-        public HrisUpdateEmployeeRequestDtoType? Type { get; set; } = null;
+        public HrisUpdateEmployeeRequestDtoNationalIdentityNumberType? Type { get; set; } = null;
 
         /// <summary>
         /// The country code

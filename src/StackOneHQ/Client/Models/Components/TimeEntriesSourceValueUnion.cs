@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TimeEntriesSourceValueUnionType
     {
         private TimeEntriesSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TimeEntriesSourceValueUnionType Str { get { return new TimeEntriesSourceValueUnionType("str"); } }
-        
+
         public static TimeEntriesSourceValueUnionType Number { get { return new TimeEntriesSourceValueUnionType("number"); } }
-        
+
         public static TimeEntriesSourceValueUnionType Boolean { get { return new TimeEntriesSourceValueUnionType("boolean"); } }
-        
+
         public static TimeEntriesSourceValueUnionType TimeEntriesSourceValue { get { return new TimeEntriesSourceValueUnionType("TimeEntries_source_value"); } }
-        
+
         public static TimeEntriesSourceValueUnionType ArrayOfAny { get { return new TimeEntriesSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TimeEntriesSourceValueUnionType Null { get { return new TimeEntriesSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(TimeEntriesSourceValueUnion.TimeEntriesSourceValueUnionConverter))]
-    public class TimeEntriesSourceValueUnion {
-        public TimeEntriesSourceValueUnion(TimeEntriesSourceValueUnionType type) {
+    public class TimeEntriesSourceValueUnion
+    {
+        public TimeEntriesSourceValueUnion(TimeEntriesSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TimeEntriesSourceValueUnionType Type { get; set; }
-
-
-        public static TimeEntriesSourceValueUnion CreateStr(string str) {
+        public static TimeEntriesSourceValueUnion CreateStr(string str)
+        {
             TimeEntriesSourceValueUnionType typ = TimeEntriesSourceValueUnionType.Str;
 
             TimeEntriesSourceValueUnion res = new TimeEntriesSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TimeEntriesSourceValueUnion CreateNumber(double number) {
+        public static TimeEntriesSourceValueUnion CreateNumber(double number)
+        {
             TimeEntriesSourceValueUnionType typ = TimeEntriesSourceValueUnionType.Number;
 
             TimeEntriesSourceValueUnion res = new TimeEntriesSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TimeEntriesSourceValueUnion CreateBoolean(bool boolean) {
+        public static TimeEntriesSourceValueUnion CreateBoolean(bool boolean)
+        {
             TimeEntriesSourceValueUnionType typ = TimeEntriesSourceValueUnionType.Boolean;
 
             TimeEntriesSourceValueUnion res = new TimeEntriesSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TimeEntriesSourceValueUnion CreateTimeEntriesSourceValue(TimeEntriesSourceValue timeEntriesSourceValue) {
+        public static TimeEntriesSourceValueUnion CreateTimeEntriesSourceValue(TimeEntriesSourceValue timeEntriesSourceValue)
+        {
             TimeEntriesSourceValueUnionType typ = TimeEntriesSourceValueUnionType.TimeEntriesSourceValue;
 
             TimeEntriesSourceValueUnion res = new TimeEntriesSourceValueUnion(typ);
             res.TimeEntriesSourceValue = timeEntriesSourceValue;
             return res;
         }
-
-        public static TimeEntriesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TimeEntriesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TimeEntriesSourceValueUnionType typ = TimeEntriesSourceValueUnionType.ArrayOfAny;
 
             TimeEntriesSourceValueUnion res = new TimeEntriesSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TimeEntriesSourceValueUnion CreateNull() {
+        public static TimeEntriesSourceValueUnion CreateNull()
+        {
             TimeEntriesSourceValueUnionType typ = TimeEntriesSourceValueUnionType.Null;
             return new TimeEntriesSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TimeEntriesSourceValueUnion res = (TimeEntriesSourceValueUnion)value;
                 if (TimeEntriesSourceValueUnionType.FromString(res.Type).Equals(TimeEntriesSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TimeEntriesSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TimeEntriesSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

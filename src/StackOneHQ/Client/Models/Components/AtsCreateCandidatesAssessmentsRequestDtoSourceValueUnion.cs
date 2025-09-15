@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType
     {
         private AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType Str { get { return new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType Number { get { return new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType Boolean { get { return new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType AtsCreateCandidatesAssessmentsRequestDtoSourceValue { get { return new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType("AtsCreateCandidatesAssessmentsRequestDto_source_value"); } }
-        
+
         public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType Null { get { return new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the application status.
     /// </summary>
     [JsonConverter(typeof(AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion.AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionConverter))]
-    public class AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion {
-        public AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType type) {
+    public class AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion
+    {
+        public AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType typ = AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.Str;
 
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion res = new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType typ = AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.Number;
 
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion res = new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType typ = AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.Boolean;
 
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion res = new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateAtsCreateCandidatesAssessmentsRequestDtoSourceValue(AtsCreateCandidatesAssessmentsRequestDtoSourceValue atsCreateCandidatesAssessmentsRequestDtoSourceValue) {
+        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateAtsCreateCandidatesAssessmentsRequestDtoSourceValue(AtsCreateCandidatesAssessmentsRequestDtoSourceValue atsCreateCandidatesAssessmentsRequestDtoSourceValue)
+        {
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType typ = AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.AtsCreateCandidatesAssessmentsRequestDtoSourceValue;
 
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion res = new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(typ);
             res.AtsCreateCandidatesAssessmentsRequestDtoSourceValue = atsCreateCandidatesAssessmentsRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType typ = AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion res = new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateNull() {
+        public static AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion CreateNull()
+        {
             AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType typ = AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.Null;
             return new AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion res = (AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnion)value;
                 if (AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsCreateCandidatesAssessmentsRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsCreateCandidatesAssessmentsRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsCreateCandidatesAssessmentsRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

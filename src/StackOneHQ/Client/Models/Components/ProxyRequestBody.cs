@@ -33,7 +33,7 @@ namespace StackOneHQ.Client.Models.Components
         public Method? Method { get; set; } = StackOneHQ.Client.Models.Components.Method.Get;
 
         /// <summary>
-        /// The path of the request including any query paramters
+        /// The path of the request including any query parameters
         /// </summary>
         [JsonProperty("path")]
         public string? Path { get; set; } = null;

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class HRISTeamSourceValueUnionType
     {
         private HRISTeamSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HRISTeamSourceValueUnionType Str { get { return new HRISTeamSourceValueUnionType("str"); } }
-        
+
         public static HRISTeamSourceValueUnionType Number { get { return new HRISTeamSourceValueUnionType("number"); } }
-        
+
         public static HRISTeamSourceValueUnionType Boolean { get { return new HRISTeamSourceValueUnionType("boolean"); } }
-        
+
         public static HRISTeamSourceValueUnionType HRISTeamSourceValue { get { return new HRISTeamSourceValueUnionType("HRISTeam_source_value"); } }
-        
+
         public static HRISTeamSourceValueUnionType ArrayOfAny { get { return new HRISTeamSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static HRISTeamSourceValueUnionType Null { get { return new HRISTeamSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(HRISTeamSourceValueUnion.HRISTeamSourceValueUnionConverter))]
-    public class HRISTeamSourceValueUnion {
-        public HRISTeamSourceValueUnion(HRISTeamSourceValueUnionType type) {
+    public class HRISTeamSourceValueUnion
+    {
+        public HRISTeamSourceValueUnion(HRISTeamSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public HRISTeamSourceValueUnionType Type { get; set; }
-
-
-        public static HRISTeamSourceValueUnion CreateStr(string str) {
+        public static HRISTeamSourceValueUnion CreateStr(string str)
+        {
             HRISTeamSourceValueUnionType typ = HRISTeamSourceValueUnionType.Str;
 
             HRISTeamSourceValueUnion res = new HRISTeamSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static HRISTeamSourceValueUnion CreateNumber(double number) {
+        public static HRISTeamSourceValueUnion CreateNumber(double number)
+        {
             HRISTeamSourceValueUnionType typ = HRISTeamSourceValueUnionType.Number;
 
             HRISTeamSourceValueUnion res = new HRISTeamSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static HRISTeamSourceValueUnion CreateBoolean(bool boolean) {
+        public static HRISTeamSourceValueUnion CreateBoolean(bool boolean)
+        {
             HRISTeamSourceValueUnionType typ = HRISTeamSourceValueUnionType.Boolean;
 
             HRISTeamSourceValueUnion res = new HRISTeamSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static HRISTeamSourceValueUnion CreateHRISTeamSourceValue(HRISTeamSourceValue hrisTeamSourceValue) {
+        public static HRISTeamSourceValueUnion CreateHRISTeamSourceValue(HRISTeamSourceValue hrisTeamSourceValue)
+        {
             HRISTeamSourceValueUnionType typ = HRISTeamSourceValueUnionType.HRISTeamSourceValue;
 
             HRISTeamSourceValueUnion res = new HRISTeamSourceValueUnion(typ);
             res.HRISTeamSourceValue = hrisTeamSourceValue;
             return res;
         }
-
-        public static HRISTeamSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static HRISTeamSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             HRISTeamSourceValueUnionType typ = HRISTeamSourceValueUnionType.ArrayOfAny;
 
             HRISTeamSourceValueUnion res = new HRISTeamSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static HRISTeamSourceValueUnion CreateNull() {
+        public static HRISTeamSourceValueUnion CreateNull()
+        {
             HRISTeamSourceValueUnionType typ = HRISTeamSourceValueUnionType.Null;
             return new HRISTeamSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 HRISTeamSourceValueUnion res = (HRISTeamSourceValueUnion)value;
                 if (HRISTeamSourceValueUnionType.FromString(res.Type).Equals(HRISTeamSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.HRISTeamSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HRISTeamSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

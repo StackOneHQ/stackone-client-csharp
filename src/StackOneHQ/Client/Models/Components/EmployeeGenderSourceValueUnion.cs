@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class EmployeeGenderSourceValueUnionType
     {
         private EmployeeGenderSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static EmployeeGenderSourceValueUnionType Str { get { return new EmployeeGenderSourceValueUnionType("str"); } }
-        
+
         public static EmployeeGenderSourceValueUnionType Number { get { return new EmployeeGenderSourceValueUnionType("number"); } }
-        
+
         public static EmployeeGenderSourceValueUnionType Boolean { get { return new EmployeeGenderSourceValueUnionType("boolean"); } }
-        
+
         public static EmployeeGenderSourceValueUnionType EmployeeSourceValueGender { get { return new EmployeeGenderSourceValueUnionType("Employee_source_value_gender"); } }
-        
+
         public static EmployeeGenderSourceValueUnionType ArrayOfAny { get { return new EmployeeGenderSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static EmployeeGenderSourceValueUnionType Null { get { return new EmployeeGenderSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(EmployeeGenderSourceValueUnion.EmployeeGenderSourceValueUnionConverter))]
-    public class EmployeeGenderSourceValueUnion {
-        public EmployeeGenderSourceValueUnion(EmployeeGenderSourceValueUnionType type) {
+    public class EmployeeGenderSourceValueUnion
+    {
+        public EmployeeGenderSourceValueUnion(EmployeeGenderSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public EmployeeGenderSourceValueUnionType Type { get; set; }
-
-
-        public static EmployeeGenderSourceValueUnion CreateStr(string str) {
+        public static EmployeeGenderSourceValueUnion CreateStr(string str)
+        {
             EmployeeGenderSourceValueUnionType typ = EmployeeGenderSourceValueUnionType.Str;
 
             EmployeeGenderSourceValueUnion res = new EmployeeGenderSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static EmployeeGenderSourceValueUnion CreateNumber(double number) {
+        public static EmployeeGenderSourceValueUnion CreateNumber(double number)
+        {
             EmployeeGenderSourceValueUnionType typ = EmployeeGenderSourceValueUnionType.Number;
 
             EmployeeGenderSourceValueUnion res = new EmployeeGenderSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static EmployeeGenderSourceValueUnion CreateBoolean(bool boolean) {
+        public static EmployeeGenderSourceValueUnion CreateBoolean(bool boolean)
+        {
             EmployeeGenderSourceValueUnionType typ = EmployeeGenderSourceValueUnionType.Boolean;
 
             EmployeeGenderSourceValueUnion res = new EmployeeGenderSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static EmployeeGenderSourceValueUnion CreateEmployeeSourceValueGender(EmployeeSourceValueGender employeeSourceValueGender) {
+        public static EmployeeGenderSourceValueUnion CreateEmployeeSourceValueGender(EmployeeSourceValueGender employeeSourceValueGender)
+        {
             EmployeeGenderSourceValueUnionType typ = EmployeeGenderSourceValueUnionType.EmployeeSourceValueGender;
 
             EmployeeGenderSourceValueUnion res = new EmployeeGenderSourceValueUnion(typ);
             res.EmployeeSourceValueGender = employeeSourceValueGender;
             return res;
         }
-
-        public static EmployeeGenderSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static EmployeeGenderSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             EmployeeGenderSourceValueUnionType typ = EmployeeGenderSourceValueUnionType.ArrayOfAny;
 
             EmployeeGenderSourceValueUnion res = new EmployeeGenderSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static EmployeeGenderSourceValueUnion CreateNull() {
+        public static EmployeeGenderSourceValueUnion CreateNull()
+        {
             EmployeeGenderSourceValueUnionType typ = EmployeeGenderSourceValueUnionType.Null;
             return new EmployeeGenderSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 EmployeeGenderSourceValueUnion res = (EmployeeGenderSourceValueUnion)value;
                 if (EmployeeGenderSourceValueUnionType.FromString(res.Type).Equals(EmployeeGenderSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.EmployeeSourceValueGender != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.EmployeeSourceValueGender));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

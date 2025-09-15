@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LocalizationModelSourceValueUnionType
     {
         private LocalizationModelSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LocalizationModelSourceValueUnionType Str { get { return new LocalizationModelSourceValueUnionType("str"); } }
-        
+
         public static LocalizationModelSourceValueUnionType Number { get { return new LocalizationModelSourceValueUnionType("number"); } }
-        
+
         public static LocalizationModelSourceValueUnionType Boolean { get { return new LocalizationModelSourceValueUnionType("boolean"); } }
-        
+
         public static LocalizationModelSourceValueUnionType LocalizationModelSourceValue { get { return new LocalizationModelSourceValueUnionType("LocalizationModel_source_value"); } }
-        
+
         public static LocalizationModelSourceValueUnionType ArrayOfAny { get { return new LocalizationModelSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static LocalizationModelSourceValueUnionType Null { get { return new LocalizationModelSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(LocalizationModelSourceValueUnion.LocalizationModelSourceValueUnionConverter))]
-    public class LocalizationModelSourceValueUnion {
-        public LocalizationModelSourceValueUnion(LocalizationModelSourceValueUnionType type) {
+    public class LocalizationModelSourceValueUnion
+    {
+        public LocalizationModelSourceValueUnion(LocalizationModelSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public LocalizationModelSourceValueUnionType Type { get; set; }
-
-
-        public static LocalizationModelSourceValueUnion CreateStr(string str) {
+        public static LocalizationModelSourceValueUnion CreateStr(string str)
+        {
             LocalizationModelSourceValueUnionType typ = LocalizationModelSourceValueUnionType.Str;
 
             LocalizationModelSourceValueUnion res = new LocalizationModelSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static LocalizationModelSourceValueUnion CreateNumber(double number) {
+        public static LocalizationModelSourceValueUnion CreateNumber(double number)
+        {
             LocalizationModelSourceValueUnionType typ = LocalizationModelSourceValueUnionType.Number;
 
             LocalizationModelSourceValueUnion res = new LocalizationModelSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static LocalizationModelSourceValueUnion CreateBoolean(bool boolean) {
+        public static LocalizationModelSourceValueUnion CreateBoolean(bool boolean)
+        {
             LocalizationModelSourceValueUnionType typ = LocalizationModelSourceValueUnionType.Boolean;
 
             LocalizationModelSourceValueUnion res = new LocalizationModelSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LocalizationModelSourceValueUnion CreateLocalizationModelSourceValue(LocalizationModelSourceValue localizationModelSourceValue) {
+        public static LocalizationModelSourceValueUnion CreateLocalizationModelSourceValue(LocalizationModelSourceValue localizationModelSourceValue)
+        {
             LocalizationModelSourceValueUnionType typ = LocalizationModelSourceValueUnionType.LocalizationModelSourceValue;
 
             LocalizationModelSourceValueUnion res = new LocalizationModelSourceValueUnion(typ);
             res.LocalizationModelSourceValue = localizationModelSourceValue;
             return res;
         }
-
-        public static LocalizationModelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static LocalizationModelSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             LocalizationModelSourceValueUnionType typ = LocalizationModelSourceValueUnionType.ArrayOfAny;
 
             LocalizationModelSourceValueUnion res = new LocalizationModelSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static LocalizationModelSourceValueUnion CreateNull() {
+        public static LocalizationModelSourceValueUnion CreateNull()
+        {
             LocalizationModelSourceValueUnionType typ = LocalizationModelSourceValueUnionType.Null;
             return new LocalizationModelSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LocalizationModelSourceValueUnion res = (LocalizationModelSourceValueUnion)value;
                 if (LocalizationModelSourceValueUnionType.FromString(res.Type).Equals(LocalizationModelSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.LocalizationModelSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.LocalizationModelSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

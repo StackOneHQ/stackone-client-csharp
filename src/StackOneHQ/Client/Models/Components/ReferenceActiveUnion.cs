@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class ReferenceActiveUnionType
     {
         private ReferenceActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ReferenceActiveUnionType Boolean { get { return new ReferenceActiveUnionType("boolean"); } }
-        
+
         public static ReferenceActiveUnionType ReferenceActiveEnum { get { return new ReferenceActiveUnionType("Reference_active_enum"); } }
-        
+
         public static ReferenceActiveUnionType Null { get { return new ReferenceActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The reference status
     /// </summary>
     [JsonConverter(typeof(ReferenceActiveUnion.ReferenceActiveUnionConverter))]
-    public class ReferenceActiveUnion {
-        public ReferenceActiveUnion(ReferenceActiveUnionType type) {
+    public class ReferenceActiveUnion
+    {
+        public ReferenceActiveUnion(ReferenceActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public ReferenceActiveEnum? ReferenceActiveEnum { get; set; }
 
         public ReferenceActiveUnionType Type { get; set; }
-
-
-        public static ReferenceActiveUnion CreateBoolean(bool boolean) {
+        public static ReferenceActiveUnion CreateBoolean(bool boolean)
+        {
             ReferenceActiveUnionType typ = ReferenceActiveUnionType.Boolean;
 
             ReferenceActiveUnion res = new ReferenceActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ReferenceActiveUnion CreateReferenceActiveEnum(ReferenceActiveEnum referenceActiveEnum) {
+        public static ReferenceActiveUnion CreateReferenceActiveEnum(ReferenceActiveEnum referenceActiveEnum)
+        {
             ReferenceActiveUnionType typ = ReferenceActiveUnionType.ReferenceActiveEnum;
 
             ReferenceActiveUnion res = new ReferenceActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static ReferenceActiveUnion CreateNull() {
+        public static ReferenceActiveUnion CreateNull()
+        {
             ReferenceActiveUnionType typ = ReferenceActiveUnionType.Null;
             return new ReferenceActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 ReferenceActiveUnion res = (ReferenceActiveUnion)value;
                 if (ReferenceActiveUnionType.FromString(res.Type).Equals(ReferenceActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ReferenceActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ReferenceActiveEnum));
                     return;
                 }
-
             }
 
         }

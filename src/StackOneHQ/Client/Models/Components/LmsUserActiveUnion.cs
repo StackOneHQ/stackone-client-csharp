@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class LmsUserActiveUnionType
     {
         private LmsUserActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static LmsUserActiveUnionType Boolean { get { return new LmsUserActiveUnionType("boolean"); } }
-        
+
         public static LmsUserActiveUnionType LmsUserActiveEnum { get { return new LmsUserActiveUnionType("LmsUser_active_enum"); } }
-        
+
         public static LmsUserActiveUnionType Null { get { return new LmsUserActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The user active status
     /// </summary>
     [JsonConverter(typeof(LmsUserActiveUnion.LmsUserActiveUnionConverter))]
-    public class LmsUserActiveUnion {
-        public LmsUserActiveUnion(LmsUserActiveUnionType type) {
+    public class LmsUserActiveUnion
+    {
+        public LmsUserActiveUnion(LmsUserActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public LmsUserActiveEnum? LmsUserActiveEnum { get; set; }
 
         public LmsUserActiveUnionType Type { get; set; }
-
-
-        public static LmsUserActiveUnion CreateBoolean(bool boolean) {
+        public static LmsUserActiveUnion CreateBoolean(bool boolean)
+        {
             LmsUserActiveUnionType typ = LmsUserActiveUnionType.Boolean;
 
             LmsUserActiveUnion res = new LmsUserActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static LmsUserActiveUnion CreateLmsUserActiveEnum(LmsUserActiveEnum lmsUserActiveEnum) {
+        public static LmsUserActiveUnion CreateLmsUserActiveEnum(LmsUserActiveEnum lmsUserActiveEnum)
+        {
             LmsUserActiveUnionType typ = LmsUserActiveUnionType.LmsUserActiveEnum;
 
             LmsUserActiveUnion res = new LmsUserActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static LmsUserActiveUnion CreateNull() {
+        public static LmsUserActiveUnion CreateNull()
+        {
             LmsUserActiveUnionType typ = LmsUserActiveUnionType.Null;
             return new LmsUserActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 LmsUserActiveUnion res = (LmsUserActiveUnion)value;
                 if (LmsUserActiveUnionType.FromString(res.Type).Equals(LmsUserActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.LmsUserActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.LmsUserActiveEnum));
                     return;
                 }
-
             }
 
         }

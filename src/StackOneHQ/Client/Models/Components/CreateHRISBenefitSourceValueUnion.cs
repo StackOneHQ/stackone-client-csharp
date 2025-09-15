@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateHRISBenefitSourceValueUnionType
     {
         private CreateHRISBenefitSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateHRISBenefitSourceValueUnionType Str { get { return new CreateHRISBenefitSourceValueUnionType("str"); } }
-        
+
         public static CreateHRISBenefitSourceValueUnionType Number { get { return new CreateHRISBenefitSourceValueUnionType("number"); } }
-        
+
         public static CreateHRISBenefitSourceValueUnionType Boolean { get { return new CreateHRISBenefitSourceValueUnionType("boolean"); } }
-        
+
         public static CreateHRISBenefitSourceValueUnionType CreateHRISBenefitSourceValue { get { return new CreateHRISBenefitSourceValueUnionType("CreateHRISBenefit_source_value"); } }
-        
+
         public static CreateHRISBenefitSourceValueUnionType ArrayOfAny { get { return new CreateHRISBenefitSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateHRISBenefitSourceValueUnionType Null { get { return new CreateHRISBenefitSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(CreateHRISBenefitSourceValueUnion.CreateHRISBenefitSourceValueUnionConverter))]
-    public class CreateHRISBenefitSourceValueUnion {
-        public CreateHRISBenefitSourceValueUnion(CreateHRISBenefitSourceValueUnionType type) {
+    public class CreateHRISBenefitSourceValueUnion
+    {
+        public CreateHRISBenefitSourceValueUnion(CreateHRISBenefitSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateHRISBenefitSourceValueUnionType Type { get; set; }
-
-
-        public static CreateHRISBenefitSourceValueUnion CreateStr(string str) {
+        public static CreateHRISBenefitSourceValueUnion CreateStr(string str)
+        {
             CreateHRISBenefitSourceValueUnionType typ = CreateHRISBenefitSourceValueUnionType.Str;
 
             CreateHRISBenefitSourceValueUnion res = new CreateHRISBenefitSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateHRISBenefitSourceValueUnion CreateNumber(double number) {
+        public static CreateHRISBenefitSourceValueUnion CreateNumber(double number)
+        {
             CreateHRISBenefitSourceValueUnionType typ = CreateHRISBenefitSourceValueUnionType.Number;
 
             CreateHRISBenefitSourceValueUnion res = new CreateHRISBenefitSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateHRISBenefitSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateHRISBenefitSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateHRISBenefitSourceValueUnionType typ = CreateHRISBenefitSourceValueUnionType.Boolean;
 
             CreateHRISBenefitSourceValueUnion res = new CreateHRISBenefitSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateHRISBenefitSourceValueUnion CreateCreateHRISBenefitSourceValue(CreateHRISBenefitSourceValue createHRISBenefitSourceValue) {
+        public static CreateHRISBenefitSourceValueUnion CreateCreateHRISBenefitSourceValue(CreateHRISBenefitSourceValue createHRISBenefitSourceValue)
+        {
             CreateHRISBenefitSourceValueUnionType typ = CreateHRISBenefitSourceValueUnionType.CreateHRISBenefitSourceValue;
 
             CreateHRISBenefitSourceValueUnion res = new CreateHRISBenefitSourceValueUnion(typ);
             res.CreateHRISBenefitSourceValue = createHRISBenefitSourceValue;
             return res;
         }
-
-        public static CreateHRISBenefitSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateHRISBenefitSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateHRISBenefitSourceValueUnionType typ = CreateHRISBenefitSourceValueUnionType.ArrayOfAny;
 
             CreateHRISBenefitSourceValueUnion res = new CreateHRISBenefitSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateHRISBenefitSourceValueUnion CreateNull() {
+        public static CreateHRISBenefitSourceValueUnion CreateNull()
+        {
             CreateHRISBenefitSourceValueUnionType typ = CreateHRISBenefitSourceValueUnionType.Null;
             return new CreateHRISBenefitSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateHRISBenefitSourceValueUnion res = (CreateHRISBenefitSourceValueUnion)value;
                 if (CreateHRISBenefitSourceValueUnionType.FromString(res.Type).Equals(CreateHRISBenefitSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateHRISBenefitSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateHRISBenefitSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

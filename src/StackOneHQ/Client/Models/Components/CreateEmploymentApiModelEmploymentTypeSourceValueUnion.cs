@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CreateEmploymentApiModelEmploymentTypeSourceValueUnionType
     {
         private CreateEmploymentApiModelEmploymentTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CreateEmploymentApiModelEmploymentTypeSourceValueUnionType Str { get { return new CreateEmploymentApiModelEmploymentTypeSourceValueUnionType("str"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentTypeSourceValueUnionType Number { get { return new CreateEmploymentApiModelEmploymentTypeSourceValueUnionType("number"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentTypeSourceValueUnionType Boolean { get { return new CreateEmploymentApiModelEmploymentTypeSourceValueUnionType("boolean"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentTypeSourceValueUnionType CreateEmploymentApiModelSourceValueEmploymentType { get { return new CreateEmploymentApiModelEmploymentTypeSourceValueUnionType("CreateEmploymentApiModel_source_value_employment_type"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentTypeSourceValueUnionType ArrayOfAny { get { return new CreateEmploymentApiModelEmploymentTypeSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static CreateEmploymentApiModelEmploymentTypeSourceValueUnionType Null { get { return new CreateEmploymentApiModelEmploymentTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the employment type.
     /// </summary>
     [JsonConverter(typeof(CreateEmploymentApiModelEmploymentTypeSourceValueUnion.CreateEmploymentApiModelEmploymentTypeSourceValueUnionConverter))]
-    public class CreateEmploymentApiModelEmploymentTypeSourceValueUnion {
-        public CreateEmploymentApiModelEmploymentTypeSourceValueUnion(CreateEmploymentApiModelEmploymentTypeSourceValueUnionType type) {
+    public class CreateEmploymentApiModelEmploymentTypeSourceValueUnion
+    {
+        public CreateEmploymentApiModelEmploymentTypeSourceValueUnion(CreateEmploymentApiModelEmploymentTypeSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public CreateEmploymentApiModelEmploymentTypeSourceValueUnionType Type { get; set; }
-
-
-        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateStr(string str) {
+        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateStr(string str)
+        {
             CreateEmploymentApiModelEmploymentTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.Str;
 
             CreateEmploymentApiModelEmploymentTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateNumber(double number) {
+        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateNumber(double number)
+        {
             CreateEmploymentApiModelEmploymentTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.Number;
 
             CreateEmploymentApiModelEmploymentTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateBoolean(bool boolean) {
+        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateBoolean(bool boolean)
+        {
             CreateEmploymentApiModelEmploymentTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.Boolean;
 
             CreateEmploymentApiModelEmploymentTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateCreateEmploymentApiModelSourceValueEmploymentType(CreateEmploymentApiModelSourceValueEmploymentType createEmploymentAPIModelSourceValueEmploymentType) {
+        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateCreateEmploymentApiModelSourceValueEmploymentType(CreateEmploymentApiModelSourceValueEmploymentType createEmploymentAPIModelSourceValueEmploymentType)
+        {
             CreateEmploymentApiModelEmploymentTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.CreateEmploymentApiModelSourceValueEmploymentType;
 
             CreateEmploymentApiModelEmploymentTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentTypeSourceValueUnion(typ);
             res.CreateEmploymentApiModelSourceValueEmploymentType = createEmploymentAPIModelSourceValueEmploymentType;
             return res;
         }
-
-        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             CreateEmploymentApiModelEmploymentTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.ArrayOfAny;
 
             CreateEmploymentApiModelEmploymentTypeSourceValueUnion res = new CreateEmploymentApiModelEmploymentTypeSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateNull() {
+        public static CreateEmploymentApiModelEmploymentTypeSourceValueUnion CreateNull()
+        {
             CreateEmploymentApiModelEmploymentTypeSourceValueUnionType typ = CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.Null;
             return new CreateEmploymentApiModelEmploymentTypeSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CreateEmploymentApiModelEmploymentTypeSourceValueUnion res = (CreateEmploymentApiModelEmploymentTypeSourceValueUnion)value;
                 if (CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.FromString(res.Type).Equals(CreateEmploymentApiModelEmploymentTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CreateEmploymentApiModelSourceValueEmploymentType != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CreateEmploymentApiModelSourceValueEmploymentType));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class WorkEligibilityCategorySourceValueUnionType
     {
         private WorkEligibilityCategorySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static WorkEligibilityCategorySourceValueUnionType Str { get { return new WorkEligibilityCategorySourceValueUnionType("str"); } }
-        
+
         public static WorkEligibilityCategorySourceValueUnionType Number { get { return new WorkEligibilityCategorySourceValueUnionType("number"); } }
-        
+
         public static WorkEligibilityCategorySourceValueUnionType Boolean { get { return new WorkEligibilityCategorySourceValueUnionType("boolean"); } }
-        
+
         public static WorkEligibilityCategorySourceValueUnionType WorkEligibilitySourceValueCategory { get { return new WorkEligibilityCategorySourceValueUnionType("WorkEligibility_source_value_category"); } }
-        
+
         public static WorkEligibilityCategorySourceValueUnionType ArrayOfAny { get { return new WorkEligibilityCategorySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static WorkEligibilityCategorySourceValueUnionType Null { get { return new WorkEligibilityCategorySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(WorkEligibilityCategorySourceValueUnion.WorkEligibilityCategorySourceValueUnionConverter))]
-    public class WorkEligibilityCategorySourceValueUnion {
-        public WorkEligibilityCategorySourceValueUnion(WorkEligibilityCategorySourceValueUnionType type) {
+    public class WorkEligibilityCategorySourceValueUnion
+    {
+        public WorkEligibilityCategorySourceValueUnion(WorkEligibilityCategorySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public WorkEligibilityCategorySourceValueUnionType Type { get; set; }
-
-
-        public static WorkEligibilityCategorySourceValueUnion CreateStr(string str) {
+        public static WorkEligibilityCategorySourceValueUnion CreateStr(string str)
+        {
             WorkEligibilityCategorySourceValueUnionType typ = WorkEligibilityCategorySourceValueUnionType.Str;
 
             WorkEligibilityCategorySourceValueUnion res = new WorkEligibilityCategorySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static WorkEligibilityCategorySourceValueUnion CreateNumber(double number) {
+        public static WorkEligibilityCategorySourceValueUnion CreateNumber(double number)
+        {
             WorkEligibilityCategorySourceValueUnionType typ = WorkEligibilityCategorySourceValueUnionType.Number;
 
             WorkEligibilityCategorySourceValueUnion res = new WorkEligibilityCategorySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static WorkEligibilityCategorySourceValueUnion CreateBoolean(bool boolean) {
+        public static WorkEligibilityCategorySourceValueUnion CreateBoolean(bool boolean)
+        {
             WorkEligibilityCategorySourceValueUnionType typ = WorkEligibilityCategorySourceValueUnionType.Boolean;
 
             WorkEligibilityCategorySourceValueUnion res = new WorkEligibilityCategorySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static WorkEligibilityCategorySourceValueUnion CreateWorkEligibilitySourceValueCategory(WorkEligibilitySourceValueCategory workEligibilitySourceValueCategory) {
+        public static WorkEligibilityCategorySourceValueUnion CreateWorkEligibilitySourceValueCategory(WorkEligibilitySourceValueCategory workEligibilitySourceValueCategory)
+        {
             WorkEligibilityCategorySourceValueUnionType typ = WorkEligibilityCategorySourceValueUnionType.WorkEligibilitySourceValueCategory;
 
             WorkEligibilityCategorySourceValueUnion res = new WorkEligibilityCategorySourceValueUnion(typ);
             res.WorkEligibilitySourceValueCategory = workEligibilitySourceValueCategory;
             return res;
         }
-
-        public static WorkEligibilityCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static WorkEligibilityCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             WorkEligibilityCategorySourceValueUnionType typ = WorkEligibilityCategorySourceValueUnionType.ArrayOfAny;
 
             WorkEligibilityCategorySourceValueUnion res = new WorkEligibilityCategorySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static WorkEligibilityCategorySourceValueUnion CreateNull() {
+        public static WorkEligibilityCategorySourceValueUnion CreateNull()
+        {
             WorkEligibilityCategorySourceValueUnionType typ = WorkEligibilityCategorySourceValueUnionType.Null;
             return new WorkEligibilityCategorySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 WorkEligibilityCategorySourceValueUnion res = (WorkEligibilityCategorySourceValueUnion)value;
                 if (WorkEligibilityCategorySourceValueUnionType.FromString(res.Type).Equals(WorkEligibilityCategorySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.WorkEligibilitySourceValueCategory != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.WorkEligibilitySourceValueCategory));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

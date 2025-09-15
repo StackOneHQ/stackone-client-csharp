@@ -1,0 +1,13 @@
+# ActionMetaItem
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `Id`                                                                              | *string*                                                                          | :heavy_minus_sign:                                                                | The action ID                                                                     |
+| `Name`                                                                            | *string*                                                                          | :heavy_minus_sign:                                                                | The action name                                                                   |
+| `Description`                                                                     | *string*                                                                          | :heavy_minus_sign:                                                                | The action description                                                            |
+| `SchemaType`                                                                      | *string*                                                                          | :heavy_minus_sign:                                                                | The schema type for the action                                                    |
+| `Authentication`                                                                  | List<[AuthenticationMetaItem](../../Models/Components/AuthenticationMetaItem.md)> | :heavy_minus_sign:                                                                | The authentication methods supported by this action                               |
+| `OperationDetails`                                                                | Dictionary<String, *object*>                                                      | :heavy_minus_sign:                                                                | The operation details for the action                                              |

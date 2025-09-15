@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsCreateApplicationRequestDtoSourceValueUnionType
     {
         private AtsCreateApplicationRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsCreateApplicationRequestDtoSourceValueUnionType Str { get { return new AtsCreateApplicationRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static AtsCreateApplicationRequestDtoSourceValueUnionType Number { get { return new AtsCreateApplicationRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static AtsCreateApplicationRequestDtoSourceValueUnionType Boolean { get { return new AtsCreateApplicationRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static AtsCreateApplicationRequestDtoSourceValueUnionType AtsCreateApplicationRequestDtoSourceValue { get { return new AtsCreateApplicationRequestDtoSourceValueUnionType("AtsCreateApplicationRequestDto_source_value"); } }
-        
+
         public static AtsCreateApplicationRequestDtoSourceValueUnionType ArrayOfAny { get { return new AtsCreateApplicationRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsCreateApplicationRequestDtoSourceValueUnionType Null { get { return new AtsCreateApplicationRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the application status.
     /// </summary>
     [JsonConverter(typeof(AtsCreateApplicationRequestDtoSourceValueUnion.AtsCreateApplicationRequestDtoSourceValueUnionConverter))]
-    public class AtsCreateApplicationRequestDtoSourceValueUnion {
-        public AtsCreateApplicationRequestDtoSourceValueUnion(AtsCreateApplicationRequestDtoSourceValueUnionType type) {
+    public class AtsCreateApplicationRequestDtoSourceValueUnion
+    {
+        public AtsCreateApplicationRequestDtoSourceValueUnion(AtsCreateApplicationRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsCreateApplicationRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateStr(string str) {
+        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateStr(string str)
+        {
             AtsCreateApplicationRequestDtoSourceValueUnionType typ = AtsCreateApplicationRequestDtoSourceValueUnionType.Str;
 
             AtsCreateApplicationRequestDtoSourceValueUnion res = new AtsCreateApplicationRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             AtsCreateApplicationRequestDtoSourceValueUnionType typ = AtsCreateApplicationRequestDtoSourceValueUnionType.Number;
 
             AtsCreateApplicationRequestDtoSourceValueUnion res = new AtsCreateApplicationRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsCreateApplicationRequestDtoSourceValueUnionType typ = AtsCreateApplicationRequestDtoSourceValueUnionType.Boolean;
 
             AtsCreateApplicationRequestDtoSourceValueUnion res = new AtsCreateApplicationRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateAtsCreateApplicationRequestDtoSourceValue(AtsCreateApplicationRequestDtoSourceValue atsCreateApplicationRequestDtoSourceValue) {
+        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateAtsCreateApplicationRequestDtoSourceValue(AtsCreateApplicationRequestDtoSourceValue atsCreateApplicationRequestDtoSourceValue)
+        {
             AtsCreateApplicationRequestDtoSourceValueUnionType typ = AtsCreateApplicationRequestDtoSourceValueUnionType.AtsCreateApplicationRequestDtoSourceValue;
 
             AtsCreateApplicationRequestDtoSourceValueUnion res = new AtsCreateApplicationRequestDtoSourceValueUnion(typ);
             res.AtsCreateApplicationRequestDtoSourceValue = atsCreateApplicationRequestDtoSourceValue;
             return res;
         }
-
-        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsCreateApplicationRequestDtoSourceValueUnionType typ = AtsCreateApplicationRequestDtoSourceValueUnionType.ArrayOfAny;
 
             AtsCreateApplicationRequestDtoSourceValueUnion res = new AtsCreateApplicationRequestDtoSourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateNull() {
+        public static AtsCreateApplicationRequestDtoSourceValueUnion CreateNull()
+        {
             AtsCreateApplicationRequestDtoSourceValueUnionType typ = AtsCreateApplicationRequestDtoSourceValueUnionType.Null;
             return new AtsCreateApplicationRequestDtoSourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsCreateApplicationRequestDtoSourceValueUnion res = (AtsCreateApplicationRequestDtoSourceValueUnion)value;
                 if (AtsCreateApplicationRequestDtoSourceValueUnionType.FromString(res.Type).Equals(AtsCreateApplicationRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsCreateApplicationRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsCreateApplicationRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

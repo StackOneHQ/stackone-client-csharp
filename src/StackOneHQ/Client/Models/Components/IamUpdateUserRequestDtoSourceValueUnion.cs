@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class IamUpdateUserRequestDtoSourceValueUnionType
     {
         private IamUpdateUserRequestDtoSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IamUpdateUserRequestDtoSourceValueUnionType Str { get { return new IamUpdateUserRequestDtoSourceValueUnionType("str"); } }
-        
+
         public static IamUpdateUserRequestDtoSourceValueUnionType Number { get { return new IamUpdateUserRequestDtoSourceValueUnionType("number"); } }
-        
+
         public static IamUpdateUserRequestDtoSourceValueUnionType Boolean { get { return new IamUpdateUserRequestDtoSourceValueUnionType("boolean"); } }
-        
+
         public static IamUpdateUserRequestDtoSourceValueUnionType IamUpdateUserRequestDtoSourceValue { get { return new IamUpdateUserRequestDtoSourceValueUnionType("IamUpdateUserRequestDto_source_value"); } }
-        
+
         public static IamUpdateUserRequestDtoSourceValueUnionType ArrayOfAny { get { return new IamUpdateUserRequestDtoSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static IamUpdateUserRequestDtoSourceValueUnionType Null { get { return new IamUpdateUserRequestDtoSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(IamUpdateUserRequestDtoSourceValueUnion.IamUpdateUserRequestDtoSourceValueUnionConverter))]
-    public class IamUpdateUserRequestDtoSourceValueUnion {
-        public IamUpdateUserRequestDtoSourceValueUnion(IamUpdateUserRequestDtoSourceValueUnionType type) {
+    public class IamUpdateUserRequestDtoSourceValueUnion
+    {
+        public IamUpdateUserRequestDtoSourceValueUnion(IamUpdateUserRequestDtoSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public IamUpdateUserRequestDtoSourceValueUnionType Type { get; set; }
-
-
-        public static IamUpdateUserRequestDtoSourceValueUnion CreateStr(string str) {
+        public static IamUpdateUserRequestDtoSourceValueUnion CreateStr(string str)
+        {
             IamUpdateUserRequestDtoSourceValueUnionType typ = IamUpdateUserRequestDtoSourceValueUnionType.Str;
 
             IamUpdateUserRequestDtoSourceValueUnion res = new IamUpdateUserRequestDtoSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static IamUpdateUserRequestDtoSourceValueUnion CreateNumber(double number) {
+        public static IamUpdateUserRequestDtoSourceValueUnion CreateNumber(double number)
+        {
             IamUpdateUserRequestDtoSourceValueUnionType typ = IamUpdateUserRequestDtoSourceValueUnionType.Number;
 
             IamUpdateUserRequestDtoSourceValueUnion res = new IamUpdateUserRequestDtoSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static IamUpdateUserRequestDtoSourceValueUnion CreateBoolean(bool boolean) {
+        public static IamUpdateUserRequestDtoSourceValueUnion CreateBoolean(bool boolean)
+        {
             IamUpdateUserRequestDtoSourceValueUnionType typ = IamUpdateUserRequestDtoSourceValueUnionType.Boolean;
 
             IamUpdateUserRequestDtoSourceValueUnion res = new IamUpdateUserRequestDtoSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static IamUpdateUserRequestDtoSourceValueUnion CreateIamUpdateUserRequestDtoSourceValue(IamUpdateUserRequestDtoSourceValue iamUpdateUserRequestDtoSourceValue) {
+        public static IamUpdateUserRequestDtoSourceValueUnion CreateIamUpdateUserRequestDtoSourceValue(IamUpdateUserRequestDtoSourceValue iamUpdateUserRequestDtoSourceValue)
+        {
             IamUpdateUserRequestDtoSourceValueUnionType typ = IamUpdateUserRequestDtoSourceValueUnionType.IamUpdateUserRequestDtoSourceValue;
 
             IamUpdateUserRequestDtoSourceValueUnion res = new IamUpdateUserRequestDtoSourceValueUnion(typ);
             res.IamUpdateUserRequestDtoSourceValue = iamUpdateUserRequestDtoSourceValue;
             return res;
         }
-
-        public static IamUpdateUserRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static IamUpdateUserRequestDtoSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             IamUpdateUserRequestDtoSourceValueUnionType typ = IamUpdateUserRequestDtoSourceValueUnionType.ArrayOfAny;
 
             IamUpdateUserRequestDtoSourceValueUnion res = new IamUpdateUserRequestDtoSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static IamUpdateUserRequestDtoSourceValueUnion CreateNull() {
+        public static IamUpdateUserRequestDtoSourceValueUnion CreateNull()
+        {
             IamUpdateUserRequestDtoSourceValueUnionType typ = IamUpdateUserRequestDtoSourceValueUnionType.Null;
             return new IamUpdateUserRequestDtoSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 IamUpdateUserRequestDtoSourceValueUnion res = (IamUpdateUserRequestDtoSourceValueUnion)value;
                 if (IamUpdateUserRequestDtoSourceValueUnionType.FromString(res.Type).Equals(IamUpdateUserRequestDtoSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.IamUpdateUserRequestDtoSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IamUpdateUserRequestDtoSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType
     {
         private TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType Str { get { return new TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType("str"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType Number { get { return new TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType("number"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType Boolean { get { return new TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType("boolean"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType TicketingTicketUpdateRequestDtoSourceValuePriority { get { return new TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType("TicketingTicketUpdateRequestDto_source_value_priority"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType ArrayOfAny { get { return new TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType Null { get { return new TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -69,8 +69,10 @@ namespace StackOneHQ.Client.Models.Components
     /// The source value of the ticket priority.
     /// </summary>
     [JsonConverter(typeof(TicketingTicketUpdateRequestDtoPrioritySourceValueUnion.TicketingTicketUpdateRequestDtoPrioritySourceValueUnionConverter))]
-    public class TicketingTicketUpdateRequestDtoPrioritySourceValueUnion {
-        public TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType type) {
+    public class TicketingTicketUpdateRequestDtoPrioritySourceValueUnion
+    {
+        public TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -90,41 +92,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType Type { get; set; }
-
-
-        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateStr(string str) {
+        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateStr(string str)
+        {
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType typ = TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.Str;
 
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnion res = new TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateNumber(double number) {
+        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateNumber(double number)
+        {
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType typ = TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.Number;
 
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnion res = new TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateBoolean(bool boolean) {
+        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateBoolean(bool boolean)
+        {
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType typ = TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.Boolean;
 
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnion res = new TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateTicketingTicketUpdateRequestDtoSourceValuePriority(TicketingTicketUpdateRequestDtoSourceValuePriority ticketingTicketUpdateRequestDtoSourceValuePriority) {
+        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateTicketingTicketUpdateRequestDtoSourceValuePriority(TicketingTicketUpdateRequestDtoSourceValuePriority ticketingTicketUpdateRequestDtoSourceValuePriority)
+        {
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType typ = TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.TicketingTicketUpdateRequestDtoSourceValuePriority;
 
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnion res = new TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(typ);
             res.TicketingTicketUpdateRequestDtoSourceValuePriority = ticketingTicketUpdateRequestDtoSourceValuePriority;
             return res;
         }
-
-        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType typ = TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.ArrayOfAny;
 
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnion res = new TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(typ);
@@ -132,7 +133,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateNull() {
+        public static TicketingTicketUpdateRequestDtoPrioritySourceValueUnion CreateNull()
+        {
             TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType typ = TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.Null;
             return new TicketingTicketUpdateRequestDtoPrioritySourceValueUnion(typ);
         }
@@ -256,38 +258,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 TicketingTicketUpdateRequestDtoPrioritySourceValueUnion res = (TicketingTicketUpdateRequestDtoPrioritySourceValueUnion)value;
                 if (TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.FromString(res.Type).Equals(TicketingTicketUpdateRequestDtoPrioritySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.TicketingTicketUpdateRequestDtoSourceValuePriority != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TicketingTicketUpdateRequestDtoSourceValuePriority));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

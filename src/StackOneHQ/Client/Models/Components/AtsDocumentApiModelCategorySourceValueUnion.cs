@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class AtsDocumentApiModelCategorySourceValueUnionType
     {
         private AtsDocumentApiModelCategorySourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsDocumentApiModelCategorySourceValueUnionType Str { get { return new AtsDocumentApiModelCategorySourceValueUnionType("str"); } }
-        
+
         public static AtsDocumentApiModelCategorySourceValueUnionType Number { get { return new AtsDocumentApiModelCategorySourceValueUnionType("number"); } }
-        
+
         public static AtsDocumentApiModelCategorySourceValueUnionType Boolean { get { return new AtsDocumentApiModelCategorySourceValueUnionType("boolean"); } }
-        
+
         public static AtsDocumentApiModelCategorySourceValueUnionType AtsDocumentApiModelSourceValueCategory { get { return new AtsDocumentApiModelCategorySourceValueUnionType("AtsDocumentApiModel_source_value_category"); } }
-        
+
         public static AtsDocumentApiModelCategorySourceValueUnionType ArrayOfAny { get { return new AtsDocumentApiModelCategorySourceValueUnionType("arrayOfAny"); } }
-        
+
         public static AtsDocumentApiModelCategorySourceValueUnionType Null { get { return new AtsDocumentApiModelCategorySourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(AtsDocumentApiModelCategorySourceValueUnion.AtsDocumentApiModelCategorySourceValueUnionConverter))]
-    public class AtsDocumentApiModelCategorySourceValueUnion {
-        public AtsDocumentApiModelCategorySourceValueUnion(AtsDocumentApiModelCategorySourceValueUnionType type) {
+    public class AtsDocumentApiModelCategorySourceValueUnion
+    {
+        public AtsDocumentApiModelCategorySourceValueUnion(AtsDocumentApiModelCategorySourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public AtsDocumentApiModelCategorySourceValueUnionType Type { get; set; }
-
-
-        public static AtsDocumentApiModelCategorySourceValueUnion CreateStr(string str) {
+        public static AtsDocumentApiModelCategorySourceValueUnion CreateStr(string str)
+        {
             AtsDocumentApiModelCategorySourceValueUnionType typ = AtsDocumentApiModelCategorySourceValueUnionType.Str;
 
             AtsDocumentApiModelCategorySourceValueUnion res = new AtsDocumentApiModelCategorySourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsDocumentApiModelCategorySourceValueUnion CreateNumber(double number) {
+        public static AtsDocumentApiModelCategorySourceValueUnion CreateNumber(double number)
+        {
             AtsDocumentApiModelCategorySourceValueUnionType typ = AtsDocumentApiModelCategorySourceValueUnionType.Number;
 
             AtsDocumentApiModelCategorySourceValueUnion res = new AtsDocumentApiModelCategorySourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsDocumentApiModelCategorySourceValueUnion CreateBoolean(bool boolean) {
+        public static AtsDocumentApiModelCategorySourceValueUnion CreateBoolean(bool boolean)
+        {
             AtsDocumentApiModelCategorySourceValueUnionType typ = AtsDocumentApiModelCategorySourceValueUnionType.Boolean;
 
             AtsDocumentApiModelCategorySourceValueUnion res = new AtsDocumentApiModelCategorySourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static AtsDocumentApiModelCategorySourceValueUnion CreateAtsDocumentApiModelSourceValueCategory(AtsDocumentApiModelSourceValueCategory atsDocumentAPIModelSourceValueCategory) {
+        public static AtsDocumentApiModelCategorySourceValueUnion CreateAtsDocumentApiModelSourceValueCategory(AtsDocumentApiModelSourceValueCategory atsDocumentAPIModelSourceValueCategory)
+        {
             AtsDocumentApiModelCategorySourceValueUnionType typ = AtsDocumentApiModelCategorySourceValueUnionType.AtsDocumentApiModelSourceValueCategory;
 
             AtsDocumentApiModelCategorySourceValueUnion res = new AtsDocumentApiModelCategorySourceValueUnion(typ);
             res.AtsDocumentApiModelSourceValueCategory = atsDocumentAPIModelSourceValueCategory;
             return res;
         }
-
-        public static AtsDocumentApiModelCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static AtsDocumentApiModelCategorySourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             AtsDocumentApiModelCategorySourceValueUnionType typ = AtsDocumentApiModelCategorySourceValueUnionType.ArrayOfAny;
 
             AtsDocumentApiModelCategorySourceValueUnion res = new AtsDocumentApiModelCategorySourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static AtsDocumentApiModelCategorySourceValueUnion CreateNull() {
+        public static AtsDocumentApiModelCategorySourceValueUnion CreateNull()
+        {
             AtsDocumentApiModelCategorySourceValueUnionType typ = AtsDocumentApiModelCategorySourceValueUnionType.Null;
             return new AtsDocumentApiModelCategorySourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 AtsDocumentApiModelCategorySourceValueUnion res = (AtsDocumentApiModelCategorySourceValueUnion)value;
                 if (AtsDocumentApiModelCategorySourceValueUnionType.FromString(res.Type).Equals(AtsDocumentApiModelCategorySourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.AtsDocumentApiModelSourceValueCategory != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsDocumentApiModelSourceValueCategory));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

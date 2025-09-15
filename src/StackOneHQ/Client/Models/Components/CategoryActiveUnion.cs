@@ -17,17 +17,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class CategoryActiveUnionType
     {
         private CategoryActiveUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CategoryActiveUnionType Boolean { get { return new CategoryActiveUnionType("boolean"); } }
-        
+
         public static CategoryActiveUnionType CategoryActiveEnum { get { return new CategoryActiveUnionType("Category_active_enum"); } }
-        
+
         public static CategoryActiveUnionType Null { get { return new CategoryActiveUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -60,8 +60,10 @@ namespace StackOneHQ.Client.Models.Components
     /// Whether the category is active and therefore available for use
     /// </summary>
     [JsonConverter(typeof(CategoryActiveUnion.CategoryActiveUnionConverter))]
-    public class CategoryActiveUnion {
-        public CategoryActiveUnion(CategoryActiveUnionType type) {
+    public class CategoryActiveUnion
+    {
+        public CategoryActiveUnion(CategoryActiveUnionType type)
+        {
             Type = type;
         }
 
@@ -72,17 +74,16 @@ namespace StackOneHQ.Client.Models.Components
         public CategoryActiveEnum? CategoryActiveEnum { get; set; }
 
         public CategoryActiveUnionType Type { get; set; }
-
-
-        public static CategoryActiveUnion CreateBoolean(bool boolean) {
+        public static CategoryActiveUnion CreateBoolean(bool boolean)
+        {
             CategoryActiveUnionType typ = CategoryActiveUnionType.Boolean;
 
             CategoryActiveUnion res = new CategoryActiveUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CategoryActiveUnion CreateCategoryActiveEnum(CategoryActiveEnum categoryActiveEnum) {
+        public static CategoryActiveUnion CreateCategoryActiveEnum(CategoryActiveEnum categoryActiveEnum)
+        {
             CategoryActiveUnionType typ = CategoryActiveUnionType.CategoryActiveEnum;
 
             CategoryActiveUnion res = new CategoryActiveUnion(typ);
@@ -90,7 +91,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CategoryActiveUnion CreateNull() {
+        public static CategoryActiveUnion CreateNull()
+        {
             CategoryActiveUnionType typ = CategoryActiveUnionType.Null;
             return new CategoryActiveUnion(typ);
         }
@@ -174,23 +176,25 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 CategoryActiveUnion res = (CategoryActiveUnion)value;
                 if (CategoryActiveUnionType.FromString(res.Type).Equals(CategoryActiveUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.CategoryActiveEnum != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CategoryActiveEnum));
                     return;
                 }
-
             }
 
         }

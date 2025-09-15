@@ -15,7 +15,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-
+    
     /// <summary>
     /// The unified value for the duration unit. If the provider does not specify this unit, the value will be set to unknown
     /// </summary>

@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class UnifiedUploadRequestDtoFileFormatSourceValueUnionType
     {
         private UnifiedUploadRequestDtoFileFormatSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static UnifiedUploadRequestDtoFileFormatSourceValueUnionType Str { get { return new UnifiedUploadRequestDtoFileFormatSourceValueUnionType("str"); } }
-        
+
         public static UnifiedUploadRequestDtoFileFormatSourceValueUnionType Number { get { return new UnifiedUploadRequestDtoFileFormatSourceValueUnionType("number"); } }
-        
+
         public static UnifiedUploadRequestDtoFileFormatSourceValueUnionType Boolean { get { return new UnifiedUploadRequestDtoFileFormatSourceValueUnionType("boolean"); } }
-        
+
         public static UnifiedUploadRequestDtoFileFormatSourceValueUnionType UnifiedUploadRequestDtoSourceValueFileFormat { get { return new UnifiedUploadRequestDtoFileFormatSourceValueUnionType("UnifiedUploadRequestDto_source_value_file_format"); } }
-        
+
         public static UnifiedUploadRequestDtoFileFormatSourceValueUnionType ArrayOfAny { get { return new UnifiedUploadRequestDtoFileFormatSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static UnifiedUploadRequestDtoFileFormatSourceValueUnionType Null { get { return new UnifiedUploadRequestDtoFileFormatSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(UnifiedUploadRequestDtoFileFormatSourceValueUnion.UnifiedUploadRequestDtoFileFormatSourceValueUnionConverter))]
-    public class UnifiedUploadRequestDtoFileFormatSourceValueUnion {
-        public UnifiedUploadRequestDtoFileFormatSourceValueUnion(UnifiedUploadRequestDtoFileFormatSourceValueUnionType type) {
+    public class UnifiedUploadRequestDtoFileFormatSourceValueUnion
+    {
+        public UnifiedUploadRequestDtoFileFormatSourceValueUnion(UnifiedUploadRequestDtoFileFormatSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public UnifiedUploadRequestDtoFileFormatSourceValueUnionType Type { get; set; }
-
-
-        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateStr(string str) {
+        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateStr(string str)
+        {
             UnifiedUploadRequestDtoFileFormatSourceValueUnionType typ = UnifiedUploadRequestDtoFileFormatSourceValueUnionType.Str;
 
             UnifiedUploadRequestDtoFileFormatSourceValueUnion res = new UnifiedUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateNumber(double number) {
+        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateNumber(double number)
+        {
             UnifiedUploadRequestDtoFileFormatSourceValueUnionType typ = UnifiedUploadRequestDtoFileFormatSourceValueUnionType.Number;
 
             UnifiedUploadRequestDtoFileFormatSourceValueUnion res = new UnifiedUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean) {
+        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateBoolean(bool boolean)
+        {
             UnifiedUploadRequestDtoFileFormatSourceValueUnionType typ = UnifiedUploadRequestDtoFileFormatSourceValueUnionType.Boolean;
 
             UnifiedUploadRequestDtoFileFormatSourceValueUnion res = new UnifiedUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateUnifiedUploadRequestDtoSourceValueFileFormat(UnifiedUploadRequestDtoSourceValueFileFormat unifiedUploadRequestDtoSourceValueFileFormat) {
+        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateUnifiedUploadRequestDtoSourceValueFileFormat(UnifiedUploadRequestDtoSourceValueFileFormat unifiedUploadRequestDtoSourceValueFileFormat)
+        {
             UnifiedUploadRequestDtoFileFormatSourceValueUnionType typ = UnifiedUploadRequestDtoFileFormatSourceValueUnionType.UnifiedUploadRequestDtoSourceValueFileFormat;
 
             UnifiedUploadRequestDtoFileFormatSourceValueUnion res = new UnifiedUploadRequestDtoFileFormatSourceValueUnion(typ);
             res.UnifiedUploadRequestDtoSourceValueFileFormat = unifiedUploadRequestDtoSourceValueFileFormat;
             return res;
         }
-
-        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             UnifiedUploadRequestDtoFileFormatSourceValueUnionType typ = UnifiedUploadRequestDtoFileFormatSourceValueUnionType.ArrayOfAny;
 
             UnifiedUploadRequestDtoFileFormatSourceValueUnion res = new UnifiedUploadRequestDtoFileFormatSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateNull() {
+        public static UnifiedUploadRequestDtoFileFormatSourceValueUnion CreateNull()
+        {
             UnifiedUploadRequestDtoFileFormatSourceValueUnionType typ = UnifiedUploadRequestDtoFileFormatSourceValueUnionType.Null;
             return new UnifiedUploadRequestDtoFileFormatSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 UnifiedUploadRequestDtoFileFormatSourceValueUnion res = (UnifiedUploadRequestDtoFileFormatSourceValueUnion)value;
                 if (UnifiedUploadRequestDtoFileFormatSourceValueUnionType.FromString(res.Type).Equals(UnifiedUploadRequestDtoFileFormatSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.UnifiedUploadRequestDtoSourceValueFileFormat != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.UnifiedUploadRequestDtoSourceValueFileFormat));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }

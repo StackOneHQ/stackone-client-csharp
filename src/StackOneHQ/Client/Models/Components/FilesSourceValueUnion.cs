@@ -17,23 +17,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    
 
     public class FilesSourceValueUnionType
     {
         private FilesSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FilesSourceValueUnionType Str { get { return new FilesSourceValueUnionType("str"); } }
-        
+
         public static FilesSourceValueUnionType Number { get { return new FilesSourceValueUnionType("number"); } }
-        
+
         public static FilesSourceValueUnionType Boolean { get { return new FilesSourceValueUnionType("boolean"); } }
-        
+
         public static FilesSourceValueUnionType FilesSourceValue { get { return new FilesSourceValueUnionType("Files_source_value"); } }
-        
+
         public static FilesSourceValueUnionType ArrayOfAny { get { return new FilesSourceValueUnionType("arrayOfAny"); } }
-        
+
         public static FilesSourceValueUnionType Null { get { return new FilesSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
@@ -66,8 +66,10 @@ namespace StackOneHQ.Client.Models.Components
 
 
     [JsonConverter(typeof(FilesSourceValueUnion.FilesSourceValueUnionConverter))]
-    public class FilesSourceValueUnion {
-        public FilesSourceValueUnion(FilesSourceValueUnionType type) {
+    public class FilesSourceValueUnion
+    {
+        public FilesSourceValueUnion(FilesSourceValueUnionType type)
+        {
             Type = type;
         }
 
@@ -87,41 +89,40 @@ namespace StackOneHQ.Client.Models.Components
         public List<object>? ArrayOfAny { get; set; }
 
         public FilesSourceValueUnionType Type { get; set; }
-
-
-        public static FilesSourceValueUnion CreateStr(string str) {
+        public static FilesSourceValueUnion CreateStr(string str)
+        {
             FilesSourceValueUnionType typ = FilesSourceValueUnionType.Str;
 
             FilesSourceValueUnion res = new FilesSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-
-        public static FilesSourceValueUnion CreateNumber(double number) {
+        public static FilesSourceValueUnion CreateNumber(double number)
+        {
             FilesSourceValueUnionType typ = FilesSourceValueUnionType.Number;
 
             FilesSourceValueUnion res = new FilesSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-
-        public static FilesSourceValueUnion CreateBoolean(bool boolean) {
+        public static FilesSourceValueUnion CreateBoolean(bool boolean)
+        {
             FilesSourceValueUnionType typ = FilesSourceValueUnionType.Boolean;
 
             FilesSourceValueUnion res = new FilesSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static FilesSourceValueUnion CreateFilesSourceValue(FilesSourceValue filesSourceValue) {
+        public static FilesSourceValueUnion CreateFilesSourceValue(FilesSourceValue filesSourceValue)
+        {
             FilesSourceValueUnionType typ = FilesSourceValueUnionType.FilesSourceValue;
 
             FilesSourceValueUnion res = new FilesSourceValueUnion(typ);
             res.FilesSourceValue = filesSourceValue;
             return res;
         }
-
-        public static FilesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny) {
+        public static FilesSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        {
             FilesSourceValueUnionType typ = FilesSourceValueUnionType.ArrayOfAny;
 
             FilesSourceValueUnion res = new FilesSourceValueUnion(typ);
@@ -129,7 +130,8 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static FilesSourceValueUnion CreateNull() {
+        public static FilesSourceValueUnion CreateNull()
+        {
             FilesSourceValueUnionType typ = FilesSourceValueUnionType.Null;
             return new FilesSourceValueUnion(typ);
         }
@@ -253,38 +255,43 @@ namespace StackOneHQ.Client.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 FilesSourceValueUnion res = (FilesSourceValueUnion)value;
                 if (FilesSourceValueUnionType.FromString(res.Type).Equals(FilesSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.FilesSourceValue != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.FilesSourceValue));
                     return;
                 }
+
                 if (res.ArrayOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
                     return;
                 }
-
             }
 
         }
