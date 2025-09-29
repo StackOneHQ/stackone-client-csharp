@@ -52,13 +52,13 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// True if the start of the time off request begins half way through the day
         /// </summary>
-        [JsonProperty("start_half_day")]
+        [JsonProperty("start_half_day", NullValueHandling = NullValueHandling.Include)]
         public HrisCreateTimeOffRequestDtoStartHalfDayUnion? StartHalfDay { get; set; } = null;
 
         /// <summary>
         /// True if the end of the time off request ends half way through the day
         /// </summary>
-        [JsonProperty("end_half_day")]
+        [JsonProperty("end_half_day", NullValueHandling = NullValueHandling.Include)]
         public HrisCreateTimeOffRequestDtoEndHalfDayUnion? EndHalfDay { get; set; } = null;
 
         /// <summary>

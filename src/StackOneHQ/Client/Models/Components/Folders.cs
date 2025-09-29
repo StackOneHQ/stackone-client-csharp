@@ -111,19 +111,19 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the folder has content
         /// </summary>
-        [JsonProperty("has_content")]
+        [JsonProperty("has_content", NullValueHandling = NullValueHandling.Include)]
         public FoldersHasContentUnion? HasContent { get; set; } = null;
 
         /// <summary>
         /// Whether the folder has children
         /// </summary>
-        [JsonProperty("has_children")]
+        [JsonProperty("has_children", NullValueHandling = NullValueHandling.Include)]
         public FoldersHasChildrenUnion? HasChildren { get; set; } = null;
 
         /// <summary>
         /// Whether the folder is at the root level of the drive
         /// </summary>
-        [JsonProperty("is_root")]
+        [JsonProperty("is_root", NullValueHandling = NullValueHandling.Include)]
         public IsRoot? IsRoot { get; set; } = null;
 
         /// <summary>

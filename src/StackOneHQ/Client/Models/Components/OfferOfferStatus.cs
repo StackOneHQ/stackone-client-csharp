@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the offer status.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public OfferSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

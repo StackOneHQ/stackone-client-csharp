@@ -27,7 +27,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public CreateEmploymentApiModelEmploymentContractTypeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public CreateEmploymentApiModelEmploymentContractTypeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

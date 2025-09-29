@@ -402,6 +402,8 @@ var res = await sdk.Mcp.McpGetAsync(
 * [GetCompany](docs/sdks/hris/README.md#getcompany) - Get Company
 * [GetEmployeeCustomFieldDefinition](docs/sdks/hris/README.md#getemployeecustomfielddefinition) - Get employee Custom Field Definition
 * [GetEmployee](docs/sdks/hris/README.md#getemployee) - Get Employee
+* [ListEmployeeShifts](docs/sdks/hris/README.md#listemployeeshifts) - List Employee Shifts
+* [GetEmployeeShift](docs/sdks/hris/README.md#getemployeeshift) - Get Employee Shift
 * [ListEmployeeTimeOffRequests](docs/sdks/hris/README.md#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [GetEmployeeTimeOffRequest](docs/sdks/hris/README.md#getemployeetimeoffrequest) - Get Employees Time Off Request
 * [CancelEmployeeTimeOff](docs/sdks/hris/README.md#cancelemployeetimeoff) - Cancel Employee Time Off Request

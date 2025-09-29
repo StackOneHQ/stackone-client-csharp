@@ -53,7 +53,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Indicates if the field is required
         /// </summary>
-        [JsonProperty("required")]
+        [JsonProperty("required", NullValueHandling = NullValueHandling.Include)]
         public FieldRequiredUnion? Required { get; set; } = null;
     }
 }

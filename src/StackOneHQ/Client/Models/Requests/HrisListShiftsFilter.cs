@@ -26,12 +26,6 @@ namespace StackOneHQ.Client.Models.Requests
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select shifts by employee ID
-        /// </summary>
-        [SpeakeasyMetadata("queryParam:name=employee_id")]
-        public string? EmployeeId { get; set; } = null;
-
-        /// <summary>
         /// Filter to select shifts by status
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=status")]

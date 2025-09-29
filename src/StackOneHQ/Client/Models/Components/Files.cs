@@ -129,13 +129,13 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the file has content
         /// </summary>
-        [JsonProperty("has_content")]
+        [JsonProperty("has_content", NullValueHandling = NullValueHandling.Include)]
         public FilesHasContentUnion? HasContent { get; set; } = null;
 
         /// <summary>
         /// Whether the file has children
         /// </summary>
-        [JsonProperty("has_children")]
+        [JsonProperty("has_children", NullValueHandling = NullValueHandling.Include)]
         public FilesHasChildrenUnion? HasChildren { get; set; } = null;
 
         /// <summary>

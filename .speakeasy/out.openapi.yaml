@@ -3462,6 +3462,319 @@ paths:
       x-speakeasy-group: "hris.employees"
       x-speakeasy-name-override: "invite"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/hris/employees/{id}/shifts:
+    get:
+      tags:
+        - "Employees"
+        - "Shifts"
+      summary: "List Employee Shifts"
+      operationId: "hris_list_employee_shifts"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "raw"
+          in: "query"
+          description: "Indicates that the raw request result should be returned in addition to the mapped result (default value is false)"
+          required: false
+          schema:
+            type: "boolean"
+            nullable: true
+        - name: "proxy"
+          in: "query"
+          description: "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            additionalProperties: true
+            nullable: true
+        - name: "fields"
+          in: "query"
+          description: "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "filter"
+          in: "query"
+          description: "HRIS Shifts filters"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            properties:
+              "updated_after":
+                type: "string"
+                format: "date-time"
+                additionalProperties: false
+                description: "Use a string with a date to only select results updated after that given date"
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+              "status":
+                type: "string"
+                enum:
+                  - "draft"
+                  - "published"
+                  - "confirmed"
+                  - "cancelled"
+                  - "unmapped_value"
+                description: "Filter to select shifts by status"
+                nullable: true
+              "starts_after":
+                type: "string"
+                format: "date-time"
+                description: "Filter shifts that start after this date"
+                nullable: true
+              "ends_before":
+                type: "string"
+                format: "date-time"
+                description: "Filter shifts that end before this date"
+                nullable: true
+            nullable: true
+        - name: "page"
+          in: "query"
+          description: "The page number of the results to fetch"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            nullable: true
+        - name: "page_size"
+          in: "query"
+          description: "The number of results per page (default value is 25)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "next"
+          in: "query"
+          description: "The unified cursor"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+        - name: "updated_after"
+          in: "query"
+          description: "Use a string with a date to only select results updated after that given date"
+          required: false
+          deprecated: true
+          schema:
+            type: "string"
+            format: "date-time"
+            nullable: true
+            example: "2020-01-01T00:00:00.000Z"
+      responses:
+        "200":
+          description: "The shifts related to the employee with the given identifier were retrieved."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/HrisShiftsPaginated"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "hris"
+      x-speakeasy-name-override: "list_employee_shifts"
+      x-speakeasy-pagination: {"type": "cursor", "inputs": [{"name": "next", "in": "parameters", "type": "cursor"}], "outputs": {"nextCursor": "$.next"}}
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/hris/employees/{id}/shifts/{subResourceId}:
+    get:
+      tags:
+        - "Employees"
+        - "Shifts"
+      summary: "Get Employee Shift"
+      operationId: "hris_get_employee_shift"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "subResourceId"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "raw"
+          in: "query"
+          description: "Indicates that the raw request result should be returned in addition to the mapped result (default value is false)"
+          required: false
+          schema:
+            type: "boolean"
+            nullable: true
+        - name: "proxy"
+          in: "query"
+          description: "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key"
+          required: false
+          style: "deepObject"
+          explode: true
+          schema:
+            type: "object"
+            additionalProperties: true
+            nullable: true
+        - name: "fields"
+          in: "query"
+          description: "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+          required: false
+          schema:
+            type: "string"
+            nullable: true
+      responses:
+        "200":
+          description: "The shift with the given identifier for the specified employee was retrieved."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/HrisShiftResult"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "hris"
+      x-speakeasy-name-override: "get_employee_shift"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/hris/employees/{id}/time_off:
     get:
       tags:
@@ -3526,8 +3839,23 @@ paths:
                 type: "array"
                 items:
                   type: "string"
+                additionalProperties: false
                 description: "List of time off policy ids to filter by."
                 nullable: true
+              "start_date":
+                type: "string"
+                format: "date-time"
+                additionalProperties: false
+                description: "Filter to include time off requests that start on or after this date."
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+              "end_date":
+                type: "string"
+                format: "date-time"
+                additionalProperties: false
+                description: "Filter to include time off requests that end on or before this date."
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
             nullable: true
         - name: "page"
           in: "query"
@@ -5900,7 +6228,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -6077,7 +6405,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -6205,7 +6533,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -6487,7 +6815,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+            example: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -9594,8 +9922,23 @@ paths:
                 type: "array"
                 items:
                   type: "string"
+                additionalProperties: false
                 description: "List of time off policy ids to filter by."
                 nullable: true
+              "start_date":
+                type: "string"
+                format: "date-time"
+                additionalProperties: false
+                description: "Filter to include time off requests that start on or after this date."
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
+              "end_date":
+                type: "string"
+                format: "date-time"
+                additionalProperties: false
+                description: "Filter to include time off requests that end on or before this date."
+                nullable: true
+                example: "2020-01-01T00:00:00.000Z"
             nullable: true
         - name: "page"
           in: "query"
@@ -9894,10 +10237,6 @@ paths:
                 description: "Use a string with a date to only select results updated after that given date"
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
-              "employee_id":
-                type: "string"
-                description: "Filter to select shifts by employee ID"
-                nullable: true
               "status":
                 type: "string"
                 enum:
@@ -38146,7 +38485,7 @@ paths:
             schema: {"$ref": "#/components/schemas/AccountingJournalCreateRequestDto"}
         required: true
       responses:
-        "200":
+        "201":
           description: "The journal was created successfully."
           content:
             "application/json":
@@ -38355,9 +38694,9 @@ components:
           type: "string"
           description: "The action ID"
           nullable: true
-        "name":
+        "label":
           type: "string"
-          description: "The action name"
+          description: "The action label"
           nullable: true
         "description":
           type: "string"
@@ -38366,6 +38705,12 @@ components:
         "schema_type":
           type: "string"
           description: "The schema type for the action"
+          nullable: true
+        "tags":
+          type: "array"
+          items:
+            type: "string"
+          description: "The tags associated with this action"
           nullable: true
         "authentication":
           type: "array"
@@ -38422,9 +38767,19 @@ components:
           items: {"$ref": "#/components/schemas/ActionsMeta"}
           description: "The list of actions metadata"
           nullable: true
-    "ActionsRpcInputDto":
+    "ActionsRpcRequestDto":
       type: "object"
       properties:
+        "action":
+          type: "string"
+          description: "The action to execute"
+          example: "create_employee"
+        "path":
+          type: "object"
+          additionalProperties: true
+          description: "Path parameters for the action"
+          nullable: true
+          example: {"id": "123"}
         "query":
           type: "object"
           additionalProperties: true
@@ -38443,18 +38798,6 @@ components:
           description: "Request body for the action"
           nullable: true
           example: {"data": "example"}
-    "ActionsRpcRequestDto":
-      type: "object"
-      properties:
-        "action":
-          type: "string"
-          description: "The action to execute"
-          example: "create_employee"
-        "input":
-          allOf:
-            - {"$ref": "#/components/schemas/ActionsRpcInputDto"}
-          description: "Input parameters for the action"
-          nullable: true
       required:
         - "action"
     "ActionsRpcResponse":
@@ -41457,7 +41800,6 @@ components:
           description: "The employee start date"
           nullable: true
           example: "2021-01-01T00:00:00.000Z"
-          deprecated: true
         "tenure":
           type: "number"
           description: "The employee tenure"
@@ -57002,8 +57344,7 @@ components:
           example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
         "attachments":
           type: "array"
-          items:
-            type: "string"
+          items: {"$ref": "#/components/schemas/MessagingAttachment"}
           description: "List of attachments in the message"
           nullable: true
         "author":

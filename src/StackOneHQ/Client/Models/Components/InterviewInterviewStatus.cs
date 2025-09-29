@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the interview status.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public InterviewSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

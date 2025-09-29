@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the pay period.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public HrisUpdateEmployeeRequestDtoPayPeriodSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

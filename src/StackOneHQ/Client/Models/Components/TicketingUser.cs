@@ -59,7 +59,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// If the user is active
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public TicketingUserActiveUnion? Active { get; set; } = null;
 
         /// <summary>

@@ -22,10 +22,10 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("url")]
         public string Url { get; set; } = default!;
 
-        [JsonProperty("body")]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Include)]
         public Body? Body { get; set; } = null;
 
-        [JsonProperty("response")]
+        [JsonProperty("response", NullValueHandling = NullValueHandling.Include)]
         public Response? Response { get; set; } = null;
     }
 }

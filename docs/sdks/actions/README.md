@@ -96,17 +96,18 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 ActionsRpcRequestDto req = new ActionsRpcRequestDto() {
     Action = "create_employee",
-    Input = new Input() {
-        Query = new Dictionary<string, object>() {
-            { "param1", "value1" },
-            { "param2", "value2" },
-        },
-        Headers = new Dictionary<string, object>() {
-            { "Content-Type", "application/json" },
-        },
-        Body = new Dictionary<string, object>() {
-            { "data", "example" },
-        },
+    Path = new Dictionary<string, object>() {
+        { "id", "123" },
+    },
+    Query = new Dictionary<string, object>() {
+        { "param1", "value1" },
+        { "param2", "value2" },
+    },
+    Headers = new Dictionary<string, object>() {
+        { "Content-Type", "application/json" },
+    },
+    Body = new Dictionary<string, object>() {
+        { "data", "example" },
     },
 };
 

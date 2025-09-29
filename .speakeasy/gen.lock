@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: ac46d8e11785f237b4ff6e0c523c0b1d
+  docChecksum: fdd2de20359100fb961ab77b221f5b91
   docVersion: 1.0.0
-  speakeasyVersion: 1.615.2
-  generationVersion: 2.698.4
-  releaseVersion: 0.4.0
-  configChecksum: 90185d2577e93bc171272c8915206e2b
+  speakeasyVersion: 1.631.4
+  generationVersion: 2.716.16
+  releaseVersion: 0.5.0
+  configChecksum: 7e9c1787f9df95319d083eaddddfe764
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.12.2
+    core: 3.12.4
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
@@ -22,7 +22,7 @@ features:
     globalServerURLs: 2.82.4
     groups: 2.81.2
     intellisenseMarkdownSupport: 0.1.0
-    methodArguments: 0.2.0
+    methodArguments: 0.2.1
     methodSecurity: 2.82.3
     nameOverrides: 2.81.2
     nullables: 0.1.1
@@ -31,7 +31,7 @@ features:
     responseFormat: 0.0.4
     retries: 0.0.1
     sdkHooks: 0.2.0
-    unions: 0.2.2
+    unions: 1.0.0
 generatedFiles:
   - .gitattributes
   - NUGET.md
@@ -1135,7 +1135,6 @@ generatedFiles:
   - docs/Models/Components/InAppTemplate.md
   - docs/Models/Components/InAppTemplateResult.md
   - docs/Models/Components/InAppTemplatesPaginated.md
-  - docs/Models/Components/Input.md
   - docs/Models/Components/Interview.md
   - docs/Models/Components/InterviewInterviewStage.md
   - docs/Models/Components/InterviewInterviewStatus.md
@@ -2002,6 +2001,8 @@ generatedFiles:
   - docs/Models/Requests/HrisGetEmployeeEmploymentResponse.md
   - docs/Models/Requests/HrisGetEmployeeRequest.md
   - docs/Models/Requests/HrisGetEmployeeResponse.md
+  - docs/Models/Requests/HrisGetEmployeeShiftRequest.md
+  - docs/Models/Requests/HrisGetEmployeeShiftResponse.md
   - docs/Models/Requests/HrisGetEmployeeSkillRequest.md
   - docs/Models/Requests/HrisGetEmployeeSkillResponse.md
   - docs/Models/Requests/HrisGetEmployeeTaskRequest.md
@@ -2068,6 +2069,10 @@ generatedFiles:
   - docs/Models/Requests/HrisListEmployeeEmploymentsFilter.md
   - docs/Models/Requests/HrisListEmployeeEmploymentsRequest.md
   - docs/Models/Requests/HrisListEmployeeEmploymentsResponse.md
+  - docs/Models/Requests/HrisListEmployeeShiftsFilter.md
+  - docs/Models/Requests/HrisListEmployeeShiftsRequest.md
+  - docs/Models/Requests/HrisListEmployeeShiftsResponse.md
+  - docs/Models/Requests/HrisListEmployeeShiftsStatus.md
   - docs/Models/Requests/HrisListEmployeeSkillsFilter.md
   - docs/Models/Requests/HrisListEmployeeSkillsRequest.md
   - docs/Models/Requests/HrisListEmployeeSkillsResponse.md
@@ -3682,7 +3687,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/InAppTemplate.cs
   - src/StackOneHQ/Client/Models/Components/InAppTemplateResult.cs
   - src/StackOneHQ/Client/Models/Components/InAppTemplatesPaginated.cs
-  - src/StackOneHQ/Client/Models/Components/Input.cs
   - src/StackOneHQ/Client/Models/Components/Interview.cs
   - src/StackOneHQ/Client/Models/Components/InterviewInterviewStage.cs
   - src/StackOneHQ/Client/Models/Components/InterviewInterviewStatus.cs
@@ -4552,6 +4556,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeEmploymentResponse.cs
   - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeRequest.cs
   - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeShiftRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeShiftResponse.cs
   - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeSkillRequest.cs
   - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeSkillResponse.cs
   - src/StackOneHQ/Client/Models/Requests/HrisGetEmployeeTaskRequest.cs
@@ -4618,6 +4624,10 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeEmploymentsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeEmploymentsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeEmploymentsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeShiftsFilter.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeShiftsRequest.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeShiftsResponse.cs
+  - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeShiftsStatus.cs
   - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeSkillsFilter.cs
   - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeSkillsRequest.cs
   - src/StackOneHQ/Client/Models/Requests/HrisListEmployeeSkillsResponse.cs
@@ -5633,7 +5643,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "start_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S", "duration_unit": {"value": "month"}}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -5737,7 +5747,7 @@ examples:
           id: "<id>"
         query:
           fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy"
-          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z", "start_date": "2020-01-01T00:00:00.000Z", "end_date": "2020-01-01T00:00:00.000Z"}
           expand: "policy"
         header:
           x-account-id: "<id>"
@@ -6431,7 +6441,7 @@ examples:
     speakeasy-default-hris-list-employments:
       parameters:
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "groups"
         header:
@@ -6469,7 +6479,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
           expand: "groups"
         header:
           x-account-id: "<id>"
@@ -6506,7 +6516,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "groups"
         header:
@@ -6581,7 +6591,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
           expand: "groups"
         header:
           x-account-id: "<id>"
@@ -14686,7 +14696,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "content": {"html": "<p>Hello world</p>", "plain": "Hello world"}, "parent_message_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "author": null, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "content": {"html": "<p>Hello world</p>", "plain": "Hello world"}, "parent_message_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "attachments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "file_name": "document.pdf", "file_size": 1024, "file_type": "application/pdf"}], "author": null, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -15073,6 +15083,8 @@ examples:
           application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "201":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
   accounting_get_company_journal:
     speakeasy-default-accounting-get-company-journal:
       parameters:
@@ -15291,7 +15303,7 @@ examples:
   stackone_rpc_action:
     speakeasy-default-stackone-rpc-action:
       requestBody:
-        application/json: {"action": "create_employee", "input": {"query": {"param1": "value1", "param2": "value2"}, "headers": {"Content-Type": "application/json"}, "body": {"data": "example"}}}
+        application/json: {"action": "create_employee", "path": {"id": "123"}, "query": {"param1": "value1", "param2": "value2"}, "headers": {"Content-Type": "application/json"}, "body": {"data": "example"}}
       responses:
         "200":
           application/json: {}
@@ -15388,5 +15400,76 @@ examples:
           application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  hris_list_employee_shifts:
+    speakeasy-default-hris-list-employee-shifts:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "emp_123456789", "location_id": "loc_123456789", "company_id": "comp_123456789", "start_time": "2024-03-20T09:00:00Z", "end_time": "2024-03-20T17:00:00Z", "break_duration": "PT1H30M", "status": {"value": "confirmed", "source_value": "Confirmed"}, "approval_status": {"value": "approved", "source_value": "Approved"}, "breaks": null, "created_at": "2024-03-20T08:00:00Z", "updated_at": "2024-03-20T08:00:00Z"}]}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
+  hris_get_employee_shift:
+    speakeasy-default-hris-get-employee-shift:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "emp_123456789", "location_id": "loc_123456789", "company_id": "comp_123456789", "start_time": "2024-03-20T09:00:00Z", "end_time": "2024-03-20T17:00:00Z", "break_duration": "PT1H30M", "status": {"value": "confirmed", "source_value": "Confirmed"}, "approval_status": null, "breaks": [{"id": "break_123456789", "start_time": "2024-03-20T12:00:00Z", "end_time": "2024-03-20T13:00:00Z", "duration": "PT1H", "is_paid": true, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}], "created_at": "2024-03-20T08:00:00Z", "updated_at": "2024-03-20T08:00:00Z"}}
+        "400":
+          application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
+        "401":
+          application/json: {"statusCode": 401, "message": "Unauthorized", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "403":
+          application/json: {"statusCode": 403, "message": "Forbidden resource", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "404":
+          application/json: {"statusCode": 404, "message": "Not Found", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "408":
+          application/json: {"statusCode": 408, "message": "Request timed out", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "409":
+          application/json: {"statusCode": 409, "message": "Conflict", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "412":
+          application/json: {"statusCode": 412, "message": "Precondition failed", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "422":
+          application/json: {"statusCode": 422, "message": "Unprocessable Entity", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "429":
+          application/json: {"statusCode": 429, "message": "Too many requests", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "500":
+          application/json: {"statusCode": 500, "message": "Internal server error", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "501":
+          application/json: {"statusCode": 501, "message": "Not Implemented", "timestamp": "2023-05-30T00:00:00.000Z"}
+        "502":
+          application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Hris.Employees.GetWorkEligibility()`:  `response.data.Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.ListJobPostings()`:  `response.data.[].Compensation.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Iam.Users.Get()`:  `response.data.Avatar.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Iam.Users.List()`:  `response.data.[].Avatar.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.JobPostings.Get()`:  `response.data.Compensation.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.WorkEligibility.UpdateRequest()`: \n  *  `request.hrisCreateWorkEligibilityRequestDto.Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Applications.Documents.List()`:  `response.data.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListEmployeeTimeOffRequests()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeTimeOffRequest()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListEmployeeDocuments()`:  `response.data.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeDocument()`:  `response.data.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetTimeOffRequest()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeTask()`:  `response.data.Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetTask()`:  `response.data.Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.GetDocument()`:  `response.data.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.Get()`:  `response.data.Documents.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.WorkEligibilityList()`:  `response.data.[].Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.CreateWorkEligibilityRequest()`: \n  *  `request.hrisCreateWorkEligibilityRequestDto.Document.Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.ListApplications()`:  `response.data.[].Documents.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Tasks.List()`:  `response.data.[].Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Hris.TimeOff.List()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.Tasks.List()`:  `response.data.[].Attachments.[].Path` **Removed** **Breaking** :warning:\n* `StackOneHq.client.Ats.InterviewStages.List()`: **Deprecated**\n* `StackOneHq.client.Actions.RpcAction()`: **Added**\n* `StackOneHq.client.Hris.Employees.CreateEmployment()`:  `request.hrisCreateEmploymentRequestDto` **Changed**\n* `StackOneHq.client.Mcp.McpPost()`: **Added**\n* `StackOneHq.client.Hris.Employees.Update()`: \n  *  `request.hrisUpdateEmployeeRequestDto.Employment` **Changed**\n* `StackOneHq.client.Hris.Employees.Employments.Update()`:  `request.hrisUpdateEmploymentRequestDto` **Changed**\n* `StackOneHq.client.Ats.ListApplicationStages()`: **Added**\n* `StackOneHq.client.Mcp.McpGet()`: **Added**\n* `StackOneHq.client.Hris.Employees.Create()`:  `request.hrisCreateEmployeeRequestDto` **Changed**\n* `StackOneHq.client.Ats.InterviewStages.Get()`: **Deprecated**\n* `StackOneHq.client.Ats.GetApplicationStage()`: **Added**\n* `StackOneHq.client.Actions.ListActionsMeta()`: **Added**\n* `StackOneHq.client.Mcp.McpDelete()`: **Added**\n* `StackOneHq.client.Lms.ListUserAssignments()`: \n  *  `request.Filter` **Changed**\n* `StackOneHq.client.Lms.Assignments.List()`: \n  *  `request.Filter` **Changed**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Actions.ListActionsMeta()`:  `response.data.[].Actions.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Actions.RpcAction()`:  `request` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListShifts()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Messaging.ListConversationMessages()`:  `response.data.[].Attachments.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Messaging.GetMessage()`:  `response.data.Attachments.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Accounting.CreateCompanyJournal()`:  `response` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListEmployeeShifts()`: **Added**\n* `StackOneHq.client.Hris.GetEmployeeShift()`: **Added**\n* `StackOneHq.client.Hris.ListEmployeeTimeOffRequests()`: \n  *  `request.Filter` **Changed**\n* `StackOneHq.client.Hris.TimeOff.List()`: \n  *  `request.Filter` **Changed**\n"

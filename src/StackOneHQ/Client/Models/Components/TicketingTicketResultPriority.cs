@@ -38,7 +38,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the ticket priority.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public TicketingTicketResultPrioritySourceValueUnion? SourceValue { get; set; } = null;
     }
 }

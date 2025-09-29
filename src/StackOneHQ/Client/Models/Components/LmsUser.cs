@@ -63,7 +63,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The user active status
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public LmsUserActiveUnion? Active { get; set; } = null;
 
         /// <summary>

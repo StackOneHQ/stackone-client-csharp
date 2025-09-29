@@ -44,7 +44,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public EntitySkillsMaximumProficiencyValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public EntitySkillsMaximumProficiencySourceValueUnion? SourceValue { get; set; } = null;
     }
 }

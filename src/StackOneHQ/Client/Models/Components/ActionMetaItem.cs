@@ -24,10 +24,10 @@ namespace StackOneHQ.Client.Models.Components
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The action name
+        /// The action label
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name { get; set; } = null;
+        [JsonProperty("label")]
+        public string? Label { get; set; } = null;
 
         /// <summary>
         /// The action description
@@ -40,6 +40,12 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("schema_type")]
         public string? SchemaType { get; set; } = null;
+
+        /// <summary>
+        /// The tags associated with this action
+        /// </summary>
+        [JsonProperty("tags")]
+        public List<string>? Tags { get; set; } = null;
 
         /// <summary>
         /// The authentication methods supported by this action

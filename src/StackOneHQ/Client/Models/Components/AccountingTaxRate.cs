@@ -55,7 +55,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the tax rate is active
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public AccountingTaxRateActiveUnion? Active { get; set; } = null;
     }
 }

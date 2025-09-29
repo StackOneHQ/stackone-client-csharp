@@ -30,7 +30,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public AtsDocumentApiModelTypeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public AtsDocumentApiModelTypeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

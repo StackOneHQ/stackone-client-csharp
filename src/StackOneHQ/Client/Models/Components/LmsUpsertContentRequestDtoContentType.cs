@@ -26,7 +26,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public LmsUpsertContentRequestDtoValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public LmsUpsertContentRequestDtoSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

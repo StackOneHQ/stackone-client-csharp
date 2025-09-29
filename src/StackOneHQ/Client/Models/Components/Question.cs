@@ -38,7 +38,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("text")]
         public string? Text { get; set; } = null;
 
-        [JsonProperty("required")]
+        [JsonProperty("required", NullValueHandling = NullValueHandling.Include)]
         public QuestionRequiredUnion? Required { get; set; } = null;
 
         [JsonProperty("multiple_choice_answers")]

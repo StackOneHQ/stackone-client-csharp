@@ -23,7 +23,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.4.0
+  version: 0.5.0
   additionalDependencies: []
   author: stackone
   baseErrorName: StackOneError
@@ -52,3 +52,4 @@ csharp:
   packageTags: sdk api client stackone stack one
   responseFormat: envelope-http
   sourceDirectory: src
+  useNodatime: true

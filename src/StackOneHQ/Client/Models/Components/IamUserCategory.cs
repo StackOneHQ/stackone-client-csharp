@@ -25,7 +25,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public string? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public AvatarCategorySourceValueUnion? SourceValue { get; set; } = null;
     }
 }

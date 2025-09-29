@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public JournalLineCurrencyCodeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public JournalLineCurrencyCodeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

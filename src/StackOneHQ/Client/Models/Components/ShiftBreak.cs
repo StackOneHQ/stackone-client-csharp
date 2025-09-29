@@ -44,7 +44,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the break is paid
         /// </summary>
-        [JsonProperty("is_paid")]
+        [JsonProperty("is_paid", NullValueHandling = NullValueHandling.Include)]
         public IsPaid? IsPaid { get; set; } = null;
 
         /// <summary>
