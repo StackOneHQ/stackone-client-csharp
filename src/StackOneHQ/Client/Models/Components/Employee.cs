@@ -202,7 +202,6 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The employee start date
         /// </summary>
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("start_date")]
         public DateTime? StartDate { get; set; } = null;
 

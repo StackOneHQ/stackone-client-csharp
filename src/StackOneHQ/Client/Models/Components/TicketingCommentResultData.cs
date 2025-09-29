@@ -45,7 +45,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the comment is internal
         /// </summary>
-        [JsonProperty("internal")]
+        [JsonProperty("internal", NullValueHandling = NullValueHandling.Include)]
         public TicketingCommentResultInternalUnion? Internal { get; set; } = null;
 
         /// <summary>

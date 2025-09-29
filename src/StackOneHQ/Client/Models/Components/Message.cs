@@ -37,7 +37,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("message_type")]
         public MessageMessageType? MessageType { get; set; } = null;
 
-        [JsonProperty("message_content")]
+        [JsonProperty("message_content", NullValueHandling = NullValueHandling.Include)]
         public MessageMessageContent? MessageContent { get; set; } = null;
     }
 }

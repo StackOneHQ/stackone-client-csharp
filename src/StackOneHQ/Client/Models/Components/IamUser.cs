@@ -60,7 +60,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Indicates if the user is a bot or service user
         /// </summary>
-        [JsonProperty("is_bot_user")]
+        [JsonProperty("is_bot_user", NullValueHandling = NullValueHandling.Include)]
         public IamUserIsBotUserUnion? IsBotUser { get; set; } = null;
 
         /// <summary>

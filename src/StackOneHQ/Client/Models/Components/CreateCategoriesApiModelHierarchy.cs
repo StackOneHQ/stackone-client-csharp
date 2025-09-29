@@ -26,7 +26,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public CreateCategoriesApiModelHierarchyValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public CreateCategoriesApiModelHierarchySourceValueUnion? SourceValue { get; set; } = null;
     }
 }

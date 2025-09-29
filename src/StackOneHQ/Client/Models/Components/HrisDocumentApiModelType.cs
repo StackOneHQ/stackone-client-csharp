@@ -30,7 +30,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public HrisDocumentApiModelTypeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public HrisDocumentApiModelTypeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

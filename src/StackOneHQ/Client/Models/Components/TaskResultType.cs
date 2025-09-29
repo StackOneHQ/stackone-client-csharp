@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public TaskResultTypeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public TaskResultTypeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

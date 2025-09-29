@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The original value from the provider used to derive the unified message type.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public SmsMessagesSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

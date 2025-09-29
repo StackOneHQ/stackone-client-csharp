@@ -37,7 +37,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The value associated with the custom field.
         /// </summary>
-        [JsonProperty("value")]
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public CustomFieldsValueUnion? Value { get; set; } = null;
 
         /// <summary>

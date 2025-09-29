@@ -27,7 +27,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public HrisUpdateEmploymentRequestDtoEmploymentContractTypeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public HrisUpdateEmploymentRequestDtoEmploymentContractTypeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

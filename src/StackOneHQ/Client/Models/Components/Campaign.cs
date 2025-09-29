@@ -60,10 +60,10 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("status")]
         public CampaignStatus? Status { get; set; } = null;
 
-        [JsonProperty("archived")]
+        [JsonProperty("archived", NullValueHandling = NullValueHandling.Include)]
         public Archived? Archived { get; set; } = null;
 
-        [JsonProperty("draft")]
+        [JsonProperty("draft", NullValueHandling = NullValueHandling.Include)]
         public Draft? Draft { get; set; } = null;
 
         /// <summary>

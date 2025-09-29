@@ -37,7 +37,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The reference status
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public ReferenceActiveUnion? Active { get; set; } = null;
     }
 }

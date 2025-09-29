@@ -46,7 +46,7 @@ namespace StackOneHQ.Client.Models.Components
         /// List of attachments in the message
         /// </summary>
         [JsonProperty("attachments")]
-        public List<string>? Attachments { get; set; } = null;
+        public List<MessagingAttachment>? Attachments { get; set; } = null;
 
         /// <summary>
         /// Author of the message

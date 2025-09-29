@@ -30,5 +30,17 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=policy_ids")]
         public List<string>? PolicyIds { get; set; } = null;
+
+        /// <summary>
+        /// Filter to include time off requests that start on or after this date.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=start_date")]
+        public DateTime? StartDate { get; set; } = null;
+
+        /// <summary>
+        /// Filter to include time off requests that end on or before this date.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=end_date")]
+        public DateTime? EndDate { get; set; } = null;
     }
 }

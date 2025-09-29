@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public WorkEligibilityIssuedByValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public WorkEligibilityIssuedBySourceValueUnion? SourceValue { get; set; } = null;
     }
 }

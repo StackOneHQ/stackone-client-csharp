@@ -25,7 +25,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The human readable value of the option
         /// </summary>
-        [JsonProperty("value")]
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public CustomFieldOptionValueUnion Value { get; set; } = default!;
     }
 }

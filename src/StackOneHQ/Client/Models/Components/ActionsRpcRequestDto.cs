@@ -10,8 +10,8 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
-    using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
+    using System.Collections.Generic;
     
     public class ActionsRpcRequestDto
     {
@@ -23,9 +23,27 @@ namespace StackOneHQ.Client.Models.Components
         public string Action { get; set; } = default!;
 
         /// <summary>
-        /// Input parameters for the action
+        /// Path parameters for the action
         /// </summary>
-        [JsonProperty("input")]
-        public Input? Input { get; set; } = null;
+        [JsonProperty("path")]
+        public Dictionary<string, object>? Path { get; set; } = null;
+
+        /// <summary>
+        /// Query parameters for the action
+        /// </summary>
+        [JsonProperty("query")]
+        public Dictionary<string, object>? Query { get; set; } = null;
+
+        /// <summary>
+        /// Headers for the action
+        /// </summary>
+        [JsonProperty("headers")]
+        public Dictionary<string, object>? Headers { get; set; } = null;
+
+        /// <summary>
+        /// Request body for the action
+        /// </summary>
+        [JsonProperty("body")]
+        public Dictionary<string, object>? Body { get; set; } = null;
     }
 }

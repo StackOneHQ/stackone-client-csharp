@@ -75,7 +75,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the content is active and available for users.
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public LmsCreateContentRequestDtoActiveUnion? Active { get; set; } = null;
 
         /// <summary>

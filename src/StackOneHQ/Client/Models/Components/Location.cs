@@ -40,7 +40,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The reference status
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public TimeEntriesActiveUnion? Active { get; set; } = null;
     }
 }

@@ -34,8 +34,6 @@ namespace StackOneHQ.Client.Models.Components
 
         public static CustomFieldOptionValueUnionType ArrayOfAny { get { return new CustomFieldOptionValueUnionType("arrayOfAny"); } }
 
-        public static CustomFieldOptionValueUnionType Null { get { return new CustomFieldOptionValueUnionType("null"); } }
-
         public override string ToString() { return Value; }
         public static implicit operator String(CustomFieldOptionValueUnionType v) { return v.Value; }
         public static CustomFieldOptionValueUnionType FromString(string v) {
@@ -45,7 +43,6 @@ namespace StackOneHQ.Client.Models.Components
                 case "boolean": return Boolean;
                 case "CustomFieldOption_value": return CustomFieldOptionValue;
                 case "arrayOfAny": return ArrayOfAny;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CustomFieldOptionValueUnionType");
             }
         }
@@ -133,27 +130,20 @@ namespace StackOneHQ.Client.Models.Components
             return res;
         }
 
-        public static CustomFieldOptionValueUnion CreateNull()
-        {
-            CustomFieldOptionValueUnionType typ = CustomFieldOptionValueUnionType.Null;
-            return new CustomFieldOptionValueUnion(typ);
-        }
-
         public class CustomFieldOptionValueUnionConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(CustomFieldOptionValueUnion);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -254,17 +244,13 @@ namespace StackOneHQ.Client.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
+                if (value == null)
+                {
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                     return;
                 }
 
                 CustomFieldOptionValueUnion res = (CustomFieldOptionValueUnion)value;
-                if (CustomFieldOptionValueUnionType.FromString(res.Type).Equals(CustomFieldOptionValueUnionType.Null))
-                {
-                    writer.WriteRawValue("null");
-                    return;
-                }
 
                 if (res.Str != null)
                 {

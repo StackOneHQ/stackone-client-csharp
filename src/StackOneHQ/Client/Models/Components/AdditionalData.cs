@@ -31,7 +31,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The value of the additional data
         /// </summary>
-        [JsonProperty("value")]
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public AdditionalDataValue? Value { get; set; } = null;
     }
 }

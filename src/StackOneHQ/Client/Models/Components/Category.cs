@@ -45,7 +45,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the category is active and therefore available for use
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public CategoryActiveUnion? Active { get; set; } = null;
 
         /// <summary>

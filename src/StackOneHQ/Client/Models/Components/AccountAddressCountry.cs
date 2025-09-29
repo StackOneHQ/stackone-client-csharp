@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the ISO 3166-1 alpha-2 code of the country.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public AccountAddressCountrySourceValueUnion? SourceValue { get; set; } = null;
     }
 }

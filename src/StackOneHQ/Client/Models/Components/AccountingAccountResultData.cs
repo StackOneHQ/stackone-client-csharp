@@ -55,7 +55,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the account is active
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public AccountingAccountResultActiveUnion? Active { get; set; } = null;
     }
 }

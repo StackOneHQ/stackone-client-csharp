@@ -98,19 +98,18 @@ namespace StackOneHQ.Client.Models.Components
 
         public class AdditionalDataValueConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(AdditionalDataValue);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
                     return null;
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 if (json[0] == '"' && json[^1] == '"'){
@@ -165,7 +164,8 @@ namespace StackOneHQ.Client.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
+                if (value == null)
+                {
                     writer.WriteRawValue("null");
                     return;
                 }

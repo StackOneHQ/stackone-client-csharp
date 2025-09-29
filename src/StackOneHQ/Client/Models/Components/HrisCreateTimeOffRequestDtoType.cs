@@ -27,7 +27,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public HrisCreateTimeOffRequestDtoTypeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public HrisCreateTimeOffRequestDtoTypeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

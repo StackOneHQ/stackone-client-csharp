@@ -9,6 +9,8 @@
 * [GetCompany](#getcompany) - Get Company
 * [GetEmployeeCustomFieldDefinition](#getemployeecustomfielddefinition) - Get employee Custom Field Definition
 * [GetEmployee](#getemployee) - Get Employee
+* [ListEmployeeShifts](#listemployeeshifts) - List Employee Shifts
+* [GetEmployeeShift](#getemployeeshift) - Get Employee Shift
 * [ListEmployeeTimeOffRequests](#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [GetEmployeeTimeOffRequest](#getemployeetimeoffrequest) - Get Employees Time Off Request
 * [CancelEmployeeTimeOff](#cancelemployeetimeoff) - Cancel Employee Time Off Request
@@ -274,6 +276,126 @@ var res = await sdk.Hris.GetEmployeeAsync(req);
 | StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
 | StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
 
+## ListEmployeeShifts
+
+List Employee Shifts
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="hris_list_employee_shifts" method="get" path="/unified/hris/employees/{id}/shifts" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+using System;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+HrisListEmployeeShiftsRequest req = new HrisListEmployeeShiftsRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    Filter = new HrisListEmployeeShiftsFilter() {
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+    },
+};
+
+HrisListEmployeeShiftsResponse? res = await sdk.Hris.ListEmployeeShiftsAsync(req);
+
+while(res != null)
+{
+    // handle items
+
+    res = await res.Next!();
+}
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [HrisListEmployeeShiftsRequest](../../Models/Requests/HrisListEmployeeShiftsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[HrisListEmployeeShiftsResponse](../../Models/Requests/HrisListEmployeeShiftsResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## GetEmployeeShift
+
+Get Employee Shift
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="hris_get_employee_shift" method="get" path="/unified/hris/employees/{id}/shifts/{subResourceId}" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+HrisGetEmployeeShiftRequest req = new HrisGetEmployeeShiftRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    SubResourceId = "<id>",
+};
+
+var res = await sdk.Hris.GetEmployeeShiftAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [HrisGetEmployeeShiftRequest](../../Models/Requests/HrisGetEmployeeShiftRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[HrisGetEmployeeShiftResponse](../../Models/Requests/HrisGetEmployeeShiftResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
 ## ListEmployeeTimeOffRequests
 
 List Employee Time Off Requests
@@ -298,6 +420,8 @@ HrisListEmployeeTimeOffRequestsRequest req = new HrisListEmployeeTimeOffRequests
     Fields = "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy",
     Filter = new HrisListEmployeeTimeOffRequestsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        StartDate = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        EndDate = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "policy",
 };
@@ -869,7 +993,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetEmploymentRequest req = new HrisGetEmploymentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager",
+    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups",
     Expand = "groups",
 };
 

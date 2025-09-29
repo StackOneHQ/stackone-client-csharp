@@ -27,7 +27,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public SkillsLevelValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public SkillsLevelSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

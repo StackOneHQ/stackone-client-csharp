@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public HRISBenefitValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public HRISBenefitSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

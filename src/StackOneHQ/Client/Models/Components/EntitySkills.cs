@@ -37,7 +37,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the skill is active and therefore available for use
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public EntitySkillsActiveUnion? Active { get; set; } = null;
 
         /// <summary>

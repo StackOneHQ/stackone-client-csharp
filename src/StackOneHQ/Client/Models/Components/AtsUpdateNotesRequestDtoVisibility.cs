@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the notes visibility.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public AtsUpdateNotesRequestDtoSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

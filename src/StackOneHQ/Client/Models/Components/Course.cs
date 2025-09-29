@@ -87,7 +87,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the course is active and available for users.
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public CourseActiveUnion? Active { get; set; } = null;
 
         /// <summary>

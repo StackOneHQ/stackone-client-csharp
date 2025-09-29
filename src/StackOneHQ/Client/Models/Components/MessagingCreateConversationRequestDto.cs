@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the conversation is private
         /// </summary>
-        [JsonProperty("private")]
+        [JsonProperty("private", NullValueHandling = NullValueHandling.Include)]
         public MessagingCreateConversationRequestDtoPrivateUnion? Private { get; set; } = null;
     }
 }

@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the job status.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public AtsJobSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

@@ -25,7 +25,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The response data from the action RPC call
         /// </summary>
-        [JsonProperty("data")]
+        [JsonProperty("data", NullValueHandling = NullValueHandling.Include)]
         public Data? Data { get; set; } = null;
     }
 }

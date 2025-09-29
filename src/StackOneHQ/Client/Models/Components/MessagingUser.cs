@@ -61,13 +61,13 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether the user is a bot
         /// </summary>
-        [JsonProperty("bot")]
+        [JsonProperty("bot", NullValueHandling = NullValueHandling.Include)]
         public MessagingUserBotUnion? Bot { get; set; } = null;
 
         /// <summary>
         /// Whether the user is active
         /// </summary>
-        [JsonProperty("active")]
+        [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public MessagingUserActiveUnion? Active { get; set; } = null;
     }
 }

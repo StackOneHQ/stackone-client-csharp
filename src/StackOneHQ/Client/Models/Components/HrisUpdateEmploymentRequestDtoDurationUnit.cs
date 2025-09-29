@@ -29,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("value")]
         public HrisUpdateEmploymentRequestDtoWorkTimeValue? Value { get; set; } = null;
 
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public HrisUpdateEmploymentRequestDtoWorkTimeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// The source value of the pay frequency.
         /// </summary>
-        [JsonProperty("source_value")]
+        [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public EmploymentPayFrequencySourceValueUnion? SourceValue { get; set; } = null;
     }
 }
