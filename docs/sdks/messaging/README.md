@@ -37,7 +37,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MessagingListConversationsRequest req = new MessagingListConversationsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,participants,name,private,created_at,last_message_at",
+    Fields = "id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields",
     Filter = new MessagingListConversationsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -164,7 +164,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MessagingGetConversationRequest req = new MessagingGetConversationRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,participants,name,private,created_at,last_message_at",
+    Fields = "id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields",
 };
 
 var res = await sdk.Messaging.GetConversationAsync(req);
@@ -279,7 +279,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MessagingListAttachmentsRequest req = new MessagingListAttachmentsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,file_name,file_size,file_type",
+    Fields = "id,remote_id,file_name,file_size,file_type,unified_custom_fields",
     Filter = new MessagingListAttachmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -344,7 +344,7 @@ MessagingGetAttachmentRequest req = new MessagingGetAttachmentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,file_name,file_size,file_type",
+    Fields = "id,remote_id,file_name,file_size,file_type,unified_custom_fields",
 };
 
 var res = await sdk.Messaging.GetAttachmentAsync(req);
@@ -400,7 +400,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MessagingListUsersRequest req = new MessagingListUsersRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,email,username,name,first_name,last_name,bot,active",
+    Fields = "id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields",
     Filter = new MessagingListUsersFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -464,7 +464,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MessagingGetUserRequest req = new MessagingGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,email,username,name,first_name,last_name,bot,active",
+    Fields = "id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields",
 };
 
 var res = await sdk.Messaging.GetUserAsync(req);
@@ -521,7 +521,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MessagingListConversationMessagesRequest req = new MessagingListConversationMessagesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at",
+    Fields = "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields",
     Filter = new MessagingListConversationMessagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -585,7 +585,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MessagingGetMessageRequest req = new MessagingGetMessageRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at",
+    Fields = "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Messaging.GetMessageAsync(req);

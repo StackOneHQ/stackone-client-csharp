@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListJobsRequest req = new HrisListJobsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,code,title,description,status,created_at,updated_at",
+    Fields = "id,remote_id,code,title,description,status,created_at,updated_at,unified_custom_fields",
     Filter = new HrisListJobsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -92,7 +92,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetJobRequest req = new HrisGetJobRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,code,title,description,status,created_at,updated_at",
+    Fields = "id,remote_id,code,title,description,status,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Hris.Jobs.GetAsync(req);

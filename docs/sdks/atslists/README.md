@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListListsRequest req = new AtsListListsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,items,type",
+    Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
     Filter = null,
 };
 
@@ -89,7 +89,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetListRequest req = new AtsGetListRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,items,type",
+    Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
 };
 
 var res = await sdk.Ats.Lists.GetAsync(req);

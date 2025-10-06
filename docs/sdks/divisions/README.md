@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetDivisionGroupRequest req = new HrisGetDivisionGroupRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
+    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields",
 };
 
 var res = await sdk.Hris.Groups.Divisions.GetAsync(req);

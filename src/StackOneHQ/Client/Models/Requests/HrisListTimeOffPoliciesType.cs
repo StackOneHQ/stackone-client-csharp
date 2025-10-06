@@ -62,6 +62,8 @@ namespace StackOneHQ.Client.Models.Requests
         InLieu,
         [JsonProperty("bereavement")]
         Bereavement,
+        [JsonProperty("other")]
+        Other,
     }
 
     public static class HrisListTimeOffPoliciesTypeExtension

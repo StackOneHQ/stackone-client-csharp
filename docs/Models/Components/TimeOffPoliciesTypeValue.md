@@ -29,3 +29,4 @@ The unified value for the type of the time off policy. If the provider does not 
 | `Personal`            | personal              |
 | `InLieu`              | in_lieu               |
 | `Bereavement`         | bereavement           |
+| `Other`               | other                 |

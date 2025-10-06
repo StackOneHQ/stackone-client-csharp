@@ -35,12 +35,12 @@ namespace StackOneHQ.Client.Models.Requests
         /// Filter shifts that start after this date
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=starts_after")]
-        public DateTime? StartsAfter { get; set; } = null;
+        public string? StartsAfter { get; set; }
 
         /// <summary>
         /// Filter shifts that end before this date
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=ends_before")]
-        public DateTime? EndsBefore { get; set; } = null;
+        public string? EndsBefore { get; set; }
     }
 }

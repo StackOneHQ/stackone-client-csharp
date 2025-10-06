@@ -23,7 +23,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.5.0
+  version: 0.6.0
   additionalDependencies: []
   author: stackone
   baseErrorName: StackOneError
@@ -31,6 +31,7 @@ csharp:
   defaultErrorName: APIException
   disableNamespacePascalCasingApr2024: true
   dotnetVersion: net8.0
+  enableCancellationToken: false
   enableSourceLink: true
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first

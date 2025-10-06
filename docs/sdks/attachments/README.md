@@ -28,7 +28,7 @@ TicketingGetAttachmentRequest req = new TicketingGetAttachmentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at",
+    Fields = "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ticketing.Tickets.Attachments.GetAsync(req);

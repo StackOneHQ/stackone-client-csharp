@@ -44,6 +44,7 @@ namespace StackOneHQ.Client.Models.Components
         public static readonly TimeOffPolicyTypeValue Personal = new TimeOffPolicyTypeValue("personal");
         public static readonly TimeOffPolicyTypeValue InLieu = new TimeOffPolicyTypeValue("in_lieu");
         public static readonly TimeOffPolicyTypeValue Bereavement = new TimeOffPolicyTypeValue("bereavement");
+        public static readonly TimeOffPolicyTypeValue Other = new TimeOffPolicyTypeValue("other");
 
         private static readonly Dictionary <string, TimeOffPolicyTypeValue> _knownValues =
             new Dictionary <string, TimeOffPolicyTypeValue> ()
@@ -69,7 +70,8 @@ namespace StackOneHQ.Client.Models.Components
                 ["holiday"] = Holiday,
                 ["personal"] = Personal,
                 ["in_lieu"] = InLieu,
-                ["bereavement"] = Bereavement
+                ["bereavement"] = Bereavement,
+                ["other"] = Other
             };
 
         private static readonly ConcurrentDictionary<string, TimeOffPolicyTypeValue> _values =

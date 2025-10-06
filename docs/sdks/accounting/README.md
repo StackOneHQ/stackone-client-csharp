@@ -36,7 +36,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AccountingListCompaniesRequest req = new AccountingListCompaniesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day",
+    Fields = "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields",
     Filter = new AccountingListCompaniesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -100,7 +100,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AccountingGetCompanyRequest req = new AccountingGetCompanyRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day",
+    Fields = "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields",
 };
 
 var res = await sdk.Accounting.GetCompanyAsync(req);
@@ -156,7 +156,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AccountingListCompanyAccountsRequest req = new AccountingListCompanyAccountsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,code,name,type,active",
+    Fields = "id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields",
     Filter = null,
 };
 
@@ -219,7 +219,7 @@ AccountingGetCompanyAccountRequest req = new AccountingGetCompanyAccountRequest(
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,code,name,type,active",
+    Fields = "id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields",
 };
 
 var res = await sdk.Accounting.GetCompanyAccountAsync(req);
@@ -276,7 +276,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AccountingListCompanyTaxRatesRequest req = new AccountingListCompanyTaxRatesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active",
+    Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields",
     Filter = new AccountingListCompanyTaxRatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -341,7 +341,7 @@ AccountingGetCompanyTaxRateRequest req = new AccountingGetCompanyTaxRateRequest(
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active",
+    Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields",
 };
 
 var res = await sdk.Accounting.GetCompanyTaxRateAsync(req);
@@ -455,7 +455,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AccountingListCompanyJournalsRequest req = new AccountingListCompanyJournalsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at",
+    Fields = "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields",
     Filter = null,
 };
 
@@ -595,7 +595,7 @@ AccountingGetCompanyJournalRequest req = new AccountingGetCompanyJournalRequest(
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at",
+    Fields = "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields",
 };
 
 var res = await sdk.Accounting.GetCompanyJournalAsync(req);

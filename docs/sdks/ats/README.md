@@ -55,7 +55,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListApplicationsRequest req = new AtsListApplicationsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate",
+    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields",
     Filter = new AtsListApplicationsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
@@ -122,7 +122,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetApplicationRequest req = new AtsGetApplicationRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate",
+    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields",
     Expand = "documents",
     Include = "attachments,custom_fields",
 };
@@ -181,7 +181,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListApplicationChangesRequest req = new AtsListApplicationChangesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values",
+    Fields = "event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values,unified_custom_fields",
     Filter = new AtsListApplicationChangesFilter() {
         CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -246,7 +246,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListApplicationNotesRequest req = new AtsListApplicationNotesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at",
+    Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields",
     Filter = new AtsListApplicationNotesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -383,7 +383,7 @@ AtsGetApplicationNoteRequest req = new AtsGetApplicationNoteRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at",
+    Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields",
 };
 
 var res = await sdk.Ats.GetNoteAsync(req);
@@ -582,7 +582,7 @@ AtsGetApplicationDocumentRequest req = new AtsGetApplicationDocumentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format",
+    Fields = "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields",
 };
 
 var res = await sdk.Ats.GetDocumentAsync(req);
@@ -638,7 +638,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListCandidatesRequest req = new AtsListCandidatesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at",
+    Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListCandidatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
@@ -872,7 +872,7 @@ AtsGetCandidateNoteRequest req = new AtsGetCandidateNoteRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at",
+    Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields",
 };
 
 var res = await sdk.Ats.GetCandidateNoteAsync(req);
@@ -928,7 +928,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListJobCustomFieldDefinitionsRequest req = new AtsListJobCustomFieldDefinitionsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,description,type,options",
+    Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new AtsListJobCustomFieldDefinitionsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -992,7 +992,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListDepartmentsRequest req = new AtsListDepartmentsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name",
+    Fields = "id,remote_id,name,unified_custom_fields",
     Filter = new AtsListDepartmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -1056,7 +1056,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListApplicationStagesRequest req = new AtsListApplicationStagesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,order,created_at,updated_at",
+    Fields = "id,remote_id,name,order,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListApplicationStagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -1120,7 +1120,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetApplicationStageRequest req = new AtsGetApplicationStageRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,order,created_at,updated_at",
+    Fields = "id,remote_id,name,order,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ats.GetApplicationStageAsync(req);
@@ -1176,7 +1176,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListJobsRequest req = new AtsListJobsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at",
+    Fields = "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListJobsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
@@ -1360,7 +1360,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListJobApplicationStagesRequest req = new AtsListJobApplicationStagesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,order,created_at,updated_at",
+    Fields = "id,remote_id,name,order,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListJobApplicationStagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -1520,7 +1520,7 @@ AtsGetJobApplicationStageRequest req = new AtsGetJobApplicationStageRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,name,order,created_at,updated_at",
+    Fields = "id,remote_id,name,order,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ats.GetJobApplicationStageAsync(req);
@@ -1576,7 +1576,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetUserRequest req = new AtsGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,first_name,last_name,name,email,phone",
+    Fields = "id,remote_id,first_name,last_name,name,email,phone,unified_custom_fields",
 };
 
 var res = await sdk.Ats.GetUserAsync(req);
@@ -1632,7 +1632,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListJobPostingsRequest req = new AtsListJobPostingsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at",
+    Fields = "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at,unified_custom_fields",
     Filter = new AtsListJobPostingsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),

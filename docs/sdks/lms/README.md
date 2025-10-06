@@ -37,7 +37,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsGetCourseRequest req = new LmsGetCourseRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors",
+    Fields = "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors,unified_custom_fields",
 };
 
 var res = await sdk.Lms.GetCourseAsync(req);
@@ -94,7 +94,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsListUserAssignmentsRequest req = new LmsListUserAssignmentsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at",
+    Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields",
     Filter = new LmsListUserAssignmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -290,7 +290,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 LmsListContentRequest req = new LmsListContentRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors",
+    Fields = "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors,unified_custom_fields",
     Filter = new LmsListContentFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -530,7 +530,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsGetCategoryRequest req = new LmsGetCategoryRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,active,hierarchy,level,language",
+    Fields = "id,remote_id,name,active,hierarchy,level,language,unified_custom_fields",
 };
 
 var res = await sdk.Lms.GetCategoryAsync(req);
@@ -585,7 +585,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 LmsListUsersRequest req = new LmsListUsersRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name",
+    Fields = "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name,unified_custom_fields",
     Filter = null,
 };
 
@@ -647,7 +647,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsGetUserRequest req = new LmsGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name",
+    Fields = "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name,unified_custom_fields",
 };
 
 var res = await sdk.Lms.GetUserAsync(req);
@@ -703,7 +703,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 LmsListSkillsRequest req = new LmsListSkillsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,active,hierarchy,language",
+    Fields = "id,remote_id,name,active,hierarchy,language,unified_custom_fields",
     Filter = new LmsListSkillsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListLocationsRequest req = new AtsListLocationsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name",
+    Fields = "id,remote_id,name,unified_custom_fields",
     Filter = new AtsListLocationsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -92,7 +92,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetLocationRequest req = new AtsGetLocationRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name",
+    Fields = "id,remote_id,name,unified_custom_fields",
 };
 
 var res = await sdk.Ats.Locations.GetAsync(req);

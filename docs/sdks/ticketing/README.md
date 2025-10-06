@@ -35,7 +35,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingGetUserRequest req = new TicketingGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at",
+    Fields = "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ticketing.GetUserAsync(req);
@@ -149,7 +149,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 TicketingListTicketTypesRequest req = new TicketingListTicketTypesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,project_id,remote_project_id",
+    Fields = "id,remote_id,name,project_id,remote_project_id,unified_custom_fields",
     Filter = new TicketingListTicketTypesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -213,7 +213,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingGetTicketTypeRequest req = new TicketingGetTicketTypeRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,project_id,remote_project_id",
+    Fields = "id,remote_id,name,project_id,remote_project_id,unified_custom_fields",
 };
 
 var res = await sdk.Ticketing.GetTicketTypeAsync(req);
@@ -269,7 +269,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 TicketingListProjectsRequest req = new TicketingListProjectsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at",
+    Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields",
     Filter = new TicketingListProjectsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -333,7 +333,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingGetProjectRequest req = new TicketingGetProjectRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at",
+    Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ticketing.GetProjectAsync(req);
@@ -389,7 +389,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingListProjectComponentsRequest req = new TicketingListProjectComponentsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at",
+    Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields",
     Filter = null,
 };
 
@@ -452,7 +452,7 @@ TicketingGetProjectComponentRequest req = new TicketingGetProjectComponentReques
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at",
+    Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ticketing.GetProjectComponentAsync(req);
@@ -509,7 +509,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingListProjectTicketTypesRequest req = new TicketingListProjectTicketTypesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,project_id,remote_project_id",
+    Fields = "id,remote_id,name,project_id,remote_project_id,unified_custom_fields",
     Filter = new TicketingListProjectTicketTypesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

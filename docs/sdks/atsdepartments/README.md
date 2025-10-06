@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetDepartmentRequest req = new AtsGetDepartmentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name",
+    Fields = "id,remote_id,name,unified_custom_fields",
 };
 
 var res = await sdk.Ats.Departments.GetAsync(req);

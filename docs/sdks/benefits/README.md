@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetBenefitRequest req = new HrisGetBenefitRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,benefit_type,provider,description,created_at,updated_at",
+    Fields = "id,remote_id,name,benefit_type,provider,description,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Hris.Benefits.GetAsync(req);

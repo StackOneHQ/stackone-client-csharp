@@ -43,14 +43,14 @@ namespace StackOneHQ.Client
         public IConnectors Connectors { get; }
 
         /// <summary>
-        /// Routing API requests through StackOne directly to the underlying provider.
-        /// </summary>
-        public IProxy Proxy { get; }
-
-        /// <summary>
         /// Model Context Protocol endpoint.
         /// </summary>
         public IMcp Mcp { get; }
+
+        /// <summary>
+        /// Routing API requests through StackOne directly to the underlying provider.
+        /// </summary>
+        public IProxy Proxy { get; }
 
         /// <summary>
         /// Retrieve Actions metadata and definitions.
@@ -82,15 +82,15 @@ namespace StackOneHQ.Client
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.0";
-        private const string _sdkGenVersion = "2.716.16";
+        private const string _sdkVersion = "0.6.0";
+        private const string _sdkGenVersion = "2.721.3";
         private const string _openapiDocVersion = "1.0.0";
         public IConnectSessions ConnectSessions { get; private set; }
         public IAccounts Accounts { get; private set; }
         public IRequestLogs RequestLogs { get; private set; }
         public IConnectors Connectors { get; private set; }
-        public IProxy Proxy { get; private set; }
         public IMcp Mcp { get; private set; }
+        public IProxy Proxy { get; private set; }
         public IActions Actions { get; private set; }
         public IHris Hris { get; private set; }
         public IAts Ats { get; private set; }
@@ -121,9 +121,9 @@ namespace StackOneHQ.Client
 
             Connectors = new Connectors(SDKConfiguration);
 
-            Proxy = new Proxy(SDKConfiguration);
-
             Mcp = new Mcp(SDKConfiguration);
+
+            Proxy = new Proxy(SDKConfiguration);
 
             Actions = new Actions(SDKConfiguration);
 
@@ -204,9 +204,9 @@ namespace StackOneHQ.Client
 
             Connectors = new Connectors(SDKConfiguration);
 
-            Proxy = new Proxy(SDKConfiguration);
-
             Mcp = new Mcp(SDKConfiguration);
+
+            Proxy = new Proxy(SDKConfiguration);
 
             Actions = new Actions(SDKConfiguration);
 

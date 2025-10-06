@@ -29,7 +29,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetTimeOffTypeRequest req = new HrisGetTimeOffTypeRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,active",
+    Fields = "id,remote_id,name,active,unified_custom_fields",
 };
 
 var res = await sdk.Hris.TimeOffTypes.GetAsync(req);

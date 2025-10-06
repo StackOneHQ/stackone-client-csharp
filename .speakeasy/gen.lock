@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: fdd2de20359100fb961ab77b221f5b91
+  docChecksum: ada0cb5f6473cbf35b91e3f3ca1c8f16
   docVersion: 1.0.0
-  speakeasyVersion: 1.631.4
-  generationVersion: 2.716.16
-  releaseVersion: 0.5.0
-  configChecksum: 7e9c1787f9df95319d083eaddddfe764
+  speakeasyVersion: 1.634.2
+  generationVersion: 2.721.3
+  releaseVersion: 0.6.0
+  configChecksum: 0e7a253c78d893130819da4b74991fe8
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.12.4
+    core: 3.13.0
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
@@ -31,7 +31,7 @@ features:
     responseFormat: 0.0.4
     retries: 0.0.1
     sdkHooks: 0.2.0
-    unions: 1.0.0
+    unions: 1.1.0
 generatedFiles:
   - .gitattributes
   - NUGET.md
@@ -5420,7 +5420,7 @@ examples:
     speakeasy-default-hris-list-companies:
       parameters:
         query:
-          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at"
+          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -5457,7 +5457,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at"
+          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -5491,7 +5491,7 @@ examples:
     speakeasy-default-hris-list-employee-custom-field-definitions:
       parameters:
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -5528,7 +5528,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -5563,7 +5563,7 @@ examples:
     speakeasy-default-hris-list-employees:
       parameters:
         query:
-          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills"
+          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "company,employments,work_location,home_location,groups,skills"
           include: "avatar_url,avatar,custom_fields,job_description,benefits"
@@ -5636,7 +5636,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills"
+          fields: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
           expand: "company,employments,work_location,home_location,groups,skills"
           include: "avatar_url,avatar,custom_fields,job_description,benefits"
         header:
@@ -5746,7 +5746,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy"
+          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "start_date": "2020-01-01T00:00:00.000Z", "end_date": "2020-01-01T00:00:00.000Z"}
           expand: "policy"
         header:
@@ -5821,7 +5821,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy"
+          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields"
           expand: "policy"
         header:
           x-account-id: "<id>"
@@ -6077,7 +6077,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6115,7 +6115,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -6149,7 +6149,7 @@ examples:
     speakeasy-default-hris-list-employee-categories:
       parameters:
         query:
-          fields: "id,remote_id,name,active"
+          fields: "id,remote_id,name,active,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6186,7 +6186,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,active"
+          fields: "id,remote_id,name,active,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -6222,7 +6222,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number"
+          fields: "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6296,7 +6296,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number"
+          fields: "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -6367,7 +6367,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "policy"
         header:
@@ -6406,7 +6406,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at,unified_custom_fields"
           expand: "policy"
         header:
           x-account-id: "<id>"
@@ -6441,7 +6441,7 @@ examples:
     speakeasy-default-hris-list-employments:
       parameters:
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "groups"
         header:
@@ -6479,7 +6479,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields"
           expand: "groups"
         header:
           x-account-id: "<id>"
@@ -6516,7 +6516,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "groups"
         header:
@@ -6591,7 +6591,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups"
+          fields: "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields"
           expand: "groups"
         header:
           x-account-id: "<id>"
@@ -6663,7 +6663,7 @@ examples:
     speakeasy-default-hris-list-groups:
       parameters:
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6698,7 +6698,7 @@ examples:
     speakeasy-default-hris-list-department-groups:
       parameters:
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6733,7 +6733,7 @@ examples:
     speakeasy-default-hris-list-cost-center-groups:
       parameters:
         query:
-          fields: "id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6768,7 +6768,7 @@ examples:
     speakeasy-default-hris-list-team-groups:
       parameters:
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6803,7 +6803,7 @@ examples:
     speakeasy-default-hris-list-division-groups:
       parameters:
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6838,7 +6838,7 @@ examples:
     speakeasy-default-hris-list-companies-groups:
       parameters:
         query:
-          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at"
+          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -6875,7 +6875,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -6911,7 +6911,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -6947,7 +6947,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -6983,7 +6983,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7019,7 +7019,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id"
+          fields: "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7055,7 +7055,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at"
+          fields: "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7089,7 +7089,7 @@ examples:
     speakeasy-default-hris-list-jobs:
       parameters:
         query:
-          fields: "id,remote_id,code,title,description,status,created_at,updated_at"
+          fields: "id,remote_id,code,title,description,status,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7126,7 +7126,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,code,title,description,status,created_at,updated_at"
+          fields: "id,remote_id,code,title,description,status,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7160,7 +7160,7 @@ examples:
     speakeasy-default-hris-list-locations:
       parameters:
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7197,7 +7197,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7300,7 +7300,7 @@ examples:
     speakeasy-default-hris-list-time-entries:
       parameters:
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "start_time": "2020-01-01T00:00:00.000Z", "end_time": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7337,7 +7337,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7371,7 +7371,7 @@ examples:
     speakeasy-default-hris-list-time-off-requests:
       parameters:
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy"
+          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields"
           filter: null
           expand: "policy"
         header:
@@ -7409,7 +7409,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy"
+          fields: "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields"
           expand: "policy"
         header:
           x-account-id: "<id>"
@@ -7444,7 +7444,7 @@ examples:
     speakeasy-default-hris-list-shifts:
       parameters:
         query:
-          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z", "starts_after": "2024-01-15T09:00", "ends_before": "2024-01-15T17:00"}
         header:
           x-account-id: "<id>"
       responses:
@@ -7483,7 +7483,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "emp_123456789", "location_id": "loc_123456789", "company_id": "comp_123456789", "start_time": "2024-03-20T09:00:00Z", "end_time": "2024-03-20T17:00:00Z", "break_duration": "PT1H30M", "status": {"value": "confirmed", "source_value": "Confirmed"}, "approval_status": {"value": "approved", "source_value": "Approved"}, "breaks": [{"id": "break_123456789", "start_time": "2024-03-20T12:00:00Z", "end_time": "2024-03-20T13:00:00Z", "duration": "PT1H", "is_paid": true, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}], "created_at": "2024-03-20T08:00:00Z", "updated_at": "2024-03-20T08:00:00Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "emp_123456789", "location_id": "loc_123456789", "company_id": "comp_123456789", "start_time": "2024-03-20T09:00:00.000", "end_time": "2024-03-20T17:00:00.000", "break_duration": "PT1H30M", "status": {"value": "confirmed", "source_value": "Confirmed"}, "approval_status": {"value": "approved", "source_value": "Approved"}, "breaks": [{"id": "break_123456789", "start_time": "2024-03-20T12:00:00Z", "end_time": "2024-03-20T13:00:00Z", "duration": "PT1H", "is_paid": true, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}], "created_at": "2024-03-20T08:00:00Z", "updated_at": "2024-03-20T08:00:00Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -7512,7 +7512,7 @@ examples:
     speakeasy-default-hris-list-time-off-types:
       parameters:
         query:
-          fields: "id,remote_id,name,active"
+          fields: "id,remote_id,name,active,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7549,7 +7549,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,active"
+          fields: "id,remote_id,name,active,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7583,7 +7583,7 @@ examples:
     speakeasy-default-hris-list-time-off-policies:
       parameters:
         query:
-          fields: "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at"
+          fields: "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7620,7 +7620,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at"
+          fields: "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7656,7 +7656,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at"
+          fields: "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7691,7 +7691,7 @@ examples:
     speakeasy-default-hris-list-benefits:
       parameters:
         query:
-          fields: "id,remote_id,name,benefit_type,provider,description,created_at,updated_at"
+          fields: "id,remote_id,name,benefit_type,provider,description,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7728,7 +7728,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,benefit_type,provider,description,created_at,updated_at"
+          fields: "id,remote_id,name,benefit_type,provider,description,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7764,7 +7764,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency"
+          fields: "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -7838,7 +7838,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency"
+          fields: "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -7874,7 +7874,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "attachments"
         header:
@@ -7913,7 +7913,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields"
           expand: "attachments"
         header:
           x-account-id: "<id>"
@@ -7948,7 +7948,7 @@ examples:
     speakeasy-default-hris-list-tasks:
       parameters:
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "attachments"
         header:
@@ -7986,7 +7986,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at"
+          fields: "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields"
           expand: "attachments"
         header:
           x-account-id: "<id>"
@@ -8021,7 +8021,7 @@ examples:
     speakeasy-default-ats-list-applications:
       parameters:
         query:
-          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate"
+          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "created_after": "2020-01-01T00:00:00.000Z"}
           expand: "documents"
           include: "attachments,custom_fields"
@@ -8094,7 +8094,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate"
+          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
           expand: "documents"
           include: "attachments,custom_fields"
         header:
@@ -8168,7 +8168,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8278,7 +8278,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -8314,7 +8314,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at"
+          fields: "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8352,7 +8352,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at"
+          fields: "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -8388,7 +8388,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values"
+          fields: "event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values,unified_custom_fields"
           filter: {"created_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8425,7 +8425,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at"
+          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8499,7 +8499,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at"
+          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -8572,7 +8572,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at"
+          fields: "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8610,7 +8610,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate"
+          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -8757,7 +8757,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8795,7 +8795,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format"
+          fields: "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -8829,7 +8829,7 @@ examples:
     speakeasy-default-ats-list-candidates:
       parameters:
         query:
-          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at"
+          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "created_after": "2020-01-01T00:00:00.000Z"}
           include: "custom_fields"
         header:
@@ -8901,7 +8901,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at"
+          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields"
           include: "custom_fields"
         header:
           x-account-id: "<id>"
@@ -8974,7 +8974,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at"
+          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9048,7 +9048,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at"
+          fields: "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9082,7 +9082,7 @@ examples:
     speakeasy-default-ats-list-application-custom-field-definitions:
       parameters:
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -9119,7 +9119,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -9154,7 +9154,7 @@ examples:
     speakeasy-default-ats-list-candidate-custom-field-definitions:
       parameters:
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9191,7 +9191,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9226,7 +9226,7 @@ examples:
     speakeasy-default-ats-list-job-custom-field-definitions:
       parameters:
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9263,7 +9263,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9298,7 +9298,7 @@ examples:
     speakeasy-default-ats-list-departments:
       parameters:
         query:
-          fields: "id,remote_id,name"
+          fields: "id,remote_id,name,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9335,7 +9335,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name"
+          fields: "id,remote_id,name,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9369,7 +9369,7 @@ examples:
     speakeasy-default-ats-list-interview-stages:
       parameters:
         query:
-          fields: "id,remote_id,name,order,created_at,updated_at"
+          fields: "id,remote_id,name,order,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9406,7 +9406,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,order,created_at,updated_at"
+          fields: "id,remote_id,name,order,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9440,7 +9440,7 @@ examples:
     speakeasy-default-ats-list-interviews:
       parameters:
         query:
-          fields: "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at"
+          fields: "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "created_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9477,7 +9477,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at"
+          fields: "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9511,7 +9511,7 @@ examples:
     speakeasy-default-ats-list-jobs:
       parameters:
         query:
-          fields: "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at"
+          fields: "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "created_after": "2020-01-01T00:00:00.000Z"}
           expand: "job_postings,interview_stages"
           include: "custom_fields"
@@ -9584,7 +9584,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at"
+          fields: "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at,unified_custom_fields"
           expand: "job_postings,interview_stages"
           include: "custom_fields"
         header:
@@ -9656,7 +9656,7 @@ examples:
     speakeasy-default-ats-list-lists:
       parameters:
         query:
-          fields: "id,remote_id,name,created_at,updated_at,items,type"
+          fields: "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -9693,7 +9693,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,created_at,updated_at,items,type"
+          fields: "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9727,7 +9727,7 @@ examples:
     speakeasy-default-ats-list-locations:
       parameters:
         query:
-          fields: "id,remote_id,name"
+          fields: "id,remote_id,name,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9764,7 +9764,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name"
+          fields: "id,remote_id,name,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9798,7 +9798,7 @@ examples:
     speakeasy-default-ats-list-rejected-reasons:
       parameters:
         query:
-          fields: "id,remote_id,label,type,rejected_reason_type"
+          fields: "id,remote_id,label,type,rejected_reason_type,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -9835,7 +9835,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,label,type,rejected_reason_type"
+          fields: "id,remote_id,label,type,rejected_reason_type,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9869,7 +9869,7 @@ examples:
     speakeasy-default-ats-list-users:
       parameters:
         query:
-          fields: "id,remote_id,first_name,last_name,name,email,phone"
+          fields: "id,remote_id,first_name,last_name,name,email,phone,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -9906,7 +9906,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,first_name,last_name,name,email,phone"
+          fields: "id,remote_id,first_name,last_name,name,email,phone,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -9940,7 +9940,7 @@ examples:
     speakeasy-default-ats-list-job-postings:
       parameters:
         query:
-          fields: "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at"
+          fields: "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "created_after": "2020-01-01T00:00:00.000Z"}
           include: "questionnaires"
         header:
@@ -9978,7 +9978,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at"
+          fields: "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at,unified_custom_fields"
           include: "questionnaires"
         header:
           x-account-id: "<id>"
@@ -10013,7 +10013,7 @@ examples:
     speakeasy-default-ats-list-offers:
       parameters:
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -10086,7 +10086,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -10294,7 +10294,7 @@ examples:
     speakeasy-default-ats-list-background-check-packages:
       parameters:
         query:
-          fields: "id,remote_id,name,description,tests"
+          fields: "id,remote_id,name,description,tests,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -10365,7 +10365,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,tests"
+          fields: "id,remote_id,name,description,tests,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -10575,7 +10575,7 @@ examples:
     speakeasy-default-ats-list-application-document-categories:
       parameters:
         query:
-          fields: "id,remote_id,name,active"
+          fields: "id,remote_id,name,active,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -10612,7 +10612,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,active"
+          fields: "id,remote_id,name,active,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -10646,7 +10646,7 @@ examples:
     speakeasy-default-crm-list-contacts:
       parameters:
         query:
-          fields: "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at"
+          fields: "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           include: "custom_fields"
         header:
@@ -10718,7 +10718,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at"
+          fields: "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at,unified_custom_fields"
           include: "custom_fields"
         header:
           x-account-id: "<id>"
@@ -10789,7 +10789,7 @@ examples:
     speakeasy-default-crm-list-accounts:
       parameters:
         query:
-          fields: "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at"
+          fields: "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -10826,7 +10826,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at"
+          fields: "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -10860,7 +10860,7 @@ examples:
     speakeasy-default-crm-list-lists:
       parameters:
         query:
-          fields: "id,remote_id,name,created_at,updated_at,items,type"
+          fields: "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -10897,7 +10897,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,created_at,updated_at,items,type"
+          fields: "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -10931,7 +10931,7 @@ examples:
     speakeasy-default-crm-list-contact-custom-field-definitions:
       parameters:
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -10968,7 +10968,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,type,options"
+          fields: "id,remote_id,name,description,type,options,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -11003,7 +11003,7 @@ examples:
     speakeasy-default-iam-list-users:
       parameters:
         query:
-          fields: "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled"
+          fields: "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "roles,groups"
         header:
@@ -11041,7 +11041,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled"
+          fields: "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields"
           expand: "roles,groups"
         header:
           x-account-id: "<id>"
@@ -11146,7 +11146,7 @@ examples:
     speakeasy-default-iam-list-roles:
       parameters:
         query:
-          fields: "id,remote_id,name,type,policies,description,created_at,updated_at"
+          fields: "id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "policies"
         header:
@@ -11184,7 +11184,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,policies,description,created_at,updated_at"
+          fields: "id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields"
           expand: "policies"
         header:
           x-account-id: "<id>"
@@ -11219,7 +11219,7 @@ examples:
     speakeasy-default-iam-list-groups:
       parameters:
         query:
-          fields: "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at"
+          fields: "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at,unified_custom_fields"
           filter: null
           expand: "roles"
         header:
@@ -11257,7 +11257,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at"
+          fields: "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at,unified_custom_fields"
           expand: "roles"
         header:
           x-account-id: "<id>"
@@ -11292,7 +11292,7 @@ examples:
     speakeasy-default-iam-list-policies:
       parameters:
         query:
-          fields: "id,remote_id,name,permissions,description,created_at,updated_at"
+          fields: "id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields"
           filter: null
           expand: "permissions"
         header:
@@ -11330,7 +11330,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,permissions,description,created_at,updated_at"
+          fields: "id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields"
           expand: "permissions"
         header:
           x-account-id: "<id>"
@@ -11365,7 +11365,7 @@ examples:
     speakeasy-default-marketing-list-email-templates:
       parameters:
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -11436,7 +11436,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -11506,7 +11506,7 @@ examples:
     speakeasy-default-marketing-list-in-app-templates:
       parameters:
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -11577,7 +11577,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -11647,7 +11647,7 @@ examples:
     speakeasy-default-marketing-list-sms-templates:
       parameters:
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -11718,7 +11718,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -11788,7 +11788,7 @@ examples:
     speakeasy-default-marketing-list-omni-channel-templates:
       parameters:
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -11859,7 +11859,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -11929,7 +11929,7 @@ examples:
     speakeasy-default-marketing-list-push-templates:
       parameters:
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12000,7 +12000,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,messages,created_at,updated_at,tags"
+          fields: "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -12070,7 +12070,7 @@ examples:
     speakeasy-default-marketing-list-campaigns:
       parameters:
         query:
-          fields: "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+          fields: "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12107,7 +12107,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+          fields: "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -12141,7 +12141,7 @@ examples:
     speakeasy-default-marketing-list-content-blocks:
       parameters:
         query:
-          fields: "id,remote_id,name,type,content,status,tags,created_at,updated_at"
+          fields: "id,remote_id,name,type,content,status,tags,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12212,7 +12212,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,type,content,status,tags,created_at,updated_at"
+          fields: "id,remote_id,name,type,content,status,tags,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -12282,7 +12282,7 @@ examples:
     speakeasy-default-lms-list-courses:
       parameters:
         query:
-          fields: "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors"
+          fields: "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12319,7 +12319,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors"
+          fields: "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -12355,7 +12355,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at"
+          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           user_id: "c28xyrc55866bvuv"
           remote_user_id: "e3cb75bf-aa84-466e-a6c1-b8322b257a48"
@@ -12497,7 +12497,7 @@ examples:
     speakeasy-default-lms-list-content:
       parameters:
         query:
-          fields: "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors"
+          fields: "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12568,7 +12568,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors"
+          fields: "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -12640,7 +12640,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent,certificate_url"
+          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent,certificate_url,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12781,7 +12781,7 @@ examples:
     speakeasy-default-lms-list-completions:
       parameters:
         query:
-          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent,certificate_url"
+          fields: "id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent,certificate_url,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12852,7 +12852,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,active,hierarchy,level,language"
+          fields: "id,remote_id,name,active,hierarchy,level,language,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -12886,7 +12886,7 @@ examples:
     speakeasy-default-lms-list-categories:
       parameters:
         query:
-          fields: "id,remote_id,name,active,hierarchy,level,language"
+          fields: "id,remote_id,name,active,hierarchy,level,language,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -12921,7 +12921,7 @@ examples:
     speakeasy-default-lms-list-users:
       parameters:
         query:
-          fields: "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name"
+          fields: "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -12958,7 +12958,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name"
+          fields: "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -12994,7 +12994,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,active,hierarchy,language"
+          fields: "id,remote_id,name,active,hierarchy,language,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -13028,7 +13028,7 @@ examples:
     speakeasy-default-lms-list-skills:
       parameters:
         query:
-          fields: "id,remote_id,name,active,hierarchy,language"
+          fields: "id,remote_id,name,active,hierarchy,language,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -13063,7 +13063,7 @@ examples:
     speakeasy-default-lms-list-assignments:
       parameters:
         query:
-          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at"
+          fields: "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           user_id: "c28xyrc55866bvuv"
           remote_user_id: "e3cb75bf-aa84-466e-a6c1-b8322b257a48"
@@ -13134,7 +13134,7 @@ examples:
     speakeasy-default-ticketing-list-tickets:
       parameters:
         query:
-          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at"
+          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -13205,7 +13205,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at"
+          fields: "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -13275,7 +13275,7 @@ examples:
     speakeasy-default-ticketing-list-users:
       parameters:
         query:
-          fields: "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at"
+          fields: "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -13312,7 +13312,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at"
+          fields: "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -13348,7 +13348,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at"
+          fields: "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -13386,7 +13386,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at"
+          fields: "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -13460,7 +13460,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at"
+          fields: "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -13498,7 +13498,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at"
+          fields: "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -13532,7 +13532,7 @@ examples:
     speakeasy-default-ticketing-list-ticket-types:
       parameters:
         query:
-          fields: "id,remote_id,name,project_id,remote_project_id"
+          fields: "id,remote_id,name,project_id,remote_project_id,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -13569,7 +13569,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,project_id,remote_project_id"
+          fields: "id,remote_id,name,project_id,remote_project_id,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -13818,7 +13818,7 @@ examples:
     speakeasy-default-documents-list-files:
       parameters:
         query:
-          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids"
+          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "name": "john_doe_resume.pdf", "content": "FAQ of the project", "created_after": "2020-01-01T00:00:00.000Z", "drive_id": "1234567890", "folder_id": "1234567890"}
           folder_id: "1234567890"
           nested_items: "true"
@@ -13858,7 +13858,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids"
+          fields: "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields"
           include: "all_parent_folder_ids"
         header:
           x-account-id: "<id>"
@@ -13893,7 +13893,7 @@ examples:
     speakeasy-default-documents-list-folders:
       parameters:
         query:
-          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids"
+          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "drive_id": "1234567890", "folder_id": "1234567890"}
           folder_id: "1234567890"
           nested_items: "true"
@@ -13933,7 +13933,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids"
+          fields: "id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields"
           include: "all_parent_folder_ids"
         header:
           x-account-id: "<id>"
@@ -13968,7 +13968,7 @@ examples:
     speakeasy-default-documents-list-drives:
       parameters:
         query:
-          fields: "id,remote_id,name,description,url,created_at,updated_at"
+          fields: "id,remote_id,name,description,url,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14005,7 +14005,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,description,url,created_at,updated_at"
+          fields: "id,remote_id,name,description,url,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14071,7 +14071,7 @@ examples:
     speakeasy-default-ticketing-list-projects:
       parameters:
         query:
-          fields: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at"
+          fields: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14108,7 +14108,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at"
+          fields: "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14144,7 +14144,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at"
+          fields: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -14182,7 +14182,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at"
+          fields: "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14218,7 +14218,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,project_id,remote_project_id"
+          fields: "id,remote_id,name,project_id,remote_project_id,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14292,7 +14292,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,order,created_at,updated_at"
+          fields: "id,remote_id,name,order,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14330,7 +14330,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,name,order,created_at,updated_at"
+          fields: "id,remote_id,name,order,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14364,7 +14364,7 @@ examples:
     speakeasy-default-messaging-list-conversations:
       parameters:
         query:
-          fields: "id,remote_id,participants,name,private,created_at,last_message_at"
+          fields: "id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14435,7 +14435,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,participants,name,private,created_at,last_message_at"
+          fields: "id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14509,7 +14509,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,file_name,file_size,file_type"
+          fields: "id,remote_id,file_name,file_size,file_type,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14547,7 +14547,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,file_name,file_size,file_type"
+          fields: "id,remote_id,file_name,file_size,file_type,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14581,7 +14581,7 @@ examples:
     speakeasy-default-messaging-list-users:
       parameters:
         query:
-          fields: "id,remote_id,email,username,name,first_name,last_name,bot,active"
+          fields: "id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14618,7 +14618,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,email,username,name,first_name,last_name,bot,active"
+          fields: "id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14654,7 +14654,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at"
+          fields: "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14691,7 +14691,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at"
+          fields: "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14759,7 +14759,7 @@ examples:
     speakeasy-default-accounting-list-companies:
       parameters:
         query:
-          fields: "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day"
+          fields: "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14796,7 +14796,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day"
+          fields: "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14832,7 +14832,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,code,name,type,active"
+          fields: "id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -14870,7 +14870,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,code,name,type,active"
+          fields: "id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -14906,7 +14906,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,name,code,percentage,active"
+          fields: "id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -14944,7 +14944,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,name,code,percentage,active"
+          fields: "id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -15016,7 +15016,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at"
+          fields: "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields"
           filter: null
         header:
           x-account-id: "<id>"
@@ -15092,7 +15092,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at"
+          fields: "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -15333,7 +15333,7 @@ examples:
     speakeasy-default-ats-list-application-stages:
       parameters:
         query:
-          fields: "id,remote_id,name,order,created_at,updated_at"
+          fields: "id,remote_id,name,order,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -15370,7 +15370,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,order,created_at,updated_at"
+          fields: "id,remote_id,name,order,created_at,updated_at,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -15406,7 +15406,7 @@ examples:
         path:
           id: "<id>"
         query:
-          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z", "starts_after": "2024-01-15T09:00", "ends_before": "2024-01-15T17:00"}
         header:
           x-account-id: "<id>"
       responses:
@@ -15446,7 +15446,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "emp_123456789", "location_id": "loc_123456789", "company_id": "comp_123456789", "start_time": "2024-03-20T09:00:00Z", "end_time": "2024-03-20T17:00:00Z", "break_duration": "PT1H30M", "status": {"value": "confirmed", "source_value": "Confirmed"}, "approval_status": null, "breaks": [{"id": "break_123456789", "start_time": "2024-03-20T12:00:00Z", "end_time": "2024-03-20T13:00:00Z", "duration": "PT1H", "is_paid": true, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}], "created_at": "2024-03-20T08:00:00Z", "updated_at": "2024-03-20T08:00:00Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "employee_id": "emp_123456789", "location_id": "loc_123456789", "company_id": "comp_123456789", "start_time": "2024-03-20T09:00:00.000", "end_time": "2024-03-20T17:00:00.000", "break_duration": "PT1H30M", "status": {"value": "confirmed", "source_value": "Confirmed"}, "approval_status": null, "breaks": [{"id": "break_123456789", "start_time": "2024-03-20T12:00:00Z", "end_time": "2024-03-20T13:00:00Z", "duration": "PT1H", "is_paid": true, "created_at": "2024-03-20T10:00:00Z", "updated_at": "2024-03-20T10:00:00Z"}], "created_at": "2024-03-20T08:00:00Z", "updated_at": "2024-03-20T08:00:00Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -15472,4 +15472,4 @@ examples:
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Actions.ListActionsMeta()`:  `response.data.[].Actions.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Actions.RpcAction()`:  `request` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListShifts()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Messaging.ListConversationMessages()`:  `response.data.[].Attachments.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Messaging.GetMessage()`:  `response.data.Attachments.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Accounting.CreateCompanyJournal()`:  `response` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListEmployeeShifts()`: **Added**\n* `StackOneHq.client.Hris.GetEmployeeShift()`: **Added**\n* `StackOneHq.client.Hris.ListEmployeeTimeOffRequests()`: \n  *  `request.Filter` **Changed**\n* `StackOneHq.client.Hris.TimeOff.List()`: \n  *  `request.Filter` **Changed**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Hris.ListEmployeeShifts()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployeeShift()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListShifts()`: \n  *  `request.Filter` **Changed** **Breaking** :warning:\n  *  `response.data.[]` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Shifts.Get()`:  `response.data` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.ListTimeOffPolicies()`: \n  *  `request.Filter` **Changed**\n* `StackOneHq.client.Hris.Employees.ListTimeOffPolicies()`: \n  *  `request.Filter` **Changed**\n"

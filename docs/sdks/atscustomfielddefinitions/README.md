@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListCandidateCustomFieldDefinitionsRequest req = new AtsListCandidateCustomFieldDefinitionsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,description,type,options",
+    Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new AtsListCandidateCustomFieldDefinitionsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -93,7 +93,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetJobCustomFieldDefinitionRequest req = new AtsGetJobCustomFieldDefinitionRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,description,type,options",
+    Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new AtsGetJobCustomFieldDefinitionFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

@@ -30,7 +30,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 CrmGetContactRequest req = new CrmGetContactRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at",
+    Fields = "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at,unified_custom_fields",
     Include = "custom_fields",
 };
 
@@ -176,7 +176,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 CrmListAccountsRequest req = new CrmListAccountsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at",
+    Fields = "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields",
     Filter = new CrmListAccountsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -240,7 +240,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 CrmGetAccountRequest req = new CrmGetAccountRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at",
+    Fields = "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Crm.GetAccountAsync(req);

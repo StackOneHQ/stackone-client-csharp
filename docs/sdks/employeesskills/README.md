@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisListEmployeeSkillsRequest req = new HrisListEmployeeSkillsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency",
+    Fields = "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency,unified_custom_fields",
     Filter = new HrisListEmployeeSkillsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

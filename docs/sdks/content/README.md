@@ -155,7 +155,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsGetContentRequest req = new LmsGetContentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors",
+    Fields = "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors,unified_custom_fields",
 };
 
 var res = await sdk.Lms.Content.GetAsync(req);

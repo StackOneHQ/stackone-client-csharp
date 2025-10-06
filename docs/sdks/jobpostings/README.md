@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetJobPostingRequest req = new AtsGetJobPostingRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at",
+    Fields = "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at,unified_custom_fields",
     Include = "questionnaires",
 };
 

@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MarketingListCampaignsRequest req = new MarketingListCampaignsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages",
+    Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages,unified_custom_fields",
     Filter = new MarketingListCampaignsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -92,7 +92,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MarketingGetCampaignRequest req = new MarketingGetCampaignRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages",
+    Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages,unified_custom_fields",
 };
 
 var res = await sdk.Marketing.Campaigns.GetAsync(req);

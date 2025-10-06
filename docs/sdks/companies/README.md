@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetCompanyGroupRequest req = new HrisGetCompanyGroupRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at",
+    Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Hris.Companies.GetAsync(req);
