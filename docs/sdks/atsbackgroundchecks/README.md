@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListBackgroundCheckPackagesRequest req = new AtsListBackgroundCheckPackagesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,description,tests",
+    Fields = "id,remote_id,name,description,tests,unified_custom_fields",
     Filter = new AtsListBackgroundCheckPackagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

@@ -26,7 +26,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 IamListGroupsRequest req = new IamListGroupsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at",
+    Fields = "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at,unified_custom_fields",
     Filter = null,
     Expand = "roles",
 };

@@ -122,7 +122,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetCandidateRequest req = new AtsGetCandidateRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at",
+    Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields",
     Include = "custom_fields",
 };
 

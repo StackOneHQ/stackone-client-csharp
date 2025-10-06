@@ -49,16 +49,16 @@ namespace StackOneHQ.Client.Models.Components
         public string? CompanyId { get; set; } = null;
 
         /// <summary>
-        /// The start time of the shift
+        /// The start time of the shift (ISO8601 date-time without timezone)
         /// </summary>
         [JsonProperty("start_time")]
-        public DateTime? StartTime { get; set; } = null;
+        public string? StartTime { get; set; } = null;
 
         /// <summary>
-        /// The end time of the shift
+        /// The end time of the shift (ISO8601 date-time without timezone)
         /// </summary>
         [JsonProperty("end_time")]
-        public DateTime? EndTime { get; set; } = null;
+        public string? EndTime { get; set; } = null;
 
         /// <summary>
         /// The total break duration for this shift in ISO 8601 duration format

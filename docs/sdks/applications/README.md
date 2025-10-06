@@ -28,7 +28,7 @@ AtsGetApplicationScorecardRequest req = new AtsGetApplicationScorecardRequest() 
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at",
+    Fields = "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Applications.GetScorecardAsync(req);

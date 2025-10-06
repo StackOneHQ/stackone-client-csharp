@@ -26,7 +26,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListUsersRequest req = new AtsListUsersRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,first_name,last_name,name,email,phone",
+    Fields = "id,remote_id,first_name,last_name,name,email,phone,unified_custom_fields",
     Filter = null,
 };
 

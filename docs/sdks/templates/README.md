@@ -170,7 +170,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MarketingGetPushTemplateRequest req = new MarketingGetPushTemplateRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
 };
 
 var res = await sdk.Marketing.Templates.GetPushAsync(req);

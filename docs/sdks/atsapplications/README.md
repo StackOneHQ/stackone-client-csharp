@@ -269,7 +269,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListApplicationsOffersRequest req = new AtsListApplicationsOffersRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history",
+    Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
     Filter = new AtsListApplicationsOffersFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -456,7 +456,7 @@ AtsGetApplicationOfferRequest req = new AtsGetApplicationOfferRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history",
+    Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
 };
 
 var res = await sdk.Ats.Applications.GetOfferAsync(req);
@@ -513,7 +513,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListApplicationScorecardsRequest req = new AtsListApplicationScorecardsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at",
+    Fields = "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListApplicationScorecardsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -578,7 +578,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListApplicationsScheduledInterviewsRequest req = new AtsListApplicationsScheduledInterviewsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at",
+    Fields = "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListApplicationsScheduledInterviewsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -643,7 +643,7 @@ AtsGetApplicationScheduledInterviewRequest req = new AtsGetApplicationScheduledI
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate",
+    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields",
 };
 
 var res = await sdk.Ats.Applications.GetScheduledInterviewAsync(req);
@@ -756,7 +756,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListApplicationCustomFieldDefinitionsRequest req = new AtsListApplicationCustomFieldDefinitionsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,description,type,options",
+    Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = null,
 };
 
@@ -818,7 +818,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetApplicationCustomFieldDefinitionRequest req = new AtsGetApplicationCustomFieldDefinitionRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,description,type,options",
+    Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = null,
 };
 

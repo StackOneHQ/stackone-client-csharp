@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 IamGetPolicyRequest req = new IamGetPolicyRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,permissions,description,created_at,updated_at",
+    Fields = "id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields",
     Expand = "permissions",
 };
 

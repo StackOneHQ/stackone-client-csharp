@@ -43,7 +43,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MarketingListEmailTemplatesRequest req = new MarketingListEmailTemplatesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListEmailTemplatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -172,7 +172,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MarketingGetEmailTemplateRequest req = new MarketingGetEmailTemplateRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
 };
 
 var res = await sdk.Marketing.GetEmailTemplateAsync(req);
@@ -299,7 +299,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MarketingListInAppTemplatesRequest req = new MarketingListInAppTemplatesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = null,
 };
 
@@ -431,7 +431,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MarketingListSmsTemplatesRequest req = new MarketingListSmsTemplatesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListSmsTemplatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -639,7 +639,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MarketingListOmniChannelTemplatesRequest req = new MarketingListOmniChannelTemplatesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListOmniChannelTemplatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -705,7 +705,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MarketingGetOmniChannelTemplateRequest req = new MarketingGetOmniChannelTemplateRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
 };
 
 var res = await sdk.Marketing.GetOmniChannelTemplateAsync(req);
@@ -834,7 +834,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MarketingListPushTemplatesRequest req = new MarketingListPushTemplatesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,messages,created_at,updated_at,tags",
+    Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListPushTemplatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -970,7 +970,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 MarketingListContentBlocksRequest req = new MarketingListContentBlocksRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,type,content,status,tags,created_at,updated_at",
+    Fields = "id,remote_id,name,type,content,status,tags,created_at,updated_at,unified_custom_fields",
     Filter = new MarketingListContentBlocksFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -1098,7 +1098,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 MarketingGetContentBlockRequest req = new MarketingGetContentBlockRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,type,content,status,tags,created_at,updated_at",
+    Fields = "id,remote_id,name,type,content,status,tags,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Marketing.GetContentBlockAsync(req);

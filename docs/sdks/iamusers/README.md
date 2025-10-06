@@ -29,7 +29,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 IamListUsersRequest req = new IamListUsersRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled",
+    Fields = "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields",
     Filter = new IamListUsersFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -94,7 +94,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 IamGetUserRequest req = new IamGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled",
+    Fields = "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields",
     Expand = "roles,groups",
 };
 

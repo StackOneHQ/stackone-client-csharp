@@ -32,7 +32,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 TicketingListTicketsRequest req = new TicketingListTicketsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at",
+    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at,unified_custom_fields",
     Filter = new TicketingListTicketsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -187,7 +187,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingGetTicketRequest req = new TicketingGetTicketRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at",
+    Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ticketing.Tickets.GetAsync(req);
@@ -344,7 +344,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 TicketingListAttachmentsRequest req = new TicketingListAttachmentsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at",
+    Fields = "id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at,unified_custom_fields",
     Filter = new TicketingListAttachmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

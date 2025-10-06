@@ -28,7 +28,7 @@ TicketingGetCommentRequest req = new TicketingGetCommentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at",
+    Fields = "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Ticketing.Comments.GetAsync(req);

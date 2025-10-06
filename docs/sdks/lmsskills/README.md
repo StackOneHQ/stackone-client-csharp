@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsGetSkillRequest req = new LmsGetSkillRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,active,hierarchy,language",
+    Fields = "id,remote_id,name,active,hierarchy,language,unified_custom_fields",
 };
 
 var res = await sdk.Lms.Skills.GetAsync(req);

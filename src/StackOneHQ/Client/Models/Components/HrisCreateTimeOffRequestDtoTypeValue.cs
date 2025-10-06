@@ -41,6 +41,7 @@ namespace StackOneHQ.Client.Models.Components
         public static readonly HrisCreateTimeOffRequestDtoTypeValue Personal = new HrisCreateTimeOffRequestDtoTypeValue("personal");
         public static readonly HrisCreateTimeOffRequestDtoTypeValue InLieu = new HrisCreateTimeOffRequestDtoTypeValue("in_lieu");
         public static readonly HrisCreateTimeOffRequestDtoTypeValue Bereavement = new HrisCreateTimeOffRequestDtoTypeValue("bereavement");
+        public static readonly HrisCreateTimeOffRequestDtoTypeValue Other = new HrisCreateTimeOffRequestDtoTypeValue("other");
 
         private static readonly Dictionary <string, HrisCreateTimeOffRequestDtoTypeValue> _knownValues =
             new Dictionary <string, HrisCreateTimeOffRequestDtoTypeValue> ()
@@ -66,7 +67,8 @@ namespace StackOneHQ.Client.Models.Components
                 ["holiday"] = Holiday,
                 ["personal"] = Personal,
                 ["in_lieu"] = InLieu,
-                ["bereavement"] = Bereavement
+                ["bereavement"] = Bereavement,
+                ["other"] = Other
             };
 
         private static readonly ConcurrentDictionary<string, HrisCreateTimeOffRequestDtoTypeValue> _values =

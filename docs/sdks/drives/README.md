@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 DocumentsGetDriveRequest req = new DocumentsGetDriveRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,description,url,created_at,updated_at",
+    Fields = "id,remote_id,name,description,url,created_at,updated_at,unified_custom_fields",
 };
 
 var res = await sdk.Drives.GetAsync(req);

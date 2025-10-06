@@ -247,7 +247,6 @@ namespace StackOneHQ.Client.Models.Components
                 if (value == null)
                 {
                     throw new InvalidOperationException("Unexpected null JSON value.");
-                    return;
                 }
 
                 CustomFieldOptionValueUnion res = (CustomFieldOptionValueUnion)value;

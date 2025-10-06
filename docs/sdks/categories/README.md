@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 LmsListCategoriesRequest req = new LmsListCategoriesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,active,hierarchy,level,language",
+    Fields = "id,remote_id,name,active,hierarchy,level,language,unified_custom_fields",
     Filter = new LmsListCategoriesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

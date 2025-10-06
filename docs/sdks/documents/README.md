@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListApplicationDocumentCategoriesRequest req = new AtsListApplicationDocumentCategoriesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,active",
+    Fields = "id,remote_id,name,active,unified_custom_fields",
     Filter = new AtsListApplicationDocumentCategoriesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

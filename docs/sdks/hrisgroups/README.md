@@ -31,7 +31,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListGroupsRequest req = new HrisListGroupsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
+    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields",
     Filter = new HrisListGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -95,7 +95,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListDepartmentGroupsRequest req = new HrisListDepartmentGroupsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
+    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields",
     Filter = new HrisListDepartmentGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -159,7 +159,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListCostCenterGroupsRequest req = new HrisListCostCenterGroupsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
+    Fields = "id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields",
     Filter = new HrisListCostCenterGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -223,7 +223,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListTeamGroupsRequest req = new HrisListTeamGroupsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids",
+    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,unified_custom_fields",
     Filter = new HrisListTeamGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -287,7 +287,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListDivisionGroupsRequest req = new HrisListDivisionGroupsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id",
+    Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields",
     Filter = new HrisListDivisionGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },

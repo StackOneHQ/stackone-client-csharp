@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetBackgroundCheckPackageRequest req = new AtsGetBackgroundCheckPackageRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,description,tests",
+    Fields = "id,remote_id,name,description,tests,unified_custom_fields",
 };
 
 var res = await sdk.Ats.BackgroundChecks.Packages.GetAsync(req);

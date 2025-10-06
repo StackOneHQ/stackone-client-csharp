@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListEmployeeCategoriesRequest req = new HrisListEmployeeCategoriesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,active",
+    Fields = "id,remote_id,name,active,unified_custom_fields",
     Filter = new HrisListEmployeeCategoriesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -92,7 +92,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetEmployeeDocumentCategoryRequest req = new HrisGetEmployeeDocumentCategoryRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,active",
+    Fields = "id,remote_id,name,active,unified_custom_fields",
 };
 
 var res = await sdk.Hris.Documents.EmployeeCategories.GetAsync(req);

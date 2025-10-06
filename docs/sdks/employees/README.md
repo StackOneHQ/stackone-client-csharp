@@ -40,7 +40,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListEmployeeCustomFieldDefinitionsRequest req = new HrisListEmployeeCustomFieldDefinitionsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,description,type,options",
+    Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new HrisListEmployeeCustomFieldDefinitionsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -104,7 +104,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills",
+    Fields = "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields",
     Filter = new HrisListEmployeesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -686,7 +686,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListEmployeeWorkEligibilityRequest req = new HrisListEmployeeWorkEligibilityRequest() {
     Id = "<id>",
-    Fields = "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number",
+    Fields = "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number,unified_custom_fields",
     Filter = new HrisListEmployeeWorkEligibilityFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -831,7 +831,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetEmployeesWorkEligibilityRequest req = new HrisGetEmployeesWorkEligibilityRequest() {
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number",
+    Fields = "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number,unified_custom_fields",
     XAccountId = "<id>",
 };
 
@@ -997,7 +997,7 @@ HrisGetEmployeeEmploymentRequest req = new HrisGetEmployeeEmploymentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups",
+    Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields",
     Expand = "groups",
 };
 
@@ -1055,7 +1055,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisListEmployeeTimeOffPoliciesRequest req = new HrisListEmployeeTimeOffPoliciesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at",
+    Fields = "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields",
     Filter = new HrisListEmployeeTimeOffPoliciesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -1120,7 +1120,7 @@ HrisGetEmployeeSkillRequest req = new HrisGetEmployeeSkillRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency",
+    Fields = "id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency,unified_custom_fields",
 };
 
 var res = await sdk.Hris.Employees.GetSkillAsync(req);

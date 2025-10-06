@@ -26,7 +26,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListTimeOffRequestsRequest req = new HrisListTimeOffRequestsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy",
+    Fields = "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields",
     Filter = null,
     Expand = "policy",
 };

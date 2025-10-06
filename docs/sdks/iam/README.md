@@ -84,7 +84,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 IamListRolesRequest req = new IamListRolesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,type,policies,description,created_at,updated_at",
+    Fields = "id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields",
     Filter = new IamListRolesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -149,7 +149,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 IamGetRoleRequest req = new IamGetRoleRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,type,policies,description,created_at,updated_at",
+    Fields = "id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields",
     Expand = "policies",
 };
 
@@ -206,7 +206,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 IamGetGroupRequest req = new IamGetGroupRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at",
+    Fields = "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at,unified_custom_fields",
     Expand = "roles",
 };
 
@@ -262,7 +262,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 IamListPoliciesRequest req = new IamListPoliciesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,permissions,description,created_at,updated_at",
+    Fields = "id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields",
     Filter = null,
     Expand = "permissions",
 };

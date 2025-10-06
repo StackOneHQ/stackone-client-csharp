@@ -28,7 +28,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 CrmListListsRequest req = new CrmListListsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,items,type",
+    Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
     Filter = new CrmListListsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -92,7 +92,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 CrmGetListRequest req = new CrmGetListRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,name,created_at,updated_at,items,type",
+    Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
 };
 
 var res = await sdk.Crm.Lists.GetAsync(req);
