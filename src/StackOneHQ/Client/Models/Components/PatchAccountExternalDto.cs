@@ -57,6 +57,6 @@ namespace StackOneHQ.Client.Models.Components
         /// The account type
         /// </summary>
         [JsonProperty("type")]
-        public PatchAccountExternalDtoType? Type { get; set; } = StackOneHQ.Client.Models.Components.PatchAccountExternalDtoType.Production;
+        public PatchAccountExternalDtoType? Type { get; set; } = null;
     }
 }

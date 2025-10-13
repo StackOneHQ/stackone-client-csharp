@@ -47,8 +47,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.0";
-        private const string _sdkGenVersion = "2.721.3";
+        private const string _sdkVersion = "0.6.1";
+        private const string _sdkGenVersion = "2.723.11";
         private const string _openapiDocVersion = "1.0.0";
 
         public Files(SDKConfig config)
@@ -70,7 +70,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "documents_download_file", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "documents_download_file", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -496,7 +496,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "documents_list_files", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "documents_list_files", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -972,7 +972,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "documents_get_file", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "documents_get_file", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)

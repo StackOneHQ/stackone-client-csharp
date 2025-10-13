@@ -16,6 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Linq;
     
+    /// <summary>
+    /// The StackOne unified content type.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ContentValue : IEquatable<ContentValue>
     {

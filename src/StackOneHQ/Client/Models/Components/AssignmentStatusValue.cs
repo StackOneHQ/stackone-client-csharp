@@ -16,6 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Linq;
     
+    /// <summary>
+    /// The StackOne unified assignment status.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AssignmentStatusValue : IEquatable<AssignmentStatusValue>
     {

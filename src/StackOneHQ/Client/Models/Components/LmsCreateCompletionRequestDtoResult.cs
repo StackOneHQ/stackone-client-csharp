@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class LmsCreateCompletionRequestDtoResult
     {
 
+        /// <summary>
+        /// The StackOne unified result status.
+        /// </summary>
         [JsonProperty("value")]
         public LmsCreateCompletionRequestDtoValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original result status from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public LmsCreateCompletionRequestDtoSourceValueUnion? SourceValue { get; set; } = null;
     }

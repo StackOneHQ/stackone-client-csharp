@@ -1,5 +1,7 @@
 # AssignmentResultValue
 
+The StackOne unified result status.
+
 
 ## Values
 

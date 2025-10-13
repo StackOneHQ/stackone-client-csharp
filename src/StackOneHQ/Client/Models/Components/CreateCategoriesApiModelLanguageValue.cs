@@ -17,7 +17,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Linq;
     
     /// <summary>
-    /// The Locale Code of the language
+    /// The unified locale code. For write operations: provide one of the listed enum values, or omit/set to &quot;unmapped_value&quot; to use source_value instead.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CreateCategoriesApiModelLanguageValue : IEquatable<CreateCategoriesApiModelLanguageValue>

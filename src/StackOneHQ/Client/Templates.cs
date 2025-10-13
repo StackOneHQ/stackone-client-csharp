@@ -47,8 +47,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.0";
-        private const string _sdkGenVersion = "2.721.3";
+        private const string _sdkVersion = "0.6.1";
+        private const string _sdkGenVersion = "2.723.11";
         private const string _openapiDocVersion = "1.0.0";
         public IInApp InApp { get; private set; }
         public ISms Sms { get; private set; }
@@ -87,7 +87,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "marketing_create_omni_channel_template", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "marketing_create_omni_channel_template", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -536,7 +536,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "marketing_create_push_template", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "marketing_create_push_template", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -973,7 +973,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "marketing_get_push_template", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "marketing_get_push_template", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)

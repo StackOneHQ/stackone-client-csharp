@@ -82,8 +82,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.0";
-        private const string _sdkGenVersion = "2.721.3";
+        private const string _sdkVersion = "0.6.1";
+        private const string _sdkGenVersion = "2.723.11";
         private const string _openapiDocVersion = "1.0.0";
 
         public Accounting(SDKConfig config)
@@ -105,7 +105,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_companies", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_companies", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -577,7 +577,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1014,7 +1014,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_company_accounts", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_company_accounts", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1487,7 +1487,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company_account", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company_account", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1924,7 +1924,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_company_tax_rates", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_company_tax_rates", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -2397,7 +2397,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company_tax_rate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company_tax_rate", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -2846,7 +2846,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_batch_create_company_journals", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_batch_create_company_journals", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -3283,7 +3283,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_company_journals", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_list_company_journals", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -3768,7 +3768,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_create_company_journal", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_create_company_journal", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -4205,7 +4205,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company_journal", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "accounting_get_company_journal", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)

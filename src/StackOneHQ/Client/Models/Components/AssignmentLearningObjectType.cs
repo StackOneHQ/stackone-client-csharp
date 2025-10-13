@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class AssignmentLearningObjectType
     {
 
+        /// <summary>
+        /// The StackOne unified learning object type.
+        /// </summary>
         [JsonProperty("value")]
         public AssignmentLearningObjectTypeValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original learning object type from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public AssignmentLearningObjectTypeSourceValueUnion? SourceValue { get; set; } = null;
     }

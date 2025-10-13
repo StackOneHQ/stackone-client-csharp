@@ -193,8 +193,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.0";
-        private const string _sdkGenVersion = "2.721.3";
+        private const string _sdkVersion = "0.6.1";
+        private const string _sdkGenVersion = "2.723.11";
         private const string _openapiDocVersion = "1.0.0";
         public IAtsApplications Applications { get; private set; }
         public ICandidates Candidates { get; private set; }
@@ -248,7 +248,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_applications", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_applications", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -724,7 +724,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1161,7 +1161,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_application_changes", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_application_changes", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -1632,7 +1632,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_application_notes", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_application_notes", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -2118,7 +2118,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_create_application_note", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_create_application_note", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -2555,7 +2555,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application_note", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application_note", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -3005,7 +3005,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_application_note", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_application_note", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -3454,7 +3454,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_upload_application_document", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_upload_application_document", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -3891,7 +3891,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application_document", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application_document", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -4328,7 +4328,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_candidates", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_candidates", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -4814,7 +4814,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_candidate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_candidate", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -5263,7 +5263,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_create_candidate_note", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_create_candidate_note", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -5700,7 +5700,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_candidate_note", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_candidate_note", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -6137,7 +6137,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_job_custom_field_definitions", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_job_custom_field_definitions", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -6609,7 +6609,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_departments", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_departments", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -7082,7 +7082,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_application_stages", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_application_stages", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -7555,7 +7555,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application_stage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_application_stage", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -7992,7 +7992,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_jobs", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_jobs", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -8479,7 +8479,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_create_job", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_create_job", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -8916,7 +8916,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_job_application_stages", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_job_application_stages", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -9402,7 +9402,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_job", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_job", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -9839,7 +9839,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_job_application_stage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_job_application_stage", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -10276,7 +10276,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_user", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_get_user", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -10713,7 +10713,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_job_postings", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_list_job_postings", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -11199,7 +11199,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_order_assessments_request", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_order_assessments_request", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -11648,7 +11648,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_assessments_result", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_assessments_result", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -12097,7 +12097,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_background_check_package", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_background_check_package", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -12546,7 +12546,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_order_background_check_request", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_order_background_check_request", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)
@@ -12995,7 +12995,7 @@ namespace StackOneHQ.Client
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_background_check_result", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "ats_update_background_check_result", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
             if (retryConfig == null)

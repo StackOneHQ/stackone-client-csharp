@@ -1,5 +1,7 @@
 # CompletionLearningObjectTypeValue
 
+The StackOne unified learning object type.
+
 
 ## Values
 

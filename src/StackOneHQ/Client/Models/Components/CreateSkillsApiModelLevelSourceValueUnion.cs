@@ -65,6 +65,9 @@ namespace StackOneHQ.Client.Models.Components
     }
 
 
+    /// <summary>
+    /// For read operations: the original skill level from the provider. For write operations: fallback value used when value is omitted or &quot;unmapped_value&quot;. You must ensure this matches the provider&apos;s format.
+    /// </summary>
     [JsonConverter(typeof(CreateSkillsApiModelLevelSourceValueUnion.CreateSkillsApiModelLevelSourceValueUnionConverter))]
     public class CreateSkillsApiModelLevelSourceValueUnion
     {

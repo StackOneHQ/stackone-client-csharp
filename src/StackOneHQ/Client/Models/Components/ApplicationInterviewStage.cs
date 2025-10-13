@@ -14,6 +14,7 @@ namespace StackOneHQ.Client.Models.Components
     using System;
     using System.Collections.Generic;
     
+    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public class ApplicationInterviewStage
     {
 

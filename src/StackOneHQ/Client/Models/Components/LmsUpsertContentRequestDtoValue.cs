@@ -16,6 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Linq;
     
+    /// <summary>
+    /// The content type for write operations. Provide one of the listed enum values. If omitted or set to &quot;unmapped_value&quot;, the source_value will be sent to the provider instead.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LmsUpsertContentRequestDtoValue : IEquatable<LmsUpsertContentRequestDtoValue>
     {

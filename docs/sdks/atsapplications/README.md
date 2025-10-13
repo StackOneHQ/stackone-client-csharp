@@ -643,7 +643,7 @@ AtsGetApplicationScheduledInterviewRequest req = new AtsGetApplicationScheduledI
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
-    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields",
+    Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields",
 };
 
 var res = await sdk.Ats.Applications.GetScheduledInterviewAsync(req);

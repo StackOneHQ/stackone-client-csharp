@@ -1,5 +1,7 @@
 # LmsCreateCompletionRequestDtoSourceValueUnion
 
+The original result status from the provider before normalization.
+
 
 ## Supported Types
 

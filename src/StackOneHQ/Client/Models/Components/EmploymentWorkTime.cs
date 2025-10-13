@@ -23,9 +23,9 @@ namespace StackOneHQ.Client.Models.Components
         public string? Duration { get; set; } = null;
 
         /// <summary>
-        /// The duration unit of the work time
+        /// The period of the work time
         /// </summary>
-        [JsonProperty("duration_unit")]
-        public EmploymentDurationUnit? DurationUnit { get; set; } = null;
+        [JsonProperty("period")]
+        public EmploymentPeriod? Period { get; set; } = null;
     }
 }

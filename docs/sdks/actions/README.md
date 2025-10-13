@@ -100,8 +100,8 @@ ActionsRpcRequestDto req = new ActionsRpcRequestDto() {
         { "id", "123" },
     },
     Query = new Dictionary<string, object>() {
-        { "param1", "value1" },
         { "param2", "value2" },
+        { "param1", "value1" },
     },
     Headers = new Dictionary<string, object>() {
         { "Content-Type", "application/json" },
