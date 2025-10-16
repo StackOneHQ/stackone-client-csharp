@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class ContentContentType
     {
 
+        /// <summary>
+        /// The StackOne unified content type.
+        /// </summary>
         [JsonProperty("value")]
         public ContentValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original value from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public ContentSourceValueUnion? SourceValue { get; set; } = null;
     }

@@ -24,9 +24,15 @@ namespace StackOneHQ.Client.Models.Components
     public class CreateSkillsApiModelLevel
     {
 
+        /// <summary>
+        /// The unified skill level. For write operations: provide one of the listed enum values, or omit/set to &quot;unmapped_value&quot; to use source_value instead.
+        /// </summary>
         [JsonProperty("value")]
         public CreateSkillsApiModelLevelValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// For read operations: the original skill level from the provider. For write operations: fallback value used when value is omitted or &quot;unmapped_value&quot;. You must ensure this matches the provider&apos;s format.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public CreateSkillsApiModelLevelSourceValueUnion? SourceValue { get; set; } = null;
     }

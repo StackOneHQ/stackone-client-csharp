@@ -41,5 +41,11 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=stage")]
         public string? Stage { get; set; } = null;
+
+        /// <summary>
+        /// Filter to select applications by application_stage_id
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=application_stage_id")]
+        public string? ApplicationStageId { get; set; } = null;
     }
 }

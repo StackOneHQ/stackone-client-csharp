@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class LmsCreateContentRequestDtoContentType
     {
 
+        /// <summary>
+        /// The StackOne unified content type.
+        /// </summary>
         [JsonProperty("value")]
         public LmsCreateContentRequestDtoValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original value from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public LmsCreateContentRequestDtoSourceValueUnion? SourceValue { get; set; } = null;
     }

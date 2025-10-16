@@ -1,5 +1,7 @@
 # AssignmentStatusValue
 
+The StackOne unified assignment status.
+
 
 ## Values
 

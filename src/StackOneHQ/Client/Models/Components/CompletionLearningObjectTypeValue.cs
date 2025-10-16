@@ -16,6 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Linq;
     
+    /// <summary>
+    /// The StackOne unified learning object type.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CompletionLearningObjectTypeValue : IEquatable<CompletionLearningObjectTypeValue>
     {

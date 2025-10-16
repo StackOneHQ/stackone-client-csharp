@@ -16,6 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Generic;
     using System.Linq;
     
+    /// <summary>
+    /// The unified category level. For write operations: provide one of the listed enum values, or omit/set to &quot;unmapped_value&quot; to use source_value instead.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CreateCategoriesApiModelLevelValue : IEquatable<CreateCategoriesApiModelLevelValue>
     {

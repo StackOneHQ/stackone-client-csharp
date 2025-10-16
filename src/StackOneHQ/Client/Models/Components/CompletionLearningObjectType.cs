@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class CompletionLearningObjectType
     {
 
+        /// <summary>
+        /// The StackOne unified learning object type.
+        /// </summary>
         [JsonProperty("value")]
         public CompletionLearningObjectTypeValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original learning object type from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public CompletionLearningObjectTypeSourceValueUnion? SourceValue { get; set; } = null;
     }

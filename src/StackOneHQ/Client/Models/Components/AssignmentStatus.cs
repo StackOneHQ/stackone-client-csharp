@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class AssignmentStatus
     {
 
+        /// <summary>
+        /// The StackOne unified assignment status.
+        /// </summary>
         [JsonProperty("value")]
         public AssignmentStatusValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original status value from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public AssignmentStatusSourceValueUnion? SourceValue { get; set; } = null;
     }

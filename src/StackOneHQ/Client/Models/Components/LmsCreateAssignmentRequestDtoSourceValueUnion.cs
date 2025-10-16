@@ -65,6 +65,9 @@ namespace StackOneHQ.Client.Models.Components
     }
 
 
+    /// <summary>
+    /// The original status value from the provider before normalization.
+    /// </summary>
     [JsonConverter(typeof(LmsCreateAssignmentRequestDtoSourceValueUnion.LmsCreateAssignmentRequestDtoSourceValueUnionConverter))]
     public class LmsCreateAssignmentRequestDtoSourceValueUnion
     {

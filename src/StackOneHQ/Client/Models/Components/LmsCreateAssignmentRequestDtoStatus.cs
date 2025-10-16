@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class LmsCreateAssignmentRequestDtoStatus
     {
 
+        /// <summary>
+        /// The StackOne unified assignment status.
+        /// </summary>
         [JsonProperty("value")]
         public LmsCreateAssignmentRequestDtoValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original status value from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public LmsCreateAssignmentRequestDtoSourceValueUnion? SourceValue { get; set; } = null;
     }

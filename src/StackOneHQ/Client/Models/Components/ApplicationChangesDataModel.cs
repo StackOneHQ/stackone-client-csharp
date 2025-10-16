@@ -12,6 +12,7 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
+    using System;
     using System.Collections.Generic;
     
     public class ApplicationChangesDataModel
@@ -20,6 +21,7 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Unique identifier of the interview stage
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("interview_stage_id")]
         public string? InterviewStageId { get; set; } = null;
 

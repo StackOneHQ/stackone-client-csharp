@@ -60,20 +60,38 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("remote_job_id")]
         public string? RemoteJobId { get; set; } = null;
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("interview_stage")]
         public ApplicationInterviewStage? InterviewStage { get; set; } = null;
+
+        [JsonProperty("application_stage")]
+        public ApplicationApplicationStage? ApplicationStage { get; set; } = null;
 
         /// <summary>
         /// Unique identifier of the interview stage
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("interview_stage_id")]
         public string? InterviewStageId { get; set; } = null;
 
         /// <summary>
         /// Provider&apos;s unique identifier of the interview stage
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("remote_interview_stage_id")]
         public string? RemoteInterviewStageId { get; set; } = null;
+
+        /// <summary>
+        /// Unique identifier of the application stage
+        /// </summary>
+        [JsonProperty("application_stage_id")]
+        public string? ApplicationStageId { get; set; } = null;
+
+        /// <summary>
+        /// Unique identifier of the application stage
+        /// </summary>
+        [JsonProperty("remote_application_stage_id")]
+        public string? RemoteApplicationStageId { get; set; } = null;
 
         [JsonProperty("rejected_reasons")]
         public List<RejectedReason>? RejectedReasons { get; set; } = null;

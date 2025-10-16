@@ -65,6 +65,9 @@ namespace StackOneHQ.Client.Models.Components
     }
 
 
+    /// <summary>
+    /// The original result status from the provider before normalization.
+    /// </summary>
     [JsonConverter(typeof(AssignmentResultSourceValueUnion.AssignmentResultSourceValueUnionConverter))]
     public class AssignmentResultSourceValueUnion
     {

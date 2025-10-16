@@ -684,7 +684,6 @@ var res = await sdk.Mcp.McpGetAsync(
 * [List](docs/sdks/requestlogs/README.md#list) - List Logs
 * [ListPlatformLogs](docs/sdks/requestlogs/README.md#listplatformlogs) - List Platform Logs
 
-
 ### [Ticketing](docs/sdks/ticketing/README.md)
 
 * [GetUser](docs/sdks/ticketing/README.md#getuser) - Get User

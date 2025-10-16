@@ -12709,7 +12709,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
+            example: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "ATS Application Filter"
@@ -12740,6 +12740,10 @@ paths:
               "stage":
                 type: "string"
                 description: "Filter to select applications by application_stage id"
+                nullable: true
+              "application_stage_id":
+                type: "string"
+                description: "Filter to select applications by application_stage_id"
                 nullable: true
             nullable: true
         - name: "page"
@@ -13019,7 +13023,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
+            example: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -14906,7 +14910,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
+            example: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
       responses:
         "200":
           description: "The applications scheduled interview with the given identifier was retrieved."
@@ -39580,7 +39584,6 @@ components:
             - "test"
             - null
           description: "The account type"
-          default: "production"
           nullable: true
           example: ["PRODUCTION", "TEST"]
           x-speakeasy-unknown-values: "allow"
@@ -46131,7 +46134,7 @@ components:
             - "zu_ZA"
             - "unmapped_value"
             - null
-          description: "The Locale Code of the language"
+          description: "The unified locale code. For write operations: provide one of the listed enum values, or omit/set to \"unmapped_value\" to use source_value instead."
           nullable: true
           example: "en_GB"
           x-speakeasy-unknown-values: "allow"
@@ -46143,6 +46146,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "For read operations: the original language code from the provider. For write operations: fallback value used when value is omitted or \"unmapped_value\". You must ensure this matches the provider's format."
           nullable: true
     LocationTypeEnum:
       type: "object"
@@ -48012,10 +48016,10 @@ components:
           description: "The work time duration in ISO 8601 duration format"
           nullable: true
           example: "P0Y0M0DT8H0M0S"
-        "duration_unit":
+        "period":
           allOf:
             - {"$ref": "#/components/schemas/WorkTimeUnitEnum"}
-          description: "The duration unit of the work time"
+          description: "The period of the work time"
           nullable: true
           example: "month"
     WorkTimeUnitEnum:
@@ -48171,14 +48175,31 @@ components:
           allOf:
             - {"$ref": "#/components/schemas/InterviewStage"}
           nullable: true
+          deprecated: true
+        "application_stage":
+          allOf:
+            - {"$ref": "#/components/schemas/ApplicationStage"}
+          nullable: true
         "interview_stage_id":
           type: "string"
           description: "Unique identifier of the interview stage"
           nullable: true
           example: "18bcbb1b-3cbc-4198-a999-460861d19480"
+          deprecated: true
         "remote_interview_stage_id":
           type: "string"
           description: "Provider's unique identifier of the interview stage"
+          nullable: true
+          example: "18bcbb1b-3cbc-4198-a999-460861d19480"
+          deprecated: true
+        "application_stage_id":
+          type: "string"
+          description: "Unique identifier of the application stage"
+          nullable: true
+          example: "18bcbb1b-3cbc-4198-a999-460861d19480"
+        "remote_application_stage_id":
+          type: "string"
+          description: "Unique identifier of the application stage"
           nullable: true
           example: "18bcbb1b-3cbc-4198-a999-460861d19480"
         "rejected_reasons":
@@ -48400,6 +48421,7 @@ components:
           description: "Unique identifier of the interview stage"
           nullable: true
           example: "18bcbb1b-3cbc-4198-a999-460861d19480"
+          deprecated: true
         "rejected_reason_ids":
           type: "array"
           items:
@@ -54712,6 +54734,7 @@ components:
             - "completed"
             - "unmapped_value"
             - null
+          description: "The StackOne unified assignment status."
           nullable: true
           example: "in_progress"
           x-speakeasy-unknown-values: "allow"
@@ -54723,6 +54746,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "The original status value from the provider before normalization."
           nullable: true
     AuthorModel:
       type: "object"
@@ -54813,6 +54837,7 @@ components:
             - "tertiary"
             - "unmapped_value"
             - null
+          description: "The unified category level. For write operations: provide one of the listed enum values, or omit/set to \"unmapped_value\" to use source_value instead."
           nullable: true
           x-speakeasy-unknown-values: "allow"
         "source_value":
@@ -54823,6 +54848,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "For read operations: the original category level from the provider. For write operations: fallback value used when value is omitted or \"unmapped_value\". You must ensure this matches the provider's format."
           nullable: true
     CategoryResult:
       type: "object"
@@ -55035,6 +55061,7 @@ components:
             - "article"
             - "unmapped_value"
             - null
+          description: "The StackOne unified content type."
           nullable: true
           x-speakeasy-unknown-values: "allow"
         "source_value":
@@ -55045,6 +55072,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "The original value from the provider before normalization."
           nullable: true
     Course:
       type: "object"
@@ -55268,6 +55296,7 @@ components:
             - "collection"
             - "unmapped_value"
             - null
+          description: "The StackOne unified learning object type."
           nullable: true
           x-speakeasy-unknown-values: "allow"
         "source_value":
@@ -55278,6 +55307,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "The original learning object type from the provider before normalization."
           nullable: true
     LmsBatchUpsertContentRequestDto:
       type: "object"
@@ -55728,6 +55758,7 @@ components:
             - "Fail"
             - "unmapped_value"
             - null
+          description: "The StackOne unified result status."
           nullable: true
           x-speakeasy-unknown-values: "allow"
         "source_value":
@@ -55738,6 +55769,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "The original result status from the provider before normalization."
           nullable: true
     SkillLevelEnum:
       type: "object"
@@ -55750,6 +55782,7 @@ components:
             - "tertiary"
             - "unmapped_value"
             - null
+          description: "The unified skill level. For write operations: provide one of the listed enum values, or omit/set to \"unmapped_value\" to use source_value instead."
           nullable: true
           x-speakeasy-unknown-values: "allow"
         "source_value":
@@ -55760,6 +55793,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "For read operations: the original skill level from the provider. For write operations: fallback value used when value is omitted or \"unmapped_value\". You must ensure this matches the provider's format."
           nullable: true
     SkillResult:
       type: "object"
@@ -55885,6 +55919,7 @@ components:
             - "interactive"
             - "unmapped_value"
             - null
+          description: "The content type for write operations. Provide one of the listed enum values. If omitted or set to \"unmapped_value\", the source_value will be sent to the provider instead."
           nullable: true
           x-speakeasy-unknown-values: "allow"
         "source_value":
@@ -55895,6 +55930,7 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          description: "The provider-specific value to use when value is omitted or set to \"unmapped_value\". You are responsible for ensuring this matches the provider's expected format."
           nullable: true
     TicketingAttachment:
       type: "object"

@@ -23,9 +23,15 @@ namespace StackOneHQ.Client.Models.Components
     public class CompletionResult1
     {
 
+        /// <summary>
+        /// The StackOne unified result status.
+        /// </summary>
         [JsonProperty("value")]
         public CompletionResultValue? Value { get; set; } = null;
 
+        /// <summary>
+        /// The original result status from the provider before normalization.
+        /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public CompletionResultSourceValueUnion? SourceValue { get; set; } = null;
     }

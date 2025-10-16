@@ -138,8 +138,8 @@ var res = await sdk.Hris.Employees.Employments.UpdateAsync(
         },
         WorkTime = new HrisUpdateEmploymentRequestDtoWorkTime() {
             Duration = "P0Y0M0DT8H0M0S",
-            DurationUnit = new HrisUpdateEmploymentRequestDtoDurationUnit() {
-                Value = HrisUpdateEmploymentRequestDtoWorkTimeValue.Month,
+            Period = new HrisUpdateEmploymentRequestDtoPeriod() {
+                Value = HrisUpdateEmploymentRequestDtoPeriodValue.Month,
             },
         },
         PayrollCode = "PC1",

@@ -1,5 +1,7 @@
 # CompletionResultValue
 
+The StackOne unified result status.
+
 
 ## Values
 

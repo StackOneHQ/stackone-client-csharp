@@ -1,5 +1,7 @@
 # LmsCreateContentRequestDtoSourceValueUnion
 
+The original value from the provider before normalization.
+
 
 ## Supported Types
 
