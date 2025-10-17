@@ -2885,7 +2885,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "HRIS Employees filters"
@@ -3172,7 +3172,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -5916,7 +5916,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at,unified_custom_fields"
+            example: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,is_unlimited,updated_at,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "HRIS Time Off Balance filters"
@@ -6106,7 +6106,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at,unified_custom_fields"
+            example: "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,is_unlimited,updated_at,unified_custom_fields"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -41653,6 +41653,11 @@ components:
           description: "Custom Unified Fields configured in your StackOne project"
           nullable: true
           example: {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}
+        "title":
+          type: "string"
+          description: "The prefix of the employee's name (e.g., Mr, Ms, Dr)"
+          nullable: true
+          example: "Mr"
         "first_name":
           type: "string"
           description: "The employee first name"
@@ -43972,6 +43977,11 @@ components:
     HrisCreateEmployeeRequestDto:
       type: "object"
       properties:
+        "title":
+          type: "string"
+          description: "The prefix of the employee's name (e.g., Mr, Ms, Dr)"
+          nullable: true
+          example: "Mr"
         "first_name":
           type: "string"
           description: "The employee first name"
@@ -45347,6 +45357,11 @@ components:
     HrisUpdateEmployeeRequestDto:
       type: "object"
       properties:
+        "title":
+          type: "string"
+          description: "The prefix of the employee's name (e.g., Mr, Ms, Dr)"
+          nullable: true
+          example: "Mr"
         "first_name":
           type: "string"
           description: "The employee first name"
@@ -47550,6 +47565,16 @@ components:
           description: "The date of when the current balance expires"
           nullable: true
           example: "2021-01-01T01:01:01.000Z"
+        "is_unlimited":
+          oneOf:
+            - type: "boolean"
+            - type: "string"
+              enum:
+                - "true"
+                - "false"
+          description: "Indicates if this time off balance represents unlimited leave"
+          nullable: true
+          example: true
         "updated_at":
           type: "string"
           format: "date-time"
