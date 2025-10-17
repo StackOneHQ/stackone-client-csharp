@@ -90,6 +90,12 @@ namespace StackOneHQ.Client.Models.Components
         public DateTime? BalanceExpiryDate { get; set; } = null;
 
         /// <summary>
+        /// Indicates if this time off balance represents unlimited leave
+        /// </summary>
+        [JsonProperty("is_unlimited", NullValueHandling = NullValueHandling.Include)]
+        public IsUnlimited? IsUnlimited { get; set; } = null;
+
+        /// <summary>
         /// The updated_at date of this time off balance
         /// </summary>
         [JsonProperty("updated_at")]

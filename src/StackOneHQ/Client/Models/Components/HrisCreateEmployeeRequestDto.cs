@@ -19,6 +19,12 @@ namespace StackOneHQ.Client.Models.Components
     {
 
         /// <summary>
+        /// The prefix of the employee&apos;s name (e.g., Mr, Ms, Dr)
+        /// </summary>
+        [JsonProperty("title")]
+        public string? Title { get; set; } = null;
+
+        /// <summary>
         /// The employee first name
         /// </summary>
         [JsonProperty("first_name")]
