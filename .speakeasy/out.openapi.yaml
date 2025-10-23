@@ -2885,7 +2885,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "HRIS Employees filters"
@@ -2958,7 +2958,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "avatar_url,avatar,custom_fields,job_description,benefits"
+            example: "avatar_url,avatar,custom_fields,job_description,benefits,bank_details"
       responses:
         "200":
           description: "The list of employees was retrieved."
@@ -3172,7 +3172,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -3188,7 +3188,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "avatar_url,avatar,custom_fields,job_description,benefits"
+            example: "avatar_url,avatar,custom_fields,job_description,benefits,bank_details"
       responses:
         "200":
           description: "The employee with the given identifier was retrieved."
@@ -15621,7 +15621,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields"
+            example: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,tags,created_at,updated_at,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "ATS Candidate Filter"
@@ -15910,7 +15910,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields"
+            example: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,tags,created_at,updated_at,unified_custom_fields"
         - name: "include"
           in: "query"
           description: "The comma separated list of fields that will be included in the response"
@@ -40406,6 +40406,34 @@ components:
         - "statusCode"
         - "message"
         - "timestamp"
+    BankAccountTypeEnum:
+      type: "object"
+      properties:
+        "value":
+          type: "string"
+          enum:
+            - "savings"
+            - "checking"
+            - "current"
+            - "business"
+            - "personal"
+            - "other"
+            - "unmapped_value"
+            - null
+          description: "The type of bank account"
+          nullable: true
+          example: "checking"
+          x-speakeasy-unknown-values: "allow"
+        "source_value":
+          oneOf:
+            - type: "string"
+            - type: "number"
+            - type: "boolean"
+            - type: "object"
+            - type: "array"
+              items: {}
+          nullable: true
+          example: "checking"
     BatchResultApiModel:
       type: "object"
       properties:
@@ -40455,6 +40483,61 @@ components:
             - type: "array"
               items: {}
           nullable: true
+    ClearingCode:
+      type: "object"
+      properties:
+        "type":
+          allOf:
+            - {"$ref": "#/components/schemas/ClearingCodeTypeEnum"}
+          description: "The type of clearing code"
+          nullable: true
+        "value":
+          type: "string"
+          description: "The clearing code value"
+          nullable: true
+          example: "12-34-56"
+    ClearingCodeTypeEnum:
+      type: "object"
+      properties:
+        "value":
+          type: "string"
+          enum:
+            - "sort_code"
+            - "building_society_reference"
+            - "aba_routing"
+            - "chips_participant_id"
+            - "transit_number"
+            - "institution_number"
+            - "bsb_code"
+            - "ifsc_code"
+            - "micr_code"
+            - "clabe"
+            - "cnaps_code"
+            - "ch_bank_clearing_code"
+            - "ch_sic_code"
+            - "zengin_code"
+            - "nz_clearing_code"
+            - "hk_bank_code"
+            - "blz"
+            - "at_bankleitzahl"
+            - "nuban"
+            - "se_bankgiro_code"
+            - "unmapped_value"
+            - null
+          description: "The type of clearing code"
+          nullable: true
+          example: "sort_code"
+          x-speakeasy-unknown-values: "allow"
+        "source_value":
+          oneOf:
+            - type: "string"
+            - type: "number"
+            - type: "boolean"
+            - type: "object"
+            - type: "array"
+              items: {}
+          nullable: true
+          example: "sort_code"
     CompaniesPaginated:
       type: "object"
       properties:
@@ -41366,6 +41449,185 @@ components:
           description: "Provider's unique identifier"
           nullable: true
           example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+    CurrencyCodeEnum:
+      type: "object"
+      properties:
+        "value":
+          type: "string"
+          enum:
+            - "AED"
+            - "AFN"
+            - "ALL"
+            - "AMD"
+            - "ANG"
+            - "AOA"
+            - "ARS"
+            - "AUD"
+            - "AWG"
+            - "AZN"
+            - "BAM"
+            - "BBD"
+            - "BDT"
+            - "BGN"
+            - "BHD"
+            - "BIF"
+            - "BMD"
+            - "BND"
+            - "BOB"
+            - "BRL"
+            - "BSD"
+            - "BTN"
+            - "BWP"
+            - "BYN"
+            - "BZD"
+            - "CAD"
+            - "CDF"
+            - "CHF"
+            - "CLP"
+            - "CNY"
+            - "COP"
+            - "CRC"
+            - "CUC"
+            - "CUP"
+            - "CVE"
+            - "CZK"
+            - "DJF"
+            - "DKK"
+            - "DOP"
+            - "DZD"
+            - "EGP"
+            - "ERN"
+            - "ETB"
+            - "EUR"
+            - "FJD"
+            - "FKP"
+            - "GBP"
+            - "GEL"
+            - "GHS"
+            - "GIP"
+            - "GMD"
+            - "GNF"
+            - "GTQ"
+            - "GYD"
+            - "HKD"
+            - "HNL"
+            - "HRK"
+            - "HTG"
+            - "HUF"
+            - "IDR"
+            - "ILS"
+            - "INR"
+            - "IQD"
+            - "IRR"
+            - "ISK"
+            - "JMD"
+            - "JOD"
+            - "JPY"
+            - "KES"
+            - "KGS"
+            - "KHR"
+            - "KMF"
+            - "KPW"
+            - "KRW"
+            - "KWD"
+            - "KYD"
+            - "KZT"
+            - "LAK"
+            - "LBP"
+            - "LKR"
+            - "LRD"
+            - "LSL"
+            - "LYD"
+            - "MAD"
+            - "MDL"
+            - "MGA"
+            - "MKD"
+            - "MMK"
+            - "MNT"
+            - "MOP"
+            - "MRU"
+            - "MUR"
+            - "MVR"
+            - "MWK"
+            - "MXN"
+            - "MYR"
+            - "MZN"
+            - "NAD"
+            - "NGN"
+            - "NIO"
+            - "NOK"
+            - "NPR"
+            - "NZD"
+            - "OMR"
+            - "PAB"
+            - "PEN"
+            - "PGK"
+            - "PHP"
+            - "PKR"
+            - "PLN"
+            - "PYG"
+            - "QAR"
+            - "RON"
+            - "RSD"
+            - "RUB"
+            - "RWF"
+            - "SAR"
+            - "SBD"
+            - "SCR"
+            - "SDG"
+            - "SEK"
+            - "SGD"
+            - "SHP"
+            - "SLL"
+            - "SOS"
+            - "SRD"
+            - "SSP"
+            - "STN"
+            - "SYP"
+            - "SZL"
+            - "THB"
+            - "TJS"
+            - "TMT"
+            - "TND"
+            - "TOP"
+            - "TRY"
+            - "TTD"
+            - "TWD"
+            - "TZS"
+            - "UAH"
+            - "UGX"
+            - "USD"
+            - "UYU"
+            - "UZS"
+            - "VES"
+            - "VND"
+            - "VUV"
+            - "WST"
+            - "XAF"
+            - "XCD"
+            - "XDR"
+            - "XOF"
+            - "XPF"
+            - "YER"
+            - "ZAR"
+            - "ZMW"
+            - "ZWL"
+            - "unmapped_value"
+            - null
+          description: "ISO 4217 currency code"
+          nullable: true
+          example: "USD"
+          x-speakeasy-unknown-values: "allow"
+        "source_value":
+          oneOf:
+            - type: "string"
+            - type: "number"
+            - type: "boolean"
+            - type: "object"
+            - type: "array"
+              items: {}
+          nullable: true
+          example: "USD"
     CustomFieldDefinition:
       type: "object"
       properties:
@@ -41898,6 +42160,11 @@ components:
           description: "The assigned employee number"
           nullable: true
           example: "125"
+        "bank_details":
+          type: "array"
+          items: {"$ref": "#/components/schemas/HRISBankDetails"}
+          description: "Bank account details for the employee"
+          nullable: true
         "national_identity_number":
           allOf:
             - {"$ref": "#/components/schemas/NationalIdentityNumberApiModel"}
@@ -43789,6 +44056,69 @@ components:
             - type: "object"
             - type: "array"
               items: {}
+          nullable: true
+    HRISBankDetails:
+      type: "object"
+      properties:
+        "id":
+          type: "string"
+          description: "Unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "remote_id":
+          type: "string"
+          description: "Provider's unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "account_name":
+          type: "string"
+          description: "The name of the bank account"
+          nullable: true
+          example: "John Doe Primary Account"
+        "is_primary":
+          type: "boolean"
+          description: "Whether this is the primary bank account"
+          nullable: true
+          example: true
+        "country_code":
+          allOf:
+            - {"$ref": "#/components/schemas/CountryCodeEnum"}
+          description: "The country code where the bank is located"
+          nullable: true
+        "currency_code":
+          allOf:
+            - {"$ref": "#/components/schemas/CurrencyCodeEnum"}
+          description: "The currency code for the account"
+          nullable: true
+        "bank_name":
+          type: "string"
+          description: "The name of the bank"
+          nullable: true
+          example: "Chase Bank"
+        "account_type":
+          allOf:
+            - {"$ref": "#/components/schemas/BankAccountTypeEnum"}
+          description: "The type of bank account"
+          nullable: true
+        "iban":
+          type: "string"
+          description: "International Bank Account Number (IBAN)"
+          nullable: true
+          example: "GB82WEST12345698765432"
+        "local_account_number":
+          type: "string"
+          description: "Local account number (used when IBAN is not available)"
+          nullable: true
+          example: "1234567890"
+        "swift_bic":
+          type: "string"
+          description: "SWIFT/BIC code for international transfers"
+          nullable: true
+          example: "CHASUS33"
+        "clearing_codes":
+          type: "array"
+          items: {"$ref": "#/components/schemas/ClearingCode"}
+          description: "Array of clearing codes required by the country"
           nullable: true
     HrisBatchDocumentUploadRequestDto:
       type: "object"
@@ -50104,6 +50434,11 @@ components:
           items: {"$ref": "#/components/schemas/CustomFields"}
           description: "The candidate custom fields"
           nullable: true
+        "tags":
+          type: "array"
+          items: {"$ref": "#/components/schemas/Tag"}
+          description: "List of candidate tags indicating metadata associated with the candidate"
+          nullable: true
         "created_at":
           type: "string"
           format: "date-time"
@@ -52351,6 +52686,19 @@ components:
           description: "The source of the application"
           nullable: true
           example: "LinkedIn"
+    Tag:
+      type: "object"
+      properties:
+        "remote_id":
+          type: "string"
+          description: "Remote ID of the tag"
+          nullable: true
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        "name":
+          type: "string"
+          description: "Name of the tag"
+          nullable: true
+          example: "Gold Medalist"
     UpdatePackage:
       type: "object"
       properties:
@@ -54904,6 +55252,11 @@ components:
           description: "Custom Unified Fields configured in your StackOne project"
           nullable: true
           example: {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}
+        "learning_object_external_reference":
+          type: "string"
+          description: "The external reference of the learning object associated with this completion, this is the main identifier for creating completions."
+          nullable: true
+          example: "learning-content-123"
         "external_reference":
           type: "string"
           description: "The external reference associated with this completion"
@@ -54948,11 +55301,6 @@ components:
           description: "Provider's unique identifier of the learning object related to the completion"
           nullable: true
           example: "e3cb55bf-aa84-466e-a6c1-b8302b257a49"
-        "learning_object_external_reference":
-          type: "string"
-          description: "The external reference of the learning object associated with this completion, this is the main identifier for creating completions."
-          nullable: true
-          example: "learning-content-123"
         "user_id":
           type: "string"
           description: "The user ID associated with this completion"
@@ -55363,11 +55711,6 @@ components:
           description: "The learning_object_id associated with this assignment. This is not required unless specified in an integration."
           nullable: true
           example: "e3gd34-23tr21-er234-345er56"
-        "learning_object_external_reference":
-          type: "string"
-          description: "The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments."
-          nullable: true
-          example: "learning-content-123"
         "progress":
           type: "number"
           description: "The progress associated with this assigment"
@@ -55390,6 +55733,12 @@ components:
             - {"$ref": "#/components/schemas/AssignmentStatusEnum"}
           description: "The status of the assignment"
           nullable: true
+        "learning_object_external_reference":
+          type: "string"
+          description: "The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments."
+          example: "learning-content-123"
+      required:
+        - "learning_object_external_reference"
     LmsCreateCompletionRequestDto:
       type: "object"
       properties:
@@ -55415,11 +55764,6 @@ components:
           description: "The id of the learning object associated with this completion. This is not required unless specified in an integration."
           nullable: true
           example: "e3gd34-23tr21-er234-345er56"
-        "learning_object_external_reference":
-          type: "string"
-          description: "The external reference of the learning object associated with this completion, this is the main identifier for creating completions."
-          nullable: true
-          example: "learning-content-123"
         "time_spent":
           type: "string"
           format: "string"
@@ -55438,6 +55782,12 @@ components:
           nullable: true
           example: "16873-ENG-VIDEO-1"
           deprecated: true
+        "learning_object_external_reference":
+          type: "string"
+          description: "The external reference of the learning object associated with this completion, this is the main identifier for creating completions."
+          example: "learning-content-123"
+      required:
+        - "learning_object_external_reference"
     LmsCreateContentRequestDto:
       type: "object"
       properties:
@@ -55447,11 +55797,6 @@ components:
           description: "Custom Unified Fields configured in your StackOne project"
           nullable: true
           example: {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}
-        "external_reference":
-          type: "string"
-          description: "The external ID associated with this content"
-          nullable: true
-          example: "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"
         "title":
           type: "string"
           description: "The title of the content"
@@ -55479,7 +55824,7 @@ components:
           example: "https://www.mobile.youtube.com/watch?v=16873"
         "content_type":
           allOf:
-            - {"$ref": "#/components/schemas/ContentTypeEnum"}
+            - {"$ref": "#/components/schemas/WriteContentTypeEnum"}
           description: "The type of content"
           nullable: true
         "cover_url":
@@ -55552,6 +55897,10 @@ components:
           description: "The date on which the content was created."
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
+        "external_reference":
+          type: "string"
+          description: "The external ID associated with this content"
+          example: "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"
         "categories":
           type: "array"
           items: {"$ref": "#/components/schemas/CreateCategoriesApiModel"}
@@ -55563,6 +55912,8 @@ components:
           items: {"$ref": "#/components/schemas/AdditionalData"}
           description: "The additional_data associated with this content"
           nullable: true
+      required:
+        - "external_reference"
     LmsUpsertContentRequestDto:
       type: "object"
       properties:
@@ -55572,11 +55923,6 @@ components:
           description: "Custom Unified Fields configured in your StackOne project"
           nullable: true
           example: {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}
-        "external_reference":
-          type: "string"
-          description: "The external ID associated with this content"
-          nullable: true
-          example: "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"
         "title":
           type: "string"
           description: "The title of the content"
@@ -55672,6 +56018,10 @@ components:
           description: "The date on which the content was created."
           nullable: true
           example: "2021-07-21T14:00:00.000Z"
+        "external_reference":
+          type: "string"
+          description: "The external ID associated with this content"
+          example: "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"
         "categories":
           type: "array"
           items: {"$ref": "#/components/schemas/CreateCategoriesApiModel"}
@@ -55687,6 +56037,8 @@ components:
             - {"$ref": "#/components/schemas/WriteContentTypeEnum"}
           description: "The type of content"
           nullable: true
+      required:
+        - "external_reference"
     LmsUser:
       type: "object"
       properties:

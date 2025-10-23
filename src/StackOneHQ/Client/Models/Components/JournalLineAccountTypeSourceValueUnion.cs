@@ -18,35 +18,35 @@ namespace StackOneHQ.Client.Models.Components
     using System.Numerics;
     using System.Reflection;
 
-    public class AccountTypeSourceValueUnionType
+    public class JournalLineAccountTypeSourceValueUnionType
     {
-        private AccountTypeSourceValueUnionType(string value) { Value = value; }
+        private JournalLineAccountTypeSourceValueUnionType(string value) { Value = value; }
 
         public string Value { get; private set; }
 
-        public static AccountTypeSourceValueUnionType Str { get { return new AccountTypeSourceValueUnionType("str"); } }
+        public static JournalLineAccountTypeSourceValueUnionType Str { get { return new JournalLineAccountTypeSourceValueUnionType("str"); } }
 
-        public static AccountTypeSourceValueUnionType Number { get { return new AccountTypeSourceValueUnionType("number"); } }
+        public static JournalLineAccountTypeSourceValueUnionType Number { get { return new JournalLineAccountTypeSourceValueUnionType("number"); } }
 
-        public static AccountTypeSourceValueUnionType Boolean { get { return new AccountTypeSourceValueUnionType("boolean"); } }
+        public static JournalLineAccountTypeSourceValueUnionType Boolean { get { return new JournalLineAccountTypeSourceValueUnionType("boolean"); } }
 
-        public static AccountTypeSourceValueUnionType SourceValueAccountType { get { return new AccountTypeSourceValueUnionType("source_value_account_type"); } }
+        public static JournalLineAccountTypeSourceValueUnionType JournalLineSourceValueAccountType { get { return new JournalLineAccountTypeSourceValueUnionType("JournalLine_source_value_account_type"); } }
 
-        public static AccountTypeSourceValueUnionType ArrayOfAny { get { return new AccountTypeSourceValueUnionType("arrayOfAny"); } }
+        public static JournalLineAccountTypeSourceValueUnionType ArrayOfAny { get { return new JournalLineAccountTypeSourceValueUnionType("arrayOfAny"); } }
 
-        public static AccountTypeSourceValueUnionType Null { get { return new AccountTypeSourceValueUnionType("null"); } }
+        public static JournalLineAccountTypeSourceValueUnionType Null { get { return new JournalLineAccountTypeSourceValueUnionType("null"); } }
 
         public override string ToString() { return Value; }
-        public static implicit operator String(AccountTypeSourceValueUnionType v) { return v.Value; }
-        public static AccountTypeSourceValueUnionType FromString(string v) {
+        public static implicit operator String(JournalLineAccountTypeSourceValueUnionType v) { return v.Value; }
+        public static JournalLineAccountTypeSourceValueUnionType FromString(string v) {
             switch(v) {
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "source_value_account_type": return SourceValueAccountType;
+                case "JournalLine_source_value_account_type": return JournalLineSourceValueAccountType;
                 case "arrayOfAny": return ArrayOfAny;
                 case "null": return Null;
-                default: throw new ArgumentException("Invalid value for AccountTypeSourceValueUnionType");
+                default: throw new ArgumentException("Invalid value for JournalLineAccountTypeSourceValueUnionType");
             }
         }
         public override bool Equals(object? obj)
@@ -55,7 +55,7 @@ namespace StackOneHQ.Client.Models.Components
             {
                 return false;
             }
-            return Value.Equals(((AccountTypeSourceValueUnionType)obj).Value);
+            return Value.Equals(((JournalLineAccountTypeSourceValueUnionType)obj).Value);
         }
 
         public override int GetHashCode()
@@ -65,10 +65,10 @@ namespace StackOneHQ.Client.Models.Components
     }
 
 
-    [JsonConverter(typeof(AccountTypeSourceValueUnion.AccountTypeSourceValueUnionConverter))]
-    public class AccountTypeSourceValueUnion
+    [JsonConverter(typeof(JournalLineAccountTypeSourceValueUnion.JournalLineAccountTypeSourceValueUnionConverter))]
+    public class JournalLineAccountTypeSourceValueUnion
     {
-        public AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType type)
+        public JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType type)
         {
             Type = type;
         }
@@ -83,62 +83,62 @@ namespace StackOneHQ.Client.Models.Components
         public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public SourceValueAccountType? SourceValueAccountType { get; set; }
+        public JournalLineSourceValueAccountType? JournalLineSourceValueAccountType { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
         public List<object>? ArrayOfAny { get; set; }
 
-        public AccountTypeSourceValueUnionType Type { get; set; }
-        public static AccountTypeSourceValueUnion CreateStr(string str)
+        public JournalLineAccountTypeSourceValueUnionType Type { get; set; }
+        public static JournalLineAccountTypeSourceValueUnion CreateStr(string str)
         {
-            AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Str;
+            JournalLineAccountTypeSourceValueUnionType typ = JournalLineAccountTypeSourceValueUnionType.Str;
 
-            AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
+            JournalLineAccountTypeSourceValueUnion res = new JournalLineAccountTypeSourceValueUnion(typ);
             res.Str = str;
             return res;
         }
-        public static AccountTypeSourceValueUnion CreateNumber(double number)
+        public static JournalLineAccountTypeSourceValueUnion CreateNumber(double number)
         {
-            AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Number;
+            JournalLineAccountTypeSourceValueUnionType typ = JournalLineAccountTypeSourceValueUnionType.Number;
 
-            AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
+            JournalLineAccountTypeSourceValueUnion res = new JournalLineAccountTypeSourceValueUnion(typ);
             res.Number = number;
             return res;
         }
-        public static AccountTypeSourceValueUnion CreateBoolean(bool boolean)
+        public static JournalLineAccountTypeSourceValueUnion CreateBoolean(bool boolean)
         {
-            AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Boolean;
+            JournalLineAccountTypeSourceValueUnionType typ = JournalLineAccountTypeSourceValueUnionType.Boolean;
 
-            AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
+            JournalLineAccountTypeSourceValueUnion res = new JournalLineAccountTypeSourceValueUnion(typ);
             res.Boolean = boolean;
             return res;
         }
-        public static AccountTypeSourceValueUnion CreateSourceValueAccountType(SourceValueAccountType sourceValueAccountType)
+        public static JournalLineAccountTypeSourceValueUnion CreateJournalLineSourceValueAccountType(JournalLineSourceValueAccountType journalLineSourceValueAccountType)
         {
-            AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.SourceValueAccountType;
+            JournalLineAccountTypeSourceValueUnionType typ = JournalLineAccountTypeSourceValueUnionType.JournalLineSourceValueAccountType;
 
-            AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
-            res.SourceValueAccountType = sourceValueAccountType;
+            JournalLineAccountTypeSourceValueUnion res = new JournalLineAccountTypeSourceValueUnion(typ);
+            res.JournalLineSourceValueAccountType = journalLineSourceValueAccountType;
             return res;
         }
-        public static AccountTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
+        public static JournalLineAccountTypeSourceValueUnion CreateArrayOfAny(List<object> arrayOfAny)
         {
-            AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.ArrayOfAny;
+            JournalLineAccountTypeSourceValueUnionType typ = JournalLineAccountTypeSourceValueUnionType.ArrayOfAny;
 
-            AccountTypeSourceValueUnion res = new AccountTypeSourceValueUnion(typ);
+            JournalLineAccountTypeSourceValueUnion res = new JournalLineAccountTypeSourceValueUnion(typ);
             res.ArrayOfAny = arrayOfAny;
             return res;
         }
 
-        public static AccountTypeSourceValueUnion CreateNull()
+        public static JournalLineAccountTypeSourceValueUnion CreateNull()
         {
-            AccountTypeSourceValueUnionType typ = AccountTypeSourceValueUnionType.Null;
-            return new AccountTypeSourceValueUnion(typ);
+            JournalLineAccountTypeSourceValueUnionType typ = JournalLineAccountTypeSourceValueUnionType.Null;
+            return new JournalLineAccountTypeSourceValueUnion(typ);
         }
 
-        public class AccountTypeSourceValueUnionConverter : JsonConverter
+        public class JournalLineAccountTypeSourceValueUnionConverter : JsonConverter
         {
-            public override bool CanConvert(System.Type objectType) => objectType == typeof(AccountTypeSourceValueUnion);
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(JournalLineAccountTypeSourceValueUnion);
 
             public override bool CanRead => true;
 
@@ -154,14 +154,14 @@ namespace StackOneHQ.Client.Models.Components
 
                 try
                 {
-                    return new AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType.SourceValueAccountType)
+                    return new JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType.JournalLineSourceValueAccountType)
                     {
-                        SourceValueAccountType = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<SourceValueAccountType>(json)
+                        JournalLineSourceValueAccountType = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<JournalLineSourceValueAccountType>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(SourceValueAccountType), new AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType.SourceValueAccountType), "SourceValueAccountType"));
+                    fallbackCandidates.Add((typeof(JournalLineSourceValueAccountType), new JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType.JournalLineSourceValueAccountType), "JournalLineSourceValueAccountType"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -173,7 +173,7 @@ namespace StackOneHQ.Client.Models.Components
                 }
 
                 if (json[0] == '"' && json[^1] == '"'){
-                    return new AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType.Str)
+                    return new JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType.Str)
                     {
                         Str = json[1..^1]
                     };
@@ -182,7 +182,7 @@ namespace StackOneHQ.Client.Models.Components
                 try
                 {
                     var converted = Convert.ToDouble(json);
-                    return new AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType.Number)
+                    return new JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType.Number)
                     {
                         Number = converted
                     };
@@ -195,7 +195,7 @@ namespace StackOneHQ.Client.Models.Components
                 try
                 {
                     var converted = Convert.ToBoolean(json);
-                    return new AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType.Boolean)
+                    return new JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType.Boolean)
                     {
                         Boolean = converted
                     };
@@ -207,14 +207,14 @@ namespace StackOneHQ.Client.Models.Components
 
                 try
                 {
-                    return new AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType.ArrayOfAny)
+                    return new JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType.ArrayOfAny)
                     {
                         ArrayOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(List<object>), new AccountTypeSourceValueUnion(AccountTypeSourceValueUnionType.ArrayOfAny), "ArrayOfAny"));
+                    fallbackCandidates.Add((typeof(List<object>), new JournalLineAccountTypeSourceValueUnion(JournalLineAccountTypeSourceValueUnionType.ArrayOfAny), "ArrayOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -256,8 +256,8 @@ namespace StackOneHQ.Client.Models.Components
                     return;
                 }
 
-                AccountTypeSourceValueUnion res = (AccountTypeSourceValueUnion)value;
-                if (AccountTypeSourceValueUnionType.FromString(res.Type).Equals(AccountTypeSourceValueUnionType.Null))
+                JournalLineAccountTypeSourceValueUnion res = (JournalLineAccountTypeSourceValueUnion)value;
+                if (JournalLineAccountTypeSourceValueUnionType.FromString(res.Type).Equals(JournalLineAccountTypeSourceValueUnionType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
@@ -281,9 +281,9 @@ namespace StackOneHQ.Client.Models.Components
                     return;
                 }
 
-                if (res.SourceValueAccountType != null)
+                if (res.JournalLineSourceValueAccountType != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.SourceValueAccountType));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.JournalLineSourceValueAccountType));
                     return;
                 }
 

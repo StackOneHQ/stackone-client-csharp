@@ -18,18 +18,18 @@ namespace StackOneHQ.Client.Models.Components
     using System.Linq;
     
     /// <summary>
-    /// Type of the account
+    /// The type of bank account
     /// </summary>
-    public class AccountType
+    public class HRISBankDetailsAccountType
     {
 
         /// <summary>
-        /// Type of account
+        /// The type of bank account
         /// </summary>
         [JsonProperty("value")]
-        public AccountTypeValue? Value { get; set; } = null;
+        public HRISBankDetailsAccountTypeValue? Value { get; set; } = null;
 
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
-        public AccountTypeSourceValueUnion? SourceValue { get; set; } = null;
+        public HRISBankDetailsAccountTypeSourceValueUnion? SourceValue { get; set; } = null;
     }
 }

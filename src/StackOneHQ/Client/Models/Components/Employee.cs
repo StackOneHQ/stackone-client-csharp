@@ -311,6 +311,12 @@ namespace StackOneHQ.Client.Models.Components
         public string? EmployeeNumber { get; set; } = null;
 
         /// <summary>
+        /// Bank account details for the employee
+        /// </summary>
+        [JsonProperty("bank_details")]
+        public List<HRISBankDetails>? BankDetails { get; set; } = null;
+
+        /// <summary>
         /// The national identity number
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]

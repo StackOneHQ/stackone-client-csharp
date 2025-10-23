@@ -1,0 +1,11 @@
+# JournalLineAccountType
+
+Type of the account
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 | Example                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `Value`                                                                                                     | [JournalLineAccountTypeValue](../../Models/Components/JournalLineAccountTypeValue.md)                       | :heavy_minus_sign:                                                                                          | Type of account                                                                                             | asset                                                                                                       |
+| `SourceValue`                                                                                               | [JournalLineAccountTypeSourceValueUnion](../../Models/Components/JournalLineAccountTypeSourceValueUnion.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         | asset                                                                                                       |

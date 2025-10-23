@@ -24,13 +24,13 @@ namespace StackOneHQ.Client.Models.Components
     {
 
         /// <summary>
-        /// The StackOne unified content type.
+        /// The content type for write operations. Provide one of the listed enum values. If omitted or set to &quot;unmapped_value&quot;, the source_value will be sent to the provider instead.
         /// </summary>
         [JsonProperty("value")]
         public LmsCreateContentRequestDtoValue? Value { get; set; } = null;
 
         /// <summary>
-        /// The original value from the provider before normalization.
+        /// The provider-specific value to use when value is omitted or set to &quot;unmapped_value&quot;. You are responsible for ensuring this matches the provider&apos;s expected format.
         /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public LmsCreateContentRequestDtoSourceValueUnion? SourceValue { get; set; } = null;

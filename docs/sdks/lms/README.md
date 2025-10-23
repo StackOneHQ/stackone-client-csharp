@@ -167,7 +167,6 @@ var res = await sdk.Lms.BatchUpsertContentAsync(
                     { "my_project_custom_field_1", "REF-1236" },
                     { "my_project_custom_field_2", "some other value" },
                 },
-                ExternalReference = "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1",
                 Title = "Software Engineer Lv 1",
                 Description = "This video acts as learning content for software engineers.",
                 Languages = new List<LanguageEnum>() {
@@ -211,6 +210,7 @@ var res = await sdk.Lms.BatchUpsertContentAsync(
                 },
                 UpdatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
                 CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+                ExternalReference = "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1",
                 Categories = new List<CreateCategoriesApiModel>() {
                     new CreateCategoriesApiModel() {
                         Id = "16873-IT345",
@@ -361,8 +361,8 @@ var res = await sdk.Lms.CreateUserCompletionAsync(
         },
         CompletedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
-        LearningObjectExternalReference = "learning-content-123",
         TimeSpent = "PT1H30M45S",
+        LearningObjectExternalReference = "learning-content-123",
     }
 );
 

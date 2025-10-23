@@ -19,12 +19,12 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields",
+    Fields = "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields",
     Filter = new HrisListEmployeesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "company,employments,work_location,home_location,groups,skills",
-    Include = "avatar_url,avatar,custom_fields,job_description,benefits",
+    Include = "avatar_url,avatar,custom_fields,job_description,benefits,bank_details",
 };
 
 HrisListEmployeesResponse? res = await sdk.Hris.Employees.ListAsync(req);
@@ -410,5 +410,151 @@ var res = await sdk.ConnectSessions.CreateAsync(req);
 // handle response
 ```
 <!-- End Server Selection [server] -->
+
+<!-- Start Custom HTTP Client [http-client] -->
+## Custom HTTP Client
+
+The C# SDK makes API calls using an `ISpeakeasyHttpClient` that wraps the native
+[HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient). This
+client provides the ability to attach hooks around the request lifecycle that can be used to modify the request or handle
+errors and response.
+
+The `ISpeakeasyHttpClient` interface allows you to either use the default `SpeakeasyHttpClient` that comes with the SDK,
+or provide your own custom implementation with customized configuration such as custom message handlers, timeouts,
+connection pooling, and other HTTP client settings.
+
+The following example shows how to create a custom HTTP client with request modification and error handling:
+
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Utils;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
+// Create a custom HTTP client
+public class CustomHttpClient : ISpeakeasyHttpClient
+{
+    private readonly ISpeakeasyHttpClient _defaultClient;
+
+    public CustomHttpClient()
+    {
+        _defaultClient = new SpeakeasyHttpClient();
+    }
+
+    public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken? cancellationToken = null)
+    {
+        // Add custom header and timeout
+        request.Headers.Add("x-custom-header", "custom value");
+        request.Headers.Add("x-request-timeout", "30");
+        
+        try
+        {
+            var response = await _defaultClient.SendAsync(request, cancellationToken);
+            // Log successful response
+            Console.WriteLine($"Request successful: {response.StatusCode}");
+            return response;
+        }
+        catch (Exception error)
+        {
+            // Log error
+            Console.WriteLine($"Request failed: {error.Message}");
+            throw;
+        }
+    }
+
+    public void Dispose()
+    {
+        _httpClient?.Dispose();
+        _defaultClient?.Dispose();
+    }
+}
+
+// Use the custom HTTP client with the SDK
+var customHttpClient = new CustomHttpClient();
+var sdk = new StackOneHQClient(client: customHttpClient);
+```
+
+<details>
+<summary>You can also provide a completely custom HTTP client with your own configuration:</summary>
+
+```csharp
+using StackOneHQ.Client.Utils;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
+// Custom HTTP client with custom configuration
+public class AdvancedHttpClient : ISpeakeasyHttpClient
+{
+    private readonly HttpClient _httpClient;
+
+    public AdvancedHttpClient()
+    {
+        var handler = new HttpClientHandler()
+        {
+            MaxConnectionsPerServer = 10,
+            // ServerCertificateCustomValidationCallback = customCertValidation, // Custom SSL validation if needed
+        };
+
+        _httpClient = new HttpClient(handler)
+        {
+            Timeout = TimeSpan.FromSeconds(30)
+        };
+    }
+
+    public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken? cancellationToken = null)
+    {
+        return await _httpClient.SendAsync(request, cancellationToken ?? CancellationToken.None);
+    }
+
+    public void Dispose()
+    {
+        _httpClient?.Dispose();
+    }
+}
+
+var sdk = StackOneHQClient.Builder()
+    .WithClient(new AdvancedHttpClient())
+    .Build();
+```
+</details>
+
+<details>
+<summary>For simple debugging, you can enable request/response logging by implementing a custom client:</summary>
+
+```csharp
+public class LoggingHttpClient : ISpeakeasyHttpClient
+{
+    private readonly ISpeakeasyHttpClient _innerClient;
+
+    public LoggingHttpClient(ISpeakeasyHttpClient innerClient = null)
+    {
+        _innerClient = innerClient ?? new SpeakeasyHttpClient();
+    }
+
+    public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken? cancellationToken = null)
+    {
+        // Log request
+        Console.WriteLine($"Sending {request.Method} request to {request.RequestUri}");
+        
+        var response = await _innerClient.SendAsync(request, cancellationToken);
+        
+        // Log response
+        Console.WriteLine($"Received {response.StatusCode} response");
+        
+        return response;
+    }
+
+    public void Dispose() => _innerClient?.Dispose();
+}
+
+var sdk = new StackOneHQClient(client: new LoggingHttpClient());
+```
+</details>
+
+The SDK also provides built-in hook support through the `SDKConfiguration.Hooks` system, which automatically handles
+`BeforeRequestAsync`, `AfterSuccessAsync`, and `AfterErrorAsync` hooks for advanced request lifecycle management.
+<!-- End Custom HTTP Client [http-client] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

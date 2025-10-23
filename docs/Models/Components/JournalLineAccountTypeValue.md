@@ -1,4 +1,4 @@
-# AccountTypeValue
+# JournalLineAccountTypeValue
 
 Type of account
 
