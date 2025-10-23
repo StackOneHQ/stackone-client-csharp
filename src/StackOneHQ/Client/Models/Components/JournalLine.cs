@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// Type of the account
         /// </summary>
         [JsonProperty("account_type")]
-        public AccountType? AccountType { get; set; } = null;
+        public JournalLineAccountType? AccountType { get; set; } = null;
 
         /// <summary>
         /// Description of the journal line

@@ -25,12 +25,6 @@ namespace StackOneHQ.Client.Models.Components
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The external ID associated with this content
-        /// </summary>
-        [JsonProperty("external_reference")]
-        public string? ExternalReference { get; set; } = null;
-
-        /// <summary>
         /// The title of the content
         /// </summary>
         [JsonProperty("title")]
@@ -126,6 +120,12 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
+
+        /// <summary>
+        /// The external ID associated with this content
+        /// </summary>
+        [JsonProperty("external_reference")]
+        public string ExternalReference { get; set; } = default!;
 
         /// <summary>
         /// The categories associated with this content

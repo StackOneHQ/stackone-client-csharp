@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>StackOneHQ.Client</PackageId>
-    <Version>0.7.0</Version>
+    <Version>0.7.1</Version>
     <TargetFramework>net8.0</TargetFramework>
     <Authors>stackone</Authors>
     <Copyright>Copyright (c) stackone 2025</Copyright>

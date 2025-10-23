@@ -38,12 +38,6 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectId { get; set; } = null;
 
         /// <summary>
-        /// The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments.
-        /// </summary>
-        [JsonProperty("learning_object_external_reference")]
-        public string? LearningObjectExternalReference { get; set; } = null;
-
-        /// <summary>
         /// The progress associated with this assigment
         /// </summary>
         [JsonProperty("progress")]
@@ -66,5 +60,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("status")]
         public LmsCreateAssignmentRequestDtoStatus? Status { get; set; } = null;
+
+        /// <summary>
+        /// The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments.
+        /// </summary>
+        [JsonProperty("learning_object_external_reference")]
+        public string LearningObjectExternalReference { get; set; } = default!;
     }
 }

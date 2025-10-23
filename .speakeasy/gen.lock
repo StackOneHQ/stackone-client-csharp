@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: 6b248a3eaff5b04890e3485f7a581000
+  docChecksum: 600682ec07ab407b6301d41c2e8ed2fc
   docVersion: 1.0.0
-  speakeasyVersion: 1.637.0
-  generationVersion: 2.727.4
-  releaseVersion: 0.7.0
-  configChecksum: 6ae919384583a759fc09a167a6eb7338
+  speakeasyVersion: 1.638.1
+  generationVersion: 2.729.2
+  releaseVersion: 0.7.1
+  configChecksum: de4127022edf893743006ae15fc06883
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.15.0
+    core: 3.15.1
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
@@ -51,9 +51,6 @@ generatedFiles:
   - docs/Models/Components/AccountAddressSourceValueCountry.md
   - docs/Models/Components/AccountAddressSourceValueLocationType.md
   - docs/Models/Components/AccountResult.md
-  - docs/Models/Components/AccountType.md
-  - docs/Models/Components/AccountTypeSourceValueUnion.md
-  - docs/Models/Components/AccountTypeValue.md
   - docs/Models/Components/AccountingAccount.md
   - docs/Models/Components/AccountingAccountActiveEnum.md
   - docs/Models/Components/AccountingAccountActiveUnion.md
@@ -340,6 +337,11 @@ generatedFiles:
   - docs/Models/Components/ChannelsEnumSourceValue.md
   - docs/Models/Components/ChannelsEnumSourceValueUnion.md
   - docs/Models/Components/ChannelsEnumValue.md
+  - docs/Models/Components/ClearingCode.md
+  - docs/Models/Components/ClearingCodeSourceValue.md
+  - docs/Models/Components/ClearingCodeSourceValueUnion.md
+  - docs/Models/Components/ClearingCodeType.md
+  - docs/Models/Components/ClearingCodeValue.md
   - docs/Models/Components/CompaniesPaginated.md
   - docs/Models/Components/Company.md
   - docs/Models/Components/CompanyResult.md
@@ -400,10 +402,13 @@ generatedFiles:
   - docs/Models/Components/CostCenterType.md
   - docs/Models/Components/CostCenterValue.md
   - docs/Models/Components/CostCenters.md
+  - docs/Models/Components/CountryCode.md
   - docs/Models/Components/CountryCodeEnum.md
   - docs/Models/Components/CountryCodeEnumSourceValue.md
   - docs/Models/Components/CountryCodeEnumSourceValueUnion.md
   - docs/Models/Components/CountryCodeEnumValue.md
+  - docs/Models/Components/CountryCodeSourceValueUnion.md
+  - docs/Models/Components/CountryCodeValue.md
   - docs/Models/Components/Course.md
   - docs/Models/Components/CourseActiveEnum.md
   - docs/Models/Components/CourseActiveUnion.md
@@ -690,6 +695,15 @@ generatedFiles:
   - docs/Models/Components/FoldersHasContentEnum.md
   - docs/Models/Components/FoldersHasContentUnion.md
   - docs/Models/Components/FoldersPaginated.md
+  - docs/Models/Components/HRISBankDetails.md
+  - docs/Models/Components/HRISBankDetailsAccountType.md
+  - docs/Models/Components/HRISBankDetailsAccountTypeSourceValueUnion.md
+  - docs/Models/Components/HRISBankDetailsAccountTypeValue.md
+  - docs/Models/Components/HRISBankDetailsCurrencyCode.md
+  - docs/Models/Components/HRISBankDetailsCurrencyCodeSourceValueUnion.md
+  - docs/Models/Components/HRISBankDetailsCurrencyCodeValue.md
+  - docs/Models/Components/HRISBankDetailsSourceValueAccountType.md
+  - docs/Models/Components/HRISBankDetailsSourceValueCurrencyCode.md
   - docs/Models/Components/HRISBenefit.md
   - docs/Models/Components/HRISBenefitBenefitType.md
   - docs/Models/Components/HRISBenefitResult.md
@@ -1201,9 +1215,13 @@ generatedFiles:
   - docs/Models/Components/JobPostingStatusValue.md
   - docs/Models/Components/JobPostingsPaginated.md
   - docs/Models/Components/JournalLine.md
+  - docs/Models/Components/JournalLineAccountType.md
+  - docs/Models/Components/JournalLineAccountTypeSourceValueUnion.md
+  - docs/Models/Components/JournalLineAccountTypeValue.md
   - docs/Models/Components/JournalLineCurrencyCode.md
   - docs/Models/Components/JournalLineCurrencyCodeSourceValueUnion.md
   - docs/Models/Components/JournalLineCurrencyCodeValue.md
+  - docs/Models/Components/JournalLineSourceValueAccountType.md
   - docs/Models/Components/JournalLineSourceValueCurrencyCode.md
   - docs/Models/Components/JsonRpcMessageDto.md
   - docs/Models/Components/Label.md
@@ -1457,12 +1475,12 @@ generatedFiles:
   - docs/Models/Components/SmsTemplateResult.md
   - docs/Models/Components/SmsTemplatesPaginated.md
   - docs/Models/Components/SocialLink.md
-  - docs/Models/Components/SourceValueAccountType.md
   - docs/Models/Components/SourceValueAvatarCategory.md
   - docs/Models/Components/SourceValueAvatarFileFormat.md
   - docs/Models/Components/SourceValueBalanceUnit.md
   - docs/Models/Components/SourceValueConditionType.md
   - docs/Models/Components/SourceValueCostCenter.md
+  - docs/Models/Components/SourceValueCountryCode.md
   - docs/Models/Components/SourceValueDepartment.md
   - docs/Models/Components/SourceValueDivision.md
   - docs/Models/Components/SourceValueHomeLocationLocationType.md
@@ -1476,6 +1494,7 @@ generatedFiles:
   - docs/Models/Components/StepLogResponse.md
   - docs/Models/Components/StepLogUrl.md
   - docs/Models/Components/StepLogsPaginated.md
+  - docs/Models/Components/Tag.md
   - docs/Models/Components/Task.md
   - docs/Models/Components/TaskCommentApiModel.md
   - docs/Models/Components/TaskResult.md
@@ -2605,9 +2624,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/AccountAddressSourceValueCountry.cs
   - src/StackOneHQ/Client/Models/Components/AccountAddressSourceValueLocationType.cs
   - src/StackOneHQ/Client/Models/Components/AccountResult.cs
-  - src/StackOneHQ/Client/Models/Components/AccountType.cs
-  - src/StackOneHQ/Client/Models/Components/AccountTypeSourceValueUnion.cs
-  - src/StackOneHQ/Client/Models/Components/AccountTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/AccountingAccount.cs
   - src/StackOneHQ/Client/Models/Components/AccountingAccountActiveEnum.cs
   - src/StackOneHQ/Client/Models/Components/AccountingAccountActiveUnion.cs
@@ -2894,6 +2910,11 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/ChannelsEnumSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/ChannelsEnumSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/ChannelsEnumValue.cs
+  - src/StackOneHQ/Client/Models/Components/ClearingCode.cs
+  - src/StackOneHQ/Client/Models/Components/ClearingCodeSourceValue.cs
+  - src/StackOneHQ/Client/Models/Components/ClearingCodeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/ClearingCodeType.cs
+  - src/StackOneHQ/Client/Models/Components/ClearingCodeValue.cs
   - src/StackOneHQ/Client/Models/Components/CompaniesPaginated.cs
   - src/StackOneHQ/Client/Models/Components/Company.cs
   - src/StackOneHQ/Client/Models/Components/CompanyResult.cs
@@ -2954,10 +2975,13 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/CostCenterType.cs
   - src/StackOneHQ/Client/Models/Components/CostCenterValue.cs
   - src/StackOneHQ/Client/Models/Components/CostCenters.cs
+  - src/StackOneHQ/Client/Models/Components/CountryCode.cs
   - src/StackOneHQ/Client/Models/Components/CountryCodeEnum.cs
   - src/StackOneHQ/Client/Models/Components/CountryCodeEnumSourceValue.cs
   - src/StackOneHQ/Client/Models/Components/CountryCodeEnumSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/CountryCodeEnumValue.cs
+  - src/StackOneHQ/Client/Models/Components/CountryCodeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/CountryCodeValue.cs
   - src/StackOneHQ/Client/Models/Components/Course.cs
   - src/StackOneHQ/Client/Models/Components/CourseActiveEnum.cs
   - src/StackOneHQ/Client/Models/Components/CourseActiveUnion.cs
@@ -3244,6 +3268,15 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/FoldersHasContentEnum.cs
   - src/StackOneHQ/Client/Models/Components/FoldersHasContentUnion.cs
   - src/StackOneHQ/Client/Models/Components/FoldersPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetails.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsAccountType.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsAccountTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsAccountTypeValue.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsCurrencyCode.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsCurrencyCodeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsCurrencyCodeValue.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsSourceValueAccountType.cs
+  - src/StackOneHQ/Client/Models/Components/HRISBankDetailsSourceValueCurrencyCode.cs
   - src/StackOneHQ/Client/Models/Components/HRISBenefit.cs
   - src/StackOneHQ/Client/Models/Components/HRISBenefitBenefitType.cs
   - src/StackOneHQ/Client/Models/Components/HRISBenefitResult.cs
@@ -3755,9 +3788,13 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/JobPostingStatusValue.cs
   - src/StackOneHQ/Client/Models/Components/JobPostingsPaginated.cs
   - src/StackOneHQ/Client/Models/Components/JournalLine.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineAccountType.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineAccountTypeSourceValueUnion.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineAccountTypeValue.cs
   - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCode.cs
   - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCodeSourceValueUnion.cs
   - src/StackOneHQ/Client/Models/Components/JournalLineCurrencyCodeValue.cs
+  - src/StackOneHQ/Client/Models/Components/JournalLineSourceValueAccountType.cs
   - src/StackOneHQ/Client/Models/Components/JournalLineSourceValueCurrencyCode.cs
   - src/StackOneHQ/Client/Models/Components/JsonRpcMessageDto.cs
   - src/StackOneHQ/Client/Models/Components/Label.cs
@@ -4011,12 +4048,12 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/SmsTemplateResult.cs
   - src/StackOneHQ/Client/Models/Components/SmsTemplatesPaginated.cs
   - src/StackOneHQ/Client/Models/Components/SocialLink.cs
-  - src/StackOneHQ/Client/Models/Components/SourceValueAccountType.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueAvatarCategory.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueAvatarFileFormat.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueBalanceUnit.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueConditionType.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueCostCenter.cs
+  - src/StackOneHQ/Client/Models/Components/SourceValueCountryCode.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueDepartment.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueDivision.cs
   - src/StackOneHQ/Client/Models/Components/SourceValueHomeLocationLocationType.cs
@@ -4030,6 +4067,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/StepLogResponse.cs
   - src/StackOneHQ/Client/Models/Components/StepLogUrl.cs
   - src/StackOneHQ/Client/Models/Components/StepLogsPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/Tag.cs
   - src/StackOneHQ/Client/Models/Components/Task.cs
   - src/StackOneHQ/Client/Models/Components/TaskCommentApiModel.cs
   - src/StackOneHQ/Client/Models/Components/TaskResult.cs
@@ -5568,10 +5606,10 @@ examples:
     speakeasy-default-hris-list-employees:
       parameters:
         query:
-          fields: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
+          fields: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
           expand: "company,employments,work_location,home_location,groups,skills"
-          include: "avatar_url,avatar,custom_fields,job_description,benefits"
+          include: "avatar_url,avatar,custom_fields,job_description,benefits,bank_details"
         header:
           x-account-id: "<id>"
       responses:
@@ -5641,14 +5679,14 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields"
+          fields: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
           expand: "company,employments,work_location,home_location,groups,skills"
-          include: "avatar_url,avatar,custom_fields,job_description,benefits"
+          include: "avatar_url,avatar,custom_fields,job_description,benefits,bank_details"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "Mr", "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "start_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S"}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "Mr", "first_name": "Isaac", "last_name": "Newton", "name": "Isaac Newton", "display_name": "Sir Isaac Newton", "avatar_url": "https://example.com/avatar.png", "personal_email": "isaac.newton@example.com", "personal_phone_number": "+1234567890", "work_email": "newton@example.com", "work_phone_number": "+1234567890", "job_title": "Physicist", "groups": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "type": {"value": "team"}}], "gender": {}, "preferred_language": {"value": "eng"}, "ethnicity": {}, "date_of_birth": "1990-01-01T00:00:00.000Z", "birthday": "2021-01-01T00:00:00Z", "marital_status": {}, "avatar": {}, "hire_date": "2021-01-01T00:00:00.000Z", "start_date": "2021-01-01T00:00:00.000Z", "tenure": 2, "work_anniversary": "2021-01-01T00:00:00Z", "employment_status": {}, "termination_date": "2021-01-01T00:00:00Z", "company_id": "1234567890", "citizenships": [{"value": "US"}], "home_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": {"value": "US"}, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "work_location": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "name": "Woolsthorpe Manor", "phone_number": "+44 1476 860 364", "street_1": "Water Lane", "street_2": "Woolsthorpe by Colsterworth", "city": "Grantham", "state": "Lincolnshire", "zip_code": "NG33 5NR", "country": null, "location_type": {"value": "home", "source_value": "Home"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "company": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "StackOne Technologies PLC", "full_name": "American Express Company", "display_name": "StackOne", "created_at": "2023-02-23T00:00:00.000Z", "updated_at": "2024-02-23T00:00:00.000Z"}, "employments": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "job_title": "Software Engineer", "pay_rate": "40.00", "pay_period": {"value": "hour", "source_value": "Hour"}, "pay_frequency": {"value": "hourly", "source_value": "Hourly"}, "pay_currency": "USD", "effective_date": "2021-01-01T01:01:01.000Z", "end_date": "2021-01-01T01:01:01.000Z", "grade": {"id": "1687-3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "1687-4", "description": "Mid-level employee demonstrating proficiency and autonomy."}, "type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Permanent", "type": {}}, "contract_type": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Full-Time", "contract_type": {}}, "work_time": {"duration": "P0Y0M0DT8H0M0S"}, "payroll_code": "PC1", "employee_id": "1687-3", "remote_employee_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "fte": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "active": true, "department": null, "cost_centers": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Engineering", "parent_ids": ["cxIQNjUyNDM0", "cxIQNjQzNzI0MQ"], "remote_parent_ids": ["652434", "6437241"], "owner_ids": ["cxIQNjUyEDM0", "cxIQNjQzNzA0MQ"], "remote_owner_ids": ["475364", "4327652"], "company_id": "1234567890", "remote_company_id": "1234567890", "distribution_percentage": 85, "type": {"value": "team"}}], "division": null, "job": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "title": "Software Engineer", "description": null, "owner_id": "5356", "parent_id": "7577"}, "manager": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "role": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "label": "Admin", "role_type": {"value": "admin"}}}]}], "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "benefits": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Health Insurance", "provider": "Aetna", "description": "Health insurance for employees", "created_at": "2021-01-01T00:00:00Z", "updated_at": "2021-01-01T00:00:00Z"}], "employee_number": "125", "bank_details": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "account_name": "John Doe Primary Account", "is_primary": true, "country_code": {"value": "US"}, "currency_code": {"value": "USD", "source_value": "USD"}, "bank_name": "Chase Bank", "account_type": {"value": "checking", "source_value": "checking"}, "iban": "GB82WEST12345698765432", "local_account_number": "1234567890", "swift_bic": "CHASUS33", "clearing_codes": [{"type": {"value": "sort_code", "source_value": "sort_code"}, "value": "12-34-56"}]}], "national_identity_numbers": [{"value": "123456789", "type": {"value": "ssn"}, "country": {"value": "US"}}], "skills": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true, "language": {"value": "en_GB"}, "maximum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}, "minimum_proficiency": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Expert"}}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -8834,7 +8872,7 @@ examples:
     speakeasy-default-ats-list-candidates:
       parameters:
         query:
-          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields"
+          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,tags,created_at,updated_at,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "created_after": "2020-01-01T00:00:00.000Z"}
           include: "custom_fields"
         header:
@@ -8906,13 +8944,13 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields"
+          fields: "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,tags,created_at,updated_at,unified_custom_fields"
           include: "custom_fields"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Romain Sestier", "first_name": "Romain", "last_name": "Sestier", "email": "sestier.romain123@gmail.com", "emails": [{"type": "personal", "value": "sestier.romain123@gmail.com"}], "social_links": [{"type": "linkedin", "url": "https://www.linkedin.com/in/romainsestier/"}], "phone_numbers": [{"phone": "+447700112233"}], "company": "Company Inc.", "title": "Software Engineer", "application_ids": ["123e4567-e89b-12d3-a456-426614174000", "523e1234-e89b-fdd2-a456-762545121101"], "remote_application_ids": ["123e4567-e89b-12d3-a456-426614174000", "523e1234-e89b-fdd2-a456-762545121101"], "hired_at": "2021-01-01T01:01:01.000Z", "country": "United States", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Romain Sestier", "first_name": "Romain", "last_name": "Sestier", "email": "sestier.romain123@gmail.com", "emails": [{"type": "personal", "value": "sestier.romain123@gmail.com"}], "social_links": [{"type": "linkedin", "url": "https://www.linkedin.com/in/romainsestier/"}], "phone_numbers": [{"phone": "+447700112233"}], "company": "Company Inc.", "title": "Software Engineer", "application_ids": ["123e4567-e89b-12d3-a456-426614174000", "523e1234-e89b-fdd2-a456-762545121101"], "remote_application_ids": ["123e4567-e89b-12d3-a456-426614174000", "523e1234-e89b-fdd2-a456-762545121101"], "hired_at": "2021-01-01T01:01:01.000Z", "country": "United States", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}], "tags": [{"remote_id": "123e4567-e89b-12d3-a456-426614174000", "name": "Gold Medalist"}], "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12401,7 +12439,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"passthrough": {"other_known_names": "John Doe"}, "learning_object_id": "e3gd34-23tr21-er234-345er56", "learning_object_external_reference": "learning-content-123", "progress": 40, "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "status": {"value": "in_progress"}}
+        application/json: {"passthrough": {"other_known_names": "John Doe"}, "learning_object_id": "e3gd34-23tr21-er234-345er56", "progress": 40, "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "status": {"value": "in_progress"}, "learning_object_external_reference": "learning-content-123"}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
@@ -12470,7 +12508,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"items": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "mobile_launch_content_url": "https://www.mobile.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "skills": [{"id": "12345", "name": "Sales Techniques"}], "order": 1, "localizations": [{"title": "Software Engineer Lv 1", "description": "This course acts as learning resource for software engineers."}, {"title": "Software Engineer: A comprehensive guide", "description": "This course acts as learning resource for software engineers."}], "tags": ["Sales Techniques", "Customer Service"], "authors": [{"id": "123", "name": "John Doe"}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "categories": [{"id": "16873-IT345", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "language": {"value": "en_GB"}}], "additional_data": [{"id": "learning_outcomes", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "value": "This is additional data"}]}]}
+        application/json: {"items": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "mobile_launch_content_url": "https://www.mobile.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "skills": [{"id": "12345", "name": "Sales Techniques"}], "order": 1, "localizations": [{"title": "Software Engineer Lv 1", "description": "This course acts as learning resource for software engineers."}, {"title": "Software Engineer: A comprehensive guide", "description": "This course acts as learning resource for software engineers."}], "tags": ["Sales Techniques", "Customer Service"], "authors": [{"id": "123", "name": "John Doe"}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "categories": [{"id": "16873-IT345", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "language": {"value": "en_GB"}}], "additional_data": [{"id": "learning_outcomes", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "value": "This is additional data"}]}]}
       responses:
         "202":
           application/json: {"statusCode": 202, "message": "Batch operation accepted", "timestamp": "2021-01-01T01:01:01.000Z", "errors": [["Missing field: name"], [], []]}
@@ -12539,7 +12577,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "mobile_launch_content_url": "https://www.mobile.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "skills": [{"id": "12345", "name": "Sales Techniques"}], "order": 1, "localizations": [{"title": "Software Engineer Lv 1", "description": "This course acts as learning resource for software engineers."}, {"title": "Software Engineer: A comprehensive guide", "description": "This course acts as learning resource for software engineers."}], "tags": ["Sales Techniques", "Customer Service"], "authors": [{"id": "123", "name": "John Doe"}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "categories": [{"id": "16873-IT345", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "language": {"value": "en_GB"}}], "additional_data": [{"id": "learning_outcomes", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "value": "This is additional data"}]}
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "mobile_launch_content_url": "https://www.mobile.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "skills": [{"id": "12345", "name": "Sales Techniques"}], "order": 1, "localizations": [{"title": "Software Engineer Lv 1", "description": "This course acts as learning resource for software engineers."}, {"title": "Software Engineer: A comprehensive guide", "description": "This course acts as learning resource for software engineers."}], "tags": ["Sales Techniques", "Customer Service"], "authors": [{"id": "123", "name": "John Doe"}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "categories": [{"id": "16873-IT345", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "language": {"value": "en_GB"}}], "additional_data": [{"id": "learning_outcomes", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "value": "This is additional data"}]}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"}}
@@ -12611,7 +12649,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "mobile_launch_content_url": "https://www.mobile.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "skills": [{"id": "12345", "name": "Sales Techniques"}], "order": 1, "localizations": [{"title": "Software Engineer Lv 1", "description": "This course acts as learning resource for software engineers."}, {"title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers."}], "tags": ["Sales Techniques", "Customer Service"], "authors": [{"id": "123", "name": "John Doe"}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "categories": [{"name": "Technology"}], "additional_data": [{"id": "learning_outcomes", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "value": "This is additional data"}]}
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "mobile_launch_content_url": "https://www.mobile.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "skills": [{"id": "12345", "name": "Sales Techniques"}], "order": 1, "localizations": [{"title": "Software Engineer Lv 1", "description": "This course acts as learning resource for software engineers."}, {"title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers."}], "tags": ["Sales Techniques", "Customer Service"], "authors": [{"id": "123", "name": "John Doe"}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "categories": [{"name": "Technology"}], "additional_data": [{"id": "learning_outcomes", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "value": "This is additional data"}]}
       responses:
         "201":
           application/json: {"statusCode": 200, "message": "Record updated successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
@@ -12651,7 +12689,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S"}]}
+          application/json: {"data": [{"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_external_reference": "learning-content-123", "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12684,7 +12722,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"passthrough": {"other_known_names": "John Doe"}, "completed_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "learning_object_external_reference": "learning-content-123", "time_spent": "PT1H30M45S"}
+        application/json: {"passthrough": {"other_known_names": "John Doe"}, "completed_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "time_spent": "PT1H30M45S", "learning_object_external_reference": "learning-content-123"}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3"}}
@@ -12722,7 +12760,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S", "certificate_url": "https://example.com/certificate/12345"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_external_reference": "learning-content-123", "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S", "certificate_url": "https://example.com/certificate/12345"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12792,7 +12830,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S"}]}
+          application/json: {"data": [{"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_external_reference": "learning-content-123", "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S"}]}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -12826,7 +12864,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "learning-content-123", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S", "certificate_url": "https://example.com/certificate/12345"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "learning_object_external_reference": "learning-content-123", "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "time_spent": "PT1H30M45S", "certificate_url": "https://example.com/certificate/12345"}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": null}
         "401":
@@ -15477,4 +15515,4 @@ examples:
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Hris.GetEmployee()`:  `response.data.Title` **Added**\n* `StackOneHq.client.Hris.ListEmployeeTimeOffBalances()`:  `response.data.[].IsUnlimited` **Added**\n* `StackOneHq.client.Hris.GetEmployeeTimeOffBalance()`:  `response.data.IsUnlimited` **Added**\n* `StackOneHq.client.Hris.Employees.List()`:  `response.data.[].Title` **Added**\n* `StackOneHq.client.Hris.Employees.Create()`: \n  *  `request.hrisCreateEmployeeRequestDto.Title` **Added**\n* `StackOneHq.client.Hris.Employees.Update()`: \n  *  `request.hrisUpdateEmployeeRequestDto.Title` **Added**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Lms.BatchUpsertContent()`: \n  *  `request.lmsBatchUpsertContentRequestDto.Items.[].ExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.CreateUserCompletion()`: \n  *  `request.lmsCreateCompletionRequestDto.LearningObjectExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.Assignments.Create()`: \n  *  `request.lmsCreateAssignmentRequestDto.LearningObjectExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.Content.Upsert()`: \n  *  `request.lmsUpsertContentRequestDto.ExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.Content.Update()`: \n  *  `request.lmsCreateContentRequestDto.ExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployee()`:  `response.data.BankDetails` **Added**\n* `StackOneHq.client.Hris.Employees.List()`:  `response.data.[].BankDetails` **Added**\n* `StackOneHq.client.Ats.ListCandidates()`:  `response.data.[].Tags` **Added**\n* `StackOneHq.client.Ats.Candidates.Get()`:  `response.data.Tags` **Added**\n"

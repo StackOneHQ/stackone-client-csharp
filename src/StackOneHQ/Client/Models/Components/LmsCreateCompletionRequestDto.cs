@@ -43,12 +43,6 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectId { get; set; } = null;
 
         /// <summary>
-        /// The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
-        /// </summary>
-        [JsonProperty("learning_object_external_reference")]
-        public string? LearningObjectExternalReference { get; set; } = null;
-
-        /// <summary>
         /// ISO 8601 duration format representing the time spent on completing the learning object
         /// </summary>
         [JsonProperty("time_spent")]
@@ -67,5 +61,11 @@ namespace StackOneHQ.Client.Models.Components
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("content_id")]
         public string? ContentId { get; set; } = null;
+
+        /// <summary>
+        /// The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
+        /// </summary>
+        [JsonProperty("learning_object_external_reference")]
+        public string LearningObjectExternalReference { get; set; } = default!;
     }
 }

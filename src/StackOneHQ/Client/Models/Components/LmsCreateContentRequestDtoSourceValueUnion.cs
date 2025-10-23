@@ -66,7 +66,7 @@ namespace StackOneHQ.Client.Models.Components
 
 
     /// <summary>
-    /// The original value from the provider before normalization.
+    /// The provider-specific value to use when value is omitted or set to &quot;unmapped_value&quot;. You are responsible for ensuring this matches the provider&apos;s expected format.
     /// </summary>
     [JsonConverter(typeof(LmsCreateContentRequestDtoSourceValueUnion.LmsCreateContentRequestDtoSourceValueUnionConverter))]
     public class LmsCreateContentRequestDtoSourceValueUnion

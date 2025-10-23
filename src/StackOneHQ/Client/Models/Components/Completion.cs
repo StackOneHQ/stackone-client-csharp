@@ -37,6 +37,12 @@ namespace StackOneHQ.Client.Models.Components
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
+        /// The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
+        /// </summary>
+        [JsonProperty("learning_object_external_reference")]
+        public string? LearningObjectExternalReference { get; set; } = null;
+
+        /// <summary>
         /// The external reference associated with this completion
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
@@ -84,12 +90,6 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("remote_learning_object_id")]
         public string? RemoteLearningObjectId { get; set; } = null;
-
-        /// <summary>
-        /// The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
-        /// </summary>
-        [JsonProperty("learning_object_external_reference")]
-        public string? LearningObjectExternalReference { get; set; } = null;
 
         /// <summary>
         /// The user ID associated with this completion

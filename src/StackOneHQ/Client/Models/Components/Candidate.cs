@@ -128,6 +128,12 @@ namespace StackOneHQ.Client.Models.Components
         public List<CustomFields>? CustomFields { get; set; } = null;
 
         /// <summary>
+        /// List of candidate tags indicating metadata associated with the candidate
+        /// </summary>
+        [JsonProperty("tags")]
+        public List<Tag>? Tags { get; set; } = null;
+
+        /// <summary>
         /// Candidate created date
         /// </summary>
         [JsonProperty("created_at")]

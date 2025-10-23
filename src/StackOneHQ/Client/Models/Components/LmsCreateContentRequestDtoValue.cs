@@ -17,7 +17,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Linq;
     
     /// <summary>
-    /// The StackOne unified content type.
+    /// The content type for write operations. Provide one of the listed enum values. If omitted or set to &quot;unmapped_value&quot;, the source_value will be sent to the provider instead.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LmsCreateContentRequestDtoValue : IEquatable<LmsCreateContentRequestDtoValue>
@@ -27,6 +27,11 @@ namespace StackOneHQ.Client.Models.Components
         public static readonly LmsCreateContentRequestDtoValue Document = new LmsCreateContentRequestDtoValue("document");
         public static readonly LmsCreateContentRequestDtoValue Audio = new LmsCreateContentRequestDtoValue("audio");
         public static readonly LmsCreateContentRequestDtoValue Article = new LmsCreateContentRequestDtoValue("article");
+        public static readonly LmsCreateContentRequestDtoValue Book = new LmsCreateContentRequestDtoValue("book");
+        public static readonly LmsCreateContentRequestDtoValue Event = new LmsCreateContentRequestDtoValue("event");
+        public static readonly LmsCreateContentRequestDtoValue Course = new LmsCreateContentRequestDtoValue("course");
+        public static readonly LmsCreateContentRequestDtoValue Collection = new LmsCreateContentRequestDtoValue("collection");
+        public static readonly LmsCreateContentRequestDtoValue Interactive = new LmsCreateContentRequestDtoValue("interactive");
         public static readonly LmsCreateContentRequestDtoValue UnmappedValue = new LmsCreateContentRequestDtoValue("unmapped_value");
 
         private static readonly Dictionary <string, LmsCreateContentRequestDtoValue> _knownValues =
@@ -37,6 +42,11 @@ namespace StackOneHQ.Client.Models.Components
                 ["document"] = Document,
                 ["audio"] = Audio,
                 ["article"] = Article,
+                ["book"] = Book,
+                ["event"] = Event,
+                ["course"] = Course,
+                ["collection"] = Collection,
+                ["interactive"] = Interactive,
                 ["unmapped_value"] = UnmappedValue
             };
 

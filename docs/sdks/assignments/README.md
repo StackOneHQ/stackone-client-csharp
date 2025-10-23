@@ -35,13 +35,13 @@ var res = await sdk.Lms.Assignments.CreateAsync(
             { "other_known_names", "John Doe" },
         },
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
-        LearningObjectExternalReference = "learning-content-123",
         Progress = 40D,
         CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         DueDate = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         Status = new LmsCreateAssignmentRequestDtoStatus() {
             Value = LmsCreateAssignmentRequestDtoValue.InProgress,
         },
+        LearningObjectExternalReference = "learning-content-123",
     }
 );
 

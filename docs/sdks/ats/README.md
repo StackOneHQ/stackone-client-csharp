@@ -638,7 +638,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListCandidatesRequest req = new AtsListCandidatesRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields",
+    Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,tags,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListCandidatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),

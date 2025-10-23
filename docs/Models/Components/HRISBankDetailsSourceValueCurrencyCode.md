@@ -1,4 +1,4 @@
-# SourceValueAccountType
+# HRISBankDetailsSourceValueCurrencyCode
 
 
 ## Fields
