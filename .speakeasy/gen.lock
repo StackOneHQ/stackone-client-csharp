@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: 600682ec07ab407b6301d41c2e8ed2fc
+  docChecksum: 8a72332e7e1a945ea5ebe9cea95a3a5f
   docVersion: 1.0.0
-  speakeasyVersion: 1.638.1
-  generationVersion: 2.729.2
-  releaseVersion: 0.7.1
-  configChecksum: de4127022edf893743006ae15fc06883
+  speakeasyVersion: 1.639.3
+  generationVersion: 2.730.5
+  releaseVersion: 0.7.2
+  configChecksum: e559099cf4d364c6734442695edceabd
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
@@ -1234,7 +1234,6 @@ generatedFiles:
   - docs/Models/Components/LinkedAccountCredentials.md
   - docs/Models/Components/LinkedAccountMeta.md
   - docs/Models/Components/LinkedAccountMetaCategory.md
-  - docs/Models/Components/LinkedAccountSetupInformation.md
   - docs/Models/Components/LinkedAccountType.md
   - docs/Models/Components/List.md
   - docs/Models/Components/ListItem.md
@@ -1371,7 +1370,6 @@ generatedFiles:
   - docs/Models/Components/PatchAccountExternalDto.md
   - docs/Models/Components/PatchAccountExternalDtoCredentials.md
   - docs/Models/Components/PatchAccountExternalDtoMetadata.md
-  - docs/Models/Components/PatchAccountExternalDtoSetupInformation.md
   - docs/Models/Components/PatchAccountExternalDtoType.md
   - docs/Models/Components/PhoneNumber.md
   - docs/Models/Components/PhoneNumberType.md
@@ -1447,6 +1445,7 @@ generatedFiles:
   - docs/Models/Components/ScorecardsResult.md
   - docs/Models/Components/Secrets.md
   - docs/Models/Components/Security.md
+  - docs/Models/Components/SetupInformation.md
   - docs/Models/Components/ShiftBreak.md
   - docs/Models/Components/SkillResult.md
   - docs/Models/Components/Skills.md
@@ -3807,7 +3806,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/LinkedAccountCredentials.cs
   - src/StackOneHQ/Client/Models/Components/LinkedAccountMeta.cs
   - src/StackOneHQ/Client/Models/Components/LinkedAccountMetaCategory.cs
-  - src/StackOneHQ/Client/Models/Components/LinkedAccountSetupInformation.cs
   - src/StackOneHQ/Client/Models/Components/LinkedAccountType.cs
   - src/StackOneHQ/Client/Models/Components/List.cs
   - src/StackOneHQ/Client/Models/Components/ListItem.cs
@@ -3944,7 +3942,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDto.cs
   - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDtoCredentials.cs
   - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDtoMetadata.cs
-  - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDtoSetupInformation.cs
   - src/StackOneHQ/Client/Models/Components/PatchAccountExternalDtoType.cs
   - src/StackOneHQ/Client/Models/Components/PhoneNumber.cs
   - src/StackOneHQ/Client/Models/Components/PhoneNumberType.cs
@@ -4020,6 +4017,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/ScorecardsResult.cs
   - src/StackOneHQ/Client/Models/Components/Secrets.cs
   - src/StackOneHQ/Client/Models/Components/Security.cs
+  - src/StackOneHQ/Client/Models/Components/SetupInformation.cs
   - src/StackOneHQ/Client/Models/Components/ShiftBreak.cs
   - src/StackOneHQ/Client/Models/Components/SkillResult.cs
   - src/StackOneHQ/Client/Models/Components/Skills.cs
@@ -15515,4 +15513,9 @@ examples:
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Lms.BatchUpsertContent()`: \n  *  `request.lmsBatchUpsertContentRequestDto.Items.[].ExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.CreateUserCompletion()`: \n  *  `request.lmsCreateCompletionRequestDto.LearningObjectExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.Assignments.Create()`: \n  *  `request.lmsCreateAssignmentRequestDto.LearningObjectExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.Content.Upsert()`: \n  *  `request.lmsUpsertContentRequestDto.ExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Lms.Content.Update()`: \n  *  `request.lmsCreateContentRequestDto.ExternalReference` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.GetEmployee()`:  `response.data.BankDetails` **Added**\n* `StackOneHq.client.Hris.Employees.List()`:  `response.data.[].BankDetails` **Added**\n* `StackOneHq.client.Ats.ListCandidates()`:  `response.data.[].Tags` **Added**\n* `StackOneHq.client.Ats.Candidates.Get()`:  `response.data.Tags` **Added**\n"
+releaseNotes: |
+  ## Csharp SDK Changes Detected:
+  * `StackOneHq.client.Accounts.List()`:  `response.[].SetupInformation` **Changed** **Breaking** :warning:
+  * `StackOneHq.client.Accounts.Get()`:  `response.setupInformation` **Changed** **Breaking** :warning:
+  * `StackOneHq.client.Accounts.Delete()`:  `response.setupInformation` **Changed** **Breaking** :warning:
+  * `StackOneHq.client.Accounts.Update()`:  `response.setupInformation` **Changed** **Breaking** :warning:

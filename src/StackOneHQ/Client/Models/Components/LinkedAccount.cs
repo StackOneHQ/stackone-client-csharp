@@ -48,7 +48,7 @@ namespace StackOneHQ.Client.Models.Components
         public LinkedAccountCredentials? Credentials { get; set; } = null;
 
         [JsonProperty("setup_information")]
-        public LinkedAccountSetupInformation? SetupInformation { get; set; } = null;
+        public Dictionary<string, object>? SetupInformation { get; set; } = null;
 
         [JsonProperty("label")]
         public string? Label { get; set; } = null;

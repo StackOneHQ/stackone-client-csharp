@@ -36,7 +36,7 @@ namespace StackOneHQ.Client.Models.Components
         public PatchAccountExternalDtoCredentials? Credentials { get; set; } = null;
 
         [JsonProperty("setup_information")]
-        public PatchAccountExternalDtoSetupInformation? SetupInformation { get; set; } = null;
+        public SetupInformation? SetupInformation { get; set; } = null;
 
         [JsonProperty("secrets")]
         public Secrets? Secrets { get; set; } = null;
