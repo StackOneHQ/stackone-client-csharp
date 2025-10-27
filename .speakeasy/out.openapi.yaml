@@ -39439,6 +39439,7 @@ components:
           nullable: true
         "setup_information":
           type: "object"
+          additionalProperties: true
           nullable: true
         "label":
           type: "string"

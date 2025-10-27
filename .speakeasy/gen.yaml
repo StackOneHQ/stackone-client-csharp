@@ -25,7 +25,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.7.1
+  version: 0.7.2
   additionalDependencies: []
   author: stackone
   baseErrorName: StackOneError
