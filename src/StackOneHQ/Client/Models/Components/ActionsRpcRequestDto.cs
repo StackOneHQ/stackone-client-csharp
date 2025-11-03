@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
+    using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
     
@@ -32,7 +33,7 @@ namespace StackOneHQ.Client.Models.Components
         /// Query parameters for the action
         /// </summary>
         [JsonProperty("query")]
-        public Dictionary<string, object>? Query { get; set; } = null;
+        public Query? Query { get; set; } = null;
 
         /// <summary>
         /// Headers for the action

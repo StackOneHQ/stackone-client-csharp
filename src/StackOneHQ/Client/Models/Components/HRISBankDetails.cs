@@ -38,8 +38,8 @@ namespace StackOneHQ.Client.Models.Components
         /// <summary>
         /// Whether this is the primary bank account
         /// </summary>
-        [JsonProperty("is_primary")]
-        public bool? IsPrimary { get; set; } = null;
+        [JsonProperty("is_primary", NullValueHandling = NullValueHandling.Include)]
+        public IsPrimary? IsPrimary { get; set; } = null;
 
         /// <summary>
         /// The country code where the bank is located

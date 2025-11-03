@@ -9,9 +9,23 @@
 #nullable enable
 namespace StackOneHQ.Client.Models.Components
 {
+    using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
+    using System.Collections.Generic;
     
-    public class ActionsRpcResponseData1
+    /// <summary>
+    /// Query parameters for the action
+    /// </summary>
+    public class Query
     {
+
+        /// <summary>
+        /// Enable debug mode for the action execution
+        /// </summary>
+        [JsonProperty("debug")]
+        public bool? Debug { get; set; } = null;
+
+        [JsonProperty("additionalProperties")]
+        public Dictionary<string, object>? AdditionalProperties { get; set; }
     }
 }

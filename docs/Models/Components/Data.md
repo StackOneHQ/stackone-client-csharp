@@ -5,14 +5,14 @@ The response data from the action RPC call
 
 ## Supported Types
 
-### ActionsRpcResponseData1
+### MapOfAny
 
 ```csharp
-Data.CreateActionsRpcResponseData1(/* values here */);
+Data.CreateMapOfAny(/* values here */);
 ```
 
-### ArrayOfActionsRpcResponseData2
+### ArrayOfMapOfAny
 
 ```csharp
-Data.CreateArrayOfActionsRpcResponseData2(/* values here */);
+Data.CreateArrayOfMapOfAny(/* values here */);
 ```
