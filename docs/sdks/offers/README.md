@@ -29,7 +29,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 AtsListOffersRequest req = new AtsListOffersRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
+    Fields = "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
     Filter = new AtsListOffersFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
@@ -166,7 +166,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetOfferRequest req = new AtsGetOfferRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
+    Fields = "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
 };
 
 var res = await sdk.Ats.Offers.GetAsync(req);

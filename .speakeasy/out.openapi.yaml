@@ -13257,7 +13257,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+            example: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -13638,7 +13638,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+            example: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
       responses:
         "200":
           description: "The offer related to the application with the given identifiers was retrieved."
@@ -21012,7 +21012,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+            example: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "Filter parameters that allow greater customisation of the list response"
@@ -21282,7 +21282,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+            example: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
       responses:
         "200":
           description: "The offer with the given identifier was retrieved."
@@ -38773,6 +38773,14 @@ components:
           items: {"$ref": "#/components/schemas/ActionsMeta"}
           description: "The list of actions metadata"
           nullable: true
+    "ActionsRpcQueryDto":
+      type: "object"
+      properties:
+        "debug":
+          type: "boolean"
+          description: "Enable debug mode for the action execution"
+          nullable: true
+          example: false
     "ActionsRpcRequestDto":
       type: "object"
       properties:
@@ -38787,11 +38795,11 @@ components:
           nullable: true
           example: {"id": "123"}
         "query":
-          type: "object"
+          allOf:
+            - {"$ref": "#/components/schemas/ActionsRpcQueryDto"}
           additionalProperties: true
           description: "Query parameters for the action"
           nullable: true
-          example: {"param1": "value1", "param2": "value2"}
         "headers":
           type: "object"
           additionalProperties: true
@@ -38816,9 +38824,11 @@ components:
         "data":
           oneOf:
             - type: "object"
+              additionalProperties: true
             - type: "array"
               items:
                 type: "object"
+                additionalProperties: true
             - type: "null"
           description: "The response data from the action RPC call"
           nullable: true
@@ -44077,7 +44087,12 @@ components:
           nullable: true
           example: "John Doe Primary Account"
         "is_primary":
-          type: "boolean"
+          oneOf:
+            - type: "boolean"
+            - type: "string"
+              enum:
+                - "true"
+                - "false"
           description: "Whether this is the primary bank account"
           nullable: true
           example: true
@@ -50261,6 +50276,9 @@ components:
           type: "string"
           enum:
             - "text"
+            - "pdf"
+            - "video"
+            - "other"
             - "unmapped_value"
             - null
           description: "The content type of the attachment."

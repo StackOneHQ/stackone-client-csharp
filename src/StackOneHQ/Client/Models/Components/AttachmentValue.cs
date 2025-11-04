@@ -23,12 +23,18 @@ namespace StackOneHQ.Client.Models.Components
     public class AttachmentValue : IEquatable<AttachmentValue>
     {
         public static readonly AttachmentValue Text = new AttachmentValue("text");
+        public static readonly AttachmentValue Pdf = new AttachmentValue("pdf");
+        public static readonly AttachmentValue Video = new AttachmentValue("video");
+        public static readonly AttachmentValue Other = new AttachmentValue("other");
         public static readonly AttachmentValue UnmappedValue = new AttachmentValue("unmapped_value");
 
         private static readonly Dictionary <string, AttachmentValue> _knownValues =
             new Dictionary <string, AttachmentValue> ()
             {
                 ["text"] = Text,
+                ["pdf"] = Pdf,
+                ["video"] = Video,
+                ["other"] = Other,
                 ["unmapped_value"] = UnmappedValue
             };
 

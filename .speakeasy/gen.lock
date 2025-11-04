@@ -1,25 +1,26 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: 8a72332e7e1a945ea5ebe9cea95a3a5f
+  docChecksum: 761964c08c67f39a7072271e3cb88a85
   docVersion: 1.0.0
-  speakeasyVersion: 1.639.3
-  generationVersion: 2.730.5
-  releaseVersion: 0.7.2
-  configChecksum: e559099cf4d364c6734442695edceabd
+  speakeasyVersion: 1.645.2
+  generationVersion: 2.735.1
+  releaseVersion: 0.8.0
+  configChecksum: 8b1e27dcd99ab75c67ab24341969ac57
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
+    additionalProperties: 0.0.1
     constsAndDefaults: 0.0.1
-    core: 3.15.1
+    core: 3.15.2
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
     globalSecurity: 2.83.8
     globalSecurityCallbacks: 0.1.0
-    globalServerURLs: 2.82.4
+    globalServerURLs: 2.83.0
     groups: 2.81.3
     intellisenseMarkdownSupport: 0.1.0
     methodArguments: 0.2.1
@@ -111,8 +112,6 @@ generatedFiles:
   - docs/Models/Components/ActionsMetaPaginated.md
   - docs/Models/Components/ActionsRpcRequestDto.md
   - docs/Models/Components/ActionsRpcResponse.md
-  - docs/Models/Components/ActionsRpcResponseData1.md
-  - docs/Models/Components/ActionsRpcResponseData2.md
   - docs/Models/Components/Actor.md
   - docs/Models/Components/AdditionalData.md
   - docs/Models/Components/AdditionalDataValue.md
@@ -1170,6 +1169,8 @@ generatedFiles:
   - docs/Models/Components/InviteEmployeeResult.md
   - docs/Models/Components/IsPaid.md
   - docs/Models/Components/IsPaidEnum.md
+  - docs/Models/Components/IsPrimary.md
+  - docs/Models/Components/IsPrimaryEnum.md
   - docs/Models/Components/IsRoot.md
   - docs/Models/Components/IsRootEnum.md
   - docs/Models/Components/IsUnlimited.md
@@ -1398,6 +1399,7 @@ generatedFiles:
   - docs/Models/Components/PushTemplate.md
   - docs/Models/Components/PushTemplateResult.md
   - docs/Models/Components/PushTemplatesPaginated.md
+  - docs/Models/Components/Query.md
   - docs/Models/Components/Question.md
   - docs/Models/Components/QuestionMultipleChoiceAnswers.md
   - docs/Models/Components/QuestionRequiredEnum.md
@@ -2683,8 +2685,6 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/ActionsMetaPaginated.cs
   - src/StackOneHQ/Client/Models/Components/ActionsRpcRequestDto.cs
   - src/StackOneHQ/Client/Models/Components/ActionsRpcResponse.cs
-  - src/StackOneHQ/Client/Models/Components/ActionsRpcResponseData1.cs
-  - src/StackOneHQ/Client/Models/Components/ActionsRpcResponseData2.cs
   - src/StackOneHQ/Client/Models/Components/Actor.cs
   - src/StackOneHQ/Client/Models/Components/AdditionalData.cs
   - src/StackOneHQ/Client/Models/Components/AdditionalDataValue.cs
@@ -3742,6 +3742,8 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/InviteEmployeeResult.cs
   - src/StackOneHQ/Client/Models/Components/IsPaid.cs
   - src/StackOneHQ/Client/Models/Components/IsPaidEnum.cs
+  - src/StackOneHQ/Client/Models/Components/IsPrimary.cs
+  - src/StackOneHQ/Client/Models/Components/IsPrimaryEnum.cs
   - src/StackOneHQ/Client/Models/Components/IsRoot.cs
   - src/StackOneHQ/Client/Models/Components/IsRootEnum.cs
   - src/StackOneHQ/Client/Models/Components/IsUnlimited.cs
@@ -3970,6 +3972,7 @@ generatedFiles:
   - src/StackOneHQ/Client/Models/Components/PushTemplate.cs
   - src/StackOneHQ/Client/Models/Components/PushTemplateResult.cs
   - src/StackOneHQ/Client/Models/Components/PushTemplatesPaginated.cs
+  - src/StackOneHQ/Client/Models/Components/Query.cs
   - src/StackOneHQ/Client/Models/Components/Question.cs
   - src/StackOneHQ/Client/Models/Components/QuestionMultipleChoiceAnswers.cs
   - src/StackOneHQ/Client/Models/Components/QuestionRequiredEnum.cs
@@ -8209,7 +8212,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -8319,7 +8322,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -10054,7 +10057,7 @@ examples:
     speakeasy-default-ats-list-offers:
       parameters:
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
         header:
           x-account-id: "<id>"
@@ -10127,7 +10130,7 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
+          fields: "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -15344,7 +15347,7 @@ examples:
   stackone_rpc_action:
     speakeasy-default-stackone-rpc-action:
       requestBody:
-        application/json: {"action": "create_employee", "path": {"id": "123"}, "query": {"param1": "value1", "param2": "value2"}, "headers": {"Content-Type": "application/json"}, "body": {"data": "example"}}
+        application/json: {"action": "create_employee", "path": {"id": "123"}, "query": {"debug": false}, "headers": {"Content-Type": "application/json"}, "body": {"data": "example"}}
       responses:
         "200":
           application/json: {}
@@ -15513,9 +15516,4 @@ examples:
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Csharp SDK Changes Detected:
-  * `StackOneHq.client.Accounts.List()`:  `response.[].SetupInformation` **Changed** **Breaking** :warning:
-  * `StackOneHq.client.Accounts.Get()`:  `response.setupInformation` **Changed** **Breaking** :warning:
-  * `StackOneHq.client.Accounts.Delete()`:  `response.setupInformation` **Changed** **Breaking** :warning:
-  * `StackOneHq.client.Accounts.Update()`:  `response.setupInformation` **Changed** **Breaking** :warning:
+releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Actions.RpcAction()`: \n  *  `request.Query` **Changed** **Breaking** :warning:\n  *  `response.data` **Changed**\n* `StackOneHq.client.Hris.GetEmployee()`:  `response.data.BankDetails.[].IsPrimary` **Changed** **Breaking** :warning:\n* `StackOneHq.client.Hris.Employees.List()`:  `response.data.[].BankDetails.[].IsPrimary` **Changed** **Breaking** :warning:\n"

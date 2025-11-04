@@ -99,9 +99,8 @@ ActionsRpcRequestDto req = new ActionsRpcRequestDto() {
     Path = new Dictionary<string, object>() {
         { "id", "123" },
     },
-    Query = new Dictionary<string, object>() {
-        { "param1", "value1" },
-        { "param2", "value2" },
+    Query = new Query() {
+        Debug = false,
     },
     Headers = new Dictionary<string, object>() {
         { "Content-Type", "application/json" },

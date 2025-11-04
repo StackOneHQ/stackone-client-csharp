@@ -11,32 +11,33 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
 
-    public class DataType
+    public class IsPrimaryType
     {
-        private DataType(string value) { Value = value; }
+        private IsPrimaryType(string value) { Value = value; }
 
         public string Value { get; private set; }
 
-        public static DataType MapOfAny { get { return new DataType("mapOfAny"); } }
+        public static IsPrimaryType Boolean { get { return new IsPrimaryType("boolean"); } }
 
-        public static DataType ArrayOfMapOfAny { get { return new DataType("arrayOfMapOfAny"); } }
+        public static IsPrimaryType IsPrimaryEnum { get { return new IsPrimaryType("is_primary_enum"); } }
 
-        public static DataType Null { get { return new DataType("null"); } }
+        public static IsPrimaryType Null { get { return new IsPrimaryType("null"); } }
 
         public override string ToString() { return Value; }
-        public static implicit operator String(DataType v) { return v.Value; }
-        public static DataType FromString(string v) {
+        public static implicit operator String(IsPrimaryType v) { return v.Value; }
+        public static IsPrimaryType FromString(string v) {
             switch(v) {
-                case "mapOfAny": return MapOfAny;
-                case "arrayOfMapOfAny": return ArrayOfMapOfAny;
+                case "boolean": return Boolean;
+                case "is_primary_enum": return IsPrimaryEnum;
                 case "null": return Null;
-                default: throw new ArgumentException("Invalid value for DataType");
+                default: throw new ArgumentException("Invalid value for IsPrimaryType");
             }
         }
         public override bool Equals(object? obj)
@@ -45,7 +46,7 @@ namespace StackOneHQ.Client.Models.Components
             {
                 return false;
             }
-            return Value.Equals(((DataType)obj).Value);
+            return Value.Equals(((IsPrimaryType)obj).Value);
         }
 
         public override int GetHashCode()
@@ -56,49 +57,49 @@ namespace StackOneHQ.Client.Models.Components
 
 
     /// <summary>
-    /// The response data from the action RPC call
+    /// Whether this is the primary bank account
     /// </summary>
-    [JsonConverter(typeof(Data.DataConverter))]
-    public class Data
+    [JsonConverter(typeof(IsPrimary.IsPrimaryConverter))]
+    public class IsPrimary
     {
-        public Data(DataType type)
+        public IsPrimary(IsPrimaryType type)
         {
             Type = type;
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Dictionary<string, object>? MapOfAny { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<Dictionary<string, object>>? ArrayOfMapOfAny { get; set; }
+        public IsPrimaryEnum? IsPrimaryEnum { get; set; }
 
-        public DataType Type { get; set; }
-        public static Data CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        public IsPrimaryType Type { get; set; }
+        public static IsPrimary CreateBoolean(bool boolean)
         {
-            DataType typ = DataType.MapOfAny;
+            IsPrimaryType typ = IsPrimaryType.Boolean;
 
-            Data res = new Data(typ);
-            res.MapOfAny = mapOfAny;
+            IsPrimary res = new IsPrimary(typ);
+            res.Boolean = boolean;
             return res;
         }
-        public static Data CreateArrayOfMapOfAny(List<Dictionary<string, object>> arrayOfMapOfAny)
+        public static IsPrimary CreateIsPrimaryEnum(IsPrimaryEnum isPrimaryEnum)
         {
-            DataType typ = DataType.ArrayOfMapOfAny;
+            IsPrimaryType typ = IsPrimaryType.IsPrimaryEnum;
 
-            Data res = new Data(typ);
-            res.ArrayOfMapOfAny = arrayOfMapOfAny;
+            IsPrimary res = new IsPrimary(typ);
+            res.IsPrimaryEnum = isPrimaryEnum;
             return res;
         }
 
-        public static Data CreateNull()
+        public static IsPrimary CreateNull()
         {
-            DataType typ = DataType.Null;
-            return new Data(typ);
+            IsPrimaryType typ = IsPrimaryType.Null;
+            return new IsPrimary(typ);
         }
 
-        public class DataConverter : JsonConverter
+        public class IsPrimaryConverter : JsonConverter
         {
-            public override bool CanConvert(System.Type objectType) => objectType == typeof(Data);
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(IsPrimary);
 
             public override bool CanRead => true;
 
@@ -114,34 +115,27 @@ namespace StackOneHQ.Client.Models.Components
 
                 try
                 {
-                    return new Data(DataType.MapOfAny)
+                    var converted = Convert.ToBoolean(json);
+                    return new IsPrimary(IsPrimaryType.Boolean)
                     {
-                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new Data(DataType.MapOfAny), "MapOfAny"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Data(DataType.ArrayOfMapOfAny)
+                    return new IsPrimary(IsPrimaryType.IsPrimaryEnum)
                     {
-                        ArrayOfMapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<Dictionary<string, object>>>(json)
+                        IsPrimaryEnum = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IsPrimaryEnum>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(List<Dictionary<string, object>>), new Data(DataType.ArrayOfMapOfAny), "ArrayOfMapOfAny"));
+                    fallbackCandidates.Add((typeof(IsPrimaryEnum), new IsPrimary(IsPrimaryType.IsPrimaryEnum), "IsPrimaryEnum"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -183,22 +177,22 @@ namespace StackOneHQ.Client.Models.Components
                     return;
                 }
 
-                Data res = (Data)value;
-                if (DataType.FromString(res.Type).Equals(DataType.Null))
+                IsPrimary res = (IsPrimary)value;
+                if (IsPrimaryType.FromString(res.Type).Equals(IsPrimaryType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;
                 }
 
-                if (res.MapOfAny != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
-                if (res.ArrayOfMapOfAny != null)
+                if (res.IsPrimaryEnum != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfMapOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.IsPrimaryEnum));
                     return;
                 }
             }
