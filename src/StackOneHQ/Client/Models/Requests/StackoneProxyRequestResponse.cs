@@ -20,6 +20,11 @@ namespace StackOneHQ.Client.Models.Requests
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
+        /// <summary>
+        /// The proxy request was successful.
+        /// </summary>
+        public ProxyResponseApiModel? ProxyResponseApiModel { get; set; }
+
         public Dictionary<string, List<string>> Headers { get; set; } = default!;
     }
 }

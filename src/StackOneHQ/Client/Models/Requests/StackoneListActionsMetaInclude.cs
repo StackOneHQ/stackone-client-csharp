@@ -15,8 +15,8 @@ namespace StackOneHQ.Client.Models.Requests
     
     public enum StackoneListActionsMetaInclude
     {
-        [JsonProperty("operation_details")]
-        OperationDetails,
+        [JsonProperty("action_details")]
+        ActionDetails,
     }
 
     public static class StackoneListActionsMetaIncludeExtension

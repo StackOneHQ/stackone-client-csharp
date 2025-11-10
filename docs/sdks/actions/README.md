@@ -36,7 +36,7 @@ StackoneListActionsMetaRequest req = new StackoneListActionsMetaRequest() {
         ActionKey = "action1",
     },
     Include = new List<StackoneListActionsMetaInclude>() {
-        StackoneListActionsMetaInclude.OperationDetails,
+        StackoneListActionsMetaInclude.ActionDetails,
     },
 };
 

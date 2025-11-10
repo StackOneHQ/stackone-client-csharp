@@ -205,8 +205,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.0";
-        private const string _sdkGenVersion = "2.735.1";
+        private const string _sdkVersion = "0.8.1";
+        private const string _sdkGenVersion = "2.745.2";
         private const string _openapiDocVersion = "1.0.0";
         public IEmployees Employees { get; private set; }
         public IHrisDocuments Documents { get; private set; }
