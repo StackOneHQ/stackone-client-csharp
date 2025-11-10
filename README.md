@@ -153,8 +153,8 @@ var res = await sdk.Mcp.McpGetAsync(
             Password = "",
         },
     },
-    xAccountId: "<id>",
-    mcpSessionId: "<id>"
+    mcpSessionId: "<id>",
+    xAccountId: "<id>"
 );
 
 // handle response
@@ -752,7 +752,7 @@ StackoneListActionsMetaRequest req = new StackoneListActionsMetaRequest() {
         ActionKey = "action1",
     },
     Include = new List<StackoneListActionsMetaInclude>() {
-        StackoneListActionsMetaInclude.OperationDetails,
+        StackoneListActionsMetaInclude.ActionDetails,
     },
 };
 

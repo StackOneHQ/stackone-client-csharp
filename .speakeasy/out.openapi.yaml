@@ -1634,10 +1634,15 @@ paths:
       parameters:
         - name: "x-account-id"
           in: "header"
-          description: "Account secure id for the target provider account"
-          required: true
+          description: "Account secure id for the target provider account (optional if x-account-id query parameter is provided)"
+          required: false
           schema:
             type: "string"
+        - name: "x-account-id"
+          in: "query"
+          description: "Account secure id (alternative to x-account-id header)"
+          required: false
+          schema: {}
         - name: "Accept"
           in: "header"
           description: "Must be text/event-stream"
@@ -1727,10 +1732,15 @@ paths:
       parameters:
         - name: "x-account-id"
           in: "header"
-          description: "Account secure id for the target provider account"
-          required: true
+          description: "Account secure id for the target provider account (optional if x-account-id query parameter is provided)"
+          required: false
           schema:
             type: "string"
+        - name: "x-account-id"
+          in: "query"
+          description: "Account secure id (alternative to x-account-id header)"
+          required: false
+          schema: {}
         - name: "mcp-session-id"
           in: "header"
           description: "Session id; omit for initialize, include for subsequent calls"
@@ -1830,10 +1840,15 @@ paths:
       parameters:
         - name: "x-account-id"
           in: "header"
-          description: "Account secure id for the target provider account"
-          required: true
+          description: "Account secure id for the target provider account (optional if x-account-id query parameter is provided)"
+          required: false
           schema:
             type: "string"
+        - name: "x-account-id"
+          in: "query"
+          description: "Account secure id (alternative to x-account-id header)"
+          required: false
+          schema: {}
         - name: "mcp-session-id"
           in: "header"
           description: "Session id"
@@ -1930,12 +1945,24 @@ paths:
       responses:
         "200":
           description: "The proxy request was successful."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ProxyResponseApiModel"}
         "201":
           description: "Resource was successfully created by the target service."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ProxyResponseApiModel"}
         "202":
           description: "Request accepted by the target service."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ProxyResponseApiModel"}
         "204":
           description: "Request succeeded with no content."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ProxyResponseApiModel"}
         "400":
           description: "Invalid request."
           content:
@@ -2081,9 +2108,9 @@ paths:
             items:
               type: "string"
               enum:
-                - "operation_details"
+                - "action_details"
             nullable: true
-            example: ["operation_details"]
+            example: ["action_details"]
       responses:
         "200":
           description: "List of actions metadata"
@@ -39763,6 +39790,24 @@ components:
           description: "Response headers"
           nullable: true
           example: {"content-type": "application/json", "x-request-id": "5678c28b211dace4e0a0f9171e6b88c5"}
+    "ProviderErrorApiModel":
+      type: "object"
+      properties:
+        "status":
+          type: "number"
+          nullable: true
+          example: 400
+        "url":
+          type: "string"
+          nullable: true
+          example: "https://api.someprovider.com/v1/endpoint"
+        "raw":
+          type: "object"
+          nullable: true
+        "headers":
+          type: "object"
+          nullable: true
+          example: {"date": "Tue, 02 Apr 2024 13:52:01 GMT", "content-type": "application/json; charset=utf-8", "transfer-encoding": "chunked", "connection": "close"}
     "ProxyRequestBody":
       type: "object"
       properties:
@@ -39800,6 +39845,41 @@ components:
           additionalProperties: true
           description: "The body of the request"
           nullable: true
+    "ProxyResponseApiModel":
+      type: "object"
+      properties:
+        "status":
+          type: "number"
+          description: "The HTTP status code returned by the provider"
+          example: 200
+        "headers":
+          type: "object"
+          additionalProperties: true
+          description: "The headers returned by the provider"
+          nullable: true
+          example: {"content-type": "application/json", "x-request-id": "123e4567-e89b-12d3-a456-426614174000"}
+        "data":
+          oneOf:
+            - type: "object"
+              additionalProperties: true
+            - type: "array"
+              items:
+                type: "object"
+                additionalProperties: true
+            - type: "string"
+            - type: "number"
+            - type: "boolean"
+          description: "The response data from the provider. Can be an object, array, or primitive value."
+          nullable: true
+          example: {"id": "123", "name": "John Doe", "email": "john.doe@example.com"}
+        "provider_errors":
+          type: "array"
+          items: {"$ref": "#/components/schemas/ProviderErrorApiModel"}
+          description: "Provider-specific errors if any occurred"
+          nullable: true
+          example: [{"status": 400, "url": "https://api.someprovider.com/v1/endpoint", "raw": {"error": "Bad Request", "message": "The supplied data is invalid"}, "headers": {"date": "Tue, 02 Apr 2024 13:52:01 GMT", "content-type": "application/json; charset=utf-8"}}]
+      required:
+        - "status"
     "RequestTimedOutResponse":
       type: "object"
       properties:
@@ -47124,24 +47204,6 @@ components:
             - type: "array"
               items: {}
           nullable: true
-    ProviderErrorApiModel:
-      type: "object"
-      properties:
-        "status":
-          type: "number"
-          nullable: true
-          example: 400
-        "url":
-          type: "string"
-          nullable: true
-          example: "https://api.someprovider.com/v1/endpoint"
-        "raw":
-          type: "object"
-          nullable: true
-        "headers":
-          type: "object"
-          nullable: true
-          example: {"date": "Tue, 02 Apr 2024 13:52:01 GMT", "content-type": "application/json; charset=utf-8", "transfer-encoding": "chunked", "connection": "close"}
     RawResponse:
       type: "object"
       properties:

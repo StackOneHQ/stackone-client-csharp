@@ -17,26 +17,26 @@ namespace StackOneHQ.Client.Models.Components
     using System.Numerics;
     using System.Reflection;
 
-    public class DataType
+    public class ActionsRpcResponseDataType
     {
-        private DataType(string value) { Value = value; }
+        private ActionsRpcResponseDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
 
-        public static DataType MapOfAny { get { return new DataType("mapOfAny"); } }
+        public static ActionsRpcResponseDataType MapOfAny { get { return new ActionsRpcResponseDataType("mapOfAny"); } }
 
-        public static DataType ArrayOfMapOfAny { get { return new DataType("arrayOfMapOfAny"); } }
+        public static ActionsRpcResponseDataType ArrayOfMapOfAny { get { return new ActionsRpcResponseDataType("arrayOfMapOfAny"); } }
 
-        public static DataType Null { get { return new DataType("null"); } }
+        public static ActionsRpcResponseDataType Null { get { return new ActionsRpcResponseDataType("null"); } }
 
         public override string ToString() { return Value; }
-        public static implicit operator String(DataType v) { return v.Value; }
-        public static DataType FromString(string v) {
+        public static implicit operator String(ActionsRpcResponseDataType v) { return v.Value; }
+        public static ActionsRpcResponseDataType FromString(string v) {
             switch(v) {
                 case "mapOfAny": return MapOfAny;
                 case "arrayOfMapOfAny": return ArrayOfMapOfAny;
                 case "null": return Null;
-                default: throw new ArgumentException("Invalid value for DataType");
+                default: throw new ArgumentException("Invalid value for ActionsRpcResponseDataType");
             }
         }
         public override bool Equals(object? obj)
@@ -45,7 +45,7 @@ namespace StackOneHQ.Client.Models.Components
             {
                 return false;
             }
-            return Value.Equals(((DataType)obj).Value);
+            return Value.Equals(((ActionsRpcResponseDataType)obj).Value);
         }
 
         public override int GetHashCode()
@@ -58,10 +58,10 @@ namespace StackOneHQ.Client.Models.Components
     /// <summary>
     /// The response data from the action RPC call
     /// </summary>
-    [JsonConverter(typeof(Data.DataConverter))]
-    public class Data
+    [JsonConverter(typeof(ActionsRpcResponseData.ActionsRpcResponseDataConverter))]
+    public class ActionsRpcResponseData
     {
-        public Data(DataType type)
+        public ActionsRpcResponseData(ActionsRpcResponseDataType type)
         {
             Type = type;
         }
@@ -72,33 +72,33 @@ namespace StackOneHQ.Client.Models.Components
         [SpeakeasyMetadata("form:explode=true")]
         public List<Dictionary<string, object>>? ArrayOfMapOfAny { get; set; }
 
-        public DataType Type { get; set; }
-        public static Data CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        public ActionsRpcResponseDataType Type { get; set; }
+        public static ActionsRpcResponseData CreateMapOfAny(Dictionary<string, object> mapOfAny)
         {
-            DataType typ = DataType.MapOfAny;
+            ActionsRpcResponseDataType typ = ActionsRpcResponseDataType.MapOfAny;
 
-            Data res = new Data(typ);
+            ActionsRpcResponseData res = new ActionsRpcResponseData(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-        public static Data CreateArrayOfMapOfAny(List<Dictionary<string, object>> arrayOfMapOfAny)
+        public static ActionsRpcResponseData CreateArrayOfMapOfAny(List<Dictionary<string, object>> arrayOfMapOfAny)
         {
-            DataType typ = DataType.ArrayOfMapOfAny;
+            ActionsRpcResponseDataType typ = ActionsRpcResponseDataType.ArrayOfMapOfAny;
 
-            Data res = new Data(typ);
+            ActionsRpcResponseData res = new ActionsRpcResponseData(typ);
             res.ArrayOfMapOfAny = arrayOfMapOfAny;
             return res;
         }
 
-        public static Data CreateNull()
+        public static ActionsRpcResponseData CreateNull()
         {
-            DataType typ = DataType.Null;
-            return new Data(typ);
+            ActionsRpcResponseDataType typ = ActionsRpcResponseDataType.Null;
+            return new ActionsRpcResponseData(typ);
         }
 
-        public class DataConverter : JsonConverter
+        public class ActionsRpcResponseDataConverter : JsonConverter
         {
-            public override bool CanConvert(System.Type objectType) => objectType == typeof(Data);
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(ActionsRpcResponseData);
 
             public override bool CanRead => true;
 
@@ -114,14 +114,14 @@ namespace StackOneHQ.Client.Models.Components
 
                 try
                 {
-                    return new Data(DataType.MapOfAny)
+                    return new ActionsRpcResponseData(ActionsRpcResponseDataType.MapOfAny)
                     {
                         MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new Data(DataType.MapOfAny), "MapOfAny"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new ActionsRpcResponseData(ActionsRpcResponseDataType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -134,14 +134,14 @@ namespace StackOneHQ.Client.Models.Components
 
                 try
                 {
-                    return new Data(DataType.ArrayOfMapOfAny)
+                    return new ActionsRpcResponseData(ActionsRpcResponseDataType.ArrayOfMapOfAny)
                     {
                         ArrayOfMapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<Dictionary<string, object>>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(List<Dictionary<string, object>>), new Data(DataType.ArrayOfMapOfAny), "ArrayOfMapOfAny"));
+                    fallbackCandidates.Add((typeof(List<Dictionary<string, object>>), new ActionsRpcResponseData(ActionsRpcResponseDataType.ArrayOfMapOfAny), "ArrayOfMapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -183,8 +183,8 @@ namespace StackOneHQ.Client.Models.Components
                     return;
                 }
 
-                Data res = (Data)value;
-                if (DataType.FromString(res.Type).Equals(DataType.Null))
+                ActionsRpcResponseData res = (ActionsRpcResponseData)value;
+                if (ActionsRpcResponseDataType.FromString(res.Type).Equals(ActionsRpcResponseDataType.Null))
                 {
                     writer.WriteRawValue("null");
                     return;

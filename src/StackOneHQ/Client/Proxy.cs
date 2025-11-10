@@ -41,8 +41,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.0";
-        private const string _sdkGenVersion = "2.735.1";
+        private const string _sdkVersion = "0.8.1";
+        private const string _sdkGenVersion = "2.745.2";
         private const string _openapiDocVersion = "1.0.0";
 
         public Proxy(SDKConfig config)
@@ -148,14 +148,32 @@ namespace StackOneHQ.Client
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{200, 201, 202, 204}.Contains(responseStatusCode))
             {
-                return new StackoneProxyRequestResponse()
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    HttpMeta = new Models.Components.HTTPMetadata()
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    ProxyResponseApiModel obj;
+                    try
                     {
-                        Response = httpResponse,
-                        Request = httpRequest
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<ProxyResponseApiModel>(httpResponseBody, NullValueHandling.Ignore);
                     }
-                };
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into ProxyResponseApiModel.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new StackoneProxyRequestResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.ProxyResponseApiModel = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode == 400)
             {

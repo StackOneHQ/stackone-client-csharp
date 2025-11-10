@@ -35,7 +35,7 @@ namespace StackOneHQ.Client
         /// Open a dedicated Server-Sent Events stream for MCP notifications
         /// </remarks>
         /// </summary>
-        Task<StackoneMcpGetResponse> McpGetAsync(StackoneMcpGetSecurity security, string xAccountId, string mcpSessionId, RetryConfig? retryConfig = null);
+        Task<StackoneMcpGetResponse> McpGetAsync(StackoneMcpGetSecurity security, string mcpSessionId, string? xAccountId = null, object? xAccountIdQueryParameter = null, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// Send MCP JSON-RPC message
@@ -44,7 +44,7 @@ namespace StackOneHQ.Client
         /// Send JSON-RPC request to the MCP server over HTTP streaming transport
         /// </remarks>
         /// </summary>
-        Task<StackoneMcpPostResponse> McpPostAsync(StackoneMcpPostSecurity security, string xAccountId, JsonRpcMessageDto jsonRpcMessageDto, string? mcpSessionId = null, RetryConfig? retryConfig = null);
+        Task<StackoneMcpPostResponse> McpPostAsync(StackoneMcpPostSecurity security, JsonRpcMessageDto jsonRpcMessageDto, string? xAccountId = null, object? xAccountIdQueryParameter = null, string? mcpSessionId = null, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// Delete MCP session
@@ -53,7 +53,7 @@ namespace StackOneHQ.Client
         /// Close an existing MCP session for the provided session id
         /// </remarks>
         /// </summary>
-        Task<StackoneMcpDeleteResponse> McpDeleteAsync(StackoneMcpDeleteSecurity security, string xAccountId, string mcpSessionId, RetryConfig? retryConfig = null);
+        Task<StackoneMcpDeleteResponse> McpDeleteAsync(StackoneMcpDeleteSecurity security, string mcpSessionId, string? xAccountId = null, object? xAccountIdQueryParameter = null, RetryConfig? retryConfig = null);
     }
 
     /// <summary>
@@ -63,8 +63,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.0";
-        private const string _sdkGenVersion = "2.735.1";
+        private const string _sdkVersion = "0.8.1";
+        private const string _sdkGenVersion = "2.745.2";
         private const string _openapiDocVersion = "1.0.0";
 
         public Mcp(SDKConfig config)
@@ -72,16 +72,16 @@ namespace StackOneHQ.Client
             SDKConfiguration = config;
         }
 
-        public async Task<StackoneMcpGetResponse> McpGetAsync(StackoneMcpGetSecurity security, string xAccountId, string mcpSessionId, RetryConfig? retryConfig = null)
+        public async Task<StackoneMcpGetResponse> McpGetAsync(StackoneMcpGetSecurity security, string mcpSessionId, string? xAccountId = null, object? xAccountIdQueryParameter = null, RetryConfig? retryConfig = null)
         {
             var request = new StackoneMcpGetRequest()
             {
-                XAccountId = xAccountId,
                 McpSessionId = mcpSessionId,
+                XAccountId = xAccountId,
+                XAccountIdQueryParameter = xAccountIdQueryParameter,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-
-            var urlString = baseUrl + "/mcp";
+            var urlString = URLBuilder.Build(baseUrl, "/mcp", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -472,17 +472,17 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<StackoneMcpPostResponse> McpPostAsync(StackoneMcpPostSecurity security, string xAccountId, JsonRpcMessageDto jsonRpcMessageDto, string? mcpSessionId = null, RetryConfig? retryConfig = null)
+        public async Task<StackoneMcpPostResponse> McpPostAsync(StackoneMcpPostSecurity security, JsonRpcMessageDto jsonRpcMessageDto, string? xAccountId = null, object? xAccountIdQueryParameter = null, string? mcpSessionId = null, RetryConfig? retryConfig = null)
         {
             var request = new StackoneMcpPostRequest()
             {
-                XAccountId = xAccountId,
                 JsonRpcMessageDto = jsonRpcMessageDto,
+                XAccountId = xAccountId,
+                XAccountIdQueryParameter = xAccountIdQueryParameter,
                 McpSessionId = mcpSessionId,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-
-            var urlString = baseUrl + "/mcp";
+            var urlString = URLBuilder.Build(baseUrl, "/mcp", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -879,16 +879,16 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<StackoneMcpDeleteResponse> McpDeleteAsync(StackoneMcpDeleteSecurity security, string xAccountId, string mcpSessionId, RetryConfig? retryConfig = null)
+        public async Task<StackoneMcpDeleteResponse> McpDeleteAsync(StackoneMcpDeleteSecurity security, string mcpSessionId, string? xAccountId = null, object? xAccountIdQueryParameter = null, RetryConfig? retryConfig = null)
         {
             var request = new StackoneMcpDeleteRequest()
             {
-                XAccountId = xAccountId,
                 McpSessionId = mcpSessionId,
+                XAccountId = xAccountId,
+                XAccountIdQueryParameter = xAccountIdQueryParameter,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-
-            var urlString = baseUrl + "/mcp";
+            var urlString = URLBuilder.Build(baseUrl, "/mcp", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
