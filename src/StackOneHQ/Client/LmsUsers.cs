@@ -29,6 +29,12 @@ namespace StackOneHQ.Client
 
         /// <summary>
         /// List User Completions
+        /// 
+        /// <remarks>
+        /// Retrieve a list of completed learning records for a user. <br/>
+        /// <br/>
+        /// These are the records of a user completing learning objects.
+        /// </remarks>
         /// </summary>
         Task<LmsListUserCompletionsResponse> ListCompletionsAsync(LmsListUserCompletionsRequest request, RetryConfig? retryConfig = null);
     }
@@ -37,8 +43,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.1";
-        private const string _sdkGenVersion = "2.745.2";
+        private const string _sdkVersion = "0.8.2";
+        private const string _sdkGenVersion = "2.755.6";
         private const string _openapiDocVersion = "1.0.0";
 
         public LmsUsers(SDKConfig config)

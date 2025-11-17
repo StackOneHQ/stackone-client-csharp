@@ -7,7 +7,7 @@
 
 * [GetCourse](#getcourse) - Get Course
 * [ListUserAssignments](#listuserassignments) - List User Assignments
-* [BatchUpsertContent](#batchupsertcontent) - Batch Upsert Content
+* [BatchUpsertContent](#batchupsertcontent) - Batch Upsert External Linking Learning Objects
 * [ListContent](#listcontent) - List Content
 * [CreateUserCompletion](#createusercompletion) - Create User Completion
 * [GetUserCompletion](#getusercompletion) - Get User Completion
@@ -19,7 +19,9 @@
 
 ## GetCourse
 
-Get Course
+Retrieve a course type learning object by its identifier. 
+
+These are collections of content type learning objects that are grouped together for a specific learning purpose.
 
 ### Example Usage
 
@@ -75,7 +77,11 @@ var res = await sdk.Lms.GetCourseAsync(req);
 
 ## ListUserAssignments
 
-List User Assignments
+Retrieve a list of assignment type learning records for a user. 
+
+These are the records linking a user to learning objects. 
+
+They can be pending, in progress, or completed.
 
 ### Example Usage
 
@@ -142,7 +148,9 @@ while(res != null)
 
 ## BatchUpsertContent
 
-Batch Upsert Content
+Batch upsert multiple external linking learning objects that redirect users to a provider platform for consumption and progress tracking. 
+
+See [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects.
 
 ### Example Usage
 
@@ -272,7 +280,11 @@ var res = await sdk.Lms.BatchUpsertContentAsync(
 
 ## ListContent
 
-List Content
+Retrieve a list of content type learning objects. 
+
+These are the most granular learning objects (e.g. video, document, podcast) on a platform. 
+
+Only content objects for which the platform supports progress and completion tracking are returned.
 
 ### Example Usage
 
@@ -336,7 +348,9 @@ while(res != null)
 
 ## CreateUserCompletion
 
-Create User Completion
+Create a completed learning record for a user. 
+
+This is the record of a user completing a learning object.
 
 ### Example Usage
 
@@ -401,7 +415,9 @@ var res = await sdk.Lms.CreateUserCompletionAsync(
 
 ## GetUserCompletion
 
-Get User Completion
+Retrieve a completed learning record for a user by its identifier. 
+
+This is the record of a user completing a learning object.
 
 ### Example Usage
 
@@ -457,7 +473,9 @@ var res = await sdk.Lms.GetUserCompletionAsync(req);
 
 ## DeleteUserCompletion
 
-Delete User Completion
+Delete a completion type learning record for a user. 
+
+This is a record of a user completing a learning object.
 
 ### Example Usage
 

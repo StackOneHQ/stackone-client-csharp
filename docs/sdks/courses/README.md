@@ -9,7 +9,9 @@
 
 ## List
 
-List Courses
+Retrieve a list of course type learning objects. 
+
+These are collections of content type learning objects that are grouped together for a specific learning purpose.
 
 ### Example Usage
 

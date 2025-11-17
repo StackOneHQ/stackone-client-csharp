@@ -10,7 +10,7 @@
 
 ## List
 
-List Completions
+Retrieve a list of completed learning records. These are the records of a user completing learning objects.
 
 ### Example Usage
 
@@ -74,7 +74,7 @@ while(res != null)
 
 ## Get
 
-Get Completion
+Retrieve a completed learning record by its identifier. This is the record of a user completing a learning object.
 
 ### Example Usage
 

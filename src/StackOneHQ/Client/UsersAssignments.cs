@@ -27,6 +27,14 @@ namespace StackOneHQ.Client
 
         /// <summary>
         /// Get User Assignment
+        /// 
+        /// <remarks>
+        /// Retrieve an assignment type learning record for a user by its identifier. <br/>
+        /// <br/>
+        /// This is the record linking a user to a learning object. <br/>
+        /// <br/>
+        /// It can be pending, in progress, or completed.
+        /// </remarks>
         /// </summary>
         Task<LmsGetUserAssignmentResponse> GetAsync(LmsGetUserAssignmentRequest request, RetryConfig? retryConfig = null);
     }
@@ -35,8 +43,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.1";
-        private const string _sdkGenVersion = "2.745.2";
+        private const string _sdkVersion = "0.8.2";
+        private const string _sdkGenVersion = "2.755.6";
         private const string _openapiDocVersion = "1.0.0";
 
         public UsersAssignments(SDKConfig config)

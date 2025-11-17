@@ -11,7 +11,11 @@
 
 ## Create
 
-Create User Assignment
+Create an assignment type learning record for a user. 
+
+This is the record linking a user to a learning object. 
+
+It can be pending or in progress.
 
 ### Example Usage
 
@@ -80,7 +84,11 @@ var res = await sdk.Lms.Assignments.CreateAsync(
 
 ## List
 
-List Assignments
+Retrieve a list of assignment type learning records. 
+
+These are the records linking a user to a learning object. 
+
+They can be pending, in progress, or completed.
 
 ### Example Usage
 
@@ -146,7 +154,11 @@ while(res != null)
 
 ## Get
 
-Get Assignment
+Retrieve an assignment type learning record by its identifier. 
+
+This is the record linking a user to a learning object. 
+
+It can be pending, in progress, or completed.
 
 ### Example Usage
 

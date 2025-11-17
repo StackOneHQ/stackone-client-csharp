@@ -9,7 +9,9 @@
 
 ## ListCompletions
 
-List User Completions
+Retrieve a list of completed learning records for a user. 
+
+These are the records of a user completing learning objects.
 
 ### Example Usage
 

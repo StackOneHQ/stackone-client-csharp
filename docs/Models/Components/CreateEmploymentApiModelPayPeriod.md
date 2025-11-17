@@ -1,6 +1,6 @@
 # CreateEmploymentApiModelPayPeriod
 
-The pay period
+The time period over which the pay rate is calculated
 
 
 ## Fields

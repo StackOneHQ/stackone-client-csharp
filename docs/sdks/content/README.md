@@ -5,13 +5,15 @@
 
 ### Available Operations
 
-* [Upsert](#upsert) - Upsert Content
+* [Upsert](#upsert) - Upsert External Linking Learning Objects
 * [Get](#get) - Get Content
-* [Update](#update) - Update Content
+* [Update](#update) - Update External Linking Learning Objects
 
 ## Upsert
 
-Upsert Content
+Create or update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. 
+
+See [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects.
 
 ### Example Usage
 
@@ -137,7 +139,11 @@ var res = await sdk.Lms.Content.UpsertAsync(
 
 ## Get
 
-Get Content
+Retrieve a content type learning object by its identifier. 
+
+These are the most granular learning objects (e.g. video, document, podcast) on a platform. 
+
+Only content objects for which the platform supports progress and completion tracking are returned.
 
 ### Example Usage
 
@@ -193,7 +199,9 @@ var res = await sdk.Lms.Content.GetAsync(req);
 
 ## Update
 
-Update Content
+Update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. 
+
+See [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects.
 
 ### Example Usage
 

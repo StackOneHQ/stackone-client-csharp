@@ -28835,6 +28835,7 @@ paths:
       tags:
         - "Courses"
       summary: "List Courses"
+      description: "Retrieve a list of course type learning objects. \n\nThese are collections of content type learning objects that are grouped together for a specific learning purpose."
       operationId: "lms_list_courses"
       parameters:
         - name: "x-account-id"
@@ -29011,6 +29012,7 @@ paths:
       tags:
         - "Courses"
       summary: "Get Course"
+      description: "Retrieve a course type learning object by its identifier. \n\nThese are collections of content type learning objects that are grouped together for a specific learning purpose."
       operationId: "lms_get_course"
       parameters:
         - name: "x-account-id"
@@ -29129,6 +29131,7 @@ paths:
         - "Users"
         - "Assignments"
       summary: "List User Assignments"
+      description: "Retrieve a list of assignment type learning records for a user. \n\nThese are the records linking a user to learning objects. \n\nThey can be pending, in progress, or completed."
       operationId: "lms_list_user_assignments"
       parameters:
         - name: "x-account-id"
@@ -29320,6 +29323,7 @@ paths:
         - "Users"
         - "Assignments"
       summary: "Create User Assignment"
+      description: "Create an assignment type learning record for a user. \n\nThis is the record linking a user to a learning object. \n\nIt can be pending or in progress."
       operationId: "lms_create_user_assignment"
       parameters:
         - name: "x-account-id"
@@ -29420,6 +29424,7 @@ paths:
         - "Users"
         - "Assignments"
       summary: "Get User Assignment"
+      description: "Retrieve an assignment type learning record for a user by its identifier. \n\nThis is the record linking a user to a learning object. \n\nIt can be pending, in progress, or completed."
       operationId: "lms_get_user_assignment"
       parameters:
         - name: "x-account-id"
@@ -29541,8 +29546,9 @@ paths:
   /unified/lms/content/batch:
     post:
       tags:
-        - "Content"
-      summary: "Batch Upsert Content"
+        - "External Linking Learning Objects"
+      summary: "Batch Upsert External Linking Learning Objects"
+      description: "Batch upsert multiple external linking learning objects that redirect users to a provider platform for consumption and progress tracking. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
       operationId: "lms_batch_upsert_content"
       parameters:
         - name: "x-account-id"
@@ -29637,6 +29643,7 @@ paths:
       tags:
         - "Content"
       summary: "List Content"
+      description: "Retrieve a list of content type learning objects. \n\nThese are the most granular learning objects (e.g. video, document, podcast) on a platform. \n\nOnly content objects for which the platform supports progress and completion tracking are returned."
       operationId: "lms_list_content"
       parameters:
         - name: "x-account-id"
@@ -29806,8 +29813,9 @@ paths:
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     put:
       tags:
-        - "Content"
-      summary: "Upsert Content"
+        - "External Linking Learning Objects"
+      summary: "Upsert External Linking Learning Objects"
+      description: "Create or update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
       operationId: "lms_upsert_content"
       parameters:
         - name: "x-account-id"
@@ -29902,6 +29910,7 @@ paths:
       tags:
         - "Content"
       summary: "Get Content"
+      description: "Retrieve a content type learning object by its identifier. \n\nThese are the most granular learning objects (e.g. video, document, podcast) on a platform. \n\nOnly content objects for which the platform supports progress and completion tracking are returned."
       operationId: "lms_get_content"
       parameters:
         - name: "x-account-id"
@@ -30016,8 +30025,9 @@ paths:
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
     patch:
       tags:
-        - "Content"
-      summary: "Update Content"
+        - "External Linking Learning Objects"
+      summary: "Update External Linking Learning Objects"
+      description: "Update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
       operationId: "lms_update_content"
       parameters:
         - name: "x-account-id"
@@ -30118,6 +30128,7 @@ paths:
         - "Users"
         - "Completions"
       summary: "List User Completions"
+      description: "Retrieve a list of completed learning records for a user. \n\nThese are the records of a user completing learning objects."
       operationId: "lms_list_user_completions"
       parameters:
         - name: "x-account-id"
@@ -30283,6 +30294,7 @@ paths:
         - "Users"
         - "Completions"
       summary: "Create User Completion"
+      description: "Create a completed learning record for a user. \n\nThis is the record of a user completing a learning object."
       operationId: "lms_create_user_completion"
       parameters:
         - name: "x-account-id"
@@ -30383,6 +30395,7 @@ paths:
         - "Users"
         - "Completions"
       summary: "Get User Completion"
+      description: "Retrieve a completed learning record for a user by its identifier. \n\nThis is the record of a user completing a learning object."
       operationId: "lms_get_user_completion"
       parameters:
         - name: "x-account-id"
@@ -30506,6 +30519,7 @@ paths:
         - "Users"
         - "Completions"
       summary: "Delete User Completion"
+      description: "Delete a completion type learning record for a user. \n\nThis is a record of a user completing a learning object."
       operationId: "lms_delete_user_completion"
       parameters:
         - name: "x-account-id"
@@ -30607,6 +30621,7 @@ paths:
       tags:
         - "Completions"
       summary: "List Completions"
+      description: "Retrieve a list of completed learning records. These are the records of a user completing learning objects."
       operationId: "lms_list_completions"
       parameters:
         - name: "x-account-id"
@@ -30771,6 +30786,7 @@ paths:
       tags:
         - "Completions"
       summary: "Get Completion"
+      description: "Retrieve a completed learning record by its identifier. This is the record of a user completing a learning object."
       operationId: "lms_get_completion"
       parameters:
         - name: "x-account-id"
@@ -31734,6 +31750,7 @@ paths:
       tags:
         - "Assignments"
       summary: "List Assignments"
+      description: "Retrieve a list of assignment type learning records. \n\nThese are the records linking a user to a learning object. \n\nThey can be pending, in progress, or completed."
       operationId: "lms_list_assignments"
       parameters:
         - name: "x-account-id"
@@ -31920,6 +31937,7 @@ paths:
       tags:
         - "Assignments"
       summary: "Get Assignment"
+      description: "Retrieve an assignment type learning record by its identifier. \n\nThis is the record linking a user to a learning object. \n\nIt can be pending, in progress, or completed."
       operationId: "lms_get_assignment"
       parameters:
         - name: "x-account-id"
@@ -39437,6 +39455,7 @@ components:
         "params":
           type: "object"
           description: "Method parameters (arbitrary JSON)"
+          nullable: true
         "id":
           type: "object"
           description: "Request id (arbitrary JSON scalar)"
@@ -39458,6 +39477,9 @@ components:
           enum:
             - "active"
             - "inactive"
+            - "suspended"
+            - "archived"
+            - "expired"
             - "error"
           x-speakeasy-unknown-values: "allow"
         "status_reasons":
@@ -41245,19 +41267,19 @@ components:
           example: "Software Engineer"
         "pay_rate":
           type: "string"
-          description: "The pay rate for the employee"
+          description: "The amount of compensation for the employee"
           nullable: true
           example: "40.00"
         "pay_period":
           allOf:
             - {"$ref": "#/components/schemas/PayPeriodEnum"}
-          description: "The pay period"
+          description: "The time period over which the pay rate is calculated"
           nullable: true
           example: "monthly"
         "pay_frequency":
           allOf:
             - {"$ref": "#/components/schemas/PayFrequencyEnum"}
-          description: "The pay frequency"
+          description: "How often the employee is paid"
           nullable: true
           example: "hourly"
         "pay_currency":
@@ -41393,19 +41415,19 @@ components:
           example: "Software Engineer"
         "pay_rate":
           type: "string"
-          description: "The pay rate for the employee"
+          description: "The amount of compensation for the employee"
           nullable: true
           example: "40.00"
         "pay_period":
           allOf:
             - {"$ref": "#/components/schemas/PayPeriodEnum"}
-          description: "The pay period"
+          description: "The time period over which the pay rate is calculated"
           nullable: true
           example: "monthly"
         "pay_frequency":
           allOf:
             - {"$ref": "#/components/schemas/PayFrequencyEnum"}
-          description: "The pay frequency"
+          description: "How often the employee is paid"
           nullable: true
           example: "hourly"
         "pay_currency":
@@ -42339,19 +42361,19 @@ components:
           example: "Software Engineer"
         "pay_rate":
           type: "string"
-          description: "The pay rate for the employee"
+          description: "The amount of compensation for the employee"
           nullable: true
           example: "40.00"
         "pay_period":
           allOf:
             - {"$ref": "#/components/schemas/PayPeriodEnum"}
-          description: "The pay period"
+          description: "The time period over which the pay rate is calculated"
           nullable: true
           example: "monthly"
         "pay_frequency":
           allOf:
             - {"$ref": "#/components/schemas/PayFrequencyEnum"}
-          description: "The pay frequency"
+          description: "How often the employee is paid"
           nullable: true
           example: "hourly"
         "pay_currency":
@@ -44654,19 +44676,19 @@ components:
           example: "Software Engineer"
         "pay_rate":
           type: "string"
-          description: "The pay rate for the employee"
+          description: "The amount of compensation for the employee"
           nullable: true
           example: "40.00"
         "pay_period":
           allOf:
             - {"$ref": "#/components/schemas/PayPeriodEnum"}
-          description: "The pay period"
+          description: "The time period over which the pay rate is calculated"
           nullable: true
           example: "monthly"
         "pay_frequency":
           allOf:
             - {"$ref": "#/components/schemas/PayFrequencyEnum"}
-          description: "The pay frequency"
+          description: "How often the employee is paid"
           nullable: true
           example: "hourly"
         "pay_currency":
@@ -46023,19 +46045,19 @@ components:
           example: "Software Engineer"
         "pay_rate":
           type: "string"
-          description: "The pay rate for the employee"
+          description: "The amount of compensation for the employee"
           nullable: true
           example: "40.00"
         "pay_period":
           allOf:
             - {"$ref": "#/components/schemas/PayPeriodEnum"}
-          description: "The pay period"
+          description: "The time period over which the pay rate is calculated"
           nullable: true
           example: "monthly"
         "pay_frequency":
           allOf:
             - {"$ref": "#/components/schemas/PayFrequencyEnum"}
-          description: "The pay frequency"
+          description: "How often the employee is paid"
           nullable: true
           example: "hourly"
         "pay_currency":
@@ -58763,9 +58785,11 @@ tags:
   - name: "Templates"
     description: "Templates for marketing content or campaigns."
   - name: "Courses"
-    description: "Collections of learning materials or modules."
+    description: "Collections of learning content."
   - name: "Content"
-    description: "Learning content or materials."
+    description: "Granular learning content items."
+  - name: "External Linking Learning Objects"
+    description: "External linking learning objects."
   - name: "Categories"
     description: "Categories for organizing learning content."
   - name: "Assignments"

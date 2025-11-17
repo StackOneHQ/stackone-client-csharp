@@ -31,19 +31,19 @@ namespace StackOneHQ.Client.Models.Components
         public string? JobTitle { get; set; } = null;
 
         /// <summary>
-        /// The pay rate for the employee
+        /// The amount of compensation for the employee
         /// </summary>
         [JsonProperty("pay_rate")]
         public string? PayRate { get; set; } = null;
 
         /// <summary>
-        /// The pay period
+        /// The time period over which the pay rate is calculated
         /// </summary>
         [JsonProperty("pay_period")]
         public HrisUpdateEmploymentRequestDtoPayPeriod? PayPeriod { get; set; } = null;
 
         /// <summary>
-        /// The pay frequency
+        /// How often the employee is paid
         /// </summary>
         [JsonProperty("pay_frequency")]
         public HrisUpdateEmploymentRequestDtoPayFrequency? PayFrequency { get; set; } = null;

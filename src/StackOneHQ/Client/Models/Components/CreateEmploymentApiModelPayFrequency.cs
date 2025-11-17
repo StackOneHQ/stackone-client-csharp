@@ -18,7 +18,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Linq;
     
     /// <summary>
-    /// The pay frequency
+    /// How often the employee is paid
     /// </summary>
     public class CreateEmploymentApiModelPayFrequency
     {

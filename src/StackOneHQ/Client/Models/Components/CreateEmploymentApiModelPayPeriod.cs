@@ -18,7 +18,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Linq;
     
     /// <summary>
-    /// The pay period
+    /// The time period over which the pay rate is calculated
     /// </summary>
     public class CreateEmploymentApiModelPayPeriod
     {

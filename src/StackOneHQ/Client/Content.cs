@@ -26,17 +26,37 @@ namespace StackOneHQ.Client
     {
 
         /// <summary>
-        /// Upsert Content
+        /// Upsert External Linking Learning Objects
+        /// 
+        /// <remarks>
+        /// Create or update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. <br/>
+        /// <br/>
+        /// See <a href="https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction">here</a> for more information about external linking learning objects.
+        /// </remarks>
         /// </summary>
         Task<LmsUpsertContentResponse> UpsertAsync(string xAccountId, LmsUpsertContentRequestDto lmsUpsertContentRequestDto, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// Get Content
+        /// 
+        /// <remarks>
+        /// Retrieve a content type learning object by its identifier. <br/>
+        /// <br/>
+        /// These are the most granular learning objects (e.g. video, document, podcast) on a platform. <br/>
+        /// <br/>
+        /// Only content objects for which the platform supports progress and completion tracking are returned.
+        /// </remarks>
         /// </summary>
         Task<LmsGetContentResponse> GetAsync(LmsGetContentRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Update Content
+        /// Update External Linking Learning Objects
+        /// 
+        /// <remarks>
+        /// Update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. <br/>
+        /// <br/>
+        /// See <a href="https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction">here</a> for more information about external linking learning objects.
+        /// </remarks>
         /// </summary>
         Task<LmsUpdateContentResponse> UpdateAsync(string xAccountId, string id, LmsCreateContentRequestDto lmsCreateContentRequestDto, RetryConfig? retryConfig = null);
     }
@@ -45,8 +65,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.1";
-        private const string _sdkGenVersion = "2.745.2";
+        private const string _sdkVersion = "0.8.2";
+        private const string _sdkGenVersion = "2.755.6";
         private const string _openapiDocVersion = "1.0.0";
 
         public Content(SDKConfig config)

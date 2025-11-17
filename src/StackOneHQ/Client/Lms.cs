@@ -36,36 +36,82 @@ namespace StackOneHQ.Client
 
         /// <summary>
         /// Get Course
+        /// 
+        /// <remarks>
+        /// Retrieve a course type learning object by its identifier. <br/>
+        /// <br/>
+        /// These are collections of content type learning objects that are grouped together for a specific learning purpose.
+        /// </remarks>
         /// </summary>
         Task<LmsGetCourseResponse> GetCourseAsync(LmsGetCourseRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// List User Assignments
+        /// 
+        /// <remarks>
+        /// Retrieve a list of assignment type learning records for a user. <br/>
+        /// <br/>
+        /// These are the records linking a user to learning objects. <br/>
+        /// <br/>
+        /// They can be pending, in progress, or completed.
+        /// </remarks>
         /// </summary>
         Task<LmsListUserAssignmentsResponse> ListUserAssignmentsAsync(LmsListUserAssignmentsRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Batch Upsert Content
+        /// Batch Upsert External Linking Learning Objects
+        /// 
+        /// <remarks>
+        /// Batch upsert multiple external linking learning objects that redirect users to a provider platform for consumption and progress tracking. <br/>
+        /// <br/>
+        /// See <a href="https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction">here</a> for more information about external linking learning objects.
+        /// </remarks>
         /// </summary>
         Task<LmsBatchUpsertContentResponse> BatchUpsertContentAsync(string xAccountId, LmsBatchUpsertContentRequestDto lmsBatchUpsertContentRequestDto, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// List Content
+        /// 
+        /// <remarks>
+        /// Retrieve a list of content type learning objects. <br/>
+        /// <br/>
+        /// These are the most granular learning objects (e.g. video, document, podcast) on a platform. <br/>
+        /// <br/>
+        /// Only content objects for which the platform supports progress and completion tracking are returned.
+        /// </remarks>
         /// </summary>
         Task<LmsListContentResponse> ListContentAsync(LmsListContentRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// Create User Completion
+        /// 
+        /// <remarks>
+        /// Create a completed learning record for a user. <br/>
+        /// <br/>
+        /// This is the record of a user completing a learning object.
+        /// </remarks>
         /// </summary>
         Task<LmsCreateUserCompletionResponse> CreateUserCompletionAsync(string xAccountId, string id, LmsCreateCompletionRequestDto lmsCreateCompletionRequestDto, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// Get User Completion
+        /// 
+        /// <remarks>
+        /// Retrieve a completed learning record for a user by its identifier. <br/>
+        /// <br/>
+        /// This is the record of a user completing a learning object.
+        /// </remarks>
         /// </summary>
         Task<LmsGetUserCompletionResponse> GetUserCompletionAsync(LmsGetUserCompletionRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
         /// Delete User Completion
+        /// 
+        /// <remarks>
+        /// Delete a completion type learning record for a user. <br/>
+        /// <br/>
+        /// This is a record of a user completing a learning object.
+        /// </remarks>
         /// </summary>
         Task<LmsDeleteUserCompletionResponse> DeleteUserCompletionAsync(string xAccountId, string id, string subResourceId, RetryConfig? retryConfig = null);
 
@@ -94,8 +140,8 @@ namespace StackOneHQ.Client
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.1";
-        private const string _sdkGenVersion = "2.745.2";
+        private const string _sdkVersion = "0.8.2";
+        private const string _sdkGenVersion = "2.755.6";
         private const string _openapiDocVersion = "1.0.0";
         public IAssignments Assignments { get; private set; }
         public IUsersAssignments UsersAssignments { get; private set; }
