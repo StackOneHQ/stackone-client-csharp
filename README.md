@@ -567,7 +567,7 @@ var res = await sdk.Mcp.McpGetAsync(
 
 * [GetCourse](docs/sdks/lms/README.md#getcourse) - Get Course
 * [ListUserAssignments](docs/sdks/lms/README.md#listuserassignments) - List User Assignments
-* [BatchUpsertContent](docs/sdks/lms/README.md#batchupsertcontent) - Batch Upsert Content
+* [BatchUpsertContent](docs/sdks/lms/README.md#batchupsertcontent) - Batch Upsert External Linking Learning Objects
 * [ListContent](docs/sdks/lms/README.md#listcontent) - List Content
 * [CreateUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
 * [GetUserCompletion](docs/sdks/lms/README.md#getusercompletion) - Get User Completion
@@ -594,9 +594,9 @@ var res = await sdk.Mcp.McpGetAsync(
 
 #### [Lms.Content](docs/sdks/content/README.md)
 
-* [Upsert](docs/sdks/content/README.md#upsert) - Upsert Content
+* [Upsert](docs/sdks/content/README.md#upsert) - Upsert External Linking Learning Objects
 * [Get](docs/sdks/content/README.md#get) - Get Content
-* [Update](docs/sdks/content/README.md#update) - Update Content
+* [Update](docs/sdks/content/README.md#update) - Update External Linking Learning Objects
 
 #### [Lms.Skills](docs/sdks/lmsskills/README.md)
 

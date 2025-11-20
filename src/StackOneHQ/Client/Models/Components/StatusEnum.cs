@@ -21,6 +21,9 @@ namespace StackOneHQ.Client.Models.Components
     {
         public static readonly StatusEnum Active = new StatusEnum("active");
         public static readonly StatusEnum Inactive = new StatusEnum("inactive");
+        public static readonly StatusEnum Suspended = new StatusEnum("suspended");
+        public static readonly StatusEnum Archived = new StatusEnum("archived");
+        public static readonly StatusEnum Expired = new StatusEnum("expired");
         public static readonly StatusEnum Error = new StatusEnum("error");
 
         private static readonly Dictionary <string, StatusEnum> _knownValues =
@@ -28,6 +31,9 @@ namespace StackOneHQ.Client.Models.Components
             {
                 ["active"] = Active,
                 ["inactive"] = Inactive,
+                ["suspended"] = Suspended,
+                ["archived"] = Archived,
+                ["expired"] = Expired,
                 ["error"] = Error
             };
 

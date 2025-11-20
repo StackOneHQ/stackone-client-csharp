@@ -1,6 +1,6 @@
 # CreateEmploymentApiModelPayFrequency
 
-The pay frequency
+How often the employee is paid
 
 
 ## Fields

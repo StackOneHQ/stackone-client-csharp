@@ -9,7 +9,11 @@
 
 ## Get
 
-Get User Assignment
+Retrieve an assignment type learning record for a user by its identifier. 
+
+This is the record linking a user to a learning object. 
+
+It can be pending, in progress, or completed.
 
 ### Example Usage
 

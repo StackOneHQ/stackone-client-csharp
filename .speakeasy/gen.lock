@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 24d370c2-6b03-48a1-b9df-d477b88b9851
 management:
-  docChecksum: d9840683e3a84a4ca52800157a7bc017
+  docChecksum: 918d2261a7c8329e70c2f98fe50a8f83
   docVersion: 1.0.0
-  speakeasyVersion: 1.651.0
-  generationVersion: 2.745.2
-  releaseVersion: 0.8.1
-  configChecksum: 3ce1526a0f474db898c76fed868c1911
+  speakeasyVersion: 1.658.1
+  generationVersion: 2.755.6
+  releaseVersion: 0.8.2
+  configChecksum: 7a93cd6b1c65e0732e8bd72de94c4558
   repoURL: https://github.com/StackOneHQ/stackone-client-csharp.git
   published: true
 features:
@@ -14,7 +14,7 @@ features:
     additionalDependencies: 0.1.0
     additionalProperties: 0.0.1
     constsAndDefaults: 0.0.1
-    core: 3.15.3
+    core: 3.15.4
     deprecations: 2.81.2
     examples: 2.81.6
     flattening: 2.81.3
@@ -28,7 +28,7 @@ features:
     nameOverrides: 2.81.2
     nullables: 0.1.1
     openEnums: 0.1.1
-    pagination: 0.2.8
+    pagination: 0.2.9
     responseFormat: 0.0.4
     retries: 0.0.1
     sdkHooks: 0.2.0
@@ -15522,4 +15522,4 @@ examples:
         "502":
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Mcp.McpGet()`:  `request` **Changed**\n* `StackOneHq.client.Mcp.McpPost()`:  `request` **Changed**\n* `StackOneHq.client.Mcp.McpDelete()`:  `request` **Changed**\n* `StackOneHq.client.Proxy.Perform()`:  `response` **Changed**\n* `StackOneHq.client.Actions.ListActionsMeta()`: \n  *  `request.Include` **Changed**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `StackOneHq.client.Mcp.McpPost()`: \n  *  `request.jsonRpcMessageDto.Params` **Changed**\n"

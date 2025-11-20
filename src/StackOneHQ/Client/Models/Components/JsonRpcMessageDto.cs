@@ -32,7 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         /// Method parameters (arbitrary JSON)
         /// </summary>
         [JsonProperty("params")]
-        public Params? Params { get; set; }
+        public Params? Params { get; set; } = null;
 
         /// <summary>
         /// Request id (arbitrary JSON scalar)
