@@ -1,21 +1,21 @@
-speakeasyVersion: 1.658.1
+speakeasyVersion: 1.660.0
 sources:
     StackOne:
         sourceNamespace: stack-one
-        sourceRevisionDigest: sha256:33828c550404b22bd65e0ee2e6cbf678f1e552fe4f42621c99a4aaa2f8e520d2
-        sourceBlobDigest: sha256:9e0ee459f5eca733925b0183ed3cd67ce7e162ba96f214790b7178cd669d14b9
+        sourceRevisionDigest: sha256:1096e575749d76bc33634804834e683b5f7ca07dec451d170775896ae68eecb5
+        sourceBlobDigest: sha256:8a7d9ec1ac52ff1840e859859bcd829220587d13f9210e7ebced0170c93f9ba2
         tags:
             - latest
-            - speakeasy-sdk-regen-1763370306
+            - speakeasy-sdk-regen-1763975093
             - 1.0.0
 targets:
     stack-one:
         source: StackOne
         sourceNamespace: stack-one
-        sourceRevisionDigest: sha256:33828c550404b22bd65e0ee2e6cbf678f1e552fe4f42621c99a4aaa2f8e520d2
-        sourceBlobDigest: sha256:9e0ee459f5eca733925b0183ed3cd67ce7e162ba96f214790b7178cd669d14b9
+        sourceRevisionDigest: sha256:1096e575749d76bc33634804834e683b5f7ca07dec451d170775896ae68eecb5
+        sourceBlobDigest: sha256:8a7d9ec1ac52ff1840e859859bcd829220587d13f9210e7ebced0170c93f9ba2
         codeSamplesNamespace: stack-one-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:9b00a031a78d74c7e62680bc6d94f5aad975f8a4d83dbdba2be08793e099b7df
+        codeSamplesRevisionDigest: sha256:0b69f241ba256a39ec80e3a6894ad65a46b34269bf55b4bccd9f3141fed6d75f
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
