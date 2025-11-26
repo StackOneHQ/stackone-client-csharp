@@ -2912,7 +2912,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,manager,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "HRIS Employees filters"
@@ -2977,7 +2977,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "company,employments,work_location,home_location,groups,skills"
+            example: "company,employments,work_location,home_location,groups,skills,manager"
         - name: "include"
           in: "query"
           description: "The comma separated list of fields that will be included in the response"
@@ -3199,7 +3199,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,manager,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -3207,7 +3207,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "company,employments,work_location,home_location,groups,skills"
+            example: "company,employments,work_location,home_location,groups,skills,manager"
         - name: "include"
           in: "query"
           description: "The comma separated list of fields that will be included in the response"
@@ -39091,6 +39091,7 @@ components:
             - "screening"
             - "messaging"
             - "accounting"
+            - "scheduling"
           description: "The provider service category"
           example: "hris"
           x-speakeasy-unknown-values: "allow"
@@ -39162,9 +39163,10 @@ components:
               - "screening"
               - "messaging"
               - "accounting"
+              - "scheduling"
               - null
           nullable: true
-          example: ["ats", "hris", "hrisLegacy", "crm", "iam", "marketing", "lms", "stackOne", "documents", "ticketing", "screening", "messaging", "accounting"]
+          example: ["ats", "hris", "hrisLegacy", "crm", "iam", "marketing", "lms", "stackOne", "documents", "ticketing", "screening", "messaging", "accounting", "scheduling"]
           x-speakeasy-unknown-values: "allow"
         "provider":
           type: "string"
@@ -39241,10 +39243,11 @@ components:
               - "screening"
               - "messaging"
               - "accounting"
+              - "scheduling"
               - null
           description: "The categories of the provider to connect to"
           nullable: true
-          example: ["ats", "hris", "hrisLegacy", "crm", "iam", "marketing", "lms", "stackOne", "documents", "ticketing", "screening", "messaging", "accounting"]
+          example: ["ats", "hris", "hrisLegacy", "crm", "iam", "marketing", "lms", "stackOne", "documents", "ticketing", "screening", "messaging", "accounting", "scheduling"]
           x-speakeasy-unknown-values: "allow"
         "provider":
           type: "string"
@@ -39327,9 +39330,10 @@ components:
               - "screening"
               - "messaging"
               - "accounting"
+              - "scheduling"
               - null
           nullable: true
-          example: ["ats", "hris", "hrisLegacy", "crm", "iam", "marketing", "lms", "stackOne", "documents", "ticketing", "screening", "messaging", "accounting"]
+          example: ["ats", "hris", "hrisLegacy", "crm", "iam", "marketing", "lms", "stackOne", "documents", "ticketing", "screening", "messaging", "accounting", "scheduling"]
           x-speakeasy-unknown-values: "allow"
         "provider":
           type: "string"
@@ -39549,6 +39553,7 @@ components:
             - "screening"
             - "messaging"
             - "accounting"
+            - "scheduling"
           x-speakeasy-unknown-values: "allow"
         "models":
           type: "object"
@@ -42247,6 +42252,11 @@ components:
           allOf:
             - {"$ref": "#/components/schemas/HRISLocation"}
           description: "The employee work location"
+          nullable: true
+        "manager":
+          allOf:
+            - {"$ref": "#/components/schemas/Manager"}
+          description: "The employee manager details"
           nullable: true
         "company":
           allOf:
@@ -46636,6 +46646,29 @@ components:
           description: "The source value of the location type."
           nullable: true
           example: "Home"
+    Manager:
+      type: "object"
+      properties:
+        "id":
+          type: "string"
+          description: "Unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "remote_id":
+          type: "string"
+          description: "Provider's unique identifier"
+          nullable: true
+          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "name":
+          type: "string"
+          description: "The manager name"
+          nullable: true
+          example: "John Doe"
+        "email":
+          type: "string"
+          description: "The manager email"
+          nullable: true
+          example: "john.doe@example.com"
     ManagerRoleApiModel:
       type: "object"
       properties:

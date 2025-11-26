@@ -40,6 +40,7 @@ ConnectSessionCreate req = new ConnectSessionCreate() {
         ConnectSessionCreateCategory.Screening,
         ConnectSessionCreateCategory.Messaging,
         ConnectSessionCreateCategory.Accounting,
+        ConnectSessionCreateCategory.Scheduling,
     },
     OriginOwnerId = "<id>",
     OriginOwnerName = "<value>",

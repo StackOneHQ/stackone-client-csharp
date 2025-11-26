@@ -41,6 +41,8 @@ namespace StackOneHQ.Client.Models.Components
         Messaging,
         [JsonProperty("accounting")]
         Accounting,
+        [JsonProperty("scheduling")]
+        Scheduling,
     }
 
     public static class ConnectSessionCategoryExtension

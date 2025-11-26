@@ -32,6 +32,7 @@ namespace StackOneHQ.Client.Models.Components
         public static readonly LinkedAccountMetaCategory Screening = new LinkedAccountMetaCategory("screening");
         public static readonly LinkedAccountMetaCategory Messaging = new LinkedAccountMetaCategory("messaging");
         public static readonly LinkedAccountMetaCategory Accounting = new LinkedAccountMetaCategory("accounting");
+        public static readonly LinkedAccountMetaCategory Scheduling = new LinkedAccountMetaCategory("scheduling");
 
         private static readonly Dictionary <string, LinkedAccountMetaCategory> _knownValues =
             new Dictionary <string, LinkedAccountMetaCategory> ()
@@ -48,7 +49,8 @@ namespace StackOneHQ.Client.Models.Components
                 ["ticketing"] = Ticketing,
                 ["screening"] = Screening,
                 ["messaging"] = Messaging,
-                ["accounting"] = Accounting
+                ["accounting"] = Accounting,
+                ["scheduling"] = Scheduling
             };
 
         private static readonly ConcurrentDictionary<string, LinkedAccountMetaCategory> _values =
