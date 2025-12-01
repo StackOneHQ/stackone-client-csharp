@@ -281,12 +281,6 @@ namespace StackOneHQ.Client.Models.Components
         public EmployeeWorkLocation? WorkLocation { get; set; } = null;
 
         /// <summary>
-        /// The employee manager details
-        /// </summary>
-        [JsonProperty("manager")]
-        public Manager? Manager { get; set; } = null;
-
-        /// <summary>
         /// The employee company
         /// </summary>
         [JsonProperty("company")]

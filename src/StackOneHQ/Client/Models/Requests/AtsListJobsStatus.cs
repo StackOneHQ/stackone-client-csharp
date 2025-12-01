@@ -23,8 +23,8 @@ namespace StackOneHQ.Client.Models.Requests
         [JsonProperty("draft")]
         Draft,
     }
-
 #pragma warning disable 0618
+
     public static class AtsListJobsStatusExtension
     {
         public static string Value(this AtsListJobsStatus value)

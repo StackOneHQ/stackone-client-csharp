@@ -64,6 +64,8 @@ namespace StackOneHQ.Client
         /// <remarks>
         /// Batch upsert multiple external linking learning objects that redirect users to a provider platform for consumption and progress tracking. <br/>
         /// <br/>
+        /// **Note:** Partial updates are not supported. When updating content, you must provide all the same fields that are required when creating content. <br/>
+        /// <br/>
         /// See <a href="https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction">here</a> for more information about external linking learning objects.
         /// </remarks>
         /// </summary>
@@ -139,10 +141,11 @@ namespace StackOneHQ.Client
     public class Lms: ILms
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
         public IAssignments Assignments { get; private set; }
         public IUsersAssignments UsersAssignments { get; private set; }
         public IContent Content { get; private set; }
@@ -166,7 +169,7 @@ namespace StackOneHQ.Client
         public async Task<LmsGetCourseResponse> GetCourseAsync(LmsGetCourseRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/courses/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/courses/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -603,7 +606,7 @@ namespace StackOneHQ.Client
         public async Task<LmsListUserAssignmentsResponse> ListUserAssignmentsAsync(LmsListUserAssignmentsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/assignments", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/assignments", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1527,7 +1530,7 @@ namespace StackOneHQ.Client
         public async Task<LmsListContentResponse> ListContentAsync(LmsListContentRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/content", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/content", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2005,7 +2008,7 @@ namespace StackOneHQ.Client
                 LmsCreateCompletionRequestDto = lmsCreateCompletionRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/completions", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/completions", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2448,7 +2451,7 @@ namespace StackOneHQ.Client
         public async Task<LmsGetUserCompletionResponse> GetUserCompletionAsync(LmsGetUserCompletionRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/completions/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/completions/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2891,7 +2894,7 @@ namespace StackOneHQ.Client
                 SubResourceId = subResourceId,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/completions/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}/completions/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3339,7 +3342,7 @@ namespace StackOneHQ.Client
         public async Task<LmsGetCategoryResponse> GetCategoryAsync(LmsGetCategoryRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/categories/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/categories/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3776,7 +3779,7 @@ namespace StackOneHQ.Client
         public async Task<LmsListUsersResponse> ListUsersAsync(LmsListUsersRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4248,7 +4251,7 @@ namespace StackOneHQ.Client
         public async Task<LmsGetUserResponse> GetUserAsync(LmsGetUserRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/users/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4685,7 +4688,7 @@ namespace StackOneHQ.Client
         public async Task<LmsListSkillsResponse> ListSkillsAsync(LmsListSkillsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/skills", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/lms/skills", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

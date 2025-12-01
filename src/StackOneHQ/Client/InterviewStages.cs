@@ -41,10 +41,11 @@ namespace StackOneHQ.Client
     public class InterviewStages: IInterviewStages
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public InterviewStages(SDKConfig config)
         {
@@ -55,7 +56,7 @@ namespace StackOneHQ.Client
         public async Task<AtsListInterviewStagesResponse> ListAsync(AtsListInterviewStagesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/interview_stages", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/interview_stages", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -529,7 +530,7 @@ namespace StackOneHQ.Client
         public async Task<AtsGetInterviewStageResponse> GetAsync(AtsGetInterviewStageRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/interview_stages/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/interview_stages/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

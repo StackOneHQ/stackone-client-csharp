@@ -115,10 +115,11 @@ namespace StackOneHQ.Client
     public class Ticketing: ITicketing
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
         public ITickets Tickets { get; private set; }
         public ITicketingUsers Users { get; private set; }
         public IComments Comments { get; private set; }
@@ -134,7 +135,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingGetUserResponse> GetUserAsync(TicketingGetUserRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/users/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/users/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -571,7 +572,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingDownloadTicketingAttachmentResponse> DownloadAttachmentAsync(TicketingDownloadTicketingAttachmentRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/tickets/{id}/attachments/{subResourceId}/download", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/tickets/{id}/attachments/{subResourceId}/download", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -997,7 +998,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingListTicketTypesResponse> ListTicketTypesAsync(TicketingListTicketTypesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/ticket_types", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/ticket_types", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1469,7 +1470,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingGetTicketTypeResponse> GetTicketTypeAsync(TicketingGetTicketTypeRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/ticket_types/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/ticket_types/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1906,7 +1907,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingListProjectsResponse> ListProjectsAsync(TicketingListProjectsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2378,7 +2379,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingGetProjectResponse> GetProjectAsync(TicketingGetProjectRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2815,7 +2816,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingListProjectComponentsResponse> ListProjectComponentsAsync(TicketingListProjectComponentsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3288,7 +3289,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingGetProjectComponentResponse> GetProjectComponentAsync(TicketingGetProjectComponentRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3725,7 +3726,7 @@ namespace StackOneHQ.Client
         public async Task<TicketingListProjectTicketTypesResponse> ListProjectTicketTypesAsync(TicketingListProjectTicketTypesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/ticket_types", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/ticket_types", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

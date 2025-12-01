@@ -91,5 +91,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("type")]
         public ConnectSessionCreateType? Type { get; set; } = StackOneHQ.Client.Models.Components.ConnectSessionCreateType.Production;
+
+        /// <summary>
+        /// The integration ID associated with this connect session
+        /// </summary>
+        [JsonProperty("integration_id")]
+        public string? IntegrationId { get; set; } = null;
     }
 }

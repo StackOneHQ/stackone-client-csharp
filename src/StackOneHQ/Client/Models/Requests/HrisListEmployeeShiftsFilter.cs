@@ -14,7 +14,7 @@ namespace StackOneHQ.Client.Models.Requests
     using System;
     
     /// <summary>
-    /// HRIS Shifts filters
+    /// HRIS Employee Shifts filters
     /// </summary>
     public class HrisListEmployeeShiftsFilter
     {

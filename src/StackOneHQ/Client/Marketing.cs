@@ -119,10 +119,11 @@ namespace StackOneHQ.Client
     public class Marketing: IMarketing
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
         public ITemplates Templates { get; private set; }
         public ICampaigns Campaigns { get; private set; }
         public IContentBlocks ContentBlocks { get; private set; }
@@ -138,7 +139,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingListEmailTemplatesResponse> TemplatesListEmailAsync(MarketingListEmailTemplatesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/email", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/email", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1059,7 +1060,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingGetEmailTemplateResponse> GetEmailTemplateAsync(MarketingGetEmailTemplateRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/email/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/email/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1502,7 +1503,7 @@ namespace StackOneHQ.Client
                 MarketingCreateEmailTemplateRequestDto = marketingCreateEmailTemplateRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/email/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/email/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1945,7 +1946,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingListInAppTemplatesResponse> TemplatesListInAppAsync(MarketingListInAppTemplatesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/in_app", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/in_app", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2866,7 +2867,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingListSmsTemplatesResponse> ListSmsTemplatesAsync(MarketingListSmsTemplatesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/sms", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/sms", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3793,7 +3794,7 @@ namespace StackOneHQ.Client
                 MarketingCreateSmsTemplateRequestDto = marketingCreateSmsTemplateRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/sms/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/sms/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4237,7 +4238,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingListOmniChannelTemplatesResponse> ListOmniChannelTemplatesAsync(MarketingListOmniChannelTemplatesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/omni_channel", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/omni_channel", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4710,7 +4711,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingGetOmniChannelTemplateResponse> GetOmniChannelTemplateAsync(MarketingGetOmniChannelTemplateRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/omni_channel/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/omni_channel/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -5154,7 +5155,7 @@ namespace StackOneHQ.Client
                 MarketingCreateTemplateRequestDto = marketingCreateTemplateRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/omni_channel/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/omni_channel/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -5597,7 +5598,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingListPushTemplatesResponse> TemplatesListPushAsync(MarketingListPushTemplatesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/push", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/push", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -6075,7 +6076,7 @@ namespace StackOneHQ.Client
                 MarketingCreatePushTemplateRequestDto = marketingCreatePushTemplateRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/push/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/templates/push/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -6518,7 +6519,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingListContentBlocksResponse> ListContentBlocksAsync(MarketingListContentBlocksRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/content_blocks", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/content_blocks", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -7439,7 +7440,7 @@ namespace StackOneHQ.Client
         public async Task<MarketingGetContentBlockResponse> GetContentBlockAsync(MarketingGetContentBlockRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/content_blocks/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/marketing/content_blocks/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

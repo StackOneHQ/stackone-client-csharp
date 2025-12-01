@@ -58,5 +58,8 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("type")]
         public PatchAccountExternalDtoType? Type { get; set; } = null;
+
+        [JsonProperty("integration_id")]
+        public string? IntegrationId { get; set; } = null;
     }
 }

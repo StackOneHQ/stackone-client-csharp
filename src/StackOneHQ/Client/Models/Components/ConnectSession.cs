@@ -70,5 +70,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("type")]
         public ConnectSessionType? Type { get; set; } = null;
+
+        /// <summary>
+        /// The integration ID (UUID) associated with this connect session
+        /// </summary>
+        [JsonProperty("integration_id")]
+        public string? IntegrationId { get; set; } = null;
     }
 }

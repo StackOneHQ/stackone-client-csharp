@@ -22,6 +22,8 @@
 * [GetDepartments](#getdepartments) - List Departments
 * [ListApplicationStages](#listapplicationstages) - List Application Stages
 * [GetApplicationStage](#getapplicationstage) - Get Application Stage
+* [CreateInterviewNote](#createinterviewnote) - Create Interview Note
+* [UpdateInterviewNote](#updateinterviewnote) - Update Interview Note
 * [ListJobs](#listjobs) - List Jobs
 * [CreateJob](#createjob) - Create Job
 * [ListJobApplicationStages](#listjobapplicationstages) - List Job Application Stages
@@ -1137,6 +1139,152 @@ var res = await sdk.Ats.GetApplicationStageAsync(req);
 ### Response
 
 **[AtsGetApplicationStageResponse](../../Models/Requests/AtsGetApplicationStageResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## CreateInterviewNote
+
+Create Interview Note
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="ats_create_interview_note" method="post" path="/unified/ats/interviews/{id}/notes" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Ats.CreateInterviewNoteAsync(
+    xAccountId: "<id>",
+    id: "<id>",
+    atsCreateNotesRequestDto: new AtsCreateNotesRequestDto() {
+        Content = new List<NoteContentApiModel>() {
+            new NoteContentApiModel() {
+                Body = "This candidate seems like a good fit for the role",
+            },
+        },
+        AuthorId = "1234567890",
+        Visibility = new AtsCreateNotesRequestDtoVisibility() {
+            Value = AtsCreateNotesRequestDtoValue.Public,
+            SourceValue = AtsCreateNotesRequestDtoSourceValueUnion.CreateStr(
+                "Public"
+            ),
+        },
+        Passthrough = new Dictionary<string, object>() {
+            { "other_known_names", "John Doe" },
+        },
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `XAccountId`                                                                    | *string*                                                                        | :heavy_check_mark:                                                              | The account identifier                                                          |
+| `Id`                                                                            | *string*                                                                        | :heavy_check_mark:                                                              | N/A                                                                             |
+| `AtsCreateNotesRequestDto`                                                      | [AtsCreateNotesRequestDto](../../Models/Components/AtsCreateNotesRequestDto.md) | :heavy_check_mark:                                                              | N/A                                                                             |
+
+### Response
+
+**[AtsCreateInterviewNoteResponse](../../Models/Requests/AtsCreateInterviewNoteResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## UpdateInterviewNote
+
+Update Interview Note
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="ats_update_interview_note" method="patch" path="/unified/ats/interviews/{id}/notes/{subResourceId}" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Ats.UpdateInterviewNoteAsync(
+    xAccountId: "<id>",
+    id: "<id>",
+    subResourceId: "<id>",
+    atsUpdateNotesRequestDto: new AtsUpdateNotesRequestDto() {
+        Content = new List<NoteContentApiModel>() {
+            new NoteContentApiModel() {
+                Body = "This candidate seems like a good fit for the role",
+            },
+        },
+        AuthorId = "1234567890",
+        Visibility = new AtsUpdateNotesRequestDtoVisibility() {
+            Value = AtsUpdateNotesRequestDtoValue.Public,
+            SourceValue = AtsUpdateNotesRequestDtoSourceValueUnion.CreateStr(
+                "Public"
+            ),
+        },
+        Passthrough = new Dictionary<string, object>() {
+            { "other_known_names", "John Doe" },
+        },
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `XAccountId`                                                                    | *string*                                                                        | :heavy_check_mark:                                                              | The account identifier                                                          |
+| `Id`                                                                            | *string*                                                                        | :heavy_check_mark:                                                              | N/A                                                                             |
+| `SubResourceId`                                                                 | *string*                                                                        | :heavy_check_mark:                                                              | N/A                                                                             |
+| `AtsUpdateNotesRequestDto`                                                      | [AtsUpdateNotesRequestDto](../../Models/Components/AtsUpdateNotesRequestDto.md) | :heavy_check_mark:                                                              | N/A                                                                             |
+
+### Response
+
+**[AtsUpdateInterviewNoteResponse](../../Models/Requests/AtsUpdateInterviewNoteResponse.md)**
 
 ### Errors
 

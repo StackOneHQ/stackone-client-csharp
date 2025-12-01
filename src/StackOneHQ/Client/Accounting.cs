@@ -81,10 +81,11 @@ namespace StackOneHQ.Client
     public class Accounting: IAccounting
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Accounting(SDKConfig config)
         {
@@ -94,7 +95,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingListCompaniesResponse> ListCompaniesAsync(AccountingListCompaniesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -566,7 +567,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingGetCompanyResponse> GetCompanyAsync(AccountingGetCompanyRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1003,7 +1004,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingListCompanyAccountsResponse> ListCompanyAccountsAsync(AccountingListCompanyAccountsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/accounts", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/accounts", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1476,7 +1477,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingGetCompanyAccountResponse> GetCompanyAccountAsync(AccountingGetCompanyAccountRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/accounts/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/accounts/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1913,7 +1914,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingListCompanyTaxRatesResponse> ListCompanyTaxRatesAsync(AccountingListCompanyTaxRatesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/tax_rates", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/tax_rates", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2386,7 +2387,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingGetCompanyTaxRateResponse> GetCompanyTaxRateAsync(AccountingGetCompanyTaxRateRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/tax_rates/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/tax_rates/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2829,7 +2830,7 @@ namespace StackOneHQ.Client
                 AccountingJournalBatchCreateRequestDto = accountingJournalBatchCreateRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals/batch", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals/batch", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3272,7 +3273,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingListCompanyJournalsResponse> ListCompanyJournalsAsync(AccountingListCompanyJournalsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3751,7 +3752,7 @@ namespace StackOneHQ.Client
                 AccountingJournalCreateRequestDto = accountingJournalCreateRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4194,7 +4195,7 @@ namespace StackOneHQ.Client
         public async Task<AccountingGetCompanyJournalResponse> GetCompanyJournalAsync(AccountingGetCompanyJournalRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/accounting/companies/{id}/journals/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

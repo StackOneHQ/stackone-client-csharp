@@ -1,0 +1,11 @@
+# AtsUpdateInterviewNoteRequest
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `XAccountId`                                                                    | *string*                                                                        | :heavy_check_mark:                                                              | The account identifier                                                          |
+| `Id`                                                                            | *string*                                                                        | :heavy_check_mark:                                                              | N/A                                                                             |
+| `SubResourceId`                                                                 | *string*                                                                        | :heavy_check_mark:                                                              | N/A                                                                             |
+| `AtsUpdateNotesRequestDto`                                                      | [AtsUpdateNotesRequestDto](../../Models/Components/AtsUpdateNotesRequestDto.md) | :heavy_check_mark:                                                              | N/A                                                                             |

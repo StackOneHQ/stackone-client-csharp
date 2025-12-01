@@ -92,10 +92,11 @@ namespace StackOneHQ.Client
     public class AtsApplications: IAtsApplications
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
         public IApplicationsDocuments Documents { get; private set; }
 
         public AtsApplications(SDKConfig config)
@@ -562,7 +563,7 @@ namespace StackOneHQ.Client
                 AtsUpdateApplicationRequestDto = atsUpdateApplicationRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1005,7 +1006,7 @@ namespace StackOneHQ.Client
         public async Task<AtsListApplicationsOffersResponse> ListOffersAsync(AtsListApplicationsOffersRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/offers", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/offers", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1485,7 +1486,7 @@ namespace StackOneHQ.Client
                 AtsMoveApplicationRequestDto = atsMoveApplicationRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/move", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/move", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1934,7 +1935,7 @@ namespace StackOneHQ.Client
                 AtsRejectApplicationRequestDto = atsRejectApplicationRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/reject", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/reject", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2377,7 +2378,7 @@ namespace StackOneHQ.Client
         public async Task<AtsGetApplicationOfferResponse> GetOfferAsync(AtsGetApplicationOfferRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/offers/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/offers/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2814,7 +2815,7 @@ namespace StackOneHQ.Client
         public async Task<AtsListApplicationScorecardsResponse> ScorecardsListAsync(AtsListApplicationScorecardsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/scorecards", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/scorecards", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3288,7 +3289,7 @@ namespace StackOneHQ.Client
         public async Task<AtsListApplicationsScheduledInterviewsResponse> ListScheduledInterviewsAsync(AtsListApplicationsScheduledInterviewsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/scheduled_interviews", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/scheduled_interviews", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3762,7 +3763,7 @@ namespace StackOneHQ.Client
         public async Task<AtsGetApplicationScheduledInterviewResponse> GetScheduledInterviewAsync(AtsGetApplicationScheduledInterviewRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/scheduled_interviews/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/scheduled_interviews/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4199,7 +4200,7 @@ namespace StackOneHQ.Client
         public async Task<AtsDownloadApplicationDocumentResponse> DownloadDocumentAsync(AtsDownloadApplicationDocumentRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/documents/{subResourceId}/download", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/documents/{subResourceId}/download", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -5117,7 +5118,7 @@ namespace StackOneHQ.Client
         public async Task<AtsListApplicationCustomFieldDefinitionsResponse> ListCustomFieldDefinitionsAsync(AtsListApplicationCustomFieldDefinitionsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/custom_field_definitions/applications", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/custom_field_definitions/applications", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -5589,7 +5590,7 @@ namespace StackOneHQ.Client
         public async Task<AtsGetApplicationCustomFieldDefinitionResponse> GetCustomFieldDefinitionAsync(AtsGetApplicationCustomFieldDefinitionRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/custom_field_definitions/applications/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/custom_field_definitions/applications/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

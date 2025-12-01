@@ -2912,7 +2912,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,manager,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
         - name: "filter"
           in: "query"
           description: "HRIS Employees filters"
@@ -2977,7 +2977,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "company,employments,work_location,home_location,groups,skills,manager"
+            example: "company,employments,work_location,home_location,groups,skills"
         - name: "include"
           in: "query"
           description: "The comma separated list of fields that will be included in the response"
@@ -3199,7 +3199,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,manager,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
+            example: "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields"
         - name: "expand"
           in: "query"
           description: "The comma separated list of fields that will be expanded in the response"
@@ -3207,7 +3207,7 @@ paths:
           schema:
             type: "string"
             nullable: true
-            example: "company,employments,work_location,home_location,groups,skills,manager"
+            example: "company,employments,work_location,home_location,groups,skills"
         - name: "include"
           in: "query"
           description: "The comma separated list of fields that will be included in the response"
@@ -3534,7 +3534,7 @@ paths:
             nullable: true
         - name: "filter"
           in: "query"
-          description: "HRIS Shifts filters"
+          description: "HRIS Employee Shifts filters"
           required: false
           style: "deepObject"
           explode: true
@@ -18691,6 +18691,211 @@ paths:
       x-speakeasy-group: "interviews"
       x-speakeasy-name-override: "get"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/ats/interviews/{id}/notes:
+    post:
+      tags:
+        - "Interviews"
+        - "Notes"
+      summary: "Create Interview Note"
+      operationId: "ats_create_interview_note"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      requestBody:
+        content:
+          "application/json":
+            schema: {"$ref": "#/components/schemas/AtsCreateNotesRequestDto"}
+        required: true
+      responses:
+        "201":
+          description: "Record created successfully."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/CreateResult"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "ats"
+      x-speakeasy-name-override: "create_interview_note"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
+  /unified/ats/interviews/{id}/notes/{subResourceId}:
+    patch:
+      tags:
+        - "Interviews"
+        - "Notes"
+      summary: "Update Interview Note"
+      operationId: "ats_update_interview_note"
+      parameters:
+        - name: "x-account-id"
+          in: "header"
+          description: "The account identifier"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "subResourceId"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      requestBody:
+        content:
+          "application/json":
+            schema: {"$ref": "#/components/schemas/AtsUpdateNotesRequestDto"}
+        required: true
+      responses:
+        "200":
+          description: "Record updated successfully."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UpdateResult"}
+        "400":
+          description: "Invalid request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
+        "401":
+          description: "Unauthorized access."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
+        "403":
+          description: "Forbidden."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
+        "404":
+          description: "Resource not found."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
+        "408":
+          description: "The request has timed out."
+          headers:
+            "Retry-After":
+              description: "A time in seconds after which the request can be retried."
+              schema:
+                type: "string"
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
+        "409":
+          description: "Conflict with current state."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/ConflictResponse"}
+        "412":
+          description: "Precondition failed: linked account belongs to a disabled integration."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
+        "422":
+          description: "Validation error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
+        "429":
+          description: "Too many requests."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
+        "500":
+          description: "Server error while executing the request."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
+        "501":
+          description: "This functionality is not implemented."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
+        "502":
+          description: "Bad gateway error."
+          content:
+            "application/json":
+              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
+      security:
+        - basic: []
+      x-speakeasy-group: "ats"
+      x-speakeasy-name-override: "update_interview_note"
+      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/ats/jobs:
     get:
       tags:
@@ -29548,7 +29753,7 @@ paths:
       tags:
         - "External Linking Learning Objects"
       summary: "Batch Upsert External Linking Learning Objects"
-      description: "Batch upsert multiple external linking learning objects that redirect users to a provider platform for consumption and progress tracking. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
+      description: "Batch upsert multiple external linking learning objects that redirect users to a provider platform for consumption and progress tracking. \n\n**Note:** Partial updates are not supported. When updating content, you must provide all the same fields that are required when creating content. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
       operationId: "lms_batch_upsert_content"
       parameters:
         - name: "x-account-id"
@@ -29815,7 +30020,7 @@ paths:
       tags:
         - "External Linking Learning Objects"
       summary: "Upsert External Linking Learning Objects"
-      description: "Create or update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
+      description: "Create or update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. \n\n**Note:** Partial updates are not supported. When updating content, you must provide all the same fields that are required when creating content. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
       operationId: "lms_upsert_content"
       parameters:
         - name: "x-account-id"
@@ -30022,105 +30227,6 @@ paths:
         - basic: []
       x-speakeasy-group: "lms.content"
       x-speakeasy-name-override: "get"
-      x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
-    patch:
-      tags:
-        - "External Linking Learning Objects"
-      summary: "Update External Linking Learning Objects"
-      description: "Update an external linking learning object that redirects users to a provider platform for consumption and progress tracking. \n\nSee [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects."
-      operationId: "lms_update_content"
-      parameters:
-        - name: "x-account-id"
-          in: "header"
-          description: "The account identifier"
-          required: true
-          schema:
-            type: "string"
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
-      requestBody:
-        content:
-          "application/json":
-            schema: {"$ref": "#/components/schemas/LmsCreateContentRequestDto"}
-        required: true
-      responses:
-        "201":
-          description: "The content was updated successfully."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/UpdateResult"}
-        "400":
-          description: "Invalid request."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/BadRequestResponse"}
-        "401":
-          description: "Unauthorized access."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/UnauthorizedResponse"}
-        "403":
-          description: "Forbidden."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/ForbiddenResponse"}
-        "404":
-          description: "Resource not found."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/NotFoundResponse"}
-        "408":
-          description: "The request has timed out."
-          headers:
-            "Retry-After":
-              description: "A time in seconds after which the request can be retried."
-              schema:
-                type: "string"
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/RequestTimedOutResponse"}
-        "409":
-          description: "Conflict with current state."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/ConflictResponse"}
-        "412":
-          description: "Precondition failed: linked account belongs to a disabled integration."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/PreconditionFailedResponse"}
-        "422":
-          description: "Validation error."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/UnprocessableEntityResponse"}
-        "429":
-          description: "Too many requests."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/TooManyRequestsResponse"}
-        "500":
-          description: "Server error while executing the request."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/InternalServerErrorResponse"}
-        "501":
-          description: "This functionality is not implemented."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/NotImplementedResponse"}
-        "502":
-          description: "Bad gateway error."
-          content:
-            "application/json":
-              schema: {"$ref": "#/components/schemas/BadGatewayResponse"}
-      security:
-        - basic: []
-      x-speakeasy-group: "lms.content"
-      x-speakeasy-name-override: "update"
       x-speakeasy-retries: {"statusCodes": [429, 408], "strategy": "backoff"}
   /unified/lms/users/{id}/completions:
     get:
@@ -39207,6 +39313,10 @@ components:
           nullable: true
           example: ["PRODUCTION", "TEST"]
           x-speakeasy-unknown-values: "allow"
+        "integration_id":
+          type: "string"
+          description: "The integration ID (UUID) associated with this connect session"
+          nullable: true
       required:
         - "id"
         - "organization_id"
@@ -39300,6 +39410,10 @@ components:
           nullable: true
           example: ["PRODUCTION", "TEST"]
           x-speakeasy-unknown-values: "allow"
+        "integration_id":
+          type: "string"
+          description: "The integration ID associated with this connect session"
+          nullable: true
       required:
         - "origin_owner_id"
         - "origin_owner_name"
@@ -39374,6 +39488,10 @@ components:
           nullable: true
           example: ["PRODUCTION", "TEST"]
           x-speakeasy-unknown-values: "allow"
+        "integration_id":
+          type: "string"
+          description: "The integration ID (UUID) associated with this connect session"
+          nullable: true
         "token":
           type: "string"
         "auth_link_url":
@@ -39652,6 +39770,9 @@ components:
           nullable: true
           example: ["PRODUCTION", "TEST"]
           x-speakeasy-unknown-values: "allow"
+        "integration_id":
+          type: "string"
+          nullable: true
     "PlatformLog":
       type: "object"
       properties:
@@ -42253,11 +42374,6 @@ components:
             - {"$ref": "#/components/schemas/HRISLocation"}
           description: "The employee work location"
           nullable: true
-        "manager":
-          allOf:
-            - {"$ref": "#/components/schemas/Manager"}
-          description: "The employee manager details"
-          nullable: true
         "company":
           allOf:
             - {"$ref": "#/components/schemas/Company"}
@@ -42585,6 +42701,16 @@ components:
           description: "Provider's unique identifier"
           nullable: true
           example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
+        "name":
+          type: "string"
+          description: "The manager name"
+          nullable: true
+          example: "John Doe"
+        "email":
+          type: "string"
+          description: "The manager email"
+          nullable: true
+          example: "john.doe@example.com"
         "role":
           allOf:
             - {"$ref": "#/components/schemas/ManagerRoleApiModel"}
@@ -46646,29 +46772,6 @@ components:
           description: "The source value of the location type."
           nullable: true
           example: "Home"
-    Manager:
-      type: "object"
-      properties:
-        "id":
-          type: "string"
-          description: "Unique identifier"
-          nullable: true
-          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
-        "remote_id":
-          type: "string"
-          description: "Provider's unique identifier"
-          nullable: true
-          example: "8187e5da-dc77-475e-9949-af0f1fa4e4e3"
-        "name":
-          type: "string"
-          description: "The manager name"
-          nullable: true
-          example: "John Doe"
-        "email":
-          type: "string"
-          description: "The manager email"
-          nullable: true
-          example: "john.doe@example.com"
     ManagerRoleApiModel:
       type: "object"
       properties:
@@ -55924,132 +56027,6 @@ components:
           example: "learning-content-123"
       required:
         - "learning_object_external_reference"
-    LmsCreateContentRequestDto:
-      type: "object"
-      properties:
-        "unified_custom_fields":
-          type: "object"
-          additionalProperties: true
-          description: "Custom Unified Fields configured in your StackOne project"
-          nullable: true
-          example: {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}
-        "title":
-          type: "string"
-          description: "The title of the content"
-          nullable: true
-          example: "Software Engineer Lv 1"
-        "description":
-          type: "string"
-          description: "The description of the content"
-          nullable: true
-          example: "This video acts as learning content for software engineers."
-        "languages":
-          type: "array"
-          items: {"$ref": "#/components/schemas/LanguageEnum"}
-          description: "The languages associated with this content"
-          nullable: true
-        "content_url":
-          type: "string"
-          description: "The external URL of the content"
-          nullable: true
-          example: "https://www.youtube.com/watch?v=16873"
-        "mobile_launch_content_url":
-          type: "string"
-          description: "The mobile friendly URL of the content"
-          nullable: true
-          example: "https://www.mobile.youtube.com/watch?v=16873"
-        "content_type":
-          allOf:
-            - {"$ref": "#/components/schemas/WriteContentTypeEnum"}
-          description: "The type of content"
-          nullable: true
-        "cover_url":
-          type: "string"
-          description: "The URL of the thumbnail image associated with the content."
-          nullable: true
-          example: "https://www.googledrive.com/?v=16873"
-        "active":
-          oneOf:
-            - type: "boolean"
-            - type: "string"
-              enum:
-                - "true"
-                - "false"
-          description: "Whether the content is active and available for users."
-          nullable: true
-          example: true
-        "duration":
-          type: "string"
-          format: "string"
-          description: "The duration of the content following the ISO8601 standard. If duration_unit is applicable we will derive this from the smallest unit given in the duration string or the minimum unit accepted by the provider."
-          nullable: true
-          example: "P3Y6M4DT12H30M5S"
-        "skills":
-          type: "array"
-          items: {"$ref": "#/components/schemas/CreateSkillsApiModel"}
-          description: "The skills associated with this content"
-          nullable: true
-          example: [{"id": "12345", "name": "Sales Techniques"}]
-        "order":
-          type: "number"
-          format: "number"
-          description: "The order of the individual content within a content grouping. This is not applicable for pushing individual content."
-          nullable: true
-          example: 1
-        "short_description":
-          type: "string"
-          description: "A short description or summary for the content"
-          nullable: true
-          example: "This course is a valuable resource and acts as learning content for..."
-          deprecated: true
-        "localizations":
-          type: "array"
-          items: {"$ref": "#/components/schemas/LocalizationModel"}
-          description: "The localization data for this content"
-          nullable: true
-          example: [{"title": "Software Engineer Lv 1", "description": "This course acts as learning resource for software engineers.", "languages": {"value": "en-GB", "source_value": "string"}}, {"title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": {"value": "en-US", "source_value": "string"}}]
-        "tags":
-          type: "array"
-          items:
-            type: "string"
-          description: "A list of tags associated with the content"
-          nullable: true
-          example: ["Sales Techniques", "Customer Service"]
-        "authors":
-          type: "array"
-          items: {"$ref": "#/components/schemas/AuthorModel"}
-          description: "The authors of the content"
-          nullable: true
-          example: [{"id": "123", "name": "John Doe"}]
-        "updated_at":
-          type: "string"
-          format: "date-time"
-          description: "The date on which the content was last updated."
-          nullable: true
-          example: "2021-07-21T14:00:00.000Z"
-        "created_at":
-          type: "string"
-          format: "date-time"
-          description: "The date on which the content was created."
-          nullable: true
-          example: "2021-07-21T14:00:00.000Z"
-        "external_reference":
-          type: "string"
-          description: "The external ID associated with this content"
-          example: "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"
-        "categories":
-          type: "array"
-          items: {"$ref": "#/components/schemas/CreateCategoriesApiModel"}
-          description: "The categories associated with this content"
-          nullable: true
-          example: [{"name": "Technology"}]
-        "additional_data":
-          type: "array"
-          items: {"$ref": "#/components/schemas/AdditionalData"}
-          description: "The additional_data associated with this content"
-          nullable: true
-      required:
-        - "external_reference"
     LmsUpsertContentRequestDto:
       type: "object"
       properties:

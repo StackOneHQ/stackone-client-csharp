@@ -150,6 +150,8 @@ while(res != null)
 
 Batch upsert multiple external linking learning objects that redirect users to a provider platform for consumption and progress tracking. 
 
+**Note:** Partial updates are not supported. When updating content, you must provide all the same fields that are required when creating content. 
+
 See [here](https://docs.stackone.com/integration-guides/lms/external-content-providers/introduction) for more information about external linking learning objects.
 
 ### Example Usage
