@@ -29,6 +29,18 @@ namespace StackOneHQ.Client.Models.Components
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
+        /// The manager name
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name { get; set; } = null;
+
+        /// <summary>
+        /// The manager email
+        /// </summary>
+        [JsonProperty("email")]
+        public string? Email { get; set; } = null;
+
+        /// <summary>
         /// The role of manager
         /// </summary>
         [JsonProperty("role")]

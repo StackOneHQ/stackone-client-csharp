@@ -41,10 +41,11 @@ namespace StackOneHQ.Client
     public class CustomFieldDefinitionsContacts: ICustomFieldDefinitionsContacts
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public CustomFieldDefinitionsContacts(SDKConfig config)
         {
@@ -54,7 +55,7 @@ namespace StackOneHQ.Client
         public async Task<CrmListContactCustomFieldDefinitionsResponse> ListAsync(CrmListContactCustomFieldDefinitionsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/crm/custom_field_definitions/contacts", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/crm/custom_field_definitions/contacts", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -526,7 +527,7 @@ namespace StackOneHQ.Client
         public async Task<CrmGetContactCustomFieldDefinitionResponse> GetAsync(CrmGetContactCustomFieldDefinitionRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/crm/custom_field_definitions/contacts/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/crm/custom_field_definitions/contacts/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

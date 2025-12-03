@@ -86,10 +86,11 @@ namespace StackOneHQ.Client
     public class Messaging: IMessaging
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Messaging(SDKConfig config)
         {
@@ -99,7 +100,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingListConversationsResponse> ListConversationsAsync(MessagingListConversationsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/conversations", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/conversations", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1020,7 +1021,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingGetConversationResponse> GetConversationAsync(MessagingGetConversationRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/conversations/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/conversations/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1457,7 +1458,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingDownloadMessagingAttachmentResponse> DownloadMessagingAttachmentAsync(MessagingDownloadMessagingAttachmentRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}/attachments/{subResourceId}/download", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}/attachments/{subResourceId}/download", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1883,7 +1884,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingListAttachmentsResponse> ListAttachmentsAsync(MessagingListAttachmentsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}/attachments", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}/attachments", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2356,7 +2357,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingGetAttachmentResponse> GetAttachmentAsync(MessagingGetAttachmentRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}/attachments/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}/attachments/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2793,7 +2794,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingListUsersResponse> ListUsersAsync(MessagingListUsersRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/users", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/users", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3265,7 +3266,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingGetUserResponse> GetUserAsync(MessagingGetUserRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/users/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/users/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3702,7 +3703,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingListConversationMessagesResponse> ListConversationMessagesAsync(MessagingListConversationMessagesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/conversations/{id}/messages", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/conversations/{id}/messages", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4175,7 +4176,7 @@ namespace StackOneHQ.Client
         public async Task<MessagingGetMessageResponse> GetMessageAsync(MessagingGetMessageRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/messaging/messages/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

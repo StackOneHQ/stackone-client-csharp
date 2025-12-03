@@ -34,10 +34,11 @@ namespace StackOneHQ.Client
     public class WorkEligibility: IWorkEligibility
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public WorkEligibility(SDKConfig config)
         {
@@ -54,7 +55,7 @@ namespace StackOneHQ.Client
                 HrisCreateWorkEligibilityRequestDto = hrisCreateWorkEligibilityRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

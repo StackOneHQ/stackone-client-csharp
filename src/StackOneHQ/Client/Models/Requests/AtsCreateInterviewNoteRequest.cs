@@ -9,22 +9,22 @@
 #nullable enable
 namespace StackOneHQ.Client.Models.Requests
 {
-    using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    using System.Collections.Generic;
     
-    public class LmsUpdateContentResponse
+    public class AtsCreateInterviewNoteRequest
     {
 
-        [JsonProperty("-")]
-        public HTTPMetadata HttpMeta { get; set; } = default!;
-
         /// <summary>
-        /// The content was updated successfully.
+        /// The account identifier
         /// </summary>
-        public UpdateResult? UpdateResult { get; set; }
+        [SpeakeasyMetadata("header:style=simple,explode=false,name=x-account-id")]
+        public string XAccountId { get; set; } = default!;
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
+        public string Id { get; set; } = default!;
+
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public AtsCreateNotesRequestDto AtsCreateNotesRequestDto { get; set; } = default!;
     }
 }

@@ -55,10 +55,11 @@ namespace StackOneHQ.Client
     public class RequestLogs: IRequestLogs
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public RequestLogs(SDKConfig config)
         {
@@ -68,7 +69,7 @@ namespace StackOneHQ.Client
         public async Task<StackoneListStepLogsResponse> ListStepsAsync(StackoneListStepLogsRequest? request = null, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/requests/logs/steps", request);
+            var urlString = URLBuilder.Build(baseUrl, "/requests/logs/steps", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -483,7 +484,7 @@ namespace StackOneHQ.Client
                 Include = include,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/requests/logs/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/requests/logs/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -893,7 +894,7 @@ namespace StackOneHQ.Client
         public async Task<StackoneListLogsResponse> ListAsync(StackoneListLogsRequest? request = null, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/requests/logs", request);
+            var urlString = URLBuilder.Build(baseUrl, "/requests/logs", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1303,7 +1304,7 @@ namespace StackOneHQ.Client
         public async Task<StackoneListPlatformLogsResponse> ListPlatformLogsAsync(StackoneListPlatformLogsRequest? request = null, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/requests/platform-logs", request);
+            var urlString = URLBuilder.Build(baseUrl, "/requests/platform-logs", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

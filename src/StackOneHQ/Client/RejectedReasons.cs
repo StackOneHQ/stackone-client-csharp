@@ -41,10 +41,11 @@ namespace StackOneHQ.Client
     public class RejectedReasons: IRejectedReasons
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public RejectedReasons(SDKConfig config)
         {
@@ -54,7 +55,7 @@ namespace StackOneHQ.Client
         public async Task<AtsListRejectedReasonsResponse> ListAsync(AtsListRejectedReasonsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/rejected_reasons", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/rejected_reasons", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -527,7 +528,7 @@ namespace StackOneHQ.Client
         public async Task<AtsGetRejectedReasonResponse> GetAsync(AtsGetRejectedReasonRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/rejected_reasons/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/ats/rejected_reasons/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

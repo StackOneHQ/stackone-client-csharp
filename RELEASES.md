@@ -189,3 +189,13 @@ Based on:
 - [csharp v0.8.3] .
 ### Releases
 - [NuGet v0.8.3] https://www.nuget.org/packages/StackOneHQ.Client/0.8.3 - .
+
+## 2025-12-01 09:05:49
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.665.0 (2.767.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.9.0] .
+### Releases
+- [NuGet v0.9.0] https://www.nuget.org/packages/StackOneHQ.Client/0.9.0 - .

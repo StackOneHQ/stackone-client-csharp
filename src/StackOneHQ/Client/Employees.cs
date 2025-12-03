@@ -106,10 +106,11 @@ namespace StackOneHQ.Client
     public class Employees: IEmployees
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
         public IEmployeesDocuments Documents { get; private set; }
         public IWorkEligibility WorkEligibility { get; private set; }
         public IEmployeesEmployments Employments { get; private set; }
@@ -129,7 +130,7 @@ namespace StackOneHQ.Client
         public async Task<HrisListEmployeeCustomFieldDefinitionsResponse> ListCustomFieldDefinitionsAsync(HrisListEmployeeCustomFieldDefinitionsRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/custom_field_definitions/employees", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/custom_field_definitions/employees", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -601,7 +602,7 @@ namespace StackOneHQ.Client
         public async Task<HrisListEmployeesResponse> ListAsync(HrisListEmployeesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1530,7 +1531,7 @@ namespace StackOneHQ.Client
                 HrisUpdateEmployeeRequestDto = hrisUpdateEmployeeRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1979,7 +1980,7 @@ namespace StackOneHQ.Client
                 HrisInviteEmployeeRequestDto = hrisInviteEmployeeRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/invite", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/invite", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2428,7 +2429,7 @@ namespace StackOneHQ.Client
                 HrisCreateTimeOffRequestDto = hrisCreateTimeOffRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -2877,7 +2878,7 @@ namespace StackOneHQ.Client
                 HrisBatchDocumentUploadRequestDto = hrisBatchDocumentUploadRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/documents/upload/batch", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/documents/upload/batch", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3320,7 +3321,7 @@ namespace StackOneHQ.Client
         public async Task<HrisListEmployeeWorkEligibilityResponse> WorkEligibilityListAsync(HrisListEmployeeWorkEligibilityRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -3799,7 +3800,7 @@ namespace StackOneHQ.Client
                 HrisCreateWorkEligibilityRequestDto = hrisCreateWorkEligibilityRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4242,7 +4243,7 @@ namespace StackOneHQ.Client
         public async Task<HrisGetEmployeesWorkEligibilityResponse> GetWorkEligibilityAsync(HrisGetEmployeesWorkEligibilityRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/work_eligibility/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -4685,7 +4686,7 @@ namespace StackOneHQ.Client
                 HrisCreateEmploymentRequestDto = hrisCreateEmploymentRequestDto,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/employments", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/employments", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -5128,7 +5129,7 @@ namespace StackOneHQ.Client
         public async Task<HrisGetEmployeeEmploymentResponse> GetEmploymentAsync(HrisGetEmployeeEmploymentRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/employments/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/employments/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -5565,7 +5566,7 @@ namespace StackOneHQ.Client
         public async Task<HrisListEmployeeTimeOffPoliciesResponse> ListTimeOffPoliciesAsync(HrisListEmployeeTimeOffPoliciesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off_policies", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off_policies", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -6038,7 +6039,7 @@ namespace StackOneHQ.Client
         public async Task<HrisGetEmployeeSkillResponse> GetSkillAsync(HrisGetEmployeeSkillRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/skills/{subResourceId}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/skills/{subResourceId}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

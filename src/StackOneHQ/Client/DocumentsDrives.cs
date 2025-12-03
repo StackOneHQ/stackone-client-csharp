@@ -36,10 +36,11 @@ namespace StackOneHQ.Client
     public class DocumentsDrives: IDocumentsDrives
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.8.3";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "1.0.0";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public DocumentsDrives(SDKConfig config)
         {
@@ -49,7 +50,7 @@ namespace StackOneHQ.Client
         public async Task<DocumentsListDrivesResponse> ListAsync(DocumentsListDrivesRequest request, RetryConfig? retryConfig = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/documents/drives", request);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/documents/drives", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

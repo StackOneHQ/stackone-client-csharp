@@ -26,7 +26,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.8.3
+  version: 0.9.0
   additionalDependencies: []
   author: stackone
   baseErrorName: StackOneError
@@ -48,9 +48,11 @@ csharp:
       shared: Models/Components
       webhooks: Models/Webhooks
   includeDebugSymbols: true
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: infer-optional-args
+  multipartArrayFormat: legacy
   outputModelSuffix: output
   packageName: StackOneHQ.Client
   packageTags: sdk api client stackone stack one

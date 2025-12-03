@@ -45,7 +45,7 @@ namespace StackOneHQ.Client.Models.Requests
         public string? Fields { get; set; } = null;
 
         /// <summary>
-        /// HRIS Shifts filters
+        /// HRIS Employee Shifts filters
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=deepObject,explode=true,name=filter")]
         public HrisListEmployeeShiftsFilter? Filter { get; set; } = null;
