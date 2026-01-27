@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class SocialLink
     {
-
         /// <summary>
-        /// Type of the social link
+        /// Type of the social link.
         /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; } = null;
 
         /// <summary>
-        /// URL of the social link
+        /// URL of the social link.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;

@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class CustomFieldOption
     {
-
         /// <summary>
-        /// The unique identifier for the option to be used when updating the custom field
+        /// The unique identifier for the option to be used when updating the custom field.
         /// </summary>
         [JsonProperty("id")]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The human readable value of the option
+        /// The human readable value of the option.
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public CustomFieldOptionValueUnion Value { get; set; } = default!;

@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class SmsMessagesMessageContent
     {
-
         [JsonProperty("body")]
         public string? Body { get; set; } = null;
 

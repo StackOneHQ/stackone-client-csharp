@@ -11,21 +11,20 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Image assets for this provider
+    /// Image assets for this provider.
     /// </summary>
     public class Images
     {
-
         /// <summary>
-        /// URL of the square logo designed and used by StackOne for this provider
+        /// URL of the square logo designed and used by StackOne for this provider.
         /// </summary>
         [JsonProperty("logo_url")]
         public string? LogoUrl { get; set; } = null;
 
         /// <summary>
-        /// URL of the original provider logo (with logo and/or name aligned horizontally)
+        /// URL of the original provider logo (with logo and/or name aligned horizontally).
         /// </summary>
         [JsonProperty("original_logo_horizontal_url")]
         public string? OriginalLogoHorizontalUrl { get; set; } = null;

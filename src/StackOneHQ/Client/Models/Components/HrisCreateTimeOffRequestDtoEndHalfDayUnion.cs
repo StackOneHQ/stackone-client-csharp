@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// True if the end of the time off request ends half way through the day
+    /// True if the end of the time off request ends half way through the day.
     /// </summary>
     [JsonConverter(typeof(HrisCreateTimeOffRequestDtoEndHalfDayUnion.HrisCreateTimeOffRequestDtoEndHalfDayUnionConverter))]
     public class HrisCreateTimeOffRequestDtoEndHalfDayUnion

@@ -63,7 +63,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
     /// The response data from the provider. Can be an object, array, or primitive value.
     /// </summary>

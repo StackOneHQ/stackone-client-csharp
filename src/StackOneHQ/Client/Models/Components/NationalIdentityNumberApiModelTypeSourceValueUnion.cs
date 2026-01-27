@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(NationalIdentityNumberApiModelTypeSourceValueUnion.NationalIdentityNumberApiModelTypeSourceValueUnionConverter))]
     public class NationalIdentityNumberApiModelTypeSourceValueUnion
     {

@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The approval status of the shift
+    /// The approval status of the shift.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisShiftResultApprovalStatusValue : IEquatable<HrisShiftResultApprovalStatusValue>
@@ -78,5 +78,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

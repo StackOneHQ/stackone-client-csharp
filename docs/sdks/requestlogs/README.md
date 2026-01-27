@@ -1,5 +1,4 @@
 # RequestLogs
-(*RequestLogs*)
 
 ## Overview
 

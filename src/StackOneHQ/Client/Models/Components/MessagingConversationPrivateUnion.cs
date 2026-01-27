@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the conversation is private
+    /// Whether the conversation is private.
     /// </summary>
     [JsonConverter(typeof(MessagingConversationPrivateUnion.MessagingConversationPrivateUnionConverter))]
     public class MessagingConversationPrivateUnion

@@ -11,26 +11,32 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+    using System.Collections.Generic;
+
     public class AuthenticationMetaItem
     {
-
         /// <summary>
-        /// The authentication type
+        /// The authentication type.
         /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; } = null;
 
         /// <summary>
-        /// The authentication label
+        /// The authentication label.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The authentication key
+        /// The authentication key.
         /// </summary>
         [JsonProperty("key")]
         public string? Key { get; set; } = null;
+
+        /// <summary>
+        /// The required scopes for this authentication method.
+        /// </summary>
+        [JsonProperty("required_scopes")]
+        public List<string>? RequiredScopes { get; set; } = null;
     }
 }

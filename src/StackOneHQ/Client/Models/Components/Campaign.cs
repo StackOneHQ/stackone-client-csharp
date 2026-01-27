@@ -14,18 +14,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class Campaign
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
@@ -34,13 +33,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The created_at date
+        /// The created_at date.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The updated_at date
+        /// The updated_at date.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
@@ -49,13 +48,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The schedule type
+        /// The schedule type.
         /// </summary>
         [JsonProperty("schedule_type")]
         public ScheduleType? ScheduleType { get; set; } = null;
 
         /// <summary>
-        /// Status of the Campaign
+        /// Status of the Campaign.
         /// </summary>
         [JsonProperty("status")]
         public CampaignStatus? Status { get; set; } = null;
@@ -67,19 +66,19 @@ namespace StackOneHQ.Client.Models.Components
         public Draft? Draft { get; set; } = null;
 
         /// <summary>
-        /// channels of the Campaign
+        /// channels of the Campaign.
         /// </summary>
         [JsonProperty("channels")]
         public List<ChannelsEnum>? Channels { get; set; } = null;
 
         /// <summary>
-        /// The first_sent_at date
+        /// The first_sent_at date.
         /// </summary>
         [JsonProperty("first_sent_at")]
         public DateTime? FirstSentAt { get; set; } = null;
 
         /// <summary>
-        /// The last_sent_at date
+        /// The last_sent_at date.
         /// </summary>
         [JsonProperty("last_sent_at")]
         public DateTime? LastSentAt { get; set; } = null;

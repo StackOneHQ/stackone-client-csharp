@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Currency code for this line
+    /// Currency code for this line.
     /// </summary>
     public class JournalLineCurrencyCode
     {
-
         /// <summary>
-        /// Default currency for the company
+        /// Default currency for the company.
         /// </summary>
         [JsonProperty("value")]
         public JournalLineCurrencyCodeValue? Value { get; set; } = null;

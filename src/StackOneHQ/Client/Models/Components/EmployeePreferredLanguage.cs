@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The employee preferred language
+    /// The employee preferred language.
     /// </summary>
     public class EmployeePreferredLanguage
     {
-
         /// <summary>
-        /// The ISO639-2 Code of the language
+        /// The ISO639-2 Code of the language.
         /// </summary>
         [JsonProperty("value")]
         public EmployeePreferredLanguageValue? Value { get; set; } = null;

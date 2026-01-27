@@ -55,7 +55,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Draft.DraftConverter))]
     public class Draft
     {

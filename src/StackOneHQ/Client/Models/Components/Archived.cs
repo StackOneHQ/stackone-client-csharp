@@ -55,7 +55,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Archived.ArchivedConverter))]
     public class Archived
     {

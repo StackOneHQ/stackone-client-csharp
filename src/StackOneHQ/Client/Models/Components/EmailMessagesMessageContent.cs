@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class EmailMessagesMessageContent
     {
-
         [JsonProperty("subject")]
         public string? Subject { get; set; } = null;
 

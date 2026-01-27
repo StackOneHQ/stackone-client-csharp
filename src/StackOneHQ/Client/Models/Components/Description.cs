@@ -11,13 +11,12 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The employee job description
+    /// The employee job description.
     /// </summary>
     public class Description
     {
-
         [JsonProperty("text")]
         public string? Text { get; set; } = null;
     }

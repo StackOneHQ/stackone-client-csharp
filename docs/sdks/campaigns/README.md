@@ -1,5 +1,4 @@
-# Campaigns
-(*Marketing.Campaigns*)
+# Marketing.Campaigns
 
 ## Overview
 
@@ -32,6 +31,7 @@ MarketingListCampaignsRequest req = new MarketingListCampaignsRequest() {
     Filter = new MarketingListCampaignsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 MarketingListCampaignsResponse? res = await sdk.Marketing.Campaigns.ListAsync(req);
@@ -93,6 +93,7 @@ MarketingGetCampaignRequest req = new MarketingGetCampaignRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Marketing.Campaigns.GetAsync(req);

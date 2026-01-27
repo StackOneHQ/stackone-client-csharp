@@ -1,5 +1,4 @@
 # Proxy
-(*Proxy*)
 
 ## Overview
 
@@ -34,7 +33,8 @@ var res = await sdk.Proxy.PerformAsync(
         Headers = new Dictionary<string, object>() {
             { "Content-Type", "application/json" },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -42,10 +42,11 @@ var res = await sdk.Proxy.PerformAsync(
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `XAccountId`                                                    | *string*                                                        | :heavy_check_mark:                                              | The account identifier                                          |
-| `ProxyRequestBody`                                              | [ProxyRequestBody](../../Models/Components/ProxyRequestBody.md) | :heavy_check_mark:                                              | The request body                                                |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `ProxyRequestBody`                                                                                                                                                       | [ProxyRequestBody](../../Models/Components/ProxyRequestBody.md)                                                                                                          | :heavy_check_mark:                                                                                                                                                       | The request body                                                                                                                                                         |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 

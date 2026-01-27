@@ -1,5 +1,4 @@
-# HrisJobs
-(*Hris.Jobs*)
+# Hris.Jobs
 
 ## Overview
 
@@ -32,6 +31,7 @@ HrisListJobsRequest req = new HrisListJobsRequest() {
     Filter = new HrisListJobsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListJobsResponse? res = await sdk.Hris.Jobs.ListAsync(req);
@@ -93,6 +93,7 @@ HrisGetJobRequest req = new HrisGetJobRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,code,title,description,status,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.Jobs.GetAsync(req);

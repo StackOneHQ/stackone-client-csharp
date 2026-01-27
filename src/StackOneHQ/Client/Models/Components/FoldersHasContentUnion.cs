@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the folder has content
+    /// Whether the folder has content.
     /// </summary>
     [JsonConverter(typeof(FoldersHasContentUnion.FoldersHasContentUnionConverter))]
     public class FoldersHasContentUnion

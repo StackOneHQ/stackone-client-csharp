@@ -14,10 +14,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class DepartmentsPaginated
     {
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("next_page")]
         public string? NextPage { get; set; } = null;

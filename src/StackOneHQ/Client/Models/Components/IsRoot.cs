@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the folder is at the root level of the drive
+    /// Whether the folder is at the root level of the drive.
     /// </summary>
     [JsonConverter(typeof(IsRoot.IsRootConverter))]
     public class IsRoot

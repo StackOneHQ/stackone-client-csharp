@@ -14,84 +14,83 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class HrisShift
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The employee ID associated with this shift
+        /// The employee ID associated with this shift.
         /// </summary>
         [JsonProperty("employee_id")]
         public string? EmployeeId { get; set; } = null;
 
         /// <summary>
-        /// The location ID where this shift takes place
+        /// The location ID where this shift takes place.
         /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; } = null;
 
         /// <summary>
-        /// The company ID associated with this shift
+        /// The company ID associated with this shift.
         /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; } = null;
 
         /// <summary>
-        /// The start time of the shift (ISO8601 date-time without timezone)
+        /// The start time of the shift (ISO8601 date-time without timezone).
         /// </summary>
         [JsonProperty("start_time")]
         public string? StartTime { get; set; } = null;
 
         /// <summary>
-        /// The end time of the shift (ISO8601 date-time without timezone)
+        /// The end time of the shift (ISO8601 date-time without timezone).
         /// </summary>
         [JsonProperty("end_time")]
         public string? EndTime { get; set; } = null;
 
         /// <summary>
-        /// The total break duration for this shift in ISO 8601 duration format
+        /// The total break duration for this shift in ISO 8601 duration format.
         /// </summary>
         [JsonProperty("break_duration")]
         public string? BreakDuration { get; set; } = null;
 
         /// <summary>
-        /// The status of the shift
+        /// The status of the shift.
         /// </summary>
         [JsonProperty("status")]
         public HrisShiftStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// The approval status of the shift
+        /// The approval status of the shift.
         /// </summary>
         [JsonProperty("approval_status")]
         public HrisShiftApprovalStatus? ApprovalStatus { get; set; } = null;
 
         /// <summary>
-        /// The breaks taken during this shift
+        /// The breaks taken during this shift.
         /// </summary>
         [JsonProperty("breaks")]
         public List<ShiftBreak>? Breaks { get; set; } = null;
 
         /// <summary>
-        /// The date and time the shift was created
+        /// The date and time the shift was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The date and time the shift was last updated
+        /// The date and time the shift was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

@@ -11,21 +11,20 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// ATS Document Filter
+    /// ATS Document Filter.
     /// </summary>
     public class AtsListApplicationDocumentsFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select documents by type
+        /// Filter to select documents by type.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=type")]
         public string? Type { get; set; } = null;

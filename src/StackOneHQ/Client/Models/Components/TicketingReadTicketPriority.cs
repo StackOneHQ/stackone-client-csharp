@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Priority of the ticket
+    /// Priority of the ticket.
     /// </summary>
     public class TicketingReadTicketPriority
     {
-
         /// <summary>
         /// The id of the ticket priority.
         /// </summary>

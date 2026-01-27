@@ -16,14 +16,13 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The employee employment type
+    /// The employee employment type.
     /// </summary>
     [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public class HrisCreateEmployeeRequestDtoEmploymentType1
     {
-
         /// <summary>
         /// The type of the employment.
         /// </summary>

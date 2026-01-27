@@ -16,36 +16,35 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class ProxyRequestBody
     {
-
         /// <summary>
-        /// The base url of the request
+        /// The base url of the request.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 
         /// <summary>
-        /// The method of the request
+        /// The method of the request.
         /// </summary>
         [JsonProperty("method")]
         public Method? Method { get; set; } = StackOneHQ.Client.Models.Components.Method.Get;
 
         /// <summary>
-        /// The path of the request including any query parameters
+        /// The path of the request including any query parameters.
         /// </summary>
         [JsonProperty("path")]
         public string? Path { get; set; } = null;
 
         /// <summary>
-        /// The headers to send in the request
+        /// The headers to send in the request.
         /// </summary>
         [JsonProperty("headers")]
         public Dictionary<string, object>? Headers { get; set; } = null;
 
         /// <summary>
-        /// The body of the request
+        /// The body of the request.
         /// </summary>
         [JsonProperty("body")]
         public Dictionary<string, object>? Body { get; set; } = null;

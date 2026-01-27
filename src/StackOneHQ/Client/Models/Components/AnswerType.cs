@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Type of the answer
+    /// Type of the answer.
     /// </summary>
     public class AnswerType
     {
-
         /// <summary>
         /// The type of the answer.
         /// </summary>

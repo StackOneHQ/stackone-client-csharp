@@ -1,5 +1,4 @@
 # Drives
-(*Drives*)
 
 ## Overview
 
@@ -28,6 +27,7 @@ DocumentsGetDriveRequest req = new DocumentsGetDriveRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,description,url,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Drives.GetAsync(req);

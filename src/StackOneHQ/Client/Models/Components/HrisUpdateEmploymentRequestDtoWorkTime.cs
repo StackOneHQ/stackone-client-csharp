@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class HrisUpdateEmploymentRequestDtoWorkTime
     {
-
         /// <summary>
-        /// The work time duration in ISO 8601 duration format
+        /// The work time duration in ISO 8601 duration format.
         /// </summary>
         [JsonProperty("duration")]
         public string? Duration { get; set; } = null;
 
         /// <summary>
-        /// The period of the work time
+        /// The period of the work time.
         /// </summary>
         [JsonProperty("period")]
         public HrisUpdateEmploymentRequestDtoPeriod? Period { get; set; } = null;

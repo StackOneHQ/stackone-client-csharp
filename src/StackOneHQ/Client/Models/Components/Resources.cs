@@ -12,15 +12,14 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Resources for this provider, such as image assets
+    /// Resources for this provider, such as image assets.
     /// </summary>
     public class Resources
     {
-
         /// <summary>
-        /// Image assets for this provider
+        /// Image assets for this provider.
         /// </summary>
         [JsonProperty("images")]
         public Images? Images { get; set; } = null;

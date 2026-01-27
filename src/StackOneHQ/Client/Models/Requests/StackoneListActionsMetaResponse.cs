@@ -15,16 +15,15 @@ namespace StackOneHQ.Client.Models.Requests
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    
+
     public class StackoneListActionsMetaResponse
     {
         public Func<Task<StackoneListActionsMetaResponse?>>? Next {get;set;}
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// List of actions metadata
+        /// List of actions metadata.
         /// </summary>
         public ActionsMetaPaginated? ActionsMetaPaginated { get; set; }
 

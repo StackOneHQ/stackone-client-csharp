@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the file has content
+    /// Whether the file has content.
     /// </summary>
     [JsonConverter(typeof(FilesHasContentUnion.FilesHasContentUnionConverter))]
     public class FilesHasContentUnion

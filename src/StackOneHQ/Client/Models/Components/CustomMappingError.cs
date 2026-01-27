@@ -11,24 +11,23 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class CustomMappingError
     {
-
         /// <summary>
-        /// The custom mapping identifier
+        /// The custom mapping identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The error message
+        /// The error message.
         /// </summary>
         [JsonProperty("message")]
         public string? Message { get; set; } = null;
 
         /// <summary>
-        /// The target field where the error occurred
+        /// The target field where the error occurred.
         /// </summary>
         [JsonProperty("targetField")]
         public string? TargetField { get; set; } = null;

@@ -1,5 +1,4 @@
-# ApplicationCategories
-(*Ats.Documents.ApplicationCategories*)
+# Ats.Documents.ApplicationCategories
 
 ## Overview
 
@@ -28,6 +27,7 @@ AtsGetApplicationDocumentCategoryRequest req = new AtsGetApplicationDocumentCate
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,active,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Documents.ApplicationCategories.GetAsync(req);

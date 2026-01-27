@@ -13,30 +13,29 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class LocalizationModel
     {
-
         /// <summary>
-        /// The title of the content
+        /// The title of the content.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// The description of the content
+        /// The description of the content.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The language associated with the localization details
+        /// The language associated with the localization details.
         /// </summary>
         [JsonProperty("language")]
         public LocalizationModelLanguage? Language { get; set; } = null;
 
         /// <summary>
-        /// The tags associated with the localization details
+        /// The tags associated with the localization details.
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; } = null;

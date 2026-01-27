@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Default currency for the company
+    /// Default currency for the company.
     /// </summary>
     public class AccountingCompanyBaseCurrency
     {
-
         /// <summary>
-        /// Default currency for the company
+        /// Default currency for the company.
         /// </summary>
         [JsonProperty("value")]
         public AccountingCompanyValue? Value { get; set; } = null;

@@ -1,5 +1,4 @@
-# AtsJobs
-(*Ats.Jobs*)
+# Ats.Jobs
 
 ## Overview
 
@@ -30,6 +29,7 @@ AtsGetJobRequest req = new AtsGetJobRequest() {
     Fields = "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at,unified_custom_fields",
     Expand = "job_postings,interview_stages",
     Include = "custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Jobs.GetAsync(req);

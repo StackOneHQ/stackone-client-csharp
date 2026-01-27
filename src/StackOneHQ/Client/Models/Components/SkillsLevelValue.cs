@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The unified skill level. For write operations: provide one of the listed enum values, or omit/set to &quot;unmapped_value&quot; to use source_value instead.
+    /// The unified skill level. For write operations: provide one of the listed enum values, or omit/set to "unmapped_value" to use source_value instead.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class SkillsLevelValue : IEquatable<SkillsLevelValue>
@@ -78,5 +78,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

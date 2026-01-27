@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The location type
+    /// The location type.
     /// </summary>
     public class AccountAddressLocationType
     {
-
         /// <summary>
         /// The type of the location.
         /// </summary>

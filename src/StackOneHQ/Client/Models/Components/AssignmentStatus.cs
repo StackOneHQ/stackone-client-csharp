@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The status of the assignment
+    /// The status of the assignment.
     /// </summary>
     public class AssignmentStatus
     {
-
         /// <summary>
         /// The StackOne unified assignment status.
         /// </summary>

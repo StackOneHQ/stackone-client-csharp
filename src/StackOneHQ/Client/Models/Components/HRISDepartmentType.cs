@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the department group
+    /// The type of the department group.
     /// </summary>
     public class HRISDepartmentType
     {
-
         [JsonProperty("value")]
         public HRISDepartmentValue? Value { get; set; } = null;
 

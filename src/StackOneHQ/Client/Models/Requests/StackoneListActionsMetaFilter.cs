@@ -10,13 +10,12 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Actions Metadata filters
+    /// Actions Metadata filters.
     /// </summary>
     public class StackoneListActionsMetaFilter
     {
-
         /// <summary>
         /// A comma-separated list of connectors to filter the results by.
         /// </summary>
@@ -30,7 +29,7 @@ namespace StackOneHQ.Client.Models.Requests
         public string? AccountIds { get; set; } = null;
 
         /// <summary>
-        /// The action key to filter the results by
+        /// The action key to filter the results by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=action_key")]
         public string? ActionKey { get; set; } = null;

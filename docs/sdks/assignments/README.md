@@ -1,5 +1,4 @@
-# Assignments
-(*Lms.Assignments*)
+# Lms.Assignments
 
 ## Overview
 
@@ -40,13 +39,14 @@ var res = await sdk.Lms.Assignments.CreateAsync(
         },
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
         Progress = 40D,
-        CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+        AssignedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         DueDate = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         Status = new LmsCreateAssignmentRequestDtoStatus() {
             Value = LmsCreateAssignmentRequestDtoValue.InProgress,
         },
         LearningObjectExternalReference = "learning-content-123",
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -54,11 +54,12 @@ var res = await sdk.Lms.Assignments.CreateAsync(
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                              | *string*                                                                                  | :heavy_check_mark:                                                                        | The account identifier                                                                    |
-| `Id`                                                                                      | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
-| `LmsCreateAssignmentRequestDto`                                                           | [LmsCreateAssignmentRequestDto](../../Models/Components/LmsCreateAssignmentRequestDto.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `LmsCreateAssignmentRequestDto`                                                                                                                                          | [LmsCreateAssignmentRequestDto](../../Models/Components/LmsCreateAssignmentRequestDto.md)                                                                                | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -106,12 +107,13 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 LmsListAssignmentsRequest req = new LmsListAssignmentsRequest() {
     XAccountId = "<id>",
-    Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields",
+    Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,assigned_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields",
     Filter = new LmsListAssignmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     UserId = "c28xyrc55866bvuv",
     RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
+    Prefer = "heartbeat",
 };
 
 LmsListAssignmentsResponse? res = await sdk.Lms.Assignments.ListAsync(req);
@@ -176,6 +178,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsGetAssignmentRequest req = new LmsGetAssignmentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.Assignments.GetAsync(req);

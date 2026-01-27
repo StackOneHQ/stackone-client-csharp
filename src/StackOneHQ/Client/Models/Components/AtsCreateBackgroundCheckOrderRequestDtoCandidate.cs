@@ -13,48 +13,47 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AtsCreateBackgroundCheckOrderRequestDtoCandidate
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Candidate first name
+        /// Candidate first name.
         /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; } = null;
 
         /// <summary>
-        /// Candidate last name
+        /// Candidate last name.
         /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// List of candidate emails
+        /// List of candidate emails.
         /// </summary>
         [JsonProperty("emails")]
         public List<CandidateEmail>? Emails { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// Candidate profile url
+        /// Candidate profile url.
         /// </summary>
         [JsonProperty("profile_url")]
         public string? ProfileUrl { get; set; } = null;

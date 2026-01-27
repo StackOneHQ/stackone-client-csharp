@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CustomFieldDefinitionSourceValueUnion.CustomFieldDefinitionSourceValueUnionConverter))]
     public class CustomFieldDefinitionSourceValueUnion
     {

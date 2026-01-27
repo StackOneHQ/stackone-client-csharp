@@ -13,72 +13,71 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class HRISDepartment
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The name of the group
+        /// The name of the group.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The list of parent group ids of the given group
+        /// The list of parent group ids of the given group.
         /// </summary>
         [JsonProperty("parent_ids")]
         public List<string>? ParentIds { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s list of parent group remote ids of the given group
+        /// Provider's list of parent group remote ids of the given group.
         /// </summary>
         [JsonProperty("remote_parent_ids")]
         public List<string>? RemoteParentIds { get; set; } = null;
 
         /// <summary>
-        /// The list of group owner ids of the given group
+        /// The list of group owner ids of the given group.
         /// </summary>
         [JsonProperty("owner_ids")]
         public List<string>? OwnerIds { get; set; } = null;
 
         /// <summary>
-        /// The list of remote group owner ids of the given group
+        /// The list of remote group owner ids of the given group.
         /// </summary>
         [JsonProperty("remote_owner_ids")]
         public List<string>? RemoteOwnerIds { get; set; } = null;
 
         /// <summary>
-        /// The id of the company that the group belongs to
+        /// The id of the company that the group belongs to.
         /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s id of the company that the group belongs to
+        /// Provider's id of the company that the group belongs to.
         /// </summary>
         [JsonProperty("remote_company_id")]
         public string? RemoteCompanyId { get; set; } = null;
 
         /// <summary>
-        /// The type of the department group
+        /// The type of the department group.
         /// </summary>
         [JsonProperty("type")]
         public HRISDepartmentType? Type { get; set; } = null;

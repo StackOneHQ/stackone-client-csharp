@@ -13,36 +13,35 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class ActionsRpcRequestDto
     {
-
         /// <summary>
-        /// The action to execute
+        /// The action to execute.
         /// </summary>
         [JsonProperty("action")]
         public string Action { get; set; } = default!;
 
         /// <summary>
-        /// Path parameters for the action
+        /// Path parameters for the action.
         /// </summary>
         [JsonProperty("path")]
         public Dictionary<string, object>? Path { get; set; } = null;
 
         /// <summary>
-        /// Query parameters for the action
+        /// Query parameters for the action.
         /// </summary>
         [JsonProperty("query")]
         public Query? Query { get; set; } = null;
 
         /// <summary>
-        /// Headers for the action
+        /// Headers for the action.
         /// </summary>
         [JsonProperty("headers")]
         public Dictionary<string, object>? Headers { get; set; } = null;
 
         /// <summary>
-        /// Request body for the action
+        /// Request body for the action.
         /// </summary>
         [JsonProperty("body")]
         public Dictionary<string, object>? Body { get; set; } = null;

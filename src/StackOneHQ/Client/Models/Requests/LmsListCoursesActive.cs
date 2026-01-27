@@ -54,9 +54,8 @@ namespace StackOneHQ.Client.Models.Requests
         }
     }
 
-
     /// <summary>
-    /// Filter to allow filtering of only active courses
+    /// Filter to allow filtering of only active courses.
     /// </summary>
     [JsonConverter(typeof(LmsListCoursesActive.LmsListCoursesActiveConverter))]
     public class LmsListCoursesActive

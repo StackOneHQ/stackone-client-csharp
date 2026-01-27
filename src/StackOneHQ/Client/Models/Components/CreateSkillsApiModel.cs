@@ -13,36 +13,35 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class CreateSkillsApiModel
     {
-
         /// <summary>
-        /// The ID associated with this skill
+        /// The ID associated with this skill.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The name associated with this skill
+        /// The name associated with this skill.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The hierarchal level of the skill
+        /// The hierarchal level of the skill.
         /// </summary>
         [JsonProperty("hierarchy")]
         public CreateSkillsApiModelHierarchy? Hierarchy { get; set; } = null;
 
         /// <summary>
-        /// The language associated with this skill
+        /// The language associated with this skill.
         /// </summary>
         [JsonProperty("language")]
         public CreateSkillsApiModelLanguage? Language { get; set; } = null;
 
         /// <summary>
-        /// The hierarchal level of the skill
+        /// The hierarchal level of the skill.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("level")]

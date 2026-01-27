@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class Tag
     {
-
         /// <summary>
-        /// Remote ID of the tag
+        /// Remote ID of the tag.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Name of the tag
+        /// Name of the tag.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;

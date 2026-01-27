@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HrisCreateTimeOffRequestDtoStatusSourceValueUnion.HrisCreateTimeOffRequestDtoStatusSourceValueUnionConverter))]
     public class HrisCreateTimeOffRequestDtoStatusSourceValueUnion
     {

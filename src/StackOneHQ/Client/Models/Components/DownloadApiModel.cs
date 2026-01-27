@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class DownloadApiModel
     {
-
         /// <summary>
-        /// Headers related to the download
+        /// Headers related to the download.
         /// </summary>
         [JsonProperty("headers")]
         public DownloadHeadersApiModel Headers { get; set; } = default!;
 
         /// <summary>
-        /// The file data in binary format
+        /// The file data in binary format.
         /// </summary>
         [JsonProperty("data")]
         public byte[] Data { get; set; } = default!;

@@ -13,10 +13,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class MoveApplicationResult
     {
-
         [JsonProperty("statusCode")]
         public double StatusCode { get; set; } = default!;
 

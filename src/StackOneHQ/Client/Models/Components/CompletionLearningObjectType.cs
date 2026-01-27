@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The learning object type of the completion
+    /// The learning object type of the completion.
     /// </summary>
     public class CompletionLearningObjectType
     {
-
         /// <summary>
         /// The StackOne unified learning object type.
         /// </summary>

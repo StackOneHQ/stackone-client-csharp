@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The period of the work time
+    /// The period of the work time.
     /// </summary>
     public class HrisCreateEmploymentRequestDtoPeriod
     {
-
         /// <summary>
         /// The unified value for the period.
         /// </summary>

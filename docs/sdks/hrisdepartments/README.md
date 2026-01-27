@@ -1,5 +1,4 @@
-# HrisDepartments
-(*Hris.Departments*)
+# Hris.Departments
 
 ## Overview
 
@@ -28,6 +27,7 @@ HrisGetDepartmentGroupRequest req = new HrisGetDepartmentGroupRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.Departments.GetAsync(req);

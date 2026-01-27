@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(AccountingJournalSourceValueUnion.AccountingJournalSourceValueUnionConverter))]
     public class AccountingJournalSourceValueUnion
     {

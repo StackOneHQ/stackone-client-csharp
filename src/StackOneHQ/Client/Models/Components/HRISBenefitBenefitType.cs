@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the benefit
+    /// The type of the benefit.
     /// </summary>
     public class HRISBenefitBenefitType
     {
-
         /// <summary>
-        /// The type of the benefit
+        /// The type of the benefit.
         /// </summary>
         [JsonProperty("value")]
         public HRISBenefitValue? Value { get; set; } = null;

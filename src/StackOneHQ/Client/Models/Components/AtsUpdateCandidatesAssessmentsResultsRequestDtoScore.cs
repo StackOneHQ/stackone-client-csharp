@@ -11,30 +11,29 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class AtsUpdateCandidatesAssessmentsResultsRequestDtoScore
     {
-
         /// <summary>
-        /// The label of the score
+        /// The label of the score.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The value is the actual score
+        /// The value is the actual score.
         /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; } = null;
 
         /// <summary>
-        /// The minimum value of the score
+        /// The minimum value of the score.
         /// </summary>
         [JsonProperty("min")]
         public string? Min { get; set; } = null;
 
         /// <summary>
-        /// The maximum value of the score
+        /// The maximum value of the score.
         /// </summary>
         [JsonProperty("max")]
         public string? Max { get; set; } = null;

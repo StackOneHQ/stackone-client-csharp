@@ -21,12 +21,16 @@ namespace StackOneHQ.Client
 
     public class HrisDocuments: IHrisDocuments
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
 
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// EmployeeCategories SubSDK.
+        /// <see cref="IEmployeeCategories"/>
+        /// </summary>
         public IEmployeeCategories EmployeeCategories { get; private set; }
 
         public HrisDocuments(SDKConfig config)

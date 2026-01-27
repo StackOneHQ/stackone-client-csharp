@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(EmployeePreferredLanguageSourceValueUnion.EmployeePreferredLanguageSourceValueUnionConverter))]
     public class EmployeePreferredLanguageSourceValueUnion
     {

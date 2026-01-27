@@ -1,5 +1,4 @@
-# AtsLocations
-(*Ats.Locations*)
+# Ats.Locations
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListLocationsRequest req = new AtsListLocationsRequest() {
     Filter = new AtsListLocationsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListLocationsResponse? res = await sdk.Ats.Locations.ListAsync(req);
@@ -93,6 +93,7 @@ AtsGetLocationRequest req = new AtsGetLocationRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Locations.GetAsync(req);

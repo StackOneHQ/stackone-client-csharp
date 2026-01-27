@@ -13,24 +13,23 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class MessagingCreateConversationRequestDto
     {
-
         /// <summary>
-        /// List of participant user IDs in the conversation
+        /// List of participant user IDs in the conversation.
         /// </summary>
         [JsonProperty("participants")]
         public List<string>? Participants { get; set; } = null;
 
         /// <summary>
-        /// Name or title of the conversation
+        /// Name or title of the conversation.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Whether the conversation is private
+        /// Whether the conversation is private.
         /// </summary>
         [JsonProperty("private", NullValueHandling = NullValueHandling.Include)]
         public MessagingCreateConversationRequestDtoPrivateUnion? Private { get; set; } = null;

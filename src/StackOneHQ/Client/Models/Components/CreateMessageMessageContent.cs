@@ -58,7 +58,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CreateMessageMessageContent.CreateMessageMessageContentConverter))]
     public class CreateMessageMessageContent
     {

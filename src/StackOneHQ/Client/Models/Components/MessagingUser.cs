@@ -12,60 +12,59 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class MessagingUser
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Email address of the user
+        /// Email address of the user.
         /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; } = null;
 
         /// <summary>
-        /// Username of the user
+        /// Username of the user.
         /// </summary>
         [JsonProperty("username")]
         public string? Username { get; set; } = null;
 
         /// <summary>
-        /// Full name of the user
+        /// Full name of the user.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// First name of the user
+        /// First name of the user.
         /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; } = null;
 
         /// <summary>
-        /// Last name of the user
+        /// Last name of the user.
         /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// Whether the user is a bot
+        /// Whether the user is a bot.
         /// </summary>
         [JsonProperty("bot", NullValueHandling = NullValueHandling.Include)]
         public MessagingUserBotUnion? Bot { get; set; } = null;
 
         /// <summary>
-        /// Whether the user is active
+        /// Whether the user is active.
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public MessagingUserActiveUnion? Active { get; set; } = null;

@@ -14,24 +14,23 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class Completion
     {
-
         /// <summary>
-        /// The ID associated with this completion
+        /// The ID associated with this completion.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
@@ -43,38 +42,38 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectExternalReference { get; set; } = null;
 
         /// <summary>
-        /// The external reference associated with this completion
+        /// The external reference associated with this completion.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("external_reference")]
         public string? ExternalReference { get; set; } = null;
 
         /// <summary>
-        /// The result of the completion
+        /// The result of the completion.
         /// </summary>
         [JsonProperty("result")]
         public CompletionResult1? Result { get; set; } = null;
 
         /// <summary>
-        /// The date the content was completed
+        /// The date the content was completed.
         /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; } = null;
 
         /// <summary>
-        /// The created date of the completion
+        /// The created date of the completion.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The updated date of the completion
+        /// The updated date of the completion.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
-        /// The learning object type of the completion
+        /// The learning object type of the completion.
         /// </summary>
         [JsonProperty("learning_object_type")]
         public CompletionLearningObjectType? LearningObjectType { get; set; } = null;
@@ -86,82 +85,88 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the learning object related to the completion
+        /// Provider's unique identifier of the learning object related to the completion.
         /// </summary>
         [JsonProperty("remote_learning_object_id")]
         public string? RemoteLearningObjectId { get; set; } = null;
 
         /// <summary>
-        /// The user ID associated with this completion
+        /// The user ID associated with this completion.
         /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the user related to the completion
+        /// Provider's unique identifier of the user related to the completion.
         /// </summary>
         [JsonProperty("remote_user_id")]
         public string? RemoteUserId { get; set; } = null;
 
         /// <summary>
-        /// ISO 8601 duration format representing the time spent on completing the learning object
+        /// ISO 8601 duration format representing the time spent on completing the learning object.
         /// </summary>
         [JsonProperty("time_spent")]
         public string? TimeSpent { get; set; } = null;
 
         /// <summary>
-        /// The certification URL associated with this completion
+        /// The certification URL associated with this completion.
         /// </summary>
         [JsonProperty("certificate_url")]
         public string? CertificateUrl { get; set; } = null;
 
         /// <summary>
-        /// The external ID associated with this completion
+        /// The external ID associated with this completion.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("external_id")]
         public string? ExternalId { get; set; } = null;
 
         /// <summary>
-        /// The external reference associated with this content
+        /// The external reference associated with this content.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("content_external_reference")]
         public string? ContentExternalReference { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the content external reference
+        /// Provider's unique identifier of the content external reference.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("remote_external_id")]
         public string? RemoteExternalId { get; set; } = null;
 
         /// <summary>
-        /// The content ID associated with this completion
+        /// The content ID associated with this completion.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("content_id")]
         public string? ContentId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the content associated with the completion
+        /// Provider's unique identifier of the content associated with the completion.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("remote_content_id")]
         public string? RemoteContentId { get; set; } = null;
 
         /// <summary>
-        /// The course ID associated with this completion
+        /// The course ID associated with this completion.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("course_id")]
         public string? CourseId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the course associated with the completion
+        /// Provider's unique identifier of the course associated with the completion.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("remote_course_id")]
         public string? RemoteCourseId { get; set; } = null;
+
+        /// <summary>
+        /// The score associated with this completion.
+        /// </summary>
+        [JsonProperty("score")]
+        public CompletionScore? Score { get; set; } = null;
     }
 }

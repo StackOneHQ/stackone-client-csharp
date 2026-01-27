@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(IamUserStatusSourceValueUnion.IamUserStatusSourceValueUnionConverter))]
     public class IamUserStatusSourceValueUnion
     {

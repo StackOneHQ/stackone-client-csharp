@@ -13,12 +13,11 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AtsCreateCandidatesAssessmentsRequestDto
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
@@ -39,13 +38,13 @@ namespace StackOneHQ.Client.Models.Components
         public AtsCreateCandidatesAssessmentsRequestDtoRequester? Requester { get; set; } = null;
 
         /// <summary>
-        /// Results update url
+        /// Results update url.
         /// </summary>
         [JsonProperty("results_update_url")]
         public string? ResultsUpdateUrl { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

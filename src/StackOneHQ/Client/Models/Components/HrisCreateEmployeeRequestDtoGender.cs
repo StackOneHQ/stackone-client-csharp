@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The employee gender
+    /// The employee gender.
     /// </summary>
     public class HrisCreateEmployeeRequestDtoGender
     {
-
         [JsonProperty("value")]
         public HrisCreateEmployeeRequestDtoGenderValue? Value { get; set; } = null;
 

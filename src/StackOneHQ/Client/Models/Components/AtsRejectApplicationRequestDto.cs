@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AtsRejectApplicationRequestDto
     {
-
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// Unique identifier of the rejection reason
+        /// Unique identifier of the rejection reason.
         /// </summary>
         [JsonProperty("rejected_reason_id")]
         public string? RejectedReasonId { get; set; } = null;

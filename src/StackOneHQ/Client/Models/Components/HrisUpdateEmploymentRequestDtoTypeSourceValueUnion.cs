@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HrisUpdateEmploymentRequestDtoTypeSourceValueUnion.HrisUpdateEmploymentRequestDtoTypeSourceValueUnionConverter))]
     public class HrisUpdateEmploymentRequestDtoTypeSourceValueUnion
     {

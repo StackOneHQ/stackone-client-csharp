@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether this is the primary bank account
+    /// Whether this is the primary bank account.
     /// </summary>
     [JsonConverter(typeof(IsPrimary.IsPrimaryConverter))]
     public class IsPrimary

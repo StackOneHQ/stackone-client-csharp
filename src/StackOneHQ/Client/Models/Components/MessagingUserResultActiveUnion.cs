@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the user is active
+    /// Whether the user is active.
     /// </summary>
     [JsonConverter(typeof(MessagingUserResultActiveUnion.MessagingUserResultActiveUnionConverter))]
     public class MessagingUserResultActiveUnion

@@ -13,21 +13,20 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// The advanced log request data
+    /// The advanced log request data.
     /// </summary>
     public class UnifiedLogsRequest
     {
-
         /// <summary>
-        /// The request ID
+        /// The request ID.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The request method
+        /// The request method.
         /// </summary>
         [JsonProperty("method")]
         public string? Method { get; set; } = null;
@@ -36,7 +35,7 @@ namespace StackOneHQ.Client.Models.Components
         public Dictionary<string, object>? Headers { get; set; } = null;
 
         /// <summary>
-        /// The request URL data
+        /// The request URL data.
         /// </summary>
         [JsonProperty("url")]
         public UnifiedLogsUrl? Url { get; set; } = null;

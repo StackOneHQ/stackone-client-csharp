@@ -1,5 +1,4 @@
 # Actions
-(*Actions*)
 
 ## Overview
 
@@ -8,6 +7,8 @@ Retrieve Actions metadata and definitions.
 ### Available Operations
 
 * [ListActionsMeta](#listactionsmeta) - List all actions metadata
+* [SearchActions](#searchactions) - Search connector actions by semantic similarity
+* [BuildActionEmbeddings](#buildactionembeddings) - Rebuild action embeddings for semantic search
 * [RpcAction](#rpcaction) - Make an RPC call to an action
 
 ## ListActionsMeta
@@ -38,6 +39,10 @@ StackoneListActionsMetaRequest req = new StackoneListActionsMetaRequest() {
     Include = new List<StackoneListActionsMetaInclude>() {
         StackoneListActionsMetaInclude.ActionDetails,
     },
+    Search = "employee",
+    Exclude = new List<Exclude>() {
+        Exclude.Actions,
+    },
 };
 
 StackoneListActionsMetaResponse? res = await sdk.Actions.ListActionsMetaAsync(req);
@@ -59,6 +64,111 @@ while(res != null)
 ### Response
 
 **[StackoneListActionsMetaResponse](../../Models/Requests/StackoneListActionsMetaResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## SearchActions
+
+Search connector actions by semantic similarity
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="stackone_search_actions" method="post" path="/actions/search" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+ActionSearchDto req = new ActionSearchDto() {
+    Query = "send a message",
+    Connector = "slack",
+};
+
+var res = await sdk.Actions.SearchActionsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `request`                                                     | [ActionSearchDto](../../Models/Components/ActionSearchDto.md) | :heavy_check_mark:                                            | The request object to use for the request.                    |
+
+### Response
+
+**[StackoneSearchActionsResponse](../../Models/Requests/StackoneSearchActionsResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## BuildActionEmbeddings
+
+Rebuild action embeddings for semantic search
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="stackone_build_action_embeddings" method="post" path="/actions/build" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+ActionBuildDto req = new ActionBuildDto() {
+    ConnectorKey = "slack",
+};
+
+var res = await sdk.Actions.BuildActionEmbeddingsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `request`                                                   | [ActionBuildDto](../../Models/Components/ActionBuildDto.md) | :heavy_check_mark:                                          | The request object to use for the request.                  |
+
+### Response
+
+**[StackoneBuildActionEmbeddingsResponse](../../Models/Requests/StackoneBuildActionEmbeddingsResponse.md)**
 
 ### Errors
 

@@ -1,5 +1,4 @@
-# AtsInterviews
-(*Ats.Interviews*)
+# Ats.Interviews
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListInterviewsRequest req = new AtsListInterviewsRequest() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
         CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListInterviewsResponse? res = await sdk.Ats.Interviews.ListAsync(req);

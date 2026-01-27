@@ -1,5 +1,4 @@
-# EmployeesTasks
-(*Hris.Employees.Tasks*)
+# Hris.Employees.Tasks
 
 ## Overview
 
@@ -32,8 +31,10 @@ HrisListEmployeeTasksRequest req = new HrisListEmployeeTasksRequest() {
     Fields = "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields",
     Filter = new HrisListEmployeeTasksFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "attachments",
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeTasksResponse? res = await sdk.Hris.Employees.Tasks.ListAsync(req);
@@ -84,35 +85,36 @@ Update Employee Task
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 
 var sdk = new StackOneHQClient(security: new Security() {
     Username = "",
     Password = "",
 });
 
-var res = await sdk.Hris.Employees.Tasks.CompleteAsync(
-    xAccountId: "<id>",
-    id: "<id>",
-    subResourceId: "<id>",
-    updateTaskRequestDto: new UpdateTaskRequestDto() {
+HrisUpdateEmployeeTaskRequest req = new HrisUpdateEmployeeTaskRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    SubResourceId = "<id>",
+    Prefer = "heartbeat",
+    UpdateTaskRequestDto = new UpdateTaskRequestDto() {
         Comment = "All required documents have been submitted",
         Status = new UpdateTaskRequestDtoStatus() {
             Value = UpdateTaskRequestDtoValue.Open,
         },
-    }
-);
+    },
+};
+
+var res = await sdk.Hris.Employees.Tasks.CompleteAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `XAccountId`                                                            | *string*                                                                | :heavy_check_mark:                                                      | The account identifier                                                  |
-| `Id`                                                                    | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
-| `SubResourceId`                                                         | *string*                                                                | :heavy_check_mark:                                                      | N/A                                                                     |
-| `UpdateTaskRequestDto`                                                  | [UpdateTaskRequestDto](../../Models/Components/UpdateTaskRequestDto.md) | :heavy_check_mark:                                                      | N/A                                                                     |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [HrisUpdateEmployeeTaskRequest](../../Models/Requests/HrisUpdateEmployeeTaskRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 

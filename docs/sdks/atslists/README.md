@@ -1,5 +1,4 @@
-# AtsLists
-(*Ats.Lists*)
+# Ats.Lists
 
 ## Overview
 
@@ -29,6 +28,7 @@ AtsListListsRequest req = new AtsListListsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
     Filter = null,
+    Prefer = "heartbeat",
 };
 
 AtsListListsResponse? res = await sdk.Ats.Lists.ListAsync(req);
@@ -90,6 +90,7 @@ AtsGetListRequest req = new AtsGetListRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Lists.GetAsync(req);

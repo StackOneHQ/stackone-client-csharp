@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The manager role type (e.g., admin, viewer)
+    /// The manager role type (e.g., admin, viewer).
     /// </summary>
     public class RoleType
     {
-
         [JsonProperty("value")]
         public EmploymentManagerApiModelValue? Value { get; set; } = null;
 

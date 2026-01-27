@@ -16,96 +16,95 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class Scorecard
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The sections in the scorecard
+        /// The sections in the scorecard.
         /// </summary>
         [JsonProperty("sections")]
         public List<ScorecardSection>? Sections { get; set; } = null;
 
         /// <summary>
-        /// The label of the scorecard
+        /// The label of the scorecard.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The candidate ID associated with the scorecard
+        /// The candidate ID associated with the scorecard.
         /// </summary>
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the candidate
+        /// Provider's unique identifier of the candidate.
         /// </summary>
         [JsonProperty("remote_candidate_id")]
         public string? RemoteCandidateId { get; set; } = null;
 
         /// <summary>
-        /// The application ID associated with the scorecard
+        /// The application ID associated with the scorecard.
         /// </summary>
         [JsonProperty("application_id")]
         public string? ApplicationId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the application
+        /// Provider's unique identifier of the application.
         /// </summary>
         [JsonProperty("remote_application_id")]
         public string? RemoteApplicationId { get; set; } = null;
 
         /// <summary>
-        /// The interview ID associated with the scorecard
+        /// The interview ID associated with the scorecard.
         /// </summary>
         [JsonProperty("interview_id")]
         public string? InterviewId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the interview
+        /// Provider's unique identifier of the interview.
         /// </summary>
         [JsonProperty("remote_interview_id")]
         public string? RemoteInterviewId { get; set; } = null;
 
         /// <summary>
-        /// The author ID of the scorecard
+        /// The author ID of the scorecard.
         /// </summary>
         [JsonProperty("author_id")]
         public string? AuthorId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the author
+        /// Provider's unique identifier of the author.
         /// </summary>
         [JsonProperty("remote_author_id")]
         public string? RemoteAuthorId { get; set; } = null;
 
         /// <summary>
-        /// The overall recommendation
+        /// The overall recommendation.
         /// </summary>
         [JsonProperty("overall_recommendation")]
         public OverallRecommendation? OverallRecommendation { get; set; } = null;
 
         /// <summary>
-        /// The creation date of the scorecard
+        /// The creation date of the scorecard.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The update date of the scorecard
+        /// The update date of the scorecard.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

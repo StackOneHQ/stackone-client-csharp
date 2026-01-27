@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
     /// The source value of the pay frequency.
     /// </summary>

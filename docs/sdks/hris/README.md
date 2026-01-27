@@ -1,5 +1,4 @@
 # Hris
-(*Hris*)
 
 ## Overview
 
@@ -13,8 +12,8 @@
 * [GetEmployeeShift](#getemployeeshift) - Get Employee Shift
 * [ListEmployeeTimeOffRequests](#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [GetEmployeeTimeOffRequest](#getemployeetimeoffrequest) - Get Employees Time Off Request
-* [CancelEmployeeTimeOff](#cancelemployeetimeoff) - Cancel Employee Time Off Request
 * [UpdateEmployeeTimeOffRequest](#updateemployeetimeoffrequest) - Update Employee Time Off Request
+* [CancelEmployeeTimeOff](#cancelemployeetimeoff) - Cancel Employee Time Off Request
 * [UploadEmployeeDocument](#uploademployeedocument) - Upload Employee Document
 * [ListEmployeeDocuments](#listemployeedocuments) - List Employee Documents
 * [GetEmployeeDocument](#getemployeedocument) - Get Employee Document
@@ -62,6 +61,7 @@ HrisListCompaniesRequest req = new HrisListCompaniesRequest() {
     Filter = new HrisListCompaniesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListCompaniesResponse? res = await sdk.Hris.GetCompaniesAsync(req);
@@ -123,6 +123,7 @@ HrisGetCompanyRequest req = new HrisGetCompanyRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetCompanyAsync(req);
@@ -183,6 +184,7 @@ HrisGetEmployeeCustomFieldDefinitionRequest req = new HrisGetEmployeeCustomField
     Filter = new HrisGetEmployeeCustomFieldDefinitionFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmployeeCustomFieldDefinitionAsync(req);
@@ -241,6 +243,7 @@ HrisGetEmployeeRequest req = new HrisGetEmployeeRequest() {
     Fields = "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields",
     Expand = "company,employments,work_location,home_location,groups,skills",
     Include = "avatar_url,avatar,custom_fields,job_description,benefits,bank_details",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmployeeAsync(req);
@@ -302,6 +305,7 @@ HrisListEmployeeShiftsRequest req = new HrisListEmployeeShiftsRequest() {
         StartsAfter = "2024-01-15T09:00",
         EndsBefore = "2024-01-15T17:00",
     },
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeShiftsResponse? res = await sdk.Hris.ListEmployeeShiftsAsync(req);
@@ -363,6 +367,7 @@ HrisGetEmployeeShiftRequest req = new HrisGetEmployeeShiftRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmployeeShiftAsync(req);
@@ -426,6 +431,7 @@ HrisListEmployeeTimeOffRequestsRequest req = new HrisListEmployeeTimeOffRequests
         EndDate = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "policy",
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeTimeOffRequestsResponse? res = await sdk.Hris.ListEmployeeTimeOffRequestsAsync(req);
@@ -489,6 +495,7 @@ HrisGetEmployeesTimeOffRequestRequest req = new HrisGetEmployeesTimeOffRequestRe
     SubResourceId = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields",
     Expand = "policy",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmployeeTimeOffRequestAsync(req);
@@ -505,6 +512,84 @@ var res = await sdk.Hris.GetEmployeeTimeOffRequestAsync(req);
 ### Response
 
 **[HrisGetEmployeesTimeOffRequestResponse](../../Models/Requests/HrisGetEmployeesTimeOffRequestResponse.md)**
+
+### Errors
+
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
+| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
+
+## UpdateEmployeeTimeOffRequest
+
+Update Employee Time Off Request
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="hris_update_employee_time_off_request" method="patch" path="/unified/hris/employees/{id}/time_off/{subResourceId}" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new StackOneHQClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+HrisUpdateEmployeeTimeOffRequestRequest req = new HrisUpdateEmployeeTimeOffRequestRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    SubResourceId = "<id>",
+    Prefer = "heartbeat",
+    HrisCreateTimeOffRequestDto = new HrisCreateTimeOffRequestDto() {
+        ApproverId = "1687-4",
+        StartDate = "2021-01-01T01:01:01.000",
+        EndDate = "2021-01-01T01:01:01.000",
+        StartHalfDay = HrisCreateTimeOffRequestDtoStartHalfDayUnion.CreateBoolean(
+            true
+        ),
+        EndHalfDay = HrisCreateTimeOffRequestDtoEndHalfDayUnion.CreateBoolean(
+            true
+        ),
+        TimeOffPolicyId = "cx280928933",
+        Reason = new HrisCreateTimeOffRequestDtoReason() {
+            Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+            RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
+        },
+        Comment = "Taking a day off for personal reasons",
+        Passthrough = new Dictionary<string, object>() {
+            { "other_known_names", "John Doe" },
+        },
+    },
+};
+
+var res = await sdk.Hris.UpdateEmployeeTimeOffRequestAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                   | [HrisUpdateEmployeeTimeOffRequestRequest](../../Models/Requests/HrisUpdateEmployeeTimeOffRequestRequest.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
+
+### Response
+
+**[HrisUpdateEmployeeTimeOffRequestResponse](../../Models/Requests/HrisUpdateEmployeeTimeOffRequestResponse.md)**
 
 ### Errors
 
@@ -543,7 +628,8 @@ var sdk = new StackOneHQClient(security: new Security() {
 var res = await sdk.Hris.CancelEmployeeTimeOffAsync(
     xAccountId: "<id>",
     id: "<id>",
-    subResourceId: "<id>"
+    subResourceId: "<id>",
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -551,92 +637,16 @@ var res = await sdk.Hris.CancelEmployeeTimeOffAsync(
 
 ### Parameters
 
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `XAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
-| `Id`                   | *string*               | :heavy_check_mark:     | N/A                    |
-| `SubResourceId`        | *string*               | :heavy_check_mark:     | N/A                    |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `SubResourceId`                                                                                                                                                          | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
 **[HrisCancelEmployeeTimeOffRequestResponse](../../Models/Requests/HrisCancelEmployeeTimeOffRequestResponse.md)**
-
-### Errors
-
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| StackOneHQ.Client.Models.Errors.BadRequestResponseException          | 400                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.UnauthorizedResponseException        | 401                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.ForbiddenResponseException           | 403                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.NotFoundResponseException            | 404                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.RequestTimedOutResponseException     | 408                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.ConflictResponseException            | 409                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.PreconditionFailedResponseException  | 412                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.UnprocessableEntityResponseException | 422                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.TooManyRequestsResponseException     | 429                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.InternalServerErrorResponse          | 500                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.NotImplementedResponseException      | 501                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.BadGatewayResponseException          | 502                                                                  | application/json                                                     |
-| StackOneHQ.Client.Models.Errors.APIException                         | 4XX, 5XX                                                             | \*/\*                                                                |
-
-## UpdateEmployeeTimeOffRequest
-
-Update Employee Time Off Request
-
-### Example Usage
-
-<!-- UsageSnippet language="csharp" operationID="hris_update_employee_time_off_request" method="patch" path="/unified/hris/employees/{id}/time_off/{subResourceId}" -->
-```csharp
-using StackOneHQ.Client;
-using StackOneHQ.Client.Models.Components;
-using System.Collections.Generic;
-
-var sdk = new StackOneHQClient(security: new Security() {
-    Username = "",
-    Password = "",
-});
-
-var res = await sdk.Hris.UpdateEmployeeTimeOffRequestAsync(
-    xAccountId: "<id>",
-    id: "<id>",
-    subResourceId: "<id>",
-    hrisCreateTimeOffRequestDto: new HrisCreateTimeOffRequestDto() {
-        ApproverId = "1687-4",
-        StartDate = "2021-01-01T01:01:01.000",
-        EndDate = "2021-01-01T01:01:01.000",
-        StartHalfDay = HrisCreateTimeOffRequestDtoStartHalfDayUnion.CreateBoolean(
-            true
-        ),
-        EndHalfDay = HrisCreateTimeOffRequestDtoEndHalfDayUnion.CreateBoolean(
-            true
-        ),
-        TimeOffPolicyId = "cx280928933",
-        Reason = new HrisCreateTimeOffRequestDtoReason() {
-            Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
-            RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
-        },
-        Comment = "Taking a day off for personal reasons",
-        Passthrough = new Dictionary<string, object>() {
-            { "other_known_names", "John Doe" },
-        },
-    }
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                          | *string*                                                                              | :heavy_check_mark:                                                                    | The account identifier                                                                |
-| `Id`                                                                                  | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
-| `SubResourceId`                                                                       | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
-| `HrisCreateTimeOffRequestDto`                                                         | [HrisCreateTimeOffRequestDto](../../Models/Components/HrisCreateTimeOffRequestDto.md) | :heavy_check_mark:                                                                    | N/A                                                                                   |
-
-### Response
-
-**[HrisUpdateEmployeeTimeOffRequestResponse](../../Models/Requests/HrisUpdateEmployeeTimeOffRequestResponse.md)**
 
 ### Errors
 
@@ -693,7 +703,8 @@ var res = await sdk.Hris.UploadEmployeeDocumentAsync(
             ),
         },
         Category = new HrisDocumentsUploadRequestDtoCategory() {},
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -701,11 +712,12 @@ var res = await sdk.Hris.UploadEmployeeDocumentAsync(
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                              | *string*                                                                                  | :heavy_check_mark:                                                                        | The account identifier                                                                    |
-| `Id`                                                                                      | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
-| `HrisDocumentsUploadRequestDto`                                                           | [HrisDocumentsUploadRequestDto](../../Models/Components/HrisDocumentsUploadRequestDto.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `HrisDocumentsUploadRequestDto`                                                                                                                                          | [HrisDocumentsUploadRequestDto](../../Models/Components/HrisDocumentsUploadRequestDto.md)                                                                                | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -754,6 +766,7 @@ HrisListEmployeeDocumentsRequest req = new HrisListEmployeeDocumentsRequest() {
     Filter = new HrisListEmployeeDocumentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeDocumentsResponse? res = await sdk.Hris.ListEmployeeDocumentsAsync(req);
@@ -816,6 +829,7 @@ HrisGetEmployeeDocumentRequest req = new HrisGetEmployeeDocumentRequest() {
     Id = "<id>",
     SubResourceId = "<id>",
     Fields = "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmployeeDocumentAsync(req);
@@ -877,6 +891,7 @@ HrisListEmployeeTimeOffBalancesRequest req = new HrisListEmployeeTimeOffBalances
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "policy",
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeTimeOffBalancesResponse? res = await sdk.Hris.ListEmployeeTimeOffBalancesAsync(req);
@@ -940,6 +955,7 @@ HrisGetEmployeeTimeOffBalanceRequest req = new HrisGetEmployeeTimeOffBalanceRequ
     SubResourceId = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,is_unlimited,updated_at,unified_custom_fields",
     Expand = "policy",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmployeeTimeOffBalanceAsync(req);
@@ -997,6 +1013,7 @@ HrisGetEmploymentRequest req = new HrisGetEmploymentRequest() {
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields",
     Expand = "groups",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmploymentAsync(req);
@@ -1053,6 +1070,7 @@ HrisGetGroupRequest req = new HrisGetGroupRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetGroupAsync(req);
@@ -1109,6 +1127,7 @@ HrisGetTeamGroupRequest req = new HrisGetTeamGroupRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetTeamGroupAsync(req);
@@ -1165,6 +1184,7 @@ HrisGetLocationRequest req = new HrisGetLocationRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetLocationAsync(req);
@@ -1224,6 +1244,7 @@ HrisListPositionsRequest req = new HrisListPositionsRequest() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Status = HrisListPositionsStatus.Open,
+    Prefer = "heartbeat",
 };
 
 HrisListPositionsResponse? res = await sdk.Hris.ListPositionsAsync(req);
@@ -1284,6 +1305,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetPositionRequest req = new HrisGetPositionRequest() {
     XAccountId = "<id>",
     Id = "<id>",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetPositionAsync(req);
@@ -1345,6 +1367,7 @@ HrisListTimeEntriesRequest req = new HrisListTimeEntriesRequest() {
         StartTime = "2020-01-01T00:00:00.000Z",
         EndTime = "2020-01-01T00:00:00.000Z",
     },
+    Prefer = "heartbeat",
 };
 
 HrisListTimeEntriesResponse? res = await sdk.Hris.ListTimeEntriesAsync(req);
@@ -1406,6 +1429,7 @@ HrisGetTimeEntriesRequest req = new HrisGetTimeEntriesRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetTimeEntryAsync(req);
@@ -1463,6 +1487,7 @@ HrisGetTimeOffRequestRequest req = new HrisGetTimeOffRequestRequest() {
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields",
     Expand = "policy",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetTimeOffRequestAsync(req);
@@ -1523,6 +1548,7 @@ HrisListShiftsRequest req = new HrisListShiftsRequest() {
         StartsAfter = "2024-01-15T09:00",
         EndsBefore = "2024-01-15T17:00",
     },
+    Prefer = "heartbeat",
 };
 
 HrisListShiftsResponse? res = await sdk.Hris.ListShiftsAsync(req);
@@ -1589,6 +1615,7 @@ HrisListTimeOffTypesRequest req = new HrisListTimeOffTypesRequest() {
     Filter = new HrisListTimeOffTypesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListTimeOffTypesResponse? res = await sdk.Hris.ListTimeOffTypesAsync(req);
@@ -1653,6 +1680,7 @@ HrisListTimeOffPoliciesRequest req = new HrisListTimeOffPoliciesRequest() {
     Filter = new HrisListTimeOffPoliciesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListTimeOffPoliciesResponse? res = await sdk.Hris.ListTimeOffPoliciesAsync(req);
@@ -1714,6 +1742,7 @@ HrisGetTimeOffPolicyRequest req = new HrisGetTimeOffPolicyRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetTimeOffPolicyAsync(req);
@@ -1773,6 +1802,7 @@ HrisListBenefitsRequest req = new HrisListBenefitsRequest() {
     Filter = new HrisListBenefitsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListBenefitsResponse? res = await sdk.Hris.ListBenefitsAsync(req);
@@ -1841,7 +1871,8 @@ var res = await sdk.Hris.CreateEmployeeSkillAsync(
             Name = "Expert",
         },
         MinimumProficiency = null,
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -1849,11 +1880,12 @@ var res = await sdk.Hris.CreateEmployeeSkillAsync(
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                            | *string*                                                                                | :heavy_check_mark:                                                                      | The account identifier                                                                  |
-| `Id`                                                                                    | *string*                                                                                | :heavy_check_mark:                                                                      | N/A                                                                                     |
-| `EntitySkillsCreateRequestDto`                                                          | [EntitySkillsCreateRequestDto](../../Models/Components/EntitySkillsCreateRequestDto.md) | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `EntitySkillsCreateRequestDto`                                                                                                                                           | [EntitySkillsCreateRequestDto](../../Models/Components/EntitySkillsCreateRequestDto.md)                                                                                  | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -1900,6 +1932,7 @@ HrisGetEmployeeTaskRequest req = new HrisGetEmployeeTaskRequest() {
     SubResourceId = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields",
     Expand = "attachments",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetEmployeeTaskAsync(req);
@@ -1957,6 +1990,7 @@ HrisGetTaskRequest req = new HrisGetTaskRequest() {
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields",
     Expand = "attachments",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.GetTaskAsync(req);

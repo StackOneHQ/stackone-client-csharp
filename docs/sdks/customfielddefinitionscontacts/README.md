@@ -1,5 +1,4 @@
-# CustomFieldDefinitionsContacts
-(*Crm.CustomFieldDefinitions.Contacts*)
+# Crm.CustomFieldDefinitions.Contacts
 
 ## Overview
 
@@ -32,6 +31,7 @@ CrmListContactCustomFieldDefinitionsRequest req = new CrmListContactCustomFieldD
     Filter = new CrmListContactCustomFieldDefinitionsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 CrmListContactCustomFieldDefinitionsResponse? res = await sdk.Crm.CustomFieldDefinitions.Contacts.ListAsync(req);
@@ -97,6 +97,7 @@ CrmGetContactCustomFieldDefinitionRequest req = new CrmGetContactCustomFieldDefi
     Filter = new CrmGetContactCustomFieldDefinitionFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Crm.CustomFieldDefinitions.Contacts.GetAsync(req);

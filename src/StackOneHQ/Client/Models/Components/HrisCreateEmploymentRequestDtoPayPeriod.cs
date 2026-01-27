@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The time period over which the pay rate is calculated
+    /// The time period over which the pay rate is calculated.
     /// </summary>
     public class HrisCreateEmploymentRequestDtoPayPeriod
     {
-
         /// <summary>
         /// The pay period of the job postings.
         /// </summary>

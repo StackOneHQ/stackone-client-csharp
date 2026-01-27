@@ -1,5 +1,4 @@
-# Companies
-(*Hris.Companies*)
+# Hris.Companies
 
 ## Overview
 
@@ -28,6 +27,7 @@ HrisGetCompanyGroupRequest req = new HrisGetCompanyGroupRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.Companies.GetAsync(req);

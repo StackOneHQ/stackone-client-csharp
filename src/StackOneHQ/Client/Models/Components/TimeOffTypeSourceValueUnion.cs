@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(TimeOffTypeSourceValueUnion.TimeOffTypeSourceValueUnionConverter))]
     public class TimeOffTypeSourceValueUnion
     {

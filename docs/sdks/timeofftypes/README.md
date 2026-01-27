@@ -1,5 +1,7 @@
-# TimeOffTypes
-(*Hris.TimeOffTypes*)
+# ~~Hris.TimeOffTypes~~
+
+> [!WARNING]
+> This SDK is **DEPRECATED**
 
 ## Overview
 
@@ -30,6 +32,7 @@ HrisGetTimeOffTypeRequest req = new HrisGetTimeOffTypeRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,active,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.TimeOffTypes.GetAsync(req);

@@ -10,9 +10,9 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Method parameters (arbitrary JSON)
+    /// Method parameters (arbitrary JSON).
     /// </summary>
     public class Params
     {

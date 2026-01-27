@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class StackoneGetAccountMetaInfoResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// The meta information of the account was retrieved
+        /// The meta information of the account was retrieved.
         /// </summary>
         public LinkedAccountMeta? LinkedAccountMeta { get; set; }
 

@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// If the user is active
+    /// If the user is active.
     /// </summary>
     [JsonConverter(typeof(TicketingUserResultActiveUnion.TicketingUserResultActiveUnionConverter))]
     public class TicketingUserResultActiveUnion

@@ -11,27 +11,26 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Documents Folders Filter
+    /// Documents Folders Filter.
     /// </summary>
     public class DocumentsListFoldersFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Use to only include Folders within the specified Drive
+        /// Use to only include Folders within the specified Drive.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=drive_id")]
         public string? DriveId { get; set; } = null;
 
         /// <summary>
-        /// Use to only include Folders within the specified Folder. Required when requesting nested items
+        /// Use to only include Folders within the specified Folder. Required when requesting nested items.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=folder_id")]
         public string? FolderId { get; set; } = null;

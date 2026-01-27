@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HRISTeamSourceValueUnion.HRISTeamSourceValueUnionConverter))]
     public class HRISTeamSourceValueUnion
     {

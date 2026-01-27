@@ -8,6 +8,7 @@ Filter positions by status
 | Name            | Value           |
 | --------------- | --------------- |
 | `Open`          | open            |
+| `Draft`         | draft           |
 | `Closed`        | closed          |
 | `Paused`        | paused          |
 | `UnmappedValue` | unmapped_value  |

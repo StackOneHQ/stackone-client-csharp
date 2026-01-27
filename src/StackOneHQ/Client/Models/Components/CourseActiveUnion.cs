@@ -55,7 +55,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
     /// Whether the course is active and available for users.
     /// </summary>

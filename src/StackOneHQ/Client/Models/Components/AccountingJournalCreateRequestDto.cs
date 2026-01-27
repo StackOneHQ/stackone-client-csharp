@@ -14,42 +14,41 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class AccountingJournalCreateRequestDto
     {
-
         /// <summary>
-        /// Reference number for the journal
+        /// Reference number for the journal.
         /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; } = null;
 
         /// <summary>
-        /// Memo or description for the journal
+        /// Memo or description for the journal.
         /// </summary>
         [JsonProperty("memo")]
         public string? Memo { get; set; } = null;
 
         /// <summary>
-        /// Currency code for the journal and all lines
+        /// Currency code for the journal and all lines.
         /// </summary>
         [JsonProperty("currency_code")]
         public AccountingJournalCreateRequestDtoCurrencyCode? CurrencyCode { get; set; } = null;
 
         /// <summary>
-        /// Exchange rate to company base currency to apply to all lines
+        /// Exchange rate to company base currency to apply to all lines.
         /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; } = null;
 
         /// <summary>
-        /// Date of the journal transaction
+        /// Date of the journal transaction.
         /// </summary>
         [JsonProperty("transaction_date")]
         public DateTime? TransactionDate { get; set; } = null;
 
         /// <summary>
-        /// List of journal lines
+        /// List of journal lines.
         /// </summary>
         [JsonProperty("lines")]
         public List<CreateJournalLine>? Lines { get; set; } = null;

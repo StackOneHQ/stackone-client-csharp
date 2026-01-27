@@ -13,50 +13,55 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class ActionMetaItem
     {
-
         /// <summary>
-        /// The action ID
+        /// The action ID.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The action label
+        /// The action label.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The action description
+        /// The action description.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The schema type for the action
+        /// The schema type for the action.
         /// </summary>
         [JsonProperty("schema_type")]
         public string? SchemaType { get; set; } = null;
 
         /// <summary>
-        /// The tags associated with this action
+        /// The tags associated with this action.
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// The authentication methods supported by this action
+        /// The authentication methods supported by this action.
         /// </summary>
         [JsonProperty("authentication")]
         public List<AuthenticationMetaItem>? Authentication { get; set; } = null;
 
         /// <summary>
-        /// The operation details for the action
+        /// The action details for the action.
         /// </summary>
-        [JsonProperty("operation_details")]
-        public Dictionary<string, object>? OperationDetails { get; set; } = null;
+        [JsonProperty("action_details")]
+        public Dictionary<string, object>? ActionDetails { get; set; } = null;
+
+        /// <summary>
+        /// The required scopes for the action.
+        /// </summary>
+        [JsonProperty("required_scopes")]
+        public List<string>? RequiredScopes { get; set; } = null;
     }
 }

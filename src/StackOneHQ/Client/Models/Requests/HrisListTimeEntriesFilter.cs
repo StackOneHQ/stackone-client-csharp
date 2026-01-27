@@ -11,33 +11,32 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// HRIS Time Entries filters
+    /// HRIS Time Entries filters.
     /// </summary>
     public class HrisListTimeEntriesFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select time entries by employee_id
+        /// Filter to select time entries by employee_id.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=employee_id")]
         public string? EmployeeId { get; set; } = null;
 
         /// <summary>
-        /// Filter to select time entries after a given time
+        /// Filter to select time entries after a given time.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=start_time")]
         public string? StartTime { get; set; } = null;
 
         /// <summary>
-        /// Filter to select time entries before a given time
+        /// Filter to select time entries before a given time.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=end_time")]
         public string? EndTime { get; set; } = null;

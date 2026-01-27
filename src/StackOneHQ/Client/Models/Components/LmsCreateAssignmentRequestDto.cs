@@ -14,18 +14,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class LmsCreateAssignmentRequestDto
     {
-
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// The external reference associated with this assignment
+        /// The external reference associated with this assignment.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("external_reference")]
@@ -38,25 +37,25 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectId { get; set; } = null;
 
         /// <summary>
-        /// The progress associated with this assigment
+        /// The progress associated with this assigment.
         /// </summary>
         [JsonProperty("progress")]
         public double? Progress { get; set; } = null;
 
         /// <summary>
-        /// The date the assignment was created
+        /// The date the assignment was assigned.
         /// </summary>
-        [JsonProperty("created_at")]
-        public DateTime? CreatedAt { get; set; } = null;
+        [JsonProperty("assigned_at")]
+        public DateTime? AssignedAt { get; set; } = null;
 
         /// <summary>
-        /// The date the assignment is due to be completed
+        /// The date the assignment is due to be completed.
         /// </summary>
         [JsonProperty("due_date")]
         public DateTime? DueDate { get; set; } = null;
 
         /// <summary>
-        /// The status of the assignment
+        /// The status of the assignment.
         /// </summary>
         [JsonProperty("status")]
         public LmsCreateAssignmentRequestDtoStatus? Status { get; set; } = null;

@@ -54,9 +54,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The response data from the action RPC call
+    /// The response data from the action RPC call.
     /// </summary>
     [JsonConverter(typeof(ActionsRpcResponseData.ActionsRpcResponseDataConverter))]
     public class ActionsRpcResponseData

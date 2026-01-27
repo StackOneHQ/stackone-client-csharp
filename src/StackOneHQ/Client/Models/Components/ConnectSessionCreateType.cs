@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The connect session account type
+    /// The connect session account type.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ConnectSessionCreateType : IEquatable<ConnectSessionCreateType>
@@ -74,5 +74,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

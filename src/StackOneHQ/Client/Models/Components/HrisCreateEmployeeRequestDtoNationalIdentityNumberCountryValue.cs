@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The ISO3166-1 Alpha2 Code of the Country
+    /// The ISO3166-1 Alpha2 Code of the Country.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue : IEquatable<HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue>
@@ -568,5 +568,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

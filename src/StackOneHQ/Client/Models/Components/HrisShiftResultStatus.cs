@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The status of the shift
+    /// The status of the shift.
     /// </summary>
     public class HrisShiftResultStatus
     {
-
         /// <summary>
-        /// The status of the shift
+        /// The status of the shift.
         /// </summary>
         [JsonProperty("value")]
         public HrisShiftResultStatusValue? Value { get; set; } = null;

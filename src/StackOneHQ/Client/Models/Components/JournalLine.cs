@@ -12,60 +12,59 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class JournalLine
     {
-
         /// <summary>
-        /// Unique identifier for the journal line
+        /// Unique identifier for the journal line.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// ID of the ledger account this line references
+        /// ID of the ledger account this line references.
         /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; } = null;
 
         /// <summary>
-        /// Type of the account
+        /// Type of the account.
         /// </summary>
         [JsonProperty("account_type")]
         public JournalLineAccountType? AccountType { get; set; } = null;
 
         /// <summary>
-        /// Description of the journal line
+        /// Description of the journal line.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// Currency code for this line
+        /// Currency code for this line.
         /// </summary>
         [JsonProperty("currency_code")]
         public JournalLineCurrencyCode? CurrencyCode { get; set; } = null;
 
         /// <summary>
-        /// Exchange rate to company base currency
+        /// Exchange rate to company base currency.
         /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; } = null;
 
         /// <summary>
-        /// Amount of the journal line in minor units, e.g. 10010 for 100.10 USD. Positive for debit, negative for credit
+        /// Amount of the journal line in minor units, e.g. 10010 for 100.10 USD. Positive for debit, negative for credit.
         /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; } = null;
 
         /// <summary>
-        /// Tax amount of the line in minor units, e.g. 10010 for 100.10 USD
+        /// Tax amount of the line in minor units, e.g. 10010 for 100.10 USD.
         /// </summary>
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; } = null;
 
         /// <summary>
-        /// Tax rate percentage
+        /// Tax rate percentage.
         /// </summary>
         [JsonProperty("tax_rate_percentage")]
         public double? TaxRatePercentage { get; set; } = null;

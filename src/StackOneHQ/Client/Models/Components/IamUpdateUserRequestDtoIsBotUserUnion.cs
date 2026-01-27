@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Indicates if the user is a bot or service user
+    /// Indicates if the user is a bot or service user.
     /// </summary>
     [JsonConverter(typeof(IamUpdateUserRequestDtoIsBotUserUnion.IamUpdateUserRequestDtoIsBotUserUnionConverter))]
     public class IamUpdateUserRequestDtoIsBotUserUnion

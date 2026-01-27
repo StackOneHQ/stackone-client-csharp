@@ -11,13 +11,12 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The labor type associated with this time entry
+    /// The labor type associated with this time entry.
     /// </summary>
     public class LaborType
     {
-
         [JsonProperty("code")]
         public string? Code { get; set; } = null;
     }

@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The list type
+    /// The list type.
     /// </summary>
     public class ListType
     {
-
         /// <summary>
         /// The type of the list.
         /// </summary>

@@ -12,7 +12,7 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public enum TicketingCommentResultInternalEnum
     {
         [JsonProperty("true")]
@@ -53,5 +53,4 @@ namespace StackOneHQ.Client.Models.Components
             throw new Exception($"Unknown value {value} for enum TicketingCommentResultInternalEnum");
         }
     }
-
 }

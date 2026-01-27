@@ -12,10 +12,9 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class RawResponse
     {
-
         [JsonProperty("method")]
         public string Method { get; set; } = default!;
 

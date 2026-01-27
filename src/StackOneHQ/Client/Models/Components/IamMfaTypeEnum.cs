@@ -16,12 +16,11 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class IamMfaTypeEnum
     {
-
         /// <summary>
-        /// The unified value for the type of multi-factor authentication. If the provider does not send back a type but does specify that MFA is set-up for this user, the value will be set to &apos;unknown&apos;.&apos;
+        /// The unified value for the type of multi-factor authentication. If the provider does not send back a type but does specify that MFA is set-up for this user, the value will be set to 'unknown'.'
         /// </summary>
         [JsonProperty("value")]
         public IamMfaTypeEnumValue? Value { get; set; } = null;

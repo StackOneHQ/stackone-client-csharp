@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the skill is active and therefore available for use
+    /// Whether the skill is active and therefore available for use.
     /// </summary>
     [JsonConverter(typeof(EntitySkillsActiveUnion.EntitySkillsActiveUnionConverter))]
     public class EntitySkillsActiveUnion

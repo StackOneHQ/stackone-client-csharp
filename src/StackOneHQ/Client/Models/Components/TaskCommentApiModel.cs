@@ -12,24 +12,23 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class TaskCommentApiModel
     {
-
         /// <summary>
-        /// The Employee ID of the author of the comment
+        /// The Employee ID of the author of the comment.
         /// </summary>
         [JsonProperty("author_employee_id")]
         public string? AuthorEmployeeId { get; set; } = null;
 
         /// <summary>
-        /// The text of the comment
+        /// The text of the comment.
         /// </summary>
         [JsonProperty("comment")]
         public string? Comment { get; set; } = null;
 
         /// <summary>
-        /// The creation date of this comment
+        /// The creation date of this comment.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;

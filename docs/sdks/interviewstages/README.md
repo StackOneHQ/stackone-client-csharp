@@ -1,5 +1,7 @@
-# InterviewStages
-(*Ats.InterviewStages*)
+# ~~Ats.InterviewStages~~
+
+> [!WARNING]
+> This SDK is **DEPRECATED**
 
 ## Overview
 
@@ -34,6 +36,7 @@ AtsListInterviewStagesRequest req = new AtsListInterviewStagesRequest() {
     Filter = new AtsListInterviewStagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListInterviewStagesResponse? res = await sdk.Ats.InterviewStages.ListAsync(req);
@@ -97,6 +100,7 @@ AtsGetInterviewStageRequest req = new AtsGetInterviewStageRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,order,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.InterviewStages.GetAsync(req);

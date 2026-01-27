@@ -12,9 +12,9 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Filter to select assignment by status
+    /// Filter to select assignment by status.
     /// </summary>
     public enum LmsListAssignmentsStatus
     {
@@ -60,5 +60,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum LmsListAssignmentsStatus");
         }
     }
-
 }

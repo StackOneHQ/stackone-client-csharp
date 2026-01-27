@@ -1,5 +1,4 @@
-# Files
-(*Documents.Files*)
+# Documents.Files
 
 ## Overview
 
@@ -31,6 +30,7 @@ DocumentsDownloadFileRequest req = new DocumentsDownloadFileRequest() {
     Id = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Documents.Files.DownloadAsync(req);
@@ -98,6 +98,7 @@ DocumentsListFilesRequest req = new DocumentsListFilesRequest() {
     FolderId = "1234567890",
     NestedItems = "true",
     Include = "all_parent_folder_ids",
+    Prefer = "heartbeat",
 };
 
 DocumentsListFilesResponse? res = await sdk.Documents.Files.ListAsync(req);
@@ -160,6 +161,7 @@ DocumentsGetFileRequest req = new DocumentsGetFileRequest() {
     Id = "<id>",
     Fields = "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields",
     Include = "all_parent_folder_ids",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Documents.Files.GetAsync(req);

@@ -64,9 +64,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The source value of this status type
+    /// The source value of this status type.
     /// </summary>
     [JsonConverter(typeof(TicketingReadTicketStatusSourceValueUnion.TicketingReadTicketStatusSourceValueUnionConverter))]
     public class TicketingReadTicketStatusSourceValueUnion

@@ -11,18 +11,23 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class StackoneProxyRequestRequest
     {
-
         /// <summary>
-        /// The account identifier
+        /// The account identifier.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-account-id")]
         public string XAccountId { get; set; } = default!;
 
         /// <summary>
-        /// The request body
+        /// Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).
+        /// </summary>
+        [SpeakeasyMetadata("header:style=simple,explode=false,name=Prefer")]
+        public string? Prefer { get; set; }
+
+        /// <summary>
+        /// The request body.
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public ProxyRequestBody ProxyRequestBody { get; set; } = default!;

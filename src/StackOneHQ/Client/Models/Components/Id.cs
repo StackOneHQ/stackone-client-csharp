@@ -10,9 +10,9 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Request id (arbitrary JSON scalar)
+    /// Request id (arbitrary JSON scalar).
     /// </summary>
     public class Id
     {

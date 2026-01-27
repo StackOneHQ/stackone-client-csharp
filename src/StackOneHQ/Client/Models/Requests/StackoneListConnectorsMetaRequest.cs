@@ -10,12 +10,11 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
-    
+
     public class StackoneListConnectorsMetaRequest
     {
-
         /// <summary>
-        /// The comma separated list of data that will be included in the response
+        /// The comma separated list of data that will be included in the response.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=include")]
         public string? Include { get; set; } = null;

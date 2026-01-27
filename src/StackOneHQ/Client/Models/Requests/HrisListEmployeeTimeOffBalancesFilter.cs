@@ -12,15 +12,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// HRIS Time Off Balance filters
+    /// HRIS Time Off Balance filters.
     /// </summary>
     public class HrisListEmployeeTimeOffBalancesFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;

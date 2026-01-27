@@ -1,5 +1,4 @@
 # Messaging
-(*Messaging*)
 
 ## Overview
 
@@ -41,6 +40,7 @@ MessagingListConversationsRequest req = new MessagingListConversationsRequest() 
     Filter = new MessagingListConversationsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 MessagingListConversationsResponse? res = await sdk.Messaging.ListConversationsAsync(req);
@@ -109,7 +109,8 @@ var res = await sdk.Messaging.CreateConversationAsync(
         Private = MessagingCreateConversationRequestDtoPrivateUnion.CreateBoolean(
             true
         ),
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -117,10 +118,11 @@ var res = await sdk.Messaging.CreateConversationAsync(
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                              | *string*                                                                                                  | :heavy_check_mark:                                                                                        | The account identifier                                                                                    |
-| `MessagingCreateConversationRequestDto`                                                                   | [MessagingCreateConversationRequestDto](../../Models/Components/MessagingCreateConversationRequestDto.md) | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `MessagingCreateConversationRequestDto`                                                                                                                                  | [MessagingCreateConversationRequestDto](../../Models/Components/MessagingCreateConversationRequestDto.md)                                                                | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -165,6 +167,7 @@ MessagingGetConversationRequest req = new MessagingGetConversationRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Messaging.GetConversationAsync(req);
@@ -223,6 +226,7 @@ MessagingDownloadMessagingAttachmentRequest req = new MessagingDownloadMessaging
     SubResourceId = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Messaging.DownloadMessagingAttachmentAsync(req);
@@ -283,6 +287,7 @@ MessagingListAttachmentsRequest req = new MessagingListAttachmentsRequest() {
     Filter = new MessagingListAttachmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 MessagingListAttachmentsResponse? res = await sdk.Messaging.ListAttachmentsAsync(req);
@@ -345,6 +350,7 @@ MessagingGetAttachmentRequest req = new MessagingGetAttachmentRequest() {
     Id = "<id>",
     SubResourceId = "<id>",
     Fields = "id,remote_id,file_name,file_size,file_type,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Messaging.GetAttachmentAsync(req);
@@ -404,6 +410,7 @@ MessagingListUsersRequest req = new MessagingListUsersRequest() {
     Filter = new MessagingListUsersFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 MessagingListUsersResponse? res = await sdk.Messaging.ListUsersAsync(req);
@@ -465,6 +472,7 @@ MessagingGetUserRequest req = new MessagingGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Messaging.GetUserAsync(req);
@@ -525,6 +533,7 @@ MessagingListConversationMessagesRequest req = new MessagingListConversationMess
     Filter = new MessagingListConversationMessagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 MessagingListConversationMessagesResponse? res = await sdk.Messaging.ListConversationMessagesAsync(req);
@@ -586,6 +595,7 @@ MessagingGetMessageRequest req = new MessagingGetMessageRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Messaging.GetMessageAsync(req);
@@ -643,7 +653,8 @@ var res = await sdk.Messaging.SendMessageAsync(
         Content = "Hello, world!",
         Recipient = "c28xyrc55866bvuv",
         Sender = "+34820398402",
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -651,10 +662,11 @@ var res = await sdk.Messaging.SendMessageAsync(
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                | *string*                                                                                    | :heavy_check_mark:                                                                          | The account identifier                                                                      |
-| `MessagingMessageSendRequestDto`                                                            | [MessagingMessageSendRequestDto](../../Models/Components/MessagingMessageSendRequestDto.md) | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `MessagingMessageSendRequestDto`                                                                                                                                         | [MessagingMessageSendRequestDto](../../Models/Components/MessagingMessageSendRequestDto.md)                                                                              | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 

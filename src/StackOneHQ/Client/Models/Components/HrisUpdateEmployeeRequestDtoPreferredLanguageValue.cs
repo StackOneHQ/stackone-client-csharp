@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The ISO639-2 Code of the language
+    /// The ISO639-2 Code of the language.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisUpdateEmployeeRequestDtoPreferredLanguageValue : IEquatable<HrisUpdateEmployeeRequestDtoPreferredLanguageValue>
@@ -308,5 +308,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

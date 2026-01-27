@@ -12,13 +12,12 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Filter parameters that allow greater customisation of the list response
+    /// Filter parameters that allow greater customisation of the list response.
     /// </summary>
     public class StackoneListLogsFilter
     {
-
         /// <summary>
         /// A comma-separated list of account IDs to filter the results by.
         /// </summary>

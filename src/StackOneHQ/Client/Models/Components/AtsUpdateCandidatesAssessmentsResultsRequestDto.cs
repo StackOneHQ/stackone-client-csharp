@@ -14,27 +14,26 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class AtsUpdateCandidatesAssessmentsResultsRequestDto
     {
-
         [JsonProperty("score")]
         public AtsUpdateCandidatesAssessmentsResultsRequestDtoScore? Score { get; set; } = null;
 
         /// <summary>
-        /// The start date of the candidate test
+        /// The start date of the candidate test.
         /// </summary>
         [JsonProperty("start_date")]
         public DateTime? StartDate { get; set; } = null;
 
         /// <summary>
-        /// The submission date of the candidate test
+        /// The submission date of the candidate test.
         /// </summary>
         [JsonProperty("submission_date")]
         public DateTime? SubmissionDate { get; set; } = null;
 
         /// <summary>
-        /// The summary about the result of the test
+        /// The summary about the result of the test.
         /// </summary>
         [JsonProperty("summary")]
         public string? Summary { get; set; } = null;
@@ -43,7 +42,7 @@ namespace StackOneHQ.Client.Models.Components
         public AtsUpdateCandidatesAssessmentsResultsRequestDtoResult? Result { get; set; } = null;
 
         /// <summary>
-        /// The test`s result url
+        /// The test`s result url.
         /// </summary>
         [JsonProperty("result_url")]
         public string? ResultUrl { get; set; } = null;
@@ -55,7 +54,7 @@ namespace StackOneHQ.Client.Models.Components
         public AtsUpdateCandidatesAssessmentsResultsRequestDtoCandidate? Candidate { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

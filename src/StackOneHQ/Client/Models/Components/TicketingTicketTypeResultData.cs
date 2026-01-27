@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class TicketingTicketTypeResultData
     {
-
         /// <summary>
         /// The id of the ticket type.
         /// </summary>

@@ -57,7 +57,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Body.BodyConverter))]
     public class Body
     {

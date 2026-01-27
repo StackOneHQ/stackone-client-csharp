@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The country code of the issued by authority
+    /// The country code of the issued by authority.
     /// </summary>
     public class HrisCreateWorkEligibilityRequestDtoIssuedBy
     {
-
         /// <summary>
-        /// The ISO3166-1 Alpha2 Code of the Country
+        /// The ISO3166-1 Alpha2 Code of the Country.
         /// </summary>
         [JsonProperty("value")]
         public HrisCreateWorkEligibilityRequestDtoIssuedByValue? Value { get; set; } = null;

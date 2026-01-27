@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class UpdateTaskRequestDto
     {
-
         /// <summary>
-        /// Comment or note about the task update
+        /// Comment or note about the task update.
         /// </summary>
         [JsonProperty("comment")]
         public string? Comment { get; set; } = null;
 
         /// <summary>
-        /// The status to apply to this Task
+        /// The status to apply to this Task.
         /// </summary>
         [JsonProperty("status")]
         public UpdateTaskRequestDtoStatus? Status { get; set; } = null;

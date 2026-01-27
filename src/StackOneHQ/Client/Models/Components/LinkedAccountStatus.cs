@@ -15,19 +15,19 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
-    [JsonConverter(typeof(OpenEnumConverter))]
-    public class StatusEnum : IEquatable<StatusEnum>
-    {
-        public static readonly StatusEnum Active = new StatusEnum("active");
-        public static readonly StatusEnum Inactive = new StatusEnum("inactive");
-        public static readonly StatusEnum Suspended = new StatusEnum("suspended");
-        public static readonly StatusEnum Archived = new StatusEnum("archived");
-        public static readonly StatusEnum Expired = new StatusEnum("expired");
-        public static readonly StatusEnum Error = new StatusEnum("error");
 
-        private static readonly Dictionary <string, StatusEnum> _knownValues =
-            new Dictionary <string, StatusEnum> ()
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class LinkedAccountStatus : IEquatable<LinkedAccountStatus>
+    {
+        public static readonly LinkedAccountStatus Active = new LinkedAccountStatus("active");
+        public static readonly LinkedAccountStatus Inactive = new LinkedAccountStatus("inactive");
+        public static readonly LinkedAccountStatus Suspended = new LinkedAccountStatus("suspended");
+        public static readonly LinkedAccountStatus Archived = new LinkedAccountStatus("archived");
+        public static readonly LinkedAccountStatus Expired = new LinkedAccountStatus("expired");
+        public static readonly LinkedAccountStatus Error = new LinkedAccountStatus("error");
+
+        private static readonly Dictionary <string, LinkedAccountStatus> _knownValues =
+            new Dictionary <string, LinkedAccountStatus> ()
             {
                 ["active"] = Active,
                 ["inactive"] = Inactive,
@@ -37,10 +37,10 @@ namespace StackOneHQ.Client.Models.Components
                 ["error"] = Error
             };
 
-        private static readonly ConcurrentDictionary<string, StatusEnum> _values =
-            new ConcurrentDictionary<string, StatusEnum>(_knownValues);
+        private static readonly ConcurrentDictionary<string, LinkedAccountStatus> _values =
+            new ConcurrentDictionary<string, LinkedAccountStatus>(_knownValues);
 
-        private StatusEnum(string value)
+        private LinkedAccountStatus(string value)
         {
             if (value == null) throw new ArgumentNullException(nameof(value));
             Value = value;
@@ -48,15 +48,15 @@ namespace StackOneHQ.Client.Models.Components
 
         public string Value { get; }
 
-        public static StatusEnum Of(string value)
+        public static LinkedAccountStatus Of(string value)
         {
-            return _values.GetOrAdd(value, _ => new StatusEnum(value));
+            return _values.GetOrAdd(value, _ => new LinkedAccountStatus(value));
         }
 
-        public static implicit operator StatusEnum(string value) => Of(value);
-        public static implicit operator string(StatusEnum statusenum) => statusenum.Value;
+        public static implicit operator LinkedAccountStatus(string value) => Of(value);
+        public static implicit operator string(LinkedAccountStatus linkedaccountstatus) => linkedaccountstatus.Value;
 
-        public static StatusEnum[] Values()
+        public static LinkedAccountStatus[] Values()
         {
             return _values.Values.ToArray();
         }
@@ -68,9 +68,9 @@ namespace StackOneHQ.Client.Models.Components
             return _knownValues.ContainsKey(Value);
         }
 
-        public override bool Equals(object? obj) => Equals(obj as StatusEnum);
+        public override bool Equals(object? obj) => Equals(obj as LinkedAccountStatus);
 
-        public bool Equals(StatusEnum? other)
+        public bool Equals(LinkedAccountStatus? other)
         {
             if (ReferenceEquals(this, other)) return true;
             if (other is null) return false;
@@ -79,5 +79,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

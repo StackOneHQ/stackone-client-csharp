@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Status of the Campaign
+    /// Status of the Campaign.
     /// </summary>
     public class CampaignStatus
     {
-
         /// <summary>
         /// The Status of the campaign.
         /// </summary>

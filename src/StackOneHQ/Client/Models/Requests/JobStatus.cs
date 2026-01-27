@@ -12,9 +12,9 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// The job_status of the job
+    /// The job_status of the job.
     /// </summary>
     public enum JobStatus
     {
@@ -56,5 +56,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum JobStatus");
         }
     }
-
 }

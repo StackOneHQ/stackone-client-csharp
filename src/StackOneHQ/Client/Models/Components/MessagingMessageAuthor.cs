@@ -14,69 +14,68 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// Author of the message
+    /// Author of the message.
     /// </summary>
     public class MessagingMessageAuthor
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The external ID associated with this user
+        /// The external ID associated with this user.
         /// </summary>
         [JsonProperty("external_reference")]
         public string? ExternalReference { get; set; } = null;
 
         /// <summary>
-        /// The user name
+        /// The user name.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The user email
+        /// The user email.
         /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; } = null;
 
         /// <summary>
-        /// The user phone number
+        /// The user phone number.
         /// </summary>
         [JsonProperty("phone_number")]
         public string? PhoneNumber { get; set; } = null;
 
         /// <summary>
-        /// The user active status
+        /// The user active status.
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public MessagingMessageActiveUnion? Active { get; set; } = null;
 
         /// <summary>
-        /// The created_at date
+        /// The created_at date.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The updated_at date
+        /// The updated_at date.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

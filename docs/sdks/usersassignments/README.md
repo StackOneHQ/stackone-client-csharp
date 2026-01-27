@@ -1,5 +1,4 @@
-# UsersAssignments
-(*Lms.UsersAssignments*)
+# Lms.UsersAssignments
 
 ## Overview
 
@@ -32,6 +31,7 @@ LmsGetUserAssignmentRequest req = new LmsGetUserAssignmentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.UsersAssignments.GetAsync(req);

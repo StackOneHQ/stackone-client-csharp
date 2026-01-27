@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Indicates if the field is required
+    /// Indicates if the field is required.
     /// </summary>
     [JsonConverter(typeof(FieldRequiredUnion.FieldRequiredUnionConverter))]
     public class FieldRequiredUnion

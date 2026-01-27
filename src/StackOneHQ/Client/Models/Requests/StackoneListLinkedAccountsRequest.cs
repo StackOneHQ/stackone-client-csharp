@@ -12,55 +12,54 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class StackoneListLinkedAccountsRequest
     {
-
         /// <summary>
-        /// The page number of the results to fetch
+        /// The page number of the results to fetch.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=page")]
         public double? Page { get; set; } = null;
 
         /// <summary>
-        /// The number of results per page
+        /// The number of results per page.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=page_size")]
         public double? PageSize { get; set; } = 25D;
 
         /// <summary>
-        /// The provider of the results to fetch
+        /// The provider of the results to fetch.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=provider")]
         public string? Provider { get; set; } = null;
 
         /// <summary>
-        /// The origin owner identifier of the results to fetch
+        /// The origin owner identifier of the results to fetch.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=origin_owner_id")]
         public string? OriginOwnerId { get; set; } = null;
 
         /// <summary>
-        /// The origin owner identifiers of the results to fetch (supports multiple IDs)
+        /// The origin owner identifiers of the results to fetch (supports multiple IDs).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=origin_owner_ids")]
         public List<string>? OriginOwnerIds { get; set; }
 
         /// <summary>
-        /// The providers list of the results to fetch
+        /// The providers list of the results to fetch.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=providers")]
         public List<string>? Providers { get; set; }
 
         /// <summary>
-        /// The providers list of the results to fetch
+        /// The providers list of the results to fetch.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=account_ids")]
         public List<string>? AccountIds { get; set; }
 
         /// <summary>
-        /// The status of the results to fetch
+        /// The status of the results to fetch.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=status")]
         public List<string>? Status { get; set; }

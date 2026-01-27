@@ -12,30 +12,29 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class JsonRpcMessageDto
     {
-
         /// <summary>
-        /// JSON-RPC protocol version
+        /// JSON-RPC protocol version.
         /// </summary>
         [JsonProperty("jsonrpc")]
         public string Jsonrpc { get; set; } = default!;
 
         /// <summary>
-        /// JSON-RPC method name
+        /// JSON-RPC method name.
         /// </summary>
         [JsonProperty("method")]
         public string Method { get; set; } = default!;
 
         /// <summary>
-        /// Method parameters (arbitrary JSON)
+        /// Method parameters (arbitrary JSON).
         /// </summary>
         [JsonProperty("params")]
         public Params? Params { get; set; } = null;
 
         /// <summary>
-        /// Request id (arbitrary JSON scalar)
+        /// Request id (arbitrary JSON scalar).
         /// </summary>
         [JsonProperty("id")]
         public Id? Id { get; set; }

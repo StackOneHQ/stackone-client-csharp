@@ -13,18 +13,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class WorkEligibility
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
@@ -45,7 +44,7 @@ namespace StackOneHQ.Client.Models.Components
         public DateTime? ValidTo { get; set; } = null;
 
         /// <summary>
-        /// The country code of the issued by authority
+        /// The country code of the issued by authority.
         /// </summary>
         [JsonProperty("issued_by")]
         public WorkEligibilityIssuedBy? IssuedBy { get; set; } = null;

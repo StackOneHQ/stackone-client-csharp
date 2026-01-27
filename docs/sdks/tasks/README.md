@@ -1,5 +1,4 @@
-# Tasks
-(*Hris.Tasks*)
+# Hris.Tasks
 
 ## Overview
 
@@ -30,8 +29,10 @@ HrisListTasksRequest req = new HrisListTasksRequest() {
     Fields = "id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields",
     Filter = new HrisListTasksFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "attachments",
+    Prefer = "heartbeat",
 };
 
 HrisListTasksResponse? res = await sdk.Hris.Tasks.ListAsync(req);

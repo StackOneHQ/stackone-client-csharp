@@ -61,9 +61,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The human readable value of the option
+    /// The human readable value of the option.
     /// </summary>
     [JsonConverter(typeof(CustomFieldOptionValueUnion.CustomFieldOptionValueUnionConverter))]
     public class CustomFieldOptionValueUnion

@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class ActionsRpcResponse
     {
-
         /// <summary>
-        /// Cursor for fetching the next page of results
+        /// Cursor for fetching the next page of results.
         /// </summary>
         [JsonProperty("next")]
         public string? Next { get; set; } = null;
 
         /// <summary>
-        /// The response data from the action RPC call
+        /// The response data from the action RPC call.
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Include)]
         public ActionsRpcResponseData? Data { get; set; } = null;

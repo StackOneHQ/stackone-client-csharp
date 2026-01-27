@@ -15,8 +15,14 @@ namespace StackOneHQ.Client.Hooks
     using System.Net.Http;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Exception that can be thrown in <see cref="IAfterErrorHook"/> implementations to prevent subsequent hooks from executing.
+    /// </summary>
     public sealed class FailEarlyException : Exception {}
 
+    /// <summary>
+    /// Manages and executes SDK hooks at various stages of the request lifecycle.
+    /// </summary>
     public class SDKHooks: IHooks
     {
         public List<ISDKInitHook> sdkInitHooks;
@@ -30,28 +36,50 @@ namespace StackOneHQ.Client.Hooks
             this.beforeRequestHooks = new List<IBeforeRequestHook>();
             this.afterSuccessHooks = new List<IAfterSuccessHook>();
             this.afterErrorHooks = new List<IAfterErrorHook>();
+            HookRegistration.InitHooks(this);
         }
 
+        /// <summary>
+        /// Registers an SDK initialization hook to be executed when the SDK is initialized.
+        /// </summary>
+        /// <param name="hook">The hook to register.</param>
         public void RegisterSDKInitHook(ISDKInitHook hook)
         {
             this.sdkInitHooks.Add(hook);
         }
 
+        /// <summary>
+        /// Registers a before request hook to be executed before each HTTP request.
+        /// </summary>
+        /// <param name="hook">The hook to register.</param>
         public void RegisterBeforeRequestHook(IBeforeRequestHook hook)
         {
             this.beforeRequestHooks.Add(hook);
         }
 
+        /// <summary>
+        /// Registers an after success hook to be executed after successful HTTP responses.
+        /// </summary>
+        /// <param name="hook">The hook to register.</param>
         public void RegisterAfterSuccessHook(IAfterSuccessHook hook)
         {
             this.afterSuccessHooks.Add(hook);
         }
 
+        /// <summary>
+        /// Registers an after error hook to be executed after errors or non-successful responses.
+        /// </summary>
+        /// <param name="hook">The hook to register.</param>
         public void RegisterAfterErrorHook(IAfterErrorHook hook)
         {
             this.afterErrorHooks.Add(hook);
         }
         
+        /// <summary>
+        /// Executes all registered SDK initialization hooks.
+        /// </summary>
+        /// <param name="config">The SDK configuration.</param>
+        /// <returns>The potentially modified SDK configuration.</returns>
         public SDKConfig SDKInit(SDKConfig config)
         {
             foreach (var hook in this.sdkInitHooks)
@@ -67,6 +95,12 @@ namespace StackOneHQ.Client.Hooks
             return config;
         }
         
+        /// <summary>
+        /// Executes all registered before request hooks.
+        /// </summary>
+        /// <param name="hookCtx">The hook context containing request metadata.</param>
+        /// <param name="request">The HTTP request message.</param>
+        /// <returns>The potentially modified HTTP request message.</returns>
         public async Task<HttpRequestMessage> BeforeRequestAsync(BeforeRequestContext hookCtx, HttpRequestMessage request)
         {
             foreach (var hook in this.beforeRequestHooks)
@@ -83,6 +117,12 @@ namespace StackOneHQ.Client.Hooks
             return request;
         }
 
+        /// <summary>
+        /// Executes all registered after success hooks.
+        /// </summary>
+        /// <param name="hookCtx">The hook context containing request metadata.</param>
+        /// <param name="response">The HTTP response message.</param>
+        /// <returns>The potentially modified HTTP response message.</returns>
         public async Task<HttpResponseMessage> AfterSuccessAsync(AfterSuccessContext hookCtx, HttpResponseMessage response)
         {
             foreach (var hook in this.afterSuccessHooks)
@@ -99,6 +139,14 @@ namespace StackOneHQ.Client.Hooks
             return response;
         }
 
+        /// <summary>
+        /// Executes all registered after error hooks.
+        /// </summary>
+        /// <param name="hookCtx">The hook context containing request metadata.</param>
+        /// <param name="response">The HTTP response message, if available.</param>
+        /// <param name="error">The exception that occurred, if any.</param>
+        /// <returns>The potentially modified HTTP response message.</returns>
+        /// <exception cref="FailEarlyException">Thrown by a hook to prevent subsequent error hooks from executing.</exception>
         public async Task<HttpResponseMessage?> AfterErrorAsync(AfterErrorContext hookCtx, HttpResponseMessage? response, Exception? error)
         {
             (HttpResponseMessage?, Exception?) responseAndError = (response, error);

@@ -14,24 +14,23 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class IamUser
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
@@ -49,7 +48,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// User&apos;s name which (can be a full name or display name)
+        /// User's name which (can be a full name or display name).
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
@@ -58,19 +57,19 @@ namespace StackOneHQ.Client.Models.Components
         public string? Username { get; set; } = null;
 
         /// <summary>
-        /// Indicates if the user is a bot or service user
+        /// Indicates if the user is a bot or service user.
         /// </summary>
         [JsonProperty("is_bot_user", NullValueHandling = NullValueHandling.Include)]
         public IamUserIsBotUserUnion? IsBotUser { get; set; } = null;
 
         /// <summary>
-        /// List of roles the user is assigned to
+        /// List of roles the user is assigned to.
         /// </summary>
         [JsonProperty("roles")]
         public List<IamRole>? Roles { get; set; } = null;
 
         /// <summary>
-        /// List of groups the user is assigned to
+        /// List of groups the user is assigned to.
         /// </summary>
         [JsonProperty("groups")]
         public List<IamGroup>? Groups { get; set; } = null;
@@ -79,25 +78,25 @@ namespace StackOneHQ.Client.Models.Components
         public IamUserStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// The date this user was last active
+        /// The date this user was last active.
         /// </summary>
         [JsonProperty("last_active_at")]
         public DateTime? LastActiveAt { get; set; } = null;
 
         /// <summary>
-        /// The date this user last logged in
+        /// The date this user last logged in.
         /// </summary>
         [JsonProperty("last_login_at")]
         public DateTime? LastLoginAt { get; set; } = null;
 
         /// <summary>
-        /// The date the user was created
+        /// The date the user was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The date the user was created
+        /// The date the user was created.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
@@ -109,7 +108,7 @@ namespace StackOneHQ.Client.Models.Components
         public List<IamMfaTypeEnum>? MultiFactorEnabled { get; set; } = null;
 
         /// <summary>
-        /// The user&apos;s avatar data. This generally contains a URL within this property&apos;s &apos;contents&apos; array.
+        /// The user's avatar data. This generally contains a URL within this property's 'contents' array.
         /// </summary>
         [JsonProperty("avatar")]
         public IamUserAvatar? Avatar { get; set; } = null;

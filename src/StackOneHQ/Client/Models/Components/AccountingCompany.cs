@@ -12,42 +12,41 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class AccountingCompany
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Name of the company
+        /// Name of the company.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Default currency for the company
+        /// Default currency for the company.
         /// </summary>
         [JsonProperty("base_currency")]
         public AccountingCompanyBaseCurrency? BaseCurrency { get; set; } = null;
 
         /// <summary>
-        /// Fiscal year start month (1-12)
+        /// Fiscal year start month (1-12).
         /// </summary>
         [JsonProperty("fiscal_year_start_month")]
         public double? FiscalYearStartMonth { get; set; } = null;
 
         /// <summary>
-        /// Fiscal year start day (1-31)
+        /// Fiscal year start day (1-31).
         /// </summary>
         [JsonProperty("fiscal_year_start_day")]
         public double? FiscalYearStartDay { get; set; } = null;

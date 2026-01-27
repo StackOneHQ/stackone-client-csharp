@@ -1,5 +1,4 @@
 # Documents
-(*Documents*)
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListApplicationDocumentCategoriesRequest req = new AtsListApplicationDocument
     Filter = new AtsListApplicationDocumentCategoriesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListApplicationDocumentCategoriesResponse? res = await sdk.Documents.ListApplicationCategoriesAsync(req);
@@ -111,7 +111,8 @@ var res = await sdk.Documents.UploadFileAsync(
                 "public"
             ),
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -119,11 +120,12 @@ var res = await sdk.Documents.UploadFileAsync(
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `XAccountId`                                                                  | *string*                                                                      | :heavy_check_mark:                                                            | The account identifier                                                        |
-| `UnifiedUploadRequestDto`                                                     | [UnifiedUploadRequestDto](../../Models/Components/UnifiedUploadRequestDto.md) | :heavy_check_mark:                                                            | N/A                                                                           |
-| `XStackoneApiSessionToken`                                                    | *string*                                                                      | :heavy_minus_sign:                                                            | The session token                                                             |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `UnifiedUploadRequestDto`                                                                                                                                                | [UnifiedUploadRequestDto](../../Models/Components/UnifiedUploadRequestDto.md)                                                                                            | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `XStackoneApiSessionToken`                                                                                                                                               | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | The session token                                                                                                                                                        |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 

@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of employment (e.g., contractor, permanent)
+    /// The type of employment (e.g., contractor, permanent).
     /// </summary>
     public class EmploymentTypeType
     {
-
         [JsonProperty("value")]
         public EmploymentTypeValue? Value { get; set; } = null;
 

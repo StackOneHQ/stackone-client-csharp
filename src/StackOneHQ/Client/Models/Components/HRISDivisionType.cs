@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the division group
+    /// The type of the division group.
     /// </summary>
     public class HRISDivisionType
     {
-
         [JsonProperty("value")]
         public HRISDivisionValue? Value { get; set; } = null;
 

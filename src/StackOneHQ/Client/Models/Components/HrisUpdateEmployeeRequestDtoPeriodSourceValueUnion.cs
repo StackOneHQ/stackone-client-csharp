@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HrisUpdateEmployeeRequestDtoPeriodSourceValueUnion.HrisUpdateEmployeeRequestDtoPeriodSourceValueUnionConverter))]
     public class HrisUpdateEmployeeRequestDtoPeriodSourceValueUnion
     {

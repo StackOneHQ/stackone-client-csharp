@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
     /// Stackone enum identifying the status of content block.
     /// </summary>
     public class ContentBlockStatus
     {
-
         /// <summary>
         /// The Status of the content blocks.
         /// </summary>

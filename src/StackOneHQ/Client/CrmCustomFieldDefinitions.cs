@@ -21,12 +21,16 @@ namespace StackOneHQ.Client
 
     public class CrmCustomFieldDefinitions: ICrmCustomFieldDefinitions
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
 
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// Contacts SubSDK.
+        /// <see cref="ICustomFieldDefinitionsContacts"/>
+        /// </summary>
         public ICustomFieldDefinitionsContacts Contacts { get; private set; }
 
         public CrmCustomFieldDefinitions(SDKConfig config)

@@ -12,9 +12,9 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Filter to select shifts by status
+    /// Filter to select shifts by status.
     /// </summary>
     public enum HrisListShiftsStatus
     {
@@ -62,5 +62,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum HrisListShiftsStatus");
         }
     }
-
 }

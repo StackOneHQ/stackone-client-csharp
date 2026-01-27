@@ -13,42 +13,41 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class ApplicationChanges
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the change was created
+        /// Timestamp when the change was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// Timestamp when the change became effective
+        /// Timestamp when the change became effective.
         /// </summary>
         [JsonProperty("effective_at")]
         public DateTime? EffectiveAt { get; set; } = null;
 
         /// <summary>
-        /// The actor who made the change
+        /// The actor who made the change.
         /// </summary>
         [JsonProperty("actor")]
         public Actor? Actor { get; set; } = null;
 
         /// <summary>
-        /// The type of change that occurred to the application
+        /// The type of change that occurred to the application.
         /// </summary>
         [JsonProperty("change_type")]
         public Models.Components.ChangeType? ChangeType { get; set; } = null;

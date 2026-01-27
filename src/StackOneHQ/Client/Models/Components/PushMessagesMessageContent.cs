@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class PushMessagesMessageContent
     {
-
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 

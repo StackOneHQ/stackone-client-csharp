@@ -1,5 +1,4 @@
-# LmsSkills
-(*Lms.Skills*)
+# Lms.Skills
 
 ## Overview
 
@@ -28,6 +27,7 @@ LmsGetSkillRequest req = new LmsGetSkillRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,active,hierarchy,language,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.Skills.GetAsync(req);

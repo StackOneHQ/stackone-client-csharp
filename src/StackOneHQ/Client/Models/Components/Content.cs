@@ -14,78 +14,77 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class Content
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The external ID associated with this content
+        /// The external ID associated with this content.
         /// </summary>
         [JsonProperty("external_reference")]
         public string? ExternalReference { get; set; } = null;
 
         /// <summary>
-        /// The parent ID/IDs associated with this content
+        /// The parent ID/IDs associated with this content.
         /// </summary>
         [JsonProperty("course_ids")]
         public List<string>? CourseIds { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the parent course ID associated with this content
+        /// Provider's unique identifier of the parent course ID associated with this content.
         /// </summary>
         [JsonProperty("remote_course_ids")]
         public List<string>? RemoteCourseIds { get; set; } = null;
 
         /// <summary>
-        /// The title of the content
+        /// The title of the content.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// The description of the content
+        /// The description of the content.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The languages associated with this content
+        /// The languages associated with this content.
         /// </summary>
         [JsonProperty("languages")]
         public List<LanguageEnum>? Languages { get; set; } = null;
 
         /// <summary>
-        /// The external URL of the content
+        /// The external URL of the content.
         /// </summary>
         [JsonProperty("content_url")]
         public string? ContentUrl { get; set; } = null;
 
         /// <summary>
-        /// The mobile friendly URL of the content
+        /// The mobile friendly URL of the content.
         /// </summary>
         [JsonProperty("mobile_launch_content_url")]
         public string? MobileLaunchContentUrl { get; set; } = null;
 
         /// <summary>
-        /// The type of content
+        /// The type of content.
         /// </summary>
         [JsonProperty("content_type")]
         public ContentContentType? ContentType { get; set; } = null;
@@ -109,13 +108,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? Duration { get; set; } = null;
 
         /// <summary>
-        /// The categories associated with this content
+        /// The categories associated with this content.
         /// </summary>
         [JsonProperty("categories")]
         public List<Category>? Categories { get; set; } = null;
 
         /// <summary>
-        /// The skills associated with this course
+        /// The skills associated with this course.
         /// </summary>
         [JsonProperty("skills")]
         public List<Skills>? Skills { get; set; } = null;
@@ -127,32 +126,32 @@ namespace StackOneHQ.Client.Models.Components
         public double? Order { get; set; } = null;
 
         /// <summary>
-        /// The name of the content provider
+        /// The name of the content provider.
         /// </summary>
         [JsonProperty("provider")]
         public string? Provider { get; set; } = null;
 
         /// <summary>
-        /// A short description or summary for the content
+        /// A short description or summary for the content.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("short_description")]
         public string? ShortDescription { get; set; } = null;
 
         /// <summary>
-        /// Localised content information
+        /// Localised content information.
         /// </summary>
         [JsonProperty("localizations")]
         public List<LocalizationModel>? Localizations { get; set; } = null;
 
         /// <summary>
-        /// A list of tags associated with the content
+        /// A list of tags associated with the content.
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// The authors of the content
+        /// The authors of the content.
         /// </summary>
         [JsonProperty("authors")]
         public List<AuthorModel>? Authors { get; set; } = null;

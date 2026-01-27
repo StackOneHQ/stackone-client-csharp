@@ -8,6 +8,7 @@ The status of the position.
 | Name            | Value           |
 | --------------- | --------------- |
 | `Open`          | open            |
+| `Draft`         | draft           |
 | `Closed`        | closed          |
 | `Paused`        | paused          |
 | `UnmappedValue` | unmapped_value  |

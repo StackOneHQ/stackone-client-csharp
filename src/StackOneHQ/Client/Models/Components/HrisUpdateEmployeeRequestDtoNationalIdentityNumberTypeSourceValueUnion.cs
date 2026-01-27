@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeSourceValueUnion.HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeSourceValueUnionConverter))]
     public class HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeSourceValueUnion
     {

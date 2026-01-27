@@ -14,67 +14,66 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class HrisCreateWorkEligibilityRequestDtoDocument
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name of the file
+        /// The name of the file.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The category of the file
+        /// The category of the file.
         /// </summary>
         [JsonProperty("category")]
         public HrisCreateWorkEligibilityRequestDtoCategory? Category { get; set; } = null;
 
         /// <summary>
-        /// The content of the file. Deprecated, use `url` and `file_format` one level up instead
+        /// The content of the file. Deprecated, use `url` and `file_format` one level up instead.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("contents")]
         public List<Models.Components.Content>? Contents { get; set; } = null;
 
         /// <summary>
-        /// The categoryId of the documents
+        /// The categoryId of the documents.
         /// </summary>
         [JsonProperty("category_id")]
         public string? CategoryId { get; set; } = null;
 
         /// <summary>
-        /// The creation date of the file
+        /// The creation date of the file.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The update date of the file
+        /// The update date of the file.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
-        /// URL where the file content is located
+        /// URL where the file content is located.
         /// </summary>
         [JsonProperty("remote_url")]
         public string? RemoteUrl { get; set; } = null;
 
         /// <summary>
-        /// The file format of the file
+        /// The file format of the file.
         /// </summary>
         [JsonProperty("file_format")]
         public HrisCreateWorkEligibilityRequestDtoFileFormat? FileFormat { get; set; } = null;

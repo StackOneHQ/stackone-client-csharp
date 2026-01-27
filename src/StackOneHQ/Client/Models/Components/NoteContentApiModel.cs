@@ -11,12 +11,11 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class NoteContentApiModel
     {
-
         /// <summary>
-        /// Body of the note
+        /// Body of the note.
         /// </summary>
         [JsonProperty("body")]
         public string? Body { get; set; } = null;

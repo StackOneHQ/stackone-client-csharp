@@ -13,30 +13,29 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AtsCreateApplicationRequestDto
     {
-
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// Unique identifier of the job
+        /// Unique identifier of the job.
         /// </summary>
         [JsonProperty("job_id")]
         public string? JobId { get; set; } = null;
 
         /// <summary>
-        /// Unique identifier of the job posting that is associated with application
+        /// Unique identifier of the job posting that is associated with application.
         /// </summary>
         [JsonProperty("job_posting_id")]
         public string? JobPostingId { get; set; } = null;
 
         /// <summary>
-        /// Unique identifier of the location
+        /// Unique identifier of the location.
         /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; } = null;
@@ -45,7 +44,7 @@ namespace StackOneHQ.Client.Models.Components
         public AtsCreateApplicationRequestDtoApplicationStatus? ApplicationStatus { get; set; } = null;
 
         /// <summary>
-        /// Questionnaires associated with the application
+        /// Questionnaires associated with the application.
         /// </summary>
         [JsonProperty("questionnaires")]
         public List<CreateQuestionnaire>? Questionnaires { get; set; } = null;

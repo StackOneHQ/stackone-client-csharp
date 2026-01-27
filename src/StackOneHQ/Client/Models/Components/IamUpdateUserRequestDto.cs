@@ -13,10 +13,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class IamUpdateUserRequestDto
     {
-
         /// <summary>
         /// Primary email address of the user. This is generally a work email address.
         /// </summary>
@@ -30,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// User&apos;s name which (can be a full name or display name)
+        /// User's name which (can be a full name or display name).
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
@@ -39,7 +38,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? Username { get; set; } = null;
 
         /// <summary>
-        /// Indicates if the user is a bot or service user
+        /// Indicates if the user is a bot or service user.
         /// </summary>
         [JsonProperty("is_bot_user", NullValueHandling = NullValueHandling.Include)]
         public IamUpdateUserRequestDtoIsBotUserUnion? IsBotUser { get; set; } = null;
@@ -48,7 +47,7 @@ namespace StackOneHQ.Client.Models.Components
         public IamUpdateUserRequestDtoStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

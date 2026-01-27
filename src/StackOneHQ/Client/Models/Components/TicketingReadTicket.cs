@@ -14,132 +14,131 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class TicketingReadTicket
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The title or subject of the ticket
+        /// The title or subject of the ticket.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// The creator of the ticket
+        /// The creator of the ticket.
         /// </summary>
         [JsonProperty("creator_id")]
         public string? CreatorId { get; set; } = null;
 
         /// <summary>
-        /// Users who reported the ticket
+        /// Users who reported the ticket.
         /// </summary>
         [JsonProperty("reporters")]
         public List<string>? Reporters { get; set; } = null;
 
         /// <summary>
-        /// Agents assigned to the ticket
+        /// Agents assigned to the ticket.
         /// </summary>
         [JsonProperty("assignees")]
         public List<string>? Assignees { get; set; } = null;
 
         /// <summary>
-        /// Array of content associated with the ticket
+        /// Array of content associated with the ticket.
         /// </summary>
         [JsonProperty("content")]
         public List<TicketingContent>? Content { get; set; } = null;
 
         /// <summary>
-        /// ID of the parent ticket if this is a sub-ticket
+        /// ID of the parent ticket if this is a sub-ticket.
         /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; } = null;
 
         /// <summary>
-        /// Priority of the ticket
+        /// Priority of the ticket.
         /// </summary>
         [JsonProperty("priority")]
         public TicketingReadTicketPriority? Priority { get; set; } = null;
 
         /// <summary>
-        /// The tags of the ticket
+        /// The tags of the ticket.
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// Projects the ticket belongs to
+        /// Projects the ticket belongs to.
         /// </summary>
         [JsonProperty("projects")]
         public List<TicketingProject>? Projects { get; set; } = null;
 
         /// <summary>
-        /// The unique ticket number or reference ID
+        /// The unique ticket number or reference ID.
         /// </summary>
         [JsonProperty("ticket_number")]
         public string? TicketNumber { get; set; } = null;
 
         /// <summary>
-        /// The type of the ticket
+        /// The type of the ticket.
         /// </summary>
         [JsonProperty("type")]
         public TicketingReadTicketType? Type { get; set; } = null;
 
         /// <summary>
-        /// The date the ticket was closed
+        /// The date the ticket was closed.
         /// </summary>
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; } = null;
 
         /// <summary>
-        /// URL to view the ticket in the source system
+        /// URL to view the ticket in the source system.
         /// </summary>
         [JsonProperty("ticket_url")]
         public string? TicketUrl { get; set; } = null;
 
         /// <summary>
-        /// Current status of the ticket
+        /// Current status of the ticket.
         /// </summary>
         [JsonProperty("status")]
         public TicketingReadTicketStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// Organization associated with the ticket
+        /// Organization associated with the ticket.
         /// </summary>
         [JsonProperty("organization")]
         public TicketingReadTicketOrganization? Organization { get; set; } = null;
 
         /// <summary>
-        /// Components associated with the ticket
+        /// Components associated with the ticket.
         /// </summary>
         [JsonProperty("components")]
         public List<TicketingComponent>? Components { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was created
+        /// The timestamp when the record was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was last updated
+        /// The timestamp when the record was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

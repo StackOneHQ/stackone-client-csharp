@@ -14,120 +14,119 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class Folders
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name associated with this folder
+        /// The name associated with this folder.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The description of the folder
+        /// The description of the folder.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The size of this folder in bytes
+        /// The size of this folder in bytes.
         /// </summary>
         [JsonProperty("size")]
         public double? Size { get; set; } = null;
 
         /// <summary>
-        /// The url of the folder
+        /// The url of the folder.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 
         /// <summary>
-        /// The path where the folder is stored
+        /// The path where the folder is stored.
         /// </summary>
         [JsonProperty("path")]
         public string? Path { get; set; } = null;
 
         /// <summary>
-        /// The user ID of owner of this folder
+        /// The user ID of owner of this folder.
         /// </summary>
         [JsonProperty("owner_id")]
         public string? OwnerId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the owner of this folder
+        /// Provider's unique identifier of the owner of this folder.
         /// </summary>
         [JsonProperty("remote_owner_id")]
         public string? RemoteOwnerId { get; set; } = null;
 
         /// <summary>
-        /// The parent folder ID associated with this folder
+        /// The parent folder ID associated with this folder.
         /// </summary>
         [JsonProperty("parent_folder_id")]
         public string? ParentFolderId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the parent folder associated with this folder
+        /// Provider's unique identifier of the parent folder associated with this folder.
         /// </summary>
         [JsonProperty("remote_parent_folder_id")]
         public string? RemoteParentFolderId { get; set; } = null;
 
         /// <summary>
-        /// The parent drive ID associated with this folder
+        /// The parent drive ID associated with this folder.
         /// </summary>
         [JsonProperty("drive_id")]
         public string? DriveId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the parent drive associated with this folder
+        /// Provider's unique identifier of the parent drive associated with this folder.
         /// </summary>
         [JsonProperty("remote_drive_id")]
         public string? RemoteDriveId { get; set; } = null;
 
         /// <summary>
-        /// The created date of the folder
+        /// The created date of the folder.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The last updated date of the folder
+        /// The last updated date of the folder.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
-        /// Whether the folder has content
+        /// Whether the folder has content.
         /// </summary>
         [JsonProperty("has_content", NullValueHandling = NullValueHandling.Include)]
         public FoldersHasContentUnion? HasContent { get; set; } = null;
 
         /// <summary>
-        /// Whether the folder has children
+        /// Whether the folder has children.
         /// </summary>
         [JsonProperty("has_children", NullValueHandling = NullValueHandling.Include)]
         public FoldersHasChildrenUnion? HasChildren { get; set; } = null;
 
         /// <summary>
-        /// Whether the folder is at the root level of the drive
+        /// Whether the folder is at the root level of the drive.
         /// </summary>
         [JsonProperty("is_root", NullValueHandling = NullValueHandling.Include)]
         public IsRoot? IsRoot { get; set; } = null;
 
         /// <summary>
-        /// List of containing parent Folder IDs in descending order
+        /// List of containing parent Folder IDs in descending order.
         /// </summary>
         [JsonProperty("all_parent_folder_ids")]
         public List<string>? AllParentFolderIds { get; set; } = null;

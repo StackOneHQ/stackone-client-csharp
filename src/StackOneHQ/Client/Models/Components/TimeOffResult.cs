@@ -13,10 +13,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class TimeOffResult
     {
-
         [JsonProperty("data")]
         public Models.Components.TimeOff Data { get; set; } = default!;
 

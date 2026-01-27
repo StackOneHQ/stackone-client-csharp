@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
-    
+
     public class StackoneListPlatformLogsRequest
     {
-
         /// <summary>
         /// The field to order the results by.
         /// </summary>
@@ -28,19 +27,19 @@ namespace StackOneHQ.Client.Models.Requests
         public StackoneListPlatformLogsOrderDirection? OrderDirection { get; set; } = null;
 
         /// <summary>
-        /// The number of results per page (default value is 25)
+        /// The number of results per page (default value is 25).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=page_size")]
         public double? PageSize { get; set; } = null;
 
         /// <summary>
-        /// The unified cursor
+        /// The unified cursor.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=next")]
         public string? Next { get; set; } = null;
 
         /// <summary>
-        /// Filter parameters that allow greater customisation of the list response
+        /// Filter parameters that allow greater customisation of the list response.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=filter")]
         public StackoneListPlatformLogsFilter? Filter { get; set; } = null;

@@ -12,14 +12,13 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// The employee job description
+    /// The employee job description.
     /// </summary>
     [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public class JobDescription
     {
-
         [JsonProperty("text")]
         public string? Text { get; set; } = null;
     }

@@ -54,9 +54,8 @@ namespace StackOneHQ.Client.Models.Requests
         }
     }
 
-
     /// <summary>
-    /// Filter to allow filtering of only active content
+    /// Filter to allow filtering of only active content.
     /// </summary>
     [JsonConverter(typeof(LmsListContentActive.LmsListContentActiveConverter))]
     public class LmsListContentActive

@@ -13,18 +13,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class ProxyResponseApiModel
     {
-
         /// <summary>
-        /// The HTTP status code returned by the provider
+        /// The HTTP status code returned by the provider.
         /// </summary>
         [JsonProperty("status")]
         public double Status { get; set; } = default!;
 
         /// <summary>
-        /// The headers returned by the provider
+        /// The headers returned by the provider.
         /// </summary>
         [JsonProperty("headers")]
         public Dictionary<string, object>? Headers { get; set; } = null;
@@ -36,7 +35,7 @@ namespace StackOneHQ.Client.Models.Components
         public ProxyResponseApiModelData? Data { get; set; } = null;
 
         /// <summary>
-        /// Provider-specific errors if any occurred
+        /// Provider-specific errors if any occurred.
         /// </summary>
         [JsonProperty("provider_errors")]
         public List<ProviderErrorApiModel>? ProviderErrors { get; set; } = null;

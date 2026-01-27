@@ -13,12 +13,11 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class HrisBatchDocumentUploadRequestDto
     {
-
         /// <summary>
-        /// The batch of items to create
+        /// The batch of items to create.
         /// </summary>
         [JsonProperty("items")]
         public List<HrisDocumentsUploadRequestDto> Items { get; set; } = default!;

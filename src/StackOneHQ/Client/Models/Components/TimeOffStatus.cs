@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The status of the time off request
+    /// The status of the time off request.
     /// </summary>
     public class TimeOffStatus
     {
-
         [JsonProperty("value")]
         public TimeOffStatusValue? Value { get; set; } = null;
 

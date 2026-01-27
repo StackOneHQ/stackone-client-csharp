@@ -16,10 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class JobPostingCompensationPayPeriod
     {
-
         /// <summary>
         /// The pay period of the job postings.
         /// </summary>

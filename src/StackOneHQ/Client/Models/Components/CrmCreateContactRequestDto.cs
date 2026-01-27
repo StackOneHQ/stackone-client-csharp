@@ -13,60 +13,59 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class CrmCreateContactRequestDto
     {
-
         /// <summary>
-        /// The contact first name
+        /// The contact first name.
         /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; } = null;
 
         /// <summary>
-        /// The contact last name
+        /// The contact last name.
         /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// The contact company name
+        /// The contact company name.
         /// </summary>
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; } = null;
 
         /// <summary>
-        /// List of contact email addresses
+        /// List of contact email addresses.
         /// </summary>
         [JsonProperty("emails")]
         public List<string>? Emails { get; set; } = null;
 
         /// <summary>
-        /// List of contact phone numbers
+        /// List of contact phone numbers.
         /// </summary>
         [JsonProperty("phone_numbers")]
         public List<string>? PhoneNumbers { get; set; } = null;
 
         /// <summary>
-        /// List of associated deal IDs
+        /// List of associated deal IDs.
         /// </summary>
         [JsonProperty("deal_ids")]
         public List<string>? DealIds { get; set; } = null;
 
         /// <summary>
-        /// List of associated account IDs
+        /// List of associated account IDs.
         /// </summary>
         [JsonProperty("account_ids")]
         public List<string>? AccountIds { get; set; } = null;
 
         /// <summary>
-        /// Contact custom fields
+        /// Contact custom fields.
         /// </summary>
         [JsonProperty("custom_fields")]
         public List<CustomFields>? CustomFields { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

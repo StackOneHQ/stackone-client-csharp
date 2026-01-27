@@ -11,12 +11,11 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class MessagingMessageSendRequestDto
     {
-
         /// <summary>
-        /// Content body of the message
+        /// Content body of the message.
         /// </summary>
         [JsonProperty("content")]
         public string? Content { get; set; } = null;
@@ -28,7 +27,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? Recipient { get; set; } = null;
 
         /// <summary>
-        /// The account_id or phone number of the message sender
+        /// The account_id or phone number of the message sender.
         /// </summary>
         [JsonProperty("sender")]
         public string? Sender { get; set; } = null;

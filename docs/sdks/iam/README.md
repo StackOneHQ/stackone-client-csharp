@@ -1,5 +1,4 @@
 # Iam
-(*Iam*)
 
 ## Overview
 
@@ -29,7 +28,8 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 var res = await sdk.Iam.DeleteUserAsync(
     xAccountId: "<id>",
-    id: "<id>"
+    id: "<id>",
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -37,10 +37,11 @@ var res = await sdk.Iam.DeleteUserAsync(
 
 ### Parameters
 
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `XAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
-| `Id`                   | *string*               | :heavy_check_mark:     | N/A                    |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -89,6 +90,7 @@ IamListRolesRequest req = new IamListRolesRequest() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "policies",
+    Prefer = "heartbeat",
 };
 
 IamListRolesResponse? res = await sdk.Iam.ListRolesAsync(req);
@@ -151,6 +153,7 @@ IamGetRoleRequest req = new IamGetRoleRequest() {
     Id = "<id>",
     Fields = "id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields",
     Expand = "policies",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Iam.GetRoleAsync(req);
@@ -208,6 +211,7 @@ IamGetGroupRequest req = new IamGetGroupRequest() {
     Id = "<id>",
     Fields = "id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at,unified_custom_fields",
     Expand = "roles",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Iam.GetGroupAsync(req);
@@ -265,6 +269,7 @@ IamListPoliciesRequest req = new IamListPoliciesRequest() {
     Fields = "id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields",
     Filter = null,
     Expand = "permissions",
+    Prefer = "heartbeat",
 };
 
 IamListPoliciesResponse? res = await sdk.Iam.ListPoliciesAsync(req);

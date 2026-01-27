@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class UnifiedWarningApiModel
     {
-
         [JsonProperty("message")]
         public string? Message { get; set; } = null;
     }

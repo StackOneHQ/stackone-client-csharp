@@ -1,5 +1,4 @@
-# EmployeesSkills
-(*Hris.Employees.Skills*)
+# Hris.Employees.Skills
 
 ## Overview
 
@@ -32,6 +31,7 @@ HrisListEmployeeSkillsRequest req = new HrisListEmployeeSkillsRequest() {
     Filter = new HrisListEmployeeSkillsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeSkillsResponse? res = await sdk.Hris.Employees.Skills.ListAsync(req);

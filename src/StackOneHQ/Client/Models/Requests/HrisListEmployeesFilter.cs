@@ -11,27 +11,26 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// HRIS Employees filters
+    /// HRIS Employees filters.
     /// </summary>
     public class HrisListEmployeesFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select employees by email
+        /// Filter to select employees by email.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=email")]
         public string? Email { get; set; } = null;
 
         /// <summary>
-        /// Filter to select employees by employee_number
+        /// Filter to select employees by employee_number.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=employee_number")]
         public string? EmployeeNumber { get; set; } = null;

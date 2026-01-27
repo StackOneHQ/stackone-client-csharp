@@ -1,5 +1,4 @@
 # Accounting
-(*Accounting*)
 
 ## Overview
 
@@ -40,6 +39,7 @@ AccountingListCompaniesRequest req = new AccountingListCompaniesRequest() {
     Filter = new AccountingListCompaniesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AccountingListCompaniesResponse? res = await sdk.Accounting.ListCompaniesAsync(req);
@@ -101,6 +101,7 @@ AccountingGetCompanyRequest req = new AccountingGetCompanyRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Accounting.GetCompanyAsync(req);
@@ -158,6 +159,7 @@ AccountingListCompanyAccountsRequest req = new AccountingListCompanyAccountsRequ
     Id = "<id>",
     Fields = "id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields",
     Filter = null,
+    Prefer = "heartbeat",
 };
 
 AccountingListCompanyAccountsResponse? res = await sdk.Accounting.ListCompanyAccountsAsync(req);
@@ -220,6 +222,7 @@ AccountingGetCompanyAccountRequest req = new AccountingGetCompanyAccountRequest(
     Id = "<id>",
     SubResourceId = "<id>",
     Fields = "id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Accounting.GetCompanyAccountAsync(req);
@@ -280,6 +283,7 @@ AccountingListCompanyTaxRatesRequest req = new AccountingListCompanyTaxRatesRequ
     Filter = new AccountingListCompanyTaxRatesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AccountingListCompanyTaxRatesResponse? res = await sdk.Accounting.ListCompanyTaxRatesAsync(req);
@@ -342,6 +346,7 @@ AccountingGetCompanyTaxRateRequest req = new AccountingGetCompanyTaxRateRequest(
     Id = "<id>",
     SubResourceId = "<id>",
     Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Accounting.GetCompanyTaxRateAsync(req);
@@ -399,7 +404,8 @@ var res = await sdk.Accounting.BatchCreateCompanyJournalsAsync(
     id: "<id>",
     accountingJournalBatchCreateRequestDto: new AccountingJournalBatchCreateRequestDto() {
         Items = new List<AccountingJournalCreateRequestDto>() {},
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -407,11 +413,12 @@ var res = await sdk.Accounting.BatchCreateCompanyJournalsAsync(
 
 ### Parameters
 
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                                | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The account identifier                                                                                      |
-| `Id`                                                                                                        | *string*                                                                                                    | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-| `AccountingJournalBatchCreateRequestDto`                                                                    | [AccountingJournalBatchCreateRequestDto](../../Models/Components/AccountingJournalBatchCreateRequestDto.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `AccountingJournalBatchCreateRequestDto`                                                                                                                                 | [AccountingJournalBatchCreateRequestDto](../../Models/Components/AccountingJournalBatchCreateRequestDto.md)                                                              | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -457,6 +464,7 @@ AccountingListCompanyJournalsRequest req = new AccountingListCompanyJournalsRequ
     Id = "<id>",
     Fields = "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields",
     Filter = null,
+    Prefer = "heartbeat",
 };
 
 AccountingListCompanyJournalsResponse? res = await sdk.Accounting.ListCompanyJournalsAsync(req);
@@ -538,7 +546,8 @@ var res = await sdk.Accounting.CreateCompanyJournalAsync(
                 TaxAmount = 10010D,
             },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -546,11 +555,12 @@ var res = await sdk.Accounting.CreateCompanyJournalAsync(
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                      | *string*                                                                                          | :heavy_check_mark:                                                                                | The account identifier                                                                            |
-| `Id`                                                                                              | *string*                                                                                          | :heavy_check_mark:                                                                                | N/A                                                                                               |
-| `AccountingJournalCreateRequestDto`                                                               | [AccountingJournalCreateRequestDto](../../Models/Components/AccountingJournalCreateRequestDto.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `AccountingJournalCreateRequestDto`                                                                                                                                      | [AccountingJournalCreateRequestDto](../../Models/Components/AccountingJournalCreateRequestDto.md)                                                                        | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -596,6 +606,7 @@ AccountingGetCompanyJournalRequest req = new AccountingGetCompanyJournalRequest(
     Id = "<id>",
     SubResourceId = "<id>",
     Fields = "id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Accounting.GetCompanyJournalAsync(req);

@@ -1,5 +1,4 @@
 # Lms
-(*Lms*)
 
 ## Overview
 
@@ -40,6 +39,7 @@ LmsGetCourseRequest req = new LmsGetCourseRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.GetCourseAsync(req);
@@ -100,12 +100,13 @@ var sdk = new StackOneHQClient(security: new Security() {
 LmsListUserAssignmentsRequest req = new LmsListUserAssignmentsRequest() {
     XAccountId = "<id>",
     Id = "<id>",
-    Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields",
+    Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,assigned_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields",
     Filter = new LmsListUserAssignmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     UserId = "c28xyrc55866bvuv",
     RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
+    Prefer = "heartbeat",
 };
 
 LmsListUserAssignmentsResponse? res = await sdk.Lms.ListUserAssignmentsAsync(req);
@@ -245,7 +246,8 @@ var res = await sdk.Lms.BatchUpsertContentAsync(
                 },
             },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -253,10 +255,11 @@ var res = await sdk.Lms.BatchUpsertContentAsync(
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | The account identifier                                                                        |
-| `LmsBatchUpsertContentRequestDto`                                                             | [LmsBatchUpsertContentRequestDto](../../Models/Components/LmsBatchUpsertContentRequestDto.md) | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `LmsBatchUpsertContentRequestDto`                                                                                                                                        | [LmsBatchUpsertContentRequestDto](../../Models/Components/LmsBatchUpsertContentRequestDto.md)                                                                            | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -308,6 +311,7 @@ LmsListContentRequest req = new LmsListContentRequest() {
     Filter = new LmsListContentFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 LmsListContentResponse? res = await sdk.Lms.ListContentAsync(req);
@@ -378,8 +382,13 @@ var res = await sdk.Lms.CreateUserCompletionAsync(
         CompletedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
         TimeSpent = "PT1H30M45S",
+        Score = new LmsCreateCompletionRequestDtoScore() {
+            Percentage = 87D,
+            RawValue = "87 / 100",
+        },
         LearningObjectExternalReference = "learning-content-123",
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -387,11 +396,12 @@ var res = await sdk.Lms.CreateUserCompletionAsync(
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                              | *string*                                                                                  | :heavy_check_mark:                                                                        | The account identifier                                                                    |
-| `Id`                                                                                      | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
-| `LmsCreateCompletionRequestDto`                                                           | [LmsCreateCompletionRequestDto](../../Models/Components/LmsCreateCompletionRequestDto.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `LmsCreateCompletionRequestDto`                                                                                                                                          | [LmsCreateCompletionRequestDto](../../Models/Components/LmsCreateCompletionRequestDto.md)                                                                                | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -438,6 +448,7 @@ LmsGetUserCompletionRequest req = new LmsGetUserCompletionRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     SubResourceId = "<id>",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.GetUserCompletionAsync(req);
@@ -494,7 +505,8 @@ var sdk = new StackOneHQClient(security: new Security() {
 var res = await sdk.Lms.DeleteUserCompletionAsync(
     xAccountId: "<id>",
     id: "<id>",
-    subResourceId: "<id>"
+    subResourceId: "<id>",
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -502,11 +514,12 @@ var res = await sdk.Lms.DeleteUserCompletionAsync(
 
 ### Parameters
 
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `XAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
-| `Id`                   | *string*               | :heavy_check_mark:     | N/A                    |
-| `SubResourceId`        | *string*               | :heavy_check_mark:     | N/A                    |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `SubResourceId`                                                                                                                                                          | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -551,6 +564,7 @@ LmsGetCategoryRequest req = new LmsGetCategoryRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,active,hierarchy,level,language,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.GetCategoryAsync(req);
@@ -607,6 +621,7 @@ LmsListUsersRequest req = new LmsListUsersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name,unified_custom_fields",
     Filter = null,
+    Prefer = "heartbeat",
 };
 
 LmsListUsersResponse? res = await sdk.Lms.ListUsersAsync(req);
@@ -668,6 +683,7 @@ LmsGetUserRequest req = new LmsGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.GetUserAsync(req);
@@ -727,6 +743,7 @@ LmsListSkillsRequest req = new LmsListSkillsRequest() {
     Filter = new LmsListSkillsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 LmsListSkillsResponse? res = await sdk.Lms.ListSkillsAsync(req);

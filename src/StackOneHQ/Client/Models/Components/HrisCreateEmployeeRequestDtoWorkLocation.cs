@@ -13,69 +13,68 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// The employee work location
+    /// The employee work location.
     /// </summary>
     public class HrisCreateEmployeeRequestDtoWorkLocation
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The name of the location
+        /// The name of the location.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The phone number of the location
+        /// The phone number of the location.
         /// </summary>
         [JsonProperty("phone_number")]
         public string? PhoneNumber { get; set; } = null;
 
         /// <summary>
-        /// The first line of the address
+        /// The first line of the address.
         /// </summary>
         [JsonProperty("street_1")]
         public string? Street1 { get; set; } = null;
 
         /// <summary>
-        /// The second line of the address
+        /// The second line of the address.
         /// </summary>
         [JsonProperty("street_2")]
         public string? Street2 { get; set; } = null;
 
         /// <summary>
-        /// The city where the location is situated
+        /// The city where the location is situated.
         /// </summary>
         [JsonProperty("city")]
         public string? City { get; set; } = null;
 
         /// <summary>
-        /// The ZIP code/Postal code of the location
+        /// The ZIP code/Postal code of the location.
         /// </summary>
         [JsonProperty("zip_code")]
         public string? ZipCode { get; set; } = null;
 
         /// <summary>
-        /// The country code
+        /// The country code.
         /// </summary>
         [JsonProperty("country")]
         public HrisCreateEmployeeRequestDtoWorkLocationCountry? Country { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// The ISO3166-2 sub division where the location is situated
+        /// The ISO3166-2 sub division where the location is situated.
         /// </summary>
         [JsonProperty("state")]
         public HrisCreateEmployeeRequestDtoWorkLocationState? State { get; set; } = null;

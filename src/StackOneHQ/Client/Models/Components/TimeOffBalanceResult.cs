@@ -13,10 +13,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class TimeOffBalanceResult
     {
-
         [JsonProperty("data")]
         public TimeOffBalances Data { get; set; } = default!;
 

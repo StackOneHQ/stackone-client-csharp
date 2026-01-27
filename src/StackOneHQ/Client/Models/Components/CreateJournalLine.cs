@@ -11,36 +11,35 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class CreateJournalLine
     {
-
         /// <summary>
-        /// ID of the ledger account this line references
+        /// ID of the ledger account this line references.
         /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; } = null;
 
         /// <summary>
-        /// Description of the journal line
+        /// Description of the journal line.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// Amount of the journal line in minor units, e.g. 10010 for 100.10 USD. Positive for debit, negative for credit
+        /// Amount of the journal line in minor units, e.g. 10010 for 100.10 USD. Positive for debit, negative for credit.
         /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; } = null;
 
         /// <summary>
-        /// ID of the tax rate applied
+        /// ID of the tax rate applied.
         /// </summary>
         [JsonProperty("tax_rate_id")]
         public string? TaxRateId { get; set; } = null;
 
         /// <summary>
-        /// Tax amount of the line in minor units, e.g. 10010 for 100.10 USD
+        /// Tax amount of the line in minor units, e.g. 10010 for 100.10 USD.
         /// </summary>
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; } = null;

@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The method of the request
+    /// The method of the request.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Method : IEquatable<Method>
@@ -80,5 +80,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

@@ -11,21 +11,20 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Content of the message
+    /// Content of the message.
     /// </summary>
     public class MessagingMessageContent
     {
-
         /// <summary>
-        /// HTML content of the message
+        /// HTML content of the message.
         /// </summary>
         [JsonProperty("html")]
         public string? Html { get; set; } = null;
 
         /// <summary>
-        /// Plain text content of the message
+        /// Plain text content of the message.
         /// </summary>
         [JsonProperty("plain")]
         public string? Plain { get; set; } = null;

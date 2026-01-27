@@ -13,21 +13,20 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// LMS Courses Filter
+    /// LMS Courses Filter.
     /// </summary>
     public class LmsListContentFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to allow filtering of only active content
+        /// Filter to allow filtering of only active content.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=active")]
         public LmsListContentActive? Active { get; set; } = null;

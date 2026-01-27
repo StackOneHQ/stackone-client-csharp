@@ -12,34 +12,33 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// ATS Jobs filters
+    /// ATS Jobs filters.
     /// </summary>
     public class AtsListJobsFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Use a string with a date to only select results created after that given date
+        /// Use a string with a date to only select results created after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=created_after")]
         public DateTime? CreatedAfter { get; set; } = null;
 
         /// <summary>
-        /// The status of the job
+        /// The status of the job.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [SpeakeasyMetadata("queryParam:name=status")]
         public AtsListJobsStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// The job_status of the job
+        /// The job_status of the job.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=job_status")]
         public JobStatus? JobStatus { get; set; } = null;

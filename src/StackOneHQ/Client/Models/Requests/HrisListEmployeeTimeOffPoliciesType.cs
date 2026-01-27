@@ -12,9 +12,9 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Filter to select time-off policies by type
+    /// Filter to select time-off policies by type.
     /// </summary>
     public enum HrisListEmployeeTimeOffPoliciesType
     {
@@ -98,5 +98,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum HrisListEmployeeTimeOffPoliciesType");
         }
     }
-
 }

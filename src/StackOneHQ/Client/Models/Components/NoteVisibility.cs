@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Visibility of the note
+    /// Visibility of the note.
     /// </summary>
     public class NoteVisibility
     {
-
         /// <summary>
         /// The visibility of the notes.
         /// </summary>

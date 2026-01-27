@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The reference status
+    /// The reference status.
     /// </summary>
     [JsonConverter(typeof(TimeEntriesActiveUnion.TimeEntriesActiveUnionConverter))]
     public class TimeEntriesActiveUnion

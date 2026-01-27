@@ -11,33 +11,32 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Organization associated with the ticket
+    /// Organization associated with the ticket.
     /// </summary>
     public class TicketingTicketResultOrganization
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The domain of the organization
+        /// The domain of the organization.
         /// </summary>
         [JsonProperty("domain")]
         public string? Domain { get; set; } = null;
 
         /// <summary>
-        /// The name of the organization
+        /// The name of the organization.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;

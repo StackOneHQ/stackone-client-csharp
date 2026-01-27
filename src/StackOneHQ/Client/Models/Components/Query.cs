@@ -12,15 +12,14 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// Query parameters for the action
+    /// Query parameters for the action.
     /// </summary>
     public class Query
     {
-
         /// <summary>
-        /// Enable debug mode for the action execution
+        /// Enable debug mode for the action execution.
         /// </summary>
         [JsonProperty("debug")]
         public bool? Debug { get; set; } = null;

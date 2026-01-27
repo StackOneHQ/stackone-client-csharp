@@ -14,18 +14,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class InterviewPart
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
@@ -34,7 +33,7 @@ namespace StackOneHQ.Client.Models.Components
         public InterviewPartType? Type { get; set; } = null;
 
         /// <summary>
-        /// The title of interview, usually corresponding to the title of an associated calendar event
+        /// The title of interview, usually corresponding to the title of an associated calendar event.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
@@ -46,7 +45,7 @@ namespace StackOneHQ.Client.Models.Components
         public List<string>? InterviewerIds { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s user (interviewer) IDs taking part in this specific interview.
+        /// Provider's user (interviewer) IDs taking part in this specific interview.
         /// </summary>
         [JsonProperty("remote_interviewer_ids")]
         public List<string>? RemoteInterviewerIds { get; set; } = null;
@@ -64,25 +63,25 @@ namespace StackOneHQ.Client.Models.Components
         public string? MeetingProvider { get; set; } = null;
 
         /// <summary>
-        /// The specific interview part&apos;s start date
+        /// The specific interview part's start date.
         /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; } = null;
 
         /// <summary>
-        /// The specific interview part&apos;s end date
+        /// The specific interview part's end date.
         /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; } = null;
 
         /// <summary>
-        /// Interview part created date
+        /// Interview part created date.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Interview part updated date
+        /// Interview part updated date.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

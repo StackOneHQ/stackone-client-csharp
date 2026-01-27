@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// ISO 4217 currency code
+    /// ISO 4217 currency code.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HRISBankDetailsCurrencyCodeValue : IEquatable<HRISBankDetailsCurrencyCodeValue>
@@ -386,5 +386,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

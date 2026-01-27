@@ -10,15 +10,14 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
-    
+
     public class StackoneGetConnectorMetaRequest
     {
-
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=provider")]
         public string Provider { get; set; } = default!;
 
         /// <summary>
-        /// The comma separated list of data that will be included in the response
+        /// The comma separated list of data that will be included in the response.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=include")]
         public string? Include { get; set; } = null;

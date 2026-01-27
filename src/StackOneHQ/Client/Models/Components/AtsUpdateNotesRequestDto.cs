@@ -13,27 +13,26 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AtsUpdateNotesRequestDto
     {
-
         [JsonProperty("content")]
         public List<NoteContentApiModel>? Content { get; set; } = null;
 
         /// <summary>
-        /// Unique identifier of the author
+        /// Unique identifier of the author.
         /// </summary>
         [JsonProperty("author_id")]
         public string? AuthorId { get; set; } = null;
 
         /// <summary>
-        /// Visibility of the note
+        /// Visibility of the note.
         /// </summary>
         [JsonProperty("visibility")]
         public AtsUpdateNotesRequestDtoVisibility? Visibility { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

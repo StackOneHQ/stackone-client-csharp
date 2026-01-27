@@ -10,9 +10,9 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Raw error response from the provider
+    /// Raw error response from the provider.
     /// </summary>
     public class ProviderErrorRaw
     {

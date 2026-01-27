@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The employment work schedule type (e.g., full-time, part-time)
+    /// The employment work schedule type (e.g., full-time, part-time).
     /// </summary>
     public class HrisCreateEmployeeRequestDtoContractTypeContractType
     {
-
         [JsonProperty("value")]
         public HrisCreateEmployeeRequestDtoContractTypeValue? Value { get; set; } = null;
 

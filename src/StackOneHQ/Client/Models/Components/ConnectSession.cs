@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class ConnectSession
     {
-
         [JsonProperty("id")]
         public double Id { get; set; } = default!;
 
-        [JsonProperty("organization_id")]
-        public double OrganizationId { get; set; } = default!;
+        [JsonProperty("organization_id", NullValueHandling = NullValueHandling.Include)]
+        public ConnectSessionOrganizationId OrganizationId { get; set; } = default!;
 
         [JsonProperty("project_id")]
         public string ProjectId { get; set; } = default!;
@@ -54,25 +53,25 @@ namespace StackOneHQ.Client.Models.Components
         public DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// Arbitrary set of key and values defined during the session token creation. This can be used to tag an account (eg. based on their pricing plan)
+        /// Arbitrary set of key and values defined during the session token creation. This can be used to tag an account (eg. based on their pricing plan).
         /// </summary>
         [JsonProperty("metadata")]
         public ConnectSessionMetadata? Metadata { get; set; } = null;
 
         /// <summary>
-        /// External trigger token to be used to trigger actions on the account
+        /// External trigger token to be used to trigger actions on the account.
         /// </summary>
         [JsonProperty("external_trigger_token")]
         public string? ExternalTriggerToken { get; set; } = null;
 
         /// <summary>
-        /// The connect session account type
+        /// The connect session account type.
         /// </summary>
         [JsonProperty("type")]
         public ConnectSessionType? Type { get; set; } = null;
 
         /// <summary>
-        /// The integration ID (UUID) associated with this connect session
+        /// The integration ID (UUID) associated with this connect session.
         /// </summary>
         [JsonProperty("integration_id")]
         public string? IntegrationId { get; set; } = null;

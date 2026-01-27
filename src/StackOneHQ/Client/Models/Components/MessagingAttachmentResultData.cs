@@ -11,36 +11,35 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class MessagingAttachmentResultData
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Name of the attached file
+        /// Name of the attached file.
         /// </summary>
         [JsonProperty("file_name")]
         public string? FileName { get; set; } = null;
 
         /// <summary>
-        /// Size of the attached file
+        /// Size of the attached file.
         /// </summary>
         [JsonProperty("file_size")]
         public double? FileSize { get; set; } = null;
 
         /// <summary>
-        /// MIME type of the attached file
+        /// MIME type of the attached file.
         /// </summary>
         [JsonProperty("file_type")]
         public string? FileType { get; set; } = null;
