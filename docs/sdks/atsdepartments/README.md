@@ -1,5 +1,4 @@
-# AtsDepartments
-(*Ats.Departments*)
+# Ats.Departments
 
 ## Overview
 
@@ -28,6 +27,7 @@ AtsGetDepartmentRequest req = new AtsGetDepartmentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Departments.GetAsync(req);

@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Indicates if this time off balance represents unlimited leave
+    /// Indicates if this time off balance represents unlimited leave.
     /// </summary>
     [JsonConverter(typeof(IsUnlimited.IsUnlimitedConverter))]
     public class IsUnlimited

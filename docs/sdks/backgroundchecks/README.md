@@ -1,5 +1,4 @@
 # BackgroundChecks
-(*BackgroundChecks*)
 
 ## Overview
 
@@ -25,7 +24,8 @@ var sdk = new StackOneHQClient(security: new Security() {
 
 var res = await sdk.BackgroundChecks.DeletePackageAsync(
     xAccountId: "<id>",
-    id: "<id>"
+    id: "<id>",
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -33,10 +33,11 @@ var res = await sdk.BackgroundChecks.DeletePackageAsync(
 
 ### Parameters
 
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `XAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
-| `Id`                   | *string*               | :heavy_check_mark:     | N/A                    |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 

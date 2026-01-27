@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
     /// Stackone enum identifying the type of message associated with the content.
     /// </summary>
     public class MessageMessageType
     {
-
         /// <summary>
         /// The unified message type.
         /// </summary>

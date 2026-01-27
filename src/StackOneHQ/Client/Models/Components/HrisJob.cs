@@ -13,54 +13,53 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class HrisJob
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Code of the job
+        /// Code of the job.
         /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; } = null;
 
         /// <summary>
-        /// Title of the job
+        /// Title of the job.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// Description of the job
+        /// Description of the job.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// Status of the job
+        /// Status of the job.
         /// </summary>
         [JsonProperty("status")]
         public HrisJobStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// Date of creation
+        /// Date of creation.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Date of last update
+        /// Date of last update.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

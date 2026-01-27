@@ -14,51 +14,50 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// The employee employment
+    /// The employee employment.
     /// </summary>
     public class HrisUpdateEmployeeRequestDtoEmployment
     {
-
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The job title of the employee
+        /// The job title of the employee.
         /// </summary>
         [JsonProperty("job_title")]
         public string? JobTitle { get; set; } = null;
 
         /// <summary>
-        /// The amount of compensation for the employee
+        /// The amount of compensation for the employee.
         /// </summary>
         [JsonProperty("pay_rate")]
         public string? PayRate { get; set; } = null;
 
         /// <summary>
-        /// The time period over which the pay rate is calculated
+        /// The time period over which the pay rate is calculated.
         /// </summary>
         [JsonProperty("pay_period")]
         public HrisUpdateEmployeeRequestDtoPayPeriod? PayPeriod { get; set; } = null;
 
         /// <summary>
-        /// How often the employee is paid
+        /// How often the employee is paid.
         /// </summary>
         [JsonProperty("pay_frequency")]
         public HrisUpdateEmployeeRequestDtoPayFrequency? PayFrequency { get; set; } = null;
 
         /// <summary>
-        /// The currency used for pay
+        /// The currency used for pay.
         /// </summary>
         [JsonProperty("pay_currency")]
         public string? PayCurrency { get; set; } = null;
 
         /// <summary>
-        /// The end date of employment
+        /// The end date of employment.
         /// </summary>
         [JsonProperty("end_date")]
         public DateTime? EndDate { get; set; } = null;
@@ -70,27 +69,27 @@ namespace StackOneHQ.Client.Models.Components
         public HrisUpdateEmployeeRequestDtoGrade? Grade { get; set; } = null;
 
         /// <summary>
-        /// The type of employment (e.g., contractor, permanent)
+        /// The type of employment (e.g., contractor, permanent).
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("employment_type")]
         public HrisUpdateEmployeeRequestDtoEmploymentEmploymentType? EmploymentType { get; set; } = null;
 
         /// <summary>
-        /// The employment work schedule type (e.g., full-time, part-time)
+        /// The employment work schedule type (e.g., full-time, part-time).
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("employment_contract_type")]
         public HrisUpdateEmployeeRequestDtoEmploymentEmploymentContractType? EmploymentContractType { get; set; } = null;
 
         /// <summary>
-        /// The type of employment
+        /// The type of employment.
         /// </summary>
         [JsonProperty("type")]
         public HrisUpdateEmployeeRequestDtoEmploymentType2? Type { get; set; } = null;
 
         /// <summary>
-        /// The employment work schedule type
+        /// The employment work schedule type.
         /// </summary>
         [JsonProperty("contract_type")]
         public HrisUpdateEmployeeRequestDtoContractType? ContractType { get; set; } = null;
@@ -99,19 +98,19 @@ namespace StackOneHQ.Client.Models.Components
         public HrisUpdateEmployeeRequestDtoWorkTime? WorkTime { get; set; } = null;
 
         /// <summary>
-        /// The payroll code of the employee
+        /// The payroll code of the employee.
         /// </summary>
         [JsonProperty("payroll_code")]
         public string? PayrollCode { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// The employee effective date
+        /// The employee effective date.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("effective_date")]

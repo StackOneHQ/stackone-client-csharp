@@ -15,7 +15,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
     /// The ISO 3166-1 alpha-2 code of the country.
     /// </summary>
@@ -568,5 +568,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

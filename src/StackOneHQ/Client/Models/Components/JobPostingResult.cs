@@ -13,10 +13,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class JobPostingResult
     {
-
         [JsonProperty("data")]
         public JobPosting Data { get; set; } = default!;
 

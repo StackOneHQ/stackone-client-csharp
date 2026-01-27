@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The file format of the file
+    /// The file format of the file.
     /// </summary>
     public class FileFileFormat
     {
-
         /// <summary>
-        /// The file format of the file, expressed as a file extension
+        /// The file format of the file, expressed as a file extension.
         /// </summary>
         [JsonProperty("value")]
         public FileValue? Value { get; set; } = null;

@@ -12,21 +12,20 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// LMS Assignment Filter
+    /// LMS Assignment Filter.
     /// </summary>
     public class LmsListUserAssignmentsFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select assignment by status
+        /// Filter to select assignment by status.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=status")]
         public LmsListUserAssignmentsStatus? Status { get; set; } = null;

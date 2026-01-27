@@ -12,7 +12,7 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
     /// The include parameter allows you to include additional data in the response.
     /// </summary>
@@ -54,5 +54,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum StackoneListLogsInclude");
         }
     }
-
 }

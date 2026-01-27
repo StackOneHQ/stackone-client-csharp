@@ -1,5 +1,4 @@
-# Benefits
-(*Hris.Benefits*)
+# Hris.Benefits
 
 ## Overview
 
@@ -28,6 +27,7 @@ HrisGetBenefitRequest req = new HrisGetBenefitRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,benefit_type,provider,description,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.Benefits.GetAsync(req);

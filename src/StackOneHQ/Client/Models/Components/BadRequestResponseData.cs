@@ -12,27 +12,26 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Error details
+    /// Error details.
     /// </summary>
     public class BadRequestResponseData
     {
-
         /// <summary>
-        /// HTTP status code
+        /// HTTP status code.
         /// </summary>
         [JsonProperty("statusCode")]
         public double? StatusCode { get; set; } = null;
 
         /// <summary>
-        /// Error message
+        /// Error message.
         /// </summary>
         [JsonProperty("message")]
         public string? Message { get; set; } = null;
 
         /// <summary>
-        /// Response headers
+        /// Response headers.
         /// </summary>
         [JsonProperty("headers")]
         public BadRequestResponseHeaders? Headers { get; set; } = null;

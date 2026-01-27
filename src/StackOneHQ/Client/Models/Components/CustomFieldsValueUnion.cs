@@ -67,7 +67,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
     /// The value associated with the custom field.
     /// </summary>

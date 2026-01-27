@@ -54,9 +54,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The value of the additional data
+    /// The value of the additional data.
     /// </summary>
     [JsonConverter(typeof(AdditionalDataValue.AdditionalDataValueConverter))]
     public class AdditionalDataValue

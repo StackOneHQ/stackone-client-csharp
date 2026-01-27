@@ -1,5 +1,4 @@
-# HrisGroups
-(*Hris.Groups*)
+# Hris.Groups
 
 ## Overview
 
@@ -35,6 +34,7 @@ HrisListGroupsRequest req = new HrisListGroupsRequest() {
     Filter = new HrisListGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListGroupsResponse? res = await sdk.Hris.Groups.ListAsync(req);
@@ -99,6 +99,7 @@ HrisListDepartmentGroupsRequest req = new HrisListDepartmentGroupsRequest() {
     Filter = new HrisListDepartmentGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListDepartmentGroupsResponse? res = await sdk.Hris.Groups.ListDepartmentsAsync(req);
@@ -163,6 +164,7 @@ HrisListCostCenterGroupsRequest req = new HrisListCostCenterGroupsRequest() {
     Filter = new HrisListCostCenterGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListCostCenterGroupsResponse? res = await sdk.Hris.Groups.ListCostCentersAsync(req);
@@ -227,6 +229,7 @@ HrisListTeamGroupsRequest req = new HrisListTeamGroupsRequest() {
     Filter = new HrisListTeamGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListTeamGroupsResponse? res = await sdk.Hris.Groups.ListTeamsAsync(req);
@@ -291,6 +294,7 @@ HrisListDivisionGroupsRequest req = new HrisListDivisionGroupsRequest() {
     Filter = new HrisListDivisionGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListDivisionGroupsResponse? res = await sdk.Hris.Groups.ListDivisionsAsync(req);

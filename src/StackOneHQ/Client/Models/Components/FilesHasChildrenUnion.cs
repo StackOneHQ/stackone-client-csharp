@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the file has children
+    /// Whether the file has children.
     /// </summary>
     [JsonConverter(typeof(FilesHasChildrenUnion.FilesHasChildrenUnionConverter))]
     public class FilesHasChildrenUnion

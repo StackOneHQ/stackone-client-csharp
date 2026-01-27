@@ -14,18 +14,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class IamGroup
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
@@ -49,7 +48,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? ParentId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the parent group id for when a group belongs to another group.
+        /// Provider's unique identifier of the parent group id for when a group belongs to another group.
         /// </summary>
         [JsonProperty("remote_parent_id")]
         public string? RemoteParentId { get; set; } = null;

@@ -64,9 +64,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The source value of the change type
+    /// The source value of the change type.
     /// </summary>
     [JsonConverter(typeof(ApplicationChangesSourceValueUnion.ApplicationChangesSourceValueUnionConverter))]
     public class ApplicationChangesSourceValueUnion

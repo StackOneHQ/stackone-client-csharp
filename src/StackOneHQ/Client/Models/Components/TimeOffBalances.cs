@@ -13,90 +13,89 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class TimeOffBalances
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The employee id associated with this balance
+        /// The employee id associated with this balance.
         /// </summary>
         [JsonProperty("employee_id")]
         public string? EmployeeId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the employee associated with this balance
+        /// Provider's unique identifier of the employee associated with this balance.
         /// </summary>
         [JsonProperty("remote_employee_id")]
         public string? RemoteEmployeeId { get; set; } = null;
 
         /// <summary>
-        /// The time off policy id associated with this balance
+        /// The time off policy id associated with this balance.
         /// </summary>
         [JsonProperty("policy_id")]
         public string? PolicyId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the time off policy id associated with this balance
+        /// Provider's unique identifier of the time off policy id associated with this balance.
         /// </summary>
         [JsonProperty("remote_policy_id")]
         public string? RemotePolicyId { get; set; } = null;
 
         /// <summary>
-        /// The time off policy associated with this balance
+        /// The time off policy associated with this balance.
         /// </summary>
         [JsonProperty("policy")]
         public TimeOffBalancesPolicy? Policy { get; set; } = null;
 
         /// <summary>
-        /// The current numeric balance for the associated employee and time off policy
+        /// The current numeric balance for the associated employee and time off policy.
         /// </summary>
         [JsonProperty("current_balance")]
         public double? CurrentBalance { get; set; } = null;
 
         /// <summary>
-        /// The initial numeric balance for the associated employee and time off policy as of the balance start date
+        /// The initial numeric balance for the associated employee and time off policy as of the balance start date.
         /// </summary>
         [JsonProperty("initial_balance")]
         public double? InitialBalance { get; set; } = null;
 
         /// <summary>
-        /// The duration unit of the current balance
+        /// The duration unit of the current balance.
         /// </summary>
         [JsonProperty("balance_unit")]
         public BalanceUnit? BalanceUnit { get; set; } = null;
 
         /// <summary>
-        /// The date of when the initial balance quantity was set
+        /// The date of when the initial balance quantity was set.
         /// </summary>
         [JsonProperty("balance_start_date")]
         public DateTime? BalanceStartDate { get; set; } = null;
 
         /// <summary>
-        /// The date of when the current balance expires
+        /// The date of when the current balance expires.
         /// </summary>
         [JsonProperty("balance_expiry_date")]
         public DateTime? BalanceExpiryDate { get; set; } = null;
 
         /// <summary>
-        /// Indicates if this time off balance represents unlimited leave
+        /// Indicates if this time off balance represents unlimited leave.
         /// </summary>
         [JsonProperty("is_unlimited", NullValueHandling = NullValueHandling.Include)]
         public IsUnlimited? IsUnlimited { get; set; } = null;
 
         /// <summary>
-        /// The updated_at date of this time off balance
+        /// The updated_at date of this time off balance.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

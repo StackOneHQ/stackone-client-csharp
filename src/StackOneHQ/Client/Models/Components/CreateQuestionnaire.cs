@@ -13,12 +13,11 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class CreateQuestionnaire
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;

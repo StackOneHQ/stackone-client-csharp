@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the file
+    /// The type of the file.
     /// </summary>
     public class TicketingAttachmentFileFormat
     {
-
         /// <summary>
-        /// The file format of the file, expressed as a file extension
+        /// The file format of the file, expressed as a file extension.
         /// </summary>
         [JsonProperty("value")]
         public TicketingAttachmentValue? Value { get; set; } = null;

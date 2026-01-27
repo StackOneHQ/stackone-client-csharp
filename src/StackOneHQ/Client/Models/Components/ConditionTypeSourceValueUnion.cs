@@ -64,9 +64,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The source value of the question&apos;s condition type
+    /// The source value of the question's condition type.
     /// </summary>
     [JsonConverter(typeof(ConditionTypeSourceValueUnion.ConditionTypeSourceValueUnionConverter))]
     public class ConditionTypeSourceValueUnion

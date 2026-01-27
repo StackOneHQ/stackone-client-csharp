@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the task
+    /// The type of the task.
     /// </summary>
     public class TaskType
     {
-
         /// <summary>
-        /// The unified value for the type of the task. If the provider does not specify this type, the value will be set to UnmappedValue
+        /// The unified value for the type of the task. If the provider does not specify this type, the value will be set to UnmappedValue.
         /// </summary>
         [JsonProperty("value")]
         public TaskTypeValue? Value { get; set; } = null;

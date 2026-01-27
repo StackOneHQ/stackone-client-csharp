@@ -11,33 +11,32 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
     /// Represents the employee’s position within the organizational hierarchy.
     /// </summary>
     public class HrisUpdateEmploymentRequestDtoGrade
     {
-
         /// <summary>
-        /// The reference id
+        /// The reference id.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The reference name
+        /// The reference name.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// description of the grade
+        /// description of the grade.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;

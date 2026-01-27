@@ -13,24 +13,23 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class CreateAnswer
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Type of the answer
+        /// Type of the answer.
         /// </summary>
         [JsonProperty("type")]
         public CreateAnswerType? Type { get; set; } = null;
 
         /// <summary>
-        /// Values of the answer
+        /// Values of the answer.
         /// </summary>
         [JsonProperty("values")]
         public List<string>? Values { get; set; } = null;

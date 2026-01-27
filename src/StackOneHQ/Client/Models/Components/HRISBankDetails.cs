@@ -13,78 +13,77 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class HRISBankDetails
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name of the bank account
+        /// The name of the bank account.
         /// </summary>
         [JsonProperty("account_name")]
         public string? AccountName { get; set; } = null;
 
         /// <summary>
-        /// Whether this is the primary bank account
+        /// Whether this is the primary bank account.
         /// </summary>
         [JsonProperty("is_primary", NullValueHandling = NullValueHandling.Include)]
         public IsPrimary? IsPrimary { get; set; } = null;
 
         /// <summary>
-        /// The country code where the bank is located
+        /// The country code where the bank is located.
         /// </summary>
         [JsonProperty("country_code")]
         public CountryCode? CountryCode { get; set; } = null;
 
         /// <summary>
-        /// The currency code for the account
+        /// The currency code for the account.
         /// </summary>
         [JsonProperty("currency_code")]
         public HRISBankDetailsCurrencyCode? CurrencyCode { get; set; } = null;
 
         /// <summary>
-        /// The name of the bank
+        /// The name of the bank.
         /// </summary>
         [JsonProperty("bank_name")]
         public string? BankName { get; set; } = null;
 
         /// <summary>
-        /// The type of bank account
+        /// The type of bank account.
         /// </summary>
         [JsonProperty("account_type")]
         public HRISBankDetailsAccountType? AccountType { get; set; } = null;
 
         /// <summary>
-        /// International Bank Account Number (IBAN)
+        /// International Bank Account Number (IBAN).
         /// </summary>
         [JsonProperty("iban")]
         public string? Iban { get; set; } = null;
 
         /// <summary>
-        /// Local account number (used when IBAN is not available)
+        /// Local account number (used when IBAN is not available).
         /// </summary>
         [JsonProperty("local_account_number")]
         public string? LocalAccountNumber { get; set; } = null;
 
         /// <summary>
-        /// SWIFT/BIC code for international transfers
+        /// SWIFT/BIC code for international transfers.
         /// </summary>
         [JsonProperty("swift_bic")]
         public string? SwiftBic { get; set; } = null;
 
         /// <summary>
-        /// Array of clearing codes required by the country
+        /// Array of clearing codes required by the country.
         /// </summary>
         [JsonProperty("clearing_codes")]
         public List<ClearingCode>? ClearingCodes { get; set; } = null;

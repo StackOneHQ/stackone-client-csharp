@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The confidentiality level of the file to be uploaded
+    /// The confidentiality level of the file to be uploaded.
     /// </summary>
     public class UnifiedUploadRequestDtoConfidential
     {
-
         /// <summary>
-        /// Whether the file is confidential or not
+        /// Whether the file is confidential or not.
         /// </summary>
         [JsonProperty("value")]
         public UnifiedUploadRequestDtoConfidentialValue? Value { get; set; } = null;

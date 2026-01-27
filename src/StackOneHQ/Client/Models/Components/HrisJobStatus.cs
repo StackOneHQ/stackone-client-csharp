@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Status of the job
+    /// Status of the job.
     /// </summary>
     public class HrisJobStatus
     {
-
         /// <summary>
         /// The status of the job.
         /// </summary>

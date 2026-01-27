@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class StackoneCreateConnectSessionResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// The details of the connect session created with token and auth link
+        /// The details of the connect session created with token and auth link.
         /// </summary>
         public ConnectSessionTokenAuthLink? ConnectSessionTokenAuthLink { get; set; }
 

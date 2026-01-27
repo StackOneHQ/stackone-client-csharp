@@ -14,91 +14,90 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class AtsCreateCandidateRequestDto
     {
-
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The candidate personal phone number
+        /// The candidate personal phone number.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("phone_number")]
         public string? PhoneNumber { get; set; } = null;
 
         /// <summary>
-        /// List of candidate phone numbers including the type of the number when available
+        /// List of candidate phone numbers including the type of the number when available.
         /// </summary>
         [JsonProperty("phone_numbers")]
         public List<PhoneNumber>? PhoneNumbers { get; set; } = null;
 
         /// <summary>
-        /// Candidate name
+        /// Candidate name.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Candidate first name
+        /// Candidate first name.
         /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; } = null;
 
         /// <summary>
-        /// Candidate last name
+        /// Candidate last name.
         /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// Candidate email
+        /// Candidate email.
         /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; } = null;
 
         /// <summary>
-        /// List of candidate social links
+        /// List of candidate social links.
         /// </summary>
         [JsonProperty("social_links")]
         public List<SocialLink>? SocialLinks { get; set; } = null;
 
         /// <summary>
-        /// Candidate company
+        /// Candidate company.
         /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; } = null;
 
         /// <summary>
-        /// Candidate title
+        /// Candidate title.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// Candidate hired date
+        /// Candidate hired date.
         /// </summary>
         [JsonProperty("hired_at")]
         public DateTime? HiredAt { get; set; } = null;
 
         /// <summary>
-        /// Candidate country
+        /// Candidate country.
         /// </summary>
         [JsonProperty("country")]
         public string? Country { get; set; } = null;
 
         /// <summary>
-        /// The candidate custom fields
+        /// The candidate custom fields.
         /// </summary>
         [JsonProperty("custom_fields")]
         public List<CustomFields>? CustomFields { get; set; } = null;

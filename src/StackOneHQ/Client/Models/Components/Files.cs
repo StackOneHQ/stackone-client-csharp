@@ -14,132 +14,131 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class Files
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name associated with this file
+        /// The name associated with this file.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The description of the file
+        /// The description of the file.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The size of this file
+        /// The size of this file.
         /// </summary>
         [JsonProperty("size")]
         public double? Size { get; set; } = null;
 
         /// <summary>
-        /// The url of the file
+        /// The url of the file.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 
         /// <summary>
-        /// The file format of the file
+        /// The file format of the file.
         /// </summary>
         [JsonProperty("file_format")]
         public FilesFileFormat? FileFormat { get; set; } = null;
 
         /// <summary>
-        /// The path where the file is stored
+        /// The path where the file is stored.
         /// </summary>
         [JsonProperty("path")]
         public string? Path { get; set; } = null;
 
         /// <summary>
-        /// The user ID of owner of this file
+        /// The user ID of owner of this file.
         /// </summary>
         [JsonProperty("owner_id")]
         public string? OwnerId { get; set; } = null;
 
         /// <summary>
-        /// List of supported export formats
+        /// List of supported export formats.
         /// </summary>
         [JsonProperty("export_formats")]
         public List<string>? ExportFormats { get; set; } = null;
 
         /// <summary>
-        /// Default download format
+        /// Default download format.
         /// </summary>
         [JsonProperty("default_download_format")]
         public string? DefaultDownloadFormat { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the owner of this file
+        /// Provider's unique identifier of the owner of this file.
         /// </summary>
         [JsonProperty("remote_owner_id")]
         public string? RemoteOwnerId { get; set; } = null;
 
         /// <summary>
-        /// The parent folder ID associated with this file
+        /// The parent folder ID associated with this file.
         /// </summary>
         [JsonProperty("folder_id")]
         public string? FolderId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the parent folder associated with this file
+        /// Provider's unique identifier of the parent folder associated with this file.
         /// </summary>
         [JsonProperty("remote_folder_id")]
         public string? RemoteFolderId { get; set; } = null;
 
         /// <summary>
-        /// The parent drive ID associated with this file
+        /// The parent drive ID associated with this file.
         /// </summary>
         [JsonProperty("drive_id")]
         public string? DriveId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the parent drive associated with this file
+        /// Provider's unique identifier of the parent drive associated with this file.
         /// </summary>
         [JsonProperty("remote_drive_id")]
         public string? RemoteDriveId { get; set; } = null;
 
         /// <summary>
-        /// The created date of the file
+        /// The created date of the file.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The last updated date of the file
+        /// The last updated date of the file.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
-        /// Whether the file has content
+        /// Whether the file has content.
         /// </summary>
         [JsonProperty("has_content", NullValueHandling = NullValueHandling.Include)]
         public FilesHasContentUnion? HasContent { get; set; } = null;
 
         /// <summary>
-        /// Whether the file has children
+        /// Whether the file has children.
         /// </summary>
         [JsonProperty("has_children", NullValueHandling = NullValueHandling.Include)]
         public FilesHasChildrenUnion? HasChildren { get; set; } = null;
 
         /// <summary>
-        /// List of containing parent Folder IDs in descending order
+        /// List of containing parent Folder IDs in descending order.
         /// </summary>
         [JsonProperty("all_parent_folder_ids")]
         public List<string>? AllParentFolderIds { get; set; } = null;

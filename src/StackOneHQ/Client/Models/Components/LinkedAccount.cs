@@ -16,10 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class LinkedAccount
     {
-
         [JsonProperty("id")]
         public string Id { get; set; } = default!;
 
@@ -30,7 +29,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? ProviderName { get; set; } = null;
 
         [JsonProperty("status")]
-        public StatusEnum Status { get; set; } = default!;
+        public LinkedAccountStatus Status { get; set; } = default!;
 
         [JsonProperty("status_reasons")]
         public List<StatusReason>? StatusReasons { get; set; } = null;
@@ -60,7 +59,7 @@ namespace StackOneHQ.Client.Models.Components
         public DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The account type
+        /// The account type.
         /// </summary>
         [JsonProperty("type")]
         public LinkedAccountType? Type { get; set; } = null;

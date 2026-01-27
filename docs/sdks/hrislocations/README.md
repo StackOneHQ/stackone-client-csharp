@@ -1,5 +1,4 @@
-# HrisLocations
-(*Hris.Locations*)
+# Hris.Locations
 
 ## Overview
 
@@ -31,6 +30,7 @@ HrisListLocationsRequest req = new HrisListLocationsRequest() {
     Filter = new HrisListLocationsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListLocationsResponse? res = await sdk.Hris.Locations.ListAsync(req);

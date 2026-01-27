@@ -14,54 +14,53 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class TicketingComment
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The ticket ID associated with the comment
+        /// The ticket ID associated with the comment.
         /// </summary>
         [JsonProperty("ticket_id")]
         public string TicketId { get; set; } = default!;
 
         /// <summary>
-        /// The user who created the comment
+        /// The user who created the comment.
         /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; } = null;
 
         /// <summary>
-        /// Whether the comment is internal
+        /// Whether the comment is internal.
         /// </summary>
         [JsonProperty("internal", NullValueHandling = NullValueHandling.Include)]
         public TicketingCommentInternalUnion? Internal { get; set; } = null;
 
         /// <summary>
-        /// Array of content associated with the comment
+        /// Array of content associated with the comment.
         /// </summary>
         [JsonProperty("content")]
         public List<TicketingContent>? Content { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was created
+        /// The timestamp when the record was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was last updated
+        /// The timestamp when the record was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

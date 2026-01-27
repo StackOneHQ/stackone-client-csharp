@@ -12,10 +12,9 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class UpdateResult
     {
-
         [JsonProperty("statusCode")]
         public double StatusCode { get; set; } = default!;
 

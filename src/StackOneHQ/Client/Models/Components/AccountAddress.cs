@@ -12,10 +12,9 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class AccountAddress
     {
-
         [JsonProperty("street_1")]
         public string? Street1 { get; set; } = null;
 
@@ -32,13 +31,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? ZipCode { get; set; } = null;
 
         /// <summary>
-        /// The country code
+        /// The country code.
         /// </summary>
         [JsonProperty("country")]
         public AccountAddressCountry? Country { get; set; } = null;
 
         /// <summary>
-        /// The location type
+        /// The location type.
         /// </summary>
         [JsonProperty("location_type")]
         public AccountAddressLocationType? LocationType { get; set; } = null;

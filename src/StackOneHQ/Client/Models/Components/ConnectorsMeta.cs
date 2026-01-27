@@ -16,30 +16,29 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class ConnectorsMeta
     {
-
         /// <summary>
-        /// The provider key
+        /// The provider key.
         /// </summary>
         [JsonProperty("provider")]
         public string Provider { get; set; } = default!;
 
         /// <summary>
-        /// The provider human-readable label
+        /// The provider human-readable label.
         /// </summary>
         [JsonProperty("provider_name")]
         public string ProviderName { get; set; } = default!;
 
         /// <summary>
-        /// The provider service category
+        /// The provider service category.
         /// </summary>
         [JsonProperty("category")]
         public ConnectorsMetaCategory Category { get; set; } = default!;
 
         /// <summary>
-        /// Whether this provider has been enabled on the integrations page for the current project
+        /// Whether this provider has been enabled on the integrations page for the current project.
         /// </summary>
         [JsonProperty("active")]
         public bool? Active { get; set; } = null;
@@ -48,7 +47,7 @@ namespace StackOneHQ.Client.Models.Components
         public Dictionary<string, object> Models { get; set; } = default!;
 
         /// <summary>
-        /// Resources for this provider, such as image assets
+        /// Resources for this provider, such as image assets.
         /// </summary>
         [JsonProperty("resources")]
         public Resources? Resources { get; set; } = null;

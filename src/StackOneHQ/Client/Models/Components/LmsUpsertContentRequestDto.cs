@@ -14,42 +14,41 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class LmsUpsertContentRequestDto
     {
-
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The title of the content
+        /// The title of the content.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// The description of the content
+        /// The description of the content.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The languages associated with this content
+        /// The languages associated with this content.
         /// </summary>
         [JsonProperty("languages")]
         public List<LanguageEnum>? Languages { get; set; } = null;
 
         /// <summary>
-        /// The external URL of the content
+        /// The external URL of the content.
         /// </summary>
         [JsonProperty("content_url")]
         public string? ContentUrl { get; set; } = null;
 
         /// <summary>
-        /// The mobile friendly URL of the content
+        /// The mobile friendly URL of the content.
         /// </summary>
         [JsonProperty("mobile_launch_content_url")]
         public string? MobileLaunchContentUrl { get; set; } = null;
@@ -73,7 +72,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? Duration { get; set; } = null;
 
         /// <summary>
-        /// The skills associated with this content
+        /// The skills associated with this content.
         /// </summary>
         [JsonProperty("skills")]
         public List<CreateSkillsApiModel>? Skills { get; set; } = null;
@@ -85,26 +84,26 @@ namespace StackOneHQ.Client.Models.Components
         public double? Order { get; set; } = null;
 
         /// <summary>
-        /// A short description or summary for the content
+        /// A short description or summary for the content.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("short_description")]
         public string? ShortDescription { get; set; } = null;
 
         /// <summary>
-        /// The localization data for this course
+        /// The localization data for this course.
         /// </summary>
         [JsonProperty("localizations")]
         public List<LocalizationModel>? Localizations { get; set; } = null;
 
         /// <summary>
-        /// A list of tags associated with the content
+        /// A list of tags associated with the content.
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// The authors of the content
+        /// The authors of the content.
         /// </summary>
         [JsonProperty("authors")]
         public List<AuthorModel>? Authors { get; set; } = null;
@@ -122,25 +121,31 @@ namespace StackOneHQ.Client.Models.Components
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The external ID associated with this content
+        /// Value to pass through to the provider.
+        /// </summary>
+        [JsonProperty("passthrough")]
+        public Dictionary<string, object>? Passthrough { get; set; } = null;
+
+        /// <summary>
+        /// The external ID associated with this content.
         /// </summary>
         [JsonProperty("external_reference")]
         public string ExternalReference { get; set; } = default!;
 
         /// <summary>
-        /// The categories associated with this content
+        /// The categories associated with this content.
         /// </summary>
         [JsonProperty("categories")]
         public List<CreateCategoriesApiModel>? Categories { get; set; } = null;
 
         /// <summary>
-        /// The additional_data associated with this content
+        /// The additional_data associated with this content.
         /// </summary>
         [JsonProperty("additional_data")]
         public List<AdditionalData>? AdditionalData { get; set; } = null;
 
         /// <summary>
-        /// The type of content
+        /// The type of content.
         /// </summary>
         [JsonProperty("content_type")]
         public LmsUpsertContentRequestDtoContentType? ContentType { get; set; } = null;

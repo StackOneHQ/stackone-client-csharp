@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The currency code for the account
+    /// The currency code for the account.
     /// </summary>
     public class HRISBankDetailsCurrencyCode
     {
-
         /// <summary>
-        /// ISO 4217 currency code
+        /// ISO 4217 currency code.
         /// </summary>
         [JsonProperty("value")]
         public HRISBankDetailsCurrencyCodeValue? Value { get; set; } = null;

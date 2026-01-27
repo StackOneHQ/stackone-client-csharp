@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class AuthorModel
     {
-
         /// <summary>
-        /// The ID of the author
+        /// The ID of the author.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The name of the author
+        /// The name of the author.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;

@@ -16,18 +16,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class PhoneNumber
     {
-
         /// <summary>
-        /// Type of phone number
+        /// Type of phone number.
         /// </summary>
         [JsonProperty("type")]
         public PhoneNumberType? Type { get; set; } = null;
 
         /// <summary>
-        /// Phone number string
+        /// Phone number string.
         /// </summary>
         [JsonProperty("phone")]
         public string? Phone { get; set; } = null;

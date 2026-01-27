@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of clearing code
+    /// The type of clearing code.
     /// </summary>
     public class ClearingCodeType
     {
-
         /// <summary>
-        /// The type of clearing code
+        /// The type of clearing code.
         /// </summary>
         [JsonProperty("value")]
         public ClearingCodeValue? Value { get; set; } = null;

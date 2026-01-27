@@ -11,12 +11,11 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class ConnectSessionAuthenticate
     {
-
         /// <summary>
-        /// The token to authenticate with
+        /// The token to authenticate with.
         /// </summary>
         [JsonProperty("token")]
         public string Token { get; set; } = default!;

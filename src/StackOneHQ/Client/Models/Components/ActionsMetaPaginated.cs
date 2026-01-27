@@ -13,18 +13,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class ActionsMetaPaginated
     {
-
         /// <summary>
-        /// Cursor for fetching the next page of results
+        /// Cursor for fetching the next page of results.
         /// </summary>
         [JsonProperty("next")]
         public string? Next { get; set; } = null;
 
         /// <summary>
-        /// The list of actions metadata
+        /// The list of actions metadata.
         /// </summary>
         [JsonProperty("data")]
         public List<ActionsMeta>? Data { get; set; } = null;

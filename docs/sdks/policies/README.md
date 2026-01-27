@@ -1,5 +1,4 @@
-# Policies
-(*Iam.Policies*)
+# Iam.Policies
 
 ## Overview
 
@@ -29,6 +28,7 @@ IamGetPolicyRequest req = new IamGetPolicyRequest() {
     Id = "<id>",
     Fields = "id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields",
     Expand = "permissions",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Iam.Policies.GetAsync(req);

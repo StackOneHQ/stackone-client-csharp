@@ -14,24 +14,23 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class LmsCreateCompletionRequestDto
     {
-
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// The result of the completion
+        /// The result of the completion.
         /// </summary>
         [JsonProperty("result")]
         public LmsCreateCompletionRequestDtoResult? Result { get; set; } = null;
 
         /// <summary>
-        /// The date the content was completed
+        /// The date the content was completed.
         /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; } = null;
@@ -43,24 +42,30 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectId { get; set; } = null;
 
         /// <summary>
-        /// ISO 8601 duration format representing the time spent on completing the learning object
+        /// ISO 8601 duration format representing the time spent on completing the learning object.
         /// </summary>
         [JsonProperty("time_spent")]
         public string? TimeSpent { get; set; } = null;
 
         /// <summary>
-        /// The external reference associated with this content
+        /// The external reference associated with this content.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("content_external_reference")]
         public string? ContentExternalReference { get; set; } = null;
 
         /// <summary>
-        /// The content ID associated with this completion
+        /// The content ID associated with this completion.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("content_id")]
         public string? ContentId { get; set; } = null;
+
+        /// <summary>
+        /// The score associated with this completion.
+        /// </summary>
+        [JsonProperty("score")]
+        public LmsCreateCompletionRequestDtoScore? Score { get; set; } = null;
 
         /// <summary>
         /// The external reference of the learning object associated with this completion, this is the main identifier for creating completions.

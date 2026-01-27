@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The learning object type of the assignment
+    /// The learning object type of the assignment.
     /// </summary>
     public class AssignmentLearningObjectType
     {
-
         /// <summary>
         /// The StackOne unified learning object type.
         /// </summary>

@@ -15,11 +15,10 @@ namespace StackOneHQ.Client.Models.Requests
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    
+
     public class HrisListEmployeeTasksResponse
     {
         public Func<Task<HrisListEmployeeTasksResponse?>>? Next {get;set;}
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 

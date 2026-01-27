@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Type of phone number
+    /// Type of phone number.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PhoneNumberType : IEquatable<PhoneNumberType>
@@ -84,5 +84,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

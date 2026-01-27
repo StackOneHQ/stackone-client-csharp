@@ -13,138 +13,137 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class StepLog
     {
-
         /// <summary>
-        /// The request ID
+        /// The request ID.
         /// </summary>
         [JsonProperty("request_id")]
         public string? RequestId { get; set; } = null;
 
         /// <summary>
-        /// The request start time ISO8601 date string
+        /// The request start time ISO8601 date string.
         /// </summary>
         [JsonProperty("start_time")]
         public DateTime? StartTime { get; set; } = null;
 
         /// <summary>
-        /// The request end time ISO8601 date string
+        /// The request end time ISO8601 date string.
         /// </summary>
         [JsonProperty("end_time")]
         public DateTime? EndTime { get; set; } = null;
 
         /// <summary>
-        /// The account ID of the request
+        /// The account ID of the request.
         /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; } = null;
 
         /// <summary>
-        /// The project ID of the request
+        /// The project ID of the request.
         /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; } = null;
 
         /// <summary>
-        /// The requested HTTP method
+        /// The requested HTTP method.
         /// </summary>
         [JsonProperty("http_method")]
         public string? HttpMethod { get; set; } = null;
 
         /// <summary>
-        /// The requested path
+        /// The requested path.
         /// </summary>
         [JsonProperty("path")]
         public string? Path { get; set; } = null;
 
         /// <summary>
-        /// The requested URL
+        /// The requested URL.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 
         /// <summary>
-        /// The requests response status code
+        /// The requests response status code.
         /// </summary>
         [JsonProperty("status")]
         public double? Status { get; set; } = null;
 
         /// <summary>
-        /// The request duration in milliseconds
+        /// The request duration in milliseconds.
         /// </summary>
         [JsonProperty("duration")]
         public double? Duration { get; set; } = null;
 
         /// <summary>
-        /// The request success flag
+        /// The request success flag.
         /// </summary>
         [JsonProperty("success")]
         public bool? Success { get; set; } = null;
 
         /// <summary>
-        /// The requested provider
+        /// The requested provider.
         /// </summary>
         [JsonProperty("provider")]
         public string? Provider { get; set; } = null;
 
         /// <summary>
-        /// The requested service
+        /// The requested service.
         /// </summary>
         [JsonProperty("service")]
         public string? Service { get; set; } = null;
 
         /// <summary>
-        /// The requested resource
+        /// The requested resource.
         /// </summary>
         [JsonProperty("resource")]
         public string? Resource { get; set; } = null;
 
         /// <summary>
-        /// The requested child resource
+        /// The requested child resource.
         /// </summary>
         [JsonProperty("child_resource")]
         public string? ChildResource { get; set; } = null;
 
         /// <summary>
-        /// The requested sub resource
+        /// The requested sub resource.
         /// </summary>
         [JsonProperty("sub_resource")]
         public string? SubResource { get; set; } = null;
 
         /// <summary>
-        /// The requested action
+        /// The requested action.
         /// </summary>
         [JsonProperty("action")]
         public string? Action { get; set; } = null;
 
         /// <summary>
-        /// The asynchronous worker flag
+        /// The asynchronous worker flag.
         /// </summary>
         [JsonProperty("is_worker")]
         public bool? IsWorker { get; set; } = null;
 
         /// <summary>
-        /// The requests source IPV4 ip address
+        /// The requests source IPV4 ip address.
         /// </summary>
         [JsonProperty("source_ip")]
         public string? SourceIp { get; set; } = null;
 
         /// <summary>
-        /// The provider request ID
+        /// The provider request ID.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The advanced log request data
+        /// The advanced log request data.
         /// </summary>
         [JsonProperty("request")]
         public StepLogRequest? Request { get; set; } = null;
 
         /// <summary>
-        /// The advanced log response data
+        /// The advanced log response data.
         /// </summary>
         [JsonProperty("response")]
         public StepLogResponse? Response { get; set; } = null;

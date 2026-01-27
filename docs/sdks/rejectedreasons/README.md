@@ -1,5 +1,4 @@
-# RejectedReasons
-(*Ats.RejectedReasons*)
+# Ats.RejectedReasons
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListRejectedReasonsRequest req = new AtsListRejectedReasonsRequest() {
     Filter = new AtsListRejectedReasonsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListRejectedReasonsResponse? res = await sdk.Ats.RejectedReasons.ListAsync(req);
@@ -93,6 +93,7 @@ AtsGetRejectedReasonRequest req = new AtsGetRejectedReasonRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,label,type,rejected_reason_type,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.RejectedReasons.GetAsync(req);

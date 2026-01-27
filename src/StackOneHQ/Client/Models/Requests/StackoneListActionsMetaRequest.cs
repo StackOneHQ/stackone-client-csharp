@@ -11,47 +11,50 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
-    using System;
     using System.Collections.Generic;
-    
+
     public class StackoneListActionsMetaRequest
     {
-
         /// <summary>
-        /// The page number of the results to fetch
-        /// </summary>
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=page")]
-        public string? Page { get; set; } = null;
-
-        /// <summary>
-        /// The number of results per page (default value is 25)
+        /// The number of results per page (default value is 25).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=page_size")]
         public string? PageSize { get; set; } = null;
 
         /// <summary>
-        /// The unified cursor
+        /// The unified cursor.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=next")]
         public string? Next { get; set; } = null;
 
         /// <summary>
-        /// The relation to group the results by
+        /// The relation to group the results by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=group_by")]
         public string? GroupBy { get; set; } = "connector";
 
         /// <summary>
-        /// Actions Metadata filters
+        /// Actions Metadata filters.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=deepObject,explode=true,name=filter")]
         public StackoneListActionsMetaFilter? Filter { get; set; } = null;
 
         /// <summary>
-        /// Additional data to include in the response
+        /// Additional data to include in the response.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=include")]
         public List<StackoneListActionsMetaInclude>? Include { get; set; } = null;
+
+        /// <summary>
+        /// Text search across provider names, action labels, and action descriptions.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=search")]
+        public string? Search { get; set; } = null;
+
+        /// <summary>
+        /// Data to exclude from the response.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=exclude")]
+        public List<Exclude>? Exclude { get; set; } = null;
     }
 }

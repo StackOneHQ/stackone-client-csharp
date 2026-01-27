@@ -20,6 +20,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     },
     Expand = "company,employments,work_location,home_location,groups,skills",
     Include = "avatar_url,avatar,custom_fields,job_description,benefits,bank_details",
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeesResponse? res = await sdk.Hris.Employees.ListAsync(req);

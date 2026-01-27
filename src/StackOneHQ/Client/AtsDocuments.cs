@@ -21,12 +21,16 @@ namespace StackOneHQ.Client
 
     public class AtsDocuments: IAtsDocuments
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
 
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// ApplicationCategories SubSDK.
+        /// <see cref="IApplicationCategories"/>
+        /// </summary>
         public IApplicationCategories ApplicationCategories { get; private set; }
 
         public AtsDocuments(SDKConfig config)

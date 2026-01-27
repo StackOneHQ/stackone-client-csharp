@@ -14,24 +14,23 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class Interview
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
@@ -40,7 +39,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? ApplicationId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the application
+        /// Provider's unique identifier of the application.
         /// </summary>
         [JsonProperty("remote_application_id")]
         public string? RemoteApplicationId { get; set; } = null;
@@ -49,7 +48,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? InterviewStageId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the interview stage
+        /// Provider's unique identifier of the interview stage.
         /// </summary>
         [JsonProperty("remote_interview_stage_id")]
         public string? RemoteInterviewStageId { get; set; } = null;
@@ -64,7 +63,7 @@ namespace StackOneHQ.Client.Models.Components
         public List<string>? InterviewerIds { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifiers of the interviewers
+        /// Provider's unique identifiers of the interviewers.
         /// </summary>
         [JsonProperty("remote_interviewer_ids")]
         public List<string>? RemoteInterviewerIds { get; set; } = null;
@@ -76,13 +75,13 @@ namespace StackOneHQ.Client.Models.Components
         public List<Interviewer>? Interviewers { get; set; } = null;
 
         /// <summary>
-        /// Interview start date
+        /// Interview start date.
         /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; } = null;
 
         /// <summary>
-        /// Interview end date
+        /// Interview end date.
         /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; } = null;
@@ -91,13 +90,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? MeetingUrl { get; set; } = null;
 
         /// <summary>
-        /// Interview created date
+        /// Interview created date.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Interview updated date
+        /// Interview updated date.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

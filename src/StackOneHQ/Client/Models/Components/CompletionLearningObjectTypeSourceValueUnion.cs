@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
     /// The original learning object type from the provider before normalization.
     /// </summary>

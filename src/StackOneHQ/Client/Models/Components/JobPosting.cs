@@ -16,24 +16,23 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class JobPosting
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
@@ -54,10 +53,10 @@ namespace StackOneHQ.Client.Models.Components
         public string? JobId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the job posting
+        /// Provider's unique identifier of the job.
         /// </summary>
-        [JsonProperty("remote_job_posting_id")]
-        public string? RemoteJobPostingId { get; set; } = null;
+        [JsonProperty("remote_job_id")]
+        public string? RemoteJobId { get; set; } = null;
 
         [JsonProperty("content")]
         public JobPostingContent? Content { get; set; } = null;
@@ -81,19 +80,19 @@ namespace StackOneHQ.Client.Models.Components
         public List<JobPostingQuestionnaire>? Questionnaires { get; set; } = null;
 
         /// <summary>
-        /// The posting start date
+        /// The posting start date.
         /// </summary>
         [JsonProperty("start_date")]
         public DateTime? StartDate { get; set; } = null;
 
         /// <summary>
-        /// Date of creation
+        /// Date of creation.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Date of last update
+        /// Date of last update.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

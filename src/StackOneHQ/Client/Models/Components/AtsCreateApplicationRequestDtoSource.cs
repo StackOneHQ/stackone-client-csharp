@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class AtsCreateApplicationRequestDtoSource
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The source of the application
+        /// The source of the application.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;

@@ -10,24 +10,23 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
-    
+
     public class StackoneMcpGetRequest
     {
-
         /// <summary>
-        /// Account secure id for the target provider account (optional if x-account-id query parameter is provided)
+        /// Account secure id for the target provider account (optional if x-account-id query parameter is provided).
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-account-id")]
         public string? XAccountId { get; set; }
 
         /// <summary>
-        /// Account secure id (alternative to x-account-id header)
+        /// Account secure id (alternative to x-account-id header).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=x-account-id")]
         public object? XAccountIdQueryParameter { get; set; }
 
         /// <summary>
-        /// Session id
+        /// Session id.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=mcp-session-id")]
         public string McpSessionId { get; set; } = default!;

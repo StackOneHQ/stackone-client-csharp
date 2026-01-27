@@ -1,5 +1,4 @@
-# EmployeeCategories
-(*Hris.Documents.EmployeeCategories*)
+# Hris.Documents.EmployeeCategories
 
 ## Overview
 
@@ -32,6 +31,7 @@ HrisListEmployeeCategoriesRequest req = new HrisListEmployeeCategoriesRequest() 
     Filter = new HrisListEmployeeCategoriesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeCategoriesResponse? res = await sdk.Hris.Documents.EmployeeCategories.ListAsync(req);
@@ -93,6 +93,7 @@ HrisGetEmployeeDocumentCategoryRequest req = new HrisGetEmployeeDocumentCategory
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,active,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.Documents.EmployeeCategories.GetAsync(req);

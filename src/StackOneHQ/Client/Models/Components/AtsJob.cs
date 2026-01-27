@@ -16,79 +16,78 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class AtsJob
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// Code of the job
+        /// Code of the job.
         /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; } = null;
 
         /// <summary>
-        /// Title of the job
+        /// Title of the job.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// Description of the job
+        /// Description of the job.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// Status of the job
+        /// Status of the job.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("status")]
         public string? Status { get; set; } = null;
 
         /// <summary>
-        /// Status of the job
+        /// Status of the job.
         /// </summary>
         [JsonProperty("job_status")]
         public AtsJobJobStatus? JobStatus { get; set; } = null;
 
         /// <summary>
-        /// Department ids of the job
+        /// Department ids of the job.
         /// </summary>
         [JsonProperty("department_ids")]
         public List<string>? DepartmentIds { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s department ids of the job
+        /// Provider's department ids of the job.
         /// </summary>
         [JsonProperty("remote_department_ids")]
         public List<string>? RemoteDepartmentIds { get; set; } = null;
 
         /// <summary>
-        /// Location ids of the job
+        /// Location ids of the job.
         /// </summary>
         [JsonProperty("location_ids")]
         public List<string>? LocationIds { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s location ids of the job
+        /// Provider's location ids of the job.
         /// </summary>
         [JsonProperty("remote_location_ids")]
         public List<string>? RemoteLocationIds { get; set; } = null;
@@ -106,25 +105,25 @@ namespace StackOneHQ.Client.Models.Components
         public List<InterviewStage>? InterviewStages { get; set; } = null;
 
         /// <summary>
-        /// Confidential status of the job
+        /// Confidential status of the job.
         /// </summary>
         [JsonProperty("confidential")]
         public AtsJobConfidential? Confidential { get; set; } = null;
 
         /// <summary>
-        /// The job custom fields
+        /// The job custom fields.
         /// </summary>
         [JsonProperty("custom_fields")]
         public List<CustomFields>? CustomFields { get; set; } = null;
 
         /// <summary>
-        /// Date of creation
+        /// Date of creation.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Date of last update
+        /// Date of last update.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

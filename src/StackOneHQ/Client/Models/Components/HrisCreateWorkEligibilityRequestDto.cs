@@ -14,15 +14,14 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class HrisCreateWorkEligibilityRequestDto
     {
-
         [JsonProperty("document")]
         public HrisCreateWorkEligibilityRequestDtoDocument? Document { get; set; } = null;
 
         /// <summary>
-        /// The country code of the issued by authority
+        /// The country code of the issued by authority.
         /// </summary>
         [JsonProperty("issued_by")]
         public HrisCreateWorkEligibilityRequestDtoIssuedBy? IssuedBy { get; set; } = null;
@@ -43,7 +42,7 @@ namespace StackOneHQ.Client.Models.Components
         public DateTime? ValidTo { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

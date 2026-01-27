@@ -12,33 +12,32 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The location of the time entry
+    /// The location of the time entry.
     /// </summary>
     public class Location
     {
-
         /// <summary>
-        /// The reference id
+        /// The reference id.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The reference name
+        /// The reference name.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The reference status
+        /// The reference status.
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public TimeEntriesActiveUnion? Active { get; set; } = null;

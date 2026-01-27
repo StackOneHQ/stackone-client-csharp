@@ -12,33 +12,32 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// HRIS Employee Shifts filters
+    /// HRIS Employee Shifts filters.
     /// </summary>
     public class HrisListEmployeeShiftsFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select shifts by status
+        /// Filter to select shifts by status.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=status")]
         public HrisListEmployeeShiftsStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// Filter shifts that start after this date
+        /// Filter shifts that start after this date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=starts_after")]
         public string? StartsAfter { get; set; }
 
         /// <summary>
-        /// Filter shifts that end before this date
+        /// Filter shifts that end before this date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=ends_before")]
         public string? EndsBefore { get; set; }

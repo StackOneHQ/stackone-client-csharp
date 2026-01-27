@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// The advanced log response data
+    /// The advanced log response data.
     /// </summary>
     public class StepLogResponse
     {
-
         /// <summary>
-        /// The response status code
+        /// The response status code.
         /// </summary>
         [JsonProperty("status_code")]
         public double? StatusCode { get; set; } = null;
@@ -33,13 +32,13 @@ namespace StackOneHQ.Client.Models.Components
         public object? Body { get; set; } = null;
 
         /// <summary>
-        /// The custom mapping errors
+        /// The custom mapping errors.
         /// </summary>
         [JsonProperty("custom_mapping_errors")]
         public List<CustomMappingError>? CustomMappingErrors { get; set; } = null;
 
         /// <summary>
-        /// The provider errors
+        /// The provider errors.
         /// </summary>
         [JsonProperty("provider_errors")]
         public List<ProviderError>? ProviderErrors { get; set; } = null;

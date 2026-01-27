@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// How often the employee is paid
+    /// How often the employee is paid.
     /// </summary>
     public class HrisCreateEmployeeRequestDtoPayFrequency
     {
-
         /// <summary>
         /// The pay frequency of the job postings.
         /// </summary>

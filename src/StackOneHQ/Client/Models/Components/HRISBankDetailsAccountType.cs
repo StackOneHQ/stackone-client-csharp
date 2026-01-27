@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of bank account
+    /// The type of bank account.
     /// </summary>
     public class HRISBankDetailsAccountType
     {
-
         /// <summary>
-        /// The type of bank account
+        /// The type of bank account.
         /// </summary>
         [JsonProperty("value")]
         public HRISBankDetailsAccountTypeValue? Value { get; set; } = null;

@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(EmploymentPeriodSourceValueUnion.EmploymentPeriodSourceValueUnionConverter))]
     public class EmploymentPeriodSourceValueUnion
     {

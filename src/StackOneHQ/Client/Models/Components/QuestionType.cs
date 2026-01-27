@@ -16,10 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class QuestionType
     {
-
         /// <summary>
         /// The type of the questions.
         /// </summary>

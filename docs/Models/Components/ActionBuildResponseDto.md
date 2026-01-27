@@ -1,0 +1,11 @@
+# ActionBuildResponseDto
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Status`                                                                                | [ActionBuildResponseDtoStatus](../../Models/Components/ActionBuildResponseDtoStatus.md) | :heavy_check_mark:                                                                      | Build status                                                                            |
+| `ActionsIndexed`                                                                        | *double*                                                                                | :heavy_check_mark:                                                                      | Number of actions indexed                                                               |
+| `ConnectorFilter`                                                                       | *string*                                                                                | :heavy_minus_sign:                                                                      | Connector filter applied                                                                |
+| `Error`                                                                                 | *string*                                                                                | :heavy_minus_sign:                                                                      | Error message if status is error                                                        |

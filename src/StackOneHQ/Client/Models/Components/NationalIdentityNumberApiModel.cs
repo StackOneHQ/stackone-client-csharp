@@ -12,10 +12,9 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class NationalIdentityNumberApiModel
     {
-
         [JsonProperty("value")]
         public string? Value { get; set; } = null;
 
@@ -23,7 +22,7 @@ namespace StackOneHQ.Client.Models.Components
         public NationalIdentityNumberApiModelType? Type { get; set; } = null;
 
         /// <summary>
-        /// The country code
+        /// The country code.
         /// </summary>
         [JsonProperty("country")]
         public NationalIdentityNumberApiModelCountry? Country { get; set; } = null;

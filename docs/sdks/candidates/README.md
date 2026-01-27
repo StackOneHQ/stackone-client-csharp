@@ -1,5 +1,4 @@
-# Candidates
-(*Ats.Candidates*)
+# Ats.Candidates
 
 ## Overview
 
@@ -67,7 +66,8 @@ var res = await sdk.Ats.Candidates.CreateAsync(
                 RemoteValueId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
             },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -75,10 +75,11 @@ var res = await sdk.Ats.Candidates.CreateAsync(
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                            | *string*                                                                                | :heavy_check_mark:                                                                      | The account identifier                                                                  |
-| `AtsCreateCandidateRequestDto`                                                          | [AtsCreateCandidateRequestDto](../../Models/Components/AtsCreateCandidateRequestDto.md) | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `AtsCreateCandidateRequestDto`                                                                                                                                           | [AtsCreateCandidateRequestDto](../../Models/Components/AtsCreateCandidateRequestDto.md)                                                                                  | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -124,6 +125,7 @@ AtsGetCandidateRequest req = new AtsGetCandidateRequest() {
     Id = "<id>",
     Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,tags,created_at,updated_at,unified_custom_fields",
     Include = "custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Candidates.GetAsync(req);

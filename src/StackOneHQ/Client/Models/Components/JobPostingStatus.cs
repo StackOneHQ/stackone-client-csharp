@@ -16,10 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class JobPostingStatus
     {
-
         /// <summary>
         /// The status of the job postings.
         /// </summary>

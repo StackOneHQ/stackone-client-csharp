@@ -12,10 +12,11 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// The status of the job
-    /// </summary>    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
+    /// The status of the job.
+    /// </summary>
+    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public enum AtsListJobsStatus
     {
         [JsonProperty("open")]
@@ -58,5 +59,4 @@ namespace StackOneHQ.Client.Models.Requests
         }
     }
 #pragma warning restore 0618
-
 }

@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Status of the position
+    /// Status of the position.
     /// </summary>
     public class PositionStatus
     {
-
         /// <summary>
         /// The status of the position.
         /// </summary>

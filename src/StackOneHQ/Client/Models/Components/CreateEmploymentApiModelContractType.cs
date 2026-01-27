@@ -12,33 +12,32 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The employment work schedule type
+    /// The employment work schedule type.
     /// </summary>
     public class CreateEmploymentApiModelContractType
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The label of the employment type
+        /// The label of the employment type.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The employment work schedule type (e.g., full-time, part-time)
+        /// The employment work schedule type (e.g., full-time, part-time).
         /// </summary>
         [JsonProperty("contract_type")]
         public CreateEmploymentApiModelContractTypeContractType? ContractType { get; set; } = null;

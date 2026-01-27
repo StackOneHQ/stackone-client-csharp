@@ -1,5 +1,4 @@
-# BackgroundChecksPackages
-(*Ats.BackgroundChecks.Packages*)
+# Ats.BackgroundChecks.Packages
 
 ## Overview
 
@@ -28,6 +27,7 @@ AtsGetBackgroundCheckPackageRequest req = new AtsGetBackgroundCheckPackageReques
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,description,tests,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.BackgroundChecks.Packages.GetAsync(req);

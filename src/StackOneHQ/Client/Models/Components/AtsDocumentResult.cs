@@ -13,10 +13,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AtsDocumentResult
     {
-
         [JsonProperty("data")]
         public AtsDocumentApiModel Data { get; set; } = default!;
 

@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AccountingBatchCreateCompanyJournalsResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// Batch operation accepted
+        /// Batch operation accepted.
         /// </summary>
         public BatchResultApiModel? BatchResultApiModel { get; set; }
 

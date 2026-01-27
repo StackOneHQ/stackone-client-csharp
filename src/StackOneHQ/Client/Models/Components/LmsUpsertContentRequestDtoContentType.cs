@@ -16,21 +16,20 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of content
+    /// The type of content.
     /// </summary>
     public class LmsUpsertContentRequestDtoContentType
     {
-
         /// <summary>
-        /// The content type for write operations. Provide one of the listed enum values. If omitted or set to &quot;unmapped_value&quot;, the source_value will be sent to the provider instead.
+        /// The content type for write operations. Provide one of the listed enum values. If omitted or set to "unmapped_value", the source_value will be sent to the provider instead.
         /// </summary>
         [JsonProperty("value")]
         public LmsUpsertContentRequestDtoValue? Value { get; set; } = null;
 
         /// <summary>
-        /// The provider-specific value to use when value is omitted or set to &quot;unmapped_value&quot;. You are responsible for ensuring this matches the provider&apos;s expected format.
+        /// The provider-specific value to use when value is omitted or set to "unmapped_value". You are responsible for ensuring this matches the provider's expected format.
         /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public LmsUpsertContentRequestDtoSourceValueUnion? SourceValue { get; set; } = null;

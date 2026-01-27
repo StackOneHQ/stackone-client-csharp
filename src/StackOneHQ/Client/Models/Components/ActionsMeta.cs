@@ -13,48 +13,71 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class ActionsMeta
     {
+        /// <summary>
+        /// The account ID this metadata applies to (only present when filtering by account_ids).
+        /// </summary>
+        [JsonProperty("account_id")]
+        public string? AccountId { get; set; } = null;
 
         /// <summary>
-        /// The version of the actions metadata
+        /// The integration ID this metadata applies to (only present when filtering by account_ids).
+        /// </summary>
+        [JsonProperty("integration_id")]
+        public string? IntegrationId { get; set; } = null;
+
+        /// <summary>
+        /// The version of the actions metadata.
         /// </summary>
         [JsonProperty("version")]
         public string? Version { get; set; } = null;
 
         /// <summary>
-        /// The name of the provider
+        /// The name of the provider.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The unique key for the provider
+        /// The unique key for the provider.
         /// </summary>
         [JsonProperty("key")]
         public string? Key { get; set; } = null;
 
         /// <summary>
-        /// The icon URL for the provider
+        /// The icon URL for the provider.
         /// </summary>
         [JsonProperty("icon")]
         public string? Icon { get; set; } = null;
 
         /// <summary>
-        /// The description of the provider
+        /// The description of the provider.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The authentication methods supported by the provider
+        /// The release stage of the connector (e.g., ga, beta, preview). By default, StackOne organizations only have access to connectors in the 'ga' stage. To get access to 'beta' or 'preview' stage connectors, please contact support.
+        /// </summary>
+        [JsonProperty("release_stage")]
+        public string? ReleaseStage { get; set; } = null;
+
+        /// <summary>
+        /// The authentication methods supported by the provider.
         /// </summary>
         [JsonProperty("authentication")]
         public List<AuthenticationMetaItem>? Authentication { get; set; } = null;
 
         /// <summary>
-        /// The list of actions available for this provider
+        /// The list of scope definitions available for this provider.
+        /// </summary>
+        [JsonProperty("scope_definitions")]
+        public List<ScopeDefinitionMetaItem>? ScopeDefinitions { get; set; } = null;
+
+        /// <summary>
+        /// The list of actions available for this provider.
         /// </summary>
         [JsonProperty("actions")]
         public List<ActionMetaItem>? Actions { get; set; } = null;

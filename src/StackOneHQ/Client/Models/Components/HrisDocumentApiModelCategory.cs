@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The category of the the document
+    /// The category of the the document.
     /// </summary>
     public class HrisDocumentApiModelCategory
     {
-
         /// <summary>
-        /// The category of the file
+        /// The category of the file.
         /// </summary>
         [JsonProperty("value")]
         public HrisDocumentApiModelCategoryValue? Value { get; set; } = null;

@@ -17,6 +17,9 @@ namespace StackOneHQ.Client
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Main configuration for the SDK.
+    /// </summary>
     public struct SDKConfig
     {
         /// <summary>
@@ -42,7 +45,7 @@ namespace StackOneHQ.Client
             Client = client ?? new SpeakeasyHttpClient();
             ServerUrl = "";
             ServerIndex = 0;
-            UserAgent = "speakeasy-sdk/csharp 0.9.0 2.767.2 1.0.0 StackOneHQ.Client";
+            UserAgent = "speakeasy-sdk/csharp 0.9.1 2.801.0 1.0.0 StackOneHQ.Client";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;

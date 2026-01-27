@@ -16,42 +16,41 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class ConnectSessionCreate
     {
-
         /// <summary>
-        /// The categories of the provider to connect to
+        /// The categories of the provider to connect to.
         /// </summary>
         [JsonProperty("categories")]
         public List<ConnectSessionCreateCategory>? Categories { get; set; } = null;
 
         /// <summary>
-        /// The provider to connect to
+        /// The provider to connect to.
         /// </summary>
         [JsonProperty("provider")]
         public string? Provider { get; set; } = null;
 
         /// <summary>
-        /// The provider version to connect to
+        /// The provider version to connect to.
         /// </summary>
         [JsonProperty("provider_version")]
         public string? ProviderVersion { get; set; } = null;
 
         /// <summary>
-        /// The origin owner identifier
+        /// The origin owner identifier.
         /// </summary>
         [JsonProperty("origin_owner_id")]
         public string OriginOwnerId { get; set; } = default!;
 
         /// <summary>
-        /// The origin owner name
+        /// The origin owner name.
         /// </summary>
         [JsonProperty("origin_owner_name")]
         public string OriginOwnerName { get; set; } = default!;
 
         /// <summary>
-        /// The origin username
+        /// The origin username.
         /// </summary>
         [JsonProperty("origin_username")]
         public string? OriginUsername { get; set; } = null;
@@ -63,13 +62,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? AccountId { get; set; } = null;
 
         /// <summary>
-        /// How long the session should be valid for in seconds
+        /// How long the session should be valid for in seconds.
         /// </summary>
         [JsonProperty("expires_in")]
         public double? ExpiresIn { get; set; } = 1800D;
 
         /// <summary>
-        /// The metadata for the connection
+        /// The metadata for the connection.
         /// </summary>
         [JsonProperty("metadata")]
         public ConnectSessionCreateMetadata? Metadata { get; set; } = null;
@@ -87,13 +86,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The connect session account type
+        /// The connect session account type.
         /// </summary>
         [JsonProperty("type")]
         public ConnectSessionCreateType? Type { get; set; } = StackOneHQ.Client.Models.Components.ConnectSessionCreateType.Production;
 
         /// <summary>
-        /// The integration ID associated with this connect session
+        /// The integration ID associated with this connect session.
         /// </summary>
         [JsonProperty("integration_id")]
         public string? IntegrationId { get; set; } = null;

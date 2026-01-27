@@ -14,55 +14,54 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class HrisCreateTimeOffRequestDto
     {
-
         /// <summary>
-        /// The approver ID
+        /// The approver ID.
         /// </summary>
         [JsonProperty("approver_id")]
         public string? ApproverId { get; set; } = null;
 
         /// <summary>
-        /// The status of the time off request
+        /// The status of the time off request.
         /// </summary>
         [JsonProperty("status")]
         public HrisCreateTimeOffRequestDtoStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// The type of the time off request
+        /// The type of the time off request.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("type")]
         public HrisCreateTimeOffRequestDtoType? Type { get; set; } = null;
 
         /// <summary>
-        /// The start date of the time off request (ISO8601 date-time without timezone)
+        /// The start date of the time off request (ISO8601 date-time without timezone).
         /// </summary>
         [JsonProperty("start_date")]
         public string? StartDate { get; set; } = null;
 
         /// <summary>
-        /// Inclusive end date of the time off request (ISO8601 date-time without timezone). The time off includes this day
+        /// Inclusive end date of the time off request (ISO8601 date-time without timezone). The time off includes this day.
         /// </summary>
         [JsonProperty("end_date")]
         public string? EndDate { get; set; } = null;
 
         /// <summary>
-        /// True if the start of the time off request begins half way through the day
+        /// True if the start of the time off request begins half way through the day.
         /// </summary>
         [JsonProperty("start_half_day", NullValueHandling = NullValueHandling.Include)]
         public HrisCreateTimeOffRequestDtoStartHalfDayUnion? StartHalfDay { get; set; } = null;
 
         /// <summary>
-        /// True if the end of the time off request ends half way through the day
+        /// True if the end of the time off request ends half way through the day.
         /// </summary>
         [JsonProperty("end_half_day", NullValueHandling = NullValueHandling.Include)]
         public HrisCreateTimeOffRequestDtoEndHalfDayUnion? EndHalfDay { get; set; } = null;
 
         /// <summary>
-        /// The time off policy id associated with this time off request
+        /// The time off policy id associated with this time off request.
         /// </summary>
         [JsonProperty("time_off_policy_id")]
         public string? TimeOffPolicyId { get; set; } = null;
@@ -71,13 +70,13 @@ namespace StackOneHQ.Client.Models.Components
         public HrisCreateTimeOffRequestDtoReason? Reason { get; set; } = null;
 
         /// <summary>
-        /// Allows users to provide additional context or notes for their time off request
+        /// Allows users to provide additional context or notes for their time off request.
         /// </summary>
         [JsonProperty("comment")]
         public string? Comment { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

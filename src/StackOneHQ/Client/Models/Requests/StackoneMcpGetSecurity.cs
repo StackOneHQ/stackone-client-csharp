@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class StackoneMcpGetSecurity
     {
-
         [SpeakeasyMetadata("security:scheme=true,type=http,subType=basic")]
         public SchemeBasic? Basic { get; set; }
 

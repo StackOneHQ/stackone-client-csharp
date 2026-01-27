@@ -12,48 +12,47 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class TicketingProject
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name of the project
+        /// The name of the project.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The description of the project
+        /// The description of the project.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The organization id related to the project
+        /// The organization id related to the project.
         /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was created
+        /// The timestamp when the record was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was last updated
+        /// The timestamp when the record was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

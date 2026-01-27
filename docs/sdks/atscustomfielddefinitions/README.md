@@ -1,5 +1,4 @@
-# AtsCustomFieldDefinitions
-(*Ats.CustomFieldDefinitions*)
+# Ats.CustomFieldDefinitions
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListCandidateCustomFieldDefinitionsRequest req = new AtsListCandidateCustomFi
     Filter = new AtsListCandidateCustomFieldDefinitionsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListCandidateCustomFieldDefinitionsResponse? res = await sdk.Ats.CustomFieldDefinitions.ListCandidatesAsync(req);
@@ -97,6 +97,7 @@ AtsGetJobCustomFieldDefinitionRequest req = new AtsGetJobCustomFieldDefinitionRe
     Filter = new AtsGetJobCustomFieldDefinitionFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.CustomFieldDefinitions.GetJobAsync(req);

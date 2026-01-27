@@ -16,10 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class AttachmentContentType
     {
-
         /// <summary>
         /// The content type of the attachment.
         /// </summary>

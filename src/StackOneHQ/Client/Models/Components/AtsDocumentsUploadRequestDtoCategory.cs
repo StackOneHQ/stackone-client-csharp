@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
     /// The category to be associated with the file to be uploaded. Id will take precedence over name.
     /// </summary>
     public class AtsDocumentsUploadRequestDtoCategory
     {
-
         /// <summary>
-        /// The category name to associate with the file
+        /// The category name to associate with the file.
         /// </summary>
         [JsonProperty("value")]
         public AtsDocumentsUploadRequestDtoCategoryValue? Value { get; set; } = null;

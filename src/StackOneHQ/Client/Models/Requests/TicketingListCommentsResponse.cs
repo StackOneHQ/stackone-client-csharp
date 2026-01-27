@@ -15,11 +15,10 @@ namespace StackOneHQ.Client.Models.Requests
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    
+
     public class TicketingListCommentsResponse
     {
         public Func<Task<TicketingListCommentsResponse?>>? Next {get;set;}
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 

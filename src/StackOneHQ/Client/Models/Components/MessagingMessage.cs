@@ -14,54 +14,53 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class MessagingMessage
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Content of the message
+        /// Content of the message.
         /// </summary>
         [JsonProperty("content")]
         public MessagingMessageContent? Content { get; set; } = null;
 
         /// <summary>
-        /// ID of the parent message if this is a reply
+        /// ID of the parent message if this is a reply.
         /// </summary>
         [JsonProperty("parent_message_id")]
         public string? ParentMessageId { get; set; } = null;
 
         /// <summary>
-        /// List of attachments in the message
+        /// List of attachments in the message.
         /// </summary>
         [JsonProperty("attachments")]
         public List<MessagingAttachment>? Attachments { get; set; } = null;
 
         /// <summary>
-        /// Author of the message
+        /// Author of the message.
         /// </summary>
         [JsonProperty("author")]
         public MessagingMessageAuthor? Author { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the message was created
+        /// Timestamp when the message was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the message was last updated
+        /// Timestamp when the message was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

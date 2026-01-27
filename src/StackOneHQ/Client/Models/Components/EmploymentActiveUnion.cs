@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// The employment active status
+    /// The employment active status.
     /// </summary>
     [JsonConverter(typeof(EmploymentActiveUnion.EmploymentActiveUnionConverter))]
     public class EmploymentActiveUnion

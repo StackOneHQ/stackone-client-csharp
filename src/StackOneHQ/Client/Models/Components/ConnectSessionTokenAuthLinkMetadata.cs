@@ -10,9 +10,9 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Arbitrary set of key and values defined during the session token creation. This can be used to tag an account (eg. based on their pricing plan)
+    /// Arbitrary set of key and values defined during the session token creation. This can be used to tag an account (eg. based on their pricing plan).
     /// </summary>
     public class ConnectSessionTokenAuthLinkMetadata
     {

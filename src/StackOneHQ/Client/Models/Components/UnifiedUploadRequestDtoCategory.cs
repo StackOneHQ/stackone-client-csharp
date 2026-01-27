@@ -11,13 +11,12 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
     /// The category object for associating uploaded files. If both an ID and a name are provided, the ID takes precedence.
     /// </summary>
     public class UnifiedUploadRequestDtoCategory
     {
-
         /// <summary>
         /// The category name for associating uploaded files.
         /// </summary>

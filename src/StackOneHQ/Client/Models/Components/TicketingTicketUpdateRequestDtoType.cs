@@ -16,21 +16,20 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of this status
+    /// The type of this status.
     /// </summary>
     public class TicketingTicketUpdateRequestDtoType
     {
-
         /// <summary>
-        /// The type of this status
+        /// The type of this status.
         /// </summary>
         [JsonProperty("value")]
         public TicketingTicketUpdateRequestDtoStatusValue? Value { get; set; } = null;
 
         /// <summary>
-        /// The source value of this status type
+        /// The source value of this status type.
         /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public TicketingTicketUpdateRequestDtoStatusSourceValueUnion? SourceValue { get; set; } = null;

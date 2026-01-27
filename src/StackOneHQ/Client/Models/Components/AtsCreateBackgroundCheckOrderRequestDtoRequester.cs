@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class AtsCreateBackgroundCheckOrderRequestDtoRequester
     {
-
         /// <summary>
         /// User ID of the hiring team member.
         /// </summary>
@@ -22,7 +21,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? UserId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the user
+        /// Provider's unique identifier of the user.
         /// </summary>
         [JsonProperty("remote_user_id")]
         public string? RemoteUserId { get; set; } = null;

@@ -10,7 +10,7 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     public class AssignmentSourceValueResult
     {
     }

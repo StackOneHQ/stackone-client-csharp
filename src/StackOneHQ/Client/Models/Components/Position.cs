@@ -13,66 +13,65 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class Position
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Job ID from the HRIS provider
+        /// Job ID from the HRIS provider.
         /// </summary>
         [JsonProperty("job_id")]
         public string? JobId { get; set; } = null;
 
         /// <summary>
-        /// Title of the position
+        /// Title of the position.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// Description of the position
+        /// Description of the position.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// Department ID associated with the position
+        /// Department ID associated with the position.
         /// </summary>
         [JsonProperty("department_id")]
         public string? DepartmentId { get; set; } = null;
 
         /// <summary>
-        /// Location ID associated with the position
+        /// Location ID associated with the position.
         /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; } = null;
 
         /// <summary>
-        /// Employment type for the position
+        /// Employment type for the position.
         /// </summary>
         [JsonProperty("employment_type")]
         public string? EmploymentType { get; set; } = null;
 
         /// <summary>
-        /// Status of the position
+        /// Status of the position.
         /// </summary>
         [JsonProperty("status")]
         public PositionStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// Date when the position was posted
+        /// Date when the position was posted.
         /// </summary>
         [JsonProperty("posted_date")]
         public DateTime? PostedDate { get; set; } = null;

@@ -16,18 +16,17 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class ConditionType
     {
-
         /// <summary>
-        /// The type of the question&apos;s condition
+        /// The type of the question's condition.
         /// </summary>
         [JsonProperty("value")]
         public ConditionTypeValue? Value { get; set; } = null;
 
         /// <summary>
-        /// The source value of the question&apos;s condition type
+        /// The source value of the question's condition type.
         /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public ConditionTypeSourceValueUnion? SourceValue { get; set; } = null;

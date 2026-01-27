@@ -14,72 +14,71 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class AccountingJournal
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// ID of the company this journal belongs to
+        /// ID of the company this journal belongs to.
         /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; } = null;
 
         /// <summary>
-        /// Reference number for the journal
+        /// Reference number for the journal.
         /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; } = null;
 
         /// <summary>
-        /// Memo or description for the journal
+        /// Memo or description for the journal.
         /// </summary>
         [JsonProperty("memo")]
         public string? Memo { get; set; } = null;
 
         /// <summary>
-        /// Date of the journal transaction
+        /// Date of the journal transaction.
         /// </summary>
         [JsonProperty("transaction_date")]
         public DateTime? TransactionDate { get; set; } = null;
 
         /// <summary>
-        /// Status of the journal
+        /// Status of the journal.
         /// </summary>
         [JsonProperty("status")]
         public AccountingJournalStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// List of journal lines
+        /// List of journal lines.
         /// </summary>
         [JsonProperty("lines")]
         public List<JournalLine>? Lines { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the journal was created
+        /// Timestamp when the journal was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the journal was last updated
+        /// Timestamp when the journal was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the journal was posted
+        /// Timestamp when the journal was posted.
         /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; } = null;

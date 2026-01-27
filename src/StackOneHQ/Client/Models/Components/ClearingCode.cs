@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class ClearingCode
     {
-
         /// <summary>
-        /// The type of clearing code
+        /// The type of clearing code.
         /// </summary>
         [JsonProperty("type")]
         public ClearingCodeType? Type { get; set; } = null;
 
         /// <summary>
-        /// The clearing code value
+        /// The clearing code value.
         /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; } = null;

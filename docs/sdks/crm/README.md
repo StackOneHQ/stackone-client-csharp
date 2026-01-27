@@ -1,5 +1,4 @@
 # Crm
-(*Crm*)
 
 ## Overview
 
@@ -32,6 +31,7 @@ CrmGetContactRequest req = new CrmGetContactRequest() {
     Id = "<id>",
     Fields = "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at,unified_custom_fields",
     Include = "custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Crm.GetContactAsync(req);
@@ -120,7 +120,8 @@ var res = await sdk.Crm.UpdateContactAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -128,11 +129,12 @@ var res = await sdk.Crm.UpdateContactAsync(
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `XAccountId`                                                                        | *string*                                                                            | :heavy_check_mark:                                                                  | The account identifier                                                              |
-| `Id`                                                                                | *string*                                                                            | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `CrmCreateContactRequestDto`                                                        | [CrmCreateContactRequestDto](../../Models/Components/CrmCreateContactRequestDto.md) | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `CrmCreateContactRequestDto`                                                                                                                                             | [CrmCreateContactRequestDto](../../Models/Components/CrmCreateContactRequestDto.md)                                                                                      | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -180,6 +182,7 @@ CrmListAccountsRequest req = new CrmListAccountsRequest() {
     Filter = new CrmListAccountsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 CrmListAccountsResponse? res = await sdk.Crm.ListAccountsAsync(req);
@@ -241,6 +244,7 @@ CrmGetAccountRequest req = new CrmGetAccountRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Crm.GetAccountAsync(req);

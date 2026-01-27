@@ -1,5 +1,4 @@
-# Tickets
-(*Ticketing.Tickets*)
+# Ticketing.Tickets
 
 ## Overview
 
@@ -36,6 +35,7 @@ TicketingListTicketsRequest req = new TicketingListTicketsRequest() {
     Filter = new TicketingListTicketsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListTicketsResponse? res = await sdk.Ticketing.Tickets.ListAsync(req);
@@ -132,7 +132,8 @@ var res = await sdk.Ticketing.Tickets.CreateAsync(
         ProjectId = "project-001",
         ComponentIds = "[\"component-001\",\"component-002\"]",
         Type = "ticket-type-001",
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -140,10 +141,11 @@ var res = await sdk.Ticketing.Tickets.CreateAsync(
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | The account identifier                                                                        |
-| `TicketingTicketCreateRequestDto`                                                             | [TicketingTicketCreateRequestDto](../../Models/Components/TicketingTicketCreateRequestDto.md) | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `TicketingTicketCreateRequestDto`                                                                                                                                        | [TicketingTicketCreateRequestDto](../../Models/Components/TicketingTicketCreateRequestDto.md)                                                                            | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -188,6 +190,7 @@ TicketingGetTicketRequest req = new TicketingGetTicketRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.Tickets.GetAsync(req);
@@ -287,7 +290,8 @@ var res = await sdk.Ticketing.Tickets.UpdateAsync(
             },
             Name = "Backlog",
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -295,11 +299,12 @@ var res = await sdk.Ticketing.Tickets.UpdateAsync(
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | The account identifier                                                                        |
-| `Id`                                                                                          | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `TicketingTicketUpdateRequestDto`                                                             | [TicketingTicketUpdateRequestDto](../../Models/Components/TicketingTicketUpdateRequestDto.md) | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `TicketingTicketUpdateRequestDto`                                                                                                                                        | [TicketingTicketUpdateRequestDto](../../Models/Components/TicketingTicketUpdateRequestDto.md)                                                                            | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -348,6 +353,7 @@ TicketingListAttachmentsRequest req = new TicketingListAttachmentsRequest() {
     Filter = new TicketingListAttachmentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListAttachmentsResponse? res = await sdk.Ticketing.Tickets.ListAttachmentsAsync(req);
@@ -412,6 +418,7 @@ TicketingListTicketStatusesRequest req = new TicketingListTicketStatusesRequest(
     Filter = new TicketingListTicketStatusesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListTicketStatusesResponse? res = await sdk.Ticketing.Tickets.ListStatusesAsync(req);

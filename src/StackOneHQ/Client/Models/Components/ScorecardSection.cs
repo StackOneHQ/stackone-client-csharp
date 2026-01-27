@@ -13,30 +13,29 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class ScorecardSection
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The label of the section
+        /// The label of the section.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The fields within the section
+        /// The fields within the section.
         /// </summary>
         [JsonProperty("fields")]
         public List<Field>? Fields { get; set; } = null;

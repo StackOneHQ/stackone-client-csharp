@@ -11,12 +11,11 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class MessagingGetAttachmentRequest
     {
-
         /// <summary>
-        /// The account identifier
+        /// The account identifier.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-account-id")]
         public string XAccountId { get; set; } = default!;
@@ -28,21 +27,27 @@ namespace StackOneHQ.Client.Models.Requests
         public string SubResourceId { get; set; } = default!;
 
         /// <summary>
-        /// Indicates that the raw request result should be returned in addition to the mapped result (default value is false)
+        /// Indicates that the raw request result should be returned in addition to the mapped result (default value is false).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public bool? Raw { get; set; } = null;
 
         /// <summary>
-        /// Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with &apos;proxy&apos; key
+        /// Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=deepObject,explode=true,name=proxy")]
         public Dictionary<string, object>? Proxy { get; set; } = null;
 
         /// <summary>
-        /// The comma separated list of fields that will be returned in the response (if empty, all fields are returned)
+        /// The comma separated list of fields that will be returned in the response (if empty, all fields are returned).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public string? Fields { get; set; } = null;
+
+        /// <summary>
+        /// Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).
+        /// </summary>
+        [SpeakeasyMetadata("header:style=simple,explode=false,name=Prefer")]
+        public string? Prefer { get; set; }
     }
 }

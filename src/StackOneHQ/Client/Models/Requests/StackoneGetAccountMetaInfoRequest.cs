@@ -10,10 +10,9 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
-    
+
     public class StackoneGetAccountMetaInfoRequest
     {
-
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
     }

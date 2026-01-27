@@ -12,12 +12,11 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class OfferHistory
     {
-
         /// <summary>
-        /// Start Date of the offer
+        /// Start Date of the offer.
         /// </summary>
         [JsonProperty("start_date")]
         public DateTime? StartDate { get; set; } = null;
@@ -29,13 +28,13 @@ namespace StackOneHQ.Client.Models.Components
         public string? Currency { get; set; } = null;
 
         /// <summary>
-        /// Date of creation
+        /// Date of creation.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Date of last update
+        /// Date of last update.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

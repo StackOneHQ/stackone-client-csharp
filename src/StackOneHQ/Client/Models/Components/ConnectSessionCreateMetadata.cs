@@ -10,9 +10,9 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The metadata for the connection
+    /// The metadata for the connection.
     /// </summary>
     public class ConnectSessionCreateMetadata
     {

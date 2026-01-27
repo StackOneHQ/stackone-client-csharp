@@ -12,13 +12,12 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Current status of the ticket
+    /// Current status of the ticket.
     /// </summary>
     public class TicketingReadTicketStatus
     {
-
         /// <summary>
         /// The id of the ticket status.
         /// </summary>
@@ -26,7 +25,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The type of this status
+        /// The type of this status.
         /// </summary>
         [JsonProperty("type")]
         public TicketingReadTicketStatusType? Type { get; set; } = null;

@@ -19,9 +19,8 @@ namespace StackOneHQ.Client
     using System.Collections.Generic;
     using System.Net.Http;
     using System.Threading.Tasks;
-
     /// <summary>
-    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING
+    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING.
     /// </summary>
     public interface IStackOneHQClient
     {
@@ -56,58 +55,140 @@ namespace StackOneHQ.Client
         /// Retrieve Actions metadata and definitions.
         /// </summary>
         public IActions Actions { get; }
+
         public IHris Hris { get; }
+
         public IAts Ats { get; }
+
         public IApplications Applications { get; }
+
         public IInterviews Interviews { get; }
+
         public IBackgroundChecks BackgroundChecks { get; }
+
         public IDocuments Documents { get; }
+
         public ICrm Crm { get; }
+
         public IIam Iam { get; }
+
         public IMarketing Marketing { get; }
+
         public ICourses Courses { get; }
+
         public ILms Lms { get; }
+
         public ITicketing Ticketing { get; }
+
         public IDrives Drives { get; }
+
         public IMessaging Messaging { get; }
+
         public IAccounting Accounting { get; }
     }
 
-
     /// <summary>
-    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING
+    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING.
     /// </summary>
     public class StackOneHQClient: IStackOneHQClient
     {
+        /// <summary>
+        /// The main SDK Configuration.
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// The ConnectSessions sub-SDK.
+        /// </summary>
         public IConnectSessions ConnectSessions { get; private set; }
+        /// <summary>
+        /// The Accounts sub-SDK.
+        /// </summary>
         public IAccounts Accounts { get; private set; }
+        /// <summary>
+        /// The RequestLogs sub-SDK.
+        /// </summary>
         public IRequestLogs RequestLogs { get; private set; }
+        /// <summary>
+        /// The Connectors sub-SDK.
+        /// </summary>
         public IConnectors Connectors { get; private set; }
+        /// <summary>
+        /// The Mcp sub-SDK.
+        /// </summary>
         public IMcp Mcp { get; private set; }
+        /// <summary>
+        /// The Proxy sub-SDK.
+        /// </summary>
         public IProxy Proxy { get; private set; }
+        /// <summary>
+        /// The Actions sub-SDK.
+        /// </summary>
         public IActions Actions { get; private set; }
+        /// <summary>
+        /// The Hris sub-SDK.
+        /// </summary>
         public IHris Hris { get; private set; }
+        /// <summary>
+        /// The Ats sub-SDK.
+        /// </summary>
         public IAts Ats { get; private set; }
+        /// <summary>
+        /// The Applications sub-SDK.
+        /// </summary>
         public IApplications Applications { get; private set; }
+        /// <summary>
+        /// The Interviews sub-SDK.
+        /// </summary>
         public IInterviews Interviews { get; private set; }
+        /// <summary>
+        /// The BackgroundChecks sub-SDK.
+        /// </summary>
         public IBackgroundChecks BackgroundChecks { get; private set; }
+        /// <summary>
+        /// The Documents sub-SDK.
+        /// </summary>
         public IDocuments Documents { get; private set; }
+        /// <summary>
+        /// The Crm sub-SDK.
+        /// </summary>
         public ICrm Crm { get; private set; }
+        /// <summary>
+        /// The Iam sub-SDK.
+        /// </summary>
         public IIam Iam { get; private set; }
+        /// <summary>
+        /// The Marketing sub-SDK.
+        /// </summary>
         public IMarketing Marketing { get; private set; }
+        /// <summary>
+        /// The Courses sub-SDK.
+        /// </summary>
         public ICourses Courses { get; private set; }
+        /// <summary>
+        /// The Lms sub-SDK.
+        /// </summary>
         public ILms Lms { get; private set; }
+        /// <summary>
+        /// The Ticketing sub-SDK.
+        /// </summary>
         public ITicketing Ticketing { get; private set; }
+        /// <summary>
+        /// The Drives sub-SDK.
+        /// </summary>
         public IDrives Drives { get; private set; }
+        /// <summary>
+        /// The Messaging sub-SDK.
+        /// </summary>
         public IMessaging Messaging { get; private set; }
+        /// <summary>
+        /// The Accounting sub-SDK.
+        /// </summary>
         public IAccounting Accounting { get; private set; }
 
+        /// <summary>
+        /// Initializes a new instance of the SDK based on a <see cref="SDKConfig"/> configuration object.
+        /// </summary>
+        /// <param name="config">The SDK configuration object.</param>
         public StackOneHQClient(SDKConfig config)
         {
             SDKConfiguration = config;
@@ -168,14 +249,22 @@ namespace StackOneHQ.Client
         /// <param name="urlParams">A dictionary of parameters to use for templating the serverUrl. Only used when serverUrl is provided.</param>
         /// <param name="client">A custom HTTP client implementation to use for making API requests. If not provided, the default SpeakeasyHttpClient will be used.</param>
         /// <param name="retryConfig">Configuration for retry behavior when API requests fail. Defines retry strategies, backoff policies, and maximum retry attempts.</param>
-        /// <exception cref="Exception">Thrown when the serverIndex is out of range (less than 0 or greater than or equal to the server list length).</exception>
-        public StackOneHQClient(StackOneHQ.Client.Models.Components.Security? security = null, Func<StackOneHQ.Client.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
+        /// <exception cref="ArgumentOutOfRangeException">Invalid value provided for <paramref name="serverIndex"/>: must be between 0 (inclusive) and 1 (exclusive).</exception>
+        public StackOneHQClient(
+            StackOneHQ.Client.Models.Components.Security? security = null,
+            Func<StackOneHQ.Client.Models.Components.Security>? securitySource = null,
+            int? serverIndex = null,
+            string? serverUrl = null,
+            Dictionary<string, string>? urlParams = null,
+            ISpeakeasyHttpClient? client = null,
+            RetryConfig? retryConfig = null
+        )
         {
             if (serverIndex != null)
             {
                 if (serverIndex.Value < 0 || serverIndex.Value >= SDKConfig.ServerList.Length)
                 {
-                    throw new Exception($"Invalid server index {serverIndex.Value}");
+                    throw new ArgumentOutOfRangeException($"Invalid server index {serverIndex}: must be between 0 (inclusive) and {SDKConfig.ServerList.Length} (exclusive)." );
                 }
             }
 
@@ -257,22 +346,31 @@ namespace StackOneHQ.Client
             SDKConfiguration = SDKConfiguration.Hooks.SDKInit(SDKConfiguration);
         }
 
+        /// <summary>
+        /// Builder class for constructing an instance of the SDK.
+        /// </summary>
         public class SDKBuilder
         {
             private SDKConfig _sdkConfig = new SDKConfig(client: new SpeakeasyHttpClient());
 
             public SDKBuilder() { }
 
+            /// <summary>
+            /// Overrides the default server by index.
+            /// </summary>
             public SDKBuilder WithServerIndex(int serverIndex)
             {
                 if (serverIndex < 0 || serverIndex >= SDKConfig.ServerList.Length)
                 {
-                    throw new Exception($"Invalid server index {serverIndex}");
+                    throw new ArgumentOutOfRangeException($"Invalid server index {serverIndex}: must be between 0 (inclusive) and {SDKConfig.ServerList.Length} (exclusive)." );
                 }
                 _sdkConfig.ServerIndex = serverIndex;
                 return this;
             }
 
+            /// <summary>
+            /// Overrides the default server URL for the SDK.
+            /// </summary>
             public SDKBuilder WithServerUrl(string serverUrl, Dictionary<string, string>? serverVariables = null)
             {
                 if (serverVariables != null)
@@ -283,30 +381,45 @@ namespace StackOneHQ.Client
                 return this;
             }
 
+            /// <summary>
+            /// Sets the securitySource security parameter for the SDK.
+            /// </summary>
             public SDKBuilder WithSecuritySource(Func<StackOneHQ.Client.Models.Components.Security> securitySource)
             {
                 _sdkConfig.SecuritySource = securitySource;
                 return this;
             }
 
+            /// <summary>
+            /// Sets the security security parameter for the SDK.
+            /// </summary>
             public SDKBuilder WithSecurity(StackOneHQ.Client.Models.Components.Security security)
             {
                 _sdkConfig.SecuritySource = () => security;
                 return this;
             }
 
+            /// <summary>
+            /// Sets a custom HTTP client to be used by the SDK.
+            /// </summary>
             public SDKBuilder WithClient(ISpeakeasyHttpClient client)
             {
                 _sdkConfig.Client = client;
                 return this;
             }
 
+            /// <summary>
+            /// Sets the retry configuration for the SDK.
+            /// </summary>
             public SDKBuilder WithRetryConfig(RetryConfig retryConfig)
             {
                 _sdkConfig.RetryConfig = retryConfig;
                 return this;
             }
 
+            /// <summary>
+            /// Builds and returns the SDK instance.
+            /// </summary>
             public StackOneHQClient Build()
             {
               return new StackOneHQClient(_sdkConfig);

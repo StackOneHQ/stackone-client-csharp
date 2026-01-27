@@ -13,64 +13,69 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class HrisListDivisionGroupsRequest
     {
-
         /// <summary>
-        /// The account identifier
+        /// The account identifier.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-account-id")]
         public string XAccountId { get; set; } = default!;
 
         /// <summary>
-        /// Indicates that the raw request result should be returned in addition to the mapped result (default value is false)
+        /// Indicates that the raw request result should be returned in addition to the mapped result (default value is false).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public bool? Raw { get; set; } = null;
 
         /// <summary>
-        /// Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with &apos;proxy&apos; key
+        /// Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=deepObject,explode=true,name=proxy")]
         public Dictionary<string, object>? Proxy { get; set; } = null;
 
         /// <summary>
-        /// The comma separated list of fields that will be returned in the response (if empty, all fields are returned)
+        /// The comma separated list of fields that will be returned in the response (if empty, all fields are returned).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public string? Fields { get; set; } = null;
 
         /// <summary>
-        /// Filter parameters that allow greater customisation of the list response
+        /// Filter parameters that allow greater customisation of the list response.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=deepObject,explode=true,name=filter")]
         public HrisListDivisionGroupsFilter? Filter { get; set; } = null;
 
         /// <summary>
-        /// The page number of the results to fetch
+        /// The page number of the results to fetch.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=page")]
         public string? Page { get; set; } = null;
 
         /// <summary>
-        /// The number of results per page (default value is 25)
+        /// The number of results per page (default value is 25).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=page_size")]
         public string? PageSize { get; set; } = null;
 
         /// <summary>
-        /// The unified cursor
+        /// The unified cursor.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=next")]
         public string? Next { get; set; } = null;
 
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
+
+        /// <summary>
+        /// Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).
+        /// </summary>
+        [SpeakeasyMetadata("header:style=simple,explode=false,name=Prefer")]
+        public string? Prefer { get; set; }
     }
 }

@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class TicketingContent
     {
-
         /// <summary>
-        /// The content of the ticket
+        /// The content of the ticket.
         /// </summary>
         [JsonProperty("plain")]
         public string? Plain { get; set; } = null;
 
         /// <summary>
-        /// The HTML content of the ticket
+        /// The HTML content of the ticket.
         /// </summary>
         [JsonProperty("html")]
         public string? Html { get; set; } = null;

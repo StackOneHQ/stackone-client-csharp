@@ -1,5 +1,4 @@
-# TicketsComments
-(*Ticketing.Tickets.Comments*)
+# Ticketing.Tickets.Comments
 
 ## Overview
 
@@ -32,6 +31,7 @@ TicketingListCommentsRequest req = new TicketingListCommentsRequest() {
     Filter = new TicketingListCommentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListCommentsResponse? res = await sdk.Ticketing.Tickets.Comments.ListAsync(req);

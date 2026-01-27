@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class StackoneRpcActionResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// Action response
+        /// Action response.
         /// </summary>
         public ActionsRpcResponse? ActionsRpcResponse { get; set; }
 

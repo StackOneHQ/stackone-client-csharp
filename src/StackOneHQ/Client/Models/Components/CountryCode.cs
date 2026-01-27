@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The country code where the bank is located
+    /// The country code where the bank is located.
     /// </summary>
     public class CountryCode
     {
-
         /// <summary>
-        /// The ISO3166-1 Alpha2 Code of the Country
+        /// The ISO3166-1 Alpha2 Code of the Country.
         /// </summary>
         [JsonProperty("value")]
         public CountryCodeValue? Value { get; set; } = null;

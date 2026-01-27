@@ -13,97 +13,96 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class TimeOff
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The employee ID
+        /// The employee ID.
         /// </summary>
         [JsonProperty("employee_id")]
         public string? EmployeeId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the employee
+        /// Provider's unique identifier of the employee.
         /// </summary>
         [JsonProperty("remote_employee_id")]
         public string? RemoteEmployeeId { get; set; } = null;
 
         /// <summary>
-        /// The approver ID
+        /// The approver ID.
         /// </summary>
         [JsonProperty("approver_id")]
         public string? ApproverId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the approver
+        /// Provider's unique identifier of the approver.
         /// </summary>
         [JsonProperty("remote_approver_id")]
         public string? RemoteApproverId { get; set; } = null;
 
         /// <summary>
-        /// The status of the time off request
+        /// The status of the time off request.
         /// </summary>
         [JsonProperty("status")]
         public TimeOffStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// The type of the time off request
+        /// The type of the time off request.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("type")]
         public TimeOffType? Type { get; set; } = null;
 
         /// <summary>
-        /// The start date of the time off request (ISO8601 date-time without timezone)
+        /// The start date of the time off request (ISO8601 date-time without timezone).
         /// </summary>
         [JsonProperty("start_date")]
         public string? StartDate { get; set; } = null;
 
         /// <summary>
-        /// Inclusive end date of the time off request (ISO8601 date-time without timezone). The time off includes this day
+        /// Inclusive end date of the time off request (ISO8601 date-time without timezone). The time off includes this day.
         /// </summary>
         [JsonProperty("end_date")]
         public string? EndDate { get; set; } = null;
 
         /// <summary>
-        /// True if the start of the time off request begins half way through the day
+        /// True if the start of the time off request begins half way through the day.
         /// </summary>
         [JsonProperty("start_half_day", NullValueHandling = NullValueHandling.Include)]
         public TimeOffStartHalfDayUnion? StartHalfDay { get; set; } = null;
 
         /// <summary>
-        /// True if the end of the time off request ends half way through the day
+        /// True if the end of the time off request ends half way through the day.
         /// </summary>
         [JsonProperty("end_half_day", NullValueHandling = NullValueHandling.Include)]
         public TimeOffEndHalfDayUnion? EndHalfDay { get; set; } = null;
 
         /// <summary>
-        /// The duration of the time off request
+        /// The duration of the time off request.
         /// </summary>
         [JsonProperty("duration")]
         public string? Duration { get; set; } = null;
 
         /// <summary>
-        /// The time off policy id associated with this time off request
+        /// The time off policy id associated with this time off request.
         /// </summary>
         [JsonProperty("time_off_policy_id")]
         public string? TimeOffPolicyId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the time off policy id associated with this time off request
+        /// Provider's unique identifier of the time off policy id associated with this time off request.
         /// </summary>
         [JsonProperty("remote_time_off_policy_id")]
         public string? RemoteTimeOffPolicyId { get; set; } = null;
@@ -112,25 +111,25 @@ namespace StackOneHQ.Client.Models.Components
         public TimeOffReason? Reason { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the time off request was created
+        /// Timestamp when the time off request was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the time off request was last updated
+        /// Timestamp when the time off request was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
-        /// The time off policy associated with Time Off
+        /// The time off policy associated with Time Off.
         /// </summary>
         [JsonProperty("policy")]
         public TimeOffPolicy? Policy { get; set; } = null;
 
         /// <summary>
-        /// Allows users to provide additional context or notes for their time off request
+        /// Allows users to provide additional context or notes for their time off request.
         /// </summary>
         [JsonProperty("comment")]
         public string? Comment { get; set; } = null;

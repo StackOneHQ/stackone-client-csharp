@@ -16,55 +16,54 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class AtsUpdateJobRequestDto
     {
-
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// Code of the job
+        /// Code of the job.
         /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; } = null;
 
         /// <summary>
-        /// Title of the job
+        /// Title of the job.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// Description of the job
+        /// Description of the job.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// Status of the job
+        /// Status of the job.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("status")]
         public string? Status { get; set; } = null;
 
         /// <summary>
-        /// Status of the job
+        /// Status of the job.
         /// </summary>
         [JsonProperty("job_status")]
         public AtsUpdateJobRequestDtoJobStatus? JobStatus { get; set; } = null;
 
         /// <summary>
-        /// Department ids of the job
+        /// Department ids of the job.
         /// </summary>
         [JsonProperty("department_ids")]
         public List<string>? DepartmentIds { get; set; } = null;
 
         /// <summary>
-        /// Location ids of the job
+        /// Location ids of the job.
         /// </summary>
         [JsonProperty("location_ids")]
         public List<string>? LocationIds { get; set; } = null;
@@ -82,19 +81,19 @@ namespace StackOneHQ.Client.Models.Components
         public List<InterviewStage>? InterviewStages { get; set; } = null;
 
         /// <summary>
-        /// Confidential status of the job
+        /// Confidential status of the job.
         /// </summary>
         [JsonProperty("confidential")]
         public AtsUpdateJobRequestDtoConfidential? Confidential { get; set; } = null;
 
         /// <summary>
-        /// The job custom fields
+        /// The job custom fields.
         /// </summary>
         [JsonProperty("custom_fields")]
         public List<CustomFields>? CustomFields { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

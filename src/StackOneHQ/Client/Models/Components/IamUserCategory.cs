@@ -12,15 +12,14 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The category of the file
+    /// The category of the file.
     /// </summary>
     public class IamUserCategory
     {
-
         /// <summary>
-        /// The category of the file
+        /// The category of the file.
         /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; } = null;

@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The employee employment status
+    /// The employee employment status.
     /// </summary>
     public class HrisUpdateEmployeeRequestDtoEmploymentStatus
     {
-
         [JsonProperty("value")]
         public HrisUpdateEmployeeRequestDtoEmploymentStatusValue? Value { get; set; } = null;
 

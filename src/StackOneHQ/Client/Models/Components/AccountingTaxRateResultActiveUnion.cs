@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the tax rate is active
+    /// Whether the tax rate is active.
     /// </summary>
     [JsonConverter(typeof(AccountingTaxRateResultActiveUnion.AccountingTaxRateResultActiveUnionConverter))]
     public class AccountingTaxRateResultActiveUnion

@@ -1,5 +1,4 @@
-# Content
-(*Lms.Content*)
+# Lms.Content
 
 ## Overview
 
@@ -80,6 +79,9 @@ var res = await sdk.Lms.Content.UpsertAsync(
         },
         UpdatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
         CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+        Passthrough = new Dictionary<string, object>() {
+            { "other_known_names", "John Doe" },
+        },
         ExternalReference = "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1",
         Categories = new List<CreateCategoriesApiModel>() {
             new CreateCategoriesApiModel() {
@@ -103,7 +105,8 @@ var res = await sdk.Lms.Content.UpsertAsync(
                 ),
             },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -111,10 +114,11 @@ var res = await sdk.Lms.Content.UpsertAsync(
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `XAccountId`                                                                        | *string*                                                                            | :heavy_check_mark:                                                                  | The account identifier                                                              |
-| `LmsUpsertContentRequestDto`                                                        | [LmsUpsertContentRequestDto](../../Models/Components/LmsUpsertContentRequestDto.md) | :heavy_check_mark:                                                                  | N/A                                                                                 |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `LmsUpsertContentRequestDto`                                                                                                                                             | [LmsUpsertContentRequestDto](../../Models/Components/LmsUpsertContentRequestDto.md)                                                                                      | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -163,6 +167,7 @@ LmsGetContentRequest req = new LmsGetContentRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Lms.Content.GetAsync(req);

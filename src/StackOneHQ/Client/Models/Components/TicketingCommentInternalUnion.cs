@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the comment is internal
+    /// Whether the comment is internal.
     /// </summary>
     [JsonConverter(typeof(TicketingCommentInternalUnion.TicketingCommentInternalUnionConverter))]
     public class TicketingCommentInternalUnion

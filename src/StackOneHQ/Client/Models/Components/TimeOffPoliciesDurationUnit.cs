@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The duration unit of the current policy
+    /// The duration unit of the current policy.
     /// </summary>
     public class TimeOffPoliciesDurationUnit
     {
-
         /// <summary>
-        /// The unified value for the duration unit. If the provider does not specify this unit, the value will be set to unknown
+        /// The unified value for the duration unit. If the provider does not specify this unit, the value will be set to unknown.
         /// </summary>
         [JsonProperty("value")]
         public TimeOffPoliciesDurationUnitValue? Value { get; set; } = null;

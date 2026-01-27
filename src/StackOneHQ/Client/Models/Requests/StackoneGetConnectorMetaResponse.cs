@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class StackoneGetConnectorMetaResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// The connector meta information was retrieved
+        /// The connector meta information was retrieved.
         /// </summary>
         public ConnectorsMeta? ConnectorsMeta { get; set; }
 

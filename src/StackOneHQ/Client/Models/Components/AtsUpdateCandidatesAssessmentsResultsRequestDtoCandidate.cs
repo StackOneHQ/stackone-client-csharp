@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class AtsUpdateCandidatesAssessmentsResultsRequestDtoCandidate
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Candidate profile url
+        /// Candidate profile url.
         /// </summary>
         [JsonProperty("profile_url")]
         public string? ProfileUrl { get; set; } = null;

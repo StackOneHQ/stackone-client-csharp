@@ -1,5 +1,4 @@
-# Sms
-(*Marketing.Templates.Sms*)
+# Marketing.Templates.Sms
 
 ## Overview
 
@@ -28,6 +27,7 @@ MarketingGetSmsTemplateRequest req = new MarketingGetSmsTemplateRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Marketing.Templates.Sms.GetAsync(req);

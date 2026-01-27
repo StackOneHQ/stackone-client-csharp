@@ -1,5 +1,4 @@
-# TicketingUsers
-(*Ticketing.Users*)
+# Ticketing.Users
 
 ## Overview
 
@@ -31,6 +30,7 @@ TicketingListUsersRequest req = new TicketingListUsersRequest() {
     Filter = new TicketingListUsersFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListUsersResponse? res = await sdk.Ticketing.Users.ListAsync(req);

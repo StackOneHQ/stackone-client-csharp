@@ -16,10 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class IamPermissionType
     {
-
         /// <summary>
         /// The type of the permission, e.g. read, read_write, delete, etc.
         /// </summary>

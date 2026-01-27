@@ -12,48 +12,47 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class AccountingTaxRateResultData
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// ID of the company this tax rate belongs to
+        /// ID of the company this tax rate belongs to.
         /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; } = null;
 
         /// <summary>
-        /// Name of the tax rate
+        /// Name of the tax rate.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// External system&apos;s tax code
+        /// External system's tax code.
         /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; } = null;
 
         /// <summary>
-        /// Tax rate percentage
+        /// Tax rate percentage.
         /// </summary>
         [JsonProperty("percentage")]
         public double? Percentage { get; set; } = null;
 
         /// <summary>
-        /// Whether the tax rate is active
+        /// Whether the tax rate is active.
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public AccountingTaxRateResultActiveUnion? Active { get; set; } = null;

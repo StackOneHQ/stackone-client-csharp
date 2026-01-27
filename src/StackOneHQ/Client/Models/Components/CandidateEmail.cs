@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class CandidateEmail
     {
-
         /// <summary>
-        /// Type of the email
+        /// Type of the email.
         /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; } = null;
 
         /// <summary>
-        /// Email value
+        /// Email value.
         /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; } = null;

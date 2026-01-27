@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The employee ethnicity
+    /// The employee ethnicity.
     /// </summary>
     public class EmployeeEthnicity
     {
-
         [JsonProperty("value")]
         public EmployeeEthnicityValue? Value { get; set; } = null;
 

@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the user is a bot
+    /// Whether the user is a bot.
     /// </summary>
     [JsonConverter(typeof(MessagingUserResultBotUnion.MessagingUserResultBotUnionConverter))]
     public class MessagingUserResultBotUnion

@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The category name to associate with the file
+    /// The category name to associate with the file.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisDocumentsUploadRequestDtoCategoryValue : IEquatable<HrisDocumentsUploadRequestDtoCategoryValue>
@@ -120,5 +120,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

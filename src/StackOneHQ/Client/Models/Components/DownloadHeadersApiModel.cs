@@ -11,42 +11,41 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class DownloadHeadersApiModel
     {
-
         /// <summary>
-        /// Value of the Content-Disposition header
+        /// Value of the Content-Disposition header.
         /// </summary>
         [JsonProperty("content-disposition")]
         public string? ContentDisposition { get; set; } = null;
 
         /// <summary>
-        /// MIME type of the file
+        /// MIME type of the file.
         /// </summary>
         [JsonProperty("content-type")]
         public string? ContentType { get; set; } = null;
 
         /// <summary>
-        /// Size of the content in bytes
+        /// Size of the content in bytes.
         /// </summary>
         [JsonProperty("content-length")]
         public double? ContentLength { get; set; } = null;
 
         /// <summary>
-        /// Range of the content being sent
+        /// Range of the content being sent.
         /// </summary>
         [JsonProperty("content-range")]
         public string? ContentRange { get; set; } = null;
 
         /// <summary>
-        /// Encoding of the content
+        /// Encoding of the content.
         /// </summary>
         [JsonProperty("content-encoding")]
         public string? ContentEncoding { get; set; } = null;
 
         /// <summary>
-        /// Transfer encoding type
+        /// Transfer encoding type.
         /// </summary>
         [JsonProperty("transfer-encoding")]
         public string? TransferEncoding { get; set; } = null;

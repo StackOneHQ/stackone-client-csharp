@@ -13,12 +13,11 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AccountingJournalBatchCreateRequestDto
     {
-
         /// <summary>
-        /// The batch of journals to create
+        /// The batch of journals to create.
         /// </summary>
         [JsonProperty("items")]
         public List<AccountingJournalCreateRequestDto> Items { get; set; } = default!;

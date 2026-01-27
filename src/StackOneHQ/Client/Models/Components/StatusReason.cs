@@ -12,10 +12,9 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class StatusReason
     {
-
         [JsonProperty("code")]
         public string? Code { get; set; } = null;
 

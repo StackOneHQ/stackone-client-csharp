@@ -11,21 +11,26 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class DocumentsUploadFileRequest
     {
-
         /// <summary>
-        /// The account identifier
+        /// The account identifier.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-account-id")]
         public string XAccountId { get; set; } = default!;
 
         /// <summary>
-        /// The session token
+        /// The session token.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-stackone-api-session-token")]
         public string? XStackoneApiSessionToken { get; set; }
+
+        /// <summary>
+        /// Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).
+        /// </summary>
+        [SpeakeasyMetadata("header:style=simple,explode=false,name=Prefer")]
+        public string? Prefer { get; set; }
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public UnifiedUploadRequestDto UnifiedUploadRequestDto { get; set; } = default!;

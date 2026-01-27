@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class MarketingUpdateInAppTemplateResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// Record updated successfully
+        /// Record updated successfully.
         /// </summary>
         public CreateResult? CreateResult { get; set; }
 

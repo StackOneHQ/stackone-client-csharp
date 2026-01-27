@@ -12,48 +12,47 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class Drives
     {
-
         /// <summary>
-        /// The ID associated with this drive
+        /// The ID associated with this drive.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name associated with this drive
+        /// The name associated with this drive.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The description associated with this drive
+        /// The description associated with this drive.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;
 
         /// <summary>
-        /// The url of the drive
+        /// The url of the drive.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 
         /// <summary>
-        /// The created date of the drive
+        /// The created date of the drive.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The last updated date of the drive
+        /// The last updated date of the drive.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Type of account
+    /// Type of account.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingAccountResultValue : IEquatable<AccountingAccountResultValue>
@@ -82,5 +82,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

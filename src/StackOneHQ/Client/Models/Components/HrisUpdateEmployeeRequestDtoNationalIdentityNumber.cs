@@ -13,14 +13,13 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// The national identity number
+    /// The national identity number.
     /// </summary>
     [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public class HrisUpdateEmployeeRequestDtoNationalIdentityNumber
     {
-
         [JsonProperty("value")]
         public string? Value { get; set; } = null;
 
@@ -28,7 +27,7 @@ namespace StackOneHQ.Client.Models.Components
         public HrisUpdateEmployeeRequestDtoNationalIdentityNumberType? Type { get; set; } = null;
 
         /// <summary>
-        /// The country code
+        /// The country code.
         /// </summary>
         [JsonProperty("country")]
         public HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountry? Country { get; set; } = null;

@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the group
+    /// The type of the group.
     /// </summary>
     public class HRISCostCenterType
     {
-
         [JsonProperty("value")]
         public HRISCostCenterValue? Value { get; set; } = null;
 

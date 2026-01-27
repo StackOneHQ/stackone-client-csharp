@@ -12,33 +12,32 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    /// The request URL data
+    /// The request URL data.
     /// </summary>
     public class UnifiedLogsUrl
     {
-
         /// <summary>
-        /// The request URL
+        /// The request URL.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 
         /// <summary>
-        /// The request URL hostname
+        /// The request URL hostname.
         /// </summary>
         [JsonProperty("hostname")]
         public string? Hostname { get; set; } = null;
 
         /// <summary>
-        /// The request path
+        /// The request path.
         /// </summary>
         [JsonProperty("path")]
         public string? Path { get; set; } = null;
 
         /// <summary>
-        /// The request query parameters
+        /// The request query parameters.
         /// </summary>
         [JsonProperty("query_params")]
         public Dictionary<string, object>? QueryParams { get; set; } = null;

@@ -13,10 +13,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class DriveResult
     {
-
         [JsonProperty("data")]
         public Models.Components.Drives Data { get; set; } = default!;
 

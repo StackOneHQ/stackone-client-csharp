@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CostCenterSourceValueUnion.CostCenterSourceValueUnionConverter))]
     public class CostCenterSourceValueUnion
     {

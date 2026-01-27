@@ -11,27 +11,26 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// ATS Candidate Filter
+    /// ATS Candidate Filter.
     /// </summary>
     public class AtsListCandidatesFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Use a string with a date to only select results created after that given date
+        /// Use a string with a date to only select results created after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=created_after")]
         public DateTime? CreatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select candidates by email
+        /// Filter to select candidates by email.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=email")]
         public string? Email { get; set; } = null;

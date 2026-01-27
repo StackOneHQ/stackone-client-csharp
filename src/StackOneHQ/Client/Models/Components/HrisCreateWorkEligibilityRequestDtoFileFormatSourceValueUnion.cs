@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion.HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnionConverter))]
     public class HrisCreateWorkEligibilityRequestDtoFileFormatSourceValueUnion
     {

@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the account is active
+    /// Whether the account is active.
     /// </summary>
     [JsonConverter(typeof(AccountingAccountResultActiveUnion.AccountingAccountResultActiveUnionConverter))]
     public class AccountingAccountResultActiveUnion

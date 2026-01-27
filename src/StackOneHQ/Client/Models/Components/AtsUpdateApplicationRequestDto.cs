@@ -13,18 +13,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class AtsUpdateApplicationRequestDto
     {
-
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;
 
         /// <summary>
-        /// The application custom fields
+        /// The application custom fields.
         /// </summary>
         [JsonProperty("custom_fields")]
         public List<CustomFields>? CustomFields { get; set; } = null;

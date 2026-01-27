@@ -1,5 +1,4 @@
-# DocumentsDrives
-(*Documents.Drives*)
+# Documents.Drives
 
 ## Overview
 
@@ -31,6 +30,7 @@ DocumentsListDrivesRequest req = new DocumentsListDrivesRequest() {
     Filter = new DocumentsListDrivesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 DocumentsListDrivesResponse? res = await sdk.Documents.Drives.ListAsync(req);

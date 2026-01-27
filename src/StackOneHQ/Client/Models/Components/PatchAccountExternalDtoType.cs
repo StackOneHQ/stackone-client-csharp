@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The account type
+    /// The account type.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PatchAccountExternalDtoType : IEquatable<PatchAccountExternalDtoType>
@@ -74,5 +74,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

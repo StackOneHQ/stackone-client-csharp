@@ -14,30 +14,29 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class Assignment
     {
-
         /// <summary>
-        /// The ID associated with this assignment
+        /// The ID associated with this assignment.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The external reference associated with this assignment
+        /// The external reference associated with this assignment.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("external_reference")]
@@ -50,7 +49,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the learning object related to the assignment
+        /// Provider's unique identifier of the learning object related to the assignment.
         /// </summary>
         [JsonProperty("remote_learning_object_id")]
         public string? RemoteLearningObjectId { get; set; } = null;
@@ -62,80 +61,86 @@ namespace StackOneHQ.Client.Models.Components
         public string? LearningObjectExternalReference { get; set; } = null;
 
         /// <summary>
-        /// The progress associated with this assigment
+        /// The progress associated with this assigment.
         /// </summary>
         [JsonProperty("progress")]
         public double? Progress { get; set; } = null;
 
         /// <summary>
-        /// The date the assignment was last updated
+        /// The date the assignment was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;
 
         /// <summary>
-        /// The date the assignment was created
+        /// The date the assignment was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The date the assignment is due to be completed
+        /// The date the assignment was assigned.
+        /// </summary>
+        [JsonProperty("assigned_at")]
+        public DateTime? AssignedAt { get; set; } = null;
+
+        /// <summary>
+        /// The date the assignment is due to be completed.
         /// </summary>
         [JsonProperty("due_date")]
         public DateTime? DueDate { get; set; } = null;
 
         /// <summary>
-        /// The status of the assignment
+        /// The status of the assignment.
         /// </summary>
         [JsonProperty("status")]
         public AssignmentStatus? Status { get; set; } = null;
 
         /// <summary>
-        /// The learning object type of the assignment
+        /// The learning object type of the assignment.
         /// </summary>
         [JsonProperty("learning_object_type")]
         public AssignmentLearningObjectType? LearningObjectType { get; set; } = null;
 
         /// <summary>
-        /// The user ID associated with this assignment
+        /// The user ID associated with this assignment.
         /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the user related to the assignment
+        /// Provider's unique identifier of the user related to the assignment.
         /// </summary>
         [JsonProperty("remote_user_id")]
         public string? RemoteUserId { get; set; } = null;
 
         /// <summary>
-        /// The certification URL associated with this assignment
+        /// The certification URL associated with this assignment.
         /// </summary>
         [JsonProperty("certificate_url")]
         public string? CertificateUrl { get; set; } = null;
 
         /// <summary>
-        /// The result of the assignment
+        /// The result of the assignment.
         /// </summary>
         [JsonProperty("result")]
         public AssignmentResult1? Result { get; set; } = null;
 
         /// <summary>
-        /// The date the content was completed
+        /// The date the content was completed.
         /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; } = null;
 
         /// <summary>
-        /// The course ID associated with this assignment
+        /// The course ID associated with this assignment.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("course_id")]
         public string? CourseId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier of the course related to the assignment
+        /// Provider's unique identifier of the course related to the assignment.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("remote_course_id")]

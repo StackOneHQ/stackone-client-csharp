@@ -1,5 +1,4 @@
-# AtsBackgroundChecks
-(*Ats.BackgroundChecks*)
+# Ats.BackgroundChecks
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListBackgroundCheckPackagesRequest req = new AtsListBackgroundCheckPackagesRe
     Filter = new AtsListBackgroundCheckPackagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListBackgroundCheckPackagesResponse? res = await sdk.Ats.BackgroundChecks.PackagesListAsync(req);
@@ -103,7 +103,8 @@ var res = await sdk.Ats.BackgroundChecks.CreatePackageAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -111,10 +112,11 @@ var res = await sdk.Ats.BackgroundChecks.CreatePackageAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                                        | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | The account identifier                                                                                              |
-| `AtsCreateBackgroundCheckPackagesRequestDto`                                                                        | [AtsCreateBackgroundCheckPackagesRequestDto](../../Models/Components/AtsCreateBackgroundCheckPackagesRequestDto.md) | :heavy_check_mark:                                                                                                  | N/A                                                                                                                 |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `AtsCreateBackgroundCheckPackagesRequestDto`                                                                                                                             | [AtsCreateBackgroundCheckPackagesRequestDto](../../Models/Components/AtsCreateBackgroundCheckPackagesRequestDto.md)                                                      | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 

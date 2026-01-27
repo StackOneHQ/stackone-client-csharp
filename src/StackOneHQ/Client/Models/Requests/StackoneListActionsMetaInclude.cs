@@ -12,7 +12,7 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public enum StackoneListActionsMetaInclude
     {
         [JsonProperty("action_details")]
@@ -51,5 +51,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum StackoneListActionsMetaInclude");
         }
     }
-
 }

@@ -16,16 +16,15 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The content type of the document
+    /// The content type of the document.
     /// </summary>
     [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public class HrisDocumentApiModelType
     {
-
         /// <summary>
-        /// The category of the file
+        /// The category of the file.
         /// </summary>
         [JsonProperty("value")]
         public HrisDocumentApiModelTypeValue? Value { get; set; } = null;

@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// True if the start of the time off request begins half way through the day
+    /// True if the start of the time off request begins half way through the day.
     /// </summary>
     [JsonConverter(typeof(TimeOffStartHalfDayUnion.TimeOffStartHalfDayUnionConverter))]
     public class TimeOffStartHalfDayUnion

@@ -25,6 +25,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     },
     Expand = "company,employments,work_location,home_location,groups,skills",
     Include = "avatar_url,avatar,custom_fields,job_description,benefits,bank_details",
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeesResponse? res = await sdk.Hris.Employees.ListAsync(req);
@@ -96,14 +97,19 @@ using StackOneHQ.Client.Models.Requests;
 
 var sdk = new StackOneHQClient();
 
-var res = await sdk.Mcp.McpGetAsync(
-    security: new StackoneMcpGetSecurity() {
+var res = await sdk.Mcp.McpPostAsync(
+    security: new StackoneMcpPostSecurity() {
         Basic = new SchemeBasic() {
             Username = "",
             Password = "",
         },
     },
-    mcpSessionId: "<id>",
+    jsonRpcMessageDto: new JsonRpcMessageDto() {
+        Jsonrpc = "2.0",
+        Method = "initialize",
+        Params = new Params() {},
+        Id = new Id() {},
+    },
     xAccountId: "<id>"
 );
 
@@ -139,6 +145,10 @@ StackoneListActionsMetaRequest req = new StackoneListActionsMetaRequest() {
     },
     Include = new List<StackoneListActionsMetaInclude>() {
         StackoneListActionsMetaInclude.ActionDetails,
+    },
+    Search = "employee",
+    Exclude = new List<Exclude>() {
+        Exclude.Actions,
     },
 };
 
@@ -359,13 +369,12 @@ catch (System.Net.Http.HttpRequestException ex)
   * [`BadGatewayResponseException`](./src/StackOneHQ/Client/Models/Errors/BadGatewayResponseException.cs): Bad gateway error. Status code `502`.
   * [`PreconditionFailedResponseException`](./src/StackOneHQ/Client/Models/Errors/PreconditionFailedResponseException.cs): Precondition failed: linked account belongs to a disabled integration. Status code `412`. *
 
-<details><summary>Less common exceptions (2)</summary>
+**Less common exceptions (2)**
 
 * [`System.Net.Http.HttpRequestException`](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httprequestexception): Network connectivity error. For more details about the underlying cause, inspect the `ex.InnerException`.
 
 * Inheriting from [`StackOneError`](./src/StackOneHQ/Client/Models/Errors/StackOneError.cs):
   * [`ResponseValidationError`](./src/StackOneHQ/Client/Models/Errors/ResponseValidationError.cs): Thrown when the response data could not be deserialized into the expected type.
-</details>
 
 \* Refer to the [relevant documentation](#available-resources-and-operations) to determine whether an exception applies to a specific operation.
 <!-- End Error Handling [errors] -->
@@ -480,8 +489,7 @@ var customHttpClient = new CustomHttpClient();
 var sdk = new StackOneHQClient(client: customHttpClient);
 ```
 
-<details>
-<summary>You can also provide a completely custom HTTP client with your own configuration:</summary>
+**You can also provide a completely custom HTTP client with your own configuration:**
 
 ```csharp
 using StackOneHQ.Client.Utils;
@@ -523,10 +531,8 @@ var sdk = StackOneHQClient.Builder()
     .WithClient(new AdvancedHttpClient())
     .Build();
 ```
-</details>
 
-<details>
-<summary>For simple debugging, you can enable request/response logging by implementing a custom client:</summary>
+**For simple debugging, you can enable request/response logging by implementing a custom client:**
 
 ```csharp
 public class LoggingHttpClient : ISpeakeasyHttpClient
@@ -556,7 +562,6 @@ public class LoggingHttpClient : ISpeakeasyHttpClient
 
 var sdk = new StackOneHQClient(client: new LoggingHttpClient());
 ```
-</details>
 
 The SDK also provides built-in hook support through the `SDKConfiguration.Hooks` system, which automatically handles
 `BeforeRequestAsync`, `AfterSuccessAsync`, and `AfterErrorAsync` hooks for advanced request lifecycle management.

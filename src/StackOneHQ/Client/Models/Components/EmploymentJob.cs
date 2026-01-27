@@ -12,45 +12,44 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The job of employee
+    /// The job of employee.
     /// </summary>
     public class EmploymentJob
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// Title of the job
+        /// Title of the job.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// The employee job description
+        /// The employee job description.
         /// </summary>
         [JsonProperty("description")]
         public Description? Description { get; set; } = null;
 
         /// <summary>
-        /// The owner_id of the job
+        /// The owner_id of the job.
         /// </summary>
         [JsonProperty("owner_id")]
         public string? OwnerId { get; set; } = null;
 
         /// <summary>
-        /// The parent_id of the job
+        /// The parent_id of the job.
         /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; } = null;

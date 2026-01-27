@@ -16,42 +16,41 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class Field
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The label of the field
+        /// The label of the field.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The type of the field
+        /// The type of the field.
         /// </summary>
         [JsonProperty("type")]
         public FieldType? Type { get; set; } = null;
 
         /// <summary>
-        /// The possible values for the field
+        /// The possible values for the field.
         /// </summary>
         [JsonProperty("values")]
         public List<string>? Values { get; set; } = null;
 
         /// <summary>
-        /// Indicates if the field is required
+        /// Indicates if the field is required.
         /// </summary>
         [JsonProperty("required", NullValueHandling = NullValueHandling.Include)]
         public FieldRequiredUnion? Required { get; set; } = null;

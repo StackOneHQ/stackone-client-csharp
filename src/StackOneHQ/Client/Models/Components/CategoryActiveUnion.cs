@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the category is active and therefore available for use
+    /// Whether the category is active and therefore available for use.
     /// </summary>
     [JsonConverter(typeof(CategoryActiveUnion.CategoryActiveUnionConverter))]
     public class CategoryActiveUnion

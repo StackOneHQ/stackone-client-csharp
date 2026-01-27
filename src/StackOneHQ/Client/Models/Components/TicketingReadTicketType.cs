@@ -11,13 +11,12 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The type of the ticket
+    /// The type of the ticket.
     /// </summary>
     public class TicketingReadTicketType
     {
-
         /// <summary>
         /// The id of the ticket type.
         /// </summary>

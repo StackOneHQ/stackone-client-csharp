@@ -55,7 +55,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(JobPostingQuestionnaireInternalUnion.JobPostingQuestionnaireInternalUnionConverter))]
     public class JobPostingQuestionnaireInternalUnion
     {

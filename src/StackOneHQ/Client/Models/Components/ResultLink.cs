@@ -11,10 +11,9 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class ResultLink
     {
-
         /// <summary>
         /// The label of the result link.
         /// </summary>

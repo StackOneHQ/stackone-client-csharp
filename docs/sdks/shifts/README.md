@@ -1,5 +1,4 @@
-# Shifts
-(*Hris.Shifts*)
+# Hris.Shifts
 
 ## Overview
 
@@ -27,6 +26,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 HrisGetShiftRequest req = new HrisGetShiftRequest() {
     XAccountId = "<id>",
     Id = "<id>",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.Shifts.GetAsync(req);

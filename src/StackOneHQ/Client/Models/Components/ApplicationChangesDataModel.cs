@@ -14,19 +14,18 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class ApplicationChangesDataModel
     {
-
         /// <summary>
-        /// Unique identifier of the interview stage
+        /// Unique identifier of the interview stage.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("interview_stage_id")]
         public string? InterviewStageId { get; set; } = null;
 
         /// <summary>
-        /// Unique identifiers of the rejection reasons
+        /// Unique identifiers of the rejection reasons.
         /// </summary>
         [JsonProperty("rejected_reason_ids")]
         public List<string>? RejectedReasonIds { get; set; } = null;

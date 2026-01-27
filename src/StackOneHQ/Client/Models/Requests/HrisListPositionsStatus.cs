@@ -12,14 +12,16 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Filter positions by status
+    /// Filter positions by status.
     /// </summary>
     public enum HrisListPositionsStatus
     {
         [JsonProperty("open")]
         Open,
+        [JsonProperty("draft")]
+        Draft,
         [JsonProperty("closed")]
         Closed,
         [JsonProperty("paused")]
@@ -60,5 +62,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum HrisListPositionsStatus");
         }
     }
-
 }

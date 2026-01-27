@@ -1,5 +1,4 @@
-# Comments
-(*Ticketing.Comments*)
+# Ticketing.Comments
 
 ## Overview
 
@@ -29,6 +28,7 @@ TicketingGetCommentRequest req = new TicketingGetCommentRequest() {
     Id = "<id>",
     SubResourceId = "<id>",
     Fields = "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.Comments.GetAsync(req);

@@ -12,33 +12,32 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The role of manager
+    /// The role of manager.
     /// </summary>
     public class Role
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The label of the role type
+        /// The label of the role type.
         /// </summary>
         [JsonProperty("label")]
         public string? Label { get; set; } = null;
 
         /// <summary>
-        /// The manager role type (e.g., admin, viewer)
+        /// The manager role type (e.g., admin, viewer).
         /// </summary>
         [JsonProperty("role_type")]
         public RoleType? RoleType { get; set; } = null;

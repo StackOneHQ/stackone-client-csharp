@@ -10,9 +10,9 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// Response headers
+    /// Response headers.
     /// </summary>
     public class BadRequestResponseHeaders
     {

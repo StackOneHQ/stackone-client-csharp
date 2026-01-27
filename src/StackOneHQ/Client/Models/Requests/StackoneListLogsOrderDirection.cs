@@ -12,7 +12,7 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
     /// The direction to order the results by.
     /// </summary>
@@ -56,5 +56,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum StackoneListLogsOrderDirection");
         }
     }
-
 }

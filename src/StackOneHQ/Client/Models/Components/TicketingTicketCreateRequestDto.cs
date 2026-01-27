@@ -13,84 +13,83 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class TicketingTicketCreateRequestDto
     {
-
         /// <summary>
-        /// Custom Unified Fields configured in your StackOne project
+        /// Custom Unified Fields configured in your StackOne project.
         /// </summary>
         [JsonProperty("unified_custom_fields")]
         public Dictionary<string, object>? UnifiedCustomFields { get; set; } = null;
 
         /// <summary>
-        /// The title or subject of the ticket
+        /// The title or subject of the ticket.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;
 
         /// <summary>
-        /// The creator of the ticket
+        /// The creator of the ticket.
         /// </summary>
         [JsonProperty("creator_id")]
         public string? CreatorId { get; set; } = null;
 
         /// <summary>
-        /// Users who reported the ticket
+        /// Users who reported the ticket.
         /// </summary>
         [JsonProperty("reporters")]
         public List<string>? Reporters { get; set; } = null;
 
         /// <summary>
-        /// Agents assigned to the ticket
+        /// Agents assigned to the ticket.
         /// </summary>
         [JsonProperty("assignees")]
         public List<string>? Assignees { get; set; } = null;
 
         /// <summary>
-        /// Array of content associated with the ticket
+        /// Array of content associated with the ticket.
         /// </summary>
         [JsonProperty("content")]
         public List<TicketingContent>? Content { get; set; } = null;
 
         /// <summary>
-        /// ID of the parent ticket if this is a sub-ticket
+        /// ID of the parent ticket if this is a sub-ticket.
         /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; } = null;
 
         /// <summary>
-        /// Priority of the ticket
+        /// Priority of the ticket.
         /// </summary>
         [JsonProperty("priority")]
         public TicketingTicketCreateRequestDtoPriority? Priority { get; set; } = null;
 
         /// <summary>
-        /// The tags of the ticket
+        /// The tags of the ticket.
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; } = null;
 
         /// <summary>
-        /// Organization associated with the ticket
+        /// Organization associated with the ticket.
         /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; } = null;
 
         /// <summary>
-        /// Project the ticket belongs to
+        /// Project the ticket belongs to.
         /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; } = null;
 
         /// <summary>
-        /// Components to associate with the ticket
+        /// Components to associate with the ticket.
         /// </summary>
         [JsonProperty("component_ids")]
         public string? ComponentIds { get; set; } = null;
 
         /// <summary>
-        /// The type of the ticket
+        /// The type of the ticket.
         /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; } = null;

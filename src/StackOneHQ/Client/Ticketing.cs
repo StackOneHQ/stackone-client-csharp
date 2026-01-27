@@ -27,101 +27,305 @@ namespace StackOneHQ.Client
     public interface ITicketing
     {
         public ITickets Tickets { get; }
-        public ITicketingUsers Users { get; }
-        public IComments Comments { get; }
 
+        public ITicketingUsers Users { get; }
+
+        public IComments Comments { get; }
         /// <summary>
-        /// Get User
-        /// 
+        /// Get User.
+        /// </summary>
         /// <remarks>
         /// Retrieve a single user by their identifier.
         /// </remarks>
-        /// </summary>
-        Task<TicketingGetUserResponse> GetUserAsync(TicketingGetUserRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingGetUserRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetUserResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingGetUserResponse> GetUserAsync(
+            TicketingGetUserRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Download Attachment
-        /// 
+        /// Download Attachment.
+        /// </summary>
         /// <remarks>
         /// Download the attachment file from a ticket.
         /// </remarks>
-        /// </summary>
-        Task<TicketingDownloadTicketingAttachmentResponse> DownloadAttachmentAsync(TicketingDownloadTicketingAttachmentRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingDownloadTicketingAttachmentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingDownloadTicketingAttachmentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingDownloadTicketingAttachmentResponse> DownloadAttachmentAsync(
+            TicketingDownloadTicketingAttachmentRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Ticket Types
-        /// 
+        /// List Ticket Types.
+        /// </summary>
         /// <remarks>
         /// Retrieve a paginated list of all ticket types.
         /// </remarks>
-        /// </summary>
-        Task<TicketingListTicketTypesResponse> ListTicketTypesAsync(TicketingListTicketTypesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingListTicketTypesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListTicketTypesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingListTicketTypesResponse> ListTicketTypesAsync(
+            TicketingListTicketTypesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Ticket Type
-        /// 
+        /// Get Ticket Type.
+        /// </summary>
         /// <remarks>
         /// Retrieve a single ticket type by its identifier.
         /// </remarks>
-        /// </summary>
-        Task<TicketingGetTicketTypeResponse> GetTicketTypeAsync(TicketingGetTicketTypeRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingGetTicketTypeRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetTicketTypeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingGetTicketTypeResponse> GetTicketTypeAsync(
+            TicketingGetTicketTypeRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Projects
-        /// 
+        /// List Projects.
+        /// </summary>
         /// <remarks>
         /// Retrieve a paginated list of projects.
         /// </remarks>
-        /// </summary>
-        Task<TicketingListProjectsResponse> ListProjectsAsync(TicketingListProjectsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingListProjectsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListProjectsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingListProjectsResponse> ListProjectsAsync(
+            TicketingListProjectsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Project
-        /// 
+        /// Get Project.
+        /// </summary>
         /// <remarks>
         /// Retrieve a single project by its identifier.
         /// </remarks>
-        /// </summary>
-        Task<TicketingGetProjectResponse> GetProjectAsync(TicketingGetProjectRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingGetProjectRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetProjectResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingGetProjectResponse> GetProjectAsync(
+            TicketingGetProjectRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Project Components
-        /// 
+        /// List Project Components.
+        /// </summary>
         /// <remarks>
         /// Retrieve a paginated list of project components.
         /// </remarks>
-        /// </summary>
-        Task<TicketingListProjectComponentsResponse> ListProjectComponentsAsync(TicketingListProjectComponentsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingListProjectComponentsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListProjectComponentsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingListProjectComponentsResponse> ListProjectComponentsAsync(
+            TicketingListProjectComponentsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Project Component
-        /// 
+        /// Get Project Component.
+        /// </summary>
         /// <remarks>
         /// Retrieve a single project component by its identifier.
         /// </remarks>
-        /// </summary>
-        Task<TicketingGetProjectComponentResponse> GetProjectComponentAsync(TicketingGetProjectComponentRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingGetProjectComponentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetProjectComponentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingGetProjectComponentResponse> GetProjectComponentAsync(
+            TicketingGetProjectComponentRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Project Ticket Types
-        /// 
+        /// List Project Ticket Types.
+        /// </summary>
         /// <remarks>
         /// Retrieve a paginated list of ticket types for a project.
         /// </remarks>
-        /// </summary>
-        Task<TicketingListProjectTicketTypesResponse> ListProjectTicketTypesAsync(TicketingListProjectTicketTypesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="TicketingListProjectTicketTypesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListProjectTicketTypesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<TicketingListProjectTicketTypesResponse> ListProjectTicketTypesAsync(
+            TicketingListProjectTicketTypesRequest request,
+            RetryConfig? retryConfig = null
+        );
     }
 
     public class Ticketing: ITicketing
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
 
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// Tickets SubSDK.
+        /// <see cref="ITickets"/>
+        /// </summary>
         public ITickets Tickets { get; private set; }
+
+        /// <summary>
+        /// Users SubSDK.
+        /// <see cref="ITicketingUsers"/>
+        /// </summary>
         public ITicketingUsers Users { get; private set; }
+
+        /// <summary>
+        /// Comments SubSDK.
+        /// <see cref="IComments"/>
+        /// </summary>
         public IComments Comments { get; private set; }
 
         public Ticketing(SDKConfig config)
@@ -132,8 +336,38 @@ namespace StackOneHQ.Client
             Comments = new Comments(SDKConfiguration);
         }
 
-        public async Task<TicketingGetUserResponse> GetUserAsync(TicketingGetUserRequest request, RetryConfig? retryConfig = null)
+        /// <summary>
+        /// Get User.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a single user by their identifier.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingGetUserRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetUserResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingGetUserResponse> GetUserAsync(
+            TicketingGetUserRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/users/{id}", request, null);
 
@@ -190,7 +424,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -569,8 +803,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingDownloadTicketingAttachmentResponse> DownloadAttachmentAsync(TicketingDownloadTicketingAttachmentRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Download Attachment.
+        /// </summary>
+        /// <remarks>
+        /// Download the attachment file from a ticket.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingDownloadTicketingAttachmentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingDownloadTicketingAttachmentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingDownloadTicketingAttachmentResponse> DownloadAttachmentAsync(
+            TicketingDownloadTicketingAttachmentRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/tickets/{id}/attachments/{subResourceId}/download", request, null);
 
@@ -627,7 +892,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -995,8 +1260,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingListTicketTypesResponse> ListTicketTypesAsync(TicketingListTicketTypesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Ticket Types.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a paginated list of all ticket types.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingListTicketTypesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListTicketTypesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingListTicketTypesResponse> ListTicketTypesAsync(
+            TicketingListTicketTypesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/ticket_types", request, null);
 
@@ -1053,7 +1349,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1102,7 +1398,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListTicketTypesAsync (
@@ -1467,8 +1764,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingGetTicketTypeResponse> GetTicketTypeAsync(TicketingGetTicketTypeRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Ticket Type.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a single ticket type by its identifier.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingGetTicketTypeRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetTicketTypeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingGetTicketTypeResponse> GetTicketTypeAsync(
+            TicketingGetTicketTypeRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/ticket_types/{id}", request, null);
 
@@ -1525,7 +1853,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1904,8 +2232,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingListProjectsResponse> ListProjectsAsync(TicketingListProjectsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Projects.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a paginated list of projects.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingListProjectsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListProjectsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingListProjectsResponse> ListProjectsAsync(
+            TicketingListProjectsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects", request, null);
 
@@ -1962,7 +2321,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2011,7 +2370,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListProjectsAsync (
@@ -2376,8 +2736,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingGetProjectResponse> GetProjectAsync(TicketingGetProjectRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Project.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a single project by its identifier.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingGetProjectRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetProjectResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingGetProjectResponse> GetProjectAsync(
+            TicketingGetProjectRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}", request, null);
 
@@ -2434,7 +2825,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2813,8 +3204,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingListProjectComponentsResponse> ListProjectComponentsAsync(TicketingListProjectComponentsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Project Components.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a paginated list of project components.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingListProjectComponentsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListProjectComponentsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingListProjectComponentsResponse> ListProjectComponentsAsync(
+            TicketingListProjectComponentsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components", request, null);
 
@@ -2871,7 +3293,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2921,7 +3343,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListProjectComponentsAsync (
@@ -3286,8 +3709,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingGetProjectComponentResponse> GetProjectComponentAsync(TicketingGetProjectComponentRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Project Component.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a single project component by its identifier.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingGetProjectComponentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingGetProjectComponentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingGetProjectComponentResponse> GetProjectComponentAsync(
+            TicketingGetProjectComponentRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/components/{subResourceId}", request, null);
 
@@ -3344,7 +3798,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -3723,8 +4177,39 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<TicketingListProjectTicketTypesResponse> ListProjectTicketTypesAsync(TicketingListProjectTicketTypesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Project Ticket Types.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve a paginated list of ticket types for a project.
+        /// </remarks>
+        /// <param name="request">A <see cref="TicketingListProjectTicketTypesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="TicketingListProjectTicketTypesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<TicketingListProjectTicketTypesResponse> ListProjectTicketTypesAsync(
+            TicketingListProjectTicketTypesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ticketing/projects/{id}/ticket_types", request, null);
 
@@ -3781,7 +4266,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -3831,7 +4316,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListProjectTicketTypesAsync (
@@ -4195,5 +4681,6 @@ namespace StackOneHQ.Client
 
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
+
     }
 }

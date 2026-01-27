@@ -1,5 +1,4 @@
 # Ticketing
-(*Ticketing*)
 
 ## Overview
 
@@ -36,6 +35,7 @@ TicketingGetUserRequest req = new TicketingGetUserRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.GetUserAsync(req);
@@ -94,6 +94,7 @@ TicketingDownloadTicketingAttachmentRequest req = new TicketingDownloadTicketing
     SubResourceId = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.DownloadAttachmentAsync(req);
@@ -153,6 +154,7 @@ TicketingListTicketTypesRequest req = new TicketingListTicketTypesRequest() {
     Filter = new TicketingListTicketTypesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListTicketTypesResponse? res = await sdk.Ticketing.ListTicketTypesAsync(req);
@@ -214,6 +216,7 @@ TicketingGetTicketTypeRequest req = new TicketingGetTicketTypeRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,project_id,remote_project_id,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.GetTicketTypeAsync(req);
@@ -273,6 +276,7 @@ TicketingListProjectsRequest req = new TicketingListProjectsRequest() {
     Filter = new TicketingListProjectsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListProjectsResponse? res = await sdk.Ticketing.ListProjectsAsync(req);
@@ -334,6 +338,7 @@ TicketingGetProjectRequest req = new TicketingGetProjectRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.GetProjectAsync(req);
@@ -391,6 +396,7 @@ TicketingListProjectComponentsRequest req = new TicketingListProjectComponentsRe
     Id = "<id>",
     Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields",
     Filter = null,
+    Prefer = "heartbeat",
 };
 
 TicketingListProjectComponentsResponse? res = await sdk.Ticketing.ListProjectComponentsAsync(req);
@@ -453,6 +459,7 @@ TicketingGetProjectComponentRequest req = new TicketingGetProjectComponentReques
     Id = "<id>",
     SubResourceId = "<id>",
     Fields = "id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.GetProjectComponentAsync(req);
@@ -513,6 +520,7 @@ TicketingListProjectTicketTypesRequest req = new TicketingListProjectTicketTypes
     Filter = new TicketingListProjectTicketTypesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 TicketingListProjectTicketTypesResponse? res = await sdk.Ticketing.ListProjectTicketTypesAsync(req);

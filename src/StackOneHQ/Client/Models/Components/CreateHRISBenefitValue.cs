@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the benefit
+    /// The type of the benefit.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CreateHRISBenefitValue : IEquatable<CreateHRISBenefitValue>
@@ -82,5 +82,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

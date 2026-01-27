@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(IamResourceSourceValueUnion.IamResourceSourceValueUnionConverter))]
     public class IamResourceSourceValueUnion
     {

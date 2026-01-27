@@ -1,5 +1,4 @@
-# Assessments
-(*Ats.Assessments*)
+# Ats.Assessments
 
 ## Overview
 
@@ -30,6 +29,7 @@ AtsListAssessmentsPackagesRequest req = new AtsListAssessmentsPackagesRequest() 
     Filter = new AtsListAssessmentsPackagesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListAssessmentsPackagesResponse? res = await sdk.Ats.Assessments.PackagesListAsync(req);

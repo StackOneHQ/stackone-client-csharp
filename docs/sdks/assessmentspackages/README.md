@@ -1,5 +1,4 @@
-# AssessmentsPackages
-(*Ats.Assessments.Packages*)
+# Ats.Assessments.Packages
 
 ## Overview
 
@@ -27,6 +26,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsGetAssessmentsPackageRequest req = new AtsGetAssessmentsPackageRequest() {
     XAccountId = "<id>",
     Id = "<id>",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Assessments.Packages.GetAsync(req);

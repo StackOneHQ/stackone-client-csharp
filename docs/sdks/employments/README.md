@@ -1,5 +1,4 @@
-# Employments
-(*Hris.Employments*)
+# Hris.Employments
 
 ## Overview
 
@@ -32,6 +31,7 @@ HrisListEmploymentsRequest req = new HrisListEmploymentsRequest() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "groups",
+    Prefer = "heartbeat",
 };
 
 HrisListEmploymentsResponse? res = await sdk.Hris.Employments.ListAsync(req);

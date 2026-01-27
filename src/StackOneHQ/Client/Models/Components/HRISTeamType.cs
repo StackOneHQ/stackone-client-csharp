@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of the team group
+    /// The type of the team group.
     /// </summary>
     public class HRISTeamType
     {
-
         [JsonProperty("value")]
         public HRISTeamValue? Value { get; set; } = null;
 

@@ -27,200 +27,992 @@ namespace StackOneHQ.Client
     public interface IHris
     {
         public IEmployees Employees { get; }
+
         public IHrisDocuments Documents { get; }
+
         public IEmployments Employments { get; }
+
         public IHrisGroups Groups { get; }
+
         public IHrisDepartments Departments { get; }
+
         public ICompanies Companies { get; }
+
         public IHrisJobs Jobs { get; }
+
         public IHrisLocations Locations { get; }
+
         public ITimeOff TimeOff { get; }
+
         public IShifts Shifts { get; }
+
         public ITimeOffTypes TimeOffTypes { get; }
+
         public IBenefits Benefits { get; }
+
         public ITasks Tasks { get; }
+        /// <summary>
+        /// List Companies.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListCompaniesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListCompaniesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListCompaniesResponse> GetCompaniesAsync(
+            HrisListCompaniesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Companies
+        /// Get Company.
         /// </summary>
-        Task<HrisListCompaniesResponse> GetCompaniesAsync(HrisListCompaniesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetCompanyRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetCompanyResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetCompanyResponse> GetCompanyAsync(
+            HrisGetCompanyRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Company
+        /// Get employee Custom Field Definition.
         /// </summary>
-        Task<HrisGetCompanyResponse> GetCompanyAsync(HrisGetCompanyRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmployeeCustomFieldDefinitionRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeCustomFieldDefinitionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmployeeCustomFieldDefinitionResponse> GetEmployeeCustomFieldDefinitionAsync(
+            HrisGetEmployeeCustomFieldDefinitionRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get employee Custom Field Definition
+        /// Get Employee.
         /// </summary>
-        Task<HrisGetEmployeeCustomFieldDefinitionResponse> GetEmployeeCustomFieldDefinitionAsync(HrisGetEmployeeCustomFieldDefinitionRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmployeeRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmployeeResponse> GetEmployeeAsync(
+            HrisGetEmployeeRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Employee
+        /// List Employee Shifts.
         /// </summary>
-        Task<HrisGetEmployeeResponse> GetEmployeeAsync(HrisGetEmployeeRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListEmployeeShiftsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeShiftsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListEmployeeShiftsResponse> ListEmployeeShiftsAsync(
+            HrisListEmployeeShiftsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Employee Shifts
+        /// Get Employee Shift.
         /// </summary>
-        Task<HrisListEmployeeShiftsResponse> ListEmployeeShiftsAsync(HrisListEmployeeShiftsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmployeeShiftRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeShiftResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmployeeShiftResponse> GetEmployeeShiftAsync(
+            HrisGetEmployeeShiftRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Employee Shift
+        /// List Employee Time Off Requests.
         /// </summary>
-        Task<HrisGetEmployeeShiftResponse> GetEmployeeShiftAsync(HrisGetEmployeeShiftRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListEmployeeTimeOffRequestsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeTimeOffRequestsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListEmployeeTimeOffRequestsResponse> ListEmployeeTimeOffRequestsAsync(
+            HrisListEmployeeTimeOffRequestsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Employee Time Off Requests
+        /// Get Employees Time Off Request.
         /// </summary>
-        Task<HrisListEmployeeTimeOffRequestsResponse> ListEmployeeTimeOffRequestsAsync(HrisListEmployeeTimeOffRequestsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmployeesTimeOffRequestRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeesTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmployeesTimeOffRequestResponse> GetEmployeeTimeOffRequestAsync(
+            HrisGetEmployeesTimeOffRequestRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Employees Time Off Request
+        /// Update Employee Time Off Request.
         /// </summary>
-        Task<HrisGetEmployeesTimeOffRequestResponse> GetEmployeeTimeOffRequestAsync(HrisGetEmployeesTimeOffRequestRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisUpdateEmployeeTimeOffRequestRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisUpdateEmployeeTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisUpdateEmployeeTimeOffRequestResponse> UpdateEmployeeTimeOffRequestAsync(
+            HrisUpdateEmployeeTimeOffRequestRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Cancel Employee Time Off Request
+        /// Cancel Employee Time Off Request.
         /// </summary>
-        Task<HrisCancelEmployeeTimeOffRequestResponse> CancelEmployeeTimeOffAsync(string xAccountId, string id, string subResourceId, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="subResourceId">Description not available.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisCancelEmployeeTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="subResourceId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisCancelEmployeeTimeOffRequestResponse> CancelEmployeeTimeOffAsync(
+            string xAccountId,
+            string id,
+            string subResourceId,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Update Employee Time Off Request
+        /// Upload Employee Document.
         /// </summary>
-        Task<HrisUpdateEmployeeTimeOffRequestResponse> UpdateEmployeeTimeOffRequestAsync(string xAccountId, string id, string subResourceId, HrisCreateTimeOffRequestDto hrisCreateTimeOffRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="hrisDocumentsUploadRequestDto">A <see cref="HrisDocumentsUploadRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisUploadEmployeeDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="hrisDocumentsUploadRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisUploadEmployeeDocumentResponse> UploadEmployeeDocumentAsync(
+            string xAccountId,
+            string id,
+            HrisDocumentsUploadRequestDto hrisDocumentsUploadRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Upload Employee Document
+        /// List Employee Documents.
         /// </summary>
-        Task<HrisUploadEmployeeDocumentResponse> UploadEmployeeDocumentAsync(string xAccountId, string id, HrisDocumentsUploadRequestDto hrisDocumentsUploadRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListEmployeeDocumentsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeDocumentsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListEmployeeDocumentsResponse> ListEmployeeDocumentsAsync(
+            HrisListEmployeeDocumentsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Employee Documents
+        /// Get Employee Document.
         /// </summary>
-        Task<HrisListEmployeeDocumentsResponse> ListEmployeeDocumentsAsync(HrisListEmployeeDocumentsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmployeeDocumentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmployeeDocumentResponse> GetEmployeeDocumentAsync(
+            HrisGetEmployeeDocumentRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Employee Document
+        /// List Employee Time Off Balances.
         /// </summary>
-        Task<HrisGetEmployeeDocumentResponse> GetEmployeeDocumentAsync(HrisGetEmployeeDocumentRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListEmployeeTimeOffBalancesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeTimeOffBalancesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListEmployeeTimeOffBalancesResponse> ListEmployeeTimeOffBalancesAsync(
+            HrisListEmployeeTimeOffBalancesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Employee Time Off Balances
+        /// Get Employee Time Off Balance.
         /// </summary>
-        Task<HrisListEmployeeTimeOffBalancesResponse> ListEmployeeTimeOffBalancesAsync(HrisListEmployeeTimeOffBalancesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmployeeTimeOffBalanceRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeTimeOffBalanceResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmployeeTimeOffBalanceResponse> GetEmployeeTimeOffBalanceAsync(
+            HrisGetEmployeeTimeOffBalanceRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Employee Time Off Balance
+        /// Get Employment.
         /// </summary>
-        Task<HrisGetEmployeeTimeOffBalanceResponse> GetEmployeeTimeOffBalanceAsync(HrisGetEmployeeTimeOffBalanceRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmploymentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmploymentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmploymentResponse> GetEmploymentAsync(
+            HrisGetEmploymentRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Employment
+        /// Get Group.
         /// </summary>
-        Task<HrisGetEmploymentResponse> GetEmploymentAsync(HrisGetEmploymentRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetGroupRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetGroupResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetGroupResponse> GetGroupAsync(HrisGetGroupRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Get Group
+        /// Get Team Group.
         /// </summary>
-        Task<HrisGetGroupResponse> GetGroupAsync(HrisGetGroupRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetTeamGroupRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTeamGroupResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetTeamGroupResponse> GetTeamGroupAsync(
+            HrisGetTeamGroupRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Team Group
+        /// Get Work Location.
         /// </summary>
-        Task<HrisGetTeamGroupResponse> GetTeamGroupAsync(HrisGetTeamGroupRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetLocationRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetLocationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetLocationResponse> GetLocationAsync(
+            HrisGetLocationRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Work Location
+        /// List Positions.
         /// </summary>
-        Task<HrisGetLocationResponse> GetLocationAsync(HrisGetLocationRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListPositionsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListPositionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListPositionsResponse> ListPositionsAsync(
+            HrisListPositionsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Positions
+        /// Get Position.
         /// </summary>
-        Task<HrisListPositionsResponse> ListPositionsAsync(HrisListPositionsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetPositionRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetPositionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetPositionResponse> GetPositionAsync(
+            HrisGetPositionRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Position
+        /// List Time Entries.
         /// </summary>
-        Task<HrisGetPositionResponse> GetPositionAsync(HrisGetPositionRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListTimeEntriesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListTimeEntriesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListTimeEntriesResponse> ListTimeEntriesAsync(
+            HrisListTimeEntriesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Time Entries
+        /// Get Time Entry.
         /// </summary>
-        Task<HrisListTimeEntriesResponse> ListTimeEntriesAsync(HrisListTimeEntriesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetTimeEntriesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTimeEntriesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetTimeEntriesResponse> GetTimeEntryAsync(
+            HrisGetTimeEntriesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Time Entry
+        /// Get time off request.
         /// </summary>
-        Task<HrisGetTimeEntriesResponse> GetTimeEntryAsync(HrisGetTimeEntriesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetTimeOffRequestRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetTimeOffRequestResponse> GetTimeOffRequestAsync(
+            HrisGetTimeOffRequestRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get time off request
+        /// List Shifts.
         /// </summary>
-        Task<HrisGetTimeOffRequestResponse> GetTimeOffRequestAsync(HrisGetTimeOffRequestRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListShiftsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListShiftsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListShiftsResponse> ListShiftsAsync(
+            HrisListShiftsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Shifts
+        /// List time off types.
         /// </summary>
-        Task<HrisListShiftsResponse> ListShiftsAsync(HrisListShiftsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListTimeOffTypesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListTimeOffTypesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
+        public  Task<HrisListTimeOffTypesResponse> ListTimeOffTypesAsync(
+            HrisListTimeOffTypesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List time off types
+        /// List Time Off Policies.
         /// </summary>
-        Task<HrisListTimeOffTypesResponse> ListTimeOffTypesAsync(HrisListTimeOffTypesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListTimeOffPoliciesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListTimeOffPoliciesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListTimeOffPoliciesResponse> ListTimeOffPoliciesAsync(
+            HrisListTimeOffPoliciesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Time Off Policies
+        /// Get Time Off Policy.
         /// </summary>
-        Task<HrisListTimeOffPoliciesResponse> ListTimeOffPoliciesAsync(HrisListTimeOffPoliciesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetTimeOffPolicyRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTimeOffPolicyResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetTimeOffPolicyResponse> GetTimeOffPolicyAsync(
+            HrisGetTimeOffPolicyRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Time Off Policy
+        /// List benefits.
         /// </summary>
-        Task<HrisGetTimeOffPolicyResponse> GetTimeOffPolicyAsync(HrisGetTimeOffPolicyRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisListBenefitsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListBenefitsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisListBenefitsResponse> ListBenefitsAsync(
+            HrisListBenefitsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List benefits
+        /// Create Employee Skill.
         /// </summary>
-        Task<HrisListBenefitsResponse> ListBenefitsAsync(HrisListBenefitsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="entitySkillsCreateRequestDto">A <see cref="EntitySkillsCreateRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisCreateEmployeeSkillResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="entitySkillsCreateRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisCreateEmployeeSkillResponse> CreateEmployeeSkillAsync(
+            string xAccountId,
+            string id,
+            EntitySkillsCreateRequestDto entitySkillsCreateRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Create Employee Skill
+        /// Get Employee Task.
         /// </summary>
-        Task<HrisCreateEmployeeSkillResponse> CreateEmployeeSkillAsync(string xAccountId, string id, EntitySkillsCreateRequestDto entitySkillsCreateRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetEmployeeTaskRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeTaskResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetEmployeeTaskResponse> GetEmployeeTaskAsync(
+            HrisGetEmployeeTaskRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Employee Task
+        /// Get Task.
         /// </summary>
-        Task<HrisGetEmployeeTaskResponse> GetEmployeeTaskAsync(HrisGetEmployeeTaskRequest request, RetryConfig? retryConfig = null);
-
-        /// <summary>
-        /// Get Task
-        /// </summary>
-        Task<HrisGetTaskResponse> GetTaskAsync(HrisGetTaskRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="HrisGetTaskRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTaskResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<HrisGetTaskResponse> GetTaskAsync(HrisGetTaskRequest request, RetryConfig? retryConfig = null);
     }
 
     public class Hris: IHris
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
 
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// Employees SubSDK.
+        /// <see cref="IEmployees"/>
+        /// </summary>
         public IEmployees Employees { get; private set; }
+
+        /// <summary>
+        /// Documents SubSDK.
+        /// <see cref="IHrisDocuments"/>
+        /// </summary>
         public IHrisDocuments Documents { get; private set; }
+
+        /// <summary>
+        /// Employments SubSDK.
+        /// <see cref="IEmployments"/>
+        /// </summary>
         public IEmployments Employments { get; private set; }
+
+        /// <summary>
+        /// Groups SubSDK.
+        /// <see cref="IHrisGroups"/>
+        /// </summary>
         public IHrisGroups Groups { get; private set; }
+
+        /// <summary>
+        /// Departments SubSDK.
+        /// <see cref="IHrisDepartments"/>
+        /// </summary>
         public IHrisDepartments Departments { get; private set; }
+
+        /// <summary>
+        /// Companies SubSDK.
+        /// <see cref="ICompanies"/>
+        /// </summary>
         public ICompanies Companies { get; private set; }
+
+        /// <summary>
+        /// Jobs SubSDK.
+        /// <see cref="IHrisJobs"/>
+        /// </summary>
         public IHrisJobs Jobs { get; private set; }
+
+        /// <summary>
+        /// Locations SubSDK.
+        /// <see cref="IHrisLocations"/>
+        /// </summary>
         public IHrisLocations Locations { get; private set; }
+
+        /// <summary>
+        /// TimeOff SubSDK.
+        /// <see cref="ITimeOff"/>
+        /// </summary>
         public ITimeOff TimeOff { get; private set; }
+
+        /// <summary>
+        /// Shifts SubSDK.
+        /// <see cref="IShifts"/>
+        /// </summary>
         public IShifts Shifts { get; private set; }
+
+        /// <summary>
+        /// TimeOffTypes SubSDK.
+        /// <see cref="ITimeOffTypes"/>
+        /// </summary>
         public ITimeOffTypes TimeOffTypes { get; private set; }
+
+        /// <summary>
+        /// Benefits SubSDK.
+        /// <see cref="IBenefits"/>
+        /// </summary>
         public IBenefits Benefits { get; private set; }
+
+        /// <summary>
+        /// Tasks SubSDK.
+        /// <see cref="ITasks"/>
+        /// </summary>
         public ITasks Tasks { get; private set; }
 
         public Hris(SDKConfig config)
@@ -241,8 +1033,35 @@ namespace StackOneHQ.Client
             Tasks = new Tasks(SDKConfiguration);
         }
 
-        public async Task<HrisListCompaniesResponse> GetCompaniesAsync(HrisListCompaniesRequest request, RetryConfig? retryConfig = null)
+        /// <summary>
+        /// List Companies.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListCompaniesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListCompaniesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListCompaniesResponse> GetCompaniesAsync(
+            HrisListCompaniesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/companies", request, null);
 
@@ -299,7 +1118,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -348,7 +1167,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await GetCompaniesAsync (
@@ -713,8 +1533,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetCompanyResponse> GetCompanyAsync(HrisGetCompanyRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Company.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetCompanyRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetCompanyResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetCompanyResponse> GetCompanyAsync(
+            HrisGetCompanyRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/companies/{id}", request, null);
 
@@ -771,7 +1619,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1150,8 +1998,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmployeeCustomFieldDefinitionResponse> GetEmployeeCustomFieldDefinitionAsync(HrisGetEmployeeCustomFieldDefinitionRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get employee Custom Field Definition.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmployeeCustomFieldDefinitionRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeCustomFieldDefinitionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmployeeCustomFieldDefinitionResponse> GetEmployeeCustomFieldDefinitionAsync(
+            HrisGetEmployeeCustomFieldDefinitionRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/custom_field_definitions/employees/{id}", request, null);
 
@@ -1208,7 +2084,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1587,8 +2463,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmployeeResponse> GetEmployeeAsync(HrisGetEmployeeRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Employee.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmployeeRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmployeeResponse> GetEmployeeAsync(
+            HrisGetEmployeeRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}", request, null);
 
@@ -1645,7 +2549,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2024,8 +2928,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListEmployeeShiftsResponse> ListEmployeeShiftsAsync(HrisListEmployeeShiftsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Employee Shifts.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListEmployeeShiftsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeShiftsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListEmployeeShiftsResponse> ListEmployeeShiftsAsync(
+            HrisListEmployeeShiftsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/shifts", request, null);
 
@@ -2082,7 +3014,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2132,7 +3064,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListEmployeeShiftsAsync (
@@ -2497,8 +3430,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmployeeShiftResponse> GetEmployeeShiftAsync(HrisGetEmployeeShiftRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Employee Shift.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmployeeShiftRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeShiftResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmployeeShiftResponse> GetEmployeeShiftAsync(
+            HrisGetEmployeeShiftRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/shifts/{subResourceId}", request, null);
 
@@ -2555,7 +3516,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2934,8 +3895,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListEmployeeTimeOffRequestsResponse> ListEmployeeTimeOffRequestsAsync(HrisListEmployeeTimeOffRequestsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Employee Time Off Requests.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListEmployeeTimeOffRequestsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeTimeOffRequestsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListEmployeeTimeOffRequestsResponse> ListEmployeeTimeOffRequestsAsync(
+            HrisListEmployeeTimeOffRequestsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off", request, null);
 
@@ -2992,7 +3981,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -3043,7 +4032,8 @@ namespace StackOneHQ.Client
                     PageSize = request.PageSize,
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
-                    Expand = request.Expand
+                    Expand = request.Expand,
+                    Prefer = request.Prefer
                 };
 
                 return await ListEmployeeTimeOffRequestsAsync (
@@ -3408,8 +4398,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmployeesTimeOffRequestResponse> GetEmployeeTimeOffRequestAsync(HrisGetEmployeesTimeOffRequestRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Employees Time Off Request.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmployeesTimeOffRequestRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeesTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmployeesTimeOffRequestResponse> GetEmployeeTimeOffRequestAsync(
+            HrisGetEmployeesTimeOffRequestRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off/{subResourceId}", request, null);
 
@@ -3466,7 +4484,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -3845,14 +4863,523 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisCancelEmployeeTimeOffRequestResponse> CancelEmployeeTimeOffAsync(string xAccountId, string id, string subResourceId, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Employee Time Off Request.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisUpdateEmployeeTimeOffRequestRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisUpdateEmployeeTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisUpdateEmployeeTimeOffRequestResponse> UpdateEmployeeTimeOffRequestAsync(
+            HrisUpdateEmployeeTimeOffRequestRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off/{subResourceId}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "HrisCreateTimeOffRequestDto", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "hris_update_employee_time_off_request", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            if (retryConfig == null)
+            {
+                if (this.SDKConfiguration.RetryConfig != null)
+                {
+                    retryConfig = this.SDKConfiguration.RetryConfig;
+                }
+                else
+                {
+                    var backoff = new BackoffStrategy(
+                        initialIntervalMs: 500L,
+                        maxIntervalMs: 60000L,
+                        maxElapsedTimeMs: 3600000L,
+                        exponent: 1.5
+                    );
+                    retryConfig = new RetryConfig(
+                        strategy: RetryConfig.RetryStrategy.BACKOFF,
+                        backoff: backoff,
+                        retryConnectionErrors: true
+                    );
+                }
+            }
+
+            List<string> statusCodes = new List<string>
+            {
+                "429",
+                "408",
+            };
+
+            Func<Task<HttpResponseMessage>> retrySend = async () =>
+            {
+                var _httpRequest = await SDKConfiguration.Client.CloneAsync(httpRequest);
+                return await SDKConfiguration.Client.SendAsync(_httpRequest);
+            };
+            var retries = new StackOneHQ.Client.Utils.Retries.Retries(retrySend, retryConfig, statusCodes);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await retries.Run();
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    CreateResult obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<CreateResult>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into CreateResult.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new HrisUpdateEmployeeTimeOffRequestResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.CreateResult = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 400)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    BadRequestResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<BadRequestResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into BadRequestResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new BadRequestResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 401)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    UnauthorizedResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<UnauthorizedResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into UnauthorizedResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new UnauthorizedResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 403)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    ForbiddenResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<ForbiddenResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into ForbiddenResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new ForbiddenResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 404)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    NotFoundResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<NotFoundResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into NotFoundResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new NotFoundResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 408)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    RequestTimedOutResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<RequestTimedOutResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into RequestTimedOutResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new RequestTimedOutResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 409)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    ConflictResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<ConflictResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into ConflictResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new ConflictResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 412)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    PreconditionFailedResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<PreconditionFailedResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into PreconditionFailedResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new PreconditionFailedResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 422)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    UnprocessableEntityResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<UnprocessableEntityResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into UnprocessableEntityResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new UnprocessableEntityResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 429)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    TooManyRequestsResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<TooManyRequestsResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into TooManyRequestsResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new TooManyRequestsResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 500)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    InternalServerErrorResponsePayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<InternalServerErrorResponsePayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into InternalServerErrorResponsePayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new InternalServerErrorResponse(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 501)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    NotImplementedResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<NotImplementedResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into NotImplementedResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new NotImplementedResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 502)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    BadGatewayResponseExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<BadGatewayResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into BadGatewayResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new BadGatewayResponseException(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Cancel Employee Time Off Request.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="subResourceId">Description not available.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisCancelEmployeeTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="subResourceId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisCancelEmployeeTimeOffRequestResponse> CancelEmployeeTimeOffAsync(
+            string xAccountId,
+            string id,
+            string subResourceId,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
+        {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (subResourceId == null) throw new ArgumentNullException(nameof(subResourceId));
+
             var request = new HrisCancelEmployeeTimeOffRequestRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 SubResourceId = subResourceId,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off/{subResourceId}", request, null);
 
@@ -3909,7 +5436,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -4299,464 +5826,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisUpdateEmployeeTimeOffRequestResponse> UpdateEmployeeTimeOffRequestAsync(string xAccountId, string id, string subResourceId, HrisCreateTimeOffRequestDto hrisCreateTimeOffRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Upload Employee Document.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="hrisDocumentsUploadRequestDto">A <see cref="HrisDocumentsUploadRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisUploadEmployeeDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="hrisDocumentsUploadRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisUploadEmployeeDocumentResponse> UploadEmployeeDocumentAsync(
+            string xAccountId,
+            string id,
+            HrisDocumentsUploadRequestDto hrisDocumentsUploadRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
-            var request = new HrisUpdateEmployeeTimeOffRequestRequest()
-            {
-                XAccountId = xAccountId,
-                Id = id,
-                SubResourceId = subResourceId,
-                HrisCreateTimeOffRequestDto = hrisCreateTimeOffRequestDto,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off/{subResourceId}", request, null);
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (hrisDocumentsUploadRequestDto == null) throw new ArgumentNullException(nameof(hrisDocumentsUploadRequestDto));
 
-            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
-            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
-
-            var serializedBody = RequestBodySerializer.Serialize(request, "HrisCreateTimeOffRequestDto", "json", false, false);
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
-
-            if (SDKConfiguration.SecuritySource != null)
-            {
-                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
-            }
-
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "hris_update_employee_time_off_request", null, SDKConfiguration.SecuritySource);
-
-            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
-            if (retryConfig == null)
-            {
-                if (this.SDKConfiguration.RetryConfig != null)
-                {
-                    retryConfig = this.SDKConfiguration.RetryConfig;
-                }
-                else
-                {
-                    var backoff = new BackoffStrategy(
-                        initialIntervalMs: 500L,
-                        maxIntervalMs: 60000L,
-                        maxElapsedTimeMs: 3600000L,
-                        exponent: 1.5
-                    );
-                    retryConfig = new RetryConfig(
-                        strategy: RetryConfig.RetryStrategy.BACKOFF,
-                        backoff: backoff,
-                        retryConnectionErrors: true
-                    );
-                }
-            }
-
-            List<string> statusCodes = new List<string>
-            {
-                "429",
-                "408",
-            };
-
-            Func<Task<HttpResponseMessage>> retrySend = async () =>
-            {
-                var _httpRequest = await SDKConfiguration.Client.CloneAsync(httpRequest);
-                return await SDKConfiguration.Client.SendAsync(_httpRequest);
-            };
-            var retries = new StackOneHQ.Client.Utils.Retries.Retries(retrySend, retryConfig, statusCodes);
-
-            HttpResponseMessage httpResponse;
-            try
-            {
-                httpResponse = await retries.Run();
-                int _statusCode = (int)httpResponse.StatusCode;
-
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
-                {
-                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
-                    if (_httpResponse != null)
-                    {
-                        httpResponse = _httpResponse;
-                    }
-                }
-            }
-            catch (Exception error)
-            {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
-                if (_httpResponse != null)
-                {
-                    httpResponse = _httpResponse;
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode == 200)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    CreateResult obj;
-                    try
-                    {
-                        obj = ResponseBodyDeserializer.DeserializeNotNull<CreateResult>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into CreateResult.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    var response = new HrisUpdateEmployeeTimeOffRequestResponse()
-                    {
-                        HttpMeta = new Models.Components.HTTPMetadata()
-                        {
-                            Response = httpResponse,
-                            Request = httpRequest
-                        }
-                    };
-                    response.CreateResult = obj;
-                    return response;
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 400)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    BadRequestResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<BadRequestResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into BadRequestResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new BadRequestResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 401)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    UnauthorizedResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<UnauthorizedResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into UnauthorizedResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new UnauthorizedResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 403)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    ForbiddenResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<ForbiddenResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into ForbiddenResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new ForbiddenResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 404)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    NotFoundResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<NotFoundResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into NotFoundResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new NotFoundResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 408)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    RequestTimedOutResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<RequestTimedOutResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into RequestTimedOutResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new RequestTimedOutResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 409)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    ConflictResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<ConflictResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into ConflictResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new ConflictResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 412)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    PreconditionFailedResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<PreconditionFailedResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into PreconditionFailedResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new PreconditionFailedResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 422)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    UnprocessableEntityResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<UnprocessableEntityResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into UnprocessableEntityResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new UnprocessableEntityResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 429)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    TooManyRequestsResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<TooManyRequestsResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into TooManyRequestsResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new TooManyRequestsResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 500)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    InternalServerErrorResponsePayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<InternalServerErrorResponsePayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into InternalServerErrorResponsePayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new InternalServerErrorResponse(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 501)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    NotImplementedResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<NotImplementedResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into NotImplementedResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new NotImplementedResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode == 502)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
-                {
-                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    BadGatewayResponseExceptionPayload payload;
-                    try
-                    {
-                        payload = ResponseBodyDeserializer.DeserializeNotNull<BadGatewayResponseExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ResponseValidationException("Failed to deserialize response body into BadGatewayResponseExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
-                    }
-
-                    payload.HttpMeta = new Models.Components.HTTPMetadata()
-                    {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    };
-
-                    throw new BadGatewayResponseException(payload, httpRequest, httpResponse, httpResponseBody);
-                }
-
-                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500)
-            {
-                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-            else if(responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-            }
-
-            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
-        }
-
-        public async Task<HrisUploadEmployeeDocumentResponse> UploadEmployeeDocumentAsync(string xAccountId, string id, HrisDocumentsUploadRequestDto hrisDocumentsUploadRequestDto, RetryConfig? retryConfig = null)
-        {
             var request = new HrisUploadEmployeeDocumentRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 HrisDocumentsUploadRequestDto = hrisDocumentsUploadRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/documents/upload", request, null);
 
@@ -4819,7 +5934,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -5198,8 +6313,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListEmployeeDocumentsResponse> ListEmployeeDocumentsAsync(HrisListEmployeeDocumentsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Employee Documents.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListEmployeeDocumentsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeDocumentsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListEmployeeDocumentsResponse> ListEmployeeDocumentsAsync(
+            HrisListEmployeeDocumentsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/documents", request, null);
 
@@ -5256,7 +6399,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -5306,7 +6449,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListEmployeeDocumentsAsync (
@@ -5671,8 +6815,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmployeeDocumentResponse> GetEmployeeDocumentAsync(HrisGetEmployeeDocumentRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Employee Document.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmployeeDocumentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmployeeDocumentResponse> GetEmployeeDocumentAsync(
+            HrisGetEmployeeDocumentRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/documents/{subResourceId}", request, null);
 
@@ -5729,7 +6901,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -6108,8 +7280,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListEmployeeTimeOffBalancesResponse> ListEmployeeTimeOffBalancesAsync(HrisListEmployeeTimeOffBalancesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Employee Time Off Balances.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListEmployeeTimeOffBalancesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListEmployeeTimeOffBalancesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListEmployeeTimeOffBalancesResponse> ListEmployeeTimeOffBalancesAsync(
+            HrisListEmployeeTimeOffBalancesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off_balances", request, null);
 
@@ -6166,7 +7366,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -6217,7 +7417,8 @@ namespace StackOneHQ.Client
                     PageSize = request.PageSize,
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
-                    Expand = request.Expand
+                    Expand = request.Expand,
+                    Prefer = request.Prefer
                 };
 
                 return await ListEmployeeTimeOffBalancesAsync (
@@ -6582,8 +7783,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmployeeTimeOffBalanceResponse> GetEmployeeTimeOffBalanceAsync(HrisGetEmployeeTimeOffBalanceRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Employee Time Off Balance.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmployeeTimeOffBalanceRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeTimeOffBalanceResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmployeeTimeOffBalanceResponse> GetEmployeeTimeOffBalanceAsync(
+            HrisGetEmployeeTimeOffBalanceRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/time_off_balances/{subResourceId}", request, null);
 
@@ -6640,7 +7869,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -7019,8 +8248,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmploymentResponse> GetEmploymentAsync(HrisGetEmploymentRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Employment.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmploymentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmploymentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmploymentResponse> GetEmploymentAsync(
+            HrisGetEmploymentRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employments/{id}", request, null);
 
@@ -7077,7 +8334,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -7456,8 +8713,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetGroupResponse> GetGroupAsync(HrisGetGroupRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Group.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetGroupRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetGroupResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetGroupResponse> GetGroupAsync(
+            HrisGetGroupRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/groups/{id}", request, null);
 
@@ -7514,7 +8799,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -7893,8 +9178,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetTeamGroupResponse> GetTeamGroupAsync(HrisGetTeamGroupRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Team Group.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetTeamGroupRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTeamGroupResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetTeamGroupResponse> GetTeamGroupAsync(
+            HrisGetTeamGroupRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/groups/teams/{id}", request, null);
 
@@ -7951,7 +9264,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -8330,8 +9643,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetLocationResponse> GetLocationAsync(HrisGetLocationRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Work Location.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetLocationRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetLocationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetLocationResponse> GetLocationAsync(
+            HrisGetLocationRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/locations/{id}", request, null);
 
@@ -8388,7 +9729,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -8767,8 +10108,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListPositionsResponse> ListPositionsAsync(HrisListPositionsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Positions.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListPositionsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListPositionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListPositionsResponse> ListPositionsAsync(
+            HrisListPositionsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/positions", request, null);
 
@@ -8825,7 +10194,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -8875,7 +10244,8 @@ namespace StackOneHQ.Client
                     PageSize = request.PageSize,
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
-                    Status = request.Status
+                    Status = request.Status,
+                    Prefer = request.Prefer
                 };
 
                 return await ListPositionsAsync (
@@ -9240,8 +10610,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetPositionResponse> GetPositionAsync(HrisGetPositionRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Position.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetPositionRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetPositionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetPositionResponse> GetPositionAsync(
+            HrisGetPositionRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/positions/{id}", request, null);
 
@@ -9298,7 +10696,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -9677,8 +11075,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListTimeEntriesResponse> ListTimeEntriesAsync(HrisListTimeEntriesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Time Entries.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListTimeEntriesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListTimeEntriesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListTimeEntriesResponse> ListTimeEntriesAsync(
+            HrisListTimeEntriesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/time_entries", request, null);
 
@@ -9735,7 +11161,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -9784,7 +11210,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListTimeEntriesAsync (
@@ -10149,8 +11576,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetTimeEntriesResponse> GetTimeEntryAsync(HrisGetTimeEntriesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Time Entry.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetTimeEntriesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTimeEntriesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetTimeEntriesResponse> GetTimeEntryAsync(
+            HrisGetTimeEntriesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/time_entries/{id}", request, null);
 
@@ -10207,7 +11662,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -10586,8 +12041,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetTimeOffRequestResponse> GetTimeOffRequestAsync(HrisGetTimeOffRequestRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get time off request.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetTimeOffRequestRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTimeOffRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetTimeOffRequestResponse> GetTimeOffRequestAsync(
+            HrisGetTimeOffRequestRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/time_off/{id}", request, null);
 
@@ -10644,7 +12127,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -11023,8 +12506,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListShiftsResponse> ListShiftsAsync(HrisListShiftsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Shifts.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListShiftsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListShiftsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListShiftsResponse> ListShiftsAsync(
+            HrisListShiftsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/shifts", request, null);
 
@@ -11081,7 +12592,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -11130,7 +12641,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListShiftsAsync (
@@ -11495,9 +13007,37 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
+
+        /// <summary>
+        /// List time off types.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListTimeOffTypesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListTimeOffTypesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
-        public async Task<HrisListTimeOffTypesResponse> ListTimeOffTypesAsync(HrisListTimeOffTypesRequest request, RetryConfig? retryConfig = null)
+        public async  Task<HrisListTimeOffTypesResponse> ListTimeOffTypesAsync(
+            HrisListTimeOffTypesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/time_off_types", request, null);
 
@@ -11554,7 +13094,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -11603,7 +13143,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListTimeOffTypesAsync (
@@ -11968,8 +13509,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListTimeOffPoliciesResponse> ListTimeOffPoliciesAsync(HrisListTimeOffPoliciesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Time Off Policies.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListTimeOffPoliciesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListTimeOffPoliciesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListTimeOffPoliciesResponse> ListTimeOffPoliciesAsync(
+            HrisListTimeOffPoliciesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/time_off_policies", request, null);
 
@@ -12026,7 +13595,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -12075,7 +13644,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListTimeOffPoliciesAsync (
@@ -12440,8 +14010,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetTimeOffPolicyResponse> GetTimeOffPolicyAsync(HrisGetTimeOffPolicyRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Time Off Policy.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetTimeOffPolicyRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTimeOffPolicyResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetTimeOffPolicyResponse> GetTimeOffPolicyAsync(
+            HrisGetTimeOffPolicyRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/time_off_policies/{id}", request, null);
 
@@ -12498,7 +14096,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -12877,8 +14475,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisListBenefitsResponse> ListBenefitsAsync(HrisListBenefitsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List benefits.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisListBenefitsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisListBenefitsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisListBenefitsResponse> ListBenefitsAsync(
+            HrisListBenefitsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/benefits", request, null);
 
@@ -12935,7 +14561,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -12984,7 +14610,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListBenefitsAsync (
@@ -13349,14 +14976,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisCreateEmployeeSkillResponse> CreateEmployeeSkillAsync(string xAccountId, string id, EntitySkillsCreateRequestDto entitySkillsCreateRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Create Employee Skill.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="entitySkillsCreateRequestDto">A <see cref="EntitySkillsCreateRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisCreateEmployeeSkillResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="entitySkillsCreateRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisCreateEmployeeSkillResponse> CreateEmployeeSkillAsync(
+            string xAccountId,
+            string id,
+            EntitySkillsCreateRequestDto entitySkillsCreateRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (entitySkillsCreateRequestDto == null) throw new ArgumentNullException(nameof(entitySkillsCreateRequestDto));
+
             var request = new HrisCreateEmployeeSkillRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 EntitySkillsCreateRequestDto = entitySkillsCreateRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/skills", request, null);
 
@@ -13419,7 +15084,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -13798,8 +15463,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetEmployeeTaskResponse> GetEmployeeTaskAsync(HrisGetEmployeeTaskRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Employee Task.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetEmployeeTaskRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetEmployeeTaskResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetEmployeeTaskResponse> GetEmployeeTaskAsync(
+            HrisGetEmployeeTaskRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/employees/{id}/tasks/{subResourceId}", request, null);
 
@@ -13856,7 +15549,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -14235,8 +15928,33 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<HrisGetTaskResponse> GetTaskAsync(HrisGetTaskRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Task.
+        /// </summary>
+        /// <param name="request">A <see cref="HrisGetTaskRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="HrisGetTaskResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<HrisGetTaskResponse> GetTaskAsync(HrisGetTaskRequest request, RetryConfig? retryConfig = null)
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/hris/tasks/{id}", request, null);
 
@@ -14293,7 +16011,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -14671,5 +16389,6 @@ namespace StackOneHQ.Client
 
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
+
     }
 }

@@ -13,12 +13,11 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class LmsBatchUpsertContentRequestDto
     {
-
         /// <summary>
-        /// The batch of items to upsert
+        /// The batch of items to upsert.
         /// </summary>
         [JsonProperty("items")]
         public List<LmsUpsertContentRequestDto> Items { get; set; } = default!;

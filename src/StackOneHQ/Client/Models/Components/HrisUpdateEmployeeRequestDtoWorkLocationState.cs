@@ -12,15 +12,14 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The ISO3166-2 sub division where the location is situated
+    /// The ISO3166-2 sub division where the location is situated.
     /// </summary>
     public class HrisUpdateEmployeeRequestDtoWorkLocationState
     {
-
         /// <summary>
-        /// state (ISO3166-2 Sub Division Code) - value must be a valid enum value
+        /// state (ISO3166-2 Sub Division Code) - value must be a valid enum value.
         /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; } = null;

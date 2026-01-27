@@ -14,10 +14,9 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class WriteResultApiModel
     {
-
         [JsonProperty("statusCode")]
         public double? StatusCode { get; set; } = null;
 

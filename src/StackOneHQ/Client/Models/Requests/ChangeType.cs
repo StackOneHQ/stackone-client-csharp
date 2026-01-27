@@ -12,9 +12,9 @@ namespace StackOneHQ.Client.Models.Requests
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Filter by the type of change that occurred to the application
+    /// Filter by the type of change that occurred to the application.
     /// </summary>
     public enum ChangeType
     {
@@ -60,5 +60,4 @@ namespace StackOneHQ.Client.Models.Requests
             throw new Exception($"Unknown value {value} for enum ChangeType");
         }
     }
-
 }

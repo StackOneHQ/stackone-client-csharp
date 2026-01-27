@@ -12,21 +12,20 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Requests;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// HRIS Time-Off Policies filters
+    /// HRIS Time-Off Policies filters.
     /// </summary>
     public class HrisListTimeOffPoliciesFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select time-off policies by type
+        /// Filter to select time-off policies by type.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=type")]
         public HrisListTimeOffPoliciesType? Type { get; set; } = null;

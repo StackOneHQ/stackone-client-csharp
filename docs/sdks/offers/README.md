@@ -1,5 +1,4 @@
-# Offers
-(*Ats.Offers*)
+# Ats.Offers
 
 ## Overview
 
@@ -33,6 +32,7 @@ AtsListOffersRequest req = new AtsListOffersRequest() {
     Filter = new AtsListOffersFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListOffersResponse? res = await sdk.Ats.Offers.ListAsync(req);
@@ -111,7 +111,8 @@ var res = await sdk.Ats.Offers.CreateAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -119,10 +120,11 @@ var res = await sdk.Ats.Offers.CreateAsync(
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `XAccountId`                                                                    | *string*                                                                        | :heavy_check_mark:                                                              | The account identifier                                                          |
-| `AtsCreateOfferRequestDto`                                                      | [AtsCreateOfferRequestDto](../../Models/Components/AtsCreateOfferRequestDto.md) | :heavy_check_mark:                                                              | N/A                                                                             |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `AtsCreateOfferRequestDto`                                                                                                                                               | [AtsCreateOfferRequestDto](../../Models/Components/AtsCreateOfferRequestDto.md)                                                                                          | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 
@@ -167,6 +169,7 @@ AtsGetOfferRequest req = new AtsGetOfferRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Offers.GetAsync(req);

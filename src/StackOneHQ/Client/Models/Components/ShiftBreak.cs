@@ -13,48 +13,47 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class ShiftBreak
     {
-
         /// <summary>
-        /// The unique identifier of the break
+        /// The unique identifier of the break.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// The start time of the break
+        /// The start time of the break.
         /// </summary>
         [JsonProperty("start_time")]
         public DateTime? StartTime { get; set; } = null;
 
         /// <summary>
-        /// The end time of the break
+        /// The end time of the break.
         /// </summary>
         [JsonProperty("end_time")]
         public DateTime? EndTime { get; set; } = null;
 
         /// <summary>
-        /// The duration of the break in ISO 8601 duration format
+        /// The duration of the break in ISO 8601 duration format.
         /// </summary>
         [JsonProperty("duration")]
         public string? Duration { get; set; } = null;
 
         /// <summary>
-        /// Whether the break is paid
+        /// Whether the break is paid.
         /// </summary>
         [JsonProperty("is_paid", NullValueHandling = NullValueHandling.Include)]
         public IsPaid? IsPaid { get; set; } = null;
 
         /// <summary>
-        /// The date and time the break was created
+        /// The date and time the break was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The date and time the break was last updated
+        /// The date and time the break was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

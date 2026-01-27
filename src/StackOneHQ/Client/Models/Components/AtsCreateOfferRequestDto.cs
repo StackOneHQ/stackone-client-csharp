@@ -14,15 +14,14 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class AtsCreateOfferRequestDto
     {
-
         [JsonProperty("application_id")]
         public string? ApplicationId { get; set; } = null;
 
         /// <summary>
-        /// Date of creation
+        /// Date of creation.
         /// </summary>
         [JsonProperty("start_date")]
         public DateTime? StartDate { get; set; } = null;
@@ -40,7 +39,7 @@ namespace StackOneHQ.Client.Models.Components
         public List<OfferHistory>? OfferHistory { get; set; } = null;
 
         /// <summary>
-        /// Value to pass through to the provider
+        /// Value to pass through to the provider.
         /// </summary>
         [JsonProperty("passthrough")]
         public Dictionary<string, object>? Passthrough { get; set; } = null;

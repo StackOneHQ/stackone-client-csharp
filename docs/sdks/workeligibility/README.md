@@ -1,5 +1,4 @@
-# WorkEligibility
-(*Hris.Employees.WorkEligibility*)
+# Hris.Employees.WorkEligibility
 
 ## Overview
 
@@ -17,6 +16,7 @@ Update Employee Work Eligibility Request
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 using System;
 using System.Collections.Generic;
 
@@ -25,11 +25,12 @@ var sdk = new StackOneHQClient(security: new Security() {
     Password = "",
 });
 
-var res = await sdk.Hris.Employees.WorkEligibility.UpdateRequestAsync(
-    id: "<id>",
-    subResourceId: "<id>",
-    xAccountId: "<id>",
-    hrisCreateWorkEligibilityRequestDto: new HrisCreateWorkEligibilityRequestDto() {
+HrisUpdateEmployeeWorkEligibilityRequestRequest req = new HrisUpdateEmployeeWorkEligibilityRequestRequest() {
+    Id = "<id>",
+    SubResourceId = "<id>",
+    XAccountId = "<id>",
+    Prefer = "heartbeat",
+    HrisCreateWorkEligibilityRequestDto = new HrisCreateWorkEligibilityRequestDto() {
         Document = new HrisCreateWorkEligibilityRequestDtoDocument() {
             Id = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
             RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
@@ -57,20 +58,19 @@ var res = await sdk.Hris.Employees.WorkEligibility.UpdateRequestAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-    }
-);
+    },
+};
+
+var res = await sdk.Hris.Employees.WorkEligibility.UpdateRequestAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `Id`                                                                                                  | *string*                                                                                              | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `SubResourceId`                                                                                       | *string*                                                                                              | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `XAccountId`                                                                                          | *string*                                                                                              | :heavy_check_mark:                                                                                    | The account identifier                                                                                |
-| `HrisCreateWorkEligibilityRequestDto`                                                                 | [HrisCreateWorkEligibilityRequestDto](../../Models/Components/HrisCreateWorkEligibilityRequestDto.md) | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| Parameter                                                                                                                   | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                   | [HrisUpdateEmployeeWorkEligibilityRequestRequest](../../Models/Requests/HrisUpdateEmployeeWorkEligibilityRequestRequest.md) | :heavy_check_mark:                                                                                                          | The request object to use for the request.                                                                                  |
 
 ### Response
 

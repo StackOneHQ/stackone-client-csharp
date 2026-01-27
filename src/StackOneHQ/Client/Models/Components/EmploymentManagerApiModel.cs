@@ -12,36 +12,35 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class EmploymentManagerApiModel
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The manager name
+        /// The manager name.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The manager email
+        /// The manager email.
         /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; } = null;
 
         /// <summary>
-        /// The role of manager
+        /// The role of manager.
         /// </summary>
         [JsonProperty("role")]
         public Role? Role { get; set; } = null;

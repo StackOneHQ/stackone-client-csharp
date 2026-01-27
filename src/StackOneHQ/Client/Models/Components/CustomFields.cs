@@ -12,18 +12,17 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class CustomFields
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
@@ -47,7 +46,7 @@ namespace StackOneHQ.Client.Models.Components
         public string? ValueId { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier for the value of the custom field.
+        /// Provider's unique identifier for the value of the custom field.
         /// </summary>
         [JsonProperty("remote_value_id")]
         public string? RemoteValueId { get; set; } = null;

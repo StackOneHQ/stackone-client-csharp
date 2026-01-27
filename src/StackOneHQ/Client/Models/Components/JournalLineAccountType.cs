@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Type of the account
+    /// Type of the account.
     /// </summary>
     public class JournalLineAccountType
     {
-
         /// <summary>
-        /// Type of account
+        /// Type of account.
         /// </summary>
         [JsonProperty("value")]
         public JournalLineAccountTypeValue? Value { get; set; } = null;

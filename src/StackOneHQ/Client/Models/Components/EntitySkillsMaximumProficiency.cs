@@ -16,27 +16,26 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The proficiency level of the skill
+    /// The proficiency level of the skill.
     /// </summary>
     public class EntitySkillsMaximumProficiency
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name associated with this proficiency
+        /// The name associated with this proficiency.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;

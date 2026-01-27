@@ -1,5 +1,4 @@
-# EmployeesEmployments
-(*Hris.Employees.Employments*)
+# Hris.Employees.Employments
 
 ## Overview
 
@@ -34,6 +33,7 @@ HrisListEmployeeEmploymentsRequest req = new HrisListEmployeeEmploymentsRequest(
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "groups",
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeeEmploymentsResponse? res = await sdk.Hris.Employees.Employments.ListAsync(req);
@@ -84,6 +84,7 @@ Update Employee Employment
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
 using System;
 using System.Collections.Generic;
 
@@ -92,11 +93,12 @@ var sdk = new StackOneHQClient(security: new Security() {
     Password = "",
 });
 
-var res = await sdk.Hris.Employees.Employments.UpdateAsync(
-    xAccountId: "<id>",
-    id: "<id>",
-    subResourceId: "<id>",
-    hrisUpdateEmploymentRequestDto: new HrisUpdateEmploymentRequestDto() {
+HrisUpdateEmployeeEmploymentRequest req = new HrisUpdateEmployeeEmploymentRequest() {
+    XAccountId = "<id>",
+    Id = "<id>",
+    SubResourceId = "<id>",
+    Prefer = "heartbeat",
+    HrisUpdateEmploymentRequestDto = new HrisUpdateEmploymentRequestDto() {
         UnifiedCustomFields = new Dictionary<string, object>() {
             { "my_project_custom_field_1", "REF-1236" },
             { "my_project_custom_field_2", "some other value" },
@@ -146,20 +148,19 @@ var res = await sdk.Hris.Employees.Employments.UpdateAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-    }
-);
+    },
+};
+
+var res = await sdk.Hris.Employees.Employments.UpdateAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `XAccountId`                                                                                | *string*                                                                                    | :heavy_check_mark:                                                                          | The account identifier                                                                      |
-| `Id`                                                                                        | *string*                                                                                    | :heavy_check_mark:                                                                          | N/A                                                                                         |
-| `SubResourceId`                                                                             | *string*                                                                                    | :heavy_check_mark:                                                                          | N/A                                                                                         |
-| `HrisUpdateEmploymentRequestDto`                                                            | [HrisUpdateEmploymentRequestDto](../../Models/Components/HrisUpdateEmploymentRequestDto.md) | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [HrisUpdateEmployeeEmploymentRequest](../../Models/Requests/HrisUpdateEmployeeEmploymentRequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
 
 ### Response
 

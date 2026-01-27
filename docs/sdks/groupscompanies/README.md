@@ -1,5 +1,4 @@
-# GroupsCompanies
-(*Hris.Groups.Companies*)
+# Hris.Groups.Companies
 
 ## Overview
 
@@ -31,6 +30,7 @@ HrisListCompaniesGroupsRequest req = new HrisListCompaniesGroupsRequest() {
     Filter = new HrisListCompaniesGroupsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 HrisListCompaniesGroupsResponse? res = await sdk.Hris.Groups.Companies.ListAsync(req);

@@ -12,48 +12,47 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class AccountingAccount
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// ID of the company this account belongs to
+        /// ID of the company this account belongs to.
         /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; } = null;
 
         /// <summary>
-        /// External system&apos;s account code/number
+        /// External system's account code/number.
         /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; } = null;
 
         /// <summary>
-        /// Name of the account
+        /// Name of the account.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Type of account
+        /// Type of account.
         /// </summary>
         [JsonProperty("type")]
         public AccountingAccountType? Type { get; set; } = null;
 
         /// <summary>
-        /// Whether the account is active
+        /// Whether the account is active.
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public AccountingAccountActiveUnion? Active { get; set; } = null;

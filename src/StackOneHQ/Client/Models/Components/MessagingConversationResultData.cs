@@ -14,48 +14,47 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Utils;
     using System;
     using System.Collections.Generic;
-    
+
     public class MessagingConversationResultData
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// List of participant user IDs in the conversation
+        /// List of participant user IDs in the conversation.
         /// </summary>
         [JsonProperty("participants")]
         public List<string>? Participants { get; set; } = null;
 
         /// <summary>
-        /// Name or title of the conversation
+        /// Name or title of the conversation.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Whether the conversation is private
+        /// Whether the conversation is private.
         /// </summary>
         [JsonProperty("private", NullValueHandling = NullValueHandling.Include)]
         public MessagingConversationResultPrivateUnion? Private { get; set; } = null;
 
         /// <summary>
-        /// Timestamp when the conversation was created
+        /// Timestamp when the conversation was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// Timestamp of the last message in the conversation
+        /// Timestamp of the last message in the conversation.
         /// </summary>
         [JsonProperty("last_message_at")]
         public DateTime? LastMessageAt { get; set; } = null;

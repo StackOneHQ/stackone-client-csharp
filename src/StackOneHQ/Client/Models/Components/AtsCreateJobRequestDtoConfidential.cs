@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Confidential status of the job
+    /// Confidential status of the job.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AtsCreateJobRequestDtoConfidential : IEquatable<AtsCreateJobRequestDtoConfidential>
@@ -76,5 +76,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

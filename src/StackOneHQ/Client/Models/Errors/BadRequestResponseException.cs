@@ -19,31 +19,31 @@ namespace StackOneHQ.Client.Models.Errors
     public class BadRequestResponseExceptionPayload
     {
         /// <summary>
-        /// HTTP status code
+        /// HTTP status code.
         /// </summary>
         [JsonProperty("statusCode")]
         public double StatusCode { get; set; } = default!;
 
         /// <summary>
-        /// Error message
+        /// Error message.
         /// </summary>
         [JsonProperty("message")]
         public string Message { get; set; } = default!;
 
         /// <summary>
-        /// Timestamp when the error occurred
+        /// Timestamp when the error occurred.
         /// </summary>
         [JsonProperty("timestamp")]
         public DateTime Timestamp { get; set; } = default!;
 
         /// <summary>
-        /// Error details
+        /// Error details.
         /// </summary>
         [JsonProperty("data")]
         public BadRequestResponseData? Data { get; set; }
 
         /// <summary>
-        /// List of provider-specific errors
+        /// List of provider-specific errors.
         /// </summary>
         [JsonProperty("provider_errors")]
         public List<ProviderError>? ProviderErrors { get; set; }
@@ -103,5 +103,4 @@ namespace StackOneHQ.Client.Models.Errors
            #pragma warning restore CS0618
         }
     }
-
 }

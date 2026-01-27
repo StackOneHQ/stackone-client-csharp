@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Status of the journal
+    /// Status of the journal.
     /// </summary>
     public class AccountingJournalStatus
     {
-
         /// <summary>
-        /// The journal status
+        /// The journal status.
         /// </summary>
         [JsonProperty("value")]
         public AccountingJournalValue? Value { get; set; } = null;

@@ -12,48 +12,47 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class EntitySkills
     {
-
         /// <summary>
-        /// The ID associated with this skill
+        /// The ID associated with this skill.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
 
         /// <summary>
-        /// The name associated with this skill
+        /// The name associated with this skill.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Whether the skill is active and therefore available for use
+        /// Whether the skill is active and therefore available for use.
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public EntitySkillsActiveUnion? Active { get; set; } = null;
 
         /// <summary>
-        /// The language associated with this skill
+        /// The language associated with this skill.
         /// </summary>
         [JsonProperty("language")]
         public EntitySkillsLanguage? Language { get; set; } = null;
 
         /// <summary>
-        /// The proficiency level of the skill
+        /// The proficiency level of the skill.
         /// </summary>
         [JsonProperty("maximum_proficiency")]
         public EntitySkillsMaximumProficiency? MaximumProficiency { get; set; } = null;
 
         /// <summary>
-        /// The proficiency level of the skill
+        /// The proficiency level of the skill.
         /// </summary>
         [JsonProperty("minimum_proficiency")]
         public EntitySkillsMinimumProficiency? MinimumProficiency { get; set; } = null;

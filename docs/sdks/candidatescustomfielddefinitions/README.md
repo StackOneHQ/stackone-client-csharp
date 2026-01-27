@@ -1,5 +1,4 @@
-# CandidatesCustomFieldDefinitions
-(*Ats.Candidates.CustomFieldDefinitions*)
+# Ats.Candidates.CustomFieldDefinitions
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsGetCandidateCustomFieldDefinitionRequest req = new AtsGetCandidateCustomField
     Filter = new AtsGetCandidateCustomFieldDefinitionFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Candidates.CustomFieldDefinitions.GetAsync(req);

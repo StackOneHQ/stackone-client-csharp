@@ -11,45 +11,44 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// Documents Files Filter
+    /// Documents Files Filter.
     /// </summary>
     public class DocumentsListFilesFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Search if the name of the file contains the string
+        /// Search if the name of the file contains the string.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Search if the contents of the file contains the string (contents can include file metadata)
+        /// Search if the contents of the file contains the string (contents can include file metadata).
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=content")]
         public string? Content { get; set; } = null;
 
         /// <summary>
-        /// Use a string with a date to only select results created after that given date
+        /// Use a string with a date to only select results created after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=created_after")]
         public DateTime? CreatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Use to only include Files within the specified Drive
+        /// Use to only include Files within the specified Drive.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=drive_id")]
         public string? DriveId { get; set; } = null;
 
         /// <summary>
-        /// Use to only include Files within the specified Folder. Required when requesting nested items
+        /// Use to only include Files within the specified Folder. Required when requesting nested items.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=folder_id")]
         public string? FolderId { get; set; } = null;

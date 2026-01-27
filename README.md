@@ -76,6 +76,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     },
     Expand = "company,employments,work_location,home_location,groups,skills",
     Include = "avatar_url,avatar,custom_fields,job_description,benefits,bank_details",
+    Prefer = "heartbeat",
 };
 
 HrisListEmployeesResponse? res = await sdk.Hris.Employees.ListAsync(req);
@@ -147,14 +148,19 @@ using StackOneHQ.Client.Models.Requests;
 
 var sdk = new StackOneHQClient();
 
-var res = await sdk.Mcp.McpGetAsync(
-    security: new StackoneMcpGetSecurity() {
+var res = await sdk.Mcp.McpPostAsync(
+    security: new StackoneMcpPostSecurity() {
         Basic = new SchemeBasic() {
             Username = "",
             Password = "",
         },
     },
-    mcpSessionId: "<id>",
+    jsonRpcMessageDto: new JsonRpcMessageDto() {
+        Jsonrpc = "2.0",
+        Method = "initialize",
+        Params = new Params() {},
+        Id = new Id() {},
+    },
     xAccountId: "<id>"
 );
 
@@ -185,13 +191,15 @@ var res = await sdk.Mcp.McpGetAsync(
 
 * [List](docs/sdks/accounts/README.md#list) - List Accounts
 * [Get](docs/sdks/accounts/README.md#get) - Get Account
-* [Delete](docs/sdks/accounts/README.md#delete) - Delete Account
 * [Update](docs/sdks/accounts/README.md#update) - Update Account
+* [Delete](docs/sdks/accounts/README.md#delete) - Delete Account
 * [GetMeta](docs/sdks/accounts/README.md#getmeta) - Get Account Meta Information
 
 ### [Actions](docs/sdks/actions/README.md)
 
 * [ListActionsMeta](docs/sdks/actions/README.md#listactionsmeta) - List all actions metadata
+* [SearchActions](docs/sdks/actions/README.md#searchactions) - Search connector actions by semantic similarity
+* [BuildActionEmbeddings](docs/sdks/actions/README.md#buildactionembeddings) - Rebuild action embeddings for semantic search
 * [RpcAction](docs/sdks/actions/README.md#rpcaction) - Make an RPC call to an action
 
 ### [Applications](docs/sdks/applications/README.md)
@@ -247,7 +255,7 @@ var res = await sdk.Mcp.McpGetAsync(
 * [ListCustomFieldDefinitions](docs/sdks/atsapplications/README.md#listcustomfielddefinitions) - List Application Custom Field Definitions
 * [GetCustomFieldDefinition](docs/sdks/atsapplications/README.md#getcustomfielddefinition) - Get Application Custom Field Definition
 
-#### [Ats.Applications.Documents](docs/sdks/applicationsdocuments/README.md)
+##### [Ats.Applications.Documents](docs/sdks/applicationsdocuments/README.md)
 
 * [List](docs/sdks/applicationsdocuments/README.md#list) - List Application Documents
 
@@ -255,7 +263,7 @@ var res = await sdk.Mcp.McpGetAsync(
 
 * [PackagesList](docs/sdks/assessments/README.md#packageslist) - List Assessments Packages
 
-#### [Ats.Assessments.Packages](docs/sdks/assessmentspackages/README.md)
+##### [Ats.Assessments.Packages](docs/sdks/assessmentspackages/README.md)
 
 * [Get](docs/sdks/assessmentspackages/README.md#get) - Get Assessments Package
 
@@ -264,7 +272,7 @@ var res = await sdk.Mcp.McpGetAsync(
 * [PackagesList](docs/sdks/atsbackgroundchecks/README.md#packageslist) - List Background Check Packages
 * [CreatePackage](docs/sdks/atsbackgroundchecks/README.md#createpackage) - Create Background Check Package
 
-#### [Ats.BackgroundChecks.Packages](docs/sdks/backgroundcheckspackages/README.md)
+##### [Ats.BackgroundChecks.Packages](docs/sdks/backgroundcheckspackages/README.md)
 
 * [Get](docs/sdks/backgroundcheckspackages/README.md#get) - Get Background Check Package
 
@@ -273,11 +281,11 @@ var res = await sdk.Mcp.McpGetAsync(
 * [Create](docs/sdks/candidates/README.md#create) - Create Candidate
 * [Get](docs/sdks/candidates/README.md#get) - Get Candidate
 
-#### [Ats.Candidates.CustomFieldDefinitions](docs/sdks/candidatescustomfielddefinitions/README.md)
+##### [Ats.Candidates.CustomFieldDefinitions](docs/sdks/candidatescustomfielddefinitions/README.md)
 
 * [Get](docs/sdks/candidatescustomfielddefinitions/README.md#get) - Get Candidate Custom Field Definition
 
-#### [Ats.Candidates.Notes](docs/sdks/notes/README.md)
+##### [Ats.Candidates.Notes](docs/sdks/notes/README.md)
 
 * [List](docs/sdks/notes/README.md#list) - List Candidate Notes
 
@@ -410,8 +418,8 @@ var res = await sdk.Mcp.McpGetAsync(
 * [GetEmployeeShift](docs/sdks/hris/README.md#getemployeeshift) - Get Employee Shift
 * [ListEmployeeTimeOffRequests](docs/sdks/hris/README.md#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [GetEmployeeTimeOffRequest](docs/sdks/hris/README.md#getemployeetimeoffrequest) - Get Employees Time Off Request
-* [CancelEmployeeTimeOff](docs/sdks/hris/README.md#cancelemployeetimeoff) - Cancel Employee Time Off Request
 * [UpdateEmployeeTimeOffRequest](docs/sdks/hris/README.md#updateemployeetimeoffrequest) - Update Employee Time Off Request
+* [CancelEmployeeTimeOff](docs/sdks/hris/README.md#cancelemployeetimeoff) - Cancel Employee Time Off Request
 * [UploadEmployeeDocument](docs/sdks/hris/README.md#uploademployeedocument) - Upload Employee Document
 * [ListEmployeeDocuments](docs/sdks/hris/README.md#listemployeedocuments) - List Employee Documents
 * [GetEmployeeDocument](docs/sdks/hris/README.md#getemployeedocument) - Get Employee Document
@@ -469,25 +477,25 @@ var res = await sdk.Mcp.McpGetAsync(
 * [ListTimeOffPolicies](docs/sdks/employees/README.md#listtimeoffpolicies) - List Assigned Time Off Policies
 * [GetSkill](docs/sdks/employees/README.md#getskill) - Get Employee Skill
 
-#### [Hris.Employees.Documents](docs/sdks/employeesdocuments/README.md)
+##### [Hris.Employees.Documents](docs/sdks/employeesdocuments/README.md)
 
 * [Download](docs/sdks/employeesdocuments/README.md#download) - Download Employee Document
 
-#### [Hris.Employees.Employments](docs/sdks/employeesemployments/README.md)
+##### [Hris.Employees.Employments](docs/sdks/employeesemployments/README.md)
 
 * [List](docs/sdks/employeesemployments/README.md#list) - List Employee Employments
 * [Update](docs/sdks/employeesemployments/README.md#update) - Update Employee Employment
 
-#### [Hris.Employees.Skills](docs/sdks/employeesskills/README.md)
+##### [Hris.Employees.Skills](docs/sdks/employeesskills/README.md)
 
 * [List](docs/sdks/employeesskills/README.md#list) - List Employee Skills
 
-#### [Hris.Employees.Tasks](docs/sdks/employeestasks/README.md)
+##### [Hris.Employees.Tasks](docs/sdks/employeestasks/README.md)
 
 * [List](docs/sdks/employeestasks/README.md#list) - List Employee Tasks
 * [Complete](docs/sdks/employeestasks/README.md#complete) - Update Employee Task
 
-#### [Hris.Employees.WorkEligibility](docs/sdks/workeligibility/README.md)
+##### [Hris.Employees.WorkEligibility](docs/sdks/workeligibility/README.md)
 
 * [UpdateRequest](docs/sdks/workeligibility/README.md#updaterequest) - Update Employee Work Eligibility Request
 
@@ -503,15 +511,15 @@ var res = await sdk.Mcp.McpGetAsync(
 * [ListTeams](docs/sdks/hrisgroups/README.md#listteams) - List Team Groups
 * [ListDivisions](docs/sdks/hrisgroups/README.md#listdivisions) - List Division Groups
 
-#### [Hris.Groups.Companies](docs/sdks/groupscompanies/README.md)
+##### [Hris.Groups.Companies](docs/sdks/groupscompanies/README.md)
 
 * [List](docs/sdks/groupscompanies/README.md#list) - List Companies Groups
 
-#### [Hris.Groups.CostCenters](docs/sdks/costcenters/README.md)
+##### [Hris.Groups.CostCenters](docs/sdks/costcenters/README.md)
 
 * [Get](docs/sdks/costcenters/README.md#get) - Get Cost Center Group
 
-#### [Hris.Groups.Divisions](docs/sdks/divisions/README.md)
+##### [Hris.Groups.Divisions](docs/sdks/divisions/README.md)
 
 * [Get](docs/sdks/divisions/README.md#get) - Get Division Group
 
@@ -647,19 +655,19 @@ var res = await sdk.Mcp.McpGetAsync(
 * [CreatePush](docs/sdks/templates/README.md#createpush) - Create Push Template
 * [GetPush](docs/sdks/templates/README.md#getpush) - Get Push Template
 
-#### [Marketing.Templates.InApp](docs/sdks/inapp/README.md)
+##### [Marketing.Templates.InApp](docs/sdks/inapp/README.md)
 
 * [Get](docs/sdks/inapp/README.md#get) - Get In-App Template
 * [Update](docs/sdks/inapp/README.md#update) - Update In-App Template
 
-#### [Marketing.Templates.Sms](docs/sdks/sms/README.md)
+##### [Marketing.Templates.Sms](docs/sdks/sms/README.md)
 
 * [Get](docs/sdks/sms/README.md#get) - Get SMS Template
 
 ### [Mcp](docs/sdks/mcp/README.md)
 
-* [McpGet](docs/sdks/mcp/README.md#mcpget) - Open MCP SSE stream
 * [McpPost](docs/sdks/mcp/README.md#mcppost) - Send MCP JSON-RPC message
+* [McpGet](docs/sdks/mcp/README.md#mcpget) - Open MCP SSE stream
 * [McpDelete](docs/sdks/mcp/README.md#mcpdelete) - Delete MCP session
 
 ### [Messaging](docs/sdks/messaging/README.md)
@@ -712,11 +720,11 @@ var res = await sdk.Mcp.McpGetAsync(
 * [ListAttachments](docs/sdks/tickets/README.md#listattachments) - List Attachments
 * [ListStatuses](docs/sdks/tickets/README.md#liststatuses) - List Ticket Statuses
 
-#### [Ticketing.Tickets.Attachments](docs/sdks/attachments/README.md)
+##### [Ticketing.Tickets.Attachments](docs/sdks/attachments/README.md)
 
 * [Get](docs/sdks/attachments/README.md#get) - Get Attachment
 
-#### [Ticketing.Tickets.Comments](docs/sdks/ticketscomments/README.md)
+##### [Ticketing.Tickets.Comments](docs/sdks/ticketscomments/README.md)
 
 * [List](docs/sdks/ticketscomments/README.md#list) - List Comments
 
@@ -755,6 +763,10 @@ StackoneListActionsMetaRequest req = new StackoneListActionsMetaRequest() {
     },
     Include = new List<StackoneListActionsMetaInclude>() {
         StackoneListActionsMetaInclude.ActionDetails,
+    },
+    Search = "employee",
+    Exclude = new List<Exclude>() {
+        Exclude.Actions,
     },
 };
 

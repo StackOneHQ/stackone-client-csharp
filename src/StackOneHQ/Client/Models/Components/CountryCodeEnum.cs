@@ -16,12 +16,11 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class CountryCodeEnum
     {
-
         /// <summary>
-        /// The ISO3166-1 Alpha2 Code of the Country
+        /// The ISO3166-1 Alpha2 Code of the Country.
         /// </summary>
         [JsonProperty("value")]
         public CountryCodeEnumValue? Value { get; set; } = null;

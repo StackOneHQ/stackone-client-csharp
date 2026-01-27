@@ -13,60 +13,59 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class ApplicationCandidate
     {
-
         /// <summary>
-        /// Candidate name
+        /// Candidate name.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// First name of the candidate
+        /// First name of the candidate.
         /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; } = null;
 
         /// <summary>
-        /// Last name of the candidate
+        /// Last name of the candidate.
         /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// Email of the candidate
+        /// Email of the candidate.
         /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; } = null;
 
         /// <summary>
-        /// List of candidate emails
+        /// List of candidate emails.
         /// </summary>
         [JsonProperty("emails")]
         public List<CandidateEmail>? Emails { get; set; } = null;
 
         /// <summary>
-        /// List of candidate phone numbers including the type of the number when available
+        /// List of candidate phone numbers including the type of the number when available.
         /// </summary>
         [JsonProperty("phone_numbers")]
         public List<PhoneNumber>? PhoneNumbers { get; set; } = null;
 
         /// <summary>
-        /// List of candidate social links
+        /// List of candidate social links.
         /// </summary>
         [JsonProperty("social_links")]
         public List<SocialLink>? SocialLinks { get; set; } = null;
 
         /// <summary>
-        /// Candidate company
+        /// Candidate company.
         /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; } = null;
 
         /// <summary>
-        /// Candidate title
+        /// Candidate title.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; } = null;

@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class HrisInviteEmployeeResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// Record invited successfully
+        /// Record invited successfully.
         /// </summary>
         public InviteEmployeeResult? InviteEmployeeResult { get; set; }
 

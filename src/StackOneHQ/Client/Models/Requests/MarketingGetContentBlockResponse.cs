@@ -13,15 +13,14 @@ namespace StackOneHQ.Client.Models.Requests
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
-    
+
     public class MarketingGetContentBlockResponse
     {
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// The Content Block with the given identifier was retrieved
+        /// The Content Block with the given identifier was retrieved.
         /// </summary>
         public ContentBlockResult? ContentBlockResult { get; set; }
 

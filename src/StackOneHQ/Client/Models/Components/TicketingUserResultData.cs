@@ -13,18 +13,17 @@ namespace StackOneHQ.Client.Models.Components
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     public class TicketingUserResultData
     {
-
         /// <summary>
-        /// Unique identifier
+        /// Unique identifier.
         /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; } = null;
 
         /// <summary>
-        /// Provider&apos;s unique identifier
+        /// Provider's unique identifier.
         /// </summary>
         [JsonProperty("remote_id")]
         public string? RemoteId { get; set; } = null;
@@ -33,61 +32,61 @@ namespace StackOneHQ.Client.Models.Components
         public TicketingUserResultType? Type { get; set; } = null;
 
         /// <summary>
-        /// John Doe
+        /// John Doe.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// The user&apos;s primary email address
+        /// The user's primary email address.
         /// </summary>
         [JsonProperty("primary_email")]
         public string? PrimaryEmail { get; set; } = null;
 
         /// <summary>
-        /// The user&apos;s primary phone number
+        /// The user's primary phone number.
         /// </summary>
         [JsonProperty("primary_phone")]
         public string? PrimaryPhone { get; set; } = null;
 
         /// <summary>
-        /// The username of the user in the provider system
+        /// The username of the user in the provider system.
         /// </summary>
         [JsonProperty("username")]
         public string? Username { get; set; } = null;
 
         /// <summary>
-        /// If the user is active
+        /// If the user is active.
         /// </summary>
         [JsonProperty("active", NullValueHandling = NullValueHandling.Include)]
         public TicketingUserResultActiveUnion? Active { get; set; } = null;
 
         /// <summary>
-        /// The first name of the user
+        /// The first name of the user.
         /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; } = null;
 
         /// <summary>
-        /// The last name of the user
+        /// The last name of the user.
         /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; } = null;
 
         /// <summary>
-        /// The unique account reference assigned as an external user (e.g. the customer account identifier registered on the customer-facing site or portal)
+        /// The unique account reference assigned as an external user (e.g. the customer account identifier registered on the customer-facing site or portal).
         /// </summary>
         [JsonProperty("customer_account_reference")]
         public string? CustomerAccountReference { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was created
+        /// The timestamp when the record was created.
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; } = null;
 
         /// <summary>
-        /// The timestamp when the record was last updated
+        /// The timestamp when the record was last updated.
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; } = null;

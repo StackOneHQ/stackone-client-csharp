@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the folder has children
+    /// Whether the folder has children.
     /// </summary>
     [JsonConverter(typeof(FoldersHasChildrenUnion.FoldersHasChildrenUnionConverter))]
     public class FoldersHasChildrenUnion

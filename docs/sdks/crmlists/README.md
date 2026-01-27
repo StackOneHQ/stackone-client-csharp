@@ -1,5 +1,4 @@
-# CrmLists
-(*Crm.Lists*)
+# Crm.Lists
 
 ## Overview
 
@@ -32,6 +31,7 @@ CrmListListsRequest req = new CrmListListsRequest() {
     Filter = new CrmListListsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 CrmListListsResponse? res = await sdk.Crm.Lists.ListAsync(req);
@@ -93,6 +93,7 @@ CrmGetListRequest req = new CrmGetListRequest() {
     XAccountId = "<id>",
     Id = "<id>",
     Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Crm.Lists.GetAsync(req);

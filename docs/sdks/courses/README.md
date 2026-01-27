@@ -1,5 +1,4 @@
 # Courses
-(*Courses*)
 
 ## Overview
 
@@ -33,6 +32,7 @@ LmsListCoursesRequest req = new LmsListCoursesRequest() {
     Filter = new LmsListCoursesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 LmsListCoursesResponse? res = await sdk.Courses.ListAsync(req);

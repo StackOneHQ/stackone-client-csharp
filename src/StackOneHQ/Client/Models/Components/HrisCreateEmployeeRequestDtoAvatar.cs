@@ -11,13 +11,12 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     /// <summary>
-    /// The employee avatar
+    /// The employee avatar.
     /// </summary>
     public class HrisCreateEmployeeRequestDtoAvatar
     {
-
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 

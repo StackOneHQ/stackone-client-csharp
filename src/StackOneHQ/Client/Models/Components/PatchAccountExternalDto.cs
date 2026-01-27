@@ -16,10 +16,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class PatchAccountExternalDto
     {
-
         [JsonProperty("provider")]
         public string? Provider { get; set; } = null;
 
@@ -54,7 +53,7 @@ namespace StackOneHQ.Client.Models.Components
         public PatchAccountExternalDtoMetadata? Metadata { get; set; } = null;
 
         /// <summary>
-        /// The account type
+        /// The account type.
         /// </summary>
         [JsonProperty("type")]
         public PatchAccountExternalDtoType? Type { get; set; } = null;

@@ -57,7 +57,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Response.ResponseConverter))]
     public class Response
     {

@@ -12,30 +12,29 @@ namespace StackOneHQ.Client.Models.Components
     using Newtonsoft.Json;
     using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
-    
+
     public class ProviderError
     {
-
         /// <summary>
-        /// HTTP status code of the provider error
+        /// HTTP status code of the provider error.
         /// </summary>
         [JsonProperty("status")]
         public double? Status { get; set; } = null;
 
         /// <summary>
-        /// URL that caused the error
+        /// URL that caused the error.
         /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; } = null;
 
         /// <summary>
-        /// Raw error response from the provider
+        /// Raw error response from the provider.
         /// </summary>
         [JsonProperty("raw")]
         public ProviderErrorRaw? Raw { get; set; } = null;
 
         /// <summary>
-        /// Response headers
+        /// Response headers.
         /// </summary>
         [JsonProperty("headers")]
         public ProviderErrorHeaders? Headers { get; set; } = null;

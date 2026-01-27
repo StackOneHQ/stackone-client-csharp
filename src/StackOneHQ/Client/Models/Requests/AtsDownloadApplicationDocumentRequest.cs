@@ -10,12 +10,11 @@
 namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
-    
+
     public class AtsDownloadApplicationDocumentRequest
     {
-
         /// <summary>
-        /// The account identifier
+        /// The account identifier.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-account-id")]
         public string XAccountId { get; set; } = default!;
@@ -27,15 +26,21 @@ namespace StackOneHQ.Client.Models.Requests
         public string SubResourceId { get; set; } = default!;
 
         /// <summary>
-        /// The format to download the file in
+        /// The format to download the file in.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=format")]
         public string? Format { get; set; } = null;
 
         /// <summary>
-        /// The export format of the file
+        /// The export format of the file.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=export_format")]
         public string? ExportFormat { get; set; } = null;
+
+        /// <summary>
+        /// Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).
+        /// </summary>
+        [SpeakeasyMetadata("header:style=simple,explode=false,name=Prefer")]
+        public string? Prefer { get; set; }
     }
 }

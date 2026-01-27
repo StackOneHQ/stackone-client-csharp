@@ -10,10 +10,9 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using StackOneHQ.Client.Utils;
-    
+
     public class SchemeBasic
     {
-
         [SpeakeasyMetadata("security:name=username")]
         public string Username { get; set; } = default!;
 

@@ -1,5 +1,4 @@
-# Notes
-(*Ats.Candidates.Notes*)
+# Ats.Candidates.Notes
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListCandidateNotesRequest req = new AtsListCandidateNotesRequest() {
     Filter = new AtsListCandidateNotesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListCandidateNotesResponse? res = await sdk.Ats.Candidates.Notes.ListAsync(req);

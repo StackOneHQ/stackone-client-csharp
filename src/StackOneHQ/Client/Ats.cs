@@ -27,201 +27,1036 @@ namespace StackOneHQ.Client
     public interface IAts
     {
         public IAtsApplications Applications { get; }
+
         public ICandidates Candidates { get; }
+
         public IAtsCustomFieldDefinitions CustomFieldDefinitions { get; }
+
         public IAtsDepartments Departments { get; }
+
         public IInterviewStages InterviewStages { get; }
+
         public IAtsInterviews Interviews { get; }
+
         public IAtsJobs Jobs { get; }
+
         public IAtsLists Lists { get; }
+
         public IAtsLocations Locations { get; }
+
         public IRejectedReasons RejectedReasons { get; }
+
         public IAtsUsers Users { get; }
+
         public IJobPostings JobPostings { get; }
+
         public IOffers Offers { get; }
+
         public IAssessments Assessments { get; }
+
         public IAtsBackgroundChecks BackgroundChecks { get; }
+
         public IAtsDocuments Documents { get; }
+        /// <summary>
+        /// List Applications.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListApplicationsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListApplicationsResponse> ListApplicationsAsync(
+            AtsListApplicationsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Applications
+        /// Get Application.
         /// </summary>
-        Task<AtsListApplicationsResponse> ListApplicationsAsync(AtsListApplicationsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsGetApplicationRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsGetApplicationResponse> GetAsync(
+            AtsGetApplicationRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Application
+        /// List Application Changes.
         /// </summary>
-        Task<AtsGetApplicationResponse> GetAsync(AtsGetApplicationRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListApplicationChangesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationChangesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListApplicationChangesResponse> GetApplicationChangesAsync(
+            AtsListApplicationChangesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Application Changes
+        /// List Application Notes.
         /// </summary>
-        Task<AtsListApplicationChangesResponse> GetApplicationChangesAsync(AtsListApplicationChangesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListApplicationNotesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationNotesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListApplicationNotesResponse> ListApplicationNotesAsync(
+            AtsListApplicationNotesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Application Notes
+        /// Create Application Note.
         /// </summary>
-        Task<AtsListApplicationNotesResponse> ListApplicationNotesAsync(AtsListApplicationNotesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsCreateNotesRequestDto">A <see cref="AtsCreateNotesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateApplicationNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsCreateNotesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsCreateApplicationNoteResponse> CreateApplicationNoteAsync(
+            string xAccountId,
+            string id,
+            AtsCreateNotesRequestDto atsCreateNotesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Create Application Note
+        /// Get Application Note.
         /// </summary>
-        Task<AtsCreateApplicationNoteResponse> CreateApplicationNoteAsync(string xAccountId, string id, AtsCreateNotesRequestDto atsCreateNotesRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsGetApplicationNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsGetApplicationNoteResponse> GetNoteAsync(
+            AtsGetApplicationNoteRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Application Note
+        /// Update Application Note.
         /// </summary>
-        Task<AtsGetApplicationNoteResponse> GetNoteAsync(AtsGetApplicationNoteRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsUpdateApplicationNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateApplicationNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUpdateApplicationNoteResponse> UpdateNoteAsync(
+            AtsUpdateApplicationNoteRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Update Application Note
+        /// Upload Application Document.
         /// </summary>
-        Task<AtsUpdateApplicationNoteResponse> UpdateNoteAsync(string xAccountId, string id, string subResourceId, AtsUpdateNotesRequestDto atsUpdateNotesRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsDocumentsUploadRequestDto">A <see cref="AtsDocumentsUploadRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUploadApplicationDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsDocumentsUploadRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUploadApplicationDocumentResponse> DocumentsUploadAsync(
+            string xAccountId,
+            string id,
+            AtsDocumentsUploadRequestDto atsDocumentsUploadRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Upload Application Document
+        /// Get Application Document.
         /// </summary>
-        Task<AtsUploadApplicationDocumentResponse> DocumentsUploadAsync(string xAccountId, string id, AtsDocumentsUploadRequestDto atsDocumentsUploadRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsGetApplicationDocumentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsGetApplicationDocumentResponse> GetDocumentAsync(
+            AtsGetApplicationDocumentRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Application Document
+        /// List Candidates.
         /// </summary>
-        Task<AtsGetApplicationDocumentResponse> GetDocumentAsync(AtsGetApplicationDocumentRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListCandidatesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListCandidatesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListCandidatesResponse> ListCandidatesAsync(
+            AtsListCandidatesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Candidates
+        /// Update Candidate.
         /// </summary>
-        Task<AtsListCandidatesResponse> ListCandidatesAsync(AtsListCandidatesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateCandidateRequestDto">A <see cref="AtsUpdateCandidateRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateCandidateResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateCandidateRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUpdateCandidateResponse> UpdateCandidateAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateCandidateRequestDto atsUpdateCandidateRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Update Candidate
+        /// Create Candidate Note.
         /// </summary>
-        Task<AtsUpdateCandidateResponse> UpdateCandidateAsync(string xAccountId, string id, AtsUpdateCandidateRequestDto atsUpdateCandidateRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsCreateNotesRequestDto">A <see cref="AtsCreateNotesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateCandidateNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsCreateNotesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsCreateCandidateNoteResponse> CreateNoteAsync(
+            string xAccountId,
+            string id,
+            AtsCreateNotesRequestDto atsCreateNotesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Create Candidate Note
+        /// Get Candidate Note.
         /// </summary>
-        Task<AtsCreateCandidateNoteResponse> CreateNoteAsync(string xAccountId, string id, AtsCreateNotesRequestDto atsCreateNotesRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsGetCandidateNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetCandidateNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsGetCandidateNoteResponse> GetCandidateNoteAsync(
+            AtsGetCandidateNoteRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Candidate Note
+        /// List Job Custom Field Definitions.
         /// </summary>
-        Task<AtsGetCandidateNoteResponse> GetCandidateNoteAsync(AtsGetCandidateNoteRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListJobCustomFieldDefinitionsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobCustomFieldDefinitionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListJobCustomFieldDefinitionsResponse> ListJobCustomFieldDefinitionsAsync(
+            AtsListJobCustomFieldDefinitionsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Job Custom Field Definitions
+        /// List Departments.
         /// </summary>
-        Task<AtsListJobCustomFieldDefinitionsResponse> ListJobCustomFieldDefinitionsAsync(AtsListJobCustomFieldDefinitionsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListDepartmentsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListDepartmentsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListDepartmentsResponse> GetDepartmentsAsync(
+            AtsListDepartmentsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Departments
+        /// List Application Stages.
         /// </summary>
-        Task<AtsListDepartmentsResponse> GetDepartmentsAsync(AtsListDepartmentsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListApplicationStagesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationStagesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListApplicationStagesResponse> ListApplicationStagesAsync(
+            AtsListApplicationStagesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Application Stages
+        /// Get Application Stage.
         /// </summary>
-        Task<AtsListApplicationStagesResponse> ListApplicationStagesAsync(AtsListApplicationStagesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsGetApplicationStageRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationStageResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsGetApplicationStageResponse> GetApplicationStageAsync(
+            AtsGetApplicationStageRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Application Stage
+        /// Create Interview Note.
         /// </summary>
-        Task<AtsGetApplicationStageResponse> GetApplicationStageAsync(AtsGetApplicationStageRequest request, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsCreateNotesRequestDto">A <see cref="AtsCreateNotesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateInterviewNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsCreateNotesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsCreateInterviewNoteResponse> CreateInterviewNoteAsync(
+            string xAccountId,
+            string id,
+            AtsCreateNotesRequestDto atsCreateNotesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Create Interview Note
+        /// Update Interview Note.
         /// </summary>
-        Task<AtsCreateInterviewNoteResponse> CreateInterviewNoteAsync(string xAccountId, string id, AtsCreateNotesRequestDto atsCreateNotesRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsUpdateInterviewNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateInterviewNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUpdateInterviewNoteResponse> UpdateInterviewNoteAsync(
+            AtsUpdateInterviewNoteRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Update Interview Note
+        /// List Jobs.
         /// </summary>
-        Task<AtsUpdateInterviewNoteResponse> UpdateInterviewNoteAsync(string xAccountId, string id, string subResourceId, AtsUpdateNotesRequestDto atsUpdateNotesRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListJobsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListJobsResponse> ListJobsAsync(AtsListJobsRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// List Jobs
+        /// Create Job.
         /// </summary>
-        Task<AtsListJobsResponse> ListJobsAsync(AtsListJobsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="atsCreateJobRequestDto">A <see cref="AtsCreateJobRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateJobResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/> or <paramref name="atsCreateJobRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsCreateJobResponse> CreateJobAsync(
+            string xAccountId,
+            AtsCreateJobRequestDto atsCreateJobRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Create Job
+        /// List Job Application Stages.
         /// </summary>
-        Task<AtsCreateJobResponse> CreateJobAsync(string xAccountId, AtsCreateJobRequestDto atsCreateJobRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListJobApplicationStagesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobApplicationStagesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListJobApplicationStagesResponse> ListJobApplicationStagesAsync(
+            AtsListJobApplicationStagesRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Job Application Stages
+        /// Update Job.
         /// </summary>
-        Task<AtsListJobApplicationStagesResponse> ListJobApplicationStagesAsync(AtsListJobApplicationStagesRequest request, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateJobRequestDto">A <see cref="AtsUpdateJobRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateJobResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateJobRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUpdateJobResponse> UpdateJobAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateJobRequestDto atsUpdateJobRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Update Job
+        /// Get Job Application Stage.
         /// </summary>
-        Task<AtsUpdateJobResponse> UpdateJobAsync(string xAccountId, string id, AtsUpdateJobRequestDto atsUpdateJobRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsGetJobApplicationStageRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetJobApplicationStageResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsGetJobApplicationStageResponse> GetJobApplicationStageAsync(
+            AtsGetJobApplicationStageRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Get Job Application Stage
+        /// Get User.
         /// </summary>
-        Task<AtsGetJobApplicationStageResponse> GetJobApplicationStageAsync(AtsGetJobApplicationStageRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsGetUserRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetUserResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsGetUserResponse> GetUserAsync(AtsGetUserRequest request, RetryConfig? retryConfig = null);
 
         /// <summary>
-        /// Get User
+        /// List Job Postings.
         /// </summary>
-        Task<AtsGetUserResponse> GetUserAsync(AtsGetUserRequest request, RetryConfig? retryConfig = null);
+        /// <param name="request">A <see cref="AtsListJobPostingsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobPostingsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsListJobPostingsResponse> ListJobPostingsAsync(
+            AtsListJobPostingsRequest request,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// List Job Postings
+        /// Order Assessments Request.
         /// </summary>
-        Task<AtsListJobPostingsResponse> ListJobPostingsAsync(AtsListJobPostingsRequest request, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="atsCreateCandidatesAssessmentsRequestDto">A <see cref="AtsCreateCandidatesAssessmentsRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsOrderAssessmentsRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/> or <paramref name="atsCreateCandidatesAssessmentsRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsOrderAssessmentsRequestResponse> OrderAssessmentsAsync(
+            string xAccountId,
+            AtsCreateCandidatesAssessmentsRequestDto atsCreateCandidatesAssessmentsRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Order Assessments Request
+        /// Update Assessments Result.
         /// </summary>
-        Task<AtsOrderAssessmentsRequestResponse> OrderAssessmentsAsync(string xAccountId, AtsCreateCandidatesAssessmentsRequestDto atsCreateCandidatesAssessmentsRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateCandidatesAssessmentsResultsRequestDto">A <see cref="AtsUpdateCandidatesAssessmentsResultsRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateAssessmentsResultResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateCandidatesAssessmentsResultsRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUpdateAssessmentsResultResponse> AssessmentsUpdateResultAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateCandidatesAssessmentsResultsRequestDto atsUpdateCandidatesAssessmentsResultsRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Update Assessments Result
+        /// Update Background Check Package.
         /// </summary>
-        Task<AtsUpdateAssessmentsResultResponse> AssessmentsUpdateResultAsync(string xAccountId, string id, AtsUpdateCandidatesAssessmentsResultsRequestDto atsUpdateCandidatesAssessmentsResultsRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateBackgroundCheckPackagesRequestDto">A <see cref="AtsUpdateBackgroundCheckPackagesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateBackgroundCheckPackageResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateBackgroundCheckPackagesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUpdateBackgroundCheckPackageResponse> UpdateBackgroundCheckPackageAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateBackgroundCheckPackagesRequestDto atsUpdateBackgroundCheckPackagesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Update Background Check Package
+        /// Order Background Check Request.
         /// </summary>
-        Task<AtsUpdateBackgroundCheckPackageResponse> UpdateBackgroundCheckPackageAsync(string xAccountId, string id, AtsUpdateBackgroundCheckPackagesRequestDto atsUpdateBackgroundCheckPackagesRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="atsCreateBackgroundCheckOrderRequestDto">A <see cref="AtsCreateBackgroundCheckOrderRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsOrderBackgroundCheckRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/> or <paramref name="atsCreateBackgroundCheckOrderRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsOrderBackgroundCheckRequestResponse> OrderBackgroundCheckAsync(
+            string xAccountId,
+            AtsCreateBackgroundCheckOrderRequestDto atsCreateBackgroundCheckOrderRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
 
         /// <summary>
-        /// Order Background Check Request
+        /// Update Background Check Result.
         /// </summary>
-        Task<AtsOrderBackgroundCheckRequestResponse> OrderBackgroundCheckAsync(string xAccountId, AtsCreateBackgroundCheckOrderRequestDto atsCreateBackgroundCheckOrderRequestDto, RetryConfig? retryConfig = null);
-
-        /// <summary>
-        /// Update Background Check Result
-        /// </summary>
-        Task<AtsUpdateBackgroundCheckResultResponse> UpdateBackgroundCheckResultAsync(string xAccountId, string id, AtsUpdateBackgroundCheckResultRequestDto atsUpdateBackgroundCheckResultRequestDto, RetryConfig? retryConfig = null);
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateBackgroundCheckResultRequestDto">A <see cref="AtsUpdateBackgroundCheckResultRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateBackgroundCheckResultResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateBackgroundCheckResultRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<AtsUpdateBackgroundCheckResultResponse> UpdateBackgroundCheckResultAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateBackgroundCheckResultRequestDto atsUpdateBackgroundCheckResultRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        );
     }
 
     public class Ats: IAts
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
 
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// Applications SubSDK.
+        /// <see cref="IAtsApplications"/>
+        /// </summary>
         public IAtsApplications Applications { get; private set; }
+
+        /// <summary>
+        /// Candidates SubSDK.
+        /// <see cref="ICandidates"/>
+        /// </summary>
         public ICandidates Candidates { get; private set; }
+
+        /// <summary>
+        /// CustomFieldDefinitions SubSDK.
+        /// <see cref="IAtsCustomFieldDefinitions"/>
+        /// </summary>
         public IAtsCustomFieldDefinitions CustomFieldDefinitions { get; private set; }
+
+        /// <summary>
+        /// Departments SubSDK.
+        /// <see cref="IAtsDepartments"/>
+        /// </summary>
         public IAtsDepartments Departments { get; private set; }
+
+        /// <summary>
+        /// InterviewStages SubSDK.
+        /// <see cref="IInterviewStages"/>
+        /// </summary>
         public IInterviewStages InterviewStages { get; private set; }
+
+        /// <summary>
+        /// Interviews SubSDK.
+        /// <see cref="IAtsInterviews"/>
+        /// </summary>
         public IAtsInterviews Interviews { get; private set; }
+
+        /// <summary>
+        /// Jobs SubSDK.
+        /// <see cref="IAtsJobs"/>
+        /// </summary>
         public IAtsJobs Jobs { get; private set; }
+
+        /// <summary>
+        /// Lists SubSDK.
+        /// <see cref="IAtsLists"/>
+        /// </summary>
         public IAtsLists Lists { get; private set; }
+
+        /// <summary>
+        /// Locations SubSDK.
+        /// <see cref="IAtsLocations"/>
+        /// </summary>
         public IAtsLocations Locations { get; private set; }
+
+        /// <summary>
+        /// RejectedReasons SubSDK.
+        /// <see cref="IRejectedReasons"/>
+        /// </summary>
         public IRejectedReasons RejectedReasons { get; private set; }
+
+        /// <summary>
+        /// Users SubSDK.
+        /// <see cref="IAtsUsers"/>
+        /// </summary>
         public IAtsUsers Users { get; private set; }
+
+        /// <summary>
+        /// JobPostings SubSDK.
+        /// <see cref="IJobPostings"/>
+        /// </summary>
         public IJobPostings JobPostings { get; private set; }
+
+        /// <summary>
+        /// Offers SubSDK.
+        /// <see cref="IOffers"/>
+        /// </summary>
         public IOffers Offers { get; private set; }
+
+        /// <summary>
+        /// Assessments SubSDK.
+        /// <see cref="IAssessments"/>
+        /// </summary>
         public IAssessments Assessments { get; private set; }
+
+        /// <summary>
+        /// BackgroundChecks SubSDK.
+        /// <see cref="IAtsBackgroundChecks"/>
+        /// </summary>
         public IAtsBackgroundChecks BackgroundChecks { get; private set; }
+
+        /// <summary>
+        /// Documents SubSDK.
+        /// <see cref="IAtsDocuments"/>
+        /// </summary>
         public IAtsDocuments Documents { get; private set; }
 
         public Ats(SDKConfig config)
@@ -245,8 +1080,35 @@ namespace StackOneHQ.Client
             Documents = new AtsDocuments(SDKConfiguration);
         }
 
-        public async Task<AtsListApplicationsResponse> ListApplicationsAsync(AtsListApplicationsRequest request, RetryConfig? retryConfig = null)
+        /// <summary>
+        /// List Applications.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListApplicationsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListApplicationsResponse> ListApplicationsAsync(
+            AtsListApplicationsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications", request, null);
 
@@ -303,7 +1165,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -356,7 +1218,8 @@ namespace StackOneHQ.Client
                     SyncToken = request.SyncToken,
                     Expand = request.Expand,
                     Include = request.Include,
-                    JobId = request.JobId
+                    JobId = request.JobId,
+                    Prefer = request.Prefer
                 };
 
                 return await ListApplicationsAsync (
@@ -721,8 +1584,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsGetApplicationResponse> GetAsync(AtsGetApplicationRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Application.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsGetApplicationRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsGetApplicationResponse> GetAsync(
+            AtsGetApplicationRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}", request, null);
 
@@ -779,7 +1670,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1158,8 +2049,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListApplicationChangesResponse> GetApplicationChangesAsync(AtsListApplicationChangesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Application Changes.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListApplicationChangesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationChangesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListApplicationChangesResponse> GetApplicationChangesAsync(
+            AtsListApplicationChangesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/changes", request, null);
 
@@ -1216,7 +2135,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1264,7 +2183,8 @@ namespace StackOneHQ.Client
                     Fields = request.Fields,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    Filter = request.Filter
+                    Filter = request.Filter,
+                    Prefer = request.Prefer
                 };
 
                 return await GetApplicationChangesAsync (
@@ -1629,8 +2549,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListApplicationNotesResponse> ListApplicationNotesAsync(AtsListApplicationNotesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Application Notes.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListApplicationNotesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationNotesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListApplicationNotesResponse> ListApplicationNotesAsync(
+            AtsListApplicationNotesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/notes", request, null);
 
@@ -1687,7 +2635,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1738,7 +2686,8 @@ namespace StackOneHQ.Client
                     PageSize = request.PageSize,
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
-                    SyncToken = request.SyncToken
+                    SyncToken = request.SyncToken,
+                    Prefer = request.Prefer
                 };
 
                 return await ListApplicationNotesAsync (
@@ -2103,14 +3052,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsCreateApplicationNoteResponse> CreateApplicationNoteAsync(string xAccountId, string id, AtsCreateNotesRequestDto atsCreateNotesRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Create Application Note.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsCreateNotesRequestDto">A <see cref="AtsCreateNotesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateApplicationNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsCreateNotesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsCreateApplicationNoteResponse> CreateApplicationNoteAsync(
+            string xAccountId,
+            string id,
+            AtsCreateNotesRequestDto atsCreateNotesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsCreateNotesRequestDto == null) throw new ArgumentNullException(nameof(atsCreateNotesRequestDto));
+
             var request = new AtsCreateApplicationNoteRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsCreateNotesRequestDto = atsCreateNotesRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/notes", request, null);
 
@@ -2173,7 +3160,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2552,8 +3539,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsGetApplicationNoteResponse> GetNoteAsync(AtsGetApplicationNoteRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Application Note.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsGetApplicationNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsGetApplicationNoteResponse> GetNoteAsync(
+            AtsGetApplicationNoteRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/notes/{subResourceId}", request, null);
 
@@ -2610,7 +3625,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -2989,15 +4004,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUpdateApplicationNoteResponse> UpdateNoteAsync(string xAccountId, string id, string subResourceId, AtsUpdateNotesRequestDto atsUpdateNotesRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Application Note.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsUpdateApplicationNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateApplicationNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUpdateApplicationNoteResponse> UpdateNoteAsync(
+            AtsUpdateApplicationNoteRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
-            var request = new AtsUpdateApplicationNoteRequest()
-            {
-                XAccountId = xAccountId,
-                Id = id,
-                SubResourceId = subResourceId,
-                AtsUpdateNotesRequestDto = atsUpdateNotesRequestDto,
-            };
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/notes/{subResourceId}", request, null);
 
@@ -3060,7 +4096,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -3439,14 +4475,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUploadApplicationDocumentResponse> DocumentsUploadAsync(string xAccountId, string id, AtsDocumentsUploadRequestDto atsDocumentsUploadRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Upload Application Document.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsDocumentsUploadRequestDto">A <see cref="AtsDocumentsUploadRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUploadApplicationDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsDocumentsUploadRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUploadApplicationDocumentResponse> DocumentsUploadAsync(
+            string xAccountId,
+            string id,
+            AtsDocumentsUploadRequestDto atsDocumentsUploadRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsDocumentsUploadRequestDto == null) throw new ArgumentNullException(nameof(atsDocumentsUploadRequestDto));
+
             var request = new AtsUploadApplicationDocumentRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsDocumentsUploadRequestDto = atsDocumentsUploadRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/documents/upload", request, null);
 
@@ -3509,7 +4583,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -3888,8 +4962,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsGetApplicationDocumentResponse> GetDocumentAsync(AtsGetApplicationDocumentRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Application Document.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsGetApplicationDocumentRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationDocumentResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsGetApplicationDocumentResponse> GetDocumentAsync(
+            AtsGetApplicationDocumentRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/applications/{id}/documents/{subResourceId}", request, null);
 
@@ -3946,7 +5048,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -4325,8 +5427,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListCandidatesResponse> ListCandidatesAsync(AtsListCandidatesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Candidates.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListCandidatesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListCandidatesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListCandidatesResponse> ListCandidatesAsync(
+            AtsListCandidatesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/candidates", request, null);
 
@@ -4383,7 +5513,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -4434,7 +5564,8 @@ namespace StackOneHQ.Client
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
                     SyncToken = request.SyncToken,
-                    Include = request.Include
+                    Include = request.Include,
+                    Prefer = request.Prefer
                 };
 
                 return await ListCandidatesAsync (
@@ -4799,14 +5930,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUpdateCandidateResponse> UpdateCandidateAsync(string xAccountId, string id, AtsUpdateCandidateRequestDto atsUpdateCandidateRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Candidate.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateCandidateRequestDto">A <see cref="AtsUpdateCandidateRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateCandidateResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateCandidateRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUpdateCandidateResponse> UpdateCandidateAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateCandidateRequestDto atsUpdateCandidateRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsUpdateCandidateRequestDto == null) throw new ArgumentNullException(nameof(atsUpdateCandidateRequestDto));
+
             var request = new AtsUpdateCandidateRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsUpdateCandidateRequestDto = atsUpdateCandidateRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/candidates/{id}", request, null);
 
@@ -4869,7 +6038,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -5248,14 +6417,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsCreateCandidateNoteResponse> CreateNoteAsync(string xAccountId, string id, AtsCreateNotesRequestDto atsCreateNotesRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Create Candidate Note.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsCreateNotesRequestDto">A <see cref="AtsCreateNotesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateCandidateNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsCreateNotesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsCreateCandidateNoteResponse> CreateNoteAsync(
+            string xAccountId,
+            string id,
+            AtsCreateNotesRequestDto atsCreateNotesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsCreateNotesRequestDto == null) throw new ArgumentNullException(nameof(atsCreateNotesRequestDto));
+
             var request = new AtsCreateCandidateNoteRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsCreateNotesRequestDto = atsCreateNotesRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/candidates/{id}/notes", request, null);
 
@@ -5318,7 +6525,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -5697,8 +6904,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsGetCandidateNoteResponse> GetCandidateNoteAsync(AtsGetCandidateNoteRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Candidate Note.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsGetCandidateNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetCandidateNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsGetCandidateNoteResponse> GetCandidateNoteAsync(
+            AtsGetCandidateNoteRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/candidates/{id}/notes/{subResourceId}", request, null);
 
@@ -5755,7 +6990,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -6134,8 +7369,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListJobCustomFieldDefinitionsResponse> ListJobCustomFieldDefinitionsAsync(AtsListJobCustomFieldDefinitionsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Job Custom Field Definitions.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListJobCustomFieldDefinitionsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobCustomFieldDefinitionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListJobCustomFieldDefinitionsResponse> ListJobCustomFieldDefinitionsAsync(
+            AtsListJobCustomFieldDefinitionsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/custom_field_definitions/jobs", request, null);
 
@@ -6192,7 +7455,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -6241,7 +7504,8 @@ namespace StackOneHQ.Client
                     Page = request.Page,
                     PageSize = request.PageSize,
                     Next = nextCursor,
-                    UpdatedAfter = request.UpdatedAfter
+                    UpdatedAfter = request.UpdatedAfter,
+                    Prefer = request.Prefer
                 };
 
                 return await ListJobCustomFieldDefinitionsAsync (
@@ -6606,8 +7870,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListDepartmentsResponse> GetDepartmentsAsync(AtsListDepartmentsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Departments.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListDepartmentsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListDepartmentsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListDepartmentsResponse> GetDepartmentsAsync(
+            AtsListDepartmentsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/departments", request, null);
 
@@ -6664,7 +7956,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -6714,7 +8006,8 @@ namespace StackOneHQ.Client
                     PageSize = request.PageSize,
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
-                    SyncToken = request.SyncToken
+                    SyncToken = request.SyncToken,
+                    Prefer = request.Prefer
                 };
 
                 return await GetDepartmentsAsync (
@@ -7079,8 +8372,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListApplicationStagesResponse> ListApplicationStagesAsync(AtsListApplicationStagesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Application Stages.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListApplicationStagesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListApplicationStagesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListApplicationStagesResponse> ListApplicationStagesAsync(
+            AtsListApplicationStagesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/application_stages", request, null);
 
@@ -7137,7 +8458,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -7187,7 +8508,8 @@ namespace StackOneHQ.Client
                     PageSize = request.PageSize,
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
-                    SyncToken = request.SyncToken
+                    SyncToken = request.SyncToken,
+                    Prefer = request.Prefer
                 };
 
                 return await ListApplicationStagesAsync (
@@ -7552,8 +8874,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsGetApplicationStageResponse> GetApplicationStageAsync(AtsGetApplicationStageRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Application Stage.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsGetApplicationStageRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetApplicationStageResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsGetApplicationStageResponse> GetApplicationStageAsync(
+            AtsGetApplicationStageRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/application_stages/{id}", request, null);
 
@@ -7610,7 +8960,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -7989,14 +9339,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsCreateInterviewNoteResponse> CreateInterviewNoteAsync(string xAccountId, string id, AtsCreateNotesRequestDto atsCreateNotesRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Create Interview Note.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsCreateNotesRequestDto">A <see cref="AtsCreateNotesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateInterviewNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsCreateNotesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsCreateInterviewNoteResponse> CreateInterviewNoteAsync(
+            string xAccountId,
+            string id,
+            AtsCreateNotesRequestDto atsCreateNotesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsCreateNotesRequestDto == null) throw new ArgumentNullException(nameof(atsCreateNotesRequestDto));
+
             var request = new AtsCreateInterviewNoteRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsCreateNotesRequestDto = atsCreateNotesRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/interviews/{id}/notes", request, null);
 
@@ -8059,7 +9447,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -8438,15 +9826,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUpdateInterviewNoteResponse> UpdateInterviewNoteAsync(string xAccountId, string id, string subResourceId, AtsUpdateNotesRequestDto atsUpdateNotesRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Interview Note.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsUpdateInterviewNoteRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateInterviewNoteResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUpdateInterviewNoteResponse> UpdateInterviewNoteAsync(
+            AtsUpdateInterviewNoteRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
-            var request = new AtsUpdateInterviewNoteRequest()
-            {
-                XAccountId = xAccountId,
-                Id = id,
-                SubResourceId = subResourceId,
-                AtsUpdateNotesRequestDto = atsUpdateNotesRequestDto,
-            };
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/interviews/{id}/notes/{subResourceId}", request, null);
 
@@ -8509,7 +9918,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -8888,8 +10297,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListJobsResponse> ListJobsAsync(AtsListJobsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Jobs.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListJobsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListJobsResponse> ListJobsAsync(
+            AtsListJobsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/jobs", request, null);
 
@@ -8946,7 +10383,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -8998,7 +10435,8 @@ namespace StackOneHQ.Client
                     UpdatedAfter = request.UpdatedAfter,
                     SyncToken = request.SyncToken,
                     Expand = request.Expand,
-                    Include = request.Include
+                    Include = request.Include,
+                    Prefer = request.Prefer
                 };
 
                 return await ListJobsAsync (
@@ -9363,15 +10801,49 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsCreateJobResponse> CreateJobAsync(string xAccountId, AtsCreateJobRequestDto atsCreateJobRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Create Job.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="atsCreateJobRequestDto">A <see cref="AtsCreateJobRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsCreateJobResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/> or <paramref name="atsCreateJobRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsCreateJobResponse> CreateJobAsync(
+            string xAccountId,
+            AtsCreateJobRequestDto atsCreateJobRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (atsCreateJobRequestDto == null) throw new ArgumentNullException(nameof(atsCreateJobRequestDto));
+
             var request = new AtsCreateJobRequest()
             {
                 XAccountId = xAccountId,
                 AtsCreateJobRequestDto = atsCreateJobRequestDto,
+                Prefer = prefer,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
 
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = baseUrl + "/unified/ats/jobs";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -9433,7 +10905,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -9812,8 +11284,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListJobApplicationStagesResponse> ListJobApplicationStagesAsync(AtsListJobApplicationStagesRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Job Application Stages.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListJobApplicationStagesRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobApplicationStagesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListJobApplicationStagesResponse> ListJobApplicationStagesAsync(
+            AtsListJobApplicationStagesRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/jobs/{id}/application_stages", request, null);
 
@@ -9870,7 +11370,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -9921,7 +11421,8 @@ namespace StackOneHQ.Client
                     PageSize = request.PageSize,
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
-                    SyncToken = request.SyncToken
+                    SyncToken = request.SyncToken,
+                    Prefer = request.Prefer
                 };
 
                 return await ListJobApplicationStagesAsync (
@@ -10286,14 +11787,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUpdateJobResponse> UpdateJobAsync(string xAccountId, string id, AtsUpdateJobRequestDto atsUpdateJobRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Job.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateJobRequestDto">A <see cref="AtsUpdateJobRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateJobResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateJobRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUpdateJobResponse> UpdateJobAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateJobRequestDto atsUpdateJobRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsUpdateJobRequestDto == null) throw new ArgumentNullException(nameof(atsUpdateJobRequestDto));
+
             var request = new AtsUpdateJobRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsUpdateJobRequestDto = atsUpdateJobRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/jobs/{id}", request, null);
 
@@ -10356,7 +11895,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -10735,8 +12274,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsGetJobApplicationStageResponse> GetJobApplicationStageAsync(AtsGetJobApplicationStageRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get Job Application Stage.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsGetJobApplicationStageRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetJobApplicationStageResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsGetJobApplicationStageResponse> GetJobApplicationStageAsync(
+            AtsGetJobApplicationStageRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/jobs/{id}/application_stages/{subResourceId}", request, null);
 
@@ -10793,7 +12360,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -11172,8 +12739,33 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsGetUserResponse> GetUserAsync(AtsGetUserRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Get User.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsGetUserRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsGetUserResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsGetUserResponse> GetUserAsync(AtsGetUserRequest request, RetryConfig? retryConfig = null)
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/users/{id}", request, null);
 
@@ -11230,7 +12822,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -11609,8 +13201,36 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsListJobPostingsResponse> ListJobPostingsAsync(AtsListJobPostingsRequest request, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// List Job Postings.
+        /// </summary>
+        /// <param name="request">A <see cref="AtsListJobPostingsRequest"/> parameter.</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsListJobPostingsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsListJobPostingsResponse> ListJobPostingsAsync(
+            AtsListJobPostingsRequest request,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/job_postings", request, null);
 
@@ -11667,7 +13287,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -11718,7 +13338,8 @@ namespace StackOneHQ.Client
                     Next = nextCursor,
                     UpdatedAfter = request.UpdatedAfter,
                     SyncToken = request.SyncToken,
-                    Include = request.Include
+                    Include = request.Include,
+                    Prefer = request.Prefer
                 };
 
                 return await ListJobPostingsAsync (
@@ -12083,15 +13704,49 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsOrderAssessmentsRequestResponse> OrderAssessmentsAsync(string xAccountId, AtsCreateCandidatesAssessmentsRequestDto atsCreateCandidatesAssessmentsRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Order Assessments Request.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="atsCreateCandidatesAssessmentsRequestDto">A <see cref="AtsCreateCandidatesAssessmentsRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsOrderAssessmentsRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/> or <paramref name="atsCreateCandidatesAssessmentsRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsOrderAssessmentsRequestResponse> OrderAssessmentsAsync(
+            string xAccountId,
+            AtsCreateCandidatesAssessmentsRequestDto atsCreateCandidatesAssessmentsRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (atsCreateCandidatesAssessmentsRequestDto == null) throw new ArgumentNullException(nameof(atsCreateCandidatesAssessmentsRequestDto));
+
             var request = new AtsOrderAssessmentsRequestRequest()
             {
                 XAccountId = xAccountId,
                 AtsCreateCandidatesAssessmentsRequestDto = atsCreateCandidatesAssessmentsRequestDto,
+                Prefer = prefer,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
 
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = baseUrl + "/unified/ats/assessments/orders";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -12153,7 +13808,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -12532,14 +14187,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUpdateAssessmentsResultResponse> AssessmentsUpdateResultAsync(string xAccountId, string id, AtsUpdateCandidatesAssessmentsResultsRequestDto atsUpdateCandidatesAssessmentsResultsRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Assessments Result.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateCandidatesAssessmentsResultsRequestDto">A <see cref="AtsUpdateCandidatesAssessmentsResultsRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateAssessmentsResultResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateCandidatesAssessmentsResultsRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUpdateAssessmentsResultResponse> AssessmentsUpdateResultAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateCandidatesAssessmentsResultsRequestDto atsUpdateCandidatesAssessmentsResultsRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsUpdateCandidatesAssessmentsResultsRequestDto == null) throw new ArgumentNullException(nameof(atsUpdateCandidatesAssessmentsResultsRequestDto));
+
             var request = new AtsUpdateAssessmentsResultRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsUpdateCandidatesAssessmentsResultsRequestDto = atsUpdateCandidatesAssessmentsResultsRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/assessments/orders/{id}/result", request, null);
 
@@ -12602,7 +14295,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -12981,14 +14674,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUpdateBackgroundCheckPackageResponse> UpdateBackgroundCheckPackageAsync(string xAccountId, string id, AtsUpdateBackgroundCheckPackagesRequestDto atsUpdateBackgroundCheckPackagesRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Background Check Package.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateBackgroundCheckPackagesRequestDto">A <see cref="AtsUpdateBackgroundCheckPackagesRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateBackgroundCheckPackageResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateBackgroundCheckPackagesRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUpdateBackgroundCheckPackageResponse> UpdateBackgroundCheckPackageAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateBackgroundCheckPackagesRequestDto atsUpdateBackgroundCheckPackagesRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsUpdateBackgroundCheckPackagesRequestDto == null) throw new ArgumentNullException(nameof(atsUpdateBackgroundCheckPackagesRequestDto));
+
             var request = new AtsUpdateBackgroundCheckPackageRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsUpdateBackgroundCheckPackagesRequestDto = atsUpdateBackgroundCheckPackagesRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/background_checks/packages/{id}", request, null);
 
@@ -13051,7 +14782,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -13430,15 +15161,49 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsOrderBackgroundCheckRequestResponse> OrderBackgroundCheckAsync(string xAccountId, AtsCreateBackgroundCheckOrderRequestDto atsCreateBackgroundCheckOrderRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Order Background Check Request.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="atsCreateBackgroundCheckOrderRequestDto">A <see cref="AtsCreateBackgroundCheckOrderRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsOrderBackgroundCheckRequestResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/> or <paramref name="atsCreateBackgroundCheckOrderRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsOrderBackgroundCheckRequestResponse> OrderBackgroundCheckAsync(
+            string xAccountId,
+            AtsCreateBackgroundCheckOrderRequestDto atsCreateBackgroundCheckOrderRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (atsCreateBackgroundCheckOrderRequestDto == null) throw new ArgumentNullException(nameof(atsCreateBackgroundCheckOrderRequestDto));
+
             var request = new AtsOrderBackgroundCheckRequestRequest()
             {
                 XAccountId = xAccountId,
                 AtsCreateBackgroundCheckOrderRequestDto = atsCreateBackgroundCheckOrderRequestDto,
+                Prefer = prefer,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
 
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = baseUrl + "/unified/ats/background_checks/orders";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -13500,7 +15265,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -13879,14 +15644,52 @@ namespace StackOneHQ.Client
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<AtsUpdateBackgroundCheckResultResponse> UpdateBackgroundCheckResultAsync(string xAccountId, string id, AtsUpdateBackgroundCheckResultRequestDto atsUpdateBackgroundCheckResultRequestDto, RetryConfig? retryConfig = null)
+
+        /// <summary>
+        /// Update Background Check Result.
+        /// </summary>
+        /// <param name="xAccountId">The account identifier.</param>
+        /// <param name="id">Description not available.</param>
+        /// <param name="atsUpdateBackgroundCheckResultRequestDto">A <see cref="AtsUpdateBackgroundCheckResultRequestDto"/> parameter.</param>
+        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
+        /// <param name="retryConfig">The retry configuration to use for this operation.</param>
+        /// <returns>An awaitable task that returns a <see cref="AtsUpdateBackgroundCheckResultResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="atsUpdateBackgroundCheckResultRequestDto"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="BadRequestResponseException">Invalid request. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="UnauthorizedResponseException">Unauthorized access. Thrown when the API returns a 401 response.</exception>
+        /// <exception cref="ForbiddenResponseException">Forbidden. Thrown when the API returns a 403 response.</exception>
+        /// <exception cref="NotFoundResponseException">Resource not found. Thrown when the API returns a 404 response.</exception>
+        /// <exception cref="RequestTimedOutResponseException">The request has timed out. Thrown when the API returns a 408 response.</exception>
+        /// <exception cref="ConflictResponseException">Conflict with current state. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="PreconditionFailedResponseException">Precondition failed: linked account belongs to a disabled integration. Thrown when the API returns a 412 response.</exception>
+        /// <exception cref="UnprocessableEntityResponseException">Validation error. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="TooManyRequestsResponseException">Too many requests. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="InternalServerErrorResponse">Server error while executing the request. Thrown when the API returns a 500 response.</exception>
+        /// <exception cref="NotImplementedResponseException">This functionality is not implemented. Thrown when the API returns a 501 response.</exception>
+        /// <exception cref="BadGatewayResponseException">Bad gateway error. Thrown when the API returns a 502 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<AtsUpdateBackgroundCheckResultResponse> UpdateBackgroundCheckResultAsync(
+            string xAccountId,
+            string id,
+            AtsUpdateBackgroundCheckResultRequestDto atsUpdateBackgroundCheckResultRequestDto,
+            string? prefer = null,
+            RetryConfig? retryConfig = null
+        )
         {
+            if (xAccountId == null) throw new ArgumentNullException(nameof(xAccountId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            if (atsUpdateBackgroundCheckResultRequestDto == null) throw new ArgumentNullException(nameof(atsUpdateBackgroundCheckResultRequestDto));
+
             var request = new AtsUpdateBackgroundCheckResultRequest()
             {
                 XAccountId = xAccountId,
                 Id = id,
                 AtsUpdateBackgroundCheckResultRequestDto = atsUpdateBackgroundCheckResultRequestDto,
+                Prefer = prefer,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/ats/background_checks/orders/{id}/result", request, null);
 
@@ -13949,7 +15752,7 @@ namespace StackOneHQ.Client
                 httpResponse = await retries.Run();
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 408 || _statusCode == 409 || _statusCode == 412 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 501 || _statusCode == 502 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -14327,5 +16130,6 @@ namespace StackOneHQ.Client
 
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
+
     }
 }

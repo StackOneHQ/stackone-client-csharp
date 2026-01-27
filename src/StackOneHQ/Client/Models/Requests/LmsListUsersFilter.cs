@@ -11,27 +11,26 @@ namespace StackOneHQ.Client.Models.Requests
 {
     using StackOneHQ.Client.Utils;
     using System;
-    
+
     /// <summary>
-    /// LMS Users Filter
+    /// LMS Users Filter.
     /// </summary>
     public class LmsListUsersFilter
     {
-
         /// <summary>
-        /// Use a string with a date to only select results updated after that given date
+        /// Use a string with a date to only select results updated after that given date.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=updated_after")]
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
-        /// Filter to select users by email
+        /// Filter to select users by email.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=email")]
         public string? Email { get; set; } = null;
 
         /// <summary>
-        /// Filter to select users by external_reference
+        /// Filter to select users by external_reference.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=external_reference")]
         public string? ExternalReference { get; set; } = null;

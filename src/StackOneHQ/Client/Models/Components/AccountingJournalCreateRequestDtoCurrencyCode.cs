@@ -16,15 +16,14 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// Currency code for the journal and all lines
+    /// Currency code for the journal and all lines.
     /// </summary>
     public class AccountingJournalCreateRequestDtoCurrencyCode
     {
-
         /// <summary>
-        /// Default currency for the company
+        /// Default currency for the company.
         /// </summary>
         [JsonProperty("value")]
         public AccountingJournalCreateRequestDtoValue? Value { get; set; } = null;

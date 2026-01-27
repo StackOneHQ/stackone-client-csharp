@@ -15,9 +15,9 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The provider service category
+    /// The provider service category.
     /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ConnectorsMetaCategory : IEquatable<ConnectorsMetaCategory>
@@ -98,5 +98,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

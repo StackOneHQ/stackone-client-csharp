@@ -1,5 +1,4 @@
-# IamUsers
-(*Iam.Users*)
+# Iam.Users
 
 ## Overview
 
@@ -34,6 +33,7 @@ IamListUsersRequest req = new IamListUsersRequest() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
     Expand = "roles,groups",
+    Prefer = "heartbeat",
 };
 
 IamListUsersResponse? res = await sdk.Iam.Users.ListAsync(req);
@@ -96,6 +96,7 @@ IamGetUserRequest req = new IamGetUserRequest() {
     Id = "<id>",
     Fields = "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields",
     Expand = "roles,groups",
+    Prefer = "heartbeat",
 };
 
 var res = await sdk.Iam.Users.GetAsync(req);
@@ -166,7 +167,8 @@ var res = await sdk.Iam.Users.UpdateAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-    }
+    },
+    prefer: "heartbeat"
 );
 
 // handle response
@@ -174,11 +176,12 @@ var res = await sdk.Iam.Users.UpdateAsync(
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `XAccountId`                                                                  | *string*                                                                      | :heavy_check_mark:                                                            | The account identifier                                                        |
-| `Id`                                                                          | *string*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
-| `IamUpdateUserRequestDto`                                                     | [IamUpdateUserRequestDto](../../Models/Components/IamUpdateUserRequestDto.md) | :heavy_check_mark:                                                            | N/A                                                                           |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
+| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `IamUpdateUserRequestDto`                                                                                                                                                | [IamUpdateUserRequestDto](../../Models/Components/IamUpdateUserRequestDto.md)                                                                                            | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
+| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
 
 ### Response
 

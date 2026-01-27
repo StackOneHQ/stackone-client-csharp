@@ -55,9 +55,8 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     /// <summary>
-    /// Whether the break is paid
+    /// Whether the break is paid.
     /// </summary>
     [JsonConverter(typeof(IsPaid.IsPaidConverter))]
     public class IsPaid

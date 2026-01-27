@@ -1,5 +1,4 @@
-# Categories
-(*Lms.Categories*)
+# Lms.Categories
 
 ## Overview
 
@@ -31,6 +30,7 @@ LmsListCategoriesRequest req = new LmsListCategoriesRequest() {
     Filter = new LmsListCategoriesFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 LmsListCategoriesResponse? res = await sdk.Lms.Categories.ListAsync(req);

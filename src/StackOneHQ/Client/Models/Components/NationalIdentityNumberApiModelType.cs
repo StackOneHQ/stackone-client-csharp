@@ -16,12 +16,11 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public class NationalIdentityNumberApiModelType
     {
-
         /// <summary>
-        /// The type of the national identity number
+        /// The type of the national identity number.
         /// </summary>
         [JsonProperty("value")]
         public NationalIdentityNumberApiModelTypeValue? Value { get; set; } = null;

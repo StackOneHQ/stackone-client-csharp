@@ -16,21 +16,20 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
-    /// The type of change that occurred to the application
+    /// The type of change that occurred to the application.
     /// </summary>
     public class ChangeType
     {
-
         /// <summary>
-        /// The type of change that occurred to the application
+        /// The type of change that occurred to the application.
         /// </summary>
         [JsonProperty("value")]
         public ApplicationChangesValue? Value { get; set; } = null;
 
         /// <summary>
-        /// The source value of the change type
+        /// The source value of the change type.
         /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Include)]
         public ApplicationChangesSourceValueUnion? SourceValue { get; set; } = null;

@@ -64,7 +64,6 @@ namespace StackOneHQ.Client.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(EmployeeEmploymentStatusSourceValueUnion.EmployeeEmploymentStatusSourceValueUnionConverter))]
     public class EmployeeEmploymentStatusSourceValueUnion
     {

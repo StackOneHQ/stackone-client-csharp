@@ -16,13 +16,12 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
     /// The type of the custom field.
     /// </summary>
     public class CustomFieldDefinitionType
     {
-
         [JsonProperty("value")]
         public CustomFieldDefinitionValue? Value { get; set; } = null;
 

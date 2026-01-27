@@ -1,5 +1,4 @@
-# AtsUsers
-(*Ats.Users*)
+# Ats.Users
 
 ## Overview
 
@@ -28,6 +27,7 @@ AtsListUsersRequest req = new AtsListUsersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,first_name,last_name,name,email,phone,unified_custom_fields",
     Filter = null,
+    Prefer = "heartbeat",
 };
 
 AtsListUsersResponse? res = await sdk.Ats.Users.ListAsync(req);

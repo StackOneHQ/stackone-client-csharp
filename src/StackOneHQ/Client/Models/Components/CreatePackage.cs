@@ -11,18 +11,17 @@ namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
     using StackOneHQ.Client.Utils;
-    
+
     public class CreatePackage
     {
-
         /// <summary>
-        /// Package name
+        /// Package name.
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
 
         /// <summary>
-        /// Package description
+        /// Package description.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; } = null;

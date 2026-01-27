@@ -15,7 +15,7 @@ namespace StackOneHQ.Client.Models.Components
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     /// <summary>
     /// The status of the position.
     /// </summary>
@@ -23,6 +23,7 @@ namespace StackOneHQ.Client.Models.Components
     public class PositionValue : IEquatable<PositionValue>
     {
         public static readonly PositionValue Open = new PositionValue("open");
+        public static readonly PositionValue Draft = new PositionValue("draft");
         public static readonly PositionValue Closed = new PositionValue("closed");
         public static readonly PositionValue Paused = new PositionValue("paused");
         public static readonly PositionValue UnmappedValue = new PositionValue("unmapped_value");
@@ -31,6 +32,7 @@ namespace StackOneHQ.Client.Models.Components
             new Dictionary <string, PositionValue> ()
             {
                 ["open"] = Open,
+                ["draft"] = Draft,
                 ["closed"] = Closed,
                 ["paused"] = Paused,
                 ["unmapped_value"] = UnmappedValue
@@ -78,5 +80,4 @@ namespace StackOneHQ.Client.Models.Components
 
         public override int GetHashCode() => Value.GetHashCode();
     }
-
 }

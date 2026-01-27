@@ -1,5 +1,4 @@
-# ApplicationsDocuments
-(*Ats.Applications.Documents*)
+# Ats.Applications.Documents
 
 ## Overview
 
@@ -32,6 +31,7 @@ AtsListApplicationDocumentsRequest req = new AtsListApplicationDocumentsRequest(
     Filter = new AtsListApplicationDocumentsFilter() {
         UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
     },
+    Prefer = "heartbeat",
 };
 
 AtsListApplicationDocumentsResponse? res = await sdk.Ats.Applications.Documents.ListAsync(req);
