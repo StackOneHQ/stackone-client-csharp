@@ -14,9 +14,9 @@ Model Context Protocol endpoint.
 
 Send JSON-RPC request to the MCP server over HTTP streaming transport
 
-### Example Usage
+### Example Usage: initialize
 
-<!-- UsageSnippet language="csharp" operationID="stackone_mcp_post" method="post" path="/mcp" -->
+<!-- UsageSnippet language="csharp" operationID="stackone_mcp_post" method="post" path="/mcp" example="initialize" -->
 ```csharp
 using StackOneHQ.Client;
 using StackOneHQ.Client.Models.Components;
@@ -34,6 +34,62 @@ var res = await sdk.Mcp.McpPostAsync(
     jsonRpcMessageDto: new JsonRpcMessageDto() {
         Jsonrpc = "2.0",
         Method = "initialize",
+        Params = new Params() {},
+        Id = new Id() {},
+    },
+    xAccountId: "<id>"
+);
+
+// handle response
+```
+### Example Usage: toolsCall
+
+<!-- UsageSnippet language="csharp" operationID="stackone_mcp_post" method="post" path="/mcp" example="toolsCall" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient();
+
+var res = await sdk.Mcp.McpPostAsync(
+    security: new StackoneMcpPostSecurity() {
+        Basic = new SchemeBasic() {
+            Username = "",
+            Password = "",
+        },
+    },
+    jsonRpcMessageDto: new JsonRpcMessageDto() {
+        Jsonrpc = "2.0",
+        Method = "tools/call",
+        Params = new Params() {},
+        Id = new Id() {},
+    },
+    xAccountId: "<id>"
+);
+
+// handle response
+```
+### Example Usage: toolsList
+
+<!-- UsageSnippet language="csharp" operationID="stackone_mcp_post" method="post" path="/mcp" example="toolsList" -->
+```csharp
+using StackOneHQ.Client;
+using StackOneHQ.Client.Models.Components;
+using StackOneHQ.Client.Models.Requests;
+
+var sdk = new StackOneHQClient();
+
+var res = await sdk.Mcp.McpPostAsync(
+    security: new StackoneMcpPostSecurity() {
+        Basic = new SchemeBasic() {
+            Username = "",
+            Password = "",
+        },
+    },
+    jsonRpcMessageDto: new JsonRpcMessageDto() {
+        Jsonrpc = "2.0",
+        Method = "tools/list",
         Params = new Params() {},
         Id = new Id() {},
     },

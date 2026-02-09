@@ -2396,11 +2396,13 @@ paths:
             nullable: true
             example:
               - action_details
+              - authentication_guides
             type: array
             items:
               type: string
               enum:
                 - action_details
+                - authentication_guides
         - name: search
           required: false
           in: query
@@ -5008,8 +5010,8 @@ paths:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
       x-speakeasy-name-override: createTimeOff
+      x-speakeasy-group: hris.employees
   /unified/hris/employees/{id}/time_off/{subResourceId}:
     get:
       operationId: hris_get_employees_time_off_request
@@ -6113,6 +6115,7 @@ paths:
           - 429
           - 408
         strategy: backoff
+      x-speakeasy-group: hris
       x-speakeasy-name-override: listEmployeeDocuments
       x-speakeasy-pagination:
         type: cursor
@@ -6122,7 +6125,6 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
-      x-speakeasy-group: hris
   /unified/hris/employees/{id}/documents/{subResourceId}:
     get:
       operationId: hris_get_employee_document
@@ -14163,8 +14165,6 @@ paths:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees.skills
-      x-speakeasy-name-override: list
       x-speakeasy-pagination:
         type: cursor
         inputs:
@@ -14173,6 +14173,8 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-group: hris.employees.skills
+      x-speakeasy-name-override: list
     post:
       operationId: hris_create_employee_skill
       summary: Create Employee Skill
@@ -27634,7 +27636,6 @@ paths:
           - 408
         strategy: backoff
       x-speakeasy-group: documents
-      x-speakeasy-name-override: listApplicationCategories
       x-speakeasy-pagination:
         type: cursor
         inputs:
@@ -27643,6 +27644,7 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-name-override: listApplicationCategories
   /unified/ats/documents/application_categories/{id}:
     get:
       operationId: ats_get_application_document_category
@@ -40973,8 +40975,6 @@ paths:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing
-      x-speakeasy-name-override: list_projects
       x-speakeasy-pagination:
         type: cursor
         inputs:
@@ -40983,6 +40983,8 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-group: ticketing
+      x-speakeasy-name-override: list_projects
   /unified/ticketing/projects/{id}:
     get:
       operationId: ticketing_get_project
@@ -46861,11 +46863,16 @@ components:
           type: string
           description: Build status
           enum:
+            - accepted
             - success
             - error
+          example: accepted
+        message:
+          type: string
+          description: Status message
         actions_indexed:
           type: number
-          description: Number of actions indexed
+          description: Number of actions indexed (only for synchronous builds)
         connector_filter:
           type: string
           description: Connector filter applied
@@ -46874,7 +46881,6 @@ components:
           description: Error message if status is error
       required:
         - status
-        - actions_indexed
     ActionMetaItem:
       type: object
       properties:
@@ -47225,6 +47231,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProviderError'
+    AuthenticationGuidesMeta:
+      type: object
+      properties:
+        config:
+          description: Configuration guide
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/GuideMeta'
+        setup:
+          description: Account linking guide
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/GuideMeta'
     AuthenticationMetaItem:
       type: object
       properties:
@@ -47246,6 +47265,11 @@ components:
           type: array
           items:
             type: string
+        support:
+          description: The support information for this authentication method, including configuration and account linking guides
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/SupportMeta'
     BadGatewayResponse:
       type: object
       properties:
@@ -47416,9 +47440,7 @@ components:
         id:
           type: number
         organization_id:
-          oneOf:
-            - type: string
-            - type: integer
+          type: string
         project_id:
           type: string
         categories:
@@ -47625,9 +47647,7 @@ components:
         id:
           type: number
         organization_id:
-          oneOf:
-            - type: string
-            - type: integer
+          type: string
         project_id:
           type: string
         categories:
@@ -47763,6 +47783,62 @@ components:
         - statusCode
         - message
         - timestamp
+    GuideMeta:
+      type: object
+      properties:
+        warning:
+          type: string
+          description: Warning text for the guide
+          nullable: true
+        sections:
+          description: The guide sections
+          type: array
+          items:
+            $ref: '#/components/schemas/GuideSectionMeta'
+      required:
+        - sections
+    GuideSectionMeta:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The title of the section
+        content:
+          type: string
+          description: The content of the section, includes markdown formatting
+        list:
+          description: List items for the section
+          nullable: true
+          type: array
+          items:
+            type: string
+        steps:
+          description: Nested steps within the section
+          nullable: true
+          type: array
+          items:
+            $ref: '#/components/schemas/GuideStepMeta'
+      required:
+        - title
+        - content
+    GuideStepMeta:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The title of the step
+        content:
+          type: string
+          description: The content of the step, includes markdown formatting
+        list:
+          description: List items for the step
+          nullable: true
+          type: array
+          items:
+            type: string
+      required:
+        - title
+        - content
     InternalServerErrorResponse:
       type: object
       properties:
@@ -48555,6 +48631,22 @@ components:
             $ref: '#/components/schemas/StepLogPartial'
       required:
         - data
+    SupportMeta:
+      type: object
+      properties:
+        link:
+          type: string
+          description: Link to support documentation
+          nullable: true
+        description:
+          type: string
+          description: Support description
+          nullable: true
+        guides:
+          description: Authentication guides for this authentication type
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/AuthenticationGuidesMeta'
     TooManyRequestsResponse:
       type: object
       properties:

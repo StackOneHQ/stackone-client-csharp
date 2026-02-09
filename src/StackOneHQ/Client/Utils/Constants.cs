@@ -22,12 +22,12 @@ namespace StackOneHQ.Client.Utils
         /// <summary>
         /// The version of the SDK.
         /// </summary>
-        public const string SdkVersion = "0.9.1";
+        public const string SdkVersion = "0.9.2";
 
         /// <summary>
         /// The version of the SDK generator used to create this SDK.
         /// </summary>
-        public const string SdkGenVersion = "2.801.0";
+        public const string SdkGenVersion = "2.812.2";
 
         /// <summary>
         /// The version of the OpenAPI document used to generate this SDK.

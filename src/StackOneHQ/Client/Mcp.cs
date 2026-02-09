@@ -296,7 +296,8 @@ namespace StackOneHQ.Client
                     {
                         Response = httpResponse,
                         Request = httpRequest
-                    }
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 400)
@@ -734,7 +735,8 @@ namespace StackOneHQ.Client
                     {
                         Response = httpResponse,
                         Request = httpRequest
-                    }
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 400)
@@ -1172,7 +1174,8 @@ namespace StackOneHQ.Client
                     {
                         Response = httpResponse,
                         Request = httpRequest
-                    }
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 400)

@@ -22,13 +22,14 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
   requestBodyFieldName: ""
+  versioningStrategy: automatic
   persistentEdits: {}
   tests:
     generateTests: false
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.9.1
+  version: 0.9.2
   additionalDependencies: []
   author: stackone
   baseErrorName: StackOneError
@@ -58,6 +59,7 @@ csharp:
   outputModelSuffix: output
   packageName: StackOneHQ.Client
   packageTags: sdk api client stackone stack one
+  respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope-http
   sourceDirectory: src
   useNodatime: true

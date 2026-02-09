@@ -27,6 +27,6 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         public TicketingAttachmentsPaginated? TicketingAttachmentsPaginated { get; set; }
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

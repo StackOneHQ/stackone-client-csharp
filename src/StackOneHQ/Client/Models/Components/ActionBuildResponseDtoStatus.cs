@@ -18,6 +18,8 @@ namespace StackOneHQ.Client.Models.Components
     /// </summary>
     public enum ActionBuildResponseDtoStatus
     {
+        [JsonProperty("accepted")]
+        Accepted,
         [JsonProperty("success")]
         Success,
         [JsonProperty("error")]

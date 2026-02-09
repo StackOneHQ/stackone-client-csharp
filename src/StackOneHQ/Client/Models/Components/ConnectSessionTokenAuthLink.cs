@@ -22,8 +22,8 @@ namespace StackOneHQ.Client.Models.Components
         [JsonProperty("id")]
         public double Id { get; set; } = default!;
 
-        [JsonProperty("organization_id", NullValueHandling = NullValueHandling.Include)]
-        public ConnectSessionTokenAuthLinkOrganizationId OrganizationId { get; set; } = default!;
+        [JsonProperty("organization_id")]
+        public string OrganizationId { get; set; } = default!;
 
         [JsonProperty("project_id")]
         public string ProjectId { get; set; } = default!;
