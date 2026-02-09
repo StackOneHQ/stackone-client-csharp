@@ -24,6 +24,6 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         public HRISCostCenterResult? HRISCostCenterResult { get; set; }
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

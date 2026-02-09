@@ -22,10 +22,16 @@ namespace StackOneHQ.Client.Models.Components
         public ActionBuildResponseDtoStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// Number of actions indexed.
+        /// Status message.
+        /// </summary>
+        [JsonProperty("message")]
+        public string? Message { get; set; }
+
+        /// <summary>
+        /// Number of actions indexed (only for synchronous builds).
         /// </summary>
         [JsonProperty("actions_indexed")]
-        public double ActionsIndexed { get; set; } = default!;
+        public double? ActionsIndexed { get; set; }
 
         /// <summary>
         /// Connector filter applied.

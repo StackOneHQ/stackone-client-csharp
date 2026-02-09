@@ -17,6 +17,8 @@ namespace StackOneHQ.Client.Models.Requests
     {
         [JsonProperty("action_details")]
         ActionDetails,
+        [JsonProperty("authentication_guides")]
+        AuthenticationGuides,
     }
 
     public static class StackoneListActionsMetaIncludeExtension

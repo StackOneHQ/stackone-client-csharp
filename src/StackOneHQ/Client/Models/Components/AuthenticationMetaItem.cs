@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
+    using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
 
@@ -38,5 +39,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("required_scopes")]
         public List<string>? RequiredScopes { get; set; } = null;
+
+        /// <summary>
+        /// The support information for this authentication method, including configuration and account linking guides.
+        /// </summary>
+        [JsonProperty("support")]
+        public Support? Support { get; set; } = null;
     }
 }

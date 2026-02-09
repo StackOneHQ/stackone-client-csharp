@@ -5,7 +5,8 @@ Build status
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Success` | success   |
-| `Error`   | error     |
+| Name       | Value      |
+| ---------- | ---------- |
+| `Accepted` | accepted   |
+| `Success`  | success    |
+| `Error`    | error      |
