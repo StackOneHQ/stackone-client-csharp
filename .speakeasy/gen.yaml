@@ -32,7 +32,7 @@ csharp:
   version: 0.9.2
   additionalDependencies: []
   author: stackone
-  baseErrorName: StackOneError
+  baseErrorName: BaseException
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIException
   disableNamespacePascalCasingApr2024: true
