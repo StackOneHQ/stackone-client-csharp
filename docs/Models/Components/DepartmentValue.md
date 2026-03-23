@@ -1,5 +1,16 @@
 # DepartmentValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = DepartmentValue.Workspace;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = DepartmentValue.Of("custom_value");
+```
+
 
 ## Values
 

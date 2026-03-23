@@ -28,7 +28,7 @@ HrisListLocationsRequest req = new HrisListLocationsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at,unified_custom_fields",
     Filter = new HrisListLocationsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

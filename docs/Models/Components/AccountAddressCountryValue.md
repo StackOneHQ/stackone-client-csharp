@@ -2,6 +2,17 @@
 
 The ISO 3166-1 alpha-2 code of the country.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = AccountAddressCountryValue.Af;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AccountAddressCountryValue.Of("custom_value");
+```
+
 
 ## Values
 

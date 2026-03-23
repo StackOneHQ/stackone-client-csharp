@@ -1,5 +1,13 @@
 # IsPaidEnum
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = IsPaidEnum.True;
+```
+
 
 ## Values
 

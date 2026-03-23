@@ -1,5 +1,16 @@
 # EmploymentContractTypeValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = EmploymentContractTypeValue.FullTime;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EmploymentContractTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

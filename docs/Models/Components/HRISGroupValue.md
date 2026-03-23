@@ -1,5 +1,16 @@
 # HRISGroupValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HRISGroupValue.Workspace;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HRISGroupValue.Of("custom_value");
+```
+
 
 ## Values
 

@@ -2,6 +2,17 @@
 
 The provider service category
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = ConnectorsMetaCategory.Ats;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ConnectorsMetaCategory.Of("custom_value");
+```
+
 
 ## Values
 

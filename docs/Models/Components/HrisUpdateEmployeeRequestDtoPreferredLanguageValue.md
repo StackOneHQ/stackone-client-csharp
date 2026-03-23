@@ -2,6 +2,17 @@
 
 The ISO639-2 Code of the language
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisUpdateEmployeeRequestDtoPreferredLanguageValue.Aar;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisUpdateEmployeeRequestDtoPreferredLanguageValue.Of("custom_value");
+```
+
 
 ## Values
 

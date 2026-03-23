@@ -77,8 +77,8 @@ var res = await sdk.Lms.Content.UpsertAsync(
                 Name = "John Doe",
             },
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
-        CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+        UpdatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z").ToUniversalTime(),
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },

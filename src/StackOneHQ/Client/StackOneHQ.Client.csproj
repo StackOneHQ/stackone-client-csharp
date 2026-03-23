@@ -3,14 +3,24 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>StackOneHQ.Client</PackageId>
-    <Version>0.9.2</Version>
+    <Version>0.9.3</Version>
     <TargetFramework>net8.0</TargetFramework>
     <Authors>stackone</Authors>
     <Copyright>Copyright (c) stackone 2026</Copyright>
     <RepositoryUrl>https://github.com/StackOneHQ/stackone-client-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>sdk api client stackone stack one</PackageTags>
-    <Description>Accounting: The documentation for the StackOne Unified API - ACCOUNTING.</Description>
+    <Description>Accounting: The documentation for the StackOne API<br/>
+The documentation for the StackOne Unified API - HRIS<br/>
+The documentation for the StackOne Unified API - ATS<br/>
+The documentation for the StackOne Unified API - CRM<br/>
+The documentation for the StackOne Unified API - IAM<br/>
+The documentation for the StackOne Unified API - MARKETING<br/>
+The documentation for the StackOne Unified API - LMS<br/>
+The documentation for the StackOne Unified API - TICKETING<br/>
+The documentation for the StackOne Unified API - DOCUMENTS<br/>
+The documentation for the StackOne Unified API - MESSAGING<br/>
+The documentation for the StackOne Unified API - ACCOUNTING.</Description>
   </PropertyGroup>
 
   <PropertyGroup>

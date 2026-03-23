@@ -30,7 +30,7 @@ IamListUsersRequest req = new IamListUsersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields",
     Filter = new IamListUsersFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Expand = "roles,groups",
     Prefer = "heartbeat",

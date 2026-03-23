@@ -58,8 +58,8 @@ AtsListApplicationsRequest req = new AtsListApplicationsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields",
     Filter = new AtsListApplicationsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
-        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Expand = "documents",
     Include = "attachments,custom_fields",
@@ -186,7 +186,7 @@ AtsListApplicationChangesRequest req = new AtsListApplicationChangesRequest() {
     Id = "<id>",
     Fields = "event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values,unified_custom_fields",
     Filter = new AtsListApplicationChangesFilter() {
-        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -252,7 +252,7 @@ AtsListApplicationNotesRequest req = new AtsListApplicationNotesRequest() {
     Id = "<id>",
     Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields",
     Filter = new AtsListApplicationNotesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -534,8 +534,7 @@ var res = await sdk.Ats.DocumentsUploadAsync(
             ),
         },
         Category = new AtsDocumentsUploadRequestDtoCategory() {},
-    },
-    prefer: "heartbeat"
+    }
 );
 
 // handle response
@@ -543,12 +542,11 @@ var res = await sdk.Ats.DocumentsUploadAsync(
 
 ### Parameters
 
-| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
-| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
-| `AtsDocumentsUploadRequestDto`                                                                                                                                           | [AtsDocumentsUploadRequestDto](../../Models/Components/AtsDocumentsUploadRequestDto.md)                                                                                  | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
-| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                            | *string*                                                                                | :heavy_check_mark:                                                                      | The account identifier                                                                  |
+| `Id`                                                                                    | *string*                                                                                | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `AtsDocumentsUploadRequestDto`                                                          | [AtsDocumentsUploadRequestDto](../../Models/Components/AtsDocumentsUploadRequestDto.md) | :heavy_check_mark:                                                                      | N/A                                                                                     |
 
 ### Response
 
@@ -652,8 +650,8 @@ AtsListCandidatesRequest req = new AtsListCandidatesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,tags,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListCandidatesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
-        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Include = "custom_fields",
     Prefer = "heartbeat",
@@ -753,7 +751,7 @@ var res = await sdk.Ats.UpdateCandidateAsync(
             "123e4567-e89b-12d3-a456-426614174000",
             "523e1234-e89b-fdd2-a456-762545121101",
         },
-        HiredAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+        HiredAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
         Country = "United States",
         CustomFields = null,
     },
@@ -948,7 +946,7 @@ AtsListJobCustomFieldDefinitionsRequest req = new AtsListJobCustomFieldDefinitio
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new AtsListJobCustomFieldDefinitionsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -1013,7 +1011,7 @@ AtsListDepartmentsRequest req = new AtsListDepartmentsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,unified_custom_fields",
     Filter = new AtsListDepartmentsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -1078,7 +1076,7 @@ AtsListApplicationStagesRequest req = new AtsListApplicationStagesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,order,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListApplicationStagesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -1349,8 +1347,8 @@ AtsListJobsRequest req = new AtsListJobsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListJobsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
-        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Expand = "job_postings,interview_stages",
     Include = "custom_fields",
@@ -1457,8 +1455,8 @@ var res = await sdk.Ats.CreateJobAsync(
                     { "my_project_custom_field_1", "REF-1236" },
                     { "my_project_custom_field_2", "some other value" },
                 },
-                CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-                UpdatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+                CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
             },
         },
         CustomFields = new List<CustomFields>() {
@@ -1536,7 +1534,7 @@ AtsListJobApplicationStagesRequest req = new AtsListJobApplicationStagesRequest(
     Id = "<id>",
     Fields = "id,remote_id,name,order,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListJobApplicationStagesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -1813,8 +1811,8 @@ AtsListJobPostingsRequest req = new AtsListJobPostingsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at,unified_custom_fields",
     Filter = new AtsListJobPostingsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
-        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Include = "questionnaires",
     Prefer = "heartbeat",
@@ -2004,8 +2002,8 @@ var res = await sdk.Ats.AssessmentsUpdateResultAsync(
     id: "<id>",
     atsUpdateCandidatesAssessmentsResultsRequestDto: new AtsUpdateCandidatesAssessmentsResultsRequestDto() {
         Score = null,
-        StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-        SubmissionDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+        StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+        SubmissionDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
         Summary = "Test is passed",
         Result = new AtsUpdateCandidatesAssessmentsResultsRequestDtoResult() {
             Value = AtsUpdateCandidatesAssessmentsResultsRequestDtoValue.Passed,
@@ -2284,8 +2282,8 @@ var res = await sdk.Ats.UpdateBackgroundCheckResultAsync(
             Min = "0",
             Max = "100",
         },
-        StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-        SubmissionDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+        StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+        SubmissionDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
         Summary = "Test is passed",
         Result = new AtsUpdateBackgroundCheckResultRequestDtoResult() {
             Value = AtsUpdateBackgroundCheckResultRequestDtoValue.Passed,

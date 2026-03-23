@@ -29,7 +29,7 @@ AtsListCandidateNotesRequest req = new AtsListCandidateNotesRequest() {
     Id = "<id>",
     Fields = "id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields",
     Filter = new AtsListCandidateNotesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

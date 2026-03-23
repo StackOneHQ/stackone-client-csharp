@@ -1,5 +1,13 @@
 # ConnectSessionCreateCategory
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = ConnectSessionCreateCategory.Ats;
+```
+
 
 ## Values
 

@@ -2,6 +2,17 @@
 
 The type of the interview.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = InterviewPartValue.Screening;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = InterviewPartValue.Of("custom_value");
+```
+
 
 ## Values
 

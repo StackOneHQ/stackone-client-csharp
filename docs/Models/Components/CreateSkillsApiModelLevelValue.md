@@ -2,6 +2,17 @@
 
 The unified skill level. For write operations: provide one of the listed enum values, or omit/set to "unmapped_value" to use source_value instead.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = CreateSkillsApiModelLevelValue.Primary;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CreateSkillsApiModelLevelValue.Of("custom_value");
+```
+
 
 ## Values
 

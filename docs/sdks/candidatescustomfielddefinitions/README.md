@@ -29,7 +29,7 @@ AtsGetCandidateCustomFieldDefinitionRequest req = new AtsGetCandidateCustomField
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new AtsGetCandidateCustomFieldDefinitionFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

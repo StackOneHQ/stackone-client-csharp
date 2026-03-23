@@ -2,6 +2,17 @@
 
 The type of the employment.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisUpdateEmploymentRequestDtoEmploymentTypeValue.Contractor;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisUpdateEmploymentRequestDtoEmploymentTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

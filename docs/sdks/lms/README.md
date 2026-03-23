@@ -102,7 +102,7 @@ LmsListUserAssignmentsRequest req = new LmsListUserAssignmentsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,assigned_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields",
     Filter = new LmsListUserAssignmentsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     UserId = "c28xyrc55866bvuv",
     RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",
@@ -219,8 +219,8 @@ var res = await sdk.Lms.BatchUpsertContentAsync(
                         Name = "John Doe",
                     },
                 },
-                UpdatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
-                CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+                UpdatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z").ToUniversalTime(),
                 ExternalReference = "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1",
                 Categories = new List<CreateCategoriesApiModel>() {
                     new CreateCategoriesApiModel() {
@@ -309,7 +309,7 @@ LmsListContentRequest req = new LmsListContentRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors,unified_custom_fields",
     Filter = new LmsListContentFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -379,7 +379,7 @@ var res = await sdk.Lms.CreateUserCompletionAsync(
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
-        CompletedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+        CompletedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z").ToUniversalTime(),
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
         TimeSpent = "PT1H30M45S",
         Score = new LmsCreateCompletionRequestDtoScore() {
@@ -741,7 +741,7 @@ LmsListSkillsRequest req = new LmsListSkillsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,active,hierarchy,language,unified_custom_fields",
     Filter = new LmsListSkillsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

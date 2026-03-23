@@ -225,7 +225,6 @@ namespace StackOneHQ.Client
         /// <param name="xAccountId">The account identifier.</param>
         /// <param name="id">Description not available.</param>
         /// <param name="hrisBatchDocumentUploadRequestDto">A <see cref="HrisBatchDocumentUploadRequestDto"/> parameter.</param>
-        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
         /// <param name="retryConfig">The retry configuration to use for this operation.</param>
         /// <returns>An awaitable task that returns a <see cref="HrisBatchUploadEmployeeDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="hrisBatchDocumentUploadRequestDto"/> is null.</exception>
@@ -248,7 +247,6 @@ namespace StackOneHQ.Client
             string xAccountId,
             string id,
             HrisBatchDocumentUploadRequestDto hrisBatchDocumentUploadRequestDto,
-            string? prefer = null,
             RetryConfig? retryConfig = null
         );
 
@@ -538,6 +536,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
@@ -596,9 +599,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -620,6 +623,7 @@ namespace StackOneHQ.Client
                 {
                     return null;
                 }
+
                 var nextCursor = nextCursorToken.Value<string>();
                 if (string.IsNullOrWhiteSpace(nextCursor))
                 {
@@ -1039,6 +1043,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
@@ -1097,9 +1106,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -1121,6 +1130,7 @@ namespace StackOneHQ.Client
                 {
                     return null;
                 }
+
                 var nextCursor = nextCursorToken.Value<string>();
                 if (string.IsNullOrWhiteSpace(nextCursor))
                 {
@@ -1554,6 +1564,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             var serializedBody = RequestBodySerializer.Serialize(request, "HrisCreateEmployeeRequestDto", "json", false, false);
             if (serializedBody != null)
             {
@@ -1618,9 +1633,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -2041,6 +2056,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             var serializedBody = RequestBodySerializer.Serialize(request, "HrisUpdateEmployeeRequestDto", "json", false, false);
             if (serializedBody != null)
             {
@@ -2105,9 +2125,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -2528,6 +2548,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             var serializedBody = RequestBodySerializer.Serialize(request, "HrisInviteEmployeeRequestDto", "json", false, false);
             if (serializedBody != null)
             {
@@ -2592,9 +2617,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -3015,6 +3040,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             var serializedBody = RequestBodySerializer.Serialize(request, "HrisCreateTimeOffRequestDto", "json", false, false);
             if (serializedBody != null)
             {
@@ -3079,9 +3109,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -3456,7 +3486,6 @@ namespace StackOneHQ.Client
         /// <param name="xAccountId">The account identifier.</param>
         /// <param name="id">Description not available.</param>
         /// <param name="hrisBatchDocumentUploadRequestDto">A <see cref="HrisBatchDocumentUploadRequestDto"/> parameter.</param>
-        /// <param name="prefer">Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).</param>
         /// <param name="retryConfig">The retry configuration to use for this operation.</param>
         /// <returns>An awaitable task that returns a <see cref="HrisBatchUploadEmployeeDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="xAccountId"/>, <paramref name="id"/> or <paramref name="hrisBatchDocumentUploadRequestDto"/> is null.</exception>
@@ -3479,7 +3508,6 @@ namespace StackOneHQ.Client
             string xAccountId,
             string id,
             HrisBatchDocumentUploadRequestDto hrisBatchDocumentUploadRequestDto,
-            string? prefer = null,
             RetryConfig? retryConfig = null
         )
         {
@@ -3492,7 +3520,6 @@ namespace StackOneHQ.Client
                 XAccountId = xAccountId,
                 Id = id,
                 HrisBatchDocumentUploadRequestDto = hrisBatchDocumentUploadRequestDto,
-                Prefer = prefer,
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3501,6 +3528,11 @@ namespace StackOneHQ.Client
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
 
             var serializedBody = RequestBodySerializer.Serialize(request, "HrisBatchDocumentUploadRequestDto", "json", false, false);
             if (serializedBody != null)
@@ -3566,9 +3598,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -3973,6 +4005,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
@@ -4031,9 +4068,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -4055,6 +4092,7 @@ namespace StackOneHQ.Client
                 {
                     return null;
                 }
+
                 var nextCursor = nextCursorToken.Value<string>();
                 if (string.IsNullOrWhiteSpace(nextCursor))
                 {
@@ -4491,6 +4529,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             var serializedBody = RequestBodySerializer.Serialize(request, "HrisCreateWorkEligibilityRequestDto", "json", false, false);
             if (serializedBody != null)
             {
@@ -4555,9 +4598,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -4962,6 +5005,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
@@ -5020,9 +5068,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -5443,6 +5491,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             var serializedBody = RequestBodySerializer.Serialize(request, "HrisCreateEmploymentRequestDto", "json", false, false);
             if (serializedBody != null)
             {
@@ -5507,9 +5560,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -5914,6 +5967,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
@@ -5972,9 +6030,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -6379,6 +6437,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
@@ -6437,9 +6500,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -6461,6 +6524,7 @@ namespace StackOneHQ.Client
                 {
                     return null;
                 }
+
                 var nextCursor = nextCursorToken.Value<string>();
                 if (string.IsNullOrWhiteSpace(nextCursor))
                 {
@@ -6881,6 +6945,11 @@ namespace StackOneHQ.Client
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
@@ -6939,9 +7008,9 @@ namespace StackOneHQ.Client
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;

@@ -31,5 +31,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("top_k")]
         public double? TopK { get; set; } = 100D;
+
+        /// <summary>
+        /// Minimum similarity score threshold (0-1). Results below this score are filtered out.
+        /// </summary>
+        [JsonProperty("min_similarity")]
+        public double? MinSimilarity { get; set; } = 0.4D;
     }
 }

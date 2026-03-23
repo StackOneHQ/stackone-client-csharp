@@ -29,7 +29,7 @@ CrmListContactCustomFieldDefinitionsRequest req = new CrmListContactCustomFieldD
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new CrmListContactCustomFieldDefinitionsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -95,7 +95,7 @@ CrmGetContactCustomFieldDefinitionRequest req = new CrmGetContactCustomFieldDefi
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new CrmGetContactCustomFieldDefinitionFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

@@ -2,6 +2,17 @@
 
 The unified message type.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = PushMessagesValue.Email;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PushMessagesValue.Of("custom_value");
+```
+
 
 ## Values
 

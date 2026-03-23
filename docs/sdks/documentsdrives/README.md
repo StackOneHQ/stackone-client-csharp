@@ -28,7 +28,7 @@ DocumentsListDrivesRequest req = new DocumentsListDrivesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,url,created_at,updated_at,unified_custom_fields",
     Filter = new DocumentsListDrivesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

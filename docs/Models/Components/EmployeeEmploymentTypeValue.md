@@ -2,6 +2,17 @@
 
 The type of the employment.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = EmployeeEmploymentTypeValue.Contractor;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EmployeeEmploymentTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

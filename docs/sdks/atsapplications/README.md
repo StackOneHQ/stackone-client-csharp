@@ -94,7 +94,7 @@ var res = await sdk.Ats.Applications.CreateAsync(
             },
             Company = "Company Inc.",
             Title = "Software Engineer",
-            HiredAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+            HiredAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
             Country = "United States",
             CustomFields = new List<CustomFields>() {
                 new CustomFields() {
@@ -274,7 +274,7 @@ AtsListApplicationsOffersRequest req = new AtsListApplicationsOffersRequest() {
     Id = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
     Filter = new AtsListApplicationsOffersFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -524,7 +524,7 @@ AtsListApplicationScorecardsRequest req = new AtsListApplicationScorecardsReques
     Id = "<id>",
     Fields = "id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListApplicationScorecardsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -590,7 +590,7 @@ AtsListApplicationsScheduledInterviewsRequest req = new AtsListApplicationsSched
     Id = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields",
     Filter = new AtsListApplicationsScheduledInterviewsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -714,7 +714,6 @@ AtsDownloadApplicationDocumentRequest req = new AtsDownloadApplicationDocumentRe
     SubResourceId = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
-    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ats.Applications.DownloadDocumentAsync(req);

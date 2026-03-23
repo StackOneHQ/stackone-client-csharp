@@ -30,7 +30,7 @@ AtsListOffersRequest req = new AtsListOffersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,application_id,remote_application_id,start_date,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields",
     Filter = new AtsListOffersFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -94,7 +94,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 var res = await sdk.Ats.Offers.CreateAsync(
     xAccountId: "<id>",
     atsCreateOfferRequestDto: new AtsCreateOfferRequestDto() {
-        StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+        StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
         OfferStatus = new AtsCreateOfferRequestDtoOfferStatus() {
             Value = AtsCreateOfferRequestDtoValue.Pending,
             SourceValue = AtsCreateOfferRequestDtoSourceValueUnion.CreateStr(
@@ -103,9 +103,9 @@ var res = await sdk.Ats.Offers.CreateAsync(
         },
         OfferHistory = new List<OfferHistory>() {
             new OfferHistory() {
-                StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-                CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-                UpdatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+                StartDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
             },
         },
         Passthrough = new Dictionary<string, object>() {

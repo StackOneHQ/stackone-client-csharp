@@ -1,5 +1,13 @@
 # TicketingUserActiveEnum
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = TicketingUserActiveEnum.True;
+```
+
 
 ## Values
 

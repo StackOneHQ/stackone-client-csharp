@@ -2,6 +2,17 @@
 
 The category name to associate with the file
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = AtsDocumentsUploadRequestDtoCategoryValue.Resume;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AtsDocumentsUploadRequestDtoCategoryValue.Of("custom_value");
+```
+
 
 ## Values
 

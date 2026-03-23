@@ -2,6 +2,17 @@
 
 The unified value for the type of the time off policy. If the provider does not specify this unit, the value will be set to unmapped_value
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = TimeOffBalancesTypeValue.Sick;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = TimeOffBalancesTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

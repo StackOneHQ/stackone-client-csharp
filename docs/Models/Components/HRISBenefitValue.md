@@ -2,6 +2,17 @@
 
 The type of the benefit
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HRISBenefitValue.RetirementSavings;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HRISBenefitValue.Of("custom_value");
+```
+
 
 ## Values
 

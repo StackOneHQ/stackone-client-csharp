@@ -2,6 +2,17 @@
 
 The unified value for the duration unit. If the provider does not specify this unit, the value will be set to unknown
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = TimeOffPoliciesDurationUnitValue.Minutes;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = TimeOffPoliciesDurationUnitValue.Of("custom_value");
+```
+
 
 ## Values
 

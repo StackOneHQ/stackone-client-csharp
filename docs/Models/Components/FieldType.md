@@ -2,6 +2,17 @@
 
 The type of the field
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = FieldType.ShortText;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = FieldType.Of("custom_value");
+```
+
 
 ## Values
 

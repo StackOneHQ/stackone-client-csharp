@@ -1,5 +1,16 @@
 # EntitySkillsMinimumProficiencyValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = EntitySkillsMinimumProficiencyValue.One;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EntitySkillsMinimumProficiencyValue.Of("custom_value");
+```
+
 
 ## Values
 

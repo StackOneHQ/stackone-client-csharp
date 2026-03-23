@@ -24,6 +24,12 @@ namespace StackOneHQ.Client.Models.Requests
         public DateTime? UpdatedAfter { get; set; } = null;
 
         /// <summary>
+        /// Search if the name of the folder contains the string.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:name=name")]
+        public string? Name { get; set; } = null;
+
+        /// <summary>
         /// Use to only include Folders within the specified Drive.
         /// </summary>
         [SpeakeasyMetadata("queryParam:name=drive_id")]

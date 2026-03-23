@@ -2,6 +2,17 @@
 
 The status of the interview.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = InterviewValue.Unscheduled;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = InterviewValue.Of("custom_value");
+```
+
 
 ## Values
 

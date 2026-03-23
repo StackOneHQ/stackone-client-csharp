@@ -29,7 +29,7 @@ AtsListApplicationDocumentsRequest req = new AtsListApplicationDocumentsRequest(
     Id = "<id>",
     Fields = "id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields",
     Filter = new AtsListApplicationDocumentsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

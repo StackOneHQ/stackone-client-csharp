@@ -1,5 +1,16 @@
 # CreateEmploymentApiModelTypeValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = CreateEmploymentApiModelTypeValue.Contractor;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CreateEmploymentApiModelTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

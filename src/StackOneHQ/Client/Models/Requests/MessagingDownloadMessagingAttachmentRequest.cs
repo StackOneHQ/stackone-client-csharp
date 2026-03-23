@@ -36,11 +36,5 @@ namespace StackOneHQ.Client.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=export_format")]
         public string? ExportFormat { get; set; } = null;
-
-        /// <summary>
-        /// Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240).
-        /// </summary>
-        [SpeakeasyMetadata("header:style=simple,explode=false,name=Prefer")]
-        public string? Prefer { get; set; }
     }
 }

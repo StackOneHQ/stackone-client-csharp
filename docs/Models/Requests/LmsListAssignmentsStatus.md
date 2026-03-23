@@ -2,6 +2,14 @@
 
 Filter to select assignment by status
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Requests;
+
+var value = LmsListAssignmentsStatus.Pending;
+```
+
 
 ## Values
 

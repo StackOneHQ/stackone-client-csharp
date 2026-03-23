@@ -52,7 +52,7 @@ var res = await sdk.Ats.Candidates.CreateAsync(
         },
         Company = "Company Inc.",
         Title = "Software Engineer",
-        HiredAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+        HiredAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
         Country = "United States",
         CustomFields = new List<CustomFields>() {
             new CustomFields() {

@@ -39,5 +39,17 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("steps")]
         public List<GuideStepMeta>? Steps { get; set; } = null;
+
+        /// <summary>
+        /// The scopes for which this section is applicable.
+        /// </summary>
+        [JsonProperty("applicableScopes")]
+        public List<string>? ApplicableScopes { get; set; } = null;
+
+        /// <summary>
+        /// An image for the section.
+        /// </summary>
+        [JsonProperty("image")]
+        public GuideSectionMetaImage? Image { get; set; } = null;
     }
 }

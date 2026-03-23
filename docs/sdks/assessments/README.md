@@ -27,7 +27,7 @@ var sdk = new StackOneHQClient(security: new Security() {
 AtsListAssessmentsPackagesRequest req = new AtsListAssessmentsPackagesRequest() {
     XAccountId = "<id>",
     Filter = new AtsListAssessmentsPackagesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

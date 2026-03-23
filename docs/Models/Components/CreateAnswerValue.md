@@ -2,6 +2,17 @@
 
 The type of the answer.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = CreateAnswerValue.ShortText;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CreateAnswerValue.Of("custom_value");
+```
+
 
 ## Values
 

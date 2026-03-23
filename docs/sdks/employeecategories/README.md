@@ -29,7 +29,7 @@ HrisListEmployeeCategoriesRequest req = new HrisListEmployeeCategoriesRequest() 
     XAccountId = "<id>",
     Fields = "id,remote_id,name,active,unified_custom_fields",
     Filter = new HrisListEmployeeCategoriesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

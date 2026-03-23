@@ -1,5 +1,16 @@
 # CostCenterValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = CostCenterValue.Workspace;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CostCenterValue.Of("custom_value");
+```
+
 
 ## Values
 

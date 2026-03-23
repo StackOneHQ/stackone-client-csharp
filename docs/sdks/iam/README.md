@@ -87,7 +87,7 @@ IamListRolesRequest req = new IamListRolesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields",
     Filter = new IamListRolesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Expand = "policies",
     Prefer = "heartbeat",

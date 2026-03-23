@@ -2,6 +2,17 @@
 
 The type of the national identity number
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeValue.Ssn;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisUpdateEmployeeRequestDtoNationalIdentityNumberTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

@@ -2,6 +2,17 @@
 
 The overall recommendation
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = OverallRecommendation.StrongYes;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = OverallRecommendation.Of("custom_value");
+```
+
 
 ## Values
 

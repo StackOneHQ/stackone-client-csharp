@@ -38,7 +38,7 @@ MessagingListConversationsRequest req = new MessagingListConversationsRequest() 
     XAccountId = "<id>",
     Fields = "id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields",
     Filter = new MessagingListConversationsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -226,7 +226,6 @@ MessagingDownloadMessagingAttachmentRequest req = new MessagingDownloadMessaging
     SubResourceId = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
-    Prefer = "heartbeat",
 };
 
 var res = await sdk.Messaging.DownloadMessagingAttachmentAsync(req);
@@ -285,7 +284,7 @@ MessagingListAttachmentsRequest req = new MessagingListAttachmentsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,file_name,file_size,file_type,unified_custom_fields",
     Filter = new MessagingListAttachmentsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -408,7 +407,7 @@ MessagingListUsersRequest req = new MessagingListUsersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields",
     Filter = new MessagingListUsersFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -531,7 +530,7 @@ MessagingListConversationMessagesRequest req = new MessagingListConversationMess
     Id = "<id>",
     Fields = "id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields",
     Filter = new MessagingListConversationMessagesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

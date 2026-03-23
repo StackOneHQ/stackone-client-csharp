@@ -2,6 +2,17 @@
 
 ISO 4217 currency code
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HRISBankDetailsCurrencyCodeValue.Aed;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HRISBankDetailsCurrencyCodeValue.Of("custom_value");
+```
+
 
 ## Values
 

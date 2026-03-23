@@ -1,5 +1,16 @@
 # HrisCreateTimeOffRequestDtoTypeValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisCreateTimeOffRequestDtoTypeValue.Sick;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisCreateTimeOffRequestDtoTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

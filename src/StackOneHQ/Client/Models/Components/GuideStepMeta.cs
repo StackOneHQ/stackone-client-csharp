@@ -10,6 +10,7 @@
 namespace StackOneHQ.Client.Models.Components
 {
     using Newtonsoft.Json;
+    using StackOneHQ.Client.Models.Components;
     using StackOneHQ.Client.Utils;
     using System.Collections.Generic;
 
@@ -32,5 +33,23 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("list")]
         public List<string>? List { get; set; } = null;
+
+        /// <summary>
+        /// When true, the step should display scopes.
+        /// </summary>
+        [JsonProperty("displayScopes")]
+        public bool? DisplayScopes { get; set; } = null;
+
+        /// <summary>
+        /// The scopes for which this step is applicable.
+        /// </summary>
+        [JsonProperty("applicableScopes")]
+        public List<string>? ApplicableScopes { get; set; } = null;
+
+        /// <summary>
+        /// An image for the step.
+        /// </summary>
+        [JsonProperty("image")]
+        public GuideStepMetaImage? Image { get; set; } = null;
     }
 }

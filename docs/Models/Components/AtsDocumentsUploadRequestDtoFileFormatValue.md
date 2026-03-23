@@ -2,6 +2,17 @@
 
 The file format of the file, expressed as a file extension
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = AtsDocumentsUploadRequestDtoFileFormatValue.UnmappedValue;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AtsDocumentsUploadRequestDtoFileFormatValue.Of("custom_value");
+```
+
 
 ## Values
 

@@ -2,6 +2,17 @@
 
 The status of the application.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = AtsCreateBackgroundCheckOrderRequestDtoValue.Active;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AtsCreateBackgroundCheckOrderRequestDtoValue.Of("custom_value");
+```
+
 
 ## Values
 

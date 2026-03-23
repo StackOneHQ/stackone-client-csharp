@@ -39,8 +39,8 @@ var res = await sdk.Lms.Assignments.CreateAsync(
         },
         LearningObjectId = "e3gd34-23tr21-er234-345er56",
         Progress = 40D,
-        AssignedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
-        DueDate = System.DateTime.Parse("2021-07-21T14:00:00.000Z"),
+        AssignedAt = System.DateTime.Parse("2021-07-21T14:00:00.000Z").ToUniversalTime(),
+        DueDate = System.DateTime.Parse("2021-07-21T14:00:00.000Z").ToUniversalTime(),
         Status = new LmsCreateAssignmentRequestDtoStatus() {
             Value = LmsCreateAssignmentRequestDtoValue.InProgress,
         },
@@ -109,7 +109,7 @@ LmsListAssignmentsRequest req = new LmsListAssignmentsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,assigned_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,certificate_url,result,completed_at,unified_custom_fields",
     Filter = new LmsListAssignmentsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     UserId = "c28xyrc55866bvuv",
     RemoteUserId = "e3cb75bf-aa84-466e-a6c1-b8322b257a48",

@@ -63,5 +63,8 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("type")]
         public LinkedAccountType? Type { get; set; } = null;
+
+        [JsonProperty("shared")]
+        public bool? Shared { get; set; } = null;
     }
 }

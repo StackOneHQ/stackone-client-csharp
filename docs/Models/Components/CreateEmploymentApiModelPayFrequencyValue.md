@@ -2,6 +2,17 @@
 
 The pay frequency of the job postings.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = CreateEmploymentApiModelPayFrequencyValue.Hourly;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CreateEmploymentApiModelPayFrequencyValue.Of("custom_value");
+```
+
 
 ## Values
 

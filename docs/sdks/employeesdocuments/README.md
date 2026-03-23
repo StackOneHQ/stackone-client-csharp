@@ -29,7 +29,6 @@ HrisDownloadEmployeeDocumentRequest req = new HrisDownloadEmployeeDocumentReques
     SubResourceId = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
-    Prefer = "heartbeat",
 };
 
 var res = await sdk.Hris.Employees.Documents.DownloadAsync(req);

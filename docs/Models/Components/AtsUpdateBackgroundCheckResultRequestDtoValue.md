@@ -2,6 +2,17 @@
 
 The result of the test.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = AtsUpdateBackgroundCheckResultRequestDtoValue.Initiated;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AtsUpdateBackgroundCheckResultRequestDtoValue.Of("custom_value");
+```
+
 
 ## Values
 

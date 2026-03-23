@@ -2,6 +2,17 @@
 
 The status of the job.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = AtsUpdateJobRequestDtoValue.Published;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AtsUpdateJobRequestDtoValue.Of("custom_value");
+```
+
 
 ## Values
 

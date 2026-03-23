@@ -2,6 +2,17 @@
 
 The type of the questions.
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = QuestionTypeValue.ShortText;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = QuestionTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

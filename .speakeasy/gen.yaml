@@ -14,6 +14,7 @@ generation:
     securityFeb2025: true
     sharedErrorComponentsApr2025: true
     sharedNestedComponentsJan2026: false
+    nameOverrideFeb2026: false
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
@@ -29,7 +30,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.9.2
+  version: 0.9.3
   additionalDependencies: []
   author: stackone
   baseErrorName: StackOneError
@@ -38,6 +39,7 @@ csharp:
   disableNamespacePascalCasingApr2024: true
   dotnetVersion: net8.0
   enableCancellationToken: false
+  enableFormatting: false
   enableSourceLink: true
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first

@@ -29,7 +29,7 @@ TicketingListCommentsRequest req = new TicketingListCommentsRequest() {
     Id = "<id>",
     Fields = "id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at,unified_custom_fields",
     Filter = new TicketingListCommentsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

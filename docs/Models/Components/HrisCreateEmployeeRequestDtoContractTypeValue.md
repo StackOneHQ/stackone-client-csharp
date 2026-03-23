@@ -1,5 +1,16 @@
 # HrisCreateEmployeeRequestDtoContractTypeValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisCreateEmployeeRequestDtoContractTypeValue.FullTime;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisCreateEmployeeRequestDtoContractTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

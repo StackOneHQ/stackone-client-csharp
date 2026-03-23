@@ -20,7 +20,17 @@ namespace StackOneHQ.Client
     using System.Net.Http;
     using System.Threading.Tasks;
     /// <summary>
-    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING.
+    /// Accounting: The documentation for the StackOne API<br/>
+    /// The documentation for the StackOne Unified API - HRIS<br/>
+    /// The documentation for the StackOne Unified API - ATS<br/>
+    /// The documentation for the StackOne Unified API - CRM<br/>
+    /// The documentation for the StackOne Unified API - IAM<br/>
+    /// The documentation for the StackOne Unified API - MARKETING<br/>
+    /// The documentation for the StackOne Unified API - LMS<br/>
+    /// The documentation for the StackOne Unified API - TICKETING<br/>
+    /// The documentation for the StackOne Unified API - DOCUMENTS<br/>
+    /// The documentation for the StackOne Unified API - MESSAGING<br/>
+    /// The documentation for the StackOne Unified API - ACCOUNTING.
     /// </summary>
     public interface IStackOneHQClient
     {
@@ -88,7 +98,17 @@ namespace StackOneHQ.Client
     }
 
     /// <summary>
-    /// Accounting: The documentation for the StackOne Unified API - ACCOUNTING.
+    /// Accounting: The documentation for the StackOne API<br/>
+    /// The documentation for the StackOne Unified API - HRIS<br/>
+    /// The documentation for the StackOne Unified API - ATS<br/>
+    /// The documentation for the StackOne Unified API - CRM<br/>
+    /// The documentation for the StackOne Unified API - IAM<br/>
+    /// The documentation for the StackOne Unified API - MARKETING<br/>
+    /// The documentation for the StackOne Unified API - LMS<br/>
+    /// The documentation for the StackOne Unified API - TICKETING<br/>
+    /// The documentation for the StackOne Unified API - DOCUMENTS<br/>
+    /// The documentation for the StackOne Unified API - MESSAGING<br/>
+    /// The documentation for the StackOne Unified API - ACCOUNTING.
     /// </summary>
     public class StackOneHQClient: IStackOneHQClient
     {

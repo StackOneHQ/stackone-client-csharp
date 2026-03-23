@@ -60,5 +60,8 @@ namespace StackOneHQ.Client.Models.Components
 
         [JsonProperty("integration_id")]
         public string? IntegrationId { get; set; } = null;
+
+        [JsonProperty("shared")]
+        public bool? Shared { get; set; } = null;
     }
 }

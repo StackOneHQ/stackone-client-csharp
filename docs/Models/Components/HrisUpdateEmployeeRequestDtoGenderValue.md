@@ -1,5 +1,16 @@
 # HrisUpdateEmployeeRequestDtoGenderValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisUpdateEmployeeRequestDtoGenderValue.Male;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisUpdateEmployeeRequestDtoGenderValue.Of("custom_value");
+```
+
 
 ## Values
 

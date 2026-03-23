@@ -180,7 +180,7 @@ CrmListAccountsRequest req = new CrmListAccountsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields",
     Filter = new CrmListAccountsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

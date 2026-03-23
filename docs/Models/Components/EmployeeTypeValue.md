@@ -2,6 +2,17 @@
 
 The type of the national identity number
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = EmployeeTypeValue.Ssn;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EmployeeTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # IsRootEnum
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = IsRootEnum.True;
+```
+
 
 ## Values
 

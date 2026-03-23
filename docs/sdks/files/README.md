@@ -30,7 +30,6 @@ DocumentsDownloadFileRequest req = new DocumentsDownloadFileRequest() {
     Id = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
-    Prefer = "heartbeat",
 };
 
 var res = await sdk.Documents.Files.DownloadAsync(req);
@@ -88,10 +87,10 @@ DocumentsListFilesRequest req = new DocumentsListFilesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields",
     Filter = new DocumentsListFilesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
         Name = "john_doe_resume.pdf",
         Content = "FAQ of the project",
-        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        CreatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
         DriveId = "1234567890",
         FolderId = "1234567890",
     },

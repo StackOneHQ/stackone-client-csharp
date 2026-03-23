@@ -218,6 +218,7 @@ ActionsRpcRequestDto req = new ActionsRpcRequestDto() {
     Body = new Dictionary<string, object>() {
         { "data", "example" },
     },
+    DefenderEnabled = true,
 };
 
 var res = await sdk.Actions.RpcActionAsync(req);

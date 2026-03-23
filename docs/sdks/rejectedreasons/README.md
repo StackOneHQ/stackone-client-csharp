@@ -29,7 +29,7 @@ AtsListRejectedReasonsRequest req = new AtsListRejectedReasonsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,label,type,rejected_reason_type,unified_custom_fields",
     Filter = new AtsListRejectedReasonsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

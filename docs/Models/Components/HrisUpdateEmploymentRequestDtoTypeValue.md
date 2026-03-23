@@ -1,5 +1,16 @@
 # HrisUpdateEmploymentRequestDtoTypeValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisUpdateEmploymentRequestDtoTypeValue.Contractor;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisUpdateEmploymentRequestDtoTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

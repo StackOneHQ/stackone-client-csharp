@@ -1,5 +1,16 @@
 # IamGroupValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = IamGroupValue.Workspace;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = IamGroupValue.Of("custom_value");
+```
+
 
 ## Values
 

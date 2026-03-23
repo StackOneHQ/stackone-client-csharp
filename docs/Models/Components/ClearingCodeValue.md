@@ -2,6 +2,17 @@
 
 The type of clearing code
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = ClearingCodeValue.SortCode;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ClearingCodeValue.Of("custom_value");
+```
+
 
 ## Values
 

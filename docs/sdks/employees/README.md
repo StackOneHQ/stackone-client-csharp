@@ -41,7 +41,7 @@ HrisListEmployeeCustomFieldDefinitionsRequest req = new HrisListEmployeeCustomFi
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,type,options,unified_custom_fields",
     Filter = new HrisListEmployeeCustomFieldDefinitionsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -106,7 +106,7 @@ HrisListEmployeesRequest req = new HrisListEmployeesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,title,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,bank_details,skills,unified_custom_fields",
     Filter = new HrisListEmployeesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Expand = "company,employments,work_location,home_location,groups,skills",
     Include = "avatar_url,avatar,custom_fields,job_description,benefits,bank_details",
@@ -192,14 +192,14 @@ var res = await sdk.Hris.Employees.CreateAsync(
             Value = HrisCreateEmployeeRequestDtoPreferredLanguageValue.Eng,
         },
         Ethnicity = new HrisCreateEmployeeRequestDtoEthnicity() {},
-        DateOfBirth = System.DateTime.Parse("1990-01-01T00:00:00.000Z"),
-        Birthday = System.DateTime.Parse("2021-01-01T00:00:00Z"),
+        DateOfBirth = System.DateTime.Parse("1990-01-01T00:00:00.000Z").ToUniversalTime(),
+        Birthday = System.DateTime.Parse("2021-01-01T00:00:00Z").ToUniversalTime(),
         MaritalStatus = new HrisCreateEmployeeRequestDtoMaritalStatus() {},
         Avatar = new HrisCreateEmployeeRequestDtoAvatar() {},
-        HireDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
-        StartDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
+        HireDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
+        StartDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
         EmploymentStatus = new HrisCreateEmployeeRequestDtoEmploymentStatus() {},
-        TerminationDate = System.DateTime.Parse("2021-01-01T00:00:00Z"),
+        TerminationDate = System.DateTime.Parse("2021-01-01T00:00:00Z").ToUniversalTime(),
         CompanyId = "1234567890",
         Citizenships = new List<CountryCodeEnum>() {
             new CountryCodeEnum() {
@@ -225,8 +225,8 @@ var res = await sdk.Hris.Employees.CreateAsync(
                 Name = "Health Insurance",
                 Provider = "Aetna",
                 Description = "Health insurance for employees",
-                CreatedAt = System.DateTime.Parse("2021-01-01T00:00:00Z"),
-                UpdatedAt = System.DateTime.Parse("2021-01-01T00:00:00Z"),
+                CreatedAt = System.DateTime.Parse("2021-01-01T00:00:00Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2021-01-01T00:00:00Z").ToUniversalTime(),
             },
         },
         EmployeeNumber = "125",
@@ -347,14 +347,14 @@ var res = await sdk.Hris.Employees.UpdateAsync(
             Value = HrisUpdateEmployeeRequestDtoPreferredLanguageValue.Eng,
         },
         Ethnicity = new HrisUpdateEmployeeRequestDtoEthnicity() {},
-        DateOfBirth = System.DateTime.Parse("1990-01-01T00:00:00.000Z"),
-        Birthday = System.DateTime.Parse("2021-01-01T00:00:00Z"),
+        DateOfBirth = System.DateTime.Parse("1990-01-01T00:00:00.000Z").ToUniversalTime(),
+        Birthday = System.DateTime.Parse("2021-01-01T00:00:00Z").ToUniversalTime(),
         MaritalStatus = new HrisUpdateEmployeeRequestDtoMaritalStatus() {},
         Avatar = new HrisUpdateEmployeeRequestDtoAvatar() {},
-        HireDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
-        StartDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
+        HireDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
+        StartDate = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
         EmploymentStatus = new HrisUpdateEmployeeRequestDtoEmploymentStatus() {},
-        TerminationDate = System.DateTime.Parse("2021-01-01T00:00:00Z"),
+        TerminationDate = System.DateTime.Parse("2021-01-01T00:00:00Z").ToUniversalTime(),
         CompanyId = "1234567890",
         Citizenships = new List<CountryCodeEnum>() {
             new CountryCodeEnum() {
@@ -641,8 +641,7 @@ var res = await sdk.Hris.Employees.BatchUploadDocumentAsync(
                 Category = new HrisDocumentsUploadRequestDtoCategory() {},
             },
         },
-    },
-    prefer: "heartbeat"
+    }
 );
 
 // handle response
@@ -650,12 +649,11 @@ var res = await sdk.Hris.Employees.BatchUploadDocumentAsync(
 
 ### Parameters
 
-| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `XAccountId`                                                                                                                                                             | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | The account identifier                                                                                                                                                   |                                                                                                                                                                          |
-| `Id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
-| `HrisBatchDocumentUploadRequestDto`                                                                                                                                      | [HrisBatchDocumentUploadRequestDto](../../Models/Components/HrisBatchDocumentUploadRequestDto.md)                                                                        | :heavy_check_mark:                                                                                                                                                       | N/A                                                                                                                                                                      |                                                                                                                                                                          |
-| `Prefer`                                                                                                                                                                 | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240) | heartbeat                                                                                                                                                                |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `XAccountId`                                                                                      | *string*                                                                                          | :heavy_check_mark:                                                                                | The account identifier                                                                            |
+| `Id`                                                                                              | *string*                                                                                          | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `HrisBatchDocumentUploadRequestDto`                                                               | [HrisBatchDocumentUploadRequestDto](../../Models/Components/HrisBatchDocumentUploadRequestDto.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |
 
 ### Response
 
@@ -701,7 +699,7 @@ HrisListEmployeeWorkEligibilityRequest req = new HrisListEmployeeWorkEligibility
     Id = "<id>",
     Fields = "id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number,unified_custom_fields",
     Filter = new HrisListEmployeeWorkEligibilityFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     XAccountId = "<id>",
     Prefer = "heartbeat",
@@ -773,8 +771,8 @@ var res = await sdk.Hris.Employees.CreateWorkEligibilityRequestAsync(
             Name = "My Document",
             Category = new HrisCreateWorkEligibilityRequestDtoCategory() {},
             CategoryId = "6530",
-            CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-            UpdatedAt = System.DateTime.Parse("2021-01-02T01:01:01.000Z"),
+            CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2021-01-02T01:01:01.000Z").ToUniversalTime(),
             RemoteUrl = "https://example.com/file.pdf",
             FileFormat = null,
         },
@@ -784,8 +782,8 @@ var res = await sdk.Hris.Employees.CreateWorkEligibilityRequestAsync(
         Number = "1234567890",
         SubType = "H1B",
         Type = new HrisCreateWorkEligibilityRequestDtoType() {},
-        ValidFrom = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
-        ValidTo = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
+        ValidFrom = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
+        ValidTo = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },
@@ -926,8 +924,8 @@ var res = await sdk.Hris.Employees.CreateEmploymentAsync(
             ),
         },
         PayCurrency = "USD",
-        EffectiveDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-        EndDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+        EffectiveDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+        EndDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
         Grade = new HrisCreateEmploymentRequestDtoGrade() {
             Id = "1687-3",
             RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",
@@ -1077,7 +1075,7 @@ HrisListEmployeeTimeOffPoliciesRequest req = new HrisListEmployeeTimeOffPolicies
     Id = "<id>",
     Fields = "id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields",
     Filter = new HrisListEmployeeTimeOffPoliciesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

@@ -29,7 +29,7 @@ CrmListContactsRequest req = new CrmListContactsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at,unified_custom_fields",
     Filter = new CrmListContactsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Include = "custom_fields",
     Prefer = "heartbeat",

@@ -2,6 +2,17 @@
 
 The type of the national identity number
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = NationalIdentityNumberApiModelTypeValue.Ssn;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = NationalIdentityNumberApiModelTypeValue.Of("custom_value");
+```
+
 
 ## Values
 

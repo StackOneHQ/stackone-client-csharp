@@ -1,5 +1,13 @@
 # FoldersHasContentEnum
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = FoldersHasContentEnum.True;
+```
+
 
 ## Values
 

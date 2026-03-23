@@ -28,7 +28,7 @@ TicketingListUsersRequest req = new TicketingListUsersRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at,unified_custom_fields",
     Filter = new TicketingListUsersFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

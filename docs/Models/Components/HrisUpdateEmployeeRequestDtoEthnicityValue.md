@@ -1,5 +1,16 @@
 # HrisUpdateEmployeeRequestDtoEthnicityValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisUpdateEmployeeRequestDtoEthnicityValue.White;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisUpdateEmployeeRequestDtoEthnicityValue.Of("custom_value");
+```
+
 
 ## Values
 

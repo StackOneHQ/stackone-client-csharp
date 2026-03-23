@@ -2,6 +2,17 @@
 
 The unified value for the status of the task. If the provider does not specify this status, the value will be set to UnmappedValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = TaskStatusValue.Open;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = TaskStatusValue.Of("custom_value");
+```
+
 
 ## Values
 

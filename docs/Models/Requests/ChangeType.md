@@ -2,6 +2,14 @@
 
 Filter by the type of change that occurred to the application
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Requests;
+
+var value = ChangeType.ApplicationStatus;
+```
+
 
 ## Values
 

@@ -37,8 +37,8 @@ HrisUpdateEmployeeWorkEligibilityRequestRequest req = new HrisUpdateEmployeeWork
             Name = "My Document",
             Category = new HrisCreateWorkEligibilityRequestDtoCategory() {},
             CategoryId = "6530",
-            CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-            UpdatedAt = System.DateTime.Parse("2021-01-02T01:01:01.000Z"),
+            CreatedAt = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2021-01-02T01:01:01.000Z").ToUniversalTime(),
             RemoteUrl = "https://example.com/file.pdf",
             FileFormat = new HrisCreateWorkEligibilityRequestDtoFileFormat() {
                 Value = HrisCreateWorkEligibilityRequestDtoDocumentValue.Pdf,
@@ -53,8 +53,8 @@ HrisUpdateEmployeeWorkEligibilityRequestRequest req = new HrisUpdateEmployeeWork
         Number = "1234567890",
         SubType = "H1B",
         Type = new HrisCreateWorkEligibilityRequestDtoType() {},
-        ValidFrom = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
-        ValidTo = System.DateTime.Parse("2021-01-01T00:00:00.000Z"),
+        ValidFrom = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
+        ValidTo = System.DateTime.Parse("2021-01-01T00:00:00.000Z").ToUniversalTime(),
         Passthrough = new Dictionary<string, object>() {
             { "other_known_names", "John Doe" },
         },

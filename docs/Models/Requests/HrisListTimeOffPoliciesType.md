@@ -2,6 +2,14 @@
 
 Filter to select time-off policies by type
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Requests;
+
+var value = HrisListTimeOffPoliciesType.Sick;
+```
+
 
 ## Values
 

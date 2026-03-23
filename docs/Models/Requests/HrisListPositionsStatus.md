@@ -2,6 +2,14 @@
 
 Filter positions by status
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Requests;
+
+var value = HrisListPositionsStatus.Open;
+```
+
 
 ## Values
 

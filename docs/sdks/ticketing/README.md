@@ -94,7 +94,6 @@ TicketingDownloadTicketingAttachmentRequest req = new TicketingDownloadTicketing
     SubResourceId = "<id>",
     Format = "base64",
     ExportFormat = "text/plain",
-    Prefer = "heartbeat",
 };
 
 var res = await sdk.Ticketing.DownloadAttachmentAsync(req);
@@ -152,7 +151,7 @@ TicketingListTicketTypesRequest req = new TicketingListTicketTypesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,project_id,remote_project_id,unified_custom_fields",
     Filter = new TicketingListTicketTypesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -274,7 +273,7 @@ TicketingListProjectsRequest req = new TicketingListProjectsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields",
     Filter = new TicketingListProjectsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -518,7 +517,7 @@ TicketingListProjectTicketTypesRequest req = new TicketingListProjectTicketTypes
     Id = "<id>",
     Fields = "id,remote_id,name,project_id,remote_project_id,unified_custom_fields",
     Filter = new TicketingListProjectTicketTypesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

@@ -30,7 +30,7 @@ HrisListEmployeeEmploymentsRequest req = new HrisListEmployeeEmploymentsRequest(
     Id = "<id>",
     Fields = "id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields",
     Filter = new HrisListEmployeeEmploymentsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Expand = "groups",
     Prefer = "heartbeat",
@@ -118,8 +118,8 @@ HrisUpdateEmployeeEmploymentRequest req = new HrisUpdateEmployeeEmploymentReques
             ),
         },
         PayCurrency = "USD",
-        EffectiveDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
-        EndDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z"),
+        EffectiveDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
+        EndDate = System.DateTime.Parse("2021-01-01T01:01:01.000Z").ToUniversalTime(),
         Grade = new HrisUpdateEmploymentRequestDtoGrade() {
             Id = "1687-3",
             RemoteId = "8187e5da-dc77-475e-9949-af0f1fa4e4e3",

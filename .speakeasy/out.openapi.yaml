@@ -2999,11 +2999,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: getCompanies
       x-speakeasy-pagination:
@@ -3014,6 +3009,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/companies/{id}:
     get:
       operationId: hris_get_company
@@ -3150,13 +3150,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getCompany
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getCompany
   /unified/hris/custom_field_definitions/employees:
     get:
       operationId: hris_list_employee_custom_field_definitions
@@ -3337,11 +3337,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.employees
       x-speakeasy-name-override: listCustomFieldDefinitions
       x-speakeasy-pagination:
@@ -3352,6 +3347,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/custom_field_definitions/employees/{id}:
     get:
       operationId: hris_get_employee_custom_field_definition
@@ -3537,13 +3537,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getEmployeeCustomFieldDefinition
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getEmployeeCustomFieldDefinition
   /unified/hris/employees:
     get:
       operationId: hris_list_employees
@@ -3748,9 +3748,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-usage-example:
-        title: List Employees
-        position: 1
       x-speakeasy-group: hris.employees
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -3766,6 +3763,9 @@ paths:
           - 429
           - 408
         strategy: backoff
+      x-speakeasy-usage-example:
+        title: List Employees
+        position: 1
     post:
       operationId: hris_create_employee
       summary: Create Employee
@@ -3877,13 +3877,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: create
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: create
   /unified/hris/employees/{id}:
     get:
       operationId: hris_get_employee
@@ -4036,13 +4036,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getEmployee
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getEmployee
     patch:
       operationId: hris_update_employee
       summary: Update Employee
@@ -4159,13 +4159,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: update
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: update
   /unified/hris/employees/{id}/invite:
     post:
       operationId: hris_invite_employee
@@ -4283,13 +4283,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: invite
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: invite
   /unified/hris/employees/{id}/shifts:
     get:
       operationId: hris_list_employee_shifts
@@ -4495,11 +4495,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: list_employee_shifts
       x-speakeasy-pagination:
@@ -4510,6 +4505,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/employees/{id}/shifts/{subResourceId}:
     get:
       operationId: hris_get_employee_shift
@@ -4651,13 +4651,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: get_employee_shift
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: get_employee_shift
   /unified/hris/employees/{id}/time_off:
     get:
       operationId: hris_list_employee_time_off_requests
@@ -4873,11 +4873,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listEmployeeTimeOffRequests
       x-speakeasy-pagination:
@@ -4888,6 +4883,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: hris_create_employee_time_off_request
       summary: Create Employee Time Off Request
@@ -5005,13 +5005,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: createTimeOff
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-name-override: createTimeOff
-      x-speakeasy-group: hris.employees
   /unified/hris/employees/{id}/time_off/{subResourceId}:
     get:
       operationId: hris_get_employees_time_off_request
@@ -5162,13 +5162,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getEmployeeTimeOffRequest
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getEmployeeTimeOffRequest
     patch:
       operationId: hris_update_employee_time_off_request
       summary: Update Employee Time Off Request
@@ -5291,13 +5291,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: updateEmployeeTimeOffRequest
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: updateEmployeeTimeOffRequest
     delete:
       operationId: hris_cancel_employee_time_off_request
       summary: Cancel Employee Time Off Request
@@ -5416,13 +5416,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: cancelEmployeeTimeOff
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: cancelEmployeeTimeOff
   /unified/hris/employees/{id}/documents/upload/batch:
     post:
       operationId: hris_batch_upload_employee_document
@@ -5444,13 +5444,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       requestBody:
         content:
           application/json:
@@ -5541,13 +5534,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: batchUploadDocument
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: batchUploadDocument
   /unified/hris/employees/{id}/documents/upload:
     post:
       operationId: hris_upload_employee_document
@@ -5569,13 +5562,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       requestBody:
         content:
           application/json:
@@ -5666,13 +5652,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: uploadEmployeeDocument
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: uploadEmployeeDocument
   /unified/hris/employees/{id}/documents/{subResourceId}/download:
     get:
       operationId: hris_download_employee_document
@@ -5715,13 +5701,6 @@ paths:
             type: string
             nullable: true
             example: text/plain
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       responses:
         "200":
           description: The document related to the employee with the given identifiers was retrieved.
@@ -5917,13 +5896,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees.documents
+      x-speakeasy-name-override: download
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees.documents
-      x-speakeasy-name-override: download
   /unified/hris/employees/{id}/documents:
     get:
       operationId: hris_list_employee_documents
@@ -6110,11 +6089,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listEmployeeDocuments
       x-speakeasy-pagination:
@@ -6125,6 +6099,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/employees/{id}/documents/{subResourceId}:
     get:
       operationId: hris_get_employee_document
@@ -6267,13 +6246,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getEmployeeDocument
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getEmployeeDocument
   /unified/hris/documents/employee_categories:
     get:
       operationId: hris_list_employee_categories
@@ -6454,11 +6433,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.documents.employeeCategories
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -6469,6 +6443,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/documents/employee_categories/{id}:
     get:
       operationId: hris_get_employee_document_category
@@ -6605,13 +6584,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.documents.employeeCategories
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.documents.employeeCategories
-      x-speakeasy-name-override: get
   /unified/hris/employees/{id}/work_eligibility:
     get:
       operationId: hris_list_employee_work_eligibility
@@ -6798,11 +6777,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.employees
       x-speakeasy-name-override: workEligibilityList
       x-speakeasy-pagination:
@@ -6813,6 +6787,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: hris_create_employee_work_eligibility_request
       summary: Create Employee Work Eligibility Request
@@ -6930,13 +6909,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: createWorkEligibilityRequest
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: createWorkEligibilityRequest
   /unified/hris/employees/{id}/work_eligibility/{subResourceId}:
     get:
       operationId: hris_get_employees_work_eligibility
@@ -7079,13 +7058,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: getWorkEligibility
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: getWorkEligibility
     patch:
       operationId: hris_update_employee_work_eligibility_request
       summary: Update Employee Work Eligibility Request
@@ -7204,13 +7183,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees.workEligibility
+      x-speakeasy-name-override: updateRequest
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees.workEligibility
-      x-speakeasy-name-override: updateRequest
   /unified/hris/employees/{id}/time_off_balances:
     get:
       operationId: hris_list_employee_time_off_balances
@@ -7412,11 +7391,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listEmployeeTimeOffBalances
       x-speakeasy-pagination:
@@ -7427,6 +7401,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/employees/{id}/time_off_balances/{subResourceId}:
     get:
       operationId: hris_get_employee_time_off_balance
@@ -7577,13 +7556,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getEmployeeTimeOffBalance
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getEmployeeTimeOffBalance
   /unified/hris/employments:
     get:
       operationId: hris_list_employments
@@ -7772,11 +7751,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.employments
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -7787,6 +7761,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/employments/{id}:
     get:
       operationId: hris_get_employment
@@ -7931,13 +7910,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getEmployment
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getEmployment
   /unified/hris/employees/{id}/employments:
     get:
       operationId: hris_list_employee_employments
@@ -8132,11 +8111,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.employees.employments
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -8147,6 +8121,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: hris_create_employee_employment
       summary: Create Employee Employment
@@ -8264,13 +8243,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: createEmployment
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: createEmployment
   /unified/hris/employees/{id}/employments/{subResourceId}:
     get:
       operationId: hris_get_employee_employment
@@ -8421,13 +8400,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: getEmployment
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: getEmployment
     patch:
       operationId: hris_update_employee_employment
       summary: Update Employee Employment
@@ -8550,13 +8529,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees.employments
+      x-speakeasy-name-override: update
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees.employments
-      x-speakeasy-name-override: update
   /unified/hris/groups:
     get:
       operationId: hris_list_groups
@@ -8737,11 +8716,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.groups
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -8752,6 +8726,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/groups/departments:
     get:
       operationId: hris_list_department_groups
@@ -8932,11 +8911,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.groups
       x-speakeasy-name-override: listDepartments
       x-speakeasy-pagination:
@@ -8947,6 +8921,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/groups/cost_centers:
     get:
       operationId: hris_list_cost_center_groups
@@ -9127,11 +9106,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.groups
       x-speakeasy-name-override: listCostCenters
       x-speakeasy-pagination:
@@ -9142,6 +9116,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/groups/teams:
     get:
       operationId: hris_list_team_groups
@@ -9322,11 +9301,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.groups
       x-speakeasy-name-override: listTeams
       x-speakeasy-pagination:
@@ -9337,6 +9311,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/groups/divisions:
     get:
       operationId: hris_list_division_groups
@@ -9517,11 +9496,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.groups
       x-speakeasy-name-override: listDivisions
       x-speakeasy-pagination:
@@ -9532,6 +9506,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/groups/companies:
     get:
       operationId: hris_list_companies_groups
@@ -9712,11 +9691,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.groups.companies
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -9727,6 +9701,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/groups/{id}:
     get:
       operationId: hris_get_group
@@ -9863,13 +9842,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getGroup
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getGroup
   /unified/hris/groups/departments/{id}:
     get:
       operationId: hris_get_department_group
@@ -10006,13 +9985,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.departments
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.departments
-      x-speakeasy-name-override: get
   /unified/hris/groups/cost_centers/{id}:
     get:
       operationId: hris_get_cost_center_group
@@ -10149,13 +10128,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.groups.costCenters
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.groups.costCenters
-      x-speakeasy-name-override: get
   /unified/hris/groups/teams/{id}:
     get:
       operationId: hris_get_team_group
@@ -10292,13 +10271,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getTeamGroup
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getTeamGroup
   /unified/hris/groups/divisions/{id}:
     get:
       operationId: hris_get_division_group
@@ -10435,13 +10414,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.groups.divisions
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.groups.divisions
-      x-speakeasy-name-override: get
   /unified/hris/groups/companies/{id}:
     get:
       operationId: hris_get_company_group
@@ -10578,13 +10557,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.companies
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.companies
-      x-speakeasy-name-override: get
   /unified/hris/jobs:
     get:
       operationId: hris_list_jobs
@@ -10765,11 +10744,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.jobs
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -10780,6 +10754,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/jobs/{id}:
     get:
       operationId: hris_get_job
@@ -10916,13 +10895,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.jobs
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.jobs
-      x-speakeasy-name-override: get
   /unified/hris/locations:
     get:
       operationId: hris_list_locations
@@ -11103,11 +11082,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.locations
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -11118,6 +11092,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/locations/{id}:
     get:
       operationId: hris_get_location
@@ -11254,13 +11233,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getLocation
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getLocation
   /unified/hris/positions:
     get:
       operationId: hris_list_positions
@@ -11456,11 +11435,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listPositions
       x-speakeasy-pagination:
@@ -11471,6 +11445,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/positions/{id}:
     get:
       operationId: hris_get_position
@@ -11606,13 +11585,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getPosition
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getPosition
   /unified/hris/time_entries:
     get:
       operationId: hris_list_time_entries
@@ -11810,11 +11789,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listTimeEntries
       x-speakeasy-pagination:
@@ -11825,6 +11799,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/time_entries/{id}:
     get:
       operationId: hris_get_time_entries
@@ -11961,13 +11940,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getTimeEntry
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getTimeEntry
   /unified/hris/time_off:
     get:
       operationId: hris_list_time_off_requests
@@ -12177,11 +12156,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.timeOff
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -12192,6 +12166,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/time_off/{id}:
     get:
       operationId: hris_get_time_off_request
@@ -12336,13 +12315,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getTimeOffRequest
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getTimeOffRequest
   /unified/hris/shifts:
     get:
       operationId: hris_list_shifts
@@ -12542,11 +12521,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listShifts
       x-speakeasy-pagination:
@@ -12557,6 +12531,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/shifts/{id}:
     get:
       operationId: hris_get_shift
@@ -12692,13 +12671,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.shifts
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.shifts
-      x-speakeasy-name-override: get
   /unified/hris/time_off_types:
     get:
       operationId: hris_list_time_off_types
@@ -12880,11 +12859,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listTimeOffTypes
       x-speakeasy-pagination:
@@ -12895,6 +12869,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/time_off_types/{id}:
     get:
       operationId: hris_get_time_off_type
@@ -13032,13 +13011,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
+      x-speakeasy-group: hris.timeOffTypes
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.timeOffTypes
-      x-speakeasy-name-override: get
   /unified/hris/time_off_policies:
     get:
       operationId: hris_list_time_off_policies
@@ -13248,11 +13227,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listTimeOffPolicies
       x-speakeasy-pagination:
@@ -13263,6 +13237,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/time_off_policies/{id}:
     get:
       operationId: hris_get_time_off_policy
@@ -13399,13 +13378,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getTimeOffPolicy
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getTimeOffPolicy
   /unified/hris/employees/{id}/time_off_policies:
     get:
       operationId: hris_list_employee_time_off_policies
@@ -13621,11 +13600,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.employees
       x-speakeasy-name-override: listTimeOffPolicies
       x-speakeasy-pagination:
@@ -13636,6 +13610,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/benefits:
     get:
       operationId: hris_list_benefits
@@ -13816,11 +13795,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris
       x-speakeasy-name-override: listBenefits
       x-speakeasy-pagination:
@@ -13831,6 +13805,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/benefits/{id}:
     get:
       operationId: hris_get_benefit
@@ -13967,13 +13946,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.benefits
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.benefits
-      x-speakeasy-name-override: get
   /unified/hris/employees/{id}/skills:
     get:
       operationId: hris_list_employee_skills
@@ -14160,11 +14139,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
+      x-speakeasy-group: hris.employees.skills
+      x-speakeasy-name-override: list
       x-speakeasy-pagination:
         type: cursor
         inputs:
@@ -14173,8 +14149,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
-      x-speakeasy-group: hris.employees.skills
-      x-speakeasy-name-override: list
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: hris_create_employee_skill
       summary: Create Employee Skill
@@ -14292,13 +14271,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: createEmployeeSkill
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: createEmployeeSkill
   /unified/hris/employees/{id}/skills/{subResourceId}:
     get:
       operationId: hris_get_employee_skill
@@ -14441,13 +14420,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees
+      x-speakeasy-name-override: getSkill
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees
-      x-speakeasy-name-override: getSkill
   /unified/hris/employees/{id}/tasks:
     get:
       operationId: hris_list_employee_tasks
@@ -14648,11 +14627,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.employees.tasks
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -14663,6 +14637,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/employees/{id}/tasks/{subResourceId}:
     get:
       operationId: hris_get_employee_task
@@ -14813,13 +14792,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getEmployeeTask
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getEmployeeTask
     patch:
       operationId: hris_update_employee_task
       summary: Update Employee Task
@@ -14942,13 +14921,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris.employees.tasks
+      x-speakeasy-name-override: complete
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris.employees.tasks
-      x-speakeasy-name-override: complete
   /unified/hris/tasks:
     get:
       operationId: hris_list_tasks
@@ -15143,11 +15122,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: hris.tasks
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -15158,6 +15132,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/hris/tasks/{id}:
     get:
       operationId: hris_get_task
@@ -15302,13 +15281,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: getTask
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: hris
-      x-speakeasy-name-override: getTask
   /unified/ats/applications:
     get:
       operationId: ats_list_applications
@@ -15541,11 +15520,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: listApplications
       x-speakeasy-pagination:
@@ -15556,6 +15530,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ats_create_application
       summary: Create Application
@@ -15667,13 +15646,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: create
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: create
   /unified/ats/applications/{id}:
     get:
       operationId: ats_get_application
@@ -15826,13 +15805,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: get
     patch:
       operationId: ats_update_application
       summary: Update Application
@@ -15949,13 +15928,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: update
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: update
   /unified/ats/applications/{id}/offers:
     get:
       operationId: ats_list_applications_offers
@@ -16150,11 +16129,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.applications
       x-speakeasy-name-override: listOffers
       x-speakeasy-pagination:
@@ -16165,6 +16139,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/applications/{id}/move:
     post:
       operationId: ats_move_application
@@ -16282,13 +16261,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: move
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: move
   /unified/ats/applications/{id}/reject:
     post:
       operationId: ats_reject_application
@@ -16406,13 +16385,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: reject
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: reject
   /unified/ats/applications/{id}/offers/{subResourceId}:
     get:
       operationId: ats_get_application_offer
@@ -16555,13 +16534,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: getOffer
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: getOffer
   /unified/ats/applications/{id}/scorecards:
     get:
       operationId: ats_list_application_scorecards
@@ -16756,11 +16735,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.applications
       x-speakeasy-name-override: scorecardsList
       x-speakeasy-pagination:
@@ -16771,6 +16745,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/applications/{id}/scorecards/{subResourceId}:
     get:
       operationId: ats_get_application_scorecard
@@ -16912,13 +16891,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: applications
+      x-speakeasy-name-override: getScorecard
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: applications
-      x-speakeasy-name-override: getScorecard
   /unified/ats/applications/{id}/changes:
     get:
       operationId: ats_list_application_changes
@@ -17096,11 +17075,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: getApplicationChanges
       x-speakeasy-pagination:
@@ -17111,6 +17085,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/applications/{id}/notes:
     get:
       operationId: ats_list_application_notes
@@ -17305,11 +17284,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: listApplicationNotes
       x-speakeasy-pagination:
@@ -17320,6 +17294,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ats_create_application_note
       summary: Create Application Note
@@ -17437,13 +17416,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: createApplicationNote
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: createApplicationNote
   /unified/ats/applications/{id}/notes/{subResourceId}:
     get:
       operationId: ats_get_application_note
@@ -17586,13 +17565,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: getNote
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: getNote
     patch:
       operationId: ats_update_application_note
       summary: Update Application Note
@@ -17715,13 +17694,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: updateNote
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: updateNote
   /unified/ats/applications/{id}/scheduled_interviews:
     get:
       operationId: ats_list_applications_scheduled_interviews
@@ -17916,11 +17895,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.applications
       x-speakeasy-name-override: listScheduledInterviews
       x-speakeasy-pagination:
@@ -17931,6 +17905,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/applications/{id}/scheduled_interviews/{subResourceId}:
     get:
       operationId: ats_get_application_scheduled_interview
@@ -18073,13 +18052,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: getScheduledInterview
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: getScheduledInterview
   /unified/ats/applications/{id}/documents/upload:
     post:
       operationId: ats_upload_application_document
@@ -18101,13 +18080,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       requestBody:
         content:
           application/json:
@@ -18198,13 +18170,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: documentsUpload
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-name-override: documentsUpload
-      x-speakeasy-group: ats
   /unified/ats/applications/{id}/documents/{subResourceId}/download:
     get:
       operationId: ats_download_application_document
@@ -18247,13 +18219,6 @@ paths:
             type: string
             nullable: true
             example: text/plain
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       responses:
         "200":
           description: The document related to the application with the given identifiers was retrieved.
@@ -18449,13 +18414,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: downloadDocument
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: downloadDocument
   /unified/ats/applications/{id}/documents:
     get:
       operationId: ats_list_application_documents
@@ -18654,11 +18619,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.applications.documents
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -18669,6 +18629,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/applications/{id}/documents/{subResourceId}:
     get:
       operationId: ats_get_application_document
@@ -18811,13 +18776,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: getDocument
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: getDocument
   /unified/ats/candidates:
     get:
       operationId: ats_list_candidates
@@ -19025,11 +18990,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: listCandidates
       x-speakeasy-pagination:
@@ -19040,6 +19000,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ats_create_candidate
       summary: Create Candidate
@@ -19151,13 +19116,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.candidates
+      x-speakeasy-name-override: create
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.candidates
-      x-speakeasy-name-override: create
   /unified/ats/candidates/{id}:
     get:
       operationId: ats_get_candidate
@@ -19302,13 +19267,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.candidates
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.candidates
-      x-speakeasy-name-override: get
     patch:
       operationId: ats_update_candidate
       summary: Update Candidate
@@ -19425,13 +19390,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: updateCandidate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: updateCandidate
   /unified/ats/candidates/{id}/notes:
     get:
       operationId: ats_list_candidate_notes
@@ -19626,11 +19591,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.candidates.notes
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -19641,6 +19601,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ats_create_candidate_note
       summary: Create Candidate Note
@@ -19758,13 +19723,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: createNote
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: createNote
   /unified/ats/candidates/{id}/notes/{subResourceId}:
     get:
       operationId: ats_get_candidate_note
@@ -19907,13 +19872,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: getCandidateNote
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: getCandidateNote
   /unified/ats/custom_field_definitions/applications:
     get:
       operationId: ats_list_application_custom_field_definitions
@@ -20094,11 +20059,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.applications
       x-speakeasy-name-override: listCustomFieldDefinitions
       x-speakeasy-pagination:
@@ -20109,6 +20069,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/custom_field_definitions/applications/{id}:
     get:
       operationId: ats_get_application_custom_field_definition
@@ -20294,13 +20259,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.applications
+      x-speakeasy-name-override: getCustomFieldDefinition
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.applications
-      x-speakeasy-name-override: getCustomFieldDefinition
   /unified/ats/custom_field_definitions/candidates:
     get:
       operationId: ats_list_candidate_custom_field_definitions
@@ -20481,11 +20446,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.customFieldDefinitions
       x-speakeasy-name-override: listCandidates
       x-speakeasy-pagination:
@@ -20496,6 +20456,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/custom_field_definitions/candidates/{id}:
     get:
       operationId: ats_get_candidate_custom_field_definition
@@ -20681,13 +20646,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.candidates.customFieldDefinitions
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.candidates.customFieldDefinitions
-      x-speakeasy-name-override: get
   /unified/ats/custom_field_definitions/jobs:
     get:
       operationId: ats_list_job_custom_field_definitions
@@ -20868,11 +20833,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: listJobCustomFieldDefinitions
       x-speakeasy-pagination:
@@ -20883,6 +20843,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/custom_field_definitions/jobs/{id}:
     get:
       operationId: ats_get_job_custom_field_definition
@@ -21068,13 +21033,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.customFieldDefinitions
+      x-speakeasy-name-override: getJob
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.customFieldDefinitions
-      x-speakeasy-name-override: getJob
   /unified/ats/departments:
     get:
       operationId: ats_list_departments
@@ -21263,11 +21228,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: getDepartments
       x-speakeasy-pagination:
@@ -21278,6 +21238,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/departments/{id}:
     get:
       operationId: ats_get_department
@@ -21414,13 +21379,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.departments
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.departments
-      x-speakeasy-name-override: get
   /unified/ats/interview_stages:
     get:
       operationId: ats_list_interview_stages
@@ -21610,11 +21575,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.interviewStages
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -21625,6 +21585,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/interview_stages/{id}:
     get:
       operationId: ats_get_interview_stage
@@ -21762,13 +21727,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
+      x-speakeasy-group: ats.interviewStages
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.interviewStages
-      x-speakeasy-name-override: get
   /unified/ats/application_stages:
     get:
       operationId: ats_list_application_stages
@@ -21957,11 +21922,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: list_application_stages
       x-speakeasy-pagination:
@@ -21972,6 +21932,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/application_stages/{id}:
     get:
       operationId: ats_get_application_stage
@@ -22108,13 +22073,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_application_stage
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: get_application_stage
   /unified/ats/interviews:
     get:
       operationId: ats_list_interviews
@@ -22310,11 +22275,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.interviews
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -22325,6 +22285,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/interviews/{id}:
     get:
       operationId: ats_get_interview
@@ -22461,13 +22426,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: interviews
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: interviews
-      x-speakeasy-name-override: get
   /unified/ats/interviews/{id}/notes:
     post:
       operationId: ats_create_interview_note
@@ -22586,13 +22551,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: create_interview_note
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: create_interview_note
   /unified/ats/interviews/{id}/notes/{subResourceId}:
     patch:
       operationId: ats_update_interview_note
@@ -22716,13 +22681,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: update_interview_note
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: update_interview_note
   /unified/ats/jobs:
     get:
       operationId: ats_list_jobs
@@ -22951,11 +22916,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: listJobs
       x-speakeasy-pagination:
@@ -22966,6 +22926,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ats_create_job
       summary: Create Job
@@ -23077,13 +23042,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: createJob
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: createJob
   /unified/ats/jobs/{id}/application_stages:
     get:
       operationId: ats_list_job_application_stages
@@ -23278,11 +23243,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: list_job_application_stages
       x-speakeasy-pagination:
@@ -23293,6 +23253,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/jobs/{id}:
     get:
       operationId: ats_get_job
@@ -23445,13 +23410,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.jobs
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.jobs
-      x-speakeasy-name-override: get
     patch:
       operationId: ats_update_job
       summary: Update Job
@@ -23568,13 +23533,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: updateJob
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: updateJob
   /unified/ats/jobs/{id}/application_stages/{subResourceId}:
     get:
       operationId: ats_get_job_application_stage
@@ -23717,13 +23682,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_job_application_stage
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: get_job_application_stage
   /unified/ats/lists:
     get:
       operationId: ats_list_lists
@@ -23904,11 +23869,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.lists
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -23919,6 +23879,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/lists/{id}:
     get:
       operationId: ats_get_list
@@ -24055,13 +24020,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.lists
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.lists
-      x-speakeasy-name-override: get
   /unified/ats/locations:
     get:
       operationId: ats_list_locations
@@ -24250,11 +24215,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.locations
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -24265,6 +24225,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/locations/{id}:
     get:
       operationId: ats_get_location
@@ -24401,13 +24366,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.locations
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.locations
-      x-speakeasy-name-override: get
   /unified/ats/rejected_reasons:
     get:
       operationId: ats_list_rejected_reasons
@@ -24596,11 +24561,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.rejectedReasons
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -24611,6 +24571,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/rejected_reasons/{id}:
     get:
       operationId: ats_get_rejected_reason
@@ -24747,13 +24712,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.rejectedReasons
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.rejectedReasons
-      x-speakeasy-name-override: get
   /unified/ats/users:
     get:
       operationId: ats_list_users
@@ -24942,11 +24907,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.users
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -24957,6 +24917,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/users/{id}:
     get:
       operationId: ats_get_user
@@ -25093,13 +25058,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: getUser
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: getUser
   /unified/ats/job_postings:
     get:
       operationId: ats_list_job_postings
@@ -25303,11 +25268,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats
       x-speakeasy-name-override: listJobPostings
       x-speakeasy-pagination:
@@ -25318,6 +25278,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/job_postings/{id}:
     get:
       operationId: ats_get_job_posting
@@ -25462,13 +25427,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.jobPostings
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.jobPostings
-      x-speakeasy-name-override: get
   /unified/ats/offers:
     get:
       operationId: ats_list_offers
@@ -25657,11 +25622,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.offers
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -25672,6 +25632,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ats_create_offer
       summary: Create Offer
@@ -25783,13 +25748,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.offers
+      x-speakeasy-name-override: create
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.offers
-      x-speakeasy-name-override: create
   /unified/ats/offers/{id}:
     get:
       operationId: ats_get_offer
@@ -25926,13 +25891,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.offers
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.offers
-      x-speakeasy-name-override: get
   /unified/ats/assessments/packages:
     get:
       operationId: ats_list_assessments_packages
@@ -26109,11 +26074,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.assessments
       x-speakeasy-name-override: packagesList
       x-speakeasy-pagination:
@@ -26124,6 +26084,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/assessments/packages/{id}:
     get:
       operationId: ats_get_assessments_package
@@ -26258,13 +26223,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.assessments.packages
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.assessments.packages
-      x-speakeasy-name-override: get
   /unified/ats/assessments/orders:
     post:
       operationId: ats_order_assessments_request
@@ -26378,13 +26343,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: orderAssessments
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: orderAssessments
   /unified/ats/assessments/orders/{id}/result:
     patch:
       operationId: ats_update_assessments_result
@@ -26503,13 +26468,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: assessmentsUpdateResult
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: assessmentsUpdateResult
   /unified/ats/background_checks/packages:
     get:
       operationId: ats_list_background_check_packages
@@ -26687,11 +26652,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ats.backgroundChecks
       x-speakeasy-name-override: packagesList
       x-speakeasy-pagination:
@@ -26702,6 +26662,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ats_create_background_check_package
       summary: Create Background Check Package
@@ -26814,13 +26779,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.backgroundChecks
+      x-speakeasy-name-override: createPackage
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.backgroundChecks
-      x-speakeasy-name-override: createPackage
   /unified/ats/background_checks/packages/{id}:
     get:
       operationId: ats_get_background_check_package
@@ -26956,13 +26921,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.backgroundChecks.packages
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.backgroundChecks.packages
-      x-speakeasy-name-override: get
     patch:
       operationId: ats_update_background_check_package
       summary: Update Background Check Package
@@ -27080,13 +27045,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: updateBackgroundCheckPackage
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: updateBackgroundCheckPackage
     delete:
       operationId: ats_delete_background_check_package
       summary: Delete Background Check Package
@@ -27198,13 +27163,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: backgroundChecks
+      x-speakeasy-name-override: deletePackage
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: backgroundChecks
-      x-speakeasy-name-override: deletePackage
   /unified/ats/background_checks/orders:
     post:
       operationId: ats_order_background_check_request
@@ -27318,13 +27283,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: orderBackgroundCheck
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: orderBackgroundCheck
   /unified/ats/background_checks/orders/{id}/result:
     patch:
       operationId: ats_update_background_check_result
@@ -27443,13 +27408,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: updateBackgroundCheckResult
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats
-      x-speakeasy-name-override: updateBackgroundCheckResult
   /unified/ats/documents/application_categories:
     get:
       operationId: ats_list_application_document_categories
@@ -27630,12 +27595,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: documents
+      x-speakeasy-name-override: listApplicationCategories
       x-speakeasy-pagination:
         type: cursor
         inputs:
@@ -27644,7 +27605,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
-      x-speakeasy-name-override: listApplicationCategories
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ats/documents/application_categories/{id}:
     get:
       operationId: ats_get_application_document_category
@@ -27781,13 +27746,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ats.documents.applicationCategories
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ats.documents.applicationCategories
-      x-speakeasy-name-override: get
   /unified/crm/contacts:
     get:
       operationId: crm_list_contacts
@@ -27976,11 +27941,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: crm.contacts
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -27991,6 +27951,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: crm_create_contact
       summary: Create Contact
@@ -28102,13 +28067,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: crm.contacts
+      x-speakeasy-name-override: create
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: crm.contacts
-      x-speakeasy-name-override: create
   /unified/crm/contacts/{id}:
     get:
       operationId: crm_get_contact
@@ -28253,13 +28218,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: getContact
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: crm
-      x-speakeasy-name-override: getContact
     patch:
       operationId: crm_update_contact
       summary: Update Contact (early access)
@@ -28376,13 +28341,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: updateContact
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: crm
-      x-speakeasy-name-override: updateContact
   /unified/crm/accounts:
     get:
       operationId: crm_list_accounts
@@ -28563,11 +28528,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: crm
       x-speakeasy-name-override: listAccounts
       x-speakeasy-pagination:
@@ -28578,6 +28538,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/crm/accounts/{id}:
     get:
       operationId: crm_get_account
@@ -28714,13 +28679,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: getAccount
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: crm
-      x-speakeasy-name-override: getAccount
   /unified/crm/lists:
     get:
       operationId: crm_list_lists
@@ -28901,11 +28866,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: crm.lists
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -28916,6 +28876,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/crm/lists/{id}:
     get:
       operationId: crm_get_list
@@ -29052,13 +29017,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: crm.lists
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: crm.lists
-      x-speakeasy-name-override: get
   /unified/crm/custom_field_definitions/contacts:
     get:
       operationId: crm_list_contact_custom_field_definitions
@@ -29239,11 +29204,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: crm.customFieldDefinitions.contacts
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -29254,6 +29214,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/crm/custom_field_definitions/contacts/{id}:
     get:
       operationId: crm_get_contact_custom_field_definition
@@ -29439,13 +29404,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: crm.customFieldDefinitions.contacts
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: crm.customFieldDefinitions.contacts
-      x-speakeasy-name-override: get
   /unified/iam/users:
     get:
       operationId: iam_list_users
@@ -29634,11 +29599,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: iam.users
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -29649,6 +29609,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/iam/users/{id}:
     get:
       operationId: iam_get_user
@@ -29793,13 +29758,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: iam.users
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: iam.users
-      x-speakeasy-name-override: get
     patch:
       operationId: iam_update_user
       summary: Update User
@@ -29916,13 +29881,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: iam.users
+      x-speakeasy-name-override: update
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: iam.users
-      x-speakeasy-name-override: update
     delete:
       operationId: iam_delete_user
       summary: Delete User
@@ -30035,13 +30000,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: iam
+      x-speakeasy-name-override: deleteUser
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: iam
-      x-speakeasy-name-override: deleteUser
   /unified/iam/roles:
     get:
       operationId: iam_list_roles
@@ -30230,11 +30195,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: iam
       x-speakeasy-name-override: listRoles
       x-speakeasy-pagination:
@@ -30245,6 +30205,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/iam/roles/{id}:
     get:
       operationId: iam_get_role
@@ -30389,13 +30354,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: iam
+      x-speakeasy-name-override: getRole
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: iam
-      x-speakeasy-name-override: getRole
   /unified/iam/groups:
     get:
       operationId: iam_list_groups
@@ -30584,11 +30549,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: iam.groups
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -30599,6 +30559,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/iam/groups/{id}:
     get:
       operationId: iam_get_group
@@ -30743,13 +30708,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: iam
+      x-speakeasy-name-override: getGroup
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: iam
-      x-speakeasy-name-override: getGroup
   /unified/iam/policies:
     get:
       operationId: iam_list_policies
@@ -30938,11 +30903,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: iam
       x-speakeasy-name-override: listPolicies
       x-speakeasy-pagination:
@@ -30953,6 +30913,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/iam/policies/{id}:
     get:
       operationId: iam_get_policy
@@ -31097,13 +31062,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: iam.policies
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: iam.policies
-      x-speakeasy-name-override: get
   /unified/marketing/templates/email:
     get:
       operationId: marketing_list_email_templates
@@ -31285,11 +31250,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: marketing
       x-speakeasy-name-override: templatesListEmail
       x-speakeasy-pagination:
@@ -31300,6 +31260,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: marketing_create_email_template
       summary: Create Email Templates
@@ -31412,13 +31377,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: createEmailTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: createEmailTemplate
   /unified/marketing/templates/email/{id}:
     get:
       operationId: marketing_get_email_template
@@ -31556,13 +31521,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: getEmailTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: getEmailTemplate
     patch:
       operationId: marketing_update_email_template
       summary: Update Email Templates
@@ -31680,13 +31645,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: updateEmailTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: updateEmailTemplate
   /unified/marketing/templates/in_app:
     get:
       operationId: marketing_list_in_app_templates
@@ -31868,11 +31833,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: marketing
       x-speakeasy-name-override: templatesListInApp
       x-speakeasy-pagination:
@@ -31883,6 +31843,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: marketing_create_in_app_template
       summary: Create In-App Template
@@ -31995,13 +31960,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: createInAppTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: createInAppTemplate
   /unified/marketing/templates/in_app/{id}:
     get:
       operationId: marketing_get_in_app_template
@@ -32139,13 +32104,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing.templates.inApp
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.templates.inApp
-      x-speakeasy-name-override: get
     patch:
       operationId: marketing_update_in_app_template
       summary: Update In-App Template
@@ -32263,13 +32228,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing.templates.inApp
+      x-speakeasy-name-override: update
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.templates.inApp
-      x-speakeasy-name-override: update
   /unified/marketing/templates/sms:
     get:
       operationId: marketing_list_sms_templates
@@ -32451,11 +32416,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: marketing
       x-speakeasy-name-override: listSmsTemplates
       x-speakeasy-pagination:
@@ -32466,6 +32426,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: marketing_create_sms_template
       summary: Create SMS Template
@@ -32578,13 +32543,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: createSmsTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: createSmsTemplate
   /unified/marketing/templates/sms/{id}:
     get:
       operationId: marketing_get_sms_template
@@ -32722,13 +32687,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing.templates.sms
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.templates.sms
-      x-speakeasy-name-override: get
     patch:
       operationId: marketing_update_sms_template
       summary: Update SMS Template
@@ -32846,13 +32811,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: updateSmsTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: updateSmsTemplate
   /unified/marketing/templates/omni_channel:
     get:
       operationId: marketing_list_omni_channel_templates
@@ -33035,11 +33000,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: marketing
       x-speakeasy-name-override: listOmniChannelTemplates
       x-speakeasy-pagination:
@@ -33050,6 +33010,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: marketing_create_omni_channel_template
       summary: Create Omni-Channel Template
@@ -33163,13 +33128,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
+      x-speakeasy-group: marketing.templates
+      x-speakeasy-name-override: createOmniChannel
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.templates
-      x-speakeasy-name-override: createOmniChannel
   /unified/marketing/templates/omni_channel/{id}:
     get:
       operationId: marketing_get_omni_channel_template
@@ -33308,13 +33273,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: getOmniChannelTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: getOmniChannelTemplate
     patch:
       operationId: marketing_update_omni_channel_template
       summary: Update Omni-Channel Template
@@ -33433,13 +33398,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
       deprecated: true
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: updateOmniChannelTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: updateOmniChannelTemplate
   /unified/marketing/templates/push:
     get:
       operationId: marketing_list_push_templates
@@ -33621,11 +33586,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: marketing
       x-speakeasy-name-override: templatesListPush
       x-speakeasy-pagination:
@@ -33636,6 +33596,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: marketing_create_push_template
       summary: Create Push Template
@@ -33748,13 +33713,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing.templates
+      x-speakeasy-name-override: createPush
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.templates
-      x-speakeasy-name-override: createPush
   /unified/marketing/templates/push/{id}:
     get:
       operationId: marketing_get_push_template
@@ -33892,13 +33857,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing.templates
+      x-speakeasy-name-override: getPush
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.templates
-      x-speakeasy-name-override: getPush
     patch:
       operationId: marketing_update_push_template
       summary: Update Push Template
@@ -34016,13 +33981,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: updatePushTemplate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: updatePushTemplate
   /unified/marketing/campaigns:
     get:
       operationId: marketing_list_campaigns
@@ -34203,11 +34168,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: marketing.campaigns
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -34218,6 +34178,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/marketing/campaigns/{id}:
     get:
       operationId: marketing_get_campaign
@@ -34354,13 +34319,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing.campaigns
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.campaigns
-      x-speakeasy-name-override: get
   /unified/marketing/content_blocks:
     get:
       operationId: marketing_list_content_blocks
@@ -34541,11 +34506,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: marketing
       x-speakeasy-name-override: listContentBlocks
       x-speakeasy-pagination:
@@ -34556,6 +34516,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: marketing_create_content_block
       summary: Create Content Block
@@ -34667,13 +34632,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: createContentBlock
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: createContentBlock
   /unified/marketing/content_blocks/{id}:
     get:
       operationId: marketing_get_content_block
@@ -34810,13 +34775,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: getContentBlock
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing
-      x-speakeasy-name-override: getContentBlock
     patch:
       operationId: marketing_update_content_block
       summary: Update Content Block
@@ -34933,13 +34898,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: marketing.contentBlocks
+      x-speakeasy-name-override: update
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: marketing.contentBlocks
-      x-speakeasy-name-override: update
   /unified/lms/courses:
     get:
       operationId: lms_list_courses
@@ -35133,11 +35098,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: courses
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -35148,6 +35108,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/lms/courses/{id}:
     get:
       operationId: lms_get_course
@@ -35283,13 +35248,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms
+      x-speakeasy-name-override: getCourse
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms
-      x-speakeasy-name-override: getCourse
   /unified/lms/users/{id}/assignments:
     get:
       operationId: lms_list_user_assignments
@@ -35499,11 +35464,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms
       x-speakeasy-name-override: listUserAssignments
       x-speakeasy-pagination:
@@ -35514,6 +35474,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: lms_create_user_assignment
       summary: Create User Assignment
@@ -35632,13 +35597,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms.assignments
+      x-speakeasy-name-override: create
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms.assignments
-      x-speakeasy-name-override: create
   /unified/lms/users/{id}/assignments/{subResourceId}:
     get:
       operationId: lms_get_user_assignment
@@ -35781,13 +35746,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms.usersAssignments
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms.usersAssignments
-      x-speakeasy-name-override: get
   /unified/lms/content/batch:
     post:
       operationId: lms_batch_upsert_content
@@ -35901,13 +35866,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms
+      x-speakeasy-name-override: batchUpsertContent
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms
-      x-speakeasy-name-override: batchUpsertContent
   /unified/lms/content:
     put:
       operationId: lms_upsert_content
@@ -36021,13 +35986,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms.content
+      x-speakeasy-name-override: upsert
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms.content
-      x-speakeasy-name-override: upsert
     get:
       operationId: lms_list_content
       summary: List Content
@@ -36216,11 +36181,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms
       x-speakeasy-name-override: listContent
       x-speakeasy-pagination:
@@ -36231,6 +36191,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/lms/content/{id}:
     get:
       operationId: lms_get_content
@@ -36366,13 +36331,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms.content
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms.content
-      x-speakeasy-name-override: get
   /unified/lms/users/{id}/completions:
     get:
       operationId: lms_list_user_completions
@@ -36556,11 +36521,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms.users
       x-speakeasy-name-override: listCompletions
       x-speakeasy-pagination:
@@ -36571,6 +36531,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: lms_create_user_completion
       summary: Create User Completion
@@ -36689,13 +36654,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms
+      x-speakeasy-name-override: createUserCompletion
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms
-      x-speakeasy-name-override: createUserCompletion
   /unified/lms/users/{id}/completions/{subResourceId}:
     get:
       operationId: lms_get_user_completion
@@ -36838,13 +36803,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms
+      x-speakeasy-name-override: getUserCompletion
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms
-      x-speakeasy-name-override: getUserCompletion
     delete:
       operationId: lms_delete_user_completion
       summary: Delete User Completion
@@ -36964,13 +36929,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms
+      x-speakeasy-name-override: deleteUserCompletion
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms
-      x-speakeasy-name-override: deleteUserCompletion
   /unified/lms/completions:
     get:
       operationId: lms_list_completions
@@ -37152,11 +37117,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms.completions
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -37167,6 +37127,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/lms/completions/{id}:
     get:
       operationId: lms_get_completion
@@ -37301,13 +37266,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms.completions
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms.completions
-      x-speakeasy-name-override: get
   /unified/lms/categories/{id}:
     get:
       operationId: lms_get_category
@@ -37442,13 +37407,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms
+      x-speakeasy-name-override: getCategory
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms
-      x-speakeasy-name-override: getCategory
   /unified/lms/categories:
     get:
       operationId: lms_list_categories
@@ -37627,11 +37592,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms.categories
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -37642,6 +37602,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/lms/users:
     get:
       operationId: lms_list_users
@@ -37830,11 +37795,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms
       x-speakeasy-name-override: listUsers
       x-speakeasy-pagination:
@@ -37845,6 +37805,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/lms/users/{id}:
     get:
       operationId: lms_get_user
@@ -37979,13 +37944,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms
+      x-speakeasy-name-override: getUser
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms
-      x-speakeasy-name-override: getUser
   /unified/lms/skills/{id}:
     get:
       operationId: lms_get_skill
@@ -38120,13 +38085,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms.skills
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms.skills
-      x-speakeasy-name-override: get
   /unified/lms/skills:
     get:
       operationId: lms_list_skills
@@ -38305,11 +38270,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms
       x-speakeasy-name-override: listSkills
       x-speakeasy-pagination:
@@ -38320,6 +38280,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/lms/assignments:
     get:
       operationId: lms_list_assignments
@@ -38523,11 +38488,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: lms.assignments
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -38538,6 +38498,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/lms/assignments/{id}:
     get:
       operationId: lms_get_assignment
@@ -38674,13 +38639,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: lms.assignments
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: lms.assignments
-      x-speakeasy-name-override: get
   /unified/ticketing/tickets:
     get:
       operationId: ticketing_list_tickets
@@ -38862,11 +38827,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing.tickets
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -38877,6 +38837,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: ticketing_create_ticket
       summary: Create Ticket
@@ -38989,13 +38954,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: create
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing.tickets
-      x-speakeasy-name-override: create
   /unified/ticketing/tickets/{id}:
     get:
       operationId: ticketing_get_ticket
@@ -39133,13 +39098,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing.tickets
-      x-speakeasy-name-override: get
     patch:
       operationId: ticketing_update_ticket
       summary: Update Ticket
@@ -39257,13 +39222,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing.tickets
+      x-speakeasy-name-override: update
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing.tickets
-      x-speakeasy-name-override: update
   /unified/ticketing/users:
     get:
       operationId: ticketing_list_users
@@ -39445,11 +39410,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing.users
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -39460,6 +39420,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ticketing/users/{id}:
     get:
       operationId: ticketing_get_user
@@ -39597,13 +39562,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing
+      x-speakeasy-name-override: getUser
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing
-      x-speakeasy-name-override: getUser
   /unified/ticketing/tickets/{id}/comments:
     get:
       operationId: ticketing_list_comments
@@ -39791,11 +39756,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing.tickets.comments
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -39806,6 +39766,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ticketing/tickets/{id}/comments/{subResourceId}:
     get:
       operationId: ticketing_get_comment
@@ -39949,13 +39914,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing.comments
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing.comments
-      x-speakeasy-name-override: get
   /unified/ticketing/tickets/{id}/attachments/{subResourceId}/download:
     get:
       operationId: ticketing_download_ticketing_attachment
@@ -39999,13 +39964,6 @@ paths:
             type: string
             nullable: true
             example: text/plain
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       responses:
         "200":
           description: The document related to the application with the given identifiers was retrieved.
@@ -40090,13 +40048,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing
+      x-speakeasy-name-override: downloadAttachment
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing
-      x-speakeasy-name-override: downloadAttachment
   /unified/ticketing/tickets/{id}/attachments:
     get:
       operationId: ticketing_list_attachments
@@ -40284,11 +40242,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing.tickets
       x-speakeasy-name-override: listAttachments
       x-speakeasy-pagination:
@@ -40299,6 +40252,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ticketing/tickets/{id}/attachments/{subResourceId}:
     get:
       operationId: ticketing_get_attachment
@@ -40442,13 +40400,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing.tickets.attachments
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing.tickets.attachments
-      x-speakeasy-name-override: get
   /unified/ticketing/ticket_types:
     get:
       operationId: ticketing_list_ticket_types
@@ -40630,11 +40588,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing
       x-speakeasy-name-override: listTicketTypes
       x-speakeasy-pagination:
@@ -40645,6 +40598,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ticketing/ticket_types/{id}:
     get:
       operationId: ticketing_get_ticket_type
@@ -40782,13 +40740,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing
+      x-speakeasy-name-override: getTicketType
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing
-      x-speakeasy-name-override: getTicketType
   /unified/ticketing/projects:
     get:
       operationId: ticketing_list_projects
@@ -40970,11 +40928,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
+      x-speakeasy-group: ticketing
+      x-speakeasy-name-override: list_projects
       x-speakeasy-pagination:
         type: cursor
         inputs:
@@ -40983,8 +40938,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
-      x-speakeasy-group: ticketing
-      x-speakeasy-name-override: list_projects
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ticketing/projects/{id}:
     get:
       operationId: ticketing_get_project
@@ -41122,13 +41080,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing
+      x-speakeasy-name-override: get_project
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing
-      x-speakeasy-name-override: get_project
   /unified/ticketing/projects/{id}/components:
     get:
       operationId: ticketing_list_project_components
@@ -41316,11 +41274,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing
       x-speakeasy-name-override: list_project_components
       x-speakeasy-pagination:
@@ -41331,6 +41284,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ticketing/projects/{id}/components/{subResourceId}:
     get:
       operationId: ticketing_get_project_component
@@ -41474,13 +41432,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: ticketing
+      x-speakeasy-name-override: get_project_component
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: ticketing
-      x-speakeasy-name-override: get_project_component
   /unified/ticketing/projects/{id}/ticket_types:
     get:
       operationId: ticketing_list_project_ticket_types
@@ -41668,11 +41626,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing
       x-speakeasy-name-override: list_project_ticket_types
       x-speakeasy-pagination:
@@ -41683,6 +41636,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/ticketing/tickets/{id}/statuses:
     get:
       operationId: ticketing_list_ticket_statuses
@@ -41869,11 +41827,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: ticketing.tickets
       x-speakeasy-name-override: listStatuses
       x-speakeasy-pagination:
@@ -41884,6 +41837,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/documents/files/{id}/download:
     get:
       operationId: documents_download_file
@@ -41926,13 +41884,6 @@ paths:
             type: string
             nullable: true
             example: text/plain
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       responses:
         "200":
           description: The file with the given identifiers was retrieved.
@@ -42017,13 +41968,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: documents.files
+      x-speakeasy-name-override: download
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: documents.files
-      x-speakeasy-name-override: download
   /unified/documents/files/upload:
     post:
       operationId: documents_upload_file
@@ -42045,13 +41996,6 @@ paths:
           required: false
           schema:
             type: string
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       requestBody:
         content:
           application/json:
@@ -42142,13 +42086,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: documents
+      x-speakeasy-name-override: uploadFile
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: documents
-      x-speakeasy-name-override: uploadFile
   /unified/documents/files:
     get:
       operationId: documents_list_files
@@ -42385,11 +42329,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: documents.files
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -42400,6 +42339,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/documents/files/{id}:
     get:
       operationId: documents_get_file
@@ -42550,13 +42494,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: documents.files
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: documents.files
-      x-speakeasy-name-override: get
   /unified/documents/folders:
     get:
       operationId: documents_list_folders
@@ -42611,6 +42555,11 @@ paths:
                 description: Use a string with a date to only select results updated after that given date
                 nullable: true
                 example: "2020-01-01T00:00:00.000Z"
+              name:
+                type: string
+                description: Search if the name of the folder contains the string
+                nullable: true
+                example: Engineering
               drive_id:
                 type: string
                 additionalProperties: false
@@ -42772,11 +42721,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: documents.folders
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -42787,6 +42731,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/documents/folders/{id}:
     get:
       operationId: documents_get_folder
@@ -42931,13 +42880,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: documents.folders
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: documents.folders
-      x-speakeasy-name-override: get
   /unified/documents/drives:
     get:
       operationId: documents_list_drives
@@ -43116,11 +43065,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: documents.drives
       x-speakeasy-name-override: list
       x-speakeasy-pagination:
@@ -43131,6 +43075,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/documents/drives/{id}:
     get:
       operationId: documents_get_drive
@@ -43267,13 +43216,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: drives
+      x-speakeasy-name-override: get
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: drives
-      x-speakeasy-name-override: get
   /unified/messaging/conversations:
     get:
       operationId: messaging_list_conversations
@@ -43454,11 +43403,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: messaging
       x-speakeasy-name-override: list_conversations
       x-speakeasy-pagination:
@@ -43469,6 +43413,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: messaging_create_conversation
       summary: Create Conversation
@@ -43580,13 +43529,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: messaging
+      x-speakeasy-name-override: create_conversation
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: messaging
-      x-speakeasy-name-override: create_conversation
   /unified/messaging/conversations/{id}:
     get:
       operationId: messaging_get_conversation
@@ -43723,13 +43672,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: messaging
+      x-speakeasy-name-override: get_conversation
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: messaging
-      x-speakeasy-name-override: get_conversation
   /unified/messaging/messages/{id}/attachments/{subResourceId}/download:
     get:
       operationId: messaging_download_messaging_attachment
@@ -43772,13 +43721,6 @@ paths:
             type: string
             nullable: true
             example: text/plain
-        - name: Prefer
-          in: header
-          description: 'Set to "heartbeat" to enable keep-alive newline heartbeats during long-running requests. Response includes Preference-Applied: heartbeat header when honored. (RFC 7240)'
-          required: false
-          schema:
-            type: string
-            example: heartbeat
       responses:
         "200":
           description: The attachment file was downloaded successfully.
@@ -43863,13 +43805,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: messaging
+      x-speakeasy-name-override: download_messaging_attachment
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: messaging
-      x-speakeasy-name-override: download_messaging_attachment
   /unified/messaging/messages/{id}/attachments:
     get:
       operationId: messaging_list_attachments
@@ -44056,11 +43998,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: messaging
       x-speakeasy-name-override: list_attachments
       x-speakeasy-pagination:
@@ -44071,6 +44008,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/messaging/messages/{id}/attachments/{subResourceId}:
     get:
       operationId: messaging_get_attachment
@@ -44213,13 +44155,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: messaging
+      x-speakeasy-name-override: get_attachment
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: messaging
-      x-speakeasy-name-override: get_attachment
   /unified/messaging/users:
     get:
       operationId: messaging_list_users
@@ -44400,11 +44342,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: messaging
       x-speakeasy-name-override: list_users
       x-speakeasy-pagination:
@@ -44415,6 +44352,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/messaging/users/{id}:
     get:
       operationId: messaging_get_user
@@ -44551,13 +44493,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: messaging
+      x-speakeasy-name-override: get_user
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: messaging
-      x-speakeasy-name-override: get_user
   /unified/messaging/conversations/{id}/messages:
     get:
       operationId: messaging_list_conversation_messages
@@ -44744,11 +44686,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: messaging
       x-speakeasy-name-override: list_conversation_messages
       x-speakeasy-pagination:
@@ -44759,6 +44696,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/messaging/messages/{id}:
     get:
       operationId: messaging_get_message
@@ -44902,13 +44844,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: messaging
+      x-speakeasy-name-override: get_message
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: messaging
-      x-speakeasy-name-override: get_message
   /unified/messaging/messages:
     post:
       operationId: messaging_send_message
@@ -45021,13 +44963,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: messaging
+      x-speakeasy-name-override: send_message
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: messaging
-      x-speakeasy-name-override: send_message
   /unified/accounting/companies:
     get:
       operationId: accounting_list_companies
@@ -45208,11 +45150,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: accounting
       x-speakeasy-name-override: list_companies
       x-speakeasy-pagination:
@@ -45223,6 +45160,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/accounting/companies/{id}:
     get:
       operationId: accounting_get_company
@@ -45359,13 +45301,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: accounting
+      x-speakeasy-name-override: get_company
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: accounting
-      x-speakeasy-name-override: get_company
   /unified/accounting/companies/{id}/accounts:
     get:
       operationId: accounting_list_company_accounts
@@ -45552,11 +45494,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: accounting
       x-speakeasy-name-override: list_company_accounts
       x-speakeasy-pagination:
@@ -45567,6 +45504,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/accounting/companies/{id}/accounts/{subResourceId}:
     get:
       operationId: accounting_get_company_account
@@ -45709,13 +45651,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: accounting
+      x-speakeasy-name-override: get_company_account
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: accounting
-      x-speakeasy-name-override: get_company_account
   /unified/accounting/companies/{id}/tax_rates:
     get:
       operationId: accounting_list_company_tax_rates
@@ -45902,11 +45844,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: accounting
       x-speakeasy-name-override: list_company_tax_rates
       x-speakeasy-pagination:
@@ -45917,6 +45854,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
   /unified/accounting/companies/{id}/tax_rates/{subResourceId}:
     get:
       operationId: accounting_get_company_tax_rate
@@ -46059,13 +46001,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: accounting
+      x-speakeasy-name-override: get_company_tax_rate
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: accounting
-      x-speakeasy-name-override: get_company_tax_rate
   /unified/accounting/companies/{id}/journals/batch:
     post:
       operationId: accounting_batch_create_company_journals
@@ -46184,13 +46126,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: accounting
+      x-speakeasy-name-override: batch_create_company_journals
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: accounting
-      x-speakeasy-name-override: batch_create_company_journals
   /unified/accounting/companies/{id}/journals:
     get:
       operationId: accounting_list_company_journals
@@ -46377,11 +46319,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
-      x-speakeasy-retries:
-        statusCodes:
-          - 429
-          - 408
-        strategy: backoff
       x-speakeasy-group: accounting
       x-speakeasy-name-override: list_company_journals
       x-speakeasy-pagination:
@@ -46392,6 +46329,11 @@ paths:
             type: cursor
         outputs:
           nextCursor: $.next
+      x-speakeasy-retries:
+        statusCodes:
+          - 429
+          - 408
+        strategy: backoff
     post:
       operationId: accounting_create_company_journal
       summary: Create Journal
@@ -46509,13 +46451,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: accounting
+      x-speakeasy-name-override: create_company_journal
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: accounting
-      x-speakeasy-name-override: create_company_journal
   /unified/accounting/companies/{id}/journals/{subResourceId}:
     get:
       operationId: accounting_get_company_journal
@@ -46658,16 +46600,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadGatewayResponse'
+      x-speakeasy-group: accounting
+      x-speakeasy-name-override: get_company_journal
       x-speakeasy-retries:
         statusCodes:
           - 429
           - 408
         strategy: backoff
-      x-speakeasy-group: accounting
-      x-speakeasy-name-override: get_company_journal
 info:
   title: Accounting
-  description: The documentation for the StackOne Unified API - ACCOUNTING
+  description: |-
+    The documentation for the StackOne API
+    The documentation for the StackOne Unified API - HRIS
+    The documentation for the StackOne Unified API - ATS
+    The documentation for the StackOne Unified API - CRM
+    The documentation for the StackOne Unified API - IAM
+    The documentation for the StackOne Unified API - MARKETING
+    The documentation for the StackOne Unified API - LMS
+    The documentation for the StackOne Unified API - TICKETING
+    The documentation for the StackOne Unified API - DOCUMENTS
+    The documentation for the StackOne Unified API - MESSAGING
+    The documentation for the StackOne Unified API - ACCOUNTING
   version: 1.0.0
   contact: {}
 tags:
@@ -46940,6 +46893,13 @@ components:
           default: 100
           minimum: 1
           maximum: 500
+        min_similarity:
+          type: number
+          description: Minimum similarity score threshold (0-1). Results below this score are filtered out.
+          example: 0.4
+          default: 0.4
+          minimum: 0
+          maximum: 1
       required:
         - query
     ActionSearchResponseDto:
@@ -47101,6 +47061,11 @@ components:
             data: example
           nullable: true
           additionalProperties: true
+        defender_enabled:
+          type: boolean
+          description: Override the account-level defender setting for this request
+          example: true
+          nullable: true
       required:
         - action
     ActionsRpcResponse:
@@ -47783,6 +47748,18 @@ components:
         - statusCode
         - message
         - timestamp
+    GuideImageMeta:
+      type: object
+      properties:
+        src:
+          type: string
+          description: The image source URL or relative path
+        alt:
+          type: string
+          description: The image alt text
+      required:
+        - src
+        - alt
     GuideMeta:
       type: object
       properties:
@@ -47818,6 +47795,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GuideStepMeta'
+        applicableScopes:
+          description: The scopes for which this section is applicable
+          nullable: true
+          type: array
+          items:
+            type: string
+        image:
+          description: An image for the section
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/GuideImageMeta'
       required:
         - title
         - content
@@ -47836,6 +47824,21 @@ components:
           type: array
           items:
             type: string
+        displayScopes:
+          type: boolean
+          description: When true, the step should display scopes
+          nullable: true
+        applicableScopes:
+          description: The scopes for which this step is applicable
+          nullable: true
+          type: array
+          items:
+            type: string
+        image:
+          description: An image for the step
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/GuideImageMeta'
       required:
         - title
         - content
@@ -47940,6 +47943,9 @@ components:
             - PRODUCTION
             - TEST
           x-speakeasy-unknown-values: allow
+          nullable: true
+        shared:
+          type: boolean
           nullable: true
       required:
         - id
@@ -48073,6 +48079,9 @@ components:
           nullable: true
         integration_id:
           type: string
+          nullable: true
+        shared:
+          type: boolean
           nullable: true
     PlatformLog:
       type: object

@@ -44,7 +44,7 @@ MarketingListEmailTemplatesRequest req = new MarketingListEmailTemplatesRequest(
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListEmailTemplatesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -441,7 +441,7 @@ MarketingListSmsTemplatesRequest req = new MarketingListSmsTemplatesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListSmsTemplatesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -654,7 +654,7 @@ MarketingListOmniChannelTemplatesRequest req = new MarketingListOmniChannelTempl
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListOmniChannelTemplatesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -853,7 +853,7 @@ MarketingListPushTemplatesRequest req = new MarketingListPushTemplatesRequest() 
     XAccountId = "<id>",
     Fields = "id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields",
     Filter = new MarketingListPushTemplatesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -992,7 +992,7 @@ MarketingListContentBlocksRequest req = new MarketingListContentBlocksRequest() 
     XAccountId = "<id>",
     Fields = "id,remote_id,name,type,content,status,tags,created_at,updated_at,unified_custom_fields",
     Filter = new MarketingListContentBlocksFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

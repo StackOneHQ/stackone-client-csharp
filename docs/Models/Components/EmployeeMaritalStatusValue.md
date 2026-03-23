@@ -1,5 +1,16 @@
 # EmployeeMaritalStatusValue
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = EmployeeMaritalStatusValue.Single;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EmployeeMaritalStatusValue.Of("custom_value");
+```
+
 
 ## Values
 

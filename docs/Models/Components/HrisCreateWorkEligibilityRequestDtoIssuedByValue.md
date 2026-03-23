@@ -2,6 +2,17 @@
 
 The ISO3166-1 Alpha2 Code of the Country
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisCreateWorkEligibilityRequestDtoIssuedByValue.Af;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisCreateWorkEligibilityRequestDtoIssuedByValue.Of("custom_value");
+```
+
 
 ## Values
 

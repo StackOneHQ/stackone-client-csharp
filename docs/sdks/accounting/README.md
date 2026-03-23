@@ -37,7 +37,7 @@ AccountingListCompaniesRequest req = new AccountingListCompaniesRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields",
     Filter = new AccountingListCompaniesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -281,7 +281,7 @@ AccountingListCompanyTaxRatesRequest req = new AccountingListCompanyTaxRatesRequ
     Id = "<id>",
     Fields = "id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields",
     Filter = new AccountingListCompanyTaxRatesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };
@@ -536,7 +536,7 @@ var res = await sdk.Accounting.CreateCompanyJournalAsync(
             ),
         },
         ExchangeRate = 1D,
-        TransactionDate = System.DateTime.Parse("2024-03-20T10:00:00Z"),
+        TransactionDate = System.DateTime.Parse("2024-03-20T10:00:00Z").ToUniversalTime(),
         Lines = new List<CreateJournalLine>() {
             new CreateJournalLine() {
                 AccountId = "acc_123456789",

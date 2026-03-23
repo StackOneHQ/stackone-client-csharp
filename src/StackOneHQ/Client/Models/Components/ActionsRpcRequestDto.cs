@@ -45,5 +45,11 @@ namespace StackOneHQ.Client.Models.Components
         /// </summary>
         [JsonProperty("body")]
         public Dictionary<string, object>? Body { get; set; } = null;
+
+        /// <summary>
+        /// Override the account-level defender setting for this request.
+        /// </summary>
+        [JsonProperty("defender_enabled")]
+        public bool? DefenderEnabled { get; set; } = null;
     }
 }

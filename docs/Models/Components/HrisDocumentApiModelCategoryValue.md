@@ -2,6 +2,17 @@
 
 The category of the file
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = HrisDocumentApiModelCategoryValue.Application;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisDocumentApiModelCategoryValue.Of("custom_value");
+```
+
 
 ## Values
 

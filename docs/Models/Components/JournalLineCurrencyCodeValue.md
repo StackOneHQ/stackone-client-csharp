@@ -2,6 +2,17 @@
 
 Default currency for the company
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = JournalLineCurrencyCodeValue.Aed;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = JournalLineCurrencyCodeValue.Of("custom_value");
+```
+
 
 ## Values
 

@@ -29,7 +29,7 @@ AtsListBackgroundCheckPackagesRequest req = new AtsListBackgroundCheckPackagesRe
     XAccountId = "<id>",
     Fields = "id,remote_id,name,description,tests,unified_custom_fields",
     Filter = new AtsListBackgroundCheckPackagesFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

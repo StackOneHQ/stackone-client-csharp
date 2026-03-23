@@ -29,7 +29,7 @@ CrmListListsRequest req = new CrmListListsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields",
     Filter = new CrmListListsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

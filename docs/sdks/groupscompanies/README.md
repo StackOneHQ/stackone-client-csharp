@@ -28,7 +28,7 @@ HrisListCompaniesGroupsRequest req = new HrisListCompaniesGroupsRequest() {
     XAccountId = "<id>",
     Fields = "id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields",
     Filter = new HrisListCompaniesGroupsFilter() {
-        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z"),
+        UpdatedAfter = System.DateTime.Parse("2020-01-01T00:00:00.000Z").ToUniversalTime(),
     },
     Prefer = "heartbeat",
 };

@@ -1,5 +1,16 @@
 # LinkedAccountStatus
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = LinkedAccountStatus.Active;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = LinkedAccountStatus.Of("custom_value");
+```
+
 
 ## Values
 

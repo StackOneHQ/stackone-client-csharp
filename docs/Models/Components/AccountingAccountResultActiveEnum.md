@@ -1,5 +1,13 @@
 # AccountingAccountResultActiveEnum
 
+## Example Usage
+
+```csharp
+using StackOneHQ.Client.Models.Components;
+
+var value = AccountingAccountResultActiveEnum.True;
+```
+
 
 ## Values
 
